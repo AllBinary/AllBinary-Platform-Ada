@@ -29,6 +29,8 @@ with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.file
 with org.apache.commons.fileupload.FileItemHeaders_Package; use org.apache.commons.fileupload.FileItemHeaders_Package;
 with org.apache.commons.fileupload.FileItemHeaders_Package_References;
 with org.apache.commons.fileupload.FileItemUtil_Package; use org.apache.commons.fileupload.FileItemUtil_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 
 package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Package is
 
@@ -36,6 +38,8 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Packa
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package FileItemUtil_Package renames Standard.org.apache.commons.fileupload.FileItemUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -149,7 +153,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Packa
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.HTTPERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, AbFileItem_Access'(This'Unchecked_Access), To_Unbounded_String ("getString"), e);
             end if;
             return StringUtil_Package.getInstance.EMPTY_STRING;

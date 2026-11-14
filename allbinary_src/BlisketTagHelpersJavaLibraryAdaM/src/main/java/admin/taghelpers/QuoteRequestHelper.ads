@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.QuoteRequestHelper_Package;
 package admin.taghelpers.QuoteRequestHelper_Package_References is
    type QuoteRequestHelper_Access is access all admin.taghelpers.QuoteRequestHelper_Package.QuoteRequestHelper'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.QuoteRequestHelper_Package_References is
    type QuoteRequestHelper_Access_Array_Access is access all QuoteRequestHelper_Access_Array;
    type QuoteRequestHelper_Access_Array_Access_Array is array (Natural range <>) of QuoteRequestHelper_Access_Array_Access;
    type QuoteRequestHelper_Access_Array_Access_Array_Access is access all QuoteRequestHelper_Access_Array_Access_Array;
+   type QuoteRequestHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : QuoteRequestHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : QuoteRequestHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new QuoteRequestHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_QuoteRequestHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return QuoteRequestHelper_Access_Array_Access is (if Value /= null and then Value.all in QuoteRequestHelper_Access_Array_Object'Class then QuoteRequestHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type QuoteRequestHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : QuoteRequestHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : QuoteRequestHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new QuoteRequestHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_QuoteRequestHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return QuoteRequestHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in QuoteRequestHelper_Access_Array_Access_Array_Object'Class then QuoteRequestHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.QuoteRequestHelper_Package_References;
 
 with admin.taghelpers.QuoteRequestHelper_Package_References;
@@ -101,10 +112,14 @@ package admin.taghelpers.QuoteRequestHelper_Package is
    function "=" (Left, Right : QuoteRequestHelper_Access_Array) return Boolean renames admin.taghelpers.QuoteRequestHelper_Package_References."=";
    subtype QuoteRequestHelper_Access_Array_Access is admin.taghelpers.QuoteRequestHelper_Package_References.QuoteRequestHelper_Access_Array_Access;
    function "=" (Left, Right : QuoteRequestHelper_Access_Array_Access) return Boolean renames admin.taghelpers.QuoteRequestHelper_Package_References."=";
+   function Java_Box (Value : QuoteRequestHelper_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.QuoteRequestHelper_Package_References.Java_Box;
+   function Java_Unbox_QuoteRequestHelper_Access_Array (Value : access Java_Object'Class) return QuoteRequestHelper_Access_Array_Access renames admin.taghelpers.QuoteRequestHelper_Package_References.Java_Unbox_QuoteRequestHelper_Access_Array;
    subtype QuoteRequestHelper_Access_Array_Access_Array is admin.taghelpers.QuoteRequestHelper_Package_References.QuoteRequestHelper_Access_Array_Access_Array;
    function "=" (Left, Right : QuoteRequestHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.QuoteRequestHelper_Package_References."=";
    subtype QuoteRequestHelper_Access_Array_Access_Array_Access is admin.taghelpers.QuoteRequestHelper_Package_References.QuoteRequestHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : QuoteRequestHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.QuoteRequestHelper_Package_References."=";
+   function Java_Box (Value : QuoteRequestHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.QuoteRequestHelper_Package_References.Java_Box;
+   function Java_Unbox_QuoteRequestHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return QuoteRequestHelper_Access_Array_Access_Array_Access renames admin.taghelpers.QuoteRequestHelper_Package_References.Java_Unbox_QuoteRequestHelper_Access_Array_Access_Array;
 
    type QuoteRequestHelper is new ModifyTable with record
       logUtil : LogUtil_Access;

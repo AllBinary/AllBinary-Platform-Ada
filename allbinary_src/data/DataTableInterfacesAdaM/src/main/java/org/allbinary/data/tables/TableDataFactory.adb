@@ -40,7 +40,7 @@ package body org.allbinary.data.tables.TableDataFactory_Package is
 
    function getInstance return TableDataFactory_Access is
    begin
-        return TableDataFactory_Access (TableDataFactory_Package.instance);
+        return TableDataFactory_Package.instance;
    end getInstance;
 
 begin

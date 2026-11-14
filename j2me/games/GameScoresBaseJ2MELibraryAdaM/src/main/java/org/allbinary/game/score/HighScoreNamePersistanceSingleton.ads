@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package;
 package org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_References is
    type HighScoreNamePersistanceSingleton_Access is access all org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package.HighScoreNamePersistanceSingleton'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_Refer
    type HighScoreNamePersistanceSingleton_Access_Array_Access is access all HighScoreNamePersistanceSingleton_Access_Array;
    type HighScoreNamePersistanceSingleton_Access_Array_Access_Array is array (Natural range <>) of HighScoreNamePersistanceSingleton_Access_Array_Access;
    type HighScoreNamePersistanceSingleton_Access_Array_Access_Array_Access is access all HighScoreNamePersistanceSingleton_Access_Array_Access_Array;
+   type HighScoreNamePersistanceSingleton_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HighScoreNamePersistanceSingleton_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HighScoreNamePersistanceSingleton_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HighScoreNamePersistanceSingleton_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HighScoreNamePersistanceSingleton_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HighScoreNamePersistanceSingleton_Access_Array_Access is (if Value /= null and then Value.all in HighScoreNamePersistanceSingleton_Access_Array_Object'Class then HighScoreNamePersistanceSingleton_Access_Array_Object'Class (Value.all).Value else null);
+   type HighScoreNamePersistanceSingleton_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HighScoreNamePersistanceSingleton_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HighScoreNamePersistanceSingleton_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HighScoreNamePersistanceSingleton_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HighScoreNamePersistanceSingleton_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HighScoreNamePersistanceSingleton_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in HighScoreNamePersistanceSingleton_Access_Array_Access_Array_Object'Class then HighScoreNamePersistanceSingleton_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_References;
 
 with org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_References;
@@ -135,10 +146,14 @@ package org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package is
    function "=" (Left, Right : HighScoreNamePersistanceSingleton_Access_Array) return Boolean renames org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_References."=";
    subtype HighScoreNamePersistanceSingleton_Access_Array_Access is org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_References.HighScoreNamePersistanceSingleton_Access_Array_Access;
    function "=" (Left, Right : HighScoreNamePersistanceSingleton_Access_Array_Access) return Boolean renames org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_References."=";
+   function Java_Box (Value : HighScoreNamePersistanceSingleton_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_References.Java_Box;
+   function Java_Unbox_HighScoreNamePersistanceSingleton_Access_Array (Value : access Java_Object'Class) return HighScoreNamePersistanceSingleton_Access_Array_Access renames org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_References.Java_Unbox_HighScoreNamePersistanceSingleton_Access_Array;
    subtype HighScoreNamePersistanceSingleton_Access_Array_Access_Array is org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_References.HighScoreNamePersistanceSingleton_Access_Array_Access_Array;
    function "=" (Left, Right : HighScoreNamePersistanceSingleton_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_References."=";
    subtype HighScoreNamePersistanceSingleton_Access_Array_Access_Array_Access is org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_References.HighScoreNamePersistanceSingleton_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HighScoreNamePersistanceSingleton_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_References."=";
+   function Java_Box (Value : HighScoreNamePersistanceSingleton_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_References.Java_Box;
+   function Java_Unbox_HighScoreNamePersistanceSingleton_Access_Array_Access_Array (Value : access Java_Object'Class) return HighScoreNamePersistanceSingleton_Access_Array_Access_Array_Access renames org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package_References.Java_Unbox_HighScoreNamePersistanceSingleton_Access_Array_Access_Array;
 
    type HighScoreNamePersistanceSingleton is new Java_Object with record
       logUtil : LogUtil_Access;

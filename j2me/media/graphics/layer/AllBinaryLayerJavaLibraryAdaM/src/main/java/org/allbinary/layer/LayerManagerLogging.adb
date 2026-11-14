@@ -173,7 +173,7 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
 
    function getInstance return LayerManagerLogging_Access is
    begin
-        return LayerManagerLogging_Access (LayerManagerLogging_Package.instance);
+        return LayerManagerLogging_Package.instance;
    end getInstance;
 
    --  throws Exception

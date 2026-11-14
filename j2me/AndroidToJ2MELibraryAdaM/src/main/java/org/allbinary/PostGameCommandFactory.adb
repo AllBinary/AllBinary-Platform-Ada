@@ -77,7 +77,7 @@ package body org.allbinary.PostGameCommandFactory_Package is
 
    function getInstance return PostGameCommandFactory_Access is
    begin
-        return PostGameCommandFactory_Access (PostGameCommandFactory_Package.instance);
+        return PostGameCommandFactory_Package.instance;
    end getInstance;
 
    procedure addCommands (This : in out PostGameCommandFactory; canvas_Param : access MyCanvas_Package.MyCanvas'Class) is

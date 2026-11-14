@@ -33,11 +33,13 @@ with org.microemu.device.ui.AlertUI_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.midlet.AllBinaryMidlet_Package;
 with org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgressBar_Package;
+with org.allbinary.animation.Animation_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.graphics.displayable.CanvasStrings_Package;
 with org.microemu.device.ui.CanvasUI_Package;
@@ -65,6 +67,7 @@ with javax.microedition.lcdui.Font_Package;
 with org.microemu.device.FontManager_Package;
 with javax.microedition.lcdui.Form_Package;
 with org.microemu.device.ui.FormUI_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Gauge_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
@@ -152,7 +155,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFac
 
    function getInstance return ProgressCanvas_Access is
    begin
-        if (ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN := Java_Object_Access (AndroidBasicTitleProgressBar_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE));
         end if;
         return ProgressCanvas_Access (ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN);

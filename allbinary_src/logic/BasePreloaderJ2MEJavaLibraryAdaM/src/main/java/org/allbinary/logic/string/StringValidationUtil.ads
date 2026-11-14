@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.string_Id.StringValidationUtil_Package;
 package org.allbinary.logic.string_Id.StringValidationUtil_Package_References is
    type StringValidationUtil_Access is access all org.allbinary.logic.string_Id.StringValidationUtil_Package.StringValidationUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.string_Id.StringValidationUtil_Package_References is
    type StringValidationUtil_Access_Array_Access is access all StringValidationUtil_Access_Array;
    type StringValidationUtil_Access_Array_Access_Array is array (Natural range <>) of StringValidationUtil_Access_Array_Access;
    type StringValidationUtil_Access_Array_Access_Array_Access is access all StringValidationUtil_Access_Array_Access_Array;
+   type StringValidationUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StringValidationUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StringValidationUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StringValidationUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StringValidationUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StringValidationUtil_Access_Array_Access is (if Value /= null and then Value.all in StringValidationUtil_Access_Array_Object'Class then StringValidationUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type StringValidationUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StringValidationUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StringValidationUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StringValidationUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StringValidationUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StringValidationUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StringValidationUtil_Access_Array_Access_Array_Object'Class then StringValidationUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.string_Id.StringValidationUtil_Package_References;
 
 with org.allbinary.logic.string_Id.StringValidationUtil_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.logic.string_Id.StringValidationUtil_Package is
    function "=" (Left, Right : StringValidationUtil_Access_Array) return Boolean renames org.allbinary.logic.string_Id.StringValidationUtil_Package_References."=";
    subtype StringValidationUtil_Access_Array_Access is org.allbinary.logic.string_Id.StringValidationUtil_Package_References.StringValidationUtil_Access_Array_Access;
    function "=" (Left, Right : StringValidationUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.string_Id.StringValidationUtil_Package_References."=";
+   function Java_Box (Value : StringValidationUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.string_Id.StringValidationUtil_Package_References.Java_Box;
+   function Java_Unbox_StringValidationUtil_Access_Array (Value : access Java_Object'Class) return StringValidationUtil_Access_Array_Access renames org.allbinary.logic.string_Id.StringValidationUtil_Package_References.Java_Unbox_StringValidationUtil_Access_Array;
    subtype StringValidationUtil_Access_Array_Access_Array is org.allbinary.logic.string_Id.StringValidationUtil_Package_References.StringValidationUtil_Access_Array_Access_Array;
    function "=" (Left, Right : StringValidationUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.string_Id.StringValidationUtil_Package_References."=";
    subtype StringValidationUtil_Access_Array_Access_Array_Access is org.allbinary.logic.string_Id.StringValidationUtil_Package_References.StringValidationUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StringValidationUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.string_Id.StringValidationUtil_Package_References."=";
+   function Java_Box (Value : StringValidationUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.string_Id.StringValidationUtil_Package_References.Java_Box;
+   function Java_Unbox_StringValidationUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return StringValidationUtil_Access_Array_Access_Array_Access renames org.allbinary.logic.string_Id.StringValidationUtil_Package_References.Java_Unbox_StringValidationUtil_Access_Array_Access_Array;
 
    type StringValidationUtil is new Java_Object with record
       stringUtil : StringUtil_Access;

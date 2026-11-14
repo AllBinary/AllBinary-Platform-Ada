@@ -28,6 +28,7 @@ with org.microemu.android.device.AndroidImageInterface_Package; use org.microemu
 with org.allbinary.animation.image.ImageAnimation_Package; use org.allbinary.animation.image.ImageAnimation_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
@@ -35,6 +36,7 @@ with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;

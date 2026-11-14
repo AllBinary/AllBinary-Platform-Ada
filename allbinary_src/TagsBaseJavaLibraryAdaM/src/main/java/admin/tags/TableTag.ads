@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.tags.TableTag_Package;
 package admin.tags.TableTag_Package_References is
    type TableTag_Access is access all admin.tags.TableTag_Package.TableTag'Class;
@@ -19,6 +20,16 @@ package admin.tags.TableTag_Package_References is
    type TableTag_Access_Array_Access is access all TableTag_Access_Array;
    type TableTag_Access_Array_Access_Array is array (Natural range <>) of TableTag_Access_Array_Access;
    type TableTag_Access_Array_Access_Array_Access is access all TableTag_Access_Array_Access_Array;
+   type TableTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TableTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TableTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TableTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TableTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TableTag_Access_Array_Access is (if Value /= null and then Value.all in TableTag_Access_Array_Object'Class then TableTag_Access_Array_Object'Class (Value.all).Value else null);
+   type TableTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TableTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TableTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TableTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TableTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TableTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TableTag_Access_Array_Access_Array_Object'Class then TableTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.tags.TableTag_Package_References;
 
 with admin.tags.TableTag_Package_References;
@@ -75,10 +86,14 @@ package admin.tags.TableTag_Package is
    function "=" (Left, Right : TableTag_Access_Array) return Boolean renames admin.tags.TableTag_Package_References."=";
    subtype TableTag_Access_Array_Access is admin.tags.TableTag_Package_References.TableTag_Access_Array_Access;
    function "=" (Left, Right : TableTag_Access_Array_Access) return Boolean renames admin.tags.TableTag_Package_References."=";
+   function Java_Box (Value : TableTag_Access_Array_Access) return Java_Object_Access renames admin.tags.TableTag_Package_References.Java_Box;
+   function Java_Unbox_TableTag_Access_Array (Value : access Java_Object'Class) return TableTag_Access_Array_Access renames admin.tags.TableTag_Package_References.Java_Unbox_TableTag_Access_Array;
    subtype TableTag_Access_Array_Access_Array is admin.tags.TableTag_Package_References.TableTag_Access_Array_Access_Array;
    function "=" (Left, Right : TableTag_Access_Array_Access_Array) return Boolean renames admin.tags.TableTag_Package_References."=";
    subtype TableTag_Access_Array_Access_Array_Access is admin.tags.TableTag_Package_References.TableTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TableTag_Access_Array_Access_Array_Access) return Boolean renames admin.tags.TableTag_Package_References."=";
+   function Java_Box (Value : TableTag_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.tags.TableTag_Package_References.Java_Box;
+   function Java_Unbox_TableTag_Access_Array_Access_Array (Value : access Java_Object'Class) return TableTag_Access_Array_Access_Array_Access renames admin.tags.TableTag_Package_References.Java_Unbox_TableTag_Access_Array_Access_Array;
 
    type TableTag is new PropertiesTag with record
       TableTag_Field_logUtil : LogUtil_Access;

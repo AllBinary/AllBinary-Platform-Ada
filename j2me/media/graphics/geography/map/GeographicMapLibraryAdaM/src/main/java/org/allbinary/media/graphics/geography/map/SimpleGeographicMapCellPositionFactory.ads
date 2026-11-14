@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
 package org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package_References is
    type SimpleGeographicMapCellPositionFactory_Access is access all org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package.SimpleGeographicMapCellPositionFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositi
    type SimpleGeographicMapCellPositionFactory_Access_Array_Access is access all SimpleGeographicMapCellPositionFactory_Access_Array;
    type SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array is array (Natural range <>) of SimpleGeographicMapCellPositionFactory_Access_Array_Access;
    type SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array_Access is access all SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array;
+   type SimpleGeographicMapCellPositionFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SimpleGeographicMapCellPositionFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SimpleGeographicMapCellPositionFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SimpleGeographicMapCellPositionFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SimpleGeographicMapCellPositionFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SimpleGeographicMapCellPositionFactory_Access_Array_Access is (if Value /= null and then Value.all in SimpleGeographicMapCellPositionFactory_Access_Array_Object'Class then SimpleGeographicMapCellPositionFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array_Object'Class then SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package_References;
 
 with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package_References;
@@ -69,10 +80,14 @@ package org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositi
    function "=" (Left, Right : SimpleGeographicMapCellPositionFactory_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package_References."=";
    subtype SimpleGeographicMapCellPositionFactory_Access_Array_Access is org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package_References.SimpleGeographicMapCellPositionFactory_Access_Array_Access;
    function "=" (Left, Right : SimpleGeographicMapCellPositionFactory_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package_References."=";
+   function Java_Box (Value : SimpleGeographicMapCellPositionFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package_References.Java_Box;
+   function Java_Unbox_SimpleGeographicMapCellPositionFactory_Access_Array (Value : access Java_Object'Class) return SimpleGeographicMapCellPositionFactory_Access_Array_Access renames org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package_References.Java_Unbox_SimpleGeographicMapCellPositionFactory_Access_Array;
    subtype SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package_References.SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array;
    function "=" (Left, Right : SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package_References."=";
    subtype SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package_References.SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package_References."=";
+   function Java_Box (Value : SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package_References.Java_Box;
+   function Java_Unbox_SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array_Access renames org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package_References.Java_Unbox_SimpleGeographicMapCellPositionFactory_Access_Array_Access_Array;
 
    type SimpleGeographicMapCellPositionFactory is new Java_Object and GeographicMapCellPositionFactoryInterface with null record;
    NULL_GEOGRAPHIC_MAP_CELL_POSITION : GeographicMapCellPosition_Access;

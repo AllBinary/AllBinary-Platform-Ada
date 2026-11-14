@@ -23,6 +23,8 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactoryInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterfaceFactoryInterface_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.processor.PaymentProcessorInterface_Package_References;
@@ -46,6 +48,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.processo
    package PaymentTypeUtil_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.PaymentTypeUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -85,7 +89,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.processo
 
    function getInstance return PaymentProcessorInterfaceFactory_Access is
    begin
-        return PaymentProcessorInterfaceFactory_Access (PaymentProcessorInterfaceFactory_Package.instance);
+        return PaymentProcessorInterfaceFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out PaymentProcessorInterfaceFactory'Class) is
@@ -124,7 +128,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.processo
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENTERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PAYMENTERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, PaymentProcessorInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;

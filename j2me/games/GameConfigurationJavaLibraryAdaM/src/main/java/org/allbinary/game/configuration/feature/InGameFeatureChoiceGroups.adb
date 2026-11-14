@@ -68,12 +68,12 @@ package body org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_
 
    function getExclusiveInstance return InGameFeatureChoiceGroups_Access is
    begin
-        return InGameFeatureChoiceGroups_Access (InGameFeatureChoiceGroups_Package.gameFeatureChoiceGroupsExclusive);
+        return InGameFeatureChoiceGroups_Package.gameFeatureChoiceGroupsExclusive;
    end getExclusiveInstance;
 
    function getMultipleInstance return InGameFeatureChoiceGroups_Access is
    begin
-        return InGameFeatureChoiceGroups_Access (InGameFeatureChoiceGroups_Package.gameFeatureChoiceGroupsMultiple);
+        return InGameFeatureChoiceGroups_Package.gameFeatureChoiceGroupsMultiple;
    end getMultipleInstance;
 
    function get (This : in out InGameFeatureChoiceGroups) return ABHashtable_Access is

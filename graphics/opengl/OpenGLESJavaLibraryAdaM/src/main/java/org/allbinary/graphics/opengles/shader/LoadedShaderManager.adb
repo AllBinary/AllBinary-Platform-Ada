@@ -54,7 +54,7 @@ package body org.allbinary.graphics.opengles.shader.LoadedShaderManager_Package 
 
    function getInstance return ShaderManager_Access is
    begin
-        return ShaderManager_Access (LoadedShaderManager_Package.instance);
+        return LoadedShaderManager_Package.instance;
    end getInstance;
 
 begin

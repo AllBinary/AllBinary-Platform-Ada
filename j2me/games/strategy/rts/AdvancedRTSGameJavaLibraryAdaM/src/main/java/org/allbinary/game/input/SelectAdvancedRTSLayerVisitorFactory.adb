@@ -51,7 +51,7 @@ package body org.allbinary.game.input.SelectAdvancedRTSLayerVisitorFactory_Packa
 
    function getInstance return SelectAdvancedRTSLayerVisitorFactory_Access is
    begin
-        return SelectAdvancedRTSLayerVisitorFactory_Access (SelectAdvancedRTSLayerVisitorFactory_Package.instance);
+        return SelectAdvancedRTSLayerVisitorFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out SelectAdvancedRTSLayerVisitorFactory'Class) is

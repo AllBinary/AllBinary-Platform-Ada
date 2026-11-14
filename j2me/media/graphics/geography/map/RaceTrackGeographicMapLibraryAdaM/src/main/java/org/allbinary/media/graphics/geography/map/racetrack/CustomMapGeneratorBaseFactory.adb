@@ -71,7 +71,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGener
 
    function getInstance return CustomMapGeneratorBaseFactory_Access is
    begin
-        return CustomMapGeneratorBaseFactory_Access (CustomMapGeneratorBaseFactory_Package.instance);
+        return CustomMapGeneratorBaseFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out CustomMapGeneratorBaseFactory'Class) is

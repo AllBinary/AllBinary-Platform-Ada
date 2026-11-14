@@ -65,7 +65,7 @@ package body org.allbinary.math.AngleIncrementInfoFactory_Package is
 
    function getInstance return AngleIncrementInfoFactory_Access is
    begin
-        return AngleIncrementInfoFactory_Access (AngleIncrementInfoFactory_Package.instance);
+        return AngleIncrementInfoFactory_Package.instance;
    end getInstance;
 
    function getAt (This : in out AngleIncrementInfoFactory; angleIncrement : Short_Integer) return AngleIncrementInfo_Access is

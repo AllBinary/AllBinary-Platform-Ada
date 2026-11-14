@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with tags.admin.customizers.ViewCustomizersTag_Package;
 package tags.admin.customizers.ViewCustomizersTag_Package_References is
    type ViewCustomizersTag_Access is access all tags.admin.customizers.ViewCustomizersTag_Package.ViewCustomizersTag'Class;
@@ -19,6 +20,16 @@ package tags.admin.customizers.ViewCustomizersTag_Package_References is
    type ViewCustomizersTag_Access_Array_Access is access all ViewCustomizersTag_Access_Array;
    type ViewCustomizersTag_Access_Array_Access_Array is array (Natural range <>) of ViewCustomizersTag_Access_Array_Access;
    type ViewCustomizersTag_Access_Array_Access_Array_Access is access all ViewCustomizersTag_Access_Array_Access_Array;
+   type ViewCustomizersTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ViewCustomizersTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ViewCustomizersTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ViewCustomizersTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ViewCustomizersTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ViewCustomizersTag_Access_Array_Access is (if Value /= null and then Value.all in ViewCustomizersTag_Access_Array_Object'Class then ViewCustomizersTag_Access_Array_Object'Class (Value.all).Value else null);
+   type ViewCustomizersTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ViewCustomizersTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ViewCustomizersTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ViewCustomizersTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ViewCustomizersTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ViewCustomizersTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ViewCustomizersTag_Access_Array_Access_Array_Object'Class then ViewCustomizersTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end tags.admin.customizers.ViewCustomizersTag_Package_References;
 
 with tags.admin.customizers.ViewCustomizersTag_Package_References;
@@ -47,10 +58,14 @@ package tags.admin.customizers.ViewCustomizersTag_Package is
    function "=" (Left, Right : ViewCustomizersTag_Access_Array) return Boolean renames tags.admin.customizers.ViewCustomizersTag_Package_References."=";
    subtype ViewCustomizersTag_Access_Array_Access is tags.admin.customizers.ViewCustomizersTag_Package_References.ViewCustomizersTag_Access_Array_Access;
    function "=" (Left, Right : ViewCustomizersTag_Access_Array_Access) return Boolean renames tags.admin.customizers.ViewCustomizersTag_Package_References."=";
+   function Java_Box (Value : ViewCustomizersTag_Access_Array_Access) return Java_Object_Access renames tags.admin.customizers.ViewCustomizersTag_Package_References.Java_Box;
+   function Java_Unbox_ViewCustomizersTag_Access_Array (Value : access Java_Object'Class) return ViewCustomizersTag_Access_Array_Access renames tags.admin.customizers.ViewCustomizersTag_Package_References.Java_Unbox_ViewCustomizersTag_Access_Array;
    subtype ViewCustomizersTag_Access_Array_Access_Array is tags.admin.customizers.ViewCustomizersTag_Package_References.ViewCustomizersTag_Access_Array_Access_Array;
    function "=" (Left, Right : ViewCustomizersTag_Access_Array_Access_Array) return Boolean renames tags.admin.customizers.ViewCustomizersTag_Package_References."=";
    subtype ViewCustomizersTag_Access_Array_Access_Array_Access is tags.admin.customizers.ViewCustomizersTag_Package_References.ViewCustomizersTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ViewCustomizersTag_Access_Array_Access_Array_Access) return Boolean renames tags.admin.customizers.ViewCustomizersTag_Package_References."=";
+   function Java_Box (Value : ViewCustomizersTag_Access_Array_Access_Array_Access) return Java_Object_Access renames tags.admin.customizers.ViewCustomizersTag_Package_References.Java_Box;
+   function Java_Unbox_ViewCustomizersTag_Access_Array_Access_Array (Value : access Java_Object'Class) return ViewCustomizersTag_Access_Array_Access_Array_Access renames tags.admin.customizers.ViewCustomizersTag_Package_References.Java_Unbox_ViewCustomizersTag_Access_Array_Access_Array;
 
    type ViewCustomizersTag is new StoreValidationTransformTag with null record;
 

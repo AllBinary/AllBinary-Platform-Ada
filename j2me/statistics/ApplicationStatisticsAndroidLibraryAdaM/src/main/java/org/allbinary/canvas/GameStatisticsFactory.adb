@@ -55,7 +55,7 @@ package body org.allbinary.canvas.GameStatisticsFactory_Package is
 
    function getInstance return AndroidGameStatistics_Access is
    begin
-        return AndroidGameStatistics_Access (GameStatisticsFactory_Package.SINGLETON);
+        return GameStatisticsFactory_Package.SINGLETON;
    end getInstance;
 
    procedure add (This : in out GameStatisticsFactory; string_Id : Unbounded_String) is

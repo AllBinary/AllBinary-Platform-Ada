@@ -22,6 +22,8 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -45,6 +47,8 @@ package body org.allbinary.data.generator.UniqueIdGenerator_Package is
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package IdGeneratorEntityFactory_Package renames Standard.org.allbinary.data.tables.generator.IdGeneratorEntityFactory_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype IdGeneratorEntity_Access is org.allbinary.data.tables.generator.IdGeneratorEntity_Package_References.IdGeneratorEntity_Access;
    function "=" (Left, Right : IdGeneratorEntity_Access) return Boolean renames org.allbinary.data.tables.generator.IdGeneratorEntity_Package_References."=";
    subtype IdGeneratorEntity_Access_Array is org.allbinary.data.tables.generator.IdGeneratorEntity_Package_References.IdGeneratorEntity_Access_Array;
@@ -93,15 +97,15 @@ package body org.allbinary.data.generator.UniqueIdGenerator_Package is
    begin
         begin
             vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-            vector.add (This.name);
-            vector.add (To_Unbounded_String (Java_Image (Long_Long_Integer (value))));
+            vector.add (Java_Box (This.name));
+            vector.add (Java_Box (To_Unbounded_String (Java_Image (Long_Long_Integer (value)))));
             This.idGeneratorEntity.insert (vector);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.IDLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.IDLOGGING) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, UniqueIdGenerator_Access'(This'Unchecked_Access), To_Unbounded_String ("initialize"), e);
             end if;
@@ -131,7 +135,7 @@ package body org.allbinary.data.generator.UniqueIdGenerator_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.IDLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.IDLOGGING) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, UniqueIdGenerator_Access'(This'Unchecked_Access), To_Unbounded_String ("getNext"), e);
             end if;

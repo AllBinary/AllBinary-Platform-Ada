@@ -19,6 +19,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with taghelpers.ValidatedViewHelperFactory_Package; use taghelpers.ValidatedViewHelperFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -35,6 +37,8 @@ package body tags.ValidationTransformTag_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    package ValidatedViewHelperFactory_Package renames Standard.taghelpers.ValidatedViewHelperFactory_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -95,7 +99,7 @@ package body tags.ValidationTransformTag_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.ValidationTransformTag_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationTransformTag_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             Java_Throw (e);
@@ -119,7 +123,7 @@ package body tags.ValidationTransformTag_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.ValidationTransformTag_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, ValidationTransformTag_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             Java_Throw (e);
@@ -133,7 +137,7 @@ package body tags.ValidationTransformTag_Package is
       request : HttpServletRequest_Access;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                 stringBuffer := StringMaker_Package.Create;
                 request := HttpServletRequest_Access (This.pageContext.getRequest);
                 stringBuffer.append (To_Unbounded_String ("ValidationViewTag Start For: "));
@@ -147,7 +151,7 @@ package body tags.ValidationTransformTag_Package is
             ValidationTransformTag'Class (This).setHelper;
             if ValidationTransformTag'Class (This).isValid then
                 declare Java_Result renames TransformTag_Package.TransformTag (This).doStartTag; pragma Unreferenced (Java_Result); begin null; end;
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (To_Unbounded_String ("View File: "));
                     stringBuffer.append (ValidationTransformTag'Class (This).getObjectFile);
@@ -162,7 +166,7 @@ package body tags.ValidationTransformTag_Package is
                 end if;
             else
                 This.pageContext.getOut.print (ValidationTransformTag'Class (This).validationInfo);
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (To_Unbounded_String ("View File: "));
                     stringBuffer.append (ValidationTransformTag'Class (This).getObjectFile);
@@ -190,7 +194,7 @@ package body tags.ValidationTransformTag_Package is
 
    function doEndTag (This : in out ValidationTransformTag) return Integer is
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
             This.ValidationTransformTag_Field_logUtil.putF (To_Unbounded_String ("Tag Ended"), ValidationTransformTag_Access'(This'Unchecked_Access), To_Unbounded_String ("doEndTag"));
         end if;
         This.logic := True;

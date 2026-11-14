@@ -79,7 +79,7 @@ package body org.allbinary.game.midlet.GameMidletEventHandler_Package is
 
    function getInstance return GameMidletEventHandler_Access is
    begin
-        return GameMidletEventHandler_Access (GameMidletEventHandler_Package.gameKeyEventHandler);
+        return GameMidletEventHandler_Package.gameKeyEventHandler;
    end getInstance;
 
    --  throws Exception

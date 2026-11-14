@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.BasketHelper_Package;
 package admin.taghelpers.BasketHelper_Package_References is
    type BasketHelper_Access is access all admin.taghelpers.BasketHelper_Package.BasketHelper'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.BasketHelper_Package_References is
    type BasketHelper_Access_Array_Access is access all BasketHelper_Access_Array;
    type BasketHelper_Access_Array_Access_Array is array (Natural range <>) of BasketHelper_Access_Array_Access;
    type BasketHelper_Access_Array_Access_Array_Access is access all BasketHelper_Access_Array_Access_Array;
+   type BasketHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasketHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasketHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasketHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasketHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasketHelper_Access_Array_Access is (if Value /= null and then Value.all in BasketHelper_Access_Array_Object'Class then BasketHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type BasketHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasketHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasketHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasketHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasketHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasketHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasketHelper_Access_Array_Access_Array_Object'Class then BasketHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.BasketHelper_Package_References;
 
 with admin.taghelpers.BasketHelper_Package_References;
@@ -87,10 +98,14 @@ package admin.taghelpers.BasketHelper_Package is
    function "=" (Left, Right : BasketHelper_Access_Array) return Boolean renames admin.taghelpers.BasketHelper_Package_References."=";
    subtype BasketHelper_Access_Array_Access is admin.taghelpers.BasketHelper_Package_References.BasketHelper_Access_Array_Access;
    function "=" (Left, Right : BasketHelper_Access_Array_Access) return Boolean renames admin.taghelpers.BasketHelper_Package_References."=";
+   function Java_Box (Value : BasketHelper_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.BasketHelper_Package_References.Java_Box;
+   function Java_Unbox_BasketHelper_Access_Array (Value : access Java_Object'Class) return BasketHelper_Access_Array_Access renames admin.taghelpers.BasketHelper_Package_References.Java_Unbox_BasketHelper_Access_Array;
    subtype BasketHelper_Access_Array_Access_Array is admin.taghelpers.BasketHelper_Package_References.BasketHelper_Access_Array_Access_Array;
    function "=" (Left, Right : BasketHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.BasketHelper_Package_References."=";
    subtype BasketHelper_Access_Array_Access_Array_Access is admin.taghelpers.BasketHelper_Package_References.BasketHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasketHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.BasketHelper_Package_References."=";
+   function Java_Box (Value : BasketHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.BasketHelper_Package_References.Java_Box;
+   function Java_Unbox_BasketHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return BasketHelper_Access_Array_Access_Array_Access renames admin.taghelpers.BasketHelper_Package_References.Java_Unbox_BasketHelper_Access_Array_Access_Array;
 
    type BasketHelper is new TagHelper with record
       logUtil : LogUtil_Access;

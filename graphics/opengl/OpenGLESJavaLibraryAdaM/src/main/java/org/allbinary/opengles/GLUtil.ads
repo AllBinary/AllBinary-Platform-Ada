@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.opengles.GLUtil_Package;
 package org.allbinary.opengles.GLUtil_Package_References is
    type GLUtil_Access is access all org.allbinary.opengles.GLUtil_Package.GLUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.opengles.GLUtil_Package_References is
    type GLUtil_Access_Array_Access is access all GLUtil_Access_Array;
    type GLUtil_Access_Array_Access_Array is array (Natural range <>) of GLUtil_Access_Array_Access;
    type GLUtil_Access_Array_Access_Array_Access is access all GLUtil_Access_Array_Access_Array;
+   type GLUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GLUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GLUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GLUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GLUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GLUtil_Access_Array_Access is (if Value /= null and then Value.all in GLUtil_Access_Array_Object'Class then GLUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type GLUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GLUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GLUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GLUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GLUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GLUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GLUtil_Access_Array_Access_Array_Object'Class then GLUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.opengles.GLUtil_Package_References;
 
 with org.allbinary.opengles.GLUtil_Package_References;
@@ -51,10 +62,14 @@ package org.allbinary.opengles.GLUtil_Package is
    function "=" (Left, Right : GLUtil_Access_Array) return Boolean renames org.allbinary.opengles.GLUtil_Package_References."=";
    subtype GLUtil_Access_Array_Access is org.allbinary.opengles.GLUtil_Package_References.GLUtil_Access_Array_Access;
    function "=" (Left, Right : GLUtil_Access_Array_Access) return Boolean renames org.allbinary.opengles.GLUtil_Package_References."=";
+   function Java_Box (Value : GLUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.opengles.GLUtil_Package_References.Java_Box;
+   function Java_Unbox_GLUtil_Access_Array (Value : access Java_Object'Class) return GLUtil_Access_Array_Access renames org.allbinary.opengles.GLUtil_Package_References.Java_Unbox_GLUtil_Access_Array;
    subtype GLUtil_Access_Array_Access_Array is org.allbinary.opengles.GLUtil_Package_References.GLUtil_Access_Array_Access_Array;
    function "=" (Left, Right : GLUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.opengles.GLUtil_Package_References."=";
    subtype GLUtil_Access_Array_Access_Array_Access is org.allbinary.opengles.GLUtil_Package_References.GLUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GLUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.opengles.GLUtil_Package_References."=";
+   function Java_Box (Value : GLUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.opengles.GLUtil_Package_References.Java_Box;
+   function Java_Unbox_GLUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return GLUtil_Access_Array_Access_Array_Access renames org.allbinary.opengles.GLUtil_Package_References.Java_Unbox_GLUtil_Access_Array_Access_Array;
 
    type GLUtil is new Java_Object with record
       BYTES_PER_FLOAT : Integer;

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.business.context.modules.storefront.HttpStoreComponentView_Package;
 package views.business.context.modules.storefront.HttpStoreComponentView_Package_References is
    type HttpStoreComponentView_Access is access all views.business.context.modules.storefront.HttpStoreComponentView_Package.HttpStoreComponentView'Class;
@@ -19,6 +20,16 @@ package views.business.context.modules.storefront.HttpStoreComponentView_Package
    type HttpStoreComponentView_Access_Array_Access is access all HttpStoreComponentView_Access_Array;
    type HttpStoreComponentView_Access_Array_Access_Array is array (Natural range <>) of HttpStoreComponentView_Access_Array_Access;
    type HttpStoreComponentView_Access_Array_Access_Array_Access is access all HttpStoreComponentView_Access_Array_Access_Array;
+   type HttpStoreComponentView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HttpStoreComponentView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HttpStoreComponentView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HttpStoreComponentView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HttpStoreComponentView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HttpStoreComponentView_Access_Array_Access is (if Value /= null and then Value.all in HttpStoreComponentView_Access_Array_Object'Class then HttpStoreComponentView_Access_Array_Object'Class (Value.all).Value else null);
+   type HttpStoreComponentView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HttpStoreComponentView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HttpStoreComponentView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HttpStoreComponentView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HttpStoreComponentView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HttpStoreComponentView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in HttpStoreComponentView_Access_Array_Access_Array_Object'Class then HttpStoreComponentView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.business.context.modules.storefront.HttpStoreComponentView_Package_References;
 
 with views.business.context.modules.storefront.HttpStoreComponentView_Package_References;
@@ -85,10 +96,14 @@ package views.business.context.modules.storefront.HttpStoreComponentView_Package
    function "=" (Left, Right : HttpStoreComponentView_Access_Array) return Boolean renames views.business.context.modules.storefront.HttpStoreComponentView_Package_References."=";
    subtype HttpStoreComponentView_Access_Array_Access is views.business.context.modules.storefront.HttpStoreComponentView_Package_References.HttpStoreComponentView_Access_Array_Access;
    function "=" (Left, Right : HttpStoreComponentView_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.HttpStoreComponentView_Package_References."=";
+   function Java_Box (Value : HttpStoreComponentView_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.HttpStoreComponentView_Package_References.Java_Box;
+   function Java_Unbox_HttpStoreComponentView_Access_Array (Value : access Java_Object'Class) return HttpStoreComponentView_Access_Array_Access renames views.business.context.modules.storefront.HttpStoreComponentView_Package_References.Java_Unbox_HttpStoreComponentView_Access_Array;
    subtype HttpStoreComponentView_Access_Array_Access_Array is views.business.context.modules.storefront.HttpStoreComponentView_Package_References.HttpStoreComponentView_Access_Array_Access_Array;
    function "=" (Left, Right : HttpStoreComponentView_Access_Array_Access_Array) return Boolean renames views.business.context.modules.storefront.HttpStoreComponentView_Package_References."=";
    subtype HttpStoreComponentView_Access_Array_Access_Array_Access is views.business.context.modules.storefront.HttpStoreComponentView_Package_References.HttpStoreComponentView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HttpStoreComponentView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.HttpStoreComponentView_Package_References."=";
+   function Java_Box (Value : HttpStoreComponentView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.HttpStoreComponentView_Package_References.Java_Box;
+   function Java_Unbox_HttpStoreComponentView_Access_Array_Access_Array (Value : access Java_Object'Class) return HttpStoreComponentView_Access_Array_Access_Array_Access renames views.business.context.modules.storefront.HttpStoreComponentView_Package_References.Java_Unbox_HttpStoreComponentView_Access_Array_Access_Array;
 
    type HttpStoreComponentView is new HttpComponentView with record
       HttpStoreComponentView_Field_logUtil : LogUtil_Access;

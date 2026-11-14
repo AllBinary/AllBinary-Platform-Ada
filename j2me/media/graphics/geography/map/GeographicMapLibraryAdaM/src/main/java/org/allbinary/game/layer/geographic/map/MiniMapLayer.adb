@@ -63,7 +63,9 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;
+with org.allbinary.game.identification.Group_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.layer.Layer_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
@@ -73,6 +75,7 @@ with org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.graph.V_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package;
 
 package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
 
@@ -194,7 +197,7 @@ package body org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
       geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       viewPosition : constant ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
-        AllBinaryLayer_Package.Initialize (This, StringUtil_Package.getInstance.EMPTY_STRING, Rectangle_Package.Create (PointFactory_Package.getInstance.createXY (0, viewPosition.getY), geographicMapInterface.getAllBinaryTiledLayer.getWidth, geographicMapInterface.getAllBinaryTiledLayer.getHeight), viewPosition);
+        AllBinaryLayer_Package.Initialize (This, StringUtil_Package.getInstance.EMPTY_STRING, Rectangle_Package.Create (PointFactory_Package.getInstance.createXY (0, viewPosition.getY2), geographicMapInterface.getAllBinaryTiledLayer.getWidth, geographicMapInterface.getAllBinaryTiledLayer.getHeight), viewPosition);
         Initialize_Fields (This);
         This.allBinaryTiledLayer := geographicMapInterface.getAllBinaryTiledLayer;
         This.geographicMapCellPositionFactory := geographicMapInterface.getGeographicMapCellPositionFactory;

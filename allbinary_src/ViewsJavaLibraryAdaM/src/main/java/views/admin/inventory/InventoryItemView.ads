@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.admin.inventory.InventoryItemView_Package;
 package views.admin.inventory.InventoryItemView_Package_References is
    type InventoryItemView_Access is access all views.admin.inventory.InventoryItemView_Package.InventoryItemView'Class;
@@ -19,6 +20,16 @@ package views.admin.inventory.InventoryItemView_Package_References is
    type InventoryItemView_Access_Array_Access is access all InventoryItemView_Access_Array;
    type InventoryItemView_Access_Array_Access_Array is array (Natural range <>) of InventoryItemView_Access_Array_Access;
    type InventoryItemView_Access_Array_Access_Array_Access is access all InventoryItemView_Access_Array_Access_Array;
+   type InventoryItemView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InventoryItemView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InventoryItemView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InventoryItemView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InventoryItemView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InventoryItemView_Access_Array_Access is (if Value /= null and then Value.all in InventoryItemView_Access_Array_Object'Class then InventoryItemView_Access_Array_Object'Class (Value.all).Value else null);
+   type InventoryItemView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InventoryItemView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InventoryItemView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InventoryItemView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InventoryItemView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InventoryItemView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in InventoryItemView_Access_Array_Access_Array_Object'Class then InventoryItemView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.admin.inventory.InventoryItemView_Package_References;
 
 with views.admin.inventory.InventoryItemView_Package_References;
@@ -129,10 +140,14 @@ package views.admin.inventory.InventoryItemView_Package is
    function "=" (Left, Right : InventoryItemView_Access_Array) return Boolean renames views.admin.inventory.InventoryItemView_Package_References."=";
    subtype InventoryItemView_Access_Array_Access is views.admin.inventory.InventoryItemView_Package_References.InventoryItemView_Access_Array_Access;
    function "=" (Left, Right : InventoryItemView_Access_Array_Access) return Boolean renames views.admin.inventory.InventoryItemView_Package_References."=";
+   function Java_Box (Value : InventoryItemView_Access_Array_Access) return Java_Object_Access renames views.admin.inventory.InventoryItemView_Package_References.Java_Box;
+   function Java_Unbox_InventoryItemView_Access_Array (Value : access Java_Object'Class) return InventoryItemView_Access_Array_Access renames views.admin.inventory.InventoryItemView_Package_References.Java_Unbox_InventoryItemView_Access_Array;
    subtype InventoryItemView_Access_Array_Access_Array is views.admin.inventory.InventoryItemView_Package_References.InventoryItemView_Access_Array_Access_Array;
    function "=" (Left, Right : InventoryItemView_Access_Array_Access_Array) return Boolean renames views.admin.inventory.InventoryItemView_Package_References."=";
    subtype InventoryItemView_Access_Array_Access_Array_Access is views.admin.inventory.InventoryItemView_Package_References.InventoryItemView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InventoryItemView_Access_Array_Access_Array_Access) return Boolean renames views.admin.inventory.InventoryItemView_Package_References."=";
+   function Java_Box (Value : InventoryItemView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.admin.inventory.InventoryItemView_Package_References.Java_Box;
+   function Java_Unbox_InventoryItemView_Access_Array_Access_Array (Value : access Java_Object'Class) return InventoryItemView_Access_Array_Access_Array_Access renames views.admin.inventory.InventoryItemView_Package_References.Java_Unbox_InventoryItemView_Access_Array_Access_Array;
 
    type InventoryItemView is new HttpStoreComponentView and RequestMapInterface with record
       InventoryItemView_Field_logUtil : LogUtil_Access;

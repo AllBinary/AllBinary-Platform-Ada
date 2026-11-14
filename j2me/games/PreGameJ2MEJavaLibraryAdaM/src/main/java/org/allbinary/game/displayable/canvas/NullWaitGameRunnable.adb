@@ -37,7 +37,7 @@ package body org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package 
 
    function getInstance return GameRunnable_Access is
    begin
-        return GameRunnable_Access (NullWaitGameRunnable_Package.instance);
+        return NullWaitGameRunnable_Package.instance;
    end getInstance;
 
 begin

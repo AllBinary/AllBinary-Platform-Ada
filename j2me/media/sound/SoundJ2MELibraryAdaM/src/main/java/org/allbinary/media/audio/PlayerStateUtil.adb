@@ -57,7 +57,7 @@ package body org.allbinary.media.audio.PlayerStateUtil_Package is
 
    function getInstance return PlayerStateUtil_Access is
    begin
-        return PlayerStateUtil_Access (PlayerStateUtil_Package.instance);
+        return PlayerStateUtil_Package.instance;
    end getInstance;
 
    function convert (This : in out PlayerStateUtil; state : Integer) return Unbounded_String is

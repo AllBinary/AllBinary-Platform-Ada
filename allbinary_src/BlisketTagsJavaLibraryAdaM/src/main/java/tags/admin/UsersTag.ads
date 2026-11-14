@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with tags.admin.UsersTag_Package;
 package tags.admin.UsersTag_Package_References is
    type UsersTag_Access is access all tags.admin.UsersTag_Package.UsersTag'Class;
@@ -19,6 +20,16 @@ package tags.admin.UsersTag_Package_References is
    type UsersTag_Access_Array_Access is access all UsersTag_Access_Array;
    type UsersTag_Access_Array_Access_Array is array (Natural range <>) of UsersTag_Access_Array_Access;
    type UsersTag_Access_Array_Access_Array_Access is access all UsersTag_Access_Array_Access_Array;
+   type UsersTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UsersTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UsersTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UsersTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UsersTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UsersTag_Access_Array_Access is (if Value /= null and then Value.all in UsersTag_Access_Array_Object'Class then UsersTag_Access_Array_Object'Class (Value.all).Value else null);
+   type UsersTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UsersTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UsersTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UsersTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UsersTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UsersTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in UsersTag_Access_Array_Access_Array_Object'Class then UsersTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end tags.admin.UsersTag_Package_References;
 
 with tags.admin.UsersTag_Package_References;
@@ -47,10 +58,14 @@ package tags.admin.UsersTag_Package is
    function "=" (Left, Right : UsersTag_Access_Array) return Boolean renames tags.admin.UsersTag_Package_References."=";
    subtype UsersTag_Access_Array_Access is tags.admin.UsersTag_Package_References.UsersTag_Access_Array_Access;
    function "=" (Left, Right : UsersTag_Access_Array_Access) return Boolean renames tags.admin.UsersTag_Package_References."=";
+   function Java_Box (Value : UsersTag_Access_Array_Access) return Java_Object_Access renames tags.admin.UsersTag_Package_References.Java_Box;
+   function Java_Unbox_UsersTag_Access_Array (Value : access Java_Object'Class) return UsersTag_Access_Array_Access renames tags.admin.UsersTag_Package_References.Java_Unbox_UsersTag_Access_Array;
    subtype UsersTag_Access_Array_Access_Array is tags.admin.UsersTag_Package_References.UsersTag_Access_Array_Access_Array;
    function "=" (Left, Right : UsersTag_Access_Array_Access_Array) return Boolean renames tags.admin.UsersTag_Package_References."=";
    subtype UsersTag_Access_Array_Access_Array_Access is tags.admin.UsersTag_Package_References.UsersTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : UsersTag_Access_Array_Access_Array_Access) return Boolean renames tags.admin.UsersTag_Package_References."=";
+   function Java_Box (Value : UsersTag_Access_Array_Access_Array_Access) return Java_Object_Access renames tags.admin.UsersTag_Package_References.Java_Box;
+   function Java_Unbox_UsersTag_Access_Array_Access_Array (Value : access Java_Object'Class) return UsersTag_Access_Array_Access_Array_Access renames tags.admin.UsersTag_Package_References.Java_Unbox_UsersTag_Access_Array_Access_Array;
 
    type UsersTag is new StoreValidationTransformTag with record
       role : Unbounded_String;

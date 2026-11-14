@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
@@ -40,11 +41,11 @@ with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRetrievalClient_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package ExceptionUtil_Package renames Standard.org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
@@ -130,11 +131,11 @@ package body org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicen
             param := BasicArrayList_Access (BasicArrayListD_Package.Create);
             xmlRpcClient := XmlRpcClient_Package.Create (server);
             XmlRpcAbeLicenseRetrievalClient'Class (This).setClient (xmlRpcClient);
-            xmlRpcClient.setBasicAuthentication (null, null);
+            xmlRpcClient.setBasicAuthentication (StringUtil_Package.getInstance.EMPTY_STRING, StringUtil_Package.getInstance.EMPTY_STRING);
             hashtable := XmlRpcAbeLicenseRetrievalClient'Class (This).getClientInfo.toHashtable;
             This.logUtil.putF (Java_Image (CLIENT_INFO) & hashtable.toString, XmlRpcAbeLicenseRetrievalClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             param.add (Java_Object_Access (hashtable));
-            result := xmlRpcClient.execute (XmlRpcAbeLicenseRetrievalClient'Class (This).getRemoteMethod, param, cryptInterface);
+            result := xmlRpcClient.executeWithCrypt (XmlRpcAbeLicenseRetrievalClient'Class (This).getRemoteMethod, param, cryptInterface);
             This.logUtil.putF (Java_Image (RESULT) & result.toString, XmlRpcAbeLicenseRetrievalClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             resultHashtable := ABHashtable_Access (result);
             if not (AbeClientLicense_Package.hasRequiredKeys (resultHashtable)) then

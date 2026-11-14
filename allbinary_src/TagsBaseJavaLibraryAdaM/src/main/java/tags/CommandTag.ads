@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with tags.CommandTag_Package;
 package tags.CommandTag_Package_References is
    type CommandTag_Access is access all tags.CommandTag_Package.CommandTag'Class;
@@ -19,6 +20,16 @@ package tags.CommandTag_Package_References is
    type CommandTag_Access_Array_Access is access all CommandTag_Access_Array;
    type CommandTag_Access_Array_Access_Array is array (Natural range <>) of CommandTag_Access_Array_Access;
    type CommandTag_Access_Array_Access_Array_Access is access all CommandTag_Access_Array_Access_Array;
+   type CommandTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CommandTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CommandTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CommandTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CommandTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CommandTag_Access_Array_Access is (if Value /= null and then Value.all in CommandTag_Access_Array_Object'Class then CommandTag_Access_Array_Object'Class (Value.all).Value else null);
+   type CommandTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CommandTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CommandTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CommandTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CommandTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CommandTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CommandTag_Access_Array_Access_Array_Object'Class then CommandTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end tags.CommandTag_Package_References;
 
 with tags.CommandTag_Package_References;
@@ -57,10 +68,14 @@ package tags.CommandTag_Package is
    function "=" (Left, Right : CommandTag_Access_Array) return Boolean renames tags.CommandTag_Package_References."=";
    subtype CommandTag_Access_Array_Access is tags.CommandTag_Package_References.CommandTag_Access_Array_Access;
    function "=" (Left, Right : CommandTag_Access_Array_Access) return Boolean renames tags.CommandTag_Package_References."=";
+   function Java_Box (Value : CommandTag_Access_Array_Access) return Java_Object_Access renames tags.CommandTag_Package_References.Java_Box;
+   function Java_Unbox_CommandTag_Access_Array (Value : access Java_Object'Class) return CommandTag_Access_Array_Access renames tags.CommandTag_Package_References.Java_Unbox_CommandTag_Access_Array;
    subtype CommandTag_Access_Array_Access_Array is tags.CommandTag_Package_References.CommandTag_Access_Array_Access_Array;
    function "=" (Left, Right : CommandTag_Access_Array_Access_Array) return Boolean renames tags.CommandTag_Package_References."=";
    subtype CommandTag_Access_Array_Access_Array_Access is tags.CommandTag_Package_References.CommandTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CommandTag_Access_Array_Access_Array_Access) return Boolean renames tags.CommandTag_Package_References."=";
+   function Java_Box (Value : CommandTag_Access_Array_Access_Array_Access) return Java_Object_Access renames tags.CommandTag_Package_References.Java_Box;
+   function Java_Unbox_CommandTag_Access_Array_Access_Array (Value : access Java_Object'Class) return CommandTag_Access_Array_Access_Array_Access renames tags.CommandTag_Package_References.Java_Unbox_CommandTag_Access_Array_Access_Array;
 
    type CommandTag is new CustomTagSupport with record
       CommandTag_Field_tagStrings : TagStrings_Access;

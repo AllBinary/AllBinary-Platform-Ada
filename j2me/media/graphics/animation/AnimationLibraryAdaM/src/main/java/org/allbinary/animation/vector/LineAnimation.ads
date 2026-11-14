@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.vector.LineAnimation_Package;
 package org.allbinary.animation.vector.LineAnimation_Package_References is
    type LineAnimation_Access is access all org.allbinary.animation.vector.LineAnimation_Package.LineAnimation'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.vector.LineAnimation_Package_References is
    type LineAnimation_Access_Array_Access is access all LineAnimation_Access_Array;
    type LineAnimation_Access_Array_Access_Array is array (Natural range <>) of LineAnimation_Access_Array_Access;
    type LineAnimation_Access_Array_Access_Array_Access is access all LineAnimation_Access_Array_Access_Array;
+   type LineAnimation_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LineAnimation_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LineAnimation_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LineAnimation_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LineAnimation_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LineAnimation_Access_Array_Access is (if Value /= null and then Value.all in LineAnimation_Access_Array_Object'Class then LineAnimation_Access_Array_Object'Class (Value.all).Value else null);
+   type LineAnimation_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LineAnimation_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LineAnimation_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LineAnimation_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LineAnimation_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LineAnimation_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in LineAnimation_Access_Array_Access_Array_Object'Class then LineAnimation_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.vector.LineAnimation_Package_References;
 
 with org.allbinary.animation.vector.LineAnimation_Package_References;
@@ -76,10 +87,14 @@ package org.allbinary.animation.vector.LineAnimation_Package is
    function "=" (Left, Right : LineAnimation_Access_Array) return Boolean renames org.allbinary.animation.vector.LineAnimation_Package_References."=";
    subtype LineAnimation_Access_Array_Access is org.allbinary.animation.vector.LineAnimation_Package_References.LineAnimation_Access_Array_Access;
    function "=" (Left, Right : LineAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.vector.LineAnimation_Package_References."=";
+   function Java_Box (Value : LineAnimation_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.vector.LineAnimation_Package_References.Java_Box;
+   function Java_Unbox_LineAnimation_Access_Array (Value : access Java_Object'Class) return LineAnimation_Access_Array_Access renames org.allbinary.animation.vector.LineAnimation_Package_References.Java_Unbox_LineAnimation_Access_Array;
    subtype LineAnimation_Access_Array_Access_Array is org.allbinary.animation.vector.LineAnimation_Package_References.LineAnimation_Access_Array_Access_Array;
    function "=" (Left, Right : LineAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.vector.LineAnimation_Package_References."=";
    subtype LineAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.vector.LineAnimation_Package_References.LineAnimation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LineAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.vector.LineAnimation_Package_References."=";
+   function Java_Box (Value : LineAnimation_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.vector.LineAnimation_Package_References.Java_Box;
+   function Java_Unbox_LineAnimation_Access_Array_Access_Array (Value : access Java_Object'Class) return LineAnimation_Access_Array_Access_Array_Access renames org.allbinary.animation.vector.LineAnimation_Package_References.Java_Unbox_LineAnimation_Access_Array_Access_Array;
 
    type LineAnimation is new Animation_Package.Animation and ColorCompositeInterface and PositionInterface with record
       newLine : Integer_Array_Access_Array_Access;

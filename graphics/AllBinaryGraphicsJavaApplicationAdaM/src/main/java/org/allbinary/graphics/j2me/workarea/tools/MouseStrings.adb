@@ -48,7 +48,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.MouseStrings_Package is
 
    function getInstance return MouseStrings_Access is
    begin
-        return MouseStrings_Access (MouseStrings_Package.instance);
+        return MouseStrings_Package.instance;
    end getInstance;
 
 begin

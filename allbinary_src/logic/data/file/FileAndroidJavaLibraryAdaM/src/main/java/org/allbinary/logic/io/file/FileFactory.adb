@@ -73,7 +73,7 @@ package body org.allbinary.logic.io.file.FileFactory_Package is
 
    function getInstance return FileFactory_Access is
    begin
-        return FileFactory_Access (FileFactory_Package.SINGLETON);
+        return FileFactory_Package.SINGLETON;
    end getInstance;
 
    --  throws Exception

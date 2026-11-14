@@ -35,6 +35,8 @@ with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package; use org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package;
 with org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFactory_Package; use org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFactory_Package;
 with org.allbinary.util.ABHashMap_Package;
@@ -61,6 +63,8 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CssPropertiesValidationFactory_Package renames Standard.org.allbinary.logic.visual.dhtml.style.css.property.CssPropertiesValidationFactory_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -170,11 +174,11 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
             else
                 This.description_Case := StringUtil_Package.getInstance.EMPTY_STRING;
             end if;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Value: ")).append (This.value).append (To_Unbounded_String ("" & ASCII.LF & "Title: ")).append (This.title_Case).append (To_Unbounded_String ("" & ASCII.LF & "Description: ")).append (This.description_Case).toString, CssElementView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             end if;
             cssElementStyleNodeVector := DomSearchHelper_Package.getAllNodes (CssElementData_Package.getInstance.NAME, node.getChildNodes);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Child Css Elements: ") & Java_Image (cssElementStyleNodeVector.size), CssElementView_Access'(This'Unchecked_Access), To_Unbounded_String ("CssElementView()"));
             end if;
             This.cssElementVector := CssElementsValidationFactory_Package.getInstance (cssElementStyleNodeVector);
@@ -185,7 +189,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEWERROR) then
                 This.logUtil.put (StringMaker_Package.Create.append (To_Unbounded_String ("Value: ")).append (This.value).append (To_Unbounded_String ("" & ASCII.LF & "Title: ")).append (This.title_Case).append (To_Unbounded_String ("" & ASCII.LF & "Description: ")).append (This.description_Case).toString, CssElementView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("CssElementView")));
@@ -208,7 +212,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
    function toHashMap (This : in out CssElementView) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (DomData_Package.VALUE, Java_Box (This.value));
         hashMap.put (Java_Box (This.TITLE), Java_Box (This.title_Case));
         hashMap.put (Java_Box (This.DESCRIPTION), Java_Box (This.description_Case));
@@ -227,7 +231,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
       cssElementDomNodeInterface : DomNodeInterface_Access;
    begin
         hashMap := CssElementView'Class (This).toHashMap;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("CssView HashMap: ") & hashMap.toString, CssElementView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
         end if;
         node := ModDomHelper_Package.createNodeWithValueNodes (document, CssElementData_Package.getInstance.NAME, hashMap);

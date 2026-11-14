@@ -46,10 +46,18 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -75,6 +83,8 @@ package body admin.taghelpers.QuoteHelper_Package is
    package AbSqlTableUtil_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype StoreFrontInterface_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access;
    function "=" (Left, Right : StoreFrontInterface_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References."=";
    subtype StoreFrontInterface_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array;
@@ -264,7 +274,7 @@ package body admin.taghelpers.QuoteHelper_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.FAILURE, QuoteHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("email"), e);
             end if;
             return To_Unbounded_String ("Thank You For Your Business.<p>");
@@ -278,7 +288,7 @@ package body admin.taghelpers.QuoteHelper_Package is
    begin
         begin
             success := QuoteRequestEntityFactory_Package.getInstance.getQuoteRequestEntityInstance.dropTable;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, QuoteHelper_Access'(This'Unchecked_Access), This.commonStrings.DROP);
             end if;
             return success;
@@ -288,7 +298,7 @@ package body admin.taghelpers.QuoteHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to drop QuoteRequest table");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, QuoteHelper_Access'(This'Unchecked_Access), This.commonStrings.DROP, e);
             end if;
             return error;
@@ -302,7 +312,7 @@ package body admin.taghelpers.QuoteHelper_Package is
    begin
         begin
             success := QuoteRequestEntityFactory_Package.getInstance.getQuoteRequestEntityInstance.createTable;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, QuoteHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"));
             end if;
             return success;
@@ -312,7 +322,7 @@ package body admin.taghelpers.QuoteHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to create new QuoteRequest table");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, QuoteHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"), e);
             end if;
             return error;
@@ -328,7 +338,7 @@ package body admin.taghelpers.QuoteHelper_Package is
         begin
             success := To_Unbounded_String ("Restore Successful");
             result := AbSqlTableUtil_Package.getInstance.restoreTable (QuoteRequestEntityFactory_Package.getInstance.getQuoteRequestEntityInstance, This.portion);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, QuoteHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"));
             end if;
             return result;
@@ -338,7 +348,7 @@ package body admin.taghelpers.QuoteHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to restore backup");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, QuoteHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("restore()"), e);
             end if;
             return error;
@@ -354,7 +364,7 @@ package body admin.taghelpers.QuoteHelper_Package is
         begin
             success := To_Unbounded_String ("Restore Successful");
             result := AbSqlTableUtil_Package.getInstance.backupTable (QuoteRequestEntityFactory_Package.getInstance.getQuoteRequestEntityInstance);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, QuoteHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"));
             end if;
             return result;
@@ -364,7 +374,7 @@ package body admin.taghelpers.QuoteHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to make backup");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, QuoteHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("backup()"), e);
             end if;
             return error;

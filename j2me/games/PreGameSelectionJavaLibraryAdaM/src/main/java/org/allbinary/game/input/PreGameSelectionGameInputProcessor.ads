@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package;
 package org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References is
    type PreGameSelectionGameInputProcessor_Access is access all org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package.PreGameSelectionGameInputProcessor'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_Refe
    type PreGameSelectionGameInputProcessor_Access_Array_Access is access all PreGameSelectionGameInputProcessor_Access_Array;
    type PreGameSelectionGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of PreGameSelectionGameInputProcessor_Access_Array_Access;
    type PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access is access all PreGameSelectionGameInputProcessor_Access_Array_Access_Array;
+   type PreGameSelectionGameInputProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PreGameSelectionGameInputProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PreGameSelectionGameInputProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PreGameSelectionGameInputProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PreGameSelectionGameInputProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PreGameSelectionGameInputProcessor_Access_Array_Access is (if Value /= null and then Value.all in PreGameSelectionGameInputProcessor_Access_Array_Object'Class then PreGameSelectionGameInputProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PreGameSelectionGameInputProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Object'Class then PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References;
 
 with org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References;
@@ -153,10 +164,14 @@ package org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package is
    function "=" (Left, Right : PreGameSelectionGameInputProcessor_Access_Array) return Boolean renames org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References."=";
    subtype PreGameSelectionGameInputProcessor_Access_Array_Access is org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.PreGameSelectionGameInputProcessor_Access_Array_Access;
    function "=" (Left, Right : PreGameSelectionGameInputProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References."=";
+   function Java_Box (Value : PreGameSelectionGameInputProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.Java_Box;
+   function Java_Unbox_PreGameSelectionGameInputProcessor_Access_Array (Value : access Java_Object'Class) return PreGameSelectionGameInputProcessor_Access_Array_Access renames org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.Java_Unbox_PreGameSelectionGameInputProcessor_Access_Array;
    subtype PreGameSelectionGameInputProcessor_Access_Array_Access_Array is org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.PreGameSelectionGameInputProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : PreGameSelectionGameInputProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References."=";
    subtype PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References."=";
+   function Java_Box (Value : PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.Java_Box;
+   function Java_Unbox_PreGameSelectionGameInputProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return PreGameSelectionGameInputProcessor_Access_Array_Access_Array_Access renames org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package_References.Java_Unbox_PreGameSelectionGameInputProcessor_Access_Array_Access_Array;
 
    type PreGameSelectionGameInputProcessor is new Processor and GameInputProcessorInterface and PlayerGameInputCompositeInterface with record
       logUtil : LogUtil_Access;
@@ -181,6 +196,7 @@ package org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package is
 
 end org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.game.input.PreGameSelectionRunnable_Package;
 package org.allbinary.game.input.PreGameSelectionRunnable_Package_References is
    type PreGameSelectionRunnable_Access is access all org.allbinary.game.input.PreGameSelectionRunnable_Package.PreGameSelectionRunnable'Class;
@@ -188,6 +204,16 @@ package org.allbinary.game.input.PreGameSelectionRunnable_Package_References is
    type PreGameSelectionRunnable_Access_Array_Access is access all PreGameSelectionRunnable_Access_Array;
    type PreGameSelectionRunnable_Access_Array_Access_Array is array (Natural range <>) of PreGameSelectionRunnable_Access_Array_Access;
    type PreGameSelectionRunnable_Access_Array_Access_Array_Access is access all PreGameSelectionRunnable_Access_Array_Access_Array;
+   type PreGameSelectionRunnable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PreGameSelectionRunnable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PreGameSelectionRunnable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PreGameSelectionRunnable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PreGameSelectionRunnable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PreGameSelectionRunnable_Access_Array_Access is (if Value /= null and then Value.all in PreGameSelectionRunnable_Access_Array_Object'Class then PreGameSelectionRunnable_Access_Array_Object'Class (Value.all).Value else null);
+   type PreGameSelectionRunnable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PreGameSelectionRunnable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PreGameSelectionRunnable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PreGameSelectionRunnable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PreGameSelectionRunnable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PreGameSelectionRunnable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PreGameSelectionRunnable_Access_Array_Access_Array_Object'Class then PreGameSelectionRunnable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.input.PreGameSelectionRunnable_Package_References;
 
 with org.allbinary.game.input.PreGameSelectionRunnable_Package_References;
@@ -334,10 +360,14 @@ package org.allbinary.game.input.PreGameSelectionRunnable_Package is
    function "=" (Left, Right : PreGameSelectionRunnable_Access_Array) return Boolean renames org.allbinary.game.input.PreGameSelectionRunnable_Package_References."=";
    subtype PreGameSelectionRunnable_Access_Array_Access is org.allbinary.game.input.PreGameSelectionRunnable_Package_References.PreGameSelectionRunnable_Access_Array_Access;
    function "=" (Left, Right : PreGameSelectionRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.input.PreGameSelectionRunnable_Package_References."=";
+   function Java_Box (Value : PreGameSelectionRunnable_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.PreGameSelectionRunnable_Package_References.Java_Box;
+   function Java_Unbox_PreGameSelectionRunnable_Access_Array (Value : access Java_Object'Class) return PreGameSelectionRunnable_Access_Array_Access renames org.allbinary.game.input.PreGameSelectionRunnable_Package_References.Java_Unbox_PreGameSelectionRunnable_Access_Array;
    subtype PreGameSelectionRunnable_Access_Array_Access_Array is org.allbinary.game.input.PreGameSelectionRunnable_Package_References.PreGameSelectionRunnable_Access_Array_Access_Array;
    function "=" (Left, Right : PreGameSelectionRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.PreGameSelectionRunnable_Package_References."=";
    subtype PreGameSelectionRunnable_Access_Array_Access_Array_Access is org.allbinary.game.input.PreGameSelectionRunnable_Package_References.PreGameSelectionRunnable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PreGameSelectionRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.PreGameSelectionRunnable_Package_References."=";
+   function Java_Box (Value : PreGameSelectionRunnable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.PreGameSelectionRunnable_Package_References.Java_Box;
+   function Java_Unbox_PreGameSelectionRunnable_Access_Array_Access_Array (Value : access Java_Object'Class) return PreGameSelectionRunnable_Access_Array_Access_Array_Access renames org.allbinary.game.input.PreGameSelectionRunnable_Package_References.Java_Unbox_PreGameSelectionRunnable_Access_Array_Access_Array;
 
    type PreGameSelectionRunnable is new ABRunnable with record
       inputProcessor : PreGameSelectionGameInputProcessor_Access;

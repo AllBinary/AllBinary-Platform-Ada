@@ -137,7 +137,7 @@ package body org.allbinary.layer.LayerInterfaceFactory_Package is
 
    function getInstance return LayerInterfaceFactory_Access is
    begin
-        return LayerInterfaceFactory_Access (LayerInterfaceFactory_Package.SINGLETON);
+        return LayerInterfaceFactory_Package.SINGLETON;
    end getInstance;
 
    procedure init (This : in out LayerInterfaceFactory) is

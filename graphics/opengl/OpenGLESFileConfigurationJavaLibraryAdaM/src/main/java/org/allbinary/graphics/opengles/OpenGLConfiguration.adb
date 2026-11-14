@@ -179,7 +179,7 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
 
    function getInstance return OpenGLConfiguration_Access is
    begin
-        if (OpenGLConfiguration_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (OpenGLConfiguration_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             OpenGLConfiguration_Package.instance := Java_Object_Access (OpenGLConfiguration_Package.Create);
         end if;
         return OpenGLConfiguration_Access (OpenGLConfiguration_Package.instance);
@@ -225,7 +225,7 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
    begin
         openGLFeatureFactory := OpenGLFeatureFactory_Package.getInstance;
         fileInputStreamFactory := FileStreamFactory_Package.getInstance;
-        fileInputStream := fileInputStreamFactory.getFileInputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE);
+        fileInputStream := InputStream_Access (fileInputStreamFactory.getFileInputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE));
         dataInputStream := DataInputStream_Package.Create (fileInputStream);
         openGLValue := dataInputStream.readInt;
         if (openGLValue) = (0) then
@@ -285,7 +285,7 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         begin
             PreLogUtil_Package.put (To_Unbounded_String ("Write Configuration: ") & OpenGLConfiguration'Class (This).toString, OpenGLConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("write"));
             fileInputStreamFactory := FileStreamFactory_Package.getInstance;
-            fileOutputStream := fileInputStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE);
+            fileOutputStream := OutputStream_Access (fileInputStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE));
             dataOutputStream := AbDataOutputStream_Package.Create (fileOutputStream);
             closeable := Closeable_Access (dataOutputStream);
             if OpenGLConfiguration'Class (This).isOpenGL then

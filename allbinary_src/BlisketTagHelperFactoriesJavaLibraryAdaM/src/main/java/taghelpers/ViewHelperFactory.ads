@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with taghelpers.ViewHelperFactory_Package;
 package taghelpers.ViewHelperFactory_Package_References is
    type ViewHelperFactory_Access is access all taghelpers.ViewHelperFactory_Package.ViewHelperFactory'Class;
@@ -19,6 +20,16 @@ package taghelpers.ViewHelperFactory_Package_References is
    type ViewHelperFactory_Access_Array_Access is access all ViewHelperFactory_Access_Array;
    type ViewHelperFactory_Access_Array_Access_Array is array (Natural range <>) of ViewHelperFactory_Access_Array_Access;
    type ViewHelperFactory_Access_Array_Access_Array_Access is access all ViewHelperFactory_Access_Array_Access_Array;
+   type ViewHelperFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ViewHelperFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ViewHelperFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ViewHelperFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ViewHelperFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ViewHelperFactory_Access_Array_Access is (if Value /= null and then Value.all in ViewHelperFactory_Access_Array_Object'Class then ViewHelperFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type ViewHelperFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ViewHelperFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ViewHelperFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ViewHelperFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ViewHelperFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ViewHelperFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ViewHelperFactory_Access_Array_Access_Array_Object'Class then ViewHelperFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end taghelpers.ViewHelperFactory_Package_References;
 
 with taghelpers.ViewHelperFactory_Package_References;
@@ -62,10 +73,14 @@ package taghelpers.ViewHelperFactory_Package is
    function "=" (Left, Right : ViewHelperFactory_Access_Array) return Boolean renames taghelpers.ViewHelperFactory_Package_References."=";
    subtype ViewHelperFactory_Access_Array_Access is taghelpers.ViewHelperFactory_Package_References.ViewHelperFactory_Access_Array_Access;
    function "=" (Left, Right : ViewHelperFactory_Access_Array_Access) return Boolean renames taghelpers.ViewHelperFactory_Package_References."=";
+   function Java_Box (Value : ViewHelperFactory_Access_Array_Access) return Java_Object_Access renames taghelpers.ViewHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_ViewHelperFactory_Access_Array (Value : access Java_Object'Class) return ViewHelperFactory_Access_Array_Access renames taghelpers.ViewHelperFactory_Package_References.Java_Unbox_ViewHelperFactory_Access_Array;
    subtype ViewHelperFactory_Access_Array_Access_Array is taghelpers.ViewHelperFactory_Package_References.ViewHelperFactory_Access_Array_Access_Array;
    function "=" (Left, Right : ViewHelperFactory_Access_Array_Access_Array) return Boolean renames taghelpers.ViewHelperFactory_Package_References."=";
    subtype ViewHelperFactory_Access_Array_Access_Array_Access is taghelpers.ViewHelperFactory_Package_References.ViewHelperFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ViewHelperFactory_Access_Array_Access_Array_Access) return Boolean renames taghelpers.ViewHelperFactory_Package_References."=";
+   function Java_Box (Value : ViewHelperFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames taghelpers.ViewHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_ViewHelperFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return ViewHelperFactory_Access_Array_Access_Array_Access renames taghelpers.ViewHelperFactory_Package_References.Java_Unbox_ViewHelperFactory_Access_Array_Access_Array;
 
    type ViewHelperFactory is new TagHelperFactory with record
       logUtil : LogUtil_Access;

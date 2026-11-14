@@ -43,7 +43,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFrontsData_P
 
    function getInstance return StoreFrontsData_Access is
    begin
-        return StoreFrontsData_Access (StoreFrontsData_Package.instance);
+        return StoreFrontsData_Package.instance;
    end getInstance;
 
 begin

@@ -77,6 +77,7 @@ with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
 with javax.microedition.lcdui.ImageStringItem_Package;
+with org.allbinary.init.Init_Package;
 with org.microemu.device.InputMethod_Package;
 with org.microemu.device.InputMethodEvent_Package;
 with org.microemu.device.InputMethodListener_Package;
@@ -96,7 +97,6 @@ with org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.math.NamedAngle_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
-with org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package;
 with javax.microedition.media.Player_Package;
 with javax.microedition.media.PlayerListener_Package;
@@ -122,6 +122,7 @@ with javax.microedition.lcdui.Ticker_Package;
 with org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.input.TouchJ2ME_Package;
+with org.allbinary.TsUtil_Package;
 with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.game.init.CommonGameInitialization_Package is
@@ -211,7 +212,7 @@ package body org.allbinary.game.init.CommonGameInitialization_Package is
             declare Java_Result renames AngleFactory_Package.getInstance; pragma Unreferenced (Java_Result); begin null; end;
             progressCanvas.addNormalPortion (50, To_Unbounded_String ("Angles"));
             CommonGameInitialization'Class (This).initGame;
-            This.resourceInitializationArray (This.GAME_RESOURCES).init;
+            This.resourceInitializationArray (This.GAME_RESOURCES).init_Method;
         end if;
         BaseGameInitialization_Package.BaseGameInitialization (This).resourceInitialization (level);
    end init;

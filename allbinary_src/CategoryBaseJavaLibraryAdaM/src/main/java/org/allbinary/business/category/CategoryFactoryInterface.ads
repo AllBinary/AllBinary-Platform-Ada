@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.category.CategoryFactoryInterface_Package;
 package org.allbinary.business.category.CategoryFactoryInterface_Package_References is
    type CategoryFactoryInterface_Access is access all org.allbinary.business.category.CategoryFactoryInterface_Package.CategoryFactoryInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.category.CategoryFactoryInterface_Package_Referen
    type CategoryFactoryInterface_Access_Array_Access is access all CategoryFactoryInterface_Access_Array;
    type CategoryFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of CategoryFactoryInterface_Access_Array_Access;
    type CategoryFactoryInterface_Access_Array_Access_Array_Access is access all CategoryFactoryInterface_Access_Array_Access_Array;
+   type CategoryFactoryInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CategoryFactoryInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CategoryFactoryInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CategoryFactoryInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CategoryFactoryInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CategoryFactoryInterface_Access_Array_Access is (if Value /= null and then Value.all in CategoryFactoryInterface_Access_Array_Object'Class then CategoryFactoryInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type CategoryFactoryInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CategoryFactoryInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CategoryFactoryInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CategoryFactoryInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CategoryFactoryInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CategoryFactoryInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CategoryFactoryInterface_Access_Array_Access_Array_Object'Class then CategoryFactoryInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.category.CategoryFactoryInterface_Package_References;
 
 with org.allbinary.business.category.CategoryFactoryInterface_Package_References;
@@ -85,10 +96,14 @@ package org.allbinary.business.category.CategoryFactoryInterface_Package is
    function "=" (Left, Right : CategoryFactoryInterface_Access_Array) return Boolean renames org.allbinary.business.category.CategoryFactoryInterface_Package_References."=";
    subtype CategoryFactoryInterface_Access_Array_Access is org.allbinary.business.category.CategoryFactoryInterface_Package_References.CategoryFactoryInterface_Access_Array_Access;
    function "=" (Left, Right : CategoryFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.business.category.CategoryFactoryInterface_Package_References."=";
+   function Java_Box (Value : CategoryFactoryInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.category.CategoryFactoryInterface_Package_References.Java_Box;
+   function Java_Unbox_CategoryFactoryInterface_Access_Array (Value : access Java_Object'Class) return CategoryFactoryInterface_Access_Array_Access renames org.allbinary.business.category.CategoryFactoryInterface_Package_References.Java_Unbox_CategoryFactoryInterface_Access_Array;
    subtype CategoryFactoryInterface_Access_Array_Access_Array is org.allbinary.business.category.CategoryFactoryInterface_Package_References.CategoryFactoryInterface_Access_Array_Access_Array;
    function "=" (Left, Right : CategoryFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.category.CategoryFactoryInterface_Package_References."=";
    subtype CategoryFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.business.category.CategoryFactoryInterface_Package_References.CategoryFactoryInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CategoryFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.category.CategoryFactoryInterface_Package_References."=";
+   function Java_Box (Value : CategoryFactoryInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.category.CategoryFactoryInterface_Package_References.Java_Box;
+   function Java_Unbox_CategoryFactoryInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return CategoryFactoryInterface_Access_Array_Access_Array_Access renames org.allbinary.business.category.CategoryFactoryInterface_Package_References.Java_Unbox_CategoryFactoryInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_CategoryFactoryInterface (Value : CategoryFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getRootInstance (This : in out CategoryFactoryInterface) return CategoryInterface_Access is abstract;
    function getRootInstance (This : in out CategoryFactoryInterface; categoryPath_Param : access AbPath_Package.AbPath'Class) return CategoryInterface_Access is abstract;

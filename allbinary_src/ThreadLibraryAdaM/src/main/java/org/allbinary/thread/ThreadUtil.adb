@@ -58,7 +58,7 @@ package body org.allbinary.thread.ThreadUtil_Package is
 
    function getInstance return ThreadUtil_Access is
    begin
-        return ThreadUtil_Access (ThreadUtil_Package.instance);
+        return ThreadUtil_Package.instance;
    end getInstance;
 
    function isRunning (This : in out ThreadUtil; thread_Param : access Thread_Package.Thread'Class) return Boolean is

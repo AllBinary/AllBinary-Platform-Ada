@@ -1,5 +1,6 @@
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.platform.opengl.OpenGLTextureFactory_Package;
 package org.platform.opengl.OpenGLTextureFactory_Package_References is
    type OpenGLTextureFactory_Access is access all org.platform.opengl.OpenGLTextureFactory_Package.OpenGLTextureFactory'Class;
@@ -7,6 +8,16 @@ package org.platform.opengl.OpenGLTextureFactory_Package_References is
    type OpenGLTextureFactory_Access_Array_Access is access all OpenGLTextureFactory_Access_Array;
    type OpenGLTextureFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLTextureFactory_Access_Array_Access;
    type OpenGLTextureFactory_Access_Array_Access_Array_Access is access all OpenGLTextureFactory_Access_Array_Access_Array;
+   type OpenGLTextureFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OpenGLTextureFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OpenGLTextureFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OpenGLTextureFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OpenGLTextureFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OpenGLTextureFactory_Access_Array_Access is (if Value /= null and then Value.all in OpenGLTextureFactory_Access_Array_Object'Class then OpenGLTextureFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type OpenGLTextureFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OpenGLTextureFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OpenGLTextureFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OpenGLTextureFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OpenGLTextureFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OpenGLTextureFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in OpenGLTextureFactory_Access_Array_Access_Array_Object'Class then OpenGLTextureFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.platform.opengl.OpenGLTextureFactory_Package_References;
 
 with org.platform.opengl.OpenGLTextureFactory_Package_References;
@@ -72,10 +83,14 @@ package org.platform.opengl.OpenGLTextureFactory_Package is
    function "=" (Left, Right : OpenGLTextureFactory_Access_Array) return Boolean renames org.platform.opengl.OpenGLTextureFactory_Package_References."=";
    subtype OpenGLTextureFactory_Access_Array_Access is org.platform.opengl.OpenGLTextureFactory_Package_References.OpenGLTextureFactory_Access_Array_Access;
    function "=" (Left, Right : OpenGLTextureFactory_Access_Array_Access) return Boolean renames org.platform.opengl.OpenGLTextureFactory_Package_References."=";
+   function Java_Box (Value : OpenGLTextureFactory_Access_Array_Access) return Java_Object_Access renames org.platform.opengl.OpenGLTextureFactory_Package_References.Java_Box;
+   function Java_Unbox_OpenGLTextureFactory_Access_Array (Value : access Java_Object'Class) return OpenGLTextureFactory_Access_Array_Access renames org.platform.opengl.OpenGLTextureFactory_Package_References.Java_Unbox_OpenGLTextureFactory_Access_Array;
    subtype OpenGLTextureFactory_Access_Array_Access_Array is org.platform.opengl.OpenGLTextureFactory_Package_References.OpenGLTextureFactory_Access_Array_Access_Array;
    function "=" (Left, Right : OpenGLTextureFactory_Access_Array_Access_Array) return Boolean renames org.platform.opengl.OpenGLTextureFactory_Package_References."=";
    subtype OpenGLTextureFactory_Access_Array_Access_Array_Access is org.platform.opengl.OpenGLTextureFactory_Package_References.OpenGLTextureFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : OpenGLTextureFactory_Access_Array_Access_Array_Access) return Boolean renames org.platform.opengl.OpenGLTextureFactory_Package_References."=";
+   function Java_Box (Value : OpenGLTextureFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.platform.opengl.OpenGLTextureFactory_Package_References.Java_Box;
+   function Java_Unbox_OpenGLTextureFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return OpenGLTextureFactory_Access_Array_Access_Array_Access renames org.platform.opengl.OpenGLTextureFactory_Package_References.Java_Unbox_OpenGLTextureFactory_Access_Array_Access_Array;
 
    type OpenGLTextureFactory is new PlatformTextureBaseFactory with record
       gluUtils : OpenGLGLUUtils_Access;

@@ -8,8 +8,19 @@ with org.allbinary.logic.system.SoftwareInformation_Package_References;
 with org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package; use org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package;
 with org.allbinary.business.advertisement.GameAdStateBase_Package; use org.allbinary.business.advertisement.GameAdStateBase_Package;
 with org.allbinary.business.advertisement.GameAdStateBase_Package_References;
+with org.allbinary.business.advertisement.AdConfiguration_Package;
+with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package;
+with org.allbinary.business.advertisement.Advertisements_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.direction.Direction_Package;
+with org.allbinary.business.advertisement.GameAdStateBase_Package;
+with org.allbinary.game.state.GameState_Package;
+with org.allbinary.game.GameType_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.input.event.VirtualKeyboardEvent_Package;
 with org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
 
@@ -67,7 +78,7 @@ package body org.allbinary.business.advertisement.GameAdStateFactory_Package is
 
    function getInstance return GameAdStateFactory_Access is
    begin
-        return GameAdStateFactory_Access (GameAdStateFactory_Package.instance);
+        return GameAdStateFactory_Package.instance;
    end getInstance;
 
    function getCurrentInstance (This : in out GameAdStateFactory) return GameAdState_Access is

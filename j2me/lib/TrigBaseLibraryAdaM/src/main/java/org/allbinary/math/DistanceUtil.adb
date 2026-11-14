@@ -49,7 +49,7 @@ package body org.allbinary.math.DistanceUtil_Package is
 
    function getInstance return DistanceUtil_Access is
    begin
-        return DistanceUtil_Access (DistanceUtil_Package.instance);
+        return DistanceUtil_Package.instance;
    end getInstance;
 
    function getDistance (This : in out DistanceUtil; x1 : Integer; y1 : Integer; x2 : Integer; y2 : Integer) return Integer is

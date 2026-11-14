@@ -56,7 +56,7 @@ package body org.allbinary.logic.java.help.JavaHelpSetNotifier_Package is
 
    function get return BasicArrayList_Access is
    begin
-        return BasicArrayList_Access (JavaHelpSetNotifier_Package.vector);
+        return JavaHelpSetNotifier_Package.vector;
    end get;
 
    function isNotified (helpSet_Param : access HelpSet_Package.HelpSet'Class) return Boolean is

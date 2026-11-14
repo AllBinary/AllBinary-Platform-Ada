@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package;
 package views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References is
    type EditGlobalsValidationView_Access is access all views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package.EditGlobalsValidationView'Class;
@@ -19,6 +20,16 @@ package views.business.context.modules.storefront.customizer.includes.globals.Ed
    type EditGlobalsValidationView_Access_Array_Access is access all EditGlobalsValidationView_Access_Array;
    type EditGlobalsValidationView_Access_Array_Access_Array is array (Natural range <>) of EditGlobalsValidationView_Access_Array_Access;
    type EditGlobalsValidationView_Access_Array_Access_Array_Access is access all EditGlobalsValidationView_Access_Array_Access_Array;
+   type EditGlobalsValidationView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : EditGlobalsValidationView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : EditGlobalsValidationView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new EditGlobalsValidationView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_EditGlobalsValidationView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return EditGlobalsValidationView_Access_Array_Access is (if Value /= null and then Value.all in EditGlobalsValidationView_Access_Array_Object'Class then EditGlobalsValidationView_Access_Array_Object'Class (Value.all).Value else null);
+   type EditGlobalsValidationView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : EditGlobalsValidationView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : EditGlobalsValidationView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new EditGlobalsValidationView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_EditGlobalsValidationView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return EditGlobalsValidationView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in EditGlobalsValidationView_Access_Array_Access_Array_Object'Class then EditGlobalsValidationView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References;
 
 with views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References;
@@ -99,10 +110,14 @@ package views.business.context.modules.storefront.customizer.includes.globals.Ed
    function "=" (Left, Right : EditGlobalsValidationView_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References."=";
    subtype EditGlobalsValidationView_Access_Array_Access is views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References.EditGlobalsValidationView_Access_Array_Access;
    function "=" (Left, Right : EditGlobalsValidationView_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References."=";
+   function Java_Box (Value : EditGlobalsValidationView_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References.Java_Box;
+   function Java_Unbox_EditGlobalsValidationView_Access_Array (Value : access Java_Object'Class) return EditGlobalsValidationView_Access_Array_Access renames views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References.Java_Unbox_EditGlobalsValidationView_Access_Array;
    subtype EditGlobalsValidationView_Access_Array_Access_Array is views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References.EditGlobalsValidationView_Access_Array_Access_Array;
    function "=" (Left, Right : EditGlobalsValidationView_Access_Array_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References."=";
    subtype EditGlobalsValidationView_Access_Array_Access_Array_Access is views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References.EditGlobalsValidationView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : EditGlobalsValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References."=";
+   function Java_Box (Value : EditGlobalsValidationView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References.Java_Box;
+   function Java_Unbox_EditGlobalsValidationView_Access_Array_Access_Array (Value : access Java_Object'Class) return EditGlobalsValidationView_Access_Array_Access_Array_Access renames views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package_References.Java_Unbox_EditGlobalsValidationView_Access_Array_Access_Array;
 
    type EditGlobalsValidationView is new GlobalsView and ValidationComponentInterface with record
       EditGlobalsValidationView_Field_logUtil : LogUtil_Access;

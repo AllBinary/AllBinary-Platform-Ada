@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.score.displayable.HighScoreUtil_Package;
 package org.allbinary.game.score.displayable.HighScoreUtil_Package_References is
    type HighScoreUtil_Access is access all org.allbinary.game.score.displayable.HighScoreUtil_Package.HighScoreUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.score.displayable.HighScoreUtil_Package_References is
    type HighScoreUtil_Access_Array_Access is access all HighScoreUtil_Access_Array;
    type HighScoreUtil_Access_Array_Access_Array is array (Natural range <>) of HighScoreUtil_Access_Array_Access;
    type HighScoreUtil_Access_Array_Access_Array_Access is access all HighScoreUtil_Access_Array_Access_Array;
+   type HighScoreUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HighScoreUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HighScoreUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HighScoreUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HighScoreUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HighScoreUtil_Access_Array_Access is (if Value /= null and then Value.all in HighScoreUtil_Access_Array_Object'Class then HighScoreUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type HighScoreUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HighScoreUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HighScoreUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HighScoreUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HighScoreUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HighScoreUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in HighScoreUtil_Access_Array_Access_Array_Object'Class then HighScoreUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.score.displayable.HighScoreUtil_Package_References;
 
 with org.allbinary.game.score.displayable.HighScoreUtil_Package_References;
@@ -189,10 +200,14 @@ package org.allbinary.game.score.displayable.HighScoreUtil_Package is
    function "=" (Left, Right : HighScoreUtil_Access_Array) return Boolean renames org.allbinary.game.score.displayable.HighScoreUtil_Package_References."=";
    subtype HighScoreUtil_Access_Array_Access is org.allbinary.game.score.displayable.HighScoreUtil_Package_References.HighScoreUtil_Access_Array_Access;
    function "=" (Left, Right : HighScoreUtil_Access_Array_Access) return Boolean renames org.allbinary.game.score.displayable.HighScoreUtil_Package_References."=";
+   function Java_Box (Value : HighScoreUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.score.displayable.HighScoreUtil_Package_References.Java_Box;
+   function Java_Unbox_HighScoreUtil_Access_Array (Value : access Java_Object'Class) return HighScoreUtil_Access_Array_Access renames org.allbinary.game.score.displayable.HighScoreUtil_Package_References.Java_Unbox_HighScoreUtil_Access_Array;
    subtype HighScoreUtil_Access_Array_Access_Array is org.allbinary.game.score.displayable.HighScoreUtil_Package_References.HighScoreUtil_Access_Array_Access_Array;
    function "=" (Left, Right : HighScoreUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.displayable.HighScoreUtil_Package_References."=";
    subtype HighScoreUtil_Access_Array_Access_Array_Access is org.allbinary.game.score.displayable.HighScoreUtil_Package_References.HighScoreUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HighScoreUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.displayable.HighScoreUtil_Package_References."=";
+   function Java_Box (Value : HighScoreUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.score.displayable.HighScoreUtil_Package_References.Java_Box;
+   function Java_Unbox_HighScoreUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return HighScoreUtil_Access_Array_Access_Array_Access renames org.allbinary.game.score.displayable.HighScoreUtil_Package_References.Java_Unbox_HighScoreUtil_Access_Array_Access_Array;
 
    type HighScoreUtil is new Java_Object and HighScoresResultsListener with record
       logUtil : LogUtil_Access;

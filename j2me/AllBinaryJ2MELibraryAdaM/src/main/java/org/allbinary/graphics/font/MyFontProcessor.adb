@@ -73,7 +73,7 @@ package body org.allbinary.graphics.font.MyFontProcessor_Package is
 
    function getInstance return MyFontProcessor_Access is
    begin
-        return MyFontProcessor_Access (MyFontProcessor_Package.instance);
+        return MyFontProcessor_Package.instance;
    end getInstance;
 
    procedure process (This : in out MyFontProcessor; graphics_Param : access Graphics_Package.Graphics'Class) is

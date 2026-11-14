@@ -16,6 +16,7 @@
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -34,6 +35,7 @@ package body tags.admin.inventory.DownloadItemTag_Package is
 
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    procedure Initialize_Fields (This : in out DownloadItemTag'Class) is
    begin
       null;
@@ -59,7 +61,7 @@ package body tags.admin.inventory.DownloadItemTag_Package is
    begin
         begin
             if (DownloadItemTag'Class (This).getCommand) /= (null) then
-                if (DownloadItemTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                if (DownloadItemTag'Class (This).getCommand.compareTo (GLOBALS2_Package.VIEW)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (DownloadItemTag'Class (This).getCommand)));
                 elsif (DownloadItemTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
                     DownloadItemTag'Class (This).setName (To_Unbounded_String ("Add Inventory Item Validation View"));
@@ -67,10 +69,10 @@ package body tags.admin.inventory.DownloadItemTag_Package is
                 elsif (DownloadItemTag'Class (This).getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
                     DownloadItemTag'Class (This).setName (To_Unbounded_String ("Delete Inventory Item Validation View"));
                     DownloadItemTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.inventory.download.DeleteFileValidationView"));
-                elsif (DownloadItemTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.EDIT)) = (0) then
+                elsif (DownloadItemTag'Class (This).getCommand.compareTo (GLOBALS2_Package.EDIT)) = (0) then
                     DownloadItemTag'Class (This).setName (To_Unbounded_String ("Edit Inventory Item Validation View"));
                     DownloadItemTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.inventory.download.EditValidationView"));
-                elsif (DownloadItemTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.NEW_Id)) = (0) then
+                elsif (DownloadItemTag'Class (This).getCommand.compareTo (GLOBALS2_Package.NEW_Id)) = (0) then
                     DownloadItemTag'Class (This).setName (To_Unbounded_String ("New Inventory Item Validation View"));
                     DownloadItemTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.inventory.download.NewValidationView"));
                 elsif (DownloadItemTag'Class (This).getCommand.compareTo (This.commonStrings.UPDATE)) = (0) then

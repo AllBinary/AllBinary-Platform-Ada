@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package;
 package org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References is
    type TouchMotionGestureFactory_Access is access all org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package.TouchMotionGestureFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_Ref
    type TouchMotionGestureFactory_Access_Array_Access is access all TouchMotionGestureFactory_Access_Array;
    type TouchMotionGestureFactory_Access_Array_Access_Array is array (Natural range <>) of TouchMotionGestureFactory_Access_Array_Access;
    type TouchMotionGestureFactory_Access_Array_Access_Array_Access is access all TouchMotionGestureFactory_Access_Array_Access_Array;
+   type TouchMotionGestureFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TouchMotionGestureFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TouchMotionGestureFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TouchMotionGestureFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TouchMotionGestureFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TouchMotionGestureFactory_Access_Array_Access is (if Value /= null and then Value.all in TouchMotionGestureFactory_Access_Array_Object'Class then TouchMotionGestureFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type TouchMotionGestureFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TouchMotionGestureFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TouchMotionGestureFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TouchMotionGestureFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TouchMotionGestureFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TouchMotionGestureFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TouchMotionGestureFactory_Access_Array_Access_Array_Object'Class then TouchMotionGestureFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References;
 
 with org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References;
@@ -56,10 +67,14 @@ package org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package is
    function "=" (Left, Right : TouchMotionGestureFactory_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References."=";
    subtype TouchMotionGestureFactory_Access_Array_Access is org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References.TouchMotionGestureFactory_Access_Array_Access;
    function "=" (Left, Right : TouchMotionGestureFactory_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References."=";
+   function Java_Box (Value : TouchMotionGestureFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References.Java_Box;
+   function Java_Unbox_TouchMotionGestureFactory_Access_Array (Value : access Java_Object'Class) return TouchMotionGestureFactory_Access_Array_Access renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References.Java_Unbox_TouchMotionGestureFactory_Access_Array;
    subtype TouchMotionGestureFactory_Access_Array_Access_Array is org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References.TouchMotionGestureFactory_Access_Array_Access_Array;
    function "=" (Left, Right : TouchMotionGestureFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References."=";
    subtype TouchMotionGestureFactory_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References.TouchMotionGestureFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TouchMotionGestureFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References."=";
+   function Java_Box (Value : TouchMotionGestureFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References.Java_Box;
+   function Java_Unbox_TouchMotionGestureFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return TouchMotionGestureFactory_Access_Array_Access_Array_Access renames org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Package_References.Java_Unbox_TouchMotionGestureFactory_Access_Array_Access_Array;
 
    type TouchMotionGestureFactory is new Java_Object with record
       LEFT : MotionGestureInput_Access;

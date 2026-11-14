@@ -25,6 +25,9 @@ with org.allbinary.logic.io.path.AbPathData_Package; use org.allbinary.logic.io.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.AbCryptUtil_Package; use org.allbinary.logic.system.security.AbCryptUtil_Package;
 with org.allbinary.logic.system.security.AbCryptUtil_Package_References;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.system.loader.NoClassDefFoundError_Package; use org.allbinary.logic.system.loader.NoClassDefFoundError_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
@@ -47,6 +50,9 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
    package StreamUtil_Package renames Standard.org.allbinary.logic.io.StreamUtil_Package;
    package AbPathData_Package renames Standard.org.allbinary.logic.io.path.AbPathData_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -84,7 +90,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
         ClassLoader_Package.Initialize (This, parent);
         Initialize_Fields (This);
         This.key := key;
-        AbeClassLoader_Package.PATH := Java_Image (org_Package.allbinary.globals.URLGLOBALS.getWebappPath) & To_Unbounded_String ("WEB-INF/classes/");
+        AbeClassLoader_Package.PATH := Java_Image (URLGLOBALS_Package.getWebappPath) & To_Unbounded_String ("WEB-INF/classes/");
    end Initialize;
 
    function Create (parent_Param : access ClassLoader_Package.ClassLoader'Class; key : Unbounded_String) return AbeClassLoader_Access is
@@ -151,7 +157,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADERERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.LOADERERROR) then
                 logBuffer.logAll;
                 This.logUtil.put (To_Unbounded_String ("Failure loading: ") & name & To_Unbounded_String ("" & ASCII.LF & "with: ") & loadedWith, AbeClassLoader_Access'(This'Unchecked_Access), This.LOAD_CLASS, e);
             end if;
@@ -178,7 +184,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADERERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.LOADERERROR) then
                 This.logUtil.put (To_Unbounded_String ("(Before LogBuffer Output) Failure loading Encrypted: ") & name & To_Unbounded_String (" File: ") & cname, Java_Box (To_Unbounded_String ("AbeClassLoader")), To_Unbounded_String ("loadClassBytes"), e);
             end if;
             StreamUtil_Package.getInstance.close (in_Id);
@@ -209,7 +215,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
                         declare
                             e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                         begin
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADER) then
+                    if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.LOADER) then
                         This.logUtil.putF (To_Unbounded_String ("Failed Loaded Class: ") & name & To_Unbounded_String (" with: ") & loadedWith, AbeClassLoader_Access'(This'Unchecked_Access), This.LOAD_CLASS);
                     end if;
                         end;
@@ -225,7 +231,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
                 end if;
                 AbeClassLoader_Package.classes.put (Java_Box (name), Java_Box (myClass));
             else
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADER) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.LOADER) then
                     This.logUtil.putF (To_Unbounded_String ("Already Loaded: ") & name & To_Unbounded_String (" with: ") & loadedWith, AbeClassLoader_Access'(This'Unchecked_Access), This.LOAD_CLASS);
                 end if;
             end if;
@@ -236,7 +242,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LOADERERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.LOADERERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failure loading: ") & name, Java_Box (To_Unbounded_String ("AbeClassLoader")), This.LOAD_CLASS, e);
             end if;
             return null;
@@ -281,7 +287,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
 
 begin
    null;
-   classes := StdUtil_Package.getInstance.createHashMap;
+   classes := Map_Access (StdUtil_Package.getInstance.createHashMap);
    PATH := Null_Unbounded_String;
 
 end org.allbinary.logic.system.loader.AbeClassLoader_Package;

@@ -40,7 +40,6 @@ with org.allbinary.graphics.color.BasicColor_Package;
 with javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.graphics.displayable.CanvasStrings_Package;
 with org.microemu.device.ui.CanvasUI_Package;
-with javax.microedition.lcdui.Choice_Package;
 with javax.microedition.lcdui.ChoiceGroup_Package;
 with javax.microedition.lcdui.ChoiceItem_Package;
 with javax.microedition.lcdui.Command_Package;
@@ -52,7 +51,6 @@ with org.allbinary.string_Id.CommonStrings_Package;
 with org.microemu.device.Device_Package;
 with org.microemu.device.DeviceDisplay_Package;
 with javax.microedition.lcdui.Display_Package;
-with org.microemu.DisplayAccess_Package;
 with javax.microedition.lcdui.DisplayAccessor_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
@@ -81,7 +79,6 @@ with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with javax.microedition.midlet.MIDlet_Package;
-with org.microemu.MIDletAccess_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.microemu.device.MutableImage_Package;
 with org.allbinary.graphics.displayable.MyCanvas_Package;
@@ -111,6 +108,7 @@ with javax.microedition.lcdui.Ticker_Package;
 with org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.input.TouchJ2ME_Package;
+with org.allbinary.TsUtil_Package;
 with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package is
@@ -159,7 +157,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFac
 
    function getInstance return ProgressCanvas_Access is
    begin
-        if (ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN := Java_Object_Access (ProgressCanvas_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE));
         end if;
         return ProgressCanvas_Access (ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN);

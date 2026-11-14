@@ -19,6 +19,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
 with taghelpers.StoreTagWorkFlowHelperFactory_Package; use taghelpers.StoreTagWorkFlowHelperFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -34,6 +36,8 @@ package body tags.StoreWorkFlowTag_Package is
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
    package StoreTagWorkFlowHelperFactory_Package renames Standard.taghelpers.StoreTagWorkFlowHelperFactory_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -57,7 +61,7 @@ package body tags.StoreWorkFlowTag_Package is
    begin
         HelperTag_Package.Initialize (This, StoreTagWorkFlowHelperFactory_Package.Create);
         Initialize_Fields (This);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
             This.logUtil.putF (This.commonStrings.START, StoreWorkFlowTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
@@ -82,7 +86,7 @@ package body tags.StoreWorkFlowTag_Package is
       result : Integer;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                 This.logUtil.putF (This.commonStrings.START, StoreWorkFlowTag_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
             end if;
             helperClass := StoreWorkFlowTag'Class (This).getHelper.all'Tag;
@@ -94,7 +98,7 @@ package body tags.StoreWorkFlowTag_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreWorkFlowTag_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
             end if;
             Java_Throw (e);
@@ -106,7 +110,7 @@ package body tags.StoreWorkFlowTag_Package is
    function doStartTag (This : in out StoreWorkFlowTag) return Integer is
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                 This.logUtil.putF (This.commonStrings.START, StoreWorkFlowTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             StoreWorkFlowTag'Class (This).setHelper;

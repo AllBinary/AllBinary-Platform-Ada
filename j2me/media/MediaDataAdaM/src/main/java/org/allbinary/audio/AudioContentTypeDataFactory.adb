@@ -43,7 +43,7 @@ package body org.allbinary.audio.AudioContentTypeDataFactory_Package is
 
    function getInstance return AudioContentTypeDataFactory_Access is
    begin
-        return AudioContentTypeDataFactory_Access (AudioContentTypeDataFactory_Package.instance);
+        return AudioContentTypeDataFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AudioContentTypeDataFactory'Class) is

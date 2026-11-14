@@ -25,7 +25,7 @@ package body org.allbinary.logic.visual.dhtml.style.color.ColorsData_Package is
 
    function getInstance return ColorsData_Access is
    begin
-        return ColorsData_Access (ColorsData_Package.instance);
+        return ColorsData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ColorsData'Class) is

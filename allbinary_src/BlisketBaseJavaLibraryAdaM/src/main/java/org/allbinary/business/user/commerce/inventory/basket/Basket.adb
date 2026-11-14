@@ -47,7 +47,7 @@ package body org.allbinary.business.user.commerce.inventory.basket.Basket_Packag
    procedure Initialize_Fields (This : in out Basket'Class) is
    begin
       null;
-      This.items := StdUtil_Package.getInstance.createHashMap;
+      This.items := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
    end Initialize_Fields;
 
 

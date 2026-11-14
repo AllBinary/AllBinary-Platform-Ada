@@ -34,6 +34,8 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -59,6 +61,8 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
    package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -129,7 +133,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
    begin
         begin
             AbSqlBean_Package.AbSqlBean (This).insert (values);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, WorkFlowEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
         exception
@@ -137,7 +141,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, WorkFlowEntity_Access'(This'Unchecked_Access), INSERT, e);
             end if;
                 end;
@@ -148,11 +152,11 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
       keysAndValues : HashMap_Access;
    begin
         begin
-            keysAndValues := StdUtil_Package.getInstance.createHashMap;
+            keysAndValues := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             keysAndValues.put (WorkFlowData_Package.getInstance.NAME, Java_Box (name));
             keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
             AbSqlBean_Package.AbSqlBean (This).deleteWhere (keysAndValues);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, WorkFlowEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
         exception
@@ -160,7 +164,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, WorkFlowEntity_Access'(This'Unchecked_Access), This.commonStrings.delete, e);
             end if;
                 end;
@@ -173,7 +177,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
       hashMap : HashMap_Access;
    begin
         begin
-            keysAndValues := StdUtil_Package.getInstance.createHashMap;
+            keysAndValues := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             keysAndValues.put (WorkFlowData_Package.getInstance.NAME, Java_Box (name));
             keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
             hashMap := AbSqlBean_Package.AbSqlBean (This).getRow (keysAndValues);
@@ -183,7 +187,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, WorkFlowEntity_Access'(This'Unchecked_Access), This.METHOD_GET, e);
             end if;
             Java_Throw (e);
@@ -201,7 +205,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
    begin
         begin
             workFlowsVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-            keysAndValues := StdUtil_Package.getInstance.createHashMap;
+            keysAndValues := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeName));
             hashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (keysAndValues);
             size := hashMapVector.size;
@@ -217,7 +221,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, WorkFlowEntity_Access'(This'Unchecked_Access), This.METHOD_GET, e);
             end if;
             return null;
@@ -230,7 +234,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
       wherekeysAndValues : HashMap_Access;
    begin
         begin
-            wherekeysAndValues := StdUtil_Package.getInstance.createHashMap;
+            wherekeysAndValues := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             wherekeysAndValues.put (WorkFlowData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (WorkFlowData_Package.getInstance.NAME)));
             wherekeysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Unbox (updatedValues.get (StoreFrontData_Package.getInstance.NAME)));
             AbSqlBean_Package.AbSqlBean (This).updateWhere (wherekeysAndValues, updatedValues);
@@ -239,7 +243,7 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, WorkFlowEntity_Access'(This'Unchecked_Access), This.METHOD_UPDATE, e);
             end if;
                 end;

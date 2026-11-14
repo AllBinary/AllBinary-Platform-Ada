@@ -122,7 +122,7 @@ package body org.allbinary.logic.communication.http.AcceptableResponseUtil_Packa
 
    function getInstance return AcceptableResponseUtil_Access is
    begin
-        return AcceptableResponseUtil_Access (AcceptableResponseUtil_Package.instance);
+        return AcceptableResponseUtil_Package.instance;
    end getInstance;
 
    --  Java static initializer: call this once

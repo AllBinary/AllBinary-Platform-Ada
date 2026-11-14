@@ -75,7 +75,7 @@ package body org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
 
    function getInstance return GitProcessHelper_Access is
    begin
-        return GitProcessHelper_Access (GitProcessHelper_Package.instance);
+        return GitProcessHelper_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out GitProcessHelper'Class) is

@@ -44,7 +44,7 @@ package body org.allbinary.game.state.GameStateFactory_Package is
 
    function getInstance return GameStateFactory_Access is
    begin
-        if (GameStateFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (GameStateFactory_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             GameStateFactory_Package.instance := Java_Object_Access (GameStateFactory_Package.Create);
         end if;
         return GameStateFactory_Access (GameStateFactory_Package.instance);

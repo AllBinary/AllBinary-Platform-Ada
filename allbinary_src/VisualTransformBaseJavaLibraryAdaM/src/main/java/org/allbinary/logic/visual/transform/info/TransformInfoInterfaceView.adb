@@ -25,8 +25,11 @@ with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use or
 with org.allbinary.logic.io.path.AbFilePath_Package;
 with org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.io.path.AbPathData_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.io.path.PathUtil_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;

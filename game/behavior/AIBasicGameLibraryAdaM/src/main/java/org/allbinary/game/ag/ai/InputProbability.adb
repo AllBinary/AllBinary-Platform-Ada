@@ -97,7 +97,7 @@ package body org.allbinary.game.ag.ai.InputProbability_Package is
       hashtable : ABHashtable_Access;
    begin
         hashtable := StdUtil_Package.getInstance.createHashtable;
-        hashtable.put (InputProbability_Package.INPUT_PROBABILITY, InputProbability_Access'(This'Unchecked_Access));
+        hashtable.put (Java_Box (InputProbability_Package.INPUT_PROBABILITY), InputProbability_Access'(This'Unchecked_Access));
         return hashtable;
    end toHashtable;
 

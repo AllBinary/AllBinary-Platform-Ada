@@ -95,11 +95,26 @@
 
         <dependency>
             <groupId>org.allbinary.media.image</groupId>
-            <artifactId>ImageJ2SEJavaLibraryAda</artifactId>
+            <artifactId>ImageSwtJ2SEJavaLibraryAda</artifactId>
             <!-- AllBinary Platform Version Start -->
             <version>1.0.0-SNAPSHOT</version>
             <!-- AllBinary Platform Version End -->
 
+            <optional>true</optional>
+        </dependency>
+        <!-- The specs of ImageSwtJ2SEJavaLibraryAda use these and its optional dependencies are not transitive -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>OpenGLESNullImageJavaLibraryAda</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.swt</groupId>
+            <artifactId>org.eclipse.swt.win32.win32.x86_64StubAda</artifactId>
+            <version>4.2.1</version>
             <optional>true</optional>
         </dependency>
 
@@ -229,7 +244,7 @@
                             <goal>unpack-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeGroupIds>org.allbinary,org.microemu,org.allbinary.media.image,org.allbinary.animation,org.allbinary.cache,org.graph,org.allbinary.game.ai</includeGroupIds>
+                            <includeGroupIds>org.allbinary,org.microemu,org.allbinary.media.image,org.allbinary.animation,org.allbinary.cache,org.graph,org.eclipse.swt,org.allbinary.game.ai</includeGroupIds>
                             <includes>META-INF/ada/**</includes>
                             <outputDirectory>${project.build.directory}/ada-dependencies</outputDirectory>
                             <overWriteSnapshots>true</overWriteSnapshots>

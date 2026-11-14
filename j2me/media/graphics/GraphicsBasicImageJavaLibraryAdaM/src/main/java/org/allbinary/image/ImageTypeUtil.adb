@@ -75,7 +75,7 @@ package body org.allbinary.image.ImageTypeUtil_Package is
 
    function getInstance return ImageTypeUtil_Access is
    begin
-        return ImageTypeUtil_Access (ImageTypeUtil_Package.SINGLETON);
+        return ImageTypeUtil_Package.SINGLETON;
    end getInstance;
 
    procedure isSupported (This : in out ImageTypeUtil; mediaFileType_Param : Unbounded_String) is

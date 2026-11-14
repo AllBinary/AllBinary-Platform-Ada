@@ -28,6 +28,45 @@ mkdir -p "$split_dir" "$dependency_split_dir" "$compiled_dir" "$archive_dir" "$a
 
 failures=()
 
+# gnatchop works with GNAT-TEMP files in its current directory. Each build chops in its own directory so builds that
+# run at the same time do not share them.
+chop_dir="$object_dir/chop"
+mkdir -p "$chop_dir"
+
+# Chops one source and checks that every file gnatchop lists was written. A chop that reports success without
+# writing a unit such as javax-microedition-lcdui-ticker_package.ads is retried.
+chop_source() {
+    local output_dir="$1"
+    local source="$2"
+    local attempt
+    local listing
+    local file
+    local missing
+    for attempt in 1 2 3; do
+        if ! listing="$(cd "$chop_dir" && gnatchop -w -r "$ada_standard" "$source" "$output_dir" 2>&1)"; then
+            echo "gnatchop failed: $source" >&2
+            echo "$listing" >&2
+            failures+=("gnatchop $source")
+            return
+        fi
+        missing=""
+        while IFS= read -r file; do
+            file="${file#"${file%%[![:space:]]*}"}"
+            [ -z "$file" ] && continue
+            # Only a Windows path is converted because cygpath -u breaks a long path such as one of 250 characters
+            case "$file" in
+                [A-Za-z]:*) file="$(cygpath -u "$file")" ;;
+            esac
+            [ -f "$file" ] || missing="$missing $file"
+        done < <(printf '%s\n' "$listing" | grep -E '^[[:space:]]+[^[:space:]]')
+        if [ -z "$missing" ]; then
+            return
+        fi
+        echo "gnatchop attempt $attempt did not write:$missing" >&2
+    done
+    failures+=("gnatchop $source did not write:$missing")
+}
+
 chop_sources() {
     local output_dir="$1"
     local input_dir="$2"
@@ -38,10 +77,7 @@ chop_sources() {
             if ! grep -qvE '^[[:space:]]*(--.*)?$' "$source"; then
                 continue
             fi
-            if ! gnatchop -w -r -q "$ada_standard" "$source" "$output_dir" > /dev/null; then
-                echo "gnatchop failed: $source" >&2
-                failures+=("gnatchop $source")
-            fi
+            chop_source "$output_dir" "$source"
         done < <(find "$input_dir" -type f -name "*.$extension" -print0 | sort -z)
     done
 }

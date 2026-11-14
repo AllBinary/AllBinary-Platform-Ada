@@ -33,7 +33,7 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlTag_Package is
    procedure Initialize (This : in out HtmlTag'Class) is
    begin
       Initialize_Fields (This);
-        This.otherAttributes := StdUtil_Package.getInstance.createHashMap;
+        This.otherAttributes := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
    end Initialize;
 
    function Create return HtmlTag_Access is

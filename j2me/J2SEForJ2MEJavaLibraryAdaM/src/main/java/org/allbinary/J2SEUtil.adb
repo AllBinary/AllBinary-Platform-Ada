@@ -39,7 +39,7 @@ package body org.allbinary.J2SEUtil_Package is
 
    function getInstance return J2SEUtil_Access is
    begin
-        return J2SEUtil_Access (J2SEUtil_Package.instance);
+        return J2SEUtil_Package.instance;
    end getInstance;
 
    function getHashMapAsArray (This : in out J2SEUtil; hashMap_Param : access HashMap_Package.HashMap'Class) return Java_Object_Access_Array_Access is

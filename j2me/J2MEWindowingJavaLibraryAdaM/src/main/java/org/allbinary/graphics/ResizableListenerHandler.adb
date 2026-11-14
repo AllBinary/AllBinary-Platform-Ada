@@ -49,7 +49,7 @@ package body org.allbinary.graphics.ResizableListenerHandler_Package is
 
    function getInstance return ResizableListenerHandler_Access is
    begin
-        return ResizableListenerHandler_Access (ResizableListenerHandler_Package.instance);
+        return ResizableListenerHandler_Package.instance;
    end getInstance;
 
    procedure setListener (This : in out ResizableListenerHandler; resizableListenerInterface_Param : access ResizableListenerInterface_Package.ResizableListenerInterface'Class) is

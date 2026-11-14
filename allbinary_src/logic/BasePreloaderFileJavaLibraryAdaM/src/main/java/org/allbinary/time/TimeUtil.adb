@@ -37,7 +37,7 @@ package body org.allbinary.time.TimeUtil_Package is
 
    function getInstance return TimeUtil_Access is
    begin
-        return TimeUtil_Access (TimeUtil_Package.instance);
+        return TimeUtil_Package.instance;
    end getInstance;
 
    procedure setCalendar (This : in out TimeUtil; calendar_Param : access Calendar_Package.Calendar'Class; yearString : Unbounded_String; monthString : Unbounded_String; dayString : Unbounded_String; hourString : Unbounded_String) is
@@ -54,7 +54,7 @@ package body org.allbinary.time.TimeUtil_Package is
         calendar.set (year, month, day, hour, 0);
    end setCalendar;
 
-   procedure setCalendar (This : in out TimeUtil; calendar_Param : access Calendar_Package.Calendar'Class; yearString : Unbounded_String; monthString : Unbounded_String; dayString : Unbounded_String; hourString : Unbounded_String; minuteString : Unbounded_String; secondString : Unbounded_String) is
+   procedure setCalendarWithTime (This : in out TimeUtil; calendar_Param : access Calendar_Package.Calendar'Class; yearString : Unbounded_String; monthString : Unbounded_String; dayString : Unbounded_String; hourString : Unbounded_String; minuteString : Unbounded_String; secondString : Unbounded_String) is
       calendar : constant Calendar_Access := Calendar_Access (calendar_Param);
       year : Integer;
       month : Integer;
@@ -70,7 +70,7 @@ package body org.allbinary.time.TimeUtil_Package is
         minute := Integer (Integer'Value (To_String (minuteString)));
         second := Integer (Integer'Value (To_String (secondString)));
         calendar.set (year, month, day, hour, minute, second);
-   end setCalendar;
+   end setCalendarWithTime;
 
    procedure setExpirationCalendar (This : in out TimeUtil; calendar_Param : access Calendar_Package.Calendar'Class; yearsString : Unbounded_String; monthsString : Unbounded_String; daysString : Unbounded_String; hoursString : Unbounded_String; minutesString : Unbounded_String; secondsString : Unbounded_String) is
       calendar : constant Calendar_Access := Calendar_Access (calendar_Param);

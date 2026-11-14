@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.generic_Id.address.shipping.SelectValidationView_Package;
 package views.generic_Id.address.shipping.SelectValidationView_Package_References is
    type SelectValidationView_Access is access all views.generic_Id.address.shipping.SelectValidationView_Package.SelectValidationView'Class;
@@ -19,6 +20,16 @@ package views.generic_Id.address.shipping.SelectValidationView_Package_Reference
    type SelectValidationView_Access_Array_Access is access all SelectValidationView_Access_Array;
    type SelectValidationView_Access_Array_Access_Array is array (Natural range <>) of SelectValidationView_Access_Array_Access;
    type SelectValidationView_Access_Array_Access_Array_Access is access all SelectValidationView_Access_Array_Access_Array;
+   type SelectValidationView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SelectValidationView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SelectValidationView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SelectValidationView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SelectValidationView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SelectValidationView_Access_Array_Access is (if Value /= null and then Value.all in SelectValidationView_Access_Array_Object'Class then SelectValidationView_Access_Array_Object'Class (Value.all).Value else null);
+   type SelectValidationView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SelectValidationView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SelectValidationView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SelectValidationView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SelectValidationView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SelectValidationView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SelectValidationView_Access_Array_Access_Array_Object'Class then SelectValidationView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.generic_Id.address.shipping.SelectValidationView_Package_References;
 
 with views.generic_Id.address.shipping.SelectValidationView_Package_References;
@@ -86,10 +97,14 @@ package views.generic_Id.address.shipping.SelectValidationView_Package is
    function "=" (Left, Right : SelectValidationView_Access_Array) return Boolean renames views.generic_Id.address.shipping.SelectValidationView_Package_References."=";
    subtype SelectValidationView_Access_Array_Access is views.generic_Id.address.shipping.SelectValidationView_Package_References.SelectValidationView_Access_Array_Access;
    function "=" (Left, Right : SelectValidationView_Access_Array_Access) return Boolean renames views.generic_Id.address.shipping.SelectValidationView_Package_References."=";
+   function Java_Box (Value : SelectValidationView_Access_Array_Access) return Java_Object_Access renames views.generic_Id.address.shipping.SelectValidationView_Package_References.Java_Box;
+   function Java_Unbox_SelectValidationView_Access_Array (Value : access Java_Object'Class) return SelectValidationView_Access_Array_Access renames views.generic_Id.address.shipping.SelectValidationView_Package_References.Java_Unbox_SelectValidationView_Access_Array;
    subtype SelectValidationView_Access_Array_Access_Array is views.generic_Id.address.shipping.SelectValidationView_Package_References.SelectValidationView_Access_Array_Access_Array;
    function "=" (Left, Right : SelectValidationView_Access_Array_Access_Array) return Boolean renames views.generic_Id.address.shipping.SelectValidationView_Package_References."=";
    subtype SelectValidationView_Access_Array_Access_Array_Access is views.generic_Id.address.shipping.SelectValidationView_Package_References.SelectValidationView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SelectValidationView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.address.shipping.SelectValidationView_Package_References."=";
+   function Java_Box (Value : SelectValidationView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.generic_Id.address.shipping.SelectValidationView_Package_References.Java_Box;
+   function Java_Unbox_SelectValidationView_Access_Array_Access_Array (Value : access Java_Object'Class) return SelectValidationView_Access_Array_Access_Array_Access renames views.generic_Id.address.shipping.SelectValidationView_Package_References.Java_Unbox_SelectValidationView_Access_Array_Access_Array;
 
    type SelectValidationView is new ShippingAddressView and ValidationComponentInterface with null record;
 

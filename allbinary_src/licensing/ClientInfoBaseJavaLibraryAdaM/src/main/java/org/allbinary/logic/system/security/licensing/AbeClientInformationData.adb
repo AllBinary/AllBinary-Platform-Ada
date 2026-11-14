@@ -40,7 +40,7 @@ package body org.allbinary.logic.system.security.licensing.AbeClientInformationD
 
    function getInstance return AbeClientInformationData_Access is
    begin
-        return AbeClientInformationData_Access (AbeClientInformationData_Package.instance);
+        return AbeClientInformationData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AbeClientInformationData'Class) is

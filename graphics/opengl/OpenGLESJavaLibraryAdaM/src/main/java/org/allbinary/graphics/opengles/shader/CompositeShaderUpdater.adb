@@ -87,7 +87,7 @@ package body org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Packa
 
    function getInstance return CompositeShaderUpdater_Access is
    begin
-        return CompositeShaderUpdater_Access (CompositeShaderUpdater_Package.instanceC);
+        return CompositeShaderUpdater_Package.instanceC;
    end getInstance;
 
    procedure Initialize (This : in out CompositeShaderUpdater'Class; uniformBlockArray : Unbounded_String_Array_Access; uniformArray : Unbounded_String_Array_Access; attributeArray : Unbounded_String_Array_Access; attributeHandleArray : Integer_Array_Access) is

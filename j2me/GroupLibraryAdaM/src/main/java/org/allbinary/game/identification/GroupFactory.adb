@@ -93,7 +93,7 @@ package body org.allbinary.game.identification.GroupFactory_Package is
 
    function getInstance return GroupFactory_Access is
    begin
-        return GroupFactory_Access (GroupFactory_Package.instance);
+        return GroupFactory_Package.instance;
    end getInstance;
 
    function getNextGroup (This : in out GroupFactory) return Group_Access is

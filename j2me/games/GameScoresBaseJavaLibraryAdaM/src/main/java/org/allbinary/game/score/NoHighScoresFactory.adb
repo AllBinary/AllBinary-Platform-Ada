@@ -25,18 +25,23 @@ with org.allbinary.game.score.HighScoresHelperBase_Package; use org.allbinary.ga
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package; use org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package_References;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.GameInfoData_Package;
 with org.allbinary.game.GameMode_Package;
 with org.allbinary.game.GameType_Package;
+with org.allbinary.game.score.HighScore_Package;
+with org.allbinary.game.score.HighScores_Package;
 with org.allbinary.game.score.HighScoresFactoryInterface_Package;
 with org.allbinary.game.score.HighScoresHelperBase_Package;
 with org.allbinary.game.score.HighScoresHelperBaseInterface_Package;
 with org.allbinary.game.score.HighScoresResultsListener_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.PlayerType_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
@@ -105,7 +110,7 @@ package body org.allbinary.game.score.NoHighScoresFactory_Package is
 
    function getInstance return NoHighScoresFactory_Access is
    begin
-        return NoHighScoresFactory_Access (NoHighScoresFactory_Package.instance);
+        return NoHighScoresFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out NoHighScoresFactory'Class) is

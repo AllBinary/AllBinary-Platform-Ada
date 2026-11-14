@@ -38,7 +38,7 @@ package body org.allbinary.game.gd.resource.GDResources_Package is
 
    function getInstance return GDResources_Access is
    begin
-        return GDResources_Access (GDResources_Package.instance);
+        return GDResources_Package.instance;
    end getInstance;
 
 begin

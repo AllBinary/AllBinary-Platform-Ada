@@ -81,7 +81,7 @@ package body org.allbinary.logic.system.hardware.HardwareFactory_Package is
 
    function getInstance return HardwareFactory_Access is
    begin
-        return HardwareFactory_Access (HardwareFactory_Package.instance);
+        return HardwareFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out HardwareFactory'Class) is

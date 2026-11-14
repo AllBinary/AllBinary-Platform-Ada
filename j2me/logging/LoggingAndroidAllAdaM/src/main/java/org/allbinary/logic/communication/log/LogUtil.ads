@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;
 package org.allbinary.logic.communication.log.LogUtil_Package_References is
    type LogUtil_Access is access all org.allbinary.logic.communication.log.LogUtil_Package.LogUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.communication.log.LogUtil_Package_References is
    type LogUtil_Access_Array_Access is access all LogUtil_Access_Array;
    type LogUtil_Access_Array_Access_Array is array (Natural range <>) of LogUtil_Access_Array_Access;
    type LogUtil_Access_Array_Access_Array_Access is access all LogUtil_Access_Array_Access_Array;
+   type LogUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LogUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LogUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LogUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LogUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LogUtil_Access_Array_Access is (if Value /= null and then Value.all in LogUtil_Access_Array_Object'Class then LogUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type LogUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LogUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LogUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LogUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LogUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LogUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in LogUtil_Access_Array_Access_Array_Object'Class then LogUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.communication.log.LogUtil_Package_References;
 
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
@@ -32,10 +43,9 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 limited with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonSeps_Package_References;
+--  with android.util.Log_Package; use android.util.Log_Package;
 limited with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package_References;
-limited with org.allbinary.logic.communication.log.Log_Package;
-with org.allbinary.logic.communication.log.Log_Package_References;
 
 package org.allbinary.logic.communication.log.LogUtil_Package is
 
@@ -61,16 +71,6 @@ package org.allbinary.logic.communication.log.LogUtil_Package is
    use type LogFormatUtil_Access_Array_Access_Array;
    subtype LogFormatUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogFormatUtil_Package_References.LogFormatUtil_Access_Array_Access_Array_Access;
    use type LogFormatUtil_Access_Array_Access_Array_Access;
-   subtype Log_Access is org.allbinary.logic.communication.log.Log_Package_References.Log_Access;
-   use type Log_Access;
-   subtype Log_Access_Array is org.allbinary.logic.communication.log.Log_Package_References.Log_Access_Array;
-   use type Log_Access_Array;
-   subtype Log_Access_Array_Access is org.allbinary.logic.communication.log.Log_Package_References.Log_Access_Array_Access;
-   use type Log_Access_Array_Access;
-   subtype Log_Access_Array_Access_Array is org.allbinary.logic.communication.log.Log_Package_References.Log_Access_Array_Access_Array;
-   use type Log_Access_Array_Access_Array;
-   subtype Log_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.Log_Package_References.Log_Access_Array_Access_Array_Access;
-   use type Log_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -81,10 +81,14 @@ package org.allbinary.logic.communication.log.LogUtil_Package is
    function "=" (Left, Right : LogUtil_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access;
    function "=" (Left, Right : LogUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   function Java_Box (Value : LogUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.log.LogUtil_Package_References.Java_Box;
+   function Java_Unbox_LogUtil_Access_Array (Value : access Java_Object'Class) return LogUtil_Access_Array_Access renames org.allbinary.logic.communication.log.LogUtil_Package_References.Java_Unbox_LogUtil_Access_Array;
    subtype LogUtil_Access_Array_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array;
    function "=" (Left, Right : LogUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LogUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
+   function Java_Box (Value : LogUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.log.LogUtil_Package_References.Java_Box;
+   function Java_Unbox_LogUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return LogUtil_Access_Array_Access_Array_Access renames org.allbinary.logic.communication.log.LogUtil_Package_References.Java_Unbox_LogUtil_Access_Array_Access_Array;
 
    type LogUtil is new Java_Object with record
       commonSeps : CommonSeps_Access;

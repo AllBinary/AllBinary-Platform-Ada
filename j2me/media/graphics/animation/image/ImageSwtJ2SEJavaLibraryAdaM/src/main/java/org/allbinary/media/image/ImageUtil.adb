@@ -33,12 +33,49 @@ with org.eclipse.swt.events.PaintListener_Package; use org.eclipse.swt.events.Pa
 with org.eclipse.swt.graphics.Transform_Package; use org.eclipse.swt.graphics.Transform_Package;
 with org.eclipse.swt.widgets.Display_Package; use org.eclipse.swt.widgets.Display_Package;
 with org.microemu.app.BareMain_Package; use org.microemu.app.BareMain_Package;
+with org.eclipse.swt.graphics.Image_Package; use org.eclipse.swt.graphics.Image_Package;
+with org.eclipse.swt.graphics.Image_Package_References;
+with org.eclipse.swt.widgets.Button_Package;
+with org.eclipse.swt.graphics.Color_Package;
+with org.eclipse.swt.widgets.Control_Package;
+with org.eclipse.swt.widgets.Decorations_Package;
+with org.eclipse.swt.graphics.Device_Package;
+with org.eclipse.swt.events.DragDetectEvent_Package;
+with org.eclipse.swt.events.DragDetectListener_Package;
+with org.eclipse.swt.graphics.Drawable_Package;
+with org.eclipse.swt.widgets.Event_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.eclipse.swt.graphics.Font_Package;
+with org.eclipse.swt.graphics.FontMetrics_Package;
+with org.eclipse.swt.events.KeyEvent_Package;
+with org.eclipse.swt.events.KeyListener_Package;
+with org.eclipse.swt.widgets.Layout_Package;
+with org.eclipse.swt.widgets.Listener_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.eclipse.swt.widgets.Menu_Package;
+with org.eclipse.swt.events.MouseEvent_Package;
+with org.eclipse.swt.events.MouseListener_Package;
+with org.eclipse.swt.events.MouseMoveListener_Package;
+with org.eclipse.swt.events.MouseWheelListener_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.eclipse.swt.graphics.PaletteData_Package;
+with org.eclipse.swt.graphics.Point_Package;
+with org.eclipse.swt.graphics.RGB_Package;
+with org.eclipse.swt.graphics.RGBA_Package;
+with org.eclipse.swt.graphics.Rectangle_Package;
+with org.eclipse.swt.graphics.Resource_Package;
+with org.eclipse.swt.internal.SWTEventObject_Package;
+with org.eclipse.swt.widgets.Scrollable_Package;
+with org.eclipse.swt.events.SelectionEvent_Package;
+with org.eclipse.swt.events.SelectionListener_Package;
+with org.eclipse.swt.widgets.Shell_Package;
+with org.eclipse.swt.events.ShellEvent_Package;
+with org.eclipse.swt.events.ShellListener_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.eclipse.swt.events.TypedEvent_Package;
+with org.eclipse.swt.widgets.Widget_Package;
 
 package body org.allbinary.media.image.ImageUtil_Package is
 
@@ -101,6 +138,16 @@ package body org.allbinary.media.image.ImageUtil_Package is
    function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
    subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
+   subtype Image_Access is org.eclipse.swt.graphics.Image_Package_References.Image_Access;
+   function "=" (Left, Right : Image_Access) return Boolean renames org.eclipse.swt.graphics.Image_Package_References."=";
+   subtype Image_Access_Array is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array;
+   function "=" (Left, Right : Image_Access_Array) return Boolean renames org.eclipse.swt.graphics.Image_Package_References."=";
+   subtype Image_Access_Array_Access is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access) return Boolean renames org.eclipse.swt.graphics.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array_Access_Array;
+   function "=" (Left, Right : Image_Access_Array_Access_Array) return Boolean renames org.eclipse.swt.graphics.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array_Access is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access_Array_Access) return Boolean renames org.eclipse.swt.graphics.Image_Package_References."=";
    procedure Initialize_Fields (This : in out ImageUtil'Class) is
    begin
       null;
@@ -114,7 +161,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
 
    function getInstance return ImageUtil_Access is
    begin
-        return ImageUtil_Access (ImageUtil_Package.instance);
+        return ImageUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageUtil'Class) is
@@ -163,8 +210,8 @@ package body org.allbinary.media.image.ImageUtil_Package is
         for index in 0 .. (size) - 1 loop
             bufferedImage := bufferedImageArray (index);
             imageData := bufferedImage.getImageData;
-            newWidth := Integer ((((imageData.width) * (percent)) / (100)));
-            newHeight := Integer ((((imageData.height) * (percent)) / (100)));
+            newWidth := (((imageData.width) * (percent)) / (100));
+            newHeight := (((imageData.height) * (percent)) / (100));
             scaledBufferedImageArray (index) := ImageUtil'Class (This).createBufferedImage5 (bufferedImage, newWidth, newHeight, scale);
         end loop;
         return scaledBufferedImageArray;
@@ -187,8 +234,8 @@ package body org.allbinary.media.image.ImageUtil_Package is
         for index in 0 .. (size) - 1 loop
             bufferedImage := bufferedImageArray (index);
             imageData := bufferedImage.getImageData;
-            newWidth := Integer (((imageData.width) * (percent)));
-            newHeight := Integer (((imageData.height) * (percent)));
+            newWidth := Integer (((Float (imageData.width)) * (percent)));
+            newHeight := Integer (((Float (imageData.height)) * (percent)));
             scaledBufferedImageArray (index) := ImageUtil'Class (This).createBufferedImage5 (bufferedImage, newWidth, newHeight, scale);
         end loop;
         return scaledBufferedImageArray;
@@ -241,8 +288,8 @@ package body org.allbinary.media.image.ImageUtil_Package is
       affineTransform : Transform_Access;
    begin
         imageData := bufferedImage.getImageData;
-        width := imageData.width;
-        height := imageData.height;
+        width := Float (imageData.width);
+        height := Float (imageData.height);
         d_newWidth := Float (newWidth);
         d_newHeight := Float (newHeight);
         widthRatio := (d_newWidth) / (width);
@@ -280,7 +327,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
       imageCanvas : Canvas_Access;
    begin
         imageCanvas := Canvas_Package.Create (parent, SWT_Package.NONE);
-        imageCanvas.addPaintListener (PaintListener_Package.Create  --  Java anonymous class body: implement it as a named type
+        imageCanvas.addPaintListener (null  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure paintControl (This : in out ; event_Param : access PaintEvent_Package.PaintEvent'Class) is
 --        event : constant PaintEvent_Access := PaintEvent_Access (event_Param);
@@ -289,7 +336,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
 --     begin
 --                  gc := GC_Access (event.gc);
 --                  affineTransform := Transform_Package.Create (gc.getDevice);
---                  affineTransform.translate (dx, dy);
+--                  affineTransform.translate (Float (dx), Float (dy));
 --                  gc.setAntialias (SWT_Package.ON);
 --                  gc.setInterpolation (SWT_Package.HIGH);
 --                  gc.drawImage (image, 0, 0, image.getBounds.width, image.getBounds.height, 0, 0, width, height);
@@ -309,11 +356,11 @@ package body org.allbinary.media.image.ImageUtil_Package is
         imageData := bufferedImage.getImageData;
         stringBuffer.append (To_Unbounded_String (" org.eclipse.swt.graphics.Image: "));
         stringBuffer.append (commonLabels.WIDTH_LABEL);
-        stringBuffer.appendint (Integer (imageData.width));
+        stringBuffer.appendint (imageData.width);
         stringBuffer.append (commonLabels.HEIGHT_LABEL);
-        stringBuffer.appendint (Integer (imageData.height));
+        stringBuffer.appendint (imageData.height);
         stringBuffer.append (To_Unbounded_String (" Type: "));
-        stringBuffer.appendint (Integer (imageData.type_Id));
+        stringBuffer.appendint (imageData.type_Id);
         return stringBuffer.toString;
    end toString;
 

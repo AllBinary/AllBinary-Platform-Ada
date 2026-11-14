@@ -74,12 +74,12 @@ package body org.apache.xmlrpc.XmlRpcClient_Package is
    end execute;
 
    --  throws XmlRpcException, IOException
-   function execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) return Java_Object_Access is
+   function executeWithCrypt (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) return Java_Object_Access is
       params : constant BasicArrayList_Access := BasicArrayList_Access (params_Param);
       cryptInterface : constant CryptInterface_Access := CryptInterface_Access (cryptInterface_Param);
    begin
         return NullUtil_Package.getInstance.NULL_OBJECT;
-   end execute;
+   end executeWithCrypt;
 
    procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Java_Object_Access := XmlRpcClient'Class (This).execute (method => method, params_Param => params_Param);
@@ -88,12 +88,12 @@ package body org.apache.xmlrpc.XmlRpcClient_Package is
       null;
    end execute;
 
-   procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) is
-      Java_Result : constant Java_Object_Access := XmlRpcClient'Class (This).execute (method => method, params_Param => params_Param, cryptInterface_Param => cryptInterface_Param);
+   procedure executeWithCrypt (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) is
+      Java_Result : constant Java_Object_Access := XmlRpcClient'Class (This).executeWithCrypt (method => method, params_Param => params_Param, cryptInterface_Param => cryptInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
-   end execute;
+   end executeWithCrypt;
 
 end org.apache.xmlrpc.XmlRpcClient_Package;
 

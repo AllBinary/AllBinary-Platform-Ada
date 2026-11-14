@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.admin.workflow.AddValidationView_Package;
 package views.admin.workflow.AddValidationView_Package_References is
    type AddValidationView_Access is access all views.admin.workflow.AddValidationView_Package.AddValidationView'Class;
@@ -19,6 +20,16 @@ package views.admin.workflow.AddValidationView_Package_References is
    type AddValidationView_Access_Array_Access is access all AddValidationView_Access_Array;
    type AddValidationView_Access_Array_Access_Array is array (Natural range <>) of AddValidationView_Access_Array_Access;
    type AddValidationView_Access_Array_Access_Array_Access is access all AddValidationView_Access_Array_Access_Array;
+   type AddValidationView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AddValidationView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AddValidationView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AddValidationView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AddValidationView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AddValidationView_Access_Array_Access is (if Value /= null and then Value.all in AddValidationView_Access_Array_Object'Class then AddValidationView_Access_Array_Object'Class (Value.all).Value else null);
+   type AddValidationView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AddValidationView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AddValidationView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AddValidationView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AddValidationView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AddValidationView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AddValidationView_Access_Array_Access_Array_Object'Class then AddValidationView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.admin.workflow.AddValidationView_Package_References;
 
 with views.admin.workflow.AddValidationView_Package_References;
@@ -112,10 +123,14 @@ package views.admin.workflow.AddValidationView_Package is
    function "=" (Left, Right : AddValidationView_Access_Array) return Boolean renames views.admin.workflow.AddValidationView_Package_References."=";
    subtype AddValidationView_Access_Array_Access is views.admin.workflow.AddValidationView_Package_References.AddValidationView_Access_Array_Access;
    function "=" (Left, Right : AddValidationView_Access_Array_Access) return Boolean renames views.admin.workflow.AddValidationView_Package_References."=";
+   function Java_Box (Value : AddValidationView_Access_Array_Access) return Java_Object_Access renames views.admin.workflow.AddValidationView_Package_References.Java_Box;
+   function Java_Unbox_AddValidationView_Access_Array (Value : access Java_Object'Class) return AddValidationView_Access_Array_Access renames views.admin.workflow.AddValidationView_Package_References.Java_Unbox_AddValidationView_Access_Array;
    subtype AddValidationView_Access_Array_Access_Array is views.admin.workflow.AddValidationView_Package_References.AddValidationView_Access_Array_Access_Array;
    function "=" (Left, Right : AddValidationView_Access_Array_Access_Array) return Boolean renames views.admin.workflow.AddValidationView_Package_References."=";
    subtype AddValidationView_Access_Array_Access_Array_Access is views.admin.workflow.AddValidationView_Package_References.AddValidationView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AddValidationView_Access_Array_Access_Array_Access) return Boolean renames views.admin.workflow.AddValidationView_Package_References."=";
+   function Java_Box (Value : AddValidationView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.admin.workflow.AddValidationView_Package_References.Java_Box;
+   function Java_Unbox_AddValidationView_Access_Array_Access_Array (Value : access Java_Object'Class) return AddValidationView_Access_Array_Access_Array_Access renames views.admin.workflow.AddValidationView_Package_References.Java_Unbox_AddValidationView_Access_Array_Access_Array;
 
    type AddValidationView is new WorkFlowView and ValidationComponentInterface with record
       AddValidationView_Field_logUtil : LogUtil_Access;

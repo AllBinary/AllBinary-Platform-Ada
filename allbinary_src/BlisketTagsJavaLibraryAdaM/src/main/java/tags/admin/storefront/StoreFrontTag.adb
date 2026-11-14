@@ -16,6 +16,7 @@
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -34,6 +35,7 @@ package body tags.admin.storefront.StoreFrontTag_Package is
 
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    procedure Initialize_Fields (This : in out StoreFrontTag'Class) is
    begin
       null;
@@ -62,9 +64,9 @@ package body tags.admin.storefront.StoreFrontTag_Package is
                 if (StoreFrontTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
                     StoreFrontTag'Class (This).setName (To_Unbounded_String ("Add Validation StoreFront View"));
                     StoreFrontTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.storefront.AddValidationStoreFrontView"));
-                elsif (StoreFrontTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                elsif (StoreFrontTag'Class (This).getCommand.compareTo (GLOBALS2_Package.VIEW)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
-                elsif (StoreFrontTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.EDIT)) = (0) then
+                elsif (StoreFrontTag'Class (This).getCommand.compareTo (GLOBALS2_Package.EDIT)) = (0) then
                     StoreFrontTag'Class (This).setName (To_Unbounded_String ("Edit Validation StoreFront View"));
                     StoreFrontTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.storefront.EditValidationStoreFrontView"));
                 elsif (StoreFrontTag'Class (This).getCommand.compareTo (This.commonStrings.UPDATE)) = (0) then
@@ -73,9 +75,9 @@ package body tags.admin.storefront.StoreFrontTag_Package is
                 elsif (StoreFrontTag'Class (This).getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
                     StoreFrontTag'Class (This).setName (To_Unbounded_String ("Delete Validation StoreFront View"));
                     StoreFrontTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.storefront.DeleteValidationStoreFrontView"));
-                elsif (StoreFrontTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) = (0) then
+                elsif (StoreFrontTag'Class (This).getCommand.compareTo (GLOBALS2_Package.BACKUP)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
-                elsif (StoreFrontTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) = (0) then
+                elsif (StoreFrontTag'Class (This).getCommand.compareTo (GLOBALS2_Package.RESTORE)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
                 elsif (StoreFrontTag'Class (This).getCommand.compareTo (This.commonStrings.DROP)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));

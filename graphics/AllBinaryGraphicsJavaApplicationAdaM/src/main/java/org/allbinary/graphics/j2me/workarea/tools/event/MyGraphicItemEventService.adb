@@ -82,7 +82,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
         listeners := listenerList.getListenerList;
         i := 0;
         while (i) < (listeners'Length) loop
-            if (listeners (i)) = (listeners ((i) + (1)).all'Tag) then
+            if (Java_Object_Access (listeners (i))) = (Java_Object_Access (listeners ((i) + (1)).all'Tag)) then
                 if (Java_Compare_To (evt.getCommand, MyGraphicItemEventService_Package.SELECT_Id)) = (0) then
                     MyGraphicItemEventListener_Access (listeners ((i) + (1))).highlight (evt);
                 elsif (Java_Compare_To (evt.getCommand, MyGraphicItemEventService_Package.DESELECT)) = (0) then

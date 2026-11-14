@@ -95,7 +95,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseUtil_Package i
 
    function getInstance return LicenseUtil_Access is
    begin
-        return LicenseUtil_Access (LicenseUtil_Package.instance);
+        return LicenseUtil_Package.instance;
    end getInstance;
 
    procedure init (This : in out LicenseUtil) is

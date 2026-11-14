@@ -41,7 +41,7 @@ package body org.allbinary.AndroidResources_Package is
 
    function getInstance return AndroidResources_Access is
    begin
-        return AndroidResources_Access (AndroidResources_Package.instance);
+        return AndroidResources_Package.instance;
    end getInstance;
 
 begin

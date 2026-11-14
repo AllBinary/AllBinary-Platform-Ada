@@ -40,9 +40,28 @@ with org.allbinary.animation.image.AlphaBaseProcessor_Package_References;
 with org.allbinary.animation.image.AlphaProcessor_Package; use org.allbinary.animation.image.AlphaProcessor_Package;
 with org.allbinary.animation.image.AlphaBaseProcessor_Package;
 with org.allbinary.animation.image.AlphaProcessor_Package;
+with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.animation.Animation_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.DirectionUtil_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.allbinary.math.FrameUtil_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.animation.RotationAnimation_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_Package is
 
@@ -241,7 +260,7 @@ package body org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimation_P
    begin
         canvasSurface := This.canvasSurfaceArray (This.bufferedImageIndex);
         canvasSurface.save;
-        This.imageRotationUtil.rotateImageCanvasSurfaceClear (This.originalImage, This.twoImages (This.bufferedImageIndex), canvasSurface, (This.angleInfo.getAngle) + (90));
+        This.imageRotationUtil.rotateImageCanvasSurfaceClear (This.originalImage, This.twoImages (This.bufferedImageIndex), canvasSurface, (Integer (This.angleInfo.getAngle)) + (90));
         This.alphaProcessor.setAlpha (This.imageModifierUtil, This.originalImage, This.twoImages (This.bufferedImageIndex), This.alphaP);
         This.imageRotationUtil.drawImage (This.originalImage, This.imageToShow, canvasSurface);
         canvasSurface.restore;

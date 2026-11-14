@@ -70,7 +70,7 @@ package body org.allbinary.string_Id.CommonSeps_Package is
 
    function getInstance return CommonSeps_Access is
    begin
-        return CommonSeps_Access (CommonSeps_Package.instance);
+        return CommonSeps_Package.instance;
    end getInstance;
 
 begin

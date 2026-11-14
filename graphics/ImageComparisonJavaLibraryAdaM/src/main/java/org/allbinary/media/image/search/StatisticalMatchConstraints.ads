@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.image.search.StatisticalMatchConstraints_Package;
 package org.allbinary.media.image.search.StatisticalMatchConstraints_Package_References is
    type StatisticalMatchConstraints_Access is access all org.allbinary.media.image.search.StatisticalMatchConstraints_Package.StatisticalMatchConstraints'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.image.search.StatisticalMatchConstraints_Package_Ref
    type StatisticalMatchConstraints_Access_Array_Access is access all StatisticalMatchConstraints_Access_Array;
    type StatisticalMatchConstraints_Access_Array_Access_Array is array (Natural range <>) of StatisticalMatchConstraints_Access_Array_Access;
    type StatisticalMatchConstraints_Access_Array_Access_Array_Access is access all StatisticalMatchConstraints_Access_Array_Access_Array;
+   type StatisticalMatchConstraints_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StatisticalMatchConstraints_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StatisticalMatchConstraints_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StatisticalMatchConstraints_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StatisticalMatchConstraints_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StatisticalMatchConstraints_Access_Array_Access is (if Value /= null and then Value.all in StatisticalMatchConstraints_Access_Array_Object'Class then StatisticalMatchConstraints_Access_Array_Object'Class (Value.all).Value else null);
+   type StatisticalMatchConstraints_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StatisticalMatchConstraints_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StatisticalMatchConstraints_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StatisticalMatchConstraints_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StatisticalMatchConstraints_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StatisticalMatchConstraints_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StatisticalMatchConstraints_Access_Array_Access_Array_Object'Class then StatisticalMatchConstraints_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.image.search.StatisticalMatchConstraints_Package_References;
 
 with org.allbinary.media.image.search.StatisticalMatchConstraints_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.media.image.search.StatisticalMatchConstraints_Package is
    function "=" (Left, Right : StatisticalMatchConstraints_Access_Array) return Boolean renames org.allbinary.media.image.search.StatisticalMatchConstraints_Package_References."=";
    subtype StatisticalMatchConstraints_Access_Array_Access is org.allbinary.media.image.search.StatisticalMatchConstraints_Package_References.StatisticalMatchConstraints_Access_Array_Access;
    function "=" (Left, Right : StatisticalMatchConstraints_Access_Array_Access) return Boolean renames org.allbinary.media.image.search.StatisticalMatchConstraints_Package_References."=";
+   function Java_Box (Value : StatisticalMatchConstraints_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.search.StatisticalMatchConstraints_Package_References.Java_Box;
+   function Java_Unbox_StatisticalMatchConstraints_Access_Array (Value : access Java_Object'Class) return StatisticalMatchConstraints_Access_Array_Access renames org.allbinary.media.image.search.StatisticalMatchConstraints_Package_References.Java_Unbox_StatisticalMatchConstraints_Access_Array;
    subtype StatisticalMatchConstraints_Access_Array_Access_Array is org.allbinary.media.image.search.StatisticalMatchConstraints_Package_References.StatisticalMatchConstraints_Access_Array_Access_Array;
    function "=" (Left, Right : StatisticalMatchConstraints_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.search.StatisticalMatchConstraints_Package_References."=";
    subtype StatisticalMatchConstraints_Access_Array_Access_Array_Access is org.allbinary.media.image.search.StatisticalMatchConstraints_Package_References.StatisticalMatchConstraints_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StatisticalMatchConstraints_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.search.StatisticalMatchConstraints_Package_References."=";
+   function Java_Box (Value : StatisticalMatchConstraints_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.search.StatisticalMatchConstraints_Package_References.Java_Box;
+   function Java_Unbox_StatisticalMatchConstraints_Access_Array_Access_Array (Value : access Java_Object'Class) return StatisticalMatchConstraints_Access_Array_Access_Array_Access renames org.allbinary.media.image.search.StatisticalMatchConstraints_Package_References.Java_Unbox_StatisticalMatchConstraints_Access_Array_Access_Array;
 
    type StatisticalMatchConstraints is new Java_Object with null record;
 

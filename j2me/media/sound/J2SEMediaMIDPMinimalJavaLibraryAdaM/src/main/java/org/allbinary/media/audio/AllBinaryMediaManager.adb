@@ -38,6 +38,7 @@ with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.audio.AudioContentTypeData_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.media.audio.BasicPlayer_Package;

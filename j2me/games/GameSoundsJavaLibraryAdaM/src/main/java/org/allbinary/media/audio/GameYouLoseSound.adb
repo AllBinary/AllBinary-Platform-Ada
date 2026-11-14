@@ -40,7 +40,7 @@ package body org.allbinary.media.audio.GameYouLoseSound_Package is
 
    function getInstance return Sound_Access is
    begin
-        return Sound_Access (GameYouLoseSound_Package.soundInterface);
+        return GameYouLoseSound_Package.soundInterface;
    end getInstance;
 
 begin

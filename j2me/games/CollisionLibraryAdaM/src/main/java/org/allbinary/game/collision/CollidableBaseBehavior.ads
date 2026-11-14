@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.collision.CollidableBaseBehavior_Package;
 package org.allbinary.game.collision.CollidableBaseBehavior_Package_References is
    type CollidableBaseBehavior_Access is access all org.allbinary.game.collision.CollidableBaseBehavior_Package.CollidableBaseBehavior'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.collision.CollidableBaseBehavior_Package_References i
    type CollidableBaseBehavior_Access_Array_Access is access all CollidableBaseBehavior_Access_Array;
    type CollidableBaseBehavior_Access_Array_Access_Array is array (Natural range <>) of CollidableBaseBehavior_Access_Array_Access;
    type CollidableBaseBehavior_Access_Array_Access_Array_Access is access all CollidableBaseBehavior_Access_Array_Access_Array;
+   type CollidableBaseBehavior_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CollidableBaseBehavior_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CollidableBaseBehavior_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CollidableBaseBehavior_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CollidableBaseBehavior_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CollidableBaseBehavior_Access_Array_Access is (if Value /= null and then Value.all in CollidableBaseBehavior_Access_Array_Object'Class then CollidableBaseBehavior_Access_Array_Object'Class (Value.all).Value else null);
+   type CollidableBaseBehavior_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CollidableBaseBehavior_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CollidableBaseBehavior_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CollidableBaseBehavior_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CollidableBaseBehavior_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CollidableBaseBehavior_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CollidableBaseBehavior_Access_Array_Access_Array_Object'Class then CollidableBaseBehavior_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.collision.CollidableBaseBehavior_Package_References;
 
 with org.allbinary.game.collision.CollidableBaseBehavior_Package_References;
@@ -146,10 +157,14 @@ package org.allbinary.game.collision.CollidableBaseBehavior_Package is
    function "=" (Left, Right : CollidableBaseBehavior_Access_Array) return Boolean renames org.allbinary.game.collision.CollidableBaseBehavior_Package_References."=";
    subtype CollidableBaseBehavior_Access_Array_Access is org.allbinary.game.collision.CollidableBaseBehavior_Package_References.CollidableBaseBehavior_Access_Array_Access;
    function "=" (Left, Right : CollidableBaseBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollidableBaseBehavior_Package_References."=";
+   function Java_Box (Value : CollidableBaseBehavior_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.collision.CollidableBaseBehavior_Package_References.Java_Box;
+   function Java_Unbox_CollidableBaseBehavior_Access_Array (Value : access Java_Object'Class) return CollidableBaseBehavior_Access_Array_Access renames org.allbinary.game.collision.CollidableBaseBehavior_Package_References.Java_Unbox_CollidableBaseBehavior_Access_Array;
    subtype CollidableBaseBehavior_Access_Array_Access_Array is org.allbinary.game.collision.CollidableBaseBehavior_Package_References.CollidableBaseBehavior_Access_Array_Access_Array;
    function "=" (Left, Right : CollidableBaseBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.collision.CollidableBaseBehavior_Package_References."=";
    subtype CollidableBaseBehavior_Access_Array_Access_Array_Access is org.allbinary.game.collision.CollidableBaseBehavior_Package_References.CollidableBaseBehavior_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CollidableBaseBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.collision.CollidableBaseBehavior_Package_References."=";
+   function Java_Box (Value : CollidableBaseBehavior_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.collision.CollidableBaseBehavior_Package_References.Java_Box;
+   function Java_Unbox_CollidableBaseBehavior_Access_Array_Access_Array (Value : access Java_Object'Class) return CollidableBaseBehavior_Access_Array_Access_Array_Access renames org.allbinary.game.collision.CollidableBaseBehavior_Package_References.Java_Unbox_CollidableBaseBehavior_Access_Array_Access_Array;
 
    type CollidableBaseBehavior is new Java_Object and CollidableInterface with record
       logUtil : LogUtil_Access;

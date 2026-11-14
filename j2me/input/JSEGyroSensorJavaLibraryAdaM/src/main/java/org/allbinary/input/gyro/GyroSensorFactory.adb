@@ -16,6 +16,26 @@
 with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
 with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References;
 with org.allbinary.input.gyro.NoGyroSensor_Package; use org.allbinary.input.gyro.NoGyroSensor_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+with org.allbinary.input.AllBinarySensor_Package;
+with org.allbinary.logic.math.BasicDecimal_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.input.Input_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+with org.allbinary.input.gyro.NoGyroSensor_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.math.Orientation_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.input.gyro.GyroSensorFactory_Package is
 
@@ -50,12 +70,12 @@ package body org.allbinary.input.gyro.GyroSensorFactory_Package is
    --  throws Exception
    procedure init is
    begin
-        GyroSensorFactory_Package.allBinaryGyroSensor := NoGyroSensor_Package.Create;
+        GyroSensorFactory_Package.allBinaryGyroSensor := AllBinaryOrientationSensor_Access (NoGyroSensor_Package.Create);
    end init;
 
    function getInstance return AllBinaryOrientationSensor_Access is
    begin
-        return AllBinaryOrientationSensor_Access (GyroSensorFactory_Package.allBinaryGyroSensor);
+        return GyroSensorFactory_Package.allBinaryGyroSensor;
    end getInstance;
 
 begin

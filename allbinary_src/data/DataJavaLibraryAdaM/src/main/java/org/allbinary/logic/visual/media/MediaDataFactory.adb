@@ -69,7 +69,7 @@ package body org.allbinary.logic.visual.media.MediaDataFactory_Package is
 
    function getInstance return MediaDataFactory_Access is
    begin
-        return MediaDataFactory_Access (MediaDataFactory_Package.instance);
+        return MediaDataFactory_Package.instance;
    end getInstance;
 
 begin

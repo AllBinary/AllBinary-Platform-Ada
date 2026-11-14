@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package;
 package org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_References is
    type InputImageIOInterfaceFactory_Access is access all org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package.InputImageIOInterfaceFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_Ref
    type InputImageIOInterfaceFactory_Access_Array_Access is access all InputImageIOInterfaceFactory_Access_Array;
    type InputImageIOInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of InputImageIOInterfaceFactory_Access_Array_Access;
    type InputImageIOInterfaceFactory_Access_Array_Access_Array_Access is access all InputImageIOInterfaceFactory_Access_Array_Access_Array;
+   type InputImageIOInterfaceFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InputImageIOInterfaceFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InputImageIOInterfaceFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InputImageIOInterfaceFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InputImageIOInterfaceFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InputImageIOInterfaceFactory_Access_Array_Access is (if Value /= null and then Value.all in InputImageIOInterfaceFactory_Access_Array_Object'Class then InputImageIOInterfaceFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type InputImageIOInterfaceFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InputImageIOInterfaceFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InputImageIOInterfaceFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InputImageIOInterfaceFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InputImageIOInterfaceFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InputImageIOInterfaceFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in InputImageIOInterfaceFactory_Access_Array_Access_Array_Object'Class then InputImageIOInterfaceFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_References;
 
 with org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_References;
@@ -69,10 +80,14 @@ package org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package is
    function "=" (Left, Right : InputImageIOInterfaceFactory_Access_Array) return Boolean renames org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_References."=";
    subtype InputImageIOInterfaceFactory_Access_Array_Access is org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_References.InputImageIOInterfaceFactory_Access_Array_Access;
    function "=" (Left, Right : InputImageIOInterfaceFactory_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_References."=";
+   function Java_Box (Value : InputImageIOInterfaceFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_References.Java_Box;
+   function Java_Unbox_InputImageIOInterfaceFactory_Access_Array (Value : access Java_Object'Class) return InputImageIOInterfaceFactory_Access_Array_Access renames org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_References.Java_Unbox_InputImageIOInterfaceFactory_Access_Array;
    subtype InputImageIOInterfaceFactory_Access_Array_Access_Array is org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_References.InputImageIOInterfaceFactory_Access_Array_Access_Array;
    function "=" (Left, Right : InputImageIOInterfaceFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_References."=";
    subtype InputImageIOInterfaceFactory_Access_Array_Access_Array_Access is org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_References.InputImageIOInterfaceFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InputImageIOInterfaceFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_References."=";
+   function Java_Box (Value : InputImageIOInterfaceFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_References.Java_Box;
+   function Java_Unbox_InputImageIOInterfaceFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return InputImageIOInterfaceFactory_Access_Array_Access_Array_Access renames org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package_References.Java_Unbox_InputImageIOInterfaceFactory_Access_Array_Access_Array;
 
    type InputImageIOInterfaceFactory is new Java_Object with null record;
 

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.communication.sql.AbSqlBean_Package;
 package org.allbinary.logic.communication.sql.AbSqlBean_Package_References is
    type AbSqlBean_Access is access all org.allbinary.logic.communication.sql.AbSqlBean_Package.AbSqlBean'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.communication.sql.AbSqlBean_Package_References is
    type AbSqlBean_Access_Array_Access is access all AbSqlBean_Access_Array;
    type AbSqlBean_Access_Array_Access_Array is array (Natural range <>) of AbSqlBean_Access_Array_Access;
    type AbSqlBean_Access_Array_Access_Array_Access is access all AbSqlBean_Access_Array_Access_Array;
+   type AbSqlBean_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AbSqlBean_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AbSqlBean_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AbSqlBean_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AbSqlBean_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AbSqlBean_Access_Array_Access is (if Value /= null and then Value.all in AbSqlBean_Access_Array_Object'Class then AbSqlBean_Access_Array_Object'Class (Value.all).Value else null);
+   type AbSqlBean_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AbSqlBean_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AbSqlBean_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AbSqlBean_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AbSqlBean_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AbSqlBean_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AbSqlBean_Access_Array_Access_Array_Object'Class then AbSqlBean_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.communication.sql.AbSqlBean_Package_References;
 
 with org.allbinary.logic.communication.sql.AbSqlBean_Package_References;
@@ -74,10 +85,14 @@ package org.allbinary.logic.communication.sql.AbSqlBean_Package is
    function "=" (Left, Right : AbSqlBean_Access_Array) return Boolean renames org.allbinary.logic.communication.sql.AbSqlBean_Package_References."=";
    subtype AbSqlBean_Access_Array_Access is org.allbinary.logic.communication.sql.AbSqlBean_Package_References.AbSqlBean_Access_Array_Access;
    function "=" (Left, Right : AbSqlBean_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlBean_Package_References."=";
+   function Java_Box (Value : AbSqlBean_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.sql.AbSqlBean_Package_References.Java_Box;
+   function Java_Unbox_AbSqlBean_Access_Array (Value : access Java_Object'Class) return AbSqlBean_Access_Array_Access renames org.allbinary.logic.communication.sql.AbSqlBean_Package_References.Java_Unbox_AbSqlBean_Access_Array;
    subtype AbSqlBean_Access_Array_Access_Array is org.allbinary.logic.communication.sql.AbSqlBean_Package_References.AbSqlBean_Access_Array_Access_Array;
    function "=" (Left, Right : AbSqlBean_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.sql.AbSqlBean_Package_References."=";
    subtype AbSqlBean_Access_Array_Access_Array_Access is org.allbinary.logic.communication.sql.AbSqlBean_Package_References.AbSqlBean_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AbSqlBean_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.AbSqlBean_Package_References."=";
+   function Java_Box (Value : AbSqlBean_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.sql.AbSqlBean_Package_References.Java_Box;
+   function Java_Unbox_AbSqlBean_Access_Array_Access_Array (Value : access Java_Object'Class) return AbSqlBean_Access_Array_Access_Array_Access renames org.allbinary.logic.communication.sql.AbSqlBean_Package_References.Java_Unbox_AbSqlBean_Access_Array_Access_Array;
 
    type AbSqlBean is new AbSqlRow with record
       AbSqlBean_Field_logUtil : LogUtil_Access;

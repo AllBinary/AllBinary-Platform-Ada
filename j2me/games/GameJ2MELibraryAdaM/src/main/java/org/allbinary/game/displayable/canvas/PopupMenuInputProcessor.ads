@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package;
 package org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References is
    type PopupMenuInputProcessor_Access is access all org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package.PopupMenuInputProcessor'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_Re
    type PopupMenuInputProcessor_Access_Array_Access is access all PopupMenuInputProcessor_Access_Array;
    type PopupMenuInputProcessor_Access_Array_Access_Array is array (Natural range <>) of PopupMenuInputProcessor_Access_Array_Access;
    type PopupMenuInputProcessor_Access_Array_Access_Array_Access is access all PopupMenuInputProcessor_Access_Array_Access_Array;
+   type PopupMenuInputProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PopupMenuInputProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PopupMenuInputProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PopupMenuInputProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PopupMenuInputProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PopupMenuInputProcessor_Access_Array_Access is (if Value /= null and then Value.all in PopupMenuInputProcessor_Access_Array_Object'Class then PopupMenuInputProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type PopupMenuInputProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PopupMenuInputProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PopupMenuInputProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PopupMenuInputProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PopupMenuInputProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PopupMenuInputProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PopupMenuInputProcessor_Access_Array_Access_Array_Object'Class then PopupMenuInputProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References;
 
 with org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References;
@@ -123,10 +134,14 @@ package org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package is
    function "=" (Left, Right : PopupMenuInputProcessor_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References."=";
    subtype PopupMenuInputProcessor_Access_Array_Access is org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References.PopupMenuInputProcessor_Access_Array_Access;
    function "=" (Left, Right : PopupMenuInputProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References."=";
+   function Java_Box (Value : PopupMenuInputProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References.Java_Box;
+   function Java_Unbox_PopupMenuInputProcessor_Access_Array (Value : access Java_Object'Class) return PopupMenuInputProcessor_Access_Array_Access renames org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References.Java_Unbox_PopupMenuInputProcessor_Access_Array;
    subtype PopupMenuInputProcessor_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References.PopupMenuInputProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : PopupMenuInputProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References."=";
    subtype PopupMenuInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References.PopupMenuInputProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PopupMenuInputProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References."=";
+   function Java_Box (Value : PopupMenuInputProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References.Java_Box;
+   function Java_Unbox_PopupMenuInputProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return PopupMenuInputProcessor_Access_Array_Access_Array_Access renames org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package_References.Java_Unbox_PopupMenuInputProcessor_Access_Array_Access_Array;
 
    type PopupMenuInputProcessor is new BasicMenuInputProcessor with record
       rectangleCollisionUtil : RectangleCollisionUtil_Access;

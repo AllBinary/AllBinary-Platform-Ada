@@ -105,7 +105,7 @@ package body org.allbinary.animation.NullRotationAnimationFactory_Package is
 
    function getFactoryInstance return NullRotationAnimationFactory_Access is
    begin
-        return NullRotationAnimationFactory_Access (NullRotationAnimationFactory_Package.NULL_ROTATION_ANIMATION_FACTORY);
+        return NullRotationAnimationFactory_Package.NULL_ROTATION_ANIMATION_FACTORY;
    end getFactoryInstance;
 
    function getInstance (This : in out NullRotationAnimationFactory; instanceId : Integer) return Animation_Access is

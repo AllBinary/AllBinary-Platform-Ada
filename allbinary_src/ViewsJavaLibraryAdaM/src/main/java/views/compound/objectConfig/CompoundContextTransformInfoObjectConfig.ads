@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package;
 package views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References is
    type CompoundContextTransformInfoObjectConfig_Access is access all views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package.CompoundContextTransformInfoObjectConfig'Class;
@@ -19,6 +20,16 @@ package views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Pac
    type CompoundContextTransformInfoObjectConfig_Access_Array_Access is access all CompoundContextTransformInfoObjectConfig_Access_Array;
    type CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array is array (Natural range <>) of CompoundContextTransformInfoObjectConfig_Access_Array_Access;
    type CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Access is access all CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array;
+   type CompoundContextTransformInfoObjectConfig_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CompoundContextTransformInfoObjectConfig_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CompoundContextTransformInfoObjectConfig_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CompoundContextTransformInfoObjectConfig_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CompoundContextTransformInfoObjectConfig_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CompoundContextTransformInfoObjectConfig_Access_Array_Access is (if Value /= null and then Value.all in CompoundContextTransformInfoObjectConfig_Access_Array_Object'Class then CompoundContextTransformInfoObjectConfig_Access_Array_Object'Class (Value.all).Value else null);
+   type CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Object'Class then CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References;
 
 with views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References;
@@ -100,10 +111,14 @@ package views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Pac
    function "=" (Left, Right : CompoundContextTransformInfoObjectConfig_Access_Array) return Boolean renames views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References."=";
    subtype CompoundContextTransformInfoObjectConfig_Access_Array_Access is views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References.CompoundContextTransformInfoObjectConfig_Access_Array_Access;
    function "=" (Left, Right : CompoundContextTransformInfoObjectConfig_Access_Array_Access) return Boolean renames views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References."=";
+   function Java_Box (Value : CompoundContextTransformInfoObjectConfig_Access_Array_Access) return Java_Object_Access renames views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References.Java_Box;
+   function Java_Unbox_CompoundContextTransformInfoObjectConfig_Access_Array (Value : access Java_Object'Class) return CompoundContextTransformInfoObjectConfig_Access_Array_Access renames views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References.Java_Unbox_CompoundContextTransformInfoObjectConfig_Access_Array;
    subtype CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array is views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References.CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array;
    function "=" (Left, Right : CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array) return Boolean renames views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References."=";
    subtype CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Access is views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References.CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Access) return Boolean renames views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References."=";
+   function Java_Box (Value : CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Access) return Java_Object_Access renames views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References.Java_Box;
+   function Java_Unbox_CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array (Value : access Java_Object'Class) return CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array_Access renames views.compound.objectConfig.CompoundContextTransformInfoObjectConfig_Package_References.Java_Unbox_CompoundContextTransformInfoObjectConfig_Access_Array_Access_Array;
 
    type CompoundContextTransformInfoObjectConfig is new GenericStoreTransformInfoObjectConfig with record
       logUtil : LogUtil_Access;

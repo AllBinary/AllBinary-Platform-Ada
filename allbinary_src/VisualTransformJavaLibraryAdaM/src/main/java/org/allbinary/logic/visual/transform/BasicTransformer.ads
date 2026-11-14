@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.visual.transform.BasicTransformer_Package;
 package org.allbinary.logic.visual.transform.BasicTransformer_Package_References is
    type BasicTransformer_Access is access all org.allbinary.logic.visual.transform.BasicTransformer_Package.BasicTransformer'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.visual.transform.BasicTransformer_Package_References
    type BasicTransformer_Access_Array_Access is access all BasicTransformer_Access_Array;
    type BasicTransformer_Access_Array_Access_Array is array (Natural range <>) of BasicTransformer_Access_Array_Access;
    type BasicTransformer_Access_Array_Access_Array_Access is access all BasicTransformer_Access_Array_Access_Array;
+   type BasicTransformer_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicTransformer_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicTransformer_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicTransformer_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicTransformer_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicTransformer_Access_Array_Access is (if Value /= null and then Value.all in BasicTransformer_Access_Array_Object'Class then BasicTransformer_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicTransformer_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicTransformer_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicTransformer_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicTransformer_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicTransformer_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicTransformer_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicTransformer_Access_Array_Access_Array_Object'Class then BasicTransformer_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.visual.transform.BasicTransformer_Package_References;
 
 with org.allbinary.logic.visual.transform.BasicTransformer_Package_References;
@@ -111,10 +122,14 @@ package org.allbinary.logic.visual.transform.BasicTransformer_Package is
    function "=" (Left, Right : BasicTransformer_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.BasicTransformer_Package_References."=";
    subtype BasicTransformer_Access_Array_Access is org.allbinary.logic.visual.transform.BasicTransformer_Package_References.BasicTransformer_Access_Array_Access;
    function "=" (Left, Right : BasicTransformer_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.BasicTransformer_Package_References."=";
+   function Java_Box (Value : BasicTransformer_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.BasicTransformer_Package_References.Java_Box;
+   function Java_Unbox_BasicTransformer_Access_Array (Value : access Java_Object'Class) return BasicTransformer_Access_Array_Access renames org.allbinary.logic.visual.transform.BasicTransformer_Package_References.Java_Unbox_BasicTransformer_Access_Array;
    subtype BasicTransformer_Access_Array_Access_Array is org.allbinary.logic.visual.transform.BasicTransformer_Package_References.BasicTransformer_Access_Array_Access_Array;
    function "=" (Left, Right : BasicTransformer_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.BasicTransformer_Package_References."=";
    subtype BasicTransformer_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.BasicTransformer_Package_References.BasicTransformer_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicTransformer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.BasicTransformer_Package_References."=";
+   function Java_Box (Value : BasicTransformer_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.BasicTransformer_Package_References.Java_Box;
+   function Java_Unbox_BasicTransformer_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicTransformer_Access_Array_Access_Array_Access renames org.allbinary.logic.visual.transform.BasicTransformer_Package_References.Java_Unbox_BasicTransformer_Access_Array_Access_Array;
 
    type BasicTransformer is new AbTransformer with record
       BasicTransformer_Field_logUtil : LogUtil_Access;

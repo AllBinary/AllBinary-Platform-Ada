@@ -49,6 +49,7 @@ with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
 with org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
@@ -337,7 +338,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
         sizeY := This.costArray (0)'Length;
         for column in 0 .. (sizeX) - 1 loop
             for row in 0 .. (sizeY) - 1 loop
-                discoveryCalculation := (Long_Long_Integer (This.mathUtil.abs_Id ((column) - (targetColumn)))) + (This.mathUtil.abs_Id ((row) - (targetRow)));
+                discoveryCalculation := (Long_Long_Integer (This.mathUtil.abs_Id ((column) - (targetColumn)))) + (Long_Long_Integer (This.mathUtil.abs_Id ((row) - (targetRow))));
                 node := This.costArray (column) (row);
                 node.pathFindingNodeCostInfoP.totalCostP := 0;
                 node.pathFindingNodeCostInfoP.costToEndP := discoveryCalculation;
@@ -364,7 +365,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
                     if (((((column) > (0)) and then ((row) > (0))) and then ((column) < (allBinaryTiledLayer.getColumns))) and then ((row) < (allBinaryTiledLayer.getRows))) and then (geographicMapInterface.isOnMap (basicGeographicMapCellPositionFactory.getAt (column, row))) then
                         neighbor := This.costArray (column) (row);
                         if This.closedSet.contains (neighbor) then
-                            goto Continue_N70418;
+                            goto Continue_N70437;
                         end if;
                         neighborInfo := PathFindingNodeCostInfo_Access (neighbor.pathFindingNodeCostInfoP);
                         calculatedCost := ((neighborInfo.costToEndP) + (neighborInfo.costFromStartP)) + (current.pathFindingNodeCostInfoP.totalCostP);
@@ -378,7 +379,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
                             end if;
                         end if;
                     end if;
-                    <<Continue_N70418>> null;
+                    <<Continue_N70437>> null;
                 end loop;
             end loop;
             exit when not (not (This.openPriorityQueue.isEmpty));
@@ -411,7 +412,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
         sizeY := This.costArray (0)'Length;
         for column in 0 .. (sizeX) - 1 loop
             for row in 0 .. (sizeY) - 1 loop
-                discoveryCalculation := (Long_Long_Integer (This.mathUtil.abs_Id ((column) - (targetColumn)))) + (This.mathUtil.abs_Id ((row) - (targetRow)));
+                discoveryCalculation := (Long_Long_Integer (This.mathUtil.abs_Id ((column) - (targetColumn)))) + (Long_Long_Integer (This.mathUtil.abs_Id ((row) - (targetRow))));
                 node := This.costArray (column) (row);
                 node.pathFindingNodeCostInfoP.totalCostP := 0;
                 node.pathFindingNodeCostInfoP.costToEndP := discoveryCalculation;
@@ -459,7 +460,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
                     if (((((column) > (0)) and then ((row) > (0))) and then ((column) < (allBinaryTiledLayer.getColumns))) and then ((row) < (allBinaryTiledLayer.getRows))) and then (geographicMapInterface.isOnMap (basicGeographicMapCellPositionFactory.getAt (column, row))) then
                         neighbor := This.costArray (column) (row);
                         if This.closedSet.contains (neighbor) then
-                            goto Continue_N72964;
+                            goto Continue_N72989;
                         end if;
                         neighborInfo := PathFindingNodeCostInfo_Access (neighbor.pathFindingNodeCostInfoP);
                         calculatedCost := ((neighborInfo.costToEndP) + (neighborInfo.costFromStartP)) + (current.pathFindingNodeCostInfoP.totalCostP);
@@ -473,7 +474,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
                             end if;
                         end if;
                     end if;
-                    <<Continue_N72964>> null;
+                    <<Continue_N72989>> null;
                 end loop;
             end loop;
             total := total + 1;

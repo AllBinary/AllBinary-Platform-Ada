@@ -1,5 +1,6 @@
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
 package org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References is
    type MultipleScrollSelectionHorizontalForm_Access is access all org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package.MultipleScrollSelectionHorizontalForm'Class;
@@ -7,6 +8,16 @@ package org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Packag
    type MultipleScrollSelectionHorizontalForm_Access_Array_Access is access all MultipleScrollSelectionHorizontalForm_Access_Array;
    type MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array is array (Natural range <>) of MultipleScrollSelectionHorizontalForm_Access_Array_Access;
    type MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access is access all MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array;
+   type MultipleScrollSelectionHorizontalForm_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MultipleScrollSelectionHorizontalForm_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MultipleScrollSelectionHorizontalForm_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MultipleScrollSelectionHorizontalForm_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MultipleScrollSelectionHorizontalForm_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MultipleScrollSelectionHorizontalForm_Access_Array_Access is (if Value /= null and then Value.all in MultipleScrollSelectionHorizontalForm_Access_Array_Object'Class then MultipleScrollSelectionHorizontalForm_Access_Array_Object'Class (Value.all).Value else null);
+   type MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Object'Class then MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References;
 
 with org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References;
@@ -127,10 +138,14 @@ package org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Packag
    function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
    subtype MultipleScrollSelectionHorizontalForm_Access_Array_Access is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array_Access;
    function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   function Java_Box (Value : MultipleScrollSelectionHorizontalForm_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.Java_Box;
+   function Java_Unbox_MultipleScrollSelectionHorizontalForm_Access_Array (Value : access Java_Object'Class) return MultipleScrollSelectionHorizontalForm_Access_Array_Access renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.Java_Unbox_MultipleScrollSelectionHorizontalForm_Access_Array;
    subtype MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array;
    function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
    subtype MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References."=";
+   function Java_Box (Value : MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.Java_Box;
+   function Java_Unbox_MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array (Value : access Java_Object'Class) return MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array_Access renames org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package_References.Java_Unbox_MultipleScrollSelectionHorizontalForm_Access_Array_Access_Array;
 
    type MultipleScrollSelectionHorizontalForm is new ScrollSelectionForm and UpdateMyFontInterface with record
       rectPaintable : Paintable_Access;
@@ -157,6 +172,7 @@ package org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Packag
 
 end org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
 package org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package_References is
    type MultipleScrollSelectionFormHorizontalPaintable_Access is access all org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package.MultipleScrollSelectionFormHorizontalPaintable'Class;
@@ -164,6 +180,16 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintab
    type MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access is access all MultipleScrollSelectionFormHorizontalPaintable_Access_Array;
    type MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array is array (Natural range <>) of MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access;
    type MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Access is access all MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array;
+   type MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MultipleScrollSelectionFormHorizontalPaintable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access is (if Value /= null and then Value.all in MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Object'Class then MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Object'Class (Value.all).Value else null);
+   type MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Object'Class then MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package_References;
 
 with org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package_References;
@@ -296,10 +322,14 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintab
    function "=" (Left, Right : MultipleScrollSelectionFormHorizontalPaintable_Access_Array) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package_References."=";
    subtype MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access is org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package_References.MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access;
    function "=" (Left, Right : MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package_References."=";
+   function Java_Box (Value : MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package_References.Java_Box;
+   function Java_Unbox_MultipleScrollSelectionFormHorizontalPaintable_Access_Array (Value : access Java_Object'Class) return MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access renames org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package_References.Java_Unbox_MultipleScrollSelectionFormHorizontalPaintable_Access_Array;
    subtype MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array is org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package_References.MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array;
    function "=" (Left, Right : MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package_References."=";
    subtype MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Access is org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package_References.MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package_References."=";
+   function Java_Box (Value : MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package_References.Java_Box;
+   function Java_Unbox_MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array (Value : access Java_Object'Class) return MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array_Access renames org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package_References.Java_Unbox_MultipleScrollSelectionFormHorizontalPaintable_Access_Array_Access_Array;
 
    type MultipleScrollSelectionFormHorizontalPaintable is new ItemIndexPaintable with record
       multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access;
@@ -312,6 +342,7 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintab
 
 end org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPaintable_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
 package org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package_References is
    type MultipleScrollSelectionFormVerticalPaintable_Access is access all org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package.MultipleScrollSelectionFormVerticalPaintable'Class;
@@ -319,6 +350,16 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable
    type MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access is access all MultipleScrollSelectionFormVerticalPaintable_Access_Array;
    type MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array is array (Natural range <>) of MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access;
    type MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Access is access all MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array;
+   type MultipleScrollSelectionFormVerticalPaintable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MultipleScrollSelectionFormVerticalPaintable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MultipleScrollSelectionFormVerticalPaintable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access is (if Value /= null and then Value.all in MultipleScrollSelectionFormVerticalPaintable_Access_Array_Object'Class then MultipleScrollSelectionFormVerticalPaintable_Access_Array_Object'Class (Value.all).Value else null);
+   type MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Object'Class then MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package_References;
 
 with org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package_References;
@@ -451,10 +492,14 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable
    function "=" (Left, Right : MultipleScrollSelectionFormVerticalPaintable_Access_Array) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package_References."=";
    subtype MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access is org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package_References.MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access;
    function "=" (Left, Right : MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package_References."=";
+   function Java_Box (Value : MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package_References.Java_Box;
+   function Java_Unbox_MultipleScrollSelectionFormVerticalPaintable_Access_Array (Value : access Java_Object'Class) return MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access renames org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package_References.Java_Unbox_MultipleScrollSelectionFormVerticalPaintable_Access_Array;
    subtype MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array is org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package_References.MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array;
    function "=" (Left, Right : MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package_References."=";
    subtype MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Access is org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package_References.MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package_References."=";
+   function Java_Box (Value : MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package_References.Java_Box;
+   function Java_Unbox_MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array (Value : access Java_Object'Class) return MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array_Access renames org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package_References.Java_Unbox_MultipleScrollSelectionFormVerticalPaintable_Access_Array_Access_Array;
 
    type MultipleScrollSelectionFormVerticalPaintable is new ItemIndexPaintable with record
       multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access;
@@ -467,6 +512,7 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable
 
 end org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPaintable_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package;
 package org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package_References is
    type MultipleScrollSelectionFormRectPaintable_Access is access all org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package.MultipleScrollSelectionFormRectPaintable'Class;
@@ -474,6 +520,16 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Pac
    type MultipleScrollSelectionFormRectPaintable_Access_Array_Access is access all MultipleScrollSelectionFormRectPaintable_Access_Array;
    type MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array is array (Natural range <>) of MultipleScrollSelectionFormRectPaintable_Access_Array_Access;
    type MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array_Access is access all MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array;
+   type MultipleScrollSelectionFormRectPaintable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MultipleScrollSelectionFormRectPaintable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MultipleScrollSelectionFormRectPaintable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MultipleScrollSelectionFormRectPaintable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MultipleScrollSelectionFormRectPaintable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MultipleScrollSelectionFormRectPaintable_Access_Array_Access is (if Value /= null and then Value.all in MultipleScrollSelectionFormRectPaintable_Access_Array_Object'Class then MultipleScrollSelectionFormRectPaintable_Access_Array_Object'Class (Value.all).Value else null);
+   type MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array_Object'Class then MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package_References;
 
 with org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package_References;
@@ -606,10 +662,14 @@ package org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Pac
    function "=" (Left, Right : MultipleScrollSelectionFormRectPaintable_Access_Array) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package_References."=";
    subtype MultipleScrollSelectionFormRectPaintable_Access_Array_Access is org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package_References.MultipleScrollSelectionFormRectPaintable_Access_Array_Access;
    function "=" (Left, Right : MultipleScrollSelectionFormRectPaintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package_References."=";
+   function Java_Box (Value : MultipleScrollSelectionFormRectPaintable_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package_References.Java_Box;
+   function Java_Unbox_MultipleScrollSelectionFormRectPaintable_Access_Array (Value : access Java_Object'Class) return MultipleScrollSelectionFormRectPaintable_Access_Array_Access renames org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package_References.Java_Unbox_MultipleScrollSelectionFormRectPaintable_Access_Array;
    subtype MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array is org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package_References.MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array;
    function "=" (Left, Right : MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package_References."=";
    subtype MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array_Access is org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package_References.MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package_References."=";
+   function Java_Box (Value : MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package_References.Java_Box;
+   function Java_Unbox_MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array (Value : access Java_Object'Class) return MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array_Access renames org.allbinary.graphics.form.MultipleScrollSelectionFormRectPaintable_Package_References.Java_Unbox_MultipleScrollSelectionFormRectPaintable_Access_Array_Access_Array;
 
    type MultipleScrollSelectionFormRectPaintable is new Paintable with record
       multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access;

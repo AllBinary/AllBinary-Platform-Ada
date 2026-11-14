@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with tags.admin.inventory.InventoryTag_Package;
 package tags.admin.inventory.InventoryTag_Package_References is
    type InventoryTag_Access is access all tags.admin.inventory.InventoryTag_Package.InventoryTag'Class;
@@ -19,6 +20,16 @@ package tags.admin.inventory.InventoryTag_Package_References is
    type InventoryTag_Access_Array_Access is access all InventoryTag_Access_Array;
    type InventoryTag_Access_Array_Access_Array is array (Natural range <>) of InventoryTag_Access_Array_Access;
    type InventoryTag_Access_Array_Access_Array_Access is access all InventoryTag_Access_Array_Access_Array;
+   type InventoryTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InventoryTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InventoryTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InventoryTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InventoryTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InventoryTag_Access_Array_Access is (if Value /= null and then Value.all in InventoryTag_Access_Array_Object'Class then InventoryTag_Access_Array_Object'Class (Value.all).Value else null);
+   type InventoryTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InventoryTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InventoryTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InventoryTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InventoryTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InventoryTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in InventoryTag_Access_Array_Access_Array_Object'Class then InventoryTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end tags.admin.inventory.InventoryTag_Package_References;
 
 with tags.admin.inventory.InventoryTag_Package_References;
@@ -47,10 +58,14 @@ package tags.admin.inventory.InventoryTag_Package is
    function "=" (Left, Right : InventoryTag_Access_Array) return Boolean renames tags.admin.inventory.InventoryTag_Package_References."=";
    subtype InventoryTag_Access_Array_Access is tags.admin.inventory.InventoryTag_Package_References.InventoryTag_Access_Array_Access;
    function "=" (Left, Right : InventoryTag_Access_Array_Access) return Boolean renames tags.admin.inventory.InventoryTag_Package_References."=";
+   function Java_Box (Value : InventoryTag_Access_Array_Access) return Java_Object_Access renames tags.admin.inventory.InventoryTag_Package_References.Java_Box;
+   function Java_Unbox_InventoryTag_Access_Array (Value : access Java_Object'Class) return InventoryTag_Access_Array_Access renames tags.admin.inventory.InventoryTag_Package_References.Java_Unbox_InventoryTag_Access_Array;
    subtype InventoryTag_Access_Array_Access_Array is tags.admin.inventory.InventoryTag_Package_References.InventoryTag_Access_Array_Access_Array;
    function "=" (Left, Right : InventoryTag_Access_Array_Access_Array) return Boolean renames tags.admin.inventory.InventoryTag_Package_References."=";
    subtype InventoryTag_Access_Array_Access_Array_Access is tags.admin.inventory.InventoryTag_Package_References.InventoryTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InventoryTag_Access_Array_Access_Array_Access) return Boolean renames tags.admin.inventory.InventoryTag_Package_References."=";
+   function Java_Box (Value : InventoryTag_Access_Array_Access_Array_Access) return Java_Object_Access renames tags.admin.inventory.InventoryTag_Package_References.Java_Box;
+   function Java_Unbox_InventoryTag_Access_Array_Access_Array (Value : access Java_Object'Class) return InventoryTag_Access_Array_Access_Array_Access renames tags.admin.inventory.InventoryTag_Package_References.Java_Unbox_InventoryTag_Access_Array_Access_Array;
 
    type InventoryTag is new StoreValidationTransformTag with null record;
 

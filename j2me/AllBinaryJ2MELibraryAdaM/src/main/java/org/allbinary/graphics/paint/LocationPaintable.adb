@@ -50,7 +50,7 @@ package body org.allbinary.graphics.paint.LocationPaintable_Package is
 
    function getInstance return LocationPaintable_Access is
    begin
-        return LocationPaintable_Access (LocationPaintable_Package.instance);
+        return LocationPaintable_Package.instance;
    end getInstance;
 
    procedure paintXY (This : in out LocationPaintable; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is

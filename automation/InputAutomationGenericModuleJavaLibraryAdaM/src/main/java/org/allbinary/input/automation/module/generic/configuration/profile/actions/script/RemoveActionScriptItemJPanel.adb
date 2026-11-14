@@ -75,7 +75,6 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       genericProfileActionJPanel : constant GenericProfileActionJPanel_Access := GenericProfileActionJPanel_Access (genericProfileActionJPanel_Param);
       profileActionScriptConditionInterface : constant ProfileActionScriptConditionInterface_Access := ProfileActionScriptConditionInterface_Access (profileActionScriptConditionInterface_Param);
    begin
-      Panel_Package.Initialize (This);
       Initialize_Fields (This);
         RemoveActionScriptItemJPanel'Class (This).initComponents;
         This.genericProfileActionJPanel := genericProfileActionJPanel;

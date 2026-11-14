@@ -54,7 +54,7 @@ package body org.allbinary.thread.PathFindingThreadPool_Package is
 
    function getInstance return ThreadPool_Access is
    begin
-        return ThreadPool_Access (PathFindingThreadPool_Package.instance);
+        return PathFindingThreadPool_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out PathFindingThreadPool'Class; poolName : Unbounded_String; numThreads : Integer; priority : Integer) is

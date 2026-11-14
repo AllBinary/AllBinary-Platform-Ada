@@ -37,7 +37,7 @@ package body org.allbinary.android.input.motion.NoMotionEventProcessor_Package i
 
    function getInstance return MotionEventProcessor_Access is
    begin
-        return MotionEventProcessor_Access (NoMotionEventProcessor_Package.SINGLETON);
+        return NoMotionEventProcessor_Package.SINGLETON;
    end getInstance;
 
 begin

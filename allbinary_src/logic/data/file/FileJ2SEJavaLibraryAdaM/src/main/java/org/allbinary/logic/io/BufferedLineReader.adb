@@ -72,6 +72,12 @@ package body org.allbinary.logic.io.BufferedLineReader_Package is
         return This.tmpIn.readLine;
    end readLine;
 
+   --  throws Exception
+   function ready (This : in out BufferedLineReader) return Boolean is
+   begin
+        return This.tmpIn.ready;
+   end ready;
+
    function getSize (This : in out BufferedLineReader) return Long_Long_Integer is
    begin
         return 0;

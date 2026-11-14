@@ -20,6 +20,7 @@ with org.allbinary.business.user.role.BasicUserRole_Package; use org.allbinary.b
 with org.allbinary.business.user.role.BasicUserRole_Package_References;
 with org.allbinary.business.user.role.BasicUserRoleData_Package; use org.allbinary.business.user.role.BasicUserRoleData_Package;
 with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
 
 package body org.allbinary.logic.communication.http.request.session.BasicWeblisketSession_Package is
@@ -29,6 +30,7 @@ package body org.allbinary.logic.communication.http.request.session.BasicWeblisk
    package PaymentGatewayData_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
    package BasicUserRoleData_Package renames Standard.org.allbinary.business.user.role.BasicUserRoleData_Package;
    package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    subtype BasicUserRole_Access is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access;
    function "=" (Left, Right : BasicUserRole_Access) return Boolean renames org.allbinary.business.user.role.BasicUserRole_Package_References."=";
    subtype BasicUserRole_Access_Array is org.allbinary.business.user.role.BasicUserRole_Package_References.BasicUserRole_Access_Array;
@@ -112,7 +114,7 @@ package body org.allbinary.logic.communication.http.request.session.BasicWeblisk
 
    function getWebAppPath (This : in out BasicWeblisketSession) return Unbounded_String is
    begin
-        return Java_Unbox (This.session.getAttribute (org_Package.allbinary.globals.GLOBALS2.WEBAPPPATH));
+        return Java_Unbox (This.session.getAttribute (GLOBALS2_Package.WEBAPPPATH));
    end getWebAppPath;
 
    function getUserName (This : in out BasicWeblisketSession) return Unbounded_String is

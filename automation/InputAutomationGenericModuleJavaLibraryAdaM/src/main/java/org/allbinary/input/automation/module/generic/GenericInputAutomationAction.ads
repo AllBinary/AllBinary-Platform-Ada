@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package;
 package org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package_References is
    type GenericInputAutomationAction_Access is access all org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package.GenericInputAutomationAction'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.module.generic_Id.GenericInputAutomationA
    type GenericInputAutomationAction_Access_Array_Access is access all GenericInputAutomationAction_Access_Array;
    type GenericInputAutomationAction_Access_Array_Access_Array is array (Natural range <>) of GenericInputAutomationAction_Access_Array_Access;
    type GenericInputAutomationAction_Access_Array_Access_Array_Access is access all GenericInputAutomationAction_Access_Array_Access_Array;
+   type GenericInputAutomationAction_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GenericInputAutomationAction_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GenericInputAutomationAction_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GenericInputAutomationAction_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GenericInputAutomationAction_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GenericInputAutomationAction_Access_Array_Access is (if Value /= null and then Value.all in GenericInputAutomationAction_Access_Array_Object'Class then GenericInputAutomationAction_Access_Array_Object'Class (Value.all).Value else null);
+   type GenericInputAutomationAction_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GenericInputAutomationAction_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GenericInputAutomationAction_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GenericInputAutomationAction_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GenericInputAutomationAction_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GenericInputAutomationAction_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GenericInputAutomationAction_Access_Array_Access_Array_Object'Class then GenericInputAutomationAction_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package_References;
 
 with org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package_References;
@@ -59,10 +70,14 @@ package org.allbinary.input.automation.module.generic_Id.GenericInputAutomationA
    function "=" (Left, Right : GenericInputAutomationAction_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package_References."=";
    subtype GenericInputAutomationAction_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package_References.GenericInputAutomationAction_Access_Array_Access;
    function "=" (Left, Right : GenericInputAutomationAction_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package_References."=";
+   function Java_Box (Value : GenericInputAutomationAction_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package_References.Java_Box;
+   function Java_Unbox_GenericInputAutomationAction_Access_Array (Value : access Java_Object'Class) return GenericInputAutomationAction_Access_Array_Access renames org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package_References.Java_Unbox_GenericInputAutomationAction_Access_Array;
    subtype GenericInputAutomationAction_Access_Array_Access_Array is org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package_References.GenericInputAutomationAction_Access_Array_Access_Array;
    function "=" (Left, Right : GenericInputAutomationAction_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package_References."=";
    subtype GenericInputAutomationAction_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package_References.GenericInputAutomationAction_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GenericInputAutomationAction_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package_References."=";
+   function Java_Box (Value : GenericInputAutomationAction_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package_References.Java_Box;
+   function Java_Unbox_GenericInputAutomationAction_Access_Array_Access_Array (Value : access Java_Object'Class) return GenericInputAutomationAction_Access_Array_Access_Array_Access renames org.allbinary.input.automation.module.generic_Id.GenericInputAutomationAction_Package_References.Java_Unbox_GenericInputAutomationAction_Access_Array_Access_Array;
 
    type GenericInputAutomationAction is new Java_Object and InputAutomationActionInterface with null record;
 

@@ -150,7 +150,7 @@ package body org.allbinary.graphics.form.PaintableForm_Package is
 
    function getNullPaintableForm return PaintableForm_Access is
    begin
-        if (PaintableForm_Package.NULL_PAINTABLE_FORM) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (PaintableForm_Package.NULL_PAINTABLE_FORM)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             PaintableForm_Package.NULL_PAINTABLE_FORM := Java_Object_Access (PaintableForm_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, new ABCustomItem_Access_Array'(0 .. (0) - 1 => null), BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE));
         end if;
         return PaintableForm_Access (PaintableForm_Package.NULL_PAINTABLE_FORM);

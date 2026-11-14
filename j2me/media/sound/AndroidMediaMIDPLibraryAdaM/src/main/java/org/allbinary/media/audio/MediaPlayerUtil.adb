@@ -71,7 +71,7 @@ package body org.allbinary.media.audio.MediaPlayerUtil_Package is
 
    function getInstance return MediaPlayerUtil_Access is
    begin
-        return MediaPlayerUtil_Access (MediaPlayerUtil_Package.instance);
+        return MediaPlayerUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

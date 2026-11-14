@@ -81,7 +81,7 @@ package body org.allbinary.graphics.OpenGLBitmapFactory_Package is
 
    function getInstance return OpenGLBitmapFactory_Access is
    begin
-        return OpenGLBitmapFactory_Access (OpenGLBitmapFactory_Package.instance);
+        return OpenGLBitmapFactory_Package.instance;
    end getInstance;
 
    function createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Var_Param : access Config_Package.Config'Class) return OpenGLBitmap_Access is

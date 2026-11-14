@@ -92,7 +92,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
    --  throws Exception
    function getInstance return InputRobotFactory_Access is
    begin
-        return InputRobotFactory_Access (InputRobotFactory_Package.inputRobotFactory_Var);
+        return InputRobotFactory_Package.inputRobotFactory_Var;
    end getInstance;
 
    procedure Initialize (This : in out InputRobotFactory'Class) is
@@ -219,7 +219,7 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
         inputRobotArray := set.toArray;
         size := inputRobotArray'Length;
         for index in 0 .. (size) - 1 loop
-            inputRobotInterface := InputRobotInterface_Access (InputRobotFactory'Class (This).get (Java_Unbox (inputRobotArray (index))));
+            inputRobotInterface := InputRobotFactory'Class (This).get (Java_Unbox (inputRobotArray (index)));
             if InterfaceUtil_Package.isImplemented (SecuredNativeLibraryInterface_Package.SecuredNativeLibraryInterface'Tag, inputRobotInterface) then
                 This.logUtil.putF (To_Unbounded_String ("Unloading Library: ") & inputRobotInterface.getName, InputRobotFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("unloadLibraries"));
                 securedNativeLibraryInterface := SecuredNativeLibraryInterface_Access (inputRobotInterface);

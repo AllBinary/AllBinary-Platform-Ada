@@ -77,7 +77,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
 
    function getInstance return Directory_Access is
    begin
-        return Directory_Access (Directory_Package.instance);
+        return Directory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out Directory'Class) is
@@ -138,7 +138,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
             if (existingDirectoryFile.list'Length) > (0) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Did not remove category: ") & existingDirectory & To_Unbounded_String (" because files exist")));
             elsif existingDirectoryFile.delete then
-                PreLogUtil_Package.put (To_Unbounded_String ("Successfully Removed: ") & existingDirectory, Java_Box (To_Unbounded_String ("Directory")), To_Unbounded_String ("remove"));
+                PreLogUtil_Package.putS (To_Unbounded_String ("Successfully Removed: ") & existingDirectory, Java_Box (To_Unbounded_String ("Directory")), To_Unbounded_String ("remove"));
             end if;
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Category Directory Is Missing:") & existingDirectory));

@@ -69,7 +69,7 @@ package body org.allbinary.input.automation.module.generic_Id.InputAutomationGen
 
    function getInstance return InputAutomationGenericModuleServiceFactory_Access is
    begin
-        return InputAutomationGenericModuleServiceFactory_Access (InputAutomationGenericModuleServiceFactory_Package.inputAutomationGenericModuleServiceFactory_Var);
+        return InputAutomationGenericModuleServiceFactory_Package.inputAutomationGenericModuleServiceFactory_Var;
    end getInstance;
 
 begin

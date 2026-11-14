@@ -79,7 +79,7 @@ package body org.allbinary.business.installer.InitializerData_Package is
 
    function getInstance return InitializerData_Access is
    begin
-        return InitializerData_Access (InitializerData_Package.instance);
+        return InitializerData_Package.instance;
    end getInstance;
 
    function getJdbcDriverSolutionInfo (This : in out InitializerData) return Unbounded_String is

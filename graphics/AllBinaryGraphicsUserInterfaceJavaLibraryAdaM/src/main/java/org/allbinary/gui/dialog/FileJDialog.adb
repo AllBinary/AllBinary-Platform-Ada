@@ -17,6 +17,7 @@ with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_
 with java.io.File_Package; use java.io.File_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with org.jdesktop.layout.GroupLayout_Package; use org.jdesktop.layout.GroupLayout_Package;
 with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package; use org.allbinary.gui.dialog.FileJDialogListenerInterface_Package;
 with org.allbinary.gui.dialog.FileJDialogListenerInterface_Package_References;
 with org.allbinary.string_Id.CommonSeps_Package;
@@ -33,6 +34,7 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
 
    package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    package File_Package renames Standard.java.io.File_Package;
+   package GroupLayout_Package renames Standard.org.jdesktop.layout.GroupLayout_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -64,7 +66,7 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
 
    procedure Initialize (This : in out FileJDialog'Class) is
    begin
-        JDialog_Package.Initialize (This);
+        null;
         Initialize_Fields (This);
         FileJDialog'Class (This).initComponents;
         FileJDialog'Class (This).getJFileChooser1.setMultiSelectionEnabled (True);
@@ -80,7 +82,7 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
    procedure Initialize (This : in out FileJDialog'Class; parent_Param : access Frame_Package.Frame'Class; modal : Boolean) is
       parent : constant Frame_Access := Frame_Access (parent_Param);
    begin
-        JDialog_Package.Initialize (This, parent, modal);
+        null;
         Initialize_Fields (This);
         FileJDialog'Class (This).initComponents;
         FileJDialog'Class (This).getJFileChooser1.setMultiSelectionEnabled (True);
@@ -103,7 +105,7 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
       layout : GroupLayout_Access;
    begin
         This.jFileChooser1 := JFileChooser_Package.Create;
-        FileJDialog'Class (This).setDefaultCloseOperation (javax_Package.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        FileJDialog'Class (This).setDefaultCloseOperation (WindowConstants_Package.DISPOSE_ON_CLOSE);
         This.jFileChooser1.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
@@ -114,8 +116,8 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
 );
         layout := GroupLayout_Package.Create (FileJDialog'Class (This).getContentPane);
         FileJDialog'Class (This).getContentPane.setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup.addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last).add (This.jFileChooser1, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addContainerGap));
-        layout.setVerticalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (layout.createSequentialGroup.addContainerGap.add (This.jFileChooser1, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 357, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last)));
+        layout.setHorizontalGroup (layout.createParallelGroup (GroupLayout_Package.LEADING).add (GroupLayout_Package.TRAILING, layout.createSequentialGroup.addContainerGap (GroupLayout_Package.DEFAULT_SIZE, Short_Integer'Last).add (This.jFileChooser1, GroupLayout_Package.PREFERRED_SIZE, GroupLayout_Package.DEFAULT_SIZE, GroupLayout_Package.PREFERRED_SIZE).addContainerGap));
+        layout.setVerticalGroup (layout.createParallelGroup (GroupLayout_Package.LEADING).add (layout.createSequentialGroup.addContainerGap.add (This.jFileChooser1, GroupLayout_Package.PREFERRED_SIZE, 357, GroupLayout_Package.PREFERRED_SIZE).addContainerGap (GroupLayout_Package.DEFAULT_SIZE, Short_Integer'Last)));
         FileJDialog'Class (This).pack;
    end initComponents;
 
@@ -137,7 +139,7 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
 
    procedure main (args : Unbounded_String_Array_Access) is
    begin
-        java_Package.awt.EventQueue.invokeLater (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
+        EventQueue_Package.invokeLater (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure run (This : in out ) is
 --     begin

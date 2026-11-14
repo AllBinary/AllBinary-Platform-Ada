@@ -97,7 +97,7 @@ package body org.allbinary.bundle.logic.preloader.AllBinaryPreloaderActivator_Pa
 
    function getBundleContext return BundleContext_Access is
    begin
-        return BundleContext_Access (AllBinaryPreloaderActivator_Package.context);
+        return AllBinaryPreloaderActivator_Package.context;
    end getBundleContext;
 
    --  throws Exception

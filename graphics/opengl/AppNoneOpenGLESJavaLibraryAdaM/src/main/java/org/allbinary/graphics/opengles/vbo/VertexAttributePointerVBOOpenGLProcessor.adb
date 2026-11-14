@@ -37,7 +37,7 @@ package body org.allbinary.graphics.opengles.vbo.VertexAttributePointerVBOOpenGL
 
    function getInstance return VertexAttributePointerVBOOpenGLProcessor_Access is
    begin
-        return VertexAttributePointerVBOOpenGLProcessor_Access (VertexAttributePointerVBOOpenGLProcessor_Package.instance);
+        return VertexAttributePointerVBOOpenGLProcessor_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out VertexAttributePointerVBOOpenGLProcessor'Class) is

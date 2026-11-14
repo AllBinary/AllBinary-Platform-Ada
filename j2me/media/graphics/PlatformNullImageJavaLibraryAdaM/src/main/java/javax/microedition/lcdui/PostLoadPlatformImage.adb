@@ -40,7 +40,7 @@ package body javax.microedition.lcdui.PostLoadPlatformImage_Package is
 
    function getInstance return PostLoadPlatformImage_Access is
    begin
-        return PostLoadPlatformImage_Access (PostLoadPlatformImage_Package.instance);
+        return PostLoadPlatformImage_Package.instance;
    end getInstance;
 
 begin

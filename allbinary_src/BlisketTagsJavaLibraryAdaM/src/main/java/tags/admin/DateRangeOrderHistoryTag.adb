@@ -17,6 +17,9 @@ with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; u
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -33,6 +36,9 @@ with tags.ValidationTransformTag_Package;
 package body tags.admin.DateRangeOrderHistoryTag_Package is
 
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -73,13 +79,13 @@ package body tags.admin.DateRangeOrderHistoryTag_Package is
    function doStartTag (This : in out DateRangeOrderHistoryTag) return Integer is
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                 This.DateRangeOrderHistoryTag_Field_logUtil.putF (To_Unbounded_String ("Tag Start"), DateRangeOrderHistoryTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             DateRangeOrderHistoryTag'Class (This).setName (To_Unbounded_String ("Range Order History View"));
             DateRangeOrderHistoryTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.orderhistory.DateRangeOrderHistoryView"));
             if (DateRangeOrderHistoryTag'Class (This).getCommand) /= (null) then
-                if (DateRangeOrderHistoryTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                if (DateRangeOrderHistoryTag'Class (This).getCommand.compareTo (GLOBALS2_Package.VIEW)) = (0) then
                     null;
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (DateRangeOrderHistoryTag'Class (This).getCommand)));

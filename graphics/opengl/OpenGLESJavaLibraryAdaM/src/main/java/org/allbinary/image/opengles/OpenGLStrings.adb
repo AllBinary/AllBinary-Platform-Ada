@@ -26,7 +26,7 @@ package body org.allbinary.image.opengles.OpenGLStrings_Package is
 
    function getInstance return OpenGLStrings_Access is
    begin
-        return OpenGLStrings_Access (OpenGLStrings_Package.instance);
+        return OpenGLStrings_Package.instance;
    end getInstance;
 
 begin

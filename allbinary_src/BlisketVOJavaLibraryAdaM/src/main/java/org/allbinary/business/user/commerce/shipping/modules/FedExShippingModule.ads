@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package;
 package org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package_References is
    type FedExShippingModule_Access is access all org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package.FedExShippingModule'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.commerce.shipping.modules.FedExShippingModul
    type FedExShippingModule_Access_Array_Access is access all FedExShippingModule_Access_Array;
    type FedExShippingModule_Access_Array_Access_Array is array (Natural range <>) of FedExShippingModule_Access_Array_Access;
    type FedExShippingModule_Access_Array_Access_Array_Access is access all FedExShippingModule_Access_Array_Access_Array;
+   type FedExShippingModule_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FedExShippingModule_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FedExShippingModule_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FedExShippingModule_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FedExShippingModule_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FedExShippingModule_Access_Array_Access is (if Value /= null and then Value.all in FedExShippingModule_Access_Array_Object'Class then FedExShippingModule_Access_Array_Object'Class (Value.all).Value else null);
+   type FedExShippingModule_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FedExShippingModule_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FedExShippingModule_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FedExShippingModule_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FedExShippingModule_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FedExShippingModule_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in FedExShippingModule_Access_Array_Access_Array_Object'Class then FedExShippingModule_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package_References;
 
 with org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.business.user.commerce.shipping.modules.FedExShippingModul
    function "=" (Left, Right : FedExShippingModule_Access_Array) return Boolean renames org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package_References."=";
    subtype FedExShippingModule_Access_Array_Access is org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package_References.FedExShippingModule_Access_Array_Access;
    function "=" (Left, Right : FedExShippingModule_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package_References."=";
+   function Java_Box (Value : FedExShippingModule_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package_References.Java_Box;
+   function Java_Unbox_FedExShippingModule_Access_Array (Value : access Java_Object'Class) return FedExShippingModule_Access_Array_Access renames org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package_References.Java_Unbox_FedExShippingModule_Access_Array;
    subtype FedExShippingModule_Access_Array_Access_Array is org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package_References.FedExShippingModule_Access_Array_Access_Array;
    function "=" (Left, Right : FedExShippingModule_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package_References."=";
    subtype FedExShippingModule_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package_References.FedExShippingModule_Access_Array_Access_Array_Access;
    function "=" (Left, Right : FedExShippingModule_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package_References."=";
+   function Java_Box (Value : FedExShippingModule_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package_References.Java_Box;
+   function Java_Unbox_FedExShippingModule_Access_Array_Access_Array (Value : access Java_Object'Class) return FedExShippingModule_Access_Array_Access_Array_Access renames org.allbinary.business.user.commerce.shipping.modules.FedExShippingModule_Package_References.Java_Unbox_FedExShippingModule_Access_Array_Access_Array;
 
    type FedExShippingModule is new Java_Object and ShippingInterface with record
       name : Unbounded_String;

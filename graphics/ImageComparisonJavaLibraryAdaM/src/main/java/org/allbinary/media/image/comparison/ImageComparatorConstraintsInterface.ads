@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package;
 package org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References is
    type ImageComparatorConstraintsInterface_Access is access all org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package.ImageComparatorConstraintsInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface
    type ImageComparatorConstraintsInterface_Access_Array_Access is access all ImageComparatorConstraintsInterface_Access_Array;
    type ImageComparatorConstraintsInterface_Access_Array_Access_Array is array (Natural range <>) of ImageComparatorConstraintsInterface_Access_Array_Access;
    type ImageComparatorConstraintsInterface_Access_Array_Access_Array_Access is access all ImageComparatorConstraintsInterface_Access_Array_Access_Array;
+   type ImageComparatorConstraintsInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageComparatorConstraintsInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageComparatorConstraintsInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageComparatorConstraintsInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageComparatorConstraintsInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageComparatorConstraintsInterface_Access_Array_Access is (if Value /= null and then Value.all in ImageComparatorConstraintsInterface_Access_Array_Object'Class then ImageComparatorConstraintsInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageComparatorConstraintsInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageComparatorConstraintsInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageComparatorConstraintsInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageComparatorConstraintsInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageComparatorConstraintsInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageComparatorConstraintsInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageComparatorConstraintsInterface_Access_Array_Access_Array_Object'Class then ImageComparatorConstraintsInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References;
 
 with org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References;
@@ -83,10 +94,14 @@ package org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface
    function "=" (Left, Right : ImageComparatorConstraintsInterface_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References."=";
    subtype ImageComparatorConstraintsInterface_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References.ImageComparatorConstraintsInterface_Access_Array_Access;
    function "=" (Left, Right : ImageComparatorConstraintsInterface_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References."=";
+   function Java_Box (Value : ImageComparatorConstraintsInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References.Java_Box;
+   function Java_Unbox_ImageComparatorConstraintsInterface_Access_Array (Value : access Java_Object'Class) return ImageComparatorConstraintsInterface_Access_Array_Access renames org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References.Java_Unbox_ImageComparatorConstraintsInterface_Access_Array;
    subtype ImageComparatorConstraintsInterface_Access_Array_Access_Array is org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References.ImageComparatorConstraintsInterface_Access_Array_Access_Array;
    function "=" (Left, Right : ImageComparatorConstraintsInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References."=";
    subtype ImageComparatorConstraintsInterface_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References.ImageComparatorConstraintsInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageComparatorConstraintsInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References."=";
+   function Java_Box (Value : ImageComparatorConstraintsInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References.Java_Box;
+   function Java_Unbox_ImageComparatorConstraintsInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageComparatorConstraintsInterface_Access_Array_Access_Array_Access renames org.allbinary.media.image.comparison.ImageComparatorConstraintsInterface_Package_References.Java_Unbox_ImageComparatorConstraintsInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_ImageComparatorConstraintsInterface (Value : ImageComparatorConstraintsInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getMaxNonMatchingPixelDeltas (This : in out ImageComparatorConstraintsInterface) return Integer is abstract;
    function isCollisionWithAvoidRectangles (This : in out ImageComparatorConstraintsInterface; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is abstract;

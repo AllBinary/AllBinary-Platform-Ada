@@ -17,6 +17,10 @@ with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.Ta
 with admin.taghelpers.TagHelperFactoryInterface_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with tags.CommandTag_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
@@ -24,6 +28,7 @@ with tags.CustomTagSupport_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
@@ -32,6 +37,8 @@ with org.allbinary.time.TimeStampUtil_Package;
 
 package body tags.HelperTag_Package is
 
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype TagHelperFactoryInterface_Access is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access;
    function "=" (Left, Right : TagHelperFactoryInterface_Access) return Boolean renames admin.taghelpers.TagHelperFactoryInterface_Package_References."=";
    subtype TagHelperFactoryInterface_Access_Array is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access_Array;
@@ -66,7 +73,7 @@ package body tags.HelperTag_Package is
    begin
       PropertiesTag_Package.Initialize (This);
       Initialize_Fields (This);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
             This.HelperTag_Field_logUtil.putF (This.commonStrings.START, HelperTag_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.tagHelperFactoryInterface := tagHelperFactoryInterface;
@@ -83,7 +90,7 @@ package body tags.HelperTag_Package is
    procedure setHelper (This : in out HelperTag) is
    begin
         if (This.anyType) = (null) then
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                 This.HelperTag_Field_logUtil.putF (To_Unbounded_String ("Creating TagHelper with: " & ASCII.LF & "") & HelperTag'Class (This).getPropertiesHashMap.toString, HelperTag_Access'(This'Unchecked_Access), To_Unbounded_String ("doStartTag"));
             end if;
             This.anyType := This.tagHelperFactoryInterface.getInstance (HelperTag'Class (This).getPropertiesHashMap, This.pageContext);
@@ -97,7 +104,7 @@ package body tags.HelperTag_Package is
 
    function doEndTag (This : in out HelperTag) return Integer is
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
             This.HelperTag_Field_logUtil.putF (To_Unbounded_String ("Tag Ended"), HelperTag_Access'(This'Unchecked_Access), To_Unbounded_String ("doEndTag"));
         end if;
         This.anyType := null;

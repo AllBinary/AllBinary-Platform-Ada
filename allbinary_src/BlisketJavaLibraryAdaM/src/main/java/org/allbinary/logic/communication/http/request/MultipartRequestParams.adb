@@ -21,6 +21,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.apache.commons.fileupload.FileItem_Package; use org.apache.commons.fileupload.FileItem_Package;
 with org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException_Package; use org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -34,6 +36,8 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package FileItem_Package renames Standard.org.apache.commons.fileupload.FileItem_Package;
    package InvalidContentTypeException_Package renames Standard.org.apache.commons.fileupload.FileUploadBase.InvalidContentTypeException_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -98,10 +102,10 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
       index : Integer;
    begin
         begin
-            specialRequest := StdUtil_Package.getInstance.createHashMap;
+            specialRequest := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             multipartRequestList := AbFileUploadFactory_Package.getInstance.getFileItemStreamList (request);
             if (multipartRequestList) /= (null) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.HTTPREQUEST) then
                     This.logUtil.putF (To_Unbounded_String ("FileItem List Size: ") & Java_Image (multipartRequestList.size), MultipartRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("processMultipartRequest()"));
                 end if;
                 fileItemArray := multipartRequestList.toArray;
@@ -115,7 +119,7 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
                         specialRequest.put (fileItem.getFieldName, fileItem);
                     end if;
                 end loop;
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.HTTPREQUEST) then
                     This.logUtil.putF (To_Unbounded_String ("Special Request Data: ") & specialRequest.toString, MultipartRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("processMultipartRequest()"));
                 end if;
                 MultipartRequestParams'Class (This).setSpecial;
@@ -126,7 +130,7 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.HTTPREQUEST) then
                 This.logUtil.putF (To_Unbounded_String ("Using Normal RequestParams"), MultipartRequestParams_Access'(This'Unchecked_Access), To_Unbounded_String ("processMultipartRequest()"));
             end if;
             RequestParams_Package.RequestParams (This).setMap (request.getParameterMap);

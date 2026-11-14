@@ -56,7 +56,7 @@ package body org.allbinary.animation.ShapeTypeFactory_Package is
 
    function getInstance return ShapeTypeFactory_Access is
    begin
-        return ShapeTypeFactory_Access (ShapeTypeFactory_Package.instance);
+        return ShapeTypeFactory_Package.instance;
    end getInstance;
 
 begin

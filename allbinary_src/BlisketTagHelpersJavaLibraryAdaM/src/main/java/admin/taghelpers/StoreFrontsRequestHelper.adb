@@ -38,10 +38,18 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -61,6 +69,8 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
    package StoreEmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype StoreFrontInterface_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access;
    function "=" (Left, Right : StoreFrontInterface_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References."=";
    subtype StoreFrontInterface_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array;
@@ -161,7 +171,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
             success := To_Unbounded_String ("Updated Successfully");
             hashMapData := This.modifyingStoreFrontInterface.toHashMap;
             StoreFrontsEntityFactory_Package.getInstance.getStoreFrontsEntityInstance.update (hashMapData);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
@@ -171,7 +181,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to update storefronts table");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;
@@ -232,7 +242,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
             stringBuffer.appendint (This.portion.getTotal.intValue);
             success := stringBuffer.toString;
             This.modifyingStoreFrontInterface.install (This.portion.getCurrent.intValue, This.portion.getTotal.intValue);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("install()"));
             end if;
             return success;
@@ -242,7 +252,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to Install storefront");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("install()"), e);
             end if;
             return error;
@@ -259,7 +269,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
             success := To_Unbounded_String ("Added Successfully");
             values := This.modifyingStoreFrontInterface.toVector;
             StoreFrontsEntityFactory_Package.getInstance.getStoreFrontsEntityInstance.insert (values);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             return success;
@@ -269,7 +279,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to add storefront");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"), e);
             end if;
             return error;
@@ -284,7 +294,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
         begin
             success := To_Unbounded_String ("Delete Successfully");
             StoreFrontsEntityFactory_Package.getInstance.getStoreFrontsEntityInstance.delete (This.storeName);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"));
             end if;
             return success;
@@ -294,7 +304,7 @@ package body admin.taghelpers.StoreFrontsRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to delete storefronts table");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreFrontsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e);
             end if;
             return error;

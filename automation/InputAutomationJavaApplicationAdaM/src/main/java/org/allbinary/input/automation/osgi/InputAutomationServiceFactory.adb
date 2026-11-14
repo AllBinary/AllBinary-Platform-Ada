@@ -100,7 +100,7 @@ package body org.allbinary.input.automation.osgi.InputAutomationServiceFactory_P
 
    function getInstance return InputAutomationServiceFactory_Access is
    begin
-        return InputAutomationServiceFactory_Access (InputAutomationServiceFactory_Package.inputAutomationServiceFactory_Var);
+        return InputAutomationServiceFactory_Package.inputAutomationServiceFactory_Var;
    end getInstance;
 
    function getService (This : in out InputAutomationServiceFactory; bundle_Param : access Bundle_Package.Bundle'Class; registration_Param : access ServiceRegistration_Package.ServiceRegistration'Class) return Java_Object_Access is

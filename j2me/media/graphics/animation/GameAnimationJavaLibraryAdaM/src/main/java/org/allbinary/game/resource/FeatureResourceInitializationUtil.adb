@@ -90,7 +90,7 @@ package body org.allbinary.game.resource.FeatureResourceInitializationUtil_Packa
 
    function getInstance return FeatureResourceInitializationUtil_Access is
    begin
-        return FeatureResourceInitializationUtil_Access (FeatureResourceInitializationUtil_Package.instance);
+        return FeatureResourceInitializationUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

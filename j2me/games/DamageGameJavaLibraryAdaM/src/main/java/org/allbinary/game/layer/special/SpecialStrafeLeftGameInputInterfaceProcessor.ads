@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package;
 package org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package_References is
    type SpecialStrafeLeftGameInputInterfaceProcessor_Access is access all org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package.SpecialStrafeLeftGameInputInterfaceProcessor'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProc
    type SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access is access all SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array;
    type SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array is array (Natural range <>) of SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access;
    type SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array_Access is access all SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array;
+   type SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access is (if Value /= null and then Value.all in SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Object'Class then SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array_Object'Class then SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package_References;
 
 with org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package_References;
@@ -83,10 +94,14 @@ package org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProc
    function "=" (Left, Right : SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array) return Boolean renames org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package_References."=";
    subtype SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access is org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package_References.SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access;
    function "=" (Left, Right : SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package_References."=";
+   function Java_Box (Value : SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package_References.Java_Box;
+   function Java_Unbox_SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array (Value : access Java_Object'Class) return SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access renames org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package_References.Java_Unbox_SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array;
    subtype SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array is org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package_References.SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package_References."=";
    subtype SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array_Access is org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package_References.SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package_References."=";
+   function Java_Box (Value : SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package_References.Java_Box;
+   function Java_Unbox_SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array_Access renames org.allbinary.game.layer.special.SpecialStrafeLeftGameInputInterfaceProcessor_Package_References.Java_Unbox_SpecialStrafeLeftGameInputInterfaceProcessor_Access_Array_Access_Array;
 
    type SpecialStrafeLeftGameInputInterfaceProcessor is new SpecialGameInputInterfaceProcessor with null record;
 

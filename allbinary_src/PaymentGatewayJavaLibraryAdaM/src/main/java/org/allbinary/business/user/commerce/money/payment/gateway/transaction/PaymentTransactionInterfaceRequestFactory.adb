@@ -39,6 +39,9 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; u
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactory_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceFactory_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package_References;
@@ -73,6 +76,9 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -123,7 +129,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
 
    function getInstance return PaymentTransactionInterfaceRequestFactory_Access is
    begin
-        return PaymentTransactionInterfaceRequestFactory_Access (PaymentTransactionInterfaceRequestFactory_Package.instance);
+        return PaymentTransactionInterfaceRequestFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out PaymentTransactionInterfaceRequestFactory'Class) is
@@ -160,9 +166,9 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
             httpTransformInfoInterface := TransformInfoHttpInterface_Access (transformInfoInterface);
             pageContext := httpTransformInfoInterface.getPageContext;
             httpServletRequest := HttpServletRequest_Access (pageContext.getRequest);
-            command := httpServletRequest.getParameter (org_Package.allbinary.globals.GLOBALS2.ADMINCOMMAND);
-            if ((command) /= (Null_Unbounded_String)) and then ((Java_Compare_To (command, org_Package.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
-                return PaymentTransactionInterface_Access (PaymentTransactionInterfaceRequestFactory'Class (This).generateFromTestData (transformInfoInterface));
+            command := httpServletRequest.getParameter (GLOBALS2_Package.ADMINCOMMAND);
+            if ((command) /= (Null_Unbounded_String)) and then ((Java_Compare_To (command, GLOBALS2_Package.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
+                return PaymentTransactionInterfaceRequestFactory'Class (This).generateFromTestData (transformInfoInterface);
             else
                 propertiesHashMap := httpTransformInfoInterface.getPropertiesHashMap;
                 weblisketSession := WeblisketSession_Package.Create (propertiesHashMap, pageContext);
@@ -175,7 +181,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
                 orderPaymentInfo.setTransactionType (TransactionTypeFactory_Package.getInstance.SALE.toString);
                 orderPaymentInfo.setTenderType (TenderTypeFactory_Package.getInstance.CREDITCARD.toString);
                 orderReview.setPaymentInfo (orderPaymentInfo);
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PAYMENT) then
                     This.logUtil.putF (orderReview.getId, PaymentTransactionInterfaceRequestFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getPaymentTransactionInterface()"));
                 end if;
                 paymentTransactionInterface := PaymentTransactionInterface_Access (PaymentTransactionInterfaceFactory_Package.getInstance.getInstance (orderReview));
@@ -186,7 +192,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENTERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PAYMENTERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentTransactionInterfaceRequestFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getPaymentTransactionInterface()"), e);
             end if;
             Java_Throw (e);
@@ -291,7 +297,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENTERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PAYMENTERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, PaymentTransactionInterfaceRequestFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("generatePaymentTransactionInterfaceFromTestData()"), e);
             end if;
             Java_Throw (e);

@@ -99,7 +99,7 @@ package body org.allbinary.game.score.HighScoreCommands_Package is
 
    function getInstance return HighScoreCommands_Access is
    begin
-        return HighScoreCommands_Access (HighScoreCommands_Package.instance);
+        return HighScoreCommands_Package.instance;
    end getInstance;
 
 begin

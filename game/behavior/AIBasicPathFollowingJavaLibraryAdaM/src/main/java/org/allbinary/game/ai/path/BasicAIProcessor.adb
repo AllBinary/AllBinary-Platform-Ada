@@ -31,8 +31,10 @@ with org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHis
 with org.allbinary.media.graphics.geography.pathfinding.GeographicMapCellPathHistoryInfo_Package_References;
 with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package; use org.allbinary.game.ai.path.BasicDirectionAIHelper_Package;
 with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References;
+with org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package;
+with org.allbinary.math.FrameUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.game.ai.path.BasicAIProcessor_Package is

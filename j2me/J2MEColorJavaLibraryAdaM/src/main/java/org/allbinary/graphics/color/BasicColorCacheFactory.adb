@@ -57,7 +57,7 @@ package body org.allbinary.graphics.color.BasicColorCacheFactory_Package is
 
    function getInstance return BasicColorCacheFactory_Access is
    begin
-        return BasicColorCacheFactory_Access (BasicColorCacheFactory_Package.instance);
+        return BasicColorCacheFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out BasicColorCacheFactory'Class) is

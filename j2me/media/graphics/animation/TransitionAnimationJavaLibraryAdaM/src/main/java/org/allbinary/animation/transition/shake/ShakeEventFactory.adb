@@ -53,7 +53,7 @@ package body org.allbinary.animation.transition.shake.ShakeEventFactory_Package 
 
    function getInstance return ShakeEventFactory_Access is
    begin
-        return ShakeEventFactory_Access (ShakeEventFactory_Package.instance);
+        return ShakeEventFactory_Package.instance;
    end getInstance;
 
    procedure init (This : in out ShakeEventFactory) is

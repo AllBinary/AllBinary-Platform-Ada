@@ -94,7 +94,7 @@ package body org.allbinary.game.configuration.persistance.GamePersistanceSinglet
 
    function getInstance return GamePersistanceSingleton_Access is
    begin
-        return GamePersistanceSingleton_Access (GamePersistanceSingleton_Package.GAME_PERSISTANCE);
+        return GamePersistanceSingleton_Package.GAME_PERSISTANCE;
    end getInstance;
 
    procedure Initialize (This : in out GamePersistanceSingleton'Class) is

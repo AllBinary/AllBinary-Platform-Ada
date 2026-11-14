@@ -34,6 +34,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoData_Package;
 with org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoImageFileUtil_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoImageFileUtil_Package;
 with org.allbinary.util.ABHashMap_Package;
@@ -58,6 +60,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -178,7 +182,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
         if (This.logoFileItem) /= (null) then
             This.logoFile := HttpRequestUtil_Package.getInstance.generateFileName (This.logoFileItem.getName);
         end if;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("HashMap: "));
             stringBuffer.append (hashMap.toString);
@@ -195,17 +199,17 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
         begin
             valid := True;
             fileData := FileData_Package.getInstance;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("LogoValidation"), LogoValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             if not (StringValidationUtil_Package.getInstance.isValidRequired (This.logoAbPath.toString, 0, 512)) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("logoPath is invalid: ") & This.logoAbPath.toString, LogoValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
             end if;
             if not (StringValidationUtil_Package.getInstance.isValidRequired (This.logoFile, fileData.MINLEN, fileData.MAXLEN)) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("logoFile is invalid: ") & This.logoFile, LogoValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                 end if;
                 return False;
@@ -215,13 +219,13 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
                     return False;
                 end if;
                 if ((This.logoFileItem.getSize) > (fileData.MAXIMAGEFILESIZE)) or else ((This.logoFileItem.getSize) < (fileData.MINIMAGEFILESIZE)) then
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                    if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                         This.logUtil.putF (To_Unbounded_String ("Image File Is Not The Right Size. ") & Java_Image (fileData.MINIMAGEFILESIZE) & To_Unbounded_String ("< > ") & Java_Image (fileData.MAXIMAGEFILESIZE), LogoValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
                     end if;
                     return False;
                 end if;
             end if;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Logo Validation: ") & Java_Image (valid), LogoValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             return valid;
@@ -230,7 +234,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to validate form"), LogoValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
@@ -250,7 +254,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), LogoValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
@@ -274,7 +278,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
       hashMap : HashMap_Access;
    begin
         stringUtil := StringUtil_Package.getInstance;
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (LogoData_Package.getInstance.IMAGE, Java_Box (stringUtil.EMPTY_STRING));
         if (This.logoFile) /= (Null_Unbounded_String) then
             hashMap.put (LogoData_Package.getInstance.IMAGEPATH, Java_Box (This.logoAbPath.toString));
@@ -299,7 +303,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
    procedure processLogoFile (This : in out LogoValidation) is
       stringBuffer : StringMaker_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("Processing logoFile: "));
             stringBuffer.append (This.logoAbPath.toString);

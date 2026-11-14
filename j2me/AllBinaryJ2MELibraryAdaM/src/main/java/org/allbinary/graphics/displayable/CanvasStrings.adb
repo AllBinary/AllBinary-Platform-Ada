@@ -71,7 +71,7 @@ package body org.allbinary.graphics.displayable.CanvasStrings_Package is
 
    function getInstance return CanvasStrings_Access is
    begin
-        return CanvasStrings_Access (CanvasStrings_Package.instance);
+        return CanvasStrings_Package.instance;
    end getInstance;
 
 begin

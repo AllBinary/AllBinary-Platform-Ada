@@ -94,7 +94,7 @@ package body org.allbinary.game.input.GameKeyUtil_Package is
 
    function getInstance return GameKeyUtil_Access is
    begin
-        return GameKeyUtil_Access (GameKeyUtil_Package.instance);
+        return GameKeyUtil_Package.instance;
    end getInstance;
 
    procedure isDirectionKey (This : in out GameKeyUtil; key : Integer) is

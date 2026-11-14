@@ -19,6 +19,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -35,6 +37,8 @@ with org.allbinary.time.TimeStampUtil_Package;
 package body workflows.template.data.Properties_Package is
 
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -67,10 +71,10 @@ package body workflows.template.data.Properties_Package is
    procedure Initialize (This : in out Properties'Class) is
    begin
       Initialize_Fields (This);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
             This.logUtil.putF (To_Unbounded_String ("Start/Tag"), Properties_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
-        This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
+        This.propertiesHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
    end Initialize;
 
    function Create return Properties_Access is
@@ -87,10 +91,10 @@ package body workflows.template.data.Properties_Package is
 
    function doEndTag (This : in out Properties) return Integer is
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
             This.logUtil.putF (To_Unbounded_String ("Tag Ended"), Properties_Access'(This'Unchecked_Access), To_Unbounded_String ("doEndTag"));
         end if;
-        This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
+        This.propertiesHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         return TagSupport_Package.EVAL_PAGE;
    end doEndTag;
 

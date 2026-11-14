@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package;
 package org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References is
    type BasicVelocityProperties_Access is access all org.allbinary.game.physics.velocity.BasicVelocityProperties_Package.BasicVelocityProperties'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_Refe
    type BasicVelocityProperties_Access_Array_Access is access all BasicVelocityProperties_Access_Array;
    type BasicVelocityProperties_Access_Array_Access_Array is array (Natural range <>) of BasicVelocityProperties_Access_Array_Access;
    type BasicVelocityProperties_Access_Array_Access_Array_Access is access all BasicVelocityProperties_Access_Array_Access_Array;
+   type BasicVelocityProperties_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicVelocityProperties_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicVelocityProperties_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicVelocityProperties_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicVelocityProperties_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicVelocityProperties_Access_Array_Access is (if Value /= null and then Value.all in BasicVelocityProperties_Access_Array_Object'Class then BasicVelocityProperties_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicVelocityProperties_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicVelocityProperties_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicVelocityProperties_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicVelocityProperties_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicVelocityProperties_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicVelocityProperties_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicVelocityProperties_Access_Array_Access_Array_Object'Class then BasicVelocityProperties_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References;
 
 with org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References;
@@ -123,10 +134,14 @@ package org.allbinary.game.physics.velocity.BasicVelocityProperties_Package is
    function "=" (Left, Right : BasicVelocityProperties_Access_Array) return Boolean renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References."=";
    subtype BasicVelocityProperties_Access_Array_Access is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array_Access;
    function "=" (Left, Right : BasicVelocityProperties_Access_Array_Access) return Boolean renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References."=";
+   function Java_Box (Value : BasicVelocityProperties_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.Java_Box;
+   function Java_Unbox_BasicVelocityProperties_Access_Array (Value : access Java_Object'Class) return BasicVelocityProperties_Access_Array_Access renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.Java_Unbox_BasicVelocityProperties_Access_Array;
    subtype BasicVelocityProperties_Access_Array_Access_Array is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array_Access_Array;
    function "=" (Left, Right : BasicVelocityProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References."=";
    subtype BasicVelocityProperties_Access_Array_Access_Array_Access is org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.BasicVelocityProperties_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicVelocityProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References."=";
+   function Java_Box (Value : BasicVelocityProperties_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.Java_Box;
+   function Java_Unbox_BasicVelocityProperties_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicVelocityProperties_Access_Array_Access_Array_Access renames org.allbinary.game.physics.velocity.BasicVelocityProperties_Package_References.Java_Unbox_BasicVelocityProperties_Access_Array_Access_Array;
 
    type BasicVelocityProperties is new Java_Object and BasicVelocityInterface with record
       logUtil : LogUtil_Access;

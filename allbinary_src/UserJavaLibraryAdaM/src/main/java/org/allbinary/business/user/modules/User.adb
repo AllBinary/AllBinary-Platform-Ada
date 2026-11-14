@@ -48,6 +48,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -78,6 +80,8 @@ package body org.allbinary.business.user.modules.User_Package is
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -306,7 +310,7 @@ package body org.allbinary.business.user.modules.User_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VALIDATIONERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VALIDATIONERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (To_Unbounded_String ("Failed to validate form"), User_Access'(This'Unchecked_Access), commonStrings.IS_VALID, e);
             end if;
@@ -339,7 +343,7 @@ package body org.allbinary.business.user.modules.User_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), User_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
@@ -581,32 +585,32 @@ package body org.allbinary.business.user.modules.User_Package is
       time : Unbounded_String;
    begin
         values := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        values.add (This.userName);
-        values.add (This.prefixName);
-        values.add (This.firstName);
-        values.add (This.lastName);
-        values.add (This.middleName);
-        values.add (This.suffixName);
-        values.add (This.company);
-        values.add (This.positionAtCompany);
-        values.add (This.mainEmail);
-        values.add (This.secondaryEmail);
-        values.add (This.homePhone);
-        values.add (This.cellPhone);
-        values.add (This.workPhone);
-        values.add (This.otherContact);
-        values.add (This.electronicDevice);
-        values.add (This.fax);
-        values.add (User'Class (This).getRole.toString);
+        values.add (Java_Box (This.userName));
+        values.add (Java_Box (This.prefixName));
+        values.add (Java_Box (This.firstName));
+        values.add (Java_Box (This.lastName));
+        values.add (Java_Box (This.middleName));
+        values.add (Java_Box (This.suffixName));
+        values.add (Java_Box (This.company));
+        values.add (Java_Box (This.positionAtCompany));
+        values.add (Java_Box (This.mainEmail));
+        values.add (Java_Box (This.secondaryEmail));
+        values.add (Java_Box (This.homePhone));
+        values.add (Java_Box (This.cellPhone));
+        values.add (Java_Box (This.workPhone));
+        values.add (Java_Box (This.otherContact));
+        values.add (Java_Box (This.electronicDevice));
+        values.add (Java_Box (This.fax));
+        values.add (Java_Box (User'Class (This).getRole.toString));
         userConfigurationDomDocumentMapping := UserConfigurationDomDocumentMapping_Package.Create (User'Class (This).getUserConfigurationInterface);
         values.add (userConfigurationDomDocumentMapping.toDomDocumentString);
-        values.add (This.permissions);
+        values.add (Java_Box (This.permissions));
         values.addAllList (This.password.toVector (This.secret));
-        values.add (This.enable_Field);
+        values.add (Java_Box (This.enable_Field));
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
-        values.add (time);
-        values.add (time);
+        values.add (Java_Box (time));
+        values.add (Java_Box (time));
         return values;
    end toVector;
 
@@ -617,7 +621,7 @@ package body org.allbinary.business.user.modules.User_Package is
       calendar : Calendar_Access;
       time : Unbounded_String;
    begin
-        values := StdUtil_Package.getInstance.createHashMap;
+        values := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         values.put (UserData_Package.USERNAME, Java_Box (This.userName));
         values.put (UserData_Package.PREFIXNAME, Java_Box (This.prefixName));
         values.put (UserData_Package.FIRSTNAME, Java_Box (This.firstName));

@@ -51,6 +51,7 @@ with javax.microedition.lcdui.Font_Package;
 with org.microemu.device.FontManager_Package;
 with javax.microedition.lcdui.Form_Package;
 with org.microemu.device.ui.FormUI_Package;
+with org.allbinary.game.state.GameStateCompositeInterface_Package;
 with javax.microedition.lcdui.Gauge_Package;
 with javax.microedition.lcdui.Image_Package;
 with javax.microedition.lcdui.ImageStringItem_Package;

@@ -8,6 +8,21 @@ with org.allbinary.graphics.OpenGLBitmap_Package; use org.allbinary.graphics.Ope
 with org.allbinary.graphics.OpenGLBitmap_Package_References;
 with org.allbinary.image.opengles.OpenGLESImage_Package; use org.allbinary.image.opengles.OpenGLESImage_Package;
 with org.allbinary.image.opengles.OpenGLESImage_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
+with org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+with org.allbinary.image.opengles.OpenGLESImageTranslate_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 
 package body org.platform.opengl.OpenGLGLUUtils_Package is
 
@@ -61,7 +76,7 @@ package body org.platform.opengl.OpenGLGLUUtils_Package is
 
    function getInstance return OpenGLGLUUtils_Access is
    begin
-        return OpenGLGLUUtils_Access (OpenGLGLUUtils_Package.instance);
+        return OpenGLGLUUtils_Package.instance;
    end getInstance;
 
    function makeByteBuffer (This : in out OpenGLGLUUtils; bmp_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; flip : Boolean) return ByteBuffer_Access is

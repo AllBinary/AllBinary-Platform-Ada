@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.resource.FeaturedResourceFactory_Package;
 package org.allbinary.game.resource.FeaturedResourceFactory_Package_References is
    type FeaturedResourceFactory_Access is access all org.allbinary.game.resource.FeaturedResourceFactory_Package.FeaturedResourceFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.resource.FeaturedResourceFactory_Package_References i
    type FeaturedResourceFactory_Access_Array_Access is access all FeaturedResourceFactory_Access_Array;
    type FeaturedResourceFactory_Access_Array_Access_Array is array (Natural range <>) of FeaturedResourceFactory_Access_Array_Access;
    type FeaturedResourceFactory_Access_Array_Access_Array_Access is access all FeaturedResourceFactory_Access_Array_Access_Array;
+   type FeaturedResourceFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FeaturedResourceFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FeaturedResourceFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FeaturedResourceFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FeaturedResourceFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FeaturedResourceFactory_Access_Array_Access is (if Value /= null and then Value.all in FeaturedResourceFactory_Access_Array_Object'Class then FeaturedResourceFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type FeaturedResourceFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FeaturedResourceFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FeaturedResourceFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FeaturedResourceFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FeaturedResourceFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FeaturedResourceFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in FeaturedResourceFactory_Access_Array_Access_Array_Object'Class then FeaturedResourceFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.resource.FeaturedResourceFactory_Package_References;
 
 with org.allbinary.game.resource.FeaturedResourceFactory_Package_References;
@@ -96,10 +107,14 @@ package org.allbinary.game.resource.FeaturedResourceFactory_Package is
    function "=" (Left, Right : FeaturedResourceFactory_Access_Array) return Boolean renames org.allbinary.game.resource.FeaturedResourceFactory_Package_References."=";
    subtype FeaturedResourceFactory_Access_Array_Access is org.allbinary.game.resource.FeaturedResourceFactory_Package_References.FeaturedResourceFactory_Access_Array_Access;
    function "=" (Left, Right : FeaturedResourceFactory_Access_Array_Access) return Boolean renames org.allbinary.game.resource.FeaturedResourceFactory_Package_References."=";
+   function Java_Box (Value : FeaturedResourceFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.resource.FeaturedResourceFactory_Package_References.Java_Box;
+   function Java_Unbox_FeaturedResourceFactory_Access_Array (Value : access Java_Object'Class) return FeaturedResourceFactory_Access_Array_Access renames org.allbinary.game.resource.FeaturedResourceFactory_Package_References.Java_Unbox_FeaturedResourceFactory_Access_Array;
    subtype FeaturedResourceFactory_Access_Array_Access_Array is org.allbinary.game.resource.FeaturedResourceFactory_Package_References.FeaturedResourceFactory_Access_Array_Access_Array;
    function "=" (Left, Right : FeaturedResourceFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.resource.FeaturedResourceFactory_Package_References."=";
    subtype FeaturedResourceFactory_Access_Array_Access_Array_Access is org.allbinary.game.resource.FeaturedResourceFactory_Package_References.FeaturedResourceFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : FeaturedResourceFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.resource.FeaturedResourceFactory_Package_References."=";
+   function Java_Box (Value : FeaturedResourceFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.resource.FeaturedResourceFactory_Package_References.Java_Box;
+   function Java_Unbox_FeaturedResourceFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return FeaturedResourceFactory_Access_Array_Access_Array_Access renames org.allbinary.game.resource.FeaturedResourceFactory_Package_References.Java_Unbox_FeaturedResourceFactory_Access_Array_Access_Array;
 
    type FeaturedResourceFactory is new Java_Object with record
       logUtil : LogUtil_Access;

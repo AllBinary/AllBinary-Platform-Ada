@@ -18,6 +18,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.smtp.event.EmailEvent_Package; use org.allbinary.logic.communication.smtp.event.EmailEvent_Package;
 with org.allbinary.logic.communication.smtp.event.EmailEvent_Package_References;
 with org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package; use org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -29,6 +31,8 @@ with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.communication.smtp.event.modules.log.LogUserEmailEventListenerModule_Package is
 
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -74,7 +78,7 @@ package body org.allbinary.logic.communication.smtp.event.modules.log.LogUserEma
       userEmailInfoEvent : constant EmailEvent_Access := EmailEvent_Access (userEmailInfoEvent_Param);
       message : Unbounded_String;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
             message := To_Unbounded_String ("Logging EmailEvent - Temporary Listener for debugging." & ASCII.LF & "" & ASCII.LF & "") & userEmailInfoEvent.toString;
             This.logUtil.putF (message, LogUserEmailEventListenerModule_Access'(This'Unchecked_Access), To_Unbounded_String ("onEmailSendRequest"));
         end if;

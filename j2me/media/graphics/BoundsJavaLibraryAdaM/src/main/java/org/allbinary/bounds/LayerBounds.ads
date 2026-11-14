@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.bounds.LayerBounds_Package;
 package org.allbinary.bounds.LayerBounds_Package_References is
    type LayerBounds_Access is access all org.allbinary.bounds.LayerBounds_Package.LayerBounds'Class;
@@ -19,6 +20,16 @@ package org.allbinary.bounds.LayerBounds_Package_References is
    type LayerBounds_Access_Array_Access is access all LayerBounds_Access_Array;
    type LayerBounds_Access_Array_Access_Array is array (Natural range <>) of LayerBounds_Access_Array_Access;
    type LayerBounds_Access_Array_Access_Array_Access is access all LayerBounds_Access_Array_Access_Array;
+   type LayerBounds_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LayerBounds_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LayerBounds_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LayerBounds_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LayerBounds_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LayerBounds_Access_Array_Access is (if Value /= null and then Value.all in LayerBounds_Access_Array_Object'Class then LayerBounds_Access_Array_Object'Class (Value.all).Value else null);
+   type LayerBounds_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LayerBounds_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LayerBounds_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LayerBounds_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LayerBounds_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LayerBounds_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in LayerBounds_Access_Array_Access_Array_Object'Class then LayerBounds_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.bounds.LayerBounds_Package_References;
 
 with org.allbinary.bounds.LayerBounds_Package_References;
@@ -110,10 +121,14 @@ package org.allbinary.bounds.LayerBounds_Package is
    function "=" (Left, Right : LayerBounds_Access_Array) return Boolean renames org.allbinary.bounds.LayerBounds_Package_References."=";
    subtype LayerBounds_Access_Array_Access is org.allbinary.bounds.LayerBounds_Package_References.LayerBounds_Access_Array_Access;
    function "=" (Left, Right : LayerBounds_Access_Array_Access) return Boolean renames org.allbinary.bounds.LayerBounds_Package_References."=";
+   function Java_Box (Value : LayerBounds_Access_Array_Access) return Java_Object_Access renames org.allbinary.bounds.LayerBounds_Package_References.Java_Box;
+   function Java_Unbox_LayerBounds_Access_Array (Value : access Java_Object'Class) return LayerBounds_Access_Array_Access renames org.allbinary.bounds.LayerBounds_Package_References.Java_Unbox_LayerBounds_Access_Array;
    subtype LayerBounds_Access_Array_Access_Array is org.allbinary.bounds.LayerBounds_Package_References.LayerBounds_Access_Array_Access_Array;
    function "=" (Left, Right : LayerBounds_Access_Array_Access_Array) return Boolean renames org.allbinary.bounds.LayerBounds_Package_References."=";
    subtype LayerBounds_Access_Array_Access_Array_Access is org.allbinary.bounds.LayerBounds_Package_References.LayerBounds_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LayerBounds_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.bounds.LayerBounds_Package_References."=";
+   function Java_Box (Value : LayerBounds_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.bounds.LayerBounds_Package_References.Java_Box;
+   function Java_Unbox_LayerBounds_Access_Array_Access_Array (Value : access Java_Object'Class) return LayerBounds_Access_Array_Access_Array_Access renames org.allbinary.bounds.LayerBounds_Package_References.Java_Unbox_LayerBounds_Access_Array_Access_Array;
 
    type LayerBounds is new Java_Object and BoundsChangeEventListener with record
       logUtil : LogUtil_Access;

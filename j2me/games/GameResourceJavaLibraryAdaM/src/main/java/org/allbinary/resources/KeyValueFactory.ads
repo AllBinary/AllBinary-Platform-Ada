@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.resources.KeyValueFactory_Package;
 package org.allbinary.resources.KeyValueFactory_Package_References is
    type KeyValueFactory_Access is access all org.allbinary.resources.KeyValueFactory_Package.KeyValueFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.resources.KeyValueFactory_Package_References is
    type KeyValueFactory_Access_Array_Access is access all KeyValueFactory_Access_Array;
    type KeyValueFactory_Access_Array_Access_Array is array (Natural range <>) of KeyValueFactory_Access_Array_Access;
    type KeyValueFactory_Access_Array_Access_Array_Access is access all KeyValueFactory_Access_Array_Access_Array;
+   type KeyValueFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : KeyValueFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : KeyValueFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new KeyValueFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_KeyValueFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return KeyValueFactory_Access_Array_Access is (if Value /= null and then Value.all in KeyValueFactory_Access_Array_Object'Class then KeyValueFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type KeyValueFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : KeyValueFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : KeyValueFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new KeyValueFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_KeyValueFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return KeyValueFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in KeyValueFactory_Access_Array_Access_Array_Object'Class then KeyValueFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.resources.KeyValueFactory_Package_References;
 
 with org.allbinary.resources.KeyValueFactory_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.resources.KeyValueFactory_Package is
    function "=" (Left, Right : KeyValueFactory_Access_Array) return Boolean renames org.allbinary.resources.KeyValueFactory_Package_References."=";
    subtype KeyValueFactory_Access_Array_Access is org.allbinary.resources.KeyValueFactory_Package_References.KeyValueFactory_Access_Array_Access;
    function "=" (Left, Right : KeyValueFactory_Access_Array_Access) return Boolean renames org.allbinary.resources.KeyValueFactory_Package_References."=";
+   function Java_Box (Value : KeyValueFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.resources.KeyValueFactory_Package_References.Java_Box;
+   function Java_Unbox_KeyValueFactory_Access_Array (Value : access Java_Object'Class) return KeyValueFactory_Access_Array_Access renames org.allbinary.resources.KeyValueFactory_Package_References.Java_Unbox_KeyValueFactory_Access_Array;
    subtype KeyValueFactory_Access_Array_Access_Array is org.allbinary.resources.KeyValueFactory_Package_References.KeyValueFactory_Access_Array_Access_Array;
    function "=" (Left, Right : KeyValueFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.resources.KeyValueFactory_Package_References."=";
    subtype KeyValueFactory_Access_Array_Access_Array_Access is org.allbinary.resources.KeyValueFactory_Package_References.KeyValueFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : KeyValueFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.resources.KeyValueFactory_Package_References."=";
+   function Java_Box (Value : KeyValueFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.resources.KeyValueFactory_Package_References.Java_Box;
+   function Java_Unbox_KeyValueFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return KeyValueFactory_Access_Array_Access_Array_Access renames org.allbinary.resources.KeyValueFactory_Package_References.Java_Unbox_KeyValueFactory_Access_Array_Access_Array;
 
    type KeyValueFactory is new Java_Object with record
       MAP : ABHashtable_Access;

@@ -277,7 +277,7 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
    function toHashMapOrder (This : in out Order) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (PaymentData_Package.METHOD, Java_Box (This.paymentMethod));
         hashMap.put (ShippingMethodData_Package.NAME, Java_Box (This.shippingType));
         hashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));

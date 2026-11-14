@@ -37,7 +37,7 @@ package body org.allbinary.graphics.opengles.ColorAttributePointerOpenGLProcesso
 
    function getInstance return ColorAttributePointerOpenGLProcessor_Access is
    begin
-        return ColorAttributePointerOpenGLProcessor_Access (ColorAttributePointerOpenGLProcessor_Package.instance);
+        return ColorAttributePointerOpenGLProcessor_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ColorAttributePointerOpenGLProcessor'Class) is

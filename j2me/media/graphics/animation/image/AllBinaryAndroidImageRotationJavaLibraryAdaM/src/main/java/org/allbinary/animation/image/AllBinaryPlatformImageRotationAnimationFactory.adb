@@ -18,6 +18,7 @@ with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary.animation.AnimationBehaviorFactory_Package;
 with org.allbinary.animation.AnimationBehaviorFactory_Package_References;
 with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with javax.microedition.khronos.opengles.GL_Package;
 

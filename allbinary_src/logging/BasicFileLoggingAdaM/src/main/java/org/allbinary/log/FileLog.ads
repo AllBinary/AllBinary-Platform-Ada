@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.log.FileLog_Package;
 package org.allbinary.log.FileLog_Package_References is
    type FileLog_Access is access all org.allbinary.log.FileLog_Package.FileLog'Class;
@@ -19,6 +20,16 @@ package org.allbinary.log.FileLog_Package_References is
    type FileLog_Access_Array_Access is access all FileLog_Access_Array;
    type FileLog_Access_Array_Access_Array is array (Natural range <>) of FileLog_Access_Array_Access;
    type FileLog_Access_Array_Access_Array_Access is access all FileLog_Access_Array_Access_Array;
+   type FileLog_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FileLog_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FileLog_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FileLog_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FileLog_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FileLog_Access_Array_Access is (if Value /= null and then Value.all in FileLog_Access_Array_Object'Class then FileLog_Access_Array_Object'Class (Value.all).Value else null);
+   type FileLog_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FileLog_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FileLog_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FileLog_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FileLog_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FileLog_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in FileLog_Access_Array_Access_Array_Object'Class then FileLog_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.log.FileLog_Package_References;
 
 with org.allbinary.log.FileLog_Package_References;
@@ -62,10 +73,14 @@ package org.allbinary.log.FileLog_Package is
    function "=" (Left, Right : FileLog_Access_Array) return Boolean renames org.allbinary.log.FileLog_Package_References."=";
    subtype FileLog_Access_Array_Access is org.allbinary.log.FileLog_Package_References.FileLog_Access_Array_Access;
    function "=" (Left, Right : FileLog_Access_Array_Access) return Boolean renames org.allbinary.log.FileLog_Package_References."=";
+   function Java_Box (Value : FileLog_Access_Array_Access) return Java_Object_Access renames org.allbinary.log.FileLog_Package_References.Java_Box;
+   function Java_Unbox_FileLog_Access_Array (Value : access Java_Object'Class) return FileLog_Access_Array_Access renames org.allbinary.log.FileLog_Package_References.Java_Unbox_FileLog_Access_Array;
    subtype FileLog_Access_Array_Access_Array is org.allbinary.log.FileLog_Package_References.FileLog_Access_Array_Access_Array;
    function "=" (Left, Right : FileLog_Access_Array_Access_Array) return Boolean renames org.allbinary.log.FileLog_Package_References."=";
    subtype FileLog_Access_Array_Access_Array_Access is org.allbinary.log.FileLog_Package_References.FileLog_Access_Array_Access_Array_Access;
    function "=" (Left, Right : FileLog_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.log.FileLog_Package_References."=";
+   function Java_Box (Value : FileLog_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.log.FileLog_Package_References.Java_Box;
+   function Java_Unbox_FileLog_Access_Array_Access_Array (Value : access Java_Object'Class) return FileLog_Access_Array_Access_Array_Access renames org.allbinary.log.FileLog_Package_References.Java_Unbox_FileLog_Access_Array_Access_Array;
 
    type FileLog is new Java_Object with null record;
    stringUtil : StringUtil_Access;

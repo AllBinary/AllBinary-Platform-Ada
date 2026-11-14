@@ -27,7 +27,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.invent
 
    function getInstance return StoreFrontInventoryStatisticsData_Access is
    begin
-        return StoreFrontInventoryStatisticsData_Access (StoreFrontInventoryStatisticsData_Package.instance);
+        return StoreFrontInventoryStatisticsData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out StoreFrontInventoryStatisticsData'Class) is

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.CustomLoaderHelperFactory_Package;
 package admin.taghelpers.CustomLoaderHelperFactory_Package_References is
    type CustomLoaderHelperFactory_Access is access all admin.taghelpers.CustomLoaderHelperFactory_Package.CustomLoaderHelperFactory'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.CustomLoaderHelperFactory_Package_References is
    type CustomLoaderHelperFactory_Access_Array_Access is access all CustomLoaderHelperFactory_Access_Array;
    type CustomLoaderHelperFactory_Access_Array_Access_Array is array (Natural range <>) of CustomLoaderHelperFactory_Access_Array_Access;
    type CustomLoaderHelperFactory_Access_Array_Access_Array_Access is access all CustomLoaderHelperFactory_Access_Array_Access_Array;
+   type CustomLoaderHelperFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CustomLoaderHelperFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CustomLoaderHelperFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CustomLoaderHelperFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CustomLoaderHelperFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CustomLoaderHelperFactory_Access_Array_Access is (if Value /= null and then Value.all in CustomLoaderHelperFactory_Access_Array_Object'Class then CustomLoaderHelperFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type CustomLoaderHelperFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CustomLoaderHelperFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CustomLoaderHelperFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CustomLoaderHelperFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CustomLoaderHelperFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CustomLoaderHelperFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CustomLoaderHelperFactory_Access_Array_Access_Array_Object'Class then CustomLoaderHelperFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.CustomLoaderHelperFactory_Package_References;
 
 with admin.taghelpers.CustomLoaderHelperFactory_Package_References;
@@ -61,10 +72,14 @@ package admin.taghelpers.CustomLoaderHelperFactory_Package is
    function "=" (Left, Right : CustomLoaderHelperFactory_Access_Array) return Boolean renames admin.taghelpers.CustomLoaderHelperFactory_Package_References."=";
    subtype CustomLoaderHelperFactory_Access_Array_Access is admin.taghelpers.CustomLoaderHelperFactory_Package_References.CustomLoaderHelperFactory_Access_Array_Access;
    function "=" (Left, Right : CustomLoaderHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.CustomLoaderHelperFactory_Package_References."=";
+   function Java_Box (Value : CustomLoaderHelperFactory_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.CustomLoaderHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_CustomLoaderHelperFactory_Access_Array (Value : access Java_Object'Class) return CustomLoaderHelperFactory_Access_Array_Access renames admin.taghelpers.CustomLoaderHelperFactory_Package_References.Java_Unbox_CustomLoaderHelperFactory_Access_Array;
    subtype CustomLoaderHelperFactory_Access_Array_Access_Array is admin.taghelpers.CustomLoaderHelperFactory_Package_References.CustomLoaderHelperFactory_Access_Array_Access_Array;
    function "=" (Left, Right : CustomLoaderHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.CustomLoaderHelperFactory_Package_References."=";
    subtype CustomLoaderHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.CustomLoaderHelperFactory_Package_References.CustomLoaderHelperFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CustomLoaderHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.CustomLoaderHelperFactory_Package_References."=";
+   function Java_Box (Value : CustomLoaderHelperFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.CustomLoaderHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_CustomLoaderHelperFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return CustomLoaderHelperFactory_Access_Array_Access_Array_Access renames admin.taghelpers.CustomLoaderHelperFactory_Package_References.Java_Unbox_CustomLoaderHelperFactory_Access_Array_Access_Array;
 
    type CustomLoaderHelperFactory is new Java_Object and TagHelperFactoryInterface with null record;
    CLASSNAME : Unbounded_String;

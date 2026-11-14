@@ -50,7 +50,7 @@ package body org.allbinary.logic.math.vector.AxisMathVectorUtil_Package is
 
    function getInstance return AxisMathVectorUtil_Access is
    begin
-        return AxisMathVectorUtil_Access (AxisMathVectorUtil_Package.instance);
+        return AxisMathVectorUtil_Package.instance;
    end getInstance;
 
    function calculateX (This : in out AxisMathVectorUtil; magnitude : Long_Long_Integer; angle : Integer) return Long_Long_Integer is

@@ -29,10 +29,14 @@ with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.game.ag.life.Life_Package; use org.allbinary.game.ag.life.Life_Package;
 with org.allbinary.game.ag.life.Life_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.animation.Animation_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.game.identification.Group_Package;
 with javax.microedition.lcdui.Image_Package;
@@ -157,7 +161,7 @@ package body org.allbinary.game.ag.life.HealthIncludingLifeBar_Package is
 
    procedure onHealthChange (This : in out HealthIncludingLifeBar) is
    begin
-        This.animationInterface.onHealthChange ((((((This.healthInterface.getHealth) + (((This.healthInterface.getMaxHealth) * (This.life.get))))) * (This.allbinaryLayer.getWidth))) / (((This.healthInterface.getMaxHealth) + (((This.healthInterface.getMaxHealth) * (This.life.getStartLives))))));
+        This.animationInterface.onHealthChange ((((((This.healthInterface.getHealth) + (((This.healthInterface.getMaxHealth) * (Integer (This.life.get)))))) * (This.allbinaryLayer.getWidth))) / (((This.healthInterface.getMaxHealth) + (((This.healthInterface.getMaxHealth) * (Integer (This.life.getStartLives)))))));
    end onHealthChange;
 
    procedure paint (This : in out HealthIncludingLifeBar; graphics_Param : access Graphics_Package.Graphics'Class) is

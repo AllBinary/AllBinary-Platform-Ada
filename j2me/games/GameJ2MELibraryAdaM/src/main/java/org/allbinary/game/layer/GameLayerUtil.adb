@@ -128,7 +128,7 @@ package body org.allbinary.game.layer.GameLayerUtil_Package is
    begin
         displayInfo := DisplayInfoSingleton_Package.getInstance;
         viewPosition := layer.getViewPosition;
-        return GameLayerUtil_Package.isInside (viewPosition.getX, viewPosition.getY, viewPosition.getX2, viewPosition.getY2, 0, 0, displayInfo.getLastWidth, displayInfo.getLastHeight);
+        return GameLayerUtil_Package.isInside (viewPosition.getX2, viewPosition.getY2, viewPosition.getX2, viewPosition.getY2, 0, 0, displayInfo.getLastWidth, displayInfo.getLastHeight);
    end isOnScreen;
 
    function isInside (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; rect2X1 : Integer; rect2Y1 : Integer; rect2X2 : Integer; rect2Y2 : Integer) return Boolean is

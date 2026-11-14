@@ -119,7 +119,7 @@ package body org.allbinary.graphics.displayable.GameTickDisplayInfoSingleton_Pac
 
    function getInstance return GameTickDisplayInfoSingleton_Access is
    begin
-        return GameTickDisplayInfoSingleton_Access (GameTickDisplayInfoSingleton_Package.instance);
+        return GameTickDisplayInfoSingleton_Package.instance;
    end getInstance;
 
    procedure update (This : in out GameTickDisplayInfoSingleton) is

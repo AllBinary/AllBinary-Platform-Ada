@@ -54,7 +54,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseTypeFactory_Pa
 
    function getInstance return LicenseTypeFactory_Access is
    begin
-        return LicenseTypeFactory_Access (LicenseTypeFactory_Package.instance);
+        return LicenseTypeFactory_Package.instance;
    end getInstance;
 
    function getInstance (This : in out LicenseTypeFactory; name : Unbounded_String) return LicenseType_Access is

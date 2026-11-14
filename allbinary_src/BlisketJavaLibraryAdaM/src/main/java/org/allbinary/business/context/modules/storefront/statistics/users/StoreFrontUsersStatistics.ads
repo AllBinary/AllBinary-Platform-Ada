@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package;
 package org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package_References is
    type StoreFrontUsersStatistics_Access is access all org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package.StoreFrontUsersStatistics'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.context.modules.storefront.statistics.users.Store
    type StoreFrontUsersStatistics_Access_Array_Access is access all StoreFrontUsersStatistics_Access_Array;
    type StoreFrontUsersStatistics_Access_Array_Access_Array is array (Natural range <>) of StoreFrontUsersStatistics_Access_Array_Access;
    type StoreFrontUsersStatistics_Access_Array_Access_Array_Access is access all StoreFrontUsersStatistics_Access_Array_Access_Array;
+   type StoreFrontUsersStatistics_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreFrontUsersStatistics_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreFrontUsersStatistics_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreFrontUsersStatistics_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreFrontUsersStatistics_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreFrontUsersStatistics_Access_Array_Access is (if Value /= null and then Value.all in StoreFrontUsersStatistics_Access_Array_Object'Class then StoreFrontUsersStatistics_Access_Array_Object'Class (Value.all).Value else null);
+   type StoreFrontUsersStatistics_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreFrontUsersStatistics_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreFrontUsersStatistics_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreFrontUsersStatistics_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreFrontUsersStatistics_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreFrontUsersStatistics_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StoreFrontUsersStatistics_Access_Array_Access_Array_Object'Class then StoreFrontUsersStatistics_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package_References;
 
 with org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package_References;
@@ -86,10 +97,14 @@ package org.allbinary.business.context.modules.storefront.statistics.users.Store
    function "=" (Left, Right : StoreFrontUsersStatistics_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package_References."=";
    subtype StoreFrontUsersStatistics_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package_References.StoreFrontUsersStatistics_Access_Array_Access;
    function "=" (Left, Right : StoreFrontUsersStatistics_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package_References."=";
+   function Java_Box (Value : StoreFrontUsersStatistics_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package_References.Java_Box;
+   function Java_Unbox_StoreFrontUsersStatistics_Access_Array (Value : access Java_Object'Class) return StoreFrontUsersStatistics_Access_Array_Access renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package_References.Java_Unbox_StoreFrontUsersStatistics_Access_Array;
    subtype StoreFrontUsersStatistics_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package_References.StoreFrontUsersStatistics_Access_Array_Access_Array;
    function "=" (Left, Right : StoreFrontUsersStatistics_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package_References."=";
    subtype StoreFrontUsersStatistics_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package_References.StoreFrontUsersStatistics_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StoreFrontUsersStatistics_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package_References."=";
+   function Java_Box (Value : StoreFrontUsersStatistics_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package_References.Java_Box;
+   function Java_Unbox_StoreFrontUsersStatistics_Access_Array_Access_Array (Value : access Java_Object'Class) return StoreFrontUsersStatistics_Access_Array_Access_Array_Access renames org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatistics_Package_References.Java_Unbox_StoreFrontUsersStatistics_Access_Array_Access_Array;
 
    type StoreFrontUsersStatistics is new Java_Object and StoreFrontUsersStatisticsInterface with record
       totalNumberOfUsers : Long_Long_Integer;

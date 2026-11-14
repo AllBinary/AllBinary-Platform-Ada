@@ -49,7 +49,7 @@ package body org.allbinary.logic.system.security.licensing.LockedUtil_Package is
 
    function getInstance return LockedUtil_Access is
    begin
-        return LockedUtil_Access (LockedUtil_Package.instance);
+        return LockedUtil_Package.instance;
    end getInstance;
 
    function isLocked (This : in out LockedUtil) return Boolean is

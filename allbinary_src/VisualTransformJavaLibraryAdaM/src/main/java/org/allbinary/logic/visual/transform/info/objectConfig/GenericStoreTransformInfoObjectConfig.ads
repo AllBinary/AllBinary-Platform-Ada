@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package;
 package org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References is
    type GenericStoreTransformInfoObjectConfig_Access is access all org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package.GenericStoreTransformInfoObjectConfig'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTrans
    type GenericStoreTransformInfoObjectConfig_Access_Array_Access is access all GenericStoreTransformInfoObjectConfig_Access_Array;
    type GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array is array (Natural range <>) of GenericStoreTransformInfoObjectConfig_Access_Array_Access;
    type GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access is access all GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array;
+   type GenericStoreTransformInfoObjectConfig_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GenericStoreTransformInfoObjectConfig_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GenericStoreTransformInfoObjectConfig_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GenericStoreTransformInfoObjectConfig_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GenericStoreTransformInfoObjectConfig_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GenericStoreTransformInfoObjectConfig_Access_Array_Access is (if Value /= null and then Value.all in GenericStoreTransformInfoObjectConfig_Access_Array_Object'Class then GenericStoreTransformInfoObjectConfig_Access_Array_Object'Class (Value.all).Value else null);
+   type GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Object'Class then GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References;
 
 with org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References;
@@ -112,10 +123,14 @@ package org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTrans
    function "=" (Left, Right : GenericStoreTransformInfoObjectConfig_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References."=";
    subtype GenericStoreTransformInfoObjectConfig_Access_Array_Access is org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References.GenericStoreTransformInfoObjectConfig_Access_Array_Access;
    function "=" (Left, Right : GenericStoreTransformInfoObjectConfig_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References."=";
+   function Java_Box (Value : GenericStoreTransformInfoObjectConfig_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References.Java_Box;
+   function Java_Unbox_GenericStoreTransformInfoObjectConfig_Access_Array (Value : access Java_Object'Class) return GenericStoreTransformInfoObjectConfig_Access_Array_Access renames org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References.Java_Unbox_GenericStoreTransformInfoObjectConfig_Access_Array;
    subtype GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References.GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array;
    function "=" (Left, Right : GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References."=";
    subtype GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References.GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References."=";
+   function Java_Box (Value : GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References.Java_Box;
+   function Java_Unbox_GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array (Value : access Java_Object'Class) return GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array_Access renames org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransformInfoObjectConfig_Package_References.Java_Unbox_GenericStoreTransformInfoObjectConfig_Access_Array_Access_Array;
 
    type GenericStoreTransformInfoObjectConfig is new TransformInfoObjectConfig with record
       GenericStoreTransformInfoObjectConfig_Field_logUtil : LogUtil_Access;

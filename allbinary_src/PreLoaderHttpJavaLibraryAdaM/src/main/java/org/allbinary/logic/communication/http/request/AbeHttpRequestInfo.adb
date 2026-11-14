@@ -141,7 +141,7 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
    function toHashMap (This : in out AbeHttpRequestInfo) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (This.abeHttpRequestInfoData.HTTP_USER_AGENT, Java_Box (This.httpUserAgent));
         hashMap.put (This.abeHttpRequestInfoData.REMOTE_ADDRESS, Java_Box (This.remoteAddress));
         hashMap.put (This.abeHttpRequestInfoData.REMOTE_HOST, Java_Box (This.remoteHost));
@@ -155,12 +155,12 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
       vector : BasicArrayList_Access;
    begin
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        vector.add (This.httpUserAgent);
-        vector.add (This.remoteAddress);
-        vector.add (This.remoteHost);
-        vector.add (This.remoteHostByAddr);
-        vector.add (This.remotePort);
-        vector.add (This.requestedFilePath);
+        vector.add (Java_Box (This.httpUserAgent));
+        vector.add (Java_Box (This.remoteAddress));
+        vector.add (Java_Box (This.remoteHost));
+        vector.add (Java_Box (This.remoteHostByAddr));
+        vector.add (Java_Box (This.remotePort));
+        vector.add (Java_Box (This.requestedFilePath));
         return vector;
    end toVector;
 

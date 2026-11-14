@@ -43,6 +43,8 @@ with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.animation.image.ActualRotationAnimation_Package;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.animation.AnimationBehaviorFactory_Package;
+with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.thread.BaseImageLoadingProcessor_Package;
 with org.allbinary.util.BasicArrayList_Package;
@@ -52,6 +54,8 @@ with org.allbinary.direction.DirectionUtil_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.math.FrameUtil_Package;
 with org.allbinary.game.gd.resource.GDResources_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.canvas.GameGlobalsFactory_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
@@ -147,7 +151,7 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
    procedure Initialize_Fields (This : in out LazyImageRotationAnimation'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.LazyImageRotationAnimation_Field_logUtil := LogUtil_Package.getInstance;
       
       
       
@@ -196,7 +200,7 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LazyImageRotationAnimation_Access'(This'Unchecked_Access), LazyImageRotationAnimation_Package.SET_REAL_ANIMATION, e);
+            This.LazyImageRotationAnimation_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, LazyImageRotationAnimation_Access'(This'Unchecked_Access), LazyImageRotationAnimation_Package.SET_REAL_ANIMATION, e);
                 end;
         end;
    end setRealAnimation;
@@ -388,7 +392,7 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LazyImageRotationAnimation_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
+            This.LazyImageRotationAnimation_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, LazyImageRotationAnimation_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
                 end;
         end;
    end paintXY;
@@ -403,7 +407,7 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, LazyImageRotationAnimation_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
+            This.LazyImageRotationAnimation_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, LazyImageRotationAnimation_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
                 end;
         end;
    end paintThreedXYZ;

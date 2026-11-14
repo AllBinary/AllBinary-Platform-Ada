@@ -98,7 +98,7 @@ package body org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
 
    function getInstance return VirtualKeyboardEventHandler_Access is
    begin
-        return VirtualKeyboardEventHandler_Access (VirtualKeyboardEventHandler_Package.gameKeyEventHandler);
+        return VirtualKeyboardEventHandler_Package.gameKeyEventHandler;
    end getInstance;
 
    --  throws Exception

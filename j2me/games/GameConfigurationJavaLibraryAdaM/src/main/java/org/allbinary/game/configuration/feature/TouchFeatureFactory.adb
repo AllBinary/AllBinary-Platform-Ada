@@ -43,7 +43,7 @@ package body org.allbinary.game.configuration.feature.TouchFeatureFactory_Packag
 
    function getInstance return TouchFeatureFactory_Access is
    begin
-        return TouchFeatureFactory_Access (TouchFeatureFactory_Package.instance);
+        return TouchFeatureFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TouchFeatureFactory'Class) is

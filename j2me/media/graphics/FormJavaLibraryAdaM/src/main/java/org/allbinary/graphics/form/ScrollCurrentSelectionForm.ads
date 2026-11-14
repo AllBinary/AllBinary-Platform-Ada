@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 package org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References is
    type ScrollCurrentSelectionForm_Access is access all org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package.ScrollCurrentSelectionForm'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_Reference
    type ScrollCurrentSelectionForm_Access_Array_Access is access all ScrollCurrentSelectionForm_Access_Array;
    type ScrollCurrentSelectionForm_Access_Array_Access_Array is array (Natural range <>) of ScrollCurrentSelectionForm_Access_Array_Access;
    type ScrollCurrentSelectionForm_Access_Array_Access_Array_Access is access all ScrollCurrentSelectionForm_Access_Array_Access_Array;
+   type ScrollCurrentSelectionForm_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ScrollCurrentSelectionForm_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ScrollCurrentSelectionForm_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ScrollCurrentSelectionForm_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ScrollCurrentSelectionForm_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ScrollCurrentSelectionForm_Access_Array_Access is (if Value /= null and then Value.all in ScrollCurrentSelectionForm_Access_Array_Object'Class then ScrollCurrentSelectionForm_Access_Array_Object'Class (Value.all).Value else null);
+   type ScrollCurrentSelectionForm_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ScrollCurrentSelectionForm_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ScrollCurrentSelectionForm_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ScrollCurrentSelectionForm_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ScrollCurrentSelectionForm_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ScrollCurrentSelectionForm_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ScrollCurrentSelectionForm_Access_Array_Access_Array_Object'Class then ScrollCurrentSelectionForm_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References;
 
 with org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References;
@@ -139,10 +150,14 @@ package org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
    function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
    subtype ScrollCurrentSelectionForm_Access_Array_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access;
    function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   function Java_Box (Value : ScrollCurrentSelectionForm_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.Java_Box;
+   function Java_Unbox_ScrollCurrentSelectionForm_Access_Array (Value : access Java_Object'Class) return ScrollCurrentSelectionForm_Access_Array_Access renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.Java_Unbox_ScrollCurrentSelectionForm_Access_Array;
    subtype ScrollCurrentSelectionForm_Access_Array_Access_Array is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access_Array;
    function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
    subtype ScrollCurrentSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.ScrollCurrentSelectionForm_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ScrollCurrentSelectionForm_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References."=";
+   function Java_Box (Value : ScrollCurrentSelectionForm_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.Java_Box;
+   function Java_Unbox_ScrollCurrentSelectionForm_Access_Array_Access_Array (Value : access Java_Object'Class) return ScrollCurrentSelectionForm_Access_Array_Access_Array_Access renames org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package_References.Java_Unbox_ScrollCurrentSelectionForm_Access_Array_Access_Array;
 
    type ScrollCurrentSelectionForm is new ScrollSelectionForm and UpdateMyFontInterface with record
       moveForSmallScreen : Boolean;
@@ -176,6 +191,7 @@ package org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package is
 
 end org.allbinary.graphics.form.ScrollCurrentSelectionForm_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.form.TempHorizontalFormProcessor_Package;
 package org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_References is
    type TempHorizontalFormProcessor_Access is access all org.allbinary.graphics.form.TempHorizontalFormProcessor_Package.TempHorizontalFormProcessor'Class;
@@ -183,6 +199,16 @@ package org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_Referenc
    type TempHorizontalFormProcessor_Access_Array_Access is access all TempHorizontalFormProcessor_Access_Array;
    type TempHorizontalFormProcessor_Access_Array_Access_Array is array (Natural range <>) of TempHorizontalFormProcessor_Access_Array_Access;
    type TempHorizontalFormProcessor_Access_Array_Access_Array_Access is access all TempHorizontalFormProcessor_Access_Array_Access_Array;
+   type TempHorizontalFormProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TempHorizontalFormProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TempHorizontalFormProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TempHorizontalFormProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TempHorizontalFormProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TempHorizontalFormProcessor_Access_Array_Access is (if Value /= null and then Value.all in TempHorizontalFormProcessor_Access_Array_Object'Class then TempHorizontalFormProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type TempHorizontalFormProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TempHorizontalFormProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TempHorizontalFormProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TempHorizontalFormProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TempHorizontalFormProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TempHorizontalFormProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TempHorizontalFormProcessor_Access_Array_Access_Array_Object'Class then TempHorizontalFormProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_References;
 
 with org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_References;
@@ -315,10 +341,14 @@ package org.allbinary.graphics.form.TempHorizontalFormProcessor_Package is
    function "=" (Left, Right : TempHorizontalFormProcessor_Access_Array) return Boolean renames org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_References."=";
    subtype TempHorizontalFormProcessor_Access_Array_Access is org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_References.TempHorizontalFormProcessor_Access_Array_Access;
    function "=" (Left, Right : TempHorizontalFormProcessor_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_References."=";
+   function Java_Box (Value : TempHorizontalFormProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_References.Java_Box;
+   function Java_Unbox_TempHorizontalFormProcessor_Access_Array (Value : access Java_Object'Class) return TempHorizontalFormProcessor_Access_Array_Access renames org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_References.Java_Unbox_TempHorizontalFormProcessor_Access_Array;
    subtype TempHorizontalFormProcessor_Access_Array_Access_Array is org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_References.TempHorizontalFormProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : TempHorizontalFormProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_References."=";
    subtype TempHorizontalFormProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_References.TempHorizontalFormProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TempHorizontalFormProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_References."=";
+   function Java_Box (Value : TempHorizontalFormProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_References.Java_Box;
+   function Java_Unbox_TempHorizontalFormProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return TempHorizontalFormProcessor_Access_Array_Access_Array_Access renames org.allbinary.graphics.form.TempHorizontalFormProcessor_Package_References.Java_Unbox_TempHorizontalFormProcessor_Access_Array_Access_Array;
 
    type TempHorizontalFormProcessor is new Processor with record
       scrollCurrentSelectionForm_Var : ScrollCurrentSelectionForm_Access;
@@ -330,6 +360,7 @@ package org.allbinary.graphics.form.TempHorizontalFormProcessor_Package is
 
 end org.allbinary.graphics.form.TempHorizontalFormProcessor_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.form.HorizontalFormProcessor_Package;
 package org.allbinary.graphics.form.HorizontalFormProcessor_Package_References is
    type HorizontalFormProcessor_Access is access all org.allbinary.graphics.form.HorizontalFormProcessor_Package.HorizontalFormProcessor'Class;
@@ -337,6 +368,16 @@ package org.allbinary.graphics.form.HorizontalFormProcessor_Package_References i
    type HorizontalFormProcessor_Access_Array_Access is access all HorizontalFormProcessor_Access_Array;
    type HorizontalFormProcessor_Access_Array_Access_Array is array (Natural range <>) of HorizontalFormProcessor_Access_Array_Access;
    type HorizontalFormProcessor_Access_Array_Access_Array_Access is access all HorizontalFormProcessor_Access_Array_Access_Array;
+   type HorizontalFormProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HorizontalFormProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HorizontalFormProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HorizontalFormProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HorizontalFormProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HorizontalFormProcessor_Access_Array_Access is (if Value /= null and then Value.all in HorizontalFormProcessor_Access_Array_Object'Class then HorizontalFormProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type HorizontalFormProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HorizontalFormProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HorizontalFormProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HorizontalFormProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HorizontalFormProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HorizontalFormProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in HorizontalFormProcessor_Access_Array_Access_Array_Object'Class then HorizontalFormProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.form.HorizontalFormProcessor_Package_References;
 
 with org.allbinary.graphics.form.HorizontalFormProcessor_Package_References;
@@ -469,10 +510,14 @@ package org.allbinary.graphics.form.HorizontalFormProcessor_Package is
    function "=" (Left, Right : HorizontalFormProcessor_Access_Array) return Boolean renames org.allbinary.graphics.form.HorizontalFormProcessor_Package_References."=";
    subtype HorizontalFormProcessor_Access_Array_Access is org.allbinary.graphics.form.HorizontalFormProcessor_Package_References.HorizontalFormProcessor_Access_Array_Access;
    function "=" (Left, Right : HorizontalFormProcessor_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.HorizontalFormProcessor_Package_References."=";
+   function Java_Box (Value : HorizontalFormProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.HorizontalFormProcessor_Package_References.Java_Box;
+   function Java_Unbox_HorizontalFormProcessor_Access_Array (Value : access Java_Object'Class) return HorizontalFormProcessor_Access_Array_Access renames org.allbinary.graphics.form.HorizontalFormProcessor_Package_References.Java_Unbox_HorizontalFormProcessor_Access_Array;
    subtype HorizontalFormProcessor_Access_Array_Access_Array is org.allbinary.graphics.form.HorizontalFormProcessor_Package_References.HorizontalFormProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : HorizontalFormProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.HorizontalFormProcessor_Package_References."=";
    subtype HorizontalFormProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.form.HorizontalFormProcessor_Package_References.HorizontalFormProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HorizontalFormProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.HorizontalFormProcessor_Package_References."=";
+   function Java_Box (Value : HorizontalFormProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.HorizontalFormProcessor_Package_References.Java_Box;
+   function Java_Unbox_HorizontalFormProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return HorizontalFormProcessor_Access_Array_Access_Array_Access renames org.allbinary.graphics.form.HorizontalFormProcessor_Package_References.Java_Unbox_HorizontalFormProcessor_Access_Array_Access_Array;
 
    type HorizontalFormProcessor is new Processor with record
       scrollCurrentSelectionForm_Var : ScrollCurrentSelectionForm_Access;
@@ -484,6 +529,7 @@ package org.allbinary.graphics.form.HorizontalFormProcessor_Package is
 
 end org.allbinary.graphics.form.HorizontalFormProcessor_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.form.VerticalFormProcessor_Package;
 package org.allbinary.graphics.form.VerticalFormProcessor_Package_References is
    type VerticalFormProcessor_Access is access all org.allbinary.graphics.form.VerticalFormProcessor_Package.VerticalFormProcessor'Class;
@@ -491,6 +537,16 @@ package org.allbinary.graphics.form.VerticalFormProcessor_Package_References is
    type VerticalFormProcessor_Access_Array_Access is access all VerticalFormProcessor_Access_Array;
    type VerticalFormProcessor_Access_Array_Access_Array is array (Natural range <>) of VerticalFormProcessor_Access_Array_Access;
    type VerticalFormProcessor_Access_Array_Access_Array_Access is access all VerticalFormProcessor_Access_Array_Access_Array;
+   type VerticalFormProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : VerticalFormProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : VerticalFormProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new VerticalFormProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_VerticalFormProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return VerticalFormProcessor_Access_Array_Access is (if Value /= null and then Value.all in VerticalFormProcessor_Access_Array_Object'Class then VerticalFormProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type VerticalFormProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : VerticalFormProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : VerticalFormProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new VerticalFormProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_VerticalFormProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return VerticalFormProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in VerticalFormProcessor_Access_Array_Access_Array_Object'Class then VerticalFormProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.form.VerticalFormProcessor_Package_References;
 
 with org.allbinary.graphics.form.VerticalFormProcessor_Package_References;
@@ -623,10 +679,14 @@ package org.allbinary.graphics.form.VerticalFormProcessor_Package is
    function "=" (Left, Right : VerticalFormProcessor_Access_Array) return Boolean renames org.allbinary.graphics.form.VerticalFormProcessor_Package_References."=";
    subtype VerticalFormProcessor_Access_Array_Access is org.allbinary.graphics.form.VerticalFormProcessor_Package_References.VerticalFormProcessor_Access_Array_Access;
    function "=" (Left, Right : VerticalFormProcessor_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.VerticalFormProcessor_Package_References."=";
+   function Java_Box (Value : VerticalFormProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.VerticalFormProcessor_Package_References.Java_Box;
+   function Java_Unbox_VerticalFormProcessor_Access_Array (Value : access Java_Object'Class) return VerticalFormProcessor_Access_Array_Access renames org.allbinary.graphics.form.VerticalFormProcessor_Package_References.Java_Unbox_VerticalFormProcessor_Access_Array;
    subtype VerticalFormProcessor_Access_Array_Access_Array is org.allbinary.graphics.form.VerticalFormProcessor_Package_References.VerticalFormProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : VerticalFormProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.VerticalFormProcessor_Package_References."=";
    subtype VerticalFormProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.form.VerticalFormProcessor_Package_References.VerticalFormProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : VerticalFormProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.VerticalFormProcessor_Package_References."=";
+   function Java_Box (Value : VerticalFormProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.VerticalFormProcessor_Package_References.Java_Box;
+   function Java_Unbox_VerticalFormProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return VerticalFormProcessor_Access_Array_Access_Array_Access renames org.allbinary.graphics.form.VerticalFormProcessor_Package_References.Java_Unbox_VerticalFormProcessor_Access_Array_Access_Array;
 
    type VerticalFormProcessor is new Processor with record
       scrollCurrentSelectionForm_Var : ScrollCurrentSelectionForm_Access;
@@ -638,6 +698,7 @@ package org.allbinary.graphics.form.VerticalFormProcessor_Package is
 
 end org.allbinary.graphics.form.VerticalFormProcessor_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package;
 package org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References is
    type TempHorizontalItemIndexDx_Access is access all org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package.TempHorizontalItemIndexDx'Class;
@@ -645,6 +706,16 @@ package org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References
    type TempHorizontalItemIndexDx_Access_Array_Access is access all TempHorizontalItemIndexDx_Access_Array;
    type TempHorizontalItemIndexDx_Access_Array_Access_Array is array (Natural range <>) of TempHorizontalItemIndexDx_Access_Array_Access;
    type TempHorizontalItemIndexDx_Access_Array_Access_Array_Access is access all TempHorizontalItemIndexDx_Access_Array_Access_Array;
+   type TempHorizontalItemIndexDx_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TempHorizontalItemIndexDx_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TempHorizontalItemIndexDx_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TempHorizontalItemIndexDx_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TempHorizontalItemIndexDx_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TempHorizontalItemIndexDx_Access_Array_Access is (if Value /= null and then Value.all in TempHorizontalItemIndexDx_Access_Array_Object'Class then TempHorizontalItemIndexDx_Access_Array_Object'Class (Value.all).Value else null);
+   type TempHorizontalItemIndexDx_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TempHorizontalItemIndexDx_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TempHorizontalItemIndexDx_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TempHorizontalItemIndexDx_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TempHorizontalItemIndexDx_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TempHorizontalItemIndexDx_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TempHorizontalItemIndexDx_Access_Array_Access_Array_Object'Class then TempHorizontalItemIndexDx_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References;
 
 with org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References;
@@ -777,10 +848,14 @@ package org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package is
    function "=" (Left, Right : TempHorizontalItemIndexDx_Access_Array) return Boolean renames org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References."=";
    subtype TempHorizontalItemIndexDx_Access_Array_Access is org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References.TempHorizontalItemIndexDx_Access_Array_Access;
    function "=" (Left, Right : TempHorizontalItemIndexDx_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References."=";
+   function Java_Box (Value : TempHorizontalItemIndexDx_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References.Java_Box;
+   function Java_Unbox_TempHorizontalItemIndexDx_Access_Array (Value : access Java_Object'Class) return TempHorizontalItemIndexDx_Access_Array_Access renames org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References.Java_Unbox_TempHorizontalItemIndexDx_Access_Array;
    subtype TempHorizontalItemIndexDx_Access_Array_Access_Array is org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References.TempHorizontalItemIndexDx_Access_Array_Access_Array;
    function "=" (Left, Right : TempHorizontalItemIndexDx_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References."=";
    subtype TempHorizontalItemIndexDx_Access_Array_Access_Array_Access is org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References.TempHorizontalItemIndexDx_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TempHorizontalItemIndexDx_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References."=";
+   function Java_Box (Value : TempHorizontalItemIndexDx_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References.Java_Box;
+   function Java_Unbox_TempHorizontalItemIndexDx_Access_Array_Access_Array (Value : access Java_Object'Class) return TempHorizontalItemIndexDx_Access_Array_Access_Array_Access renames org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package_References.Java_Unbox_TempHorizontalItemIndexDx_Access_Array_Access_Array;
 
    type TempHorizontalItemIndexDx is new ItemIndexDx with record
       scrollCurrentSelectionForm_Var : ScrollCurrentSelectionForm_Access;
@@ -793,6 +868,7 @@ package org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package is
 
 end org.allbinary.graphics.form.TempHorizontalItemIndexDx_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.form.HorizontalItemIndexDx_Package;
 package org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References is
    type HorizontalItemIndexDx_Access is access all org.allbinary.graphics.form.HorizontalItemIndexDx_Package.HorizontalItemIndexDx'Class;
@@ -800,6 +876,16 @@ package org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References is
    type HorizontalItemIndexDx_Access_Array_Access is access all HorizontalItemIndexDx_Access_Array;
    type HorizontalItemIndexDx_Access_Array_Access_Array is array (Natural range <>) of HorizontalItemIndexDx_Access_Array_Access;
    type HorizontalItemIndexDx_Access_Array_Access_Array_Access is access all HorizontalItemIndexDx_Access_Array_Access_Array;
+   type HorizontalItemIndexDx_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HorizontalItemIndexDx_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HorizontalItemIndexDx_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HorizontalItemIndexDx_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HorizontalItemIndexDx_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HorizontalItemIndexDx_Access_Array_Access is (if Value /= null and then Value.all in HorizontalItemIndexDx_Access_Array_Object'Class then HorizontalItemIndexDx_Access_Array_Object'Class (Value.all).Value else null);
+   type HorizontalItemIndexDx_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HorizontalItemIndexDx_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HorizontalItemIndexDx_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HorizontalItemIndexDx_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HorizontalItemIndexDx_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HorizontalItemIndexDx_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in HorizontalItemIndexDx_Access_Array_Access_Array_Object'Class then HorizontalItemIndexDx_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References;
 
 with org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References;
@@ -932,10 +1018,14 @@ package org.allbinary.graphics.form.HorizontalItemIndexDx_Package is
    function "=" (Left, Right : HorizontalItemIndexDx_Access_Array) return Boolean renames org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References."=";
    subtype HorizontalItemIndexDx_Access_Array_Access is org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References.HorizontalItemIndexDx_Access_Array_Access;
    function "=" (Left, Right : HorizontalItemIndexDx_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References."=";
+   function Java_Box (Value : HorizontalItemIndexDx_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References.Java_Box;
+   function Java_Unbox_HorizontalItemIndexDx_Access_Array (Value : access Java_Object'Class) return HorizontalItemIndexDx_Access_Array_Access renames org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References.Java_Unbox_HorizontalItemIndexDx_Access_Array;
    subtype HorizontalItemIndexDx_Access_Array_Access_Array is org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References.HorizontalItemIndexDx_Access_Array_Access_Array;
    function "=" (Left, Right : HorizontalItemIndexDx_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References."=";
    subtype HorizontalItemIndexDx_Access_Array_Access_Array_Access is org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References.HorizontalItemIndexDx_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HorizontalItemIndexDx_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References."=";
+   function Java_Box (Value : HorizontalItemIndexDx_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References.Java_Box;
+   function Java_Unbox_HorizontalItemIndexDx_Access_Array_Access_Array (Value : access Java_Object'Class) return HorizontalItemIndexDx_Access_Array_Access_Array_Access renames org.allbinary.graphics.form.HorizontalItemIndexDx_Package_References.Java_Unbox_HorizontalItemIndexDx_Access_Array_Access_Array;
 
    type HorizontalItemIndexDx is new ItemIndexDx with record
       scrollCurrentSelectionForm_Var : ScrollCurrentSelectionForm_Access;
@@ -948,6 +1038,7 @@ package org.allbinary.graphics.form.HorizontalItemIndexDx_Package is
 
 end org.allbinary.graphics.form.HorizontalItemIndexDx_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.form.VerticalItemIndexDx_Package;
 package org.allbinary.graphics.form.VerticalItemIndexDx_Package_References is
    type VerticalItemIndexDx_Access is access all org.allbinary.graphics.form.VerticalItemIndexDx_Package.VerticalItemIndexDx'Class;
@@ -955,6 +1046,16 @@ package org.allbinary.graphics.form.VerticalItemIndexDx_Package_References is
    type VerticalItemIndexDx_Access_Array_Access is access all VerticalItemIndexDx_Access_Array;
    type VerticalItemIndexDx_Access_Array_Access_Array is array (Natural range <>) of VerticalItemIndexDx_Access_Array_Access;
    type VerticalItemIndexDx_Access_Array_Access_Array_Access is access all VerticalItemIndexDx_Access_Array_Access_Array;
+   type VerticalItemIndexDx_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : VerticalItemIndexDx_Access_Array_Access;
+   end record;
+   function Java_Box (Value : VerticalItemIndexDx_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new VerticalItemIndexDx_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_VerticalItemIndexDx_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return VerticalItemIndexDx_Access_Array_Access is (if Value /= null and then Value.all in VerticalItemIndexDx_Access_Array_Object'Class then VerticalItemIndexDx_Access_Array_Object'Class (Value.all).Value else null);
+   type VerticalItemIndexDx_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : VerticalItemIndexDx_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : VerticalItemIndexDx_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new VerticalItemIndexDx_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_VerticalItemIndexDx_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return VerticalItemIndexDx_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in VerticalItemIndexDx_Access_Array_Access_Array_Object'Class then VerticalItemIndexDx_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.form.VerticalItemIndexDx_Package_References;
 
 with org.allbinary.graphics.form.VerticalItemIndexDx_Package_References;
@@ -1087,10 +1188,14 @@ package org.allbinary.graphics.form.VerticalItemIndexDx_Package is
    function "=" (Left, Right : VerticalItemIndexDx_Access_Array) return Boolean renames org.allbinary.graphics.form.VerticalItemIndexDx_Package_References."=";
    subtype VerticalItemIndexDx_Access_Array_Access is org.allbinary.graphics.form.VerticalItemIndexDx_Package_References.VerticalItemIndexDx_Access_Array_Access;
    function "=" (Left, Right : VerticalItemIndexDx_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.VerticalItemIndexDx_Package_References."=";
+   function Java_Box (Value : VerticalItemIndexDx_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.VerticalItemIndexDx_Package_References.Java_Box;
+   function Java_Unbox_VerticalItemIndexDx_Access_Array (Value : access Java_Object'Class) return VerticalItemIndexDx_Access_Array_Access renames org.allbinary.graphics.form.VerticalItemIndexDx_Package_References.Java_Unbox_VerticalItemIndexDx_Access_Array;
    subtype VerticalItemIndexDx_Access_Array_Access_Array is org.allbinary.graphics.form.VerticalItemIndexDx_Package_References.VerticalItemIndexDx_Access_Array_Access_Array;
    function "=" (Left, Right : VerticalItemIndexDx_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.VerticalItemIndexDx_Package_References."=";
    subtype VerticalItemIndexDx_Access_Array_Access_Array_Access is org.allbinary.graphics.form.VerticalItemIndexDx_Package_References.VerticalItemIndexDx_Access_Array_Access_Array_Access;
    function "=" (Left, Right : VerticalItemIndexDx_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.VerticalItemIndexDx_Package_References."=";
+   function Java_Box (Value : VerticalItemIndexDx_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.VerticalItemIndexDx_Package_References.Java_Box;
+   function Java_Unbox_VerticalItemIndexDx_Access_Array_Access_Array (Value : access Java_Object'Class) return VerticalItemIndexDx_Access_Array_Access_Array_Access renames org.allbinary.graphics.form.VerticalItemIndexDx_Package_References.Java_Unbox_VerticalItemIndexDx_Access_Array_Access_Array;
 
    type VerticalItemIndexDx is new ItemIndexDx with record
       scrollCurrentSelectionForm_Var : ScrollCurrentSelectionForm_Access;

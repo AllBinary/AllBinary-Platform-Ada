@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package;
 package org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_References is
    type SpecialRightGameInputProcessor_Access is access all org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package.SpecialRightGameInputProcessor'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_
    type SpecialRightGameInputProcessor_Access_Array_Access is access all SpecialRightGameInputProcessor_Access_Array;
    type SpecialRightGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of SpecialRightGameInputProcessor_Access_Array_Access;
    type SpecialRightGameInputProcessor_Access_Array_Access_Array_Access is access all SpecialRightGameInputProcessor_Access_Array_Access_Array;
+   type SpecialRightGameInputProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SpecialRightGameInputProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SpecialRightGameInputProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SpecialRightGameInputProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SpecialRightGameInputProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SpecialRightGameInputProcessor_Access_Array_Access is (if Value /= null and then Value.all in SpecialRightGameInputProcessor_Access_Array_Object'Class then SpecialRightGameInputProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type SpecialRightGameInputProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SpecialRightGameInputProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SpecialRightGameInputProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SpecialRightGameInputProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SpecialRightGameInputProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SpecialRightGameInputProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SpecialRightGameInputProcessor_Access_Array_Access_Array_Object'Class then SpecialRightGameInputProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_References;
 
 with org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_References;
@@ -83,10 +94,14 @@ package org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package 
    function "=" (Left, Right : SpecialRightGameInputProcessor_Access_Array) return Boolean renames org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_References."=";
    subtype SpecialRightGameInputProcessor_Access_Array_Access is org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_References.SpecialRightGameInputProcessor_Access_Array_Access;
    function "=" (Left, Right : SpecialRightGameInputProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_References."=";
+   function Java_Box (Value : SpecialRightGameInputProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_References.Java_Box;
+   function Java_Unbox_SpecialRightGameInputProcessor_Access_Array (Value : access Java_Object'Class) return SpecialRightGameInputProcessor_Access_Array_Access renames org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_References.Java_Unbox_SpecialRightGameInputProcessor_Access_Array;
    subtype SpecialRightGameInputProcessor_Access_Array_Access_Array is org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_References.SpecialRightGameInputProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : SpecialRightGameInputProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_References."=";
    subtype SpecialRightGameInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_References.SpecialRightGameInputProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SpecialRightGameInputProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_References."=";
+   function Java_Box (Value : SpecialRightGameInputProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_References.Java_Box;
+   function Java_Unbox_SpecialRightGameInputProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return SpecialRightGameInputProcessor_Access_Array_Access_Array_Access renames org.allbinary.game.layer.special.SpecialRightGameInputProcessor_Package_References.Java_Unbox_SpecialRightGameInputProcessor_Access_Array_Access_Array;
 
    type SpecialRightGameInputProcessor is new SpecialGameInputProcessor with null record;
 

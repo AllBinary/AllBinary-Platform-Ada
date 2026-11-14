@@ -37,7 +37,7 @@ package body org.allbinary.graphics.opengles.vbo.ColorAttributePointerVBOOpenGLP
 
    function getInstance return ColorAttributePointerVBOOpenGLProcessor_Access is
    begin
-        return ColorAttributePointerVBOOpenGLProcessor_Access (ColorAttributePointerVBOOpenGLProcessor_Package.instance);
+        return ColorAttributePointerVBOOpenGLProcessor_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ColorAttributePointerVBOOpenGLProcessor'Class) is

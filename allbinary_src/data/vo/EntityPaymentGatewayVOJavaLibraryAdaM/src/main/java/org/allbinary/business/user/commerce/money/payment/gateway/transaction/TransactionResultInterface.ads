@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package;
 package org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package_References is
    type TransactionResultInterface_Access is access all org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package.TransactionResultInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.commerce.money.payment.gateway.transaction.T
    type TransactionResultInterface_Access_Array_Access is access all TransactionResultInterface_Access_Array;
    type TransactionResultInterface_Access_Array_Access_Array is array (Natural range <>) of TransactionResultInterface_Access_Array_Access;
    type TransactionResultInterface_Access_Array_Access_Array_Access is access all TransactionResultInterface_Access_Array_Access_Array;
+   type TransactionResultInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransactionResultInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransactionResultInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransactionResultInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransactionResultInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransactionResultInterface_Access_Array_Access is (if Value /= null and then Value.all in TransactionResultInterface_Access_Array_Object'Class then TransactionResultInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type TransactionResultInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransactionResultInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransactionResultInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransactionResultInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransactionResultInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransactionResultInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TransactionResultInterface_Access_Array_Access_Array_Object'Class then TransactionResultInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package_References;
 
 with org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package_References;
@@ -58,10 +69,14 @@ package org.allbinary.business.user.commerce.money.payment.gateway.transaction.T
    function "=" (Left, Right : TransactionResultInterface_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package_References."=";
    subtype TransactionResultInterface_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package_References.TransactionResultInterface_Access_Array_Access;
    function "=" (Left, Right : TransactionResultInterface_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package_References."=";
+   function Java_Box (Value : TransactionResultInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package_References.Java_Box;
+   function Java_Unbox_TransactionResultInterface_Access_Array (Value : access Java_Object'Class) return TransactionResultInterface_Access_Array_Access renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package_References.Java_Unbox_TransactionResultInterface_Access_Array;
    subtype TransactionResultInterface_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package_References.TransactionResultInterface_Access_Array_Access_Array;
    function "=" (Left, Right : TransactionResultInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package_References."=";
    subtype TransactionResultInterface_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package_References.TransactionResultInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TransactionResultInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package_References."=";
+   function Java_Box (Value : TransactionResultInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package_References.Java_Box;
+   function Java_Unbox_TransactionResultInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return TransactionResultInterface_Access_Array_Access_Array_Access renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.TransactionResultInterface_Package_References.Java_Unbox_TransactionResultInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_TransactionResultInterface (Value : TransactionResultInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function toString (This : in out TransactionResultInterface) return Unbounded_String is abstract;
    function getValues (This : in out TransactionResultInterface) return BasicArrayList_Access is abstract;

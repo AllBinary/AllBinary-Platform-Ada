@@ -91,9 +91,7 @@ package body org.allbinary.graphics.draw.KeyValueDrawString_Package is
 
    procedure update (This : in out KeyValueDrawString; value : Unbounded_String) is
    begin
-        if (value) /= (Null_Unbounded_String) then
-            This.value := value;
-        end if;
+        This.value := value;
    end update;
 
 end org.allbinary.graphics.draw.KeyValueDrawString_Package;

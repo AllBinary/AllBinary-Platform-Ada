@@ -72,7 +72,7 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
 
    function getInstance return DrawVerticalStringUtil_Access is
    begin
-        return DrawVerticalStringUtil_Access (DrawVerticalStringUtil_Package.instance);
+        return DrawVerticalStringUtil_Package.instance;
    end getInstance;
 
    procedure updateMeasurement (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics_Package.Graphics'Class; string_Id : Unbounded_String) is

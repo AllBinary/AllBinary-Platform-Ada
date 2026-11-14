@@ -27,14 +27,40 @@ with org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Packa
 with org.allbinary.input.motion.button.CommonButtons_Package; use org.allbinary.input.motion.button.CommonButtons_Package;
 with org.allbinary.input.motion.button.TouchButton_Package; use org.allbinary.input.motion.button.TouchButton_Package;
 with org.allbinary.input.motion.button.BasicTouchInputFactory_Package; use org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.input.motion.button.BasicTouchButtonCellPositionFactory_Package;
+with org.allbinary.input.motion.button.BasicTouchInputFactory_Package;
+with org.allbinary.graphics.CellPosition_Package;
+with org.allbinary.input.motion.button.CommonButtons_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEventFactory_Package;
+with org.allbinary.game.input.GameKeyEventSourceInterface_Package;
+with org.allbinary.game.input.GameKeyFactory_Package;
+with org.allbinary.game.input.Input_Package;
+with org.allbinary.game.input.mapping.InputMapping_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package;
+with org.allbinary.input.motion.button.TouchButtonLocationHelper_Package;
+with org.allbinary.input.motion.button.TouchButtonResource_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuilder_Package is
 
@@ -98,7 +124,7 @@ package body org.allbinary.input.motion.button.UpgradeDowngradeTouchButtonsBuild
             touchButtonLocationHelper := TouchButtonLocationHelper_Package.Create;
             cellPositionFactory := CellPositionFactory_Package.getInstance;
             basicTouchButtonCellPositionFactory := BasicTouchButtonCellPositionFactory_Package.Create;
-            if ((basicTouchButtonCellPositionFactory.SECOND_FROM_TOP_LEFT) /= (cellPositionFactory.NONE)) and then ((basicTouchButtonCellPositionFactory.SECOND_FROM_TOP_RIGHT) /= (cellPositionFactory.NONE)) then
+            if ((Java_Object_Access (basicTouchButtonCellPositionFactory.SECOND_FROM_TOP_LEFT)) /= (Java_Object_Access (cellPositionFactory.NONE))) and then ((Java_Object_Access (basicTouchButtonCellPositionFactory.SECOND_FROM_TOP_RIGHT)) /= (Java_Object_Access (cellPositionFactory.NONE))) then
                 commonButtons := CommonButtons_Package.getInstance;
                 UP := TouchButton_Package.createButton (BasicTouchInputFactory_Package.getInstance.SPECIAL_BUTTON_TWO, TouchButtonUpgradeResource_Package.getInstance, commonButtons.NORMAL_BUTTON, basicTouchButtonCellPositionFactory.SECOND_FROM_TOP_LEFT, touchButtonLocationHelper.getColumnsRemainderHalf, touchButtonLocationHelper.getRowsRemainderHalf);
                 DOWN := TouchButton_Package.createButton (BasicTouchInputFactory_Package.getInstance.SPECIAL_BUTTON_ONE, TouchButtonDowngradeResource_Package.getInstance, commonButtons.NORMAL_BUTTON, basicTouchButtonCellPositionFactory.SECOND_FROM_TOP_RIGHT, touchButtonLocationHelper.getColumnsRemainderHalf, touchButtonLocationHelper.getRowsRemainderHalf);

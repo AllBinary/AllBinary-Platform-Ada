@@ -62,7 +62,7 @@ package body org.allbinary.animation.special.SpecialAnimation_Package is
 
    function getInstance return SpecialAnimation_Access is
    begin
-        return SpecialAnimation_Access (SpecialAnimation_Package.NULL_SPECIAL_ANIMATION);
+        return SpecialAnimation_Package.NULL_SPECIAL_ANIMATION;
    end getInstance;
 
    procedure Initialize (This : in out SpecialAnimation'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is

@@ -107,7 +107,7 @@ package body org.allbinary.logic.io.file.FileUtil2_Package is
 
    function getInstance return FileUtil2_Access is
    begin
-        return FileUtil2_Access (FileUtil2_Package.instance);
+        return FileUtil2_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out FileUtil2'Class) is
@@ -129,7 +129,7 @@ package body org.allbinary.logic.io.file.FileUtil2_Package is
    begin
         inputStream := null;
         begin
-            inputStream := AbFileInputStream_Package.Create (file);
+            inputStream := AbFileInputStream_Package.createFromAbFile (file);
         exception
             when Java_Occurrence : others =>
                 declare

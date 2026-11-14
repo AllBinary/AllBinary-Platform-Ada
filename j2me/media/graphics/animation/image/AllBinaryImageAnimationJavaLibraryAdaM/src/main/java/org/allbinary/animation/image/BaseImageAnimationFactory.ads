@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.image.BaseImageAnimationFactory_Package;
 package org.allbinary.animation.image.BaseImageAnimationFactory_Package_References is
    type BaseImageAnimationFactory_Access is access all org.allbinary.animation.image.BaseImageAnimationFactory_Package.BaseImageAnimationFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.image.BaseImageAnimationFactory_Package_Referenc
    type BaseImageAnimationFactory_Access_Array_Access is access all BaseImageAnimationFactory_Access_Array;
    type BaseImageAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of BaseImageAnimationFactory_Access_Array_Access;
    type BaseImageAnimationFactory_Access_Array_Access_Array_Access is access all BaseImageAnimationFactory_Access_Array_Access_Array;
+   type BaseImageAnimationFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BaseImageAnimationFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BaseImageAnimationFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BaseImageAnimationFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BaseImageAnimationFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BaseImageAnimationFactory_Access_Array_Access is (if Value /= null and then Value.all in BaseImageAnimationFactory_Access_Array_Object'Class then BaseImageAnimationFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type BaseImageAnimationFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BaseImageAnimationFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BaseImageAnimationFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BaseImageAnimationFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BaseImageAnimationFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BaseImageAnimationFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BaseImageAnimationFactory_Access_Array_Access_Array_Object'Class then BaseImageAnimationFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.image.BaseImageAnimationFactory_Package_References;
 
 with org.allbinary.animation.image.BaseImageAnimationFactory_Package_References;
@@ -123,10 +134,14 @@ package org.allbinary.animation.image.BaseImageAnimationFactory_Package is
    function "=" (Left, Right : BaseImageAnimationFactory_Access_Array) return Boolean renames org.allbinary.animation.image.BaseImageAnimationFactory_Package_References."=";
    subtype BaseImageAnimationFactory_Access_Array_Access is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array_Access;
    function "=" (Left, Right : BaseImageAnimationFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.image.BaseImageAnimationFactory_Package_References."=";
+   function Java_Box (Value : BaseImageAnimationFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.Java_Box;
+   function Java_Unbox_BaseImageAnimationFactory_Access_Array (Value : access Java_Object'Class) return BaseImageAnimationFactory_Access_Array_Access renames org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.Java_Unbox_BaseImageAnimationFactory_Access_Array;
    subtype BaseImageAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array_Access_Array;
    function "=" (Left, Right : BaseImageAnimationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.BaseImageAnimationFactory_Package_References."=";
    subtype BaseImageAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.BaseImageAnimationFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BaseImageAnimationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.BaseImageAnimationFactory_Package_References."=";
+   function Java_Box (Value : BaseImageAnimationFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.Java_Box;
+   function Java_Unbox_BaseImageAnimationFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return BaseImageAnimationFactory_Access_Array_Access_Array_Access renames org.allbinary.animation.image.BaseImageAnimationFactory_Package_References.Java_Unbox_BaseImageAnimationFactory_Access_Array_Access_Array;
 
    type BaseImageAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface with record
       animationFactoryImageScaleUtil : AnimationFactoryImageScaleUtil_Access;

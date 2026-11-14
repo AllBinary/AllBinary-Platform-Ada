@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
 package org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References is
    type PlayerGameNotificationHud_Access is access all org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package.PlayerGameNotificationHud'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_
    type PlayerGameNotificationHud_Access_Array_Access is access all PlayerGameNotificationHud_Access_Array;
    type PlayerGameNotificationHud_Access_Array_Access_Array is array (Natural range <>) of PlayerGameNotificationHud_Access_Array_Access;
    type PlayerGameNotificationHud_Access_Array_Access_Array_Access is access all PlayerGameNotificationHud_Access_Array_Access_Array;
+   type PlayerGameNotificationHud_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PlayerGameNotificationHud_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PlayerGameNotificationHud_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PlayerGameNotificationHud_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PlayerGameNotificationHud_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PlayerGameNotificationHud_Access_Array_Access is (if Value /= null and then Value.all in PlayerGameNotificationHud_Access_Array_Object'Class then PlayerGameNotificationHud_Access_Array_Object'Class (Value.all).Value else null);
+   type PlayerGameNotificationHud_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PlayerGameNotificationHud_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PlayerGameNotificationHud_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PlayerGameNotificationHud_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PlayerGameNotificationHud_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PlayerGameNotificationHud_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PlayerGameNotificationHud_Access_Array_Access_Array_Object'Class then PlayerGameNotificationHud_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References;
 
 with org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References;
@@ -167,15 +178,19 @@ package org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package 
    function "=" (Left, Right : PlayerGameNotificationHud_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References."=";
    subtype PlayerGameNotificationHud_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access;
    function "=" (Left, Right : PlayerGameNotificationHud_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References."=";
+   function Java_Box (Value : PlayerGameNotificationHud_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.Java_Box;
+   function Java_Unbox_PlayerGameNotificationHud_Access_Array (Value : access Java_Object'Class) return PlayerGameNotificationHud_Access_Array_Access renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.Java_Unbox_PlayerGameNotificationHud_Access_Array;
    subtype PlayerGameNotificationHud_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access_Array;
    function "=" (Left, Right : PlayerGameNotificationHud_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References."=";
    subtype PlayerGameNotificationHud_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.PlayerGameNotificationHud_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PlayerGameNotificationHud_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References."=";
+   function Java_Box (Value : PlayerGameNotificationHud_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.Java_Box;
+   function Java_Unbox_PlayerGameNotificationHud_Access_Array_Access_Array (Value : access Java_Object'Class) return PlayerGameNotificationHud_Access_Array_Access_Array_Access renames org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package_References.Java_Unbox_PlayerGameNotificationHud_Access_Array_Access_Array;
 
    type PlayerGameNotificationHud is new GameNotificationHud and UpdateMyFontInterface with record
       gameTickTimeDelayHelper : GameTickTimeDelayHelper_Access;
       EMPTY_STRING : Unbounded_String;
-      displayInfo : DisplayInfoSingleton_Access;
+      PlayerGameNotificationHud_Field_displayInfo : DisplayInfoSingleton_Access;
       timeDelayHelper : TimeDelayHelper_Access;
       circularIndexUtil : CircularIndexUtil_Access;
       gameNotification : GameNotification_Access;
@@ -206,6 +221,7 @@ package org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package 
 
 end org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package;
 package org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_References is
    type SetAndRemoveProcessor_Access is access all org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package.SetAndRemoveProcessor'Class;
@@ -213,6 +229,16 @@ package org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_Refe
    type SetAndRemoveProcessor_Access_Array_Access is access all SetAndRemoveProcessor_Access_Array;
    type SetAndRemoveProcessor_Access_Array_Access_Array is array (Natural range <>) of SetAndRemoveProcessor_Access_Array_Access;
    type SetAndRemoveProcessor_Access_Array_Access_Array_Access is access all SetAndRemoveProcessor_Access_Array_Access_Array;
+   type SetAndRemoveProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SetAndRemoveProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SetAndRemoveProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SetAndRemoveProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SetAndRemoveProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SetAndRemoveProcessor_Access_Array_Access is (if Value /= null and then Value.all in SetAndRemoveProcessor_Access_Array_Object'Class then SetAndRemoveProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type SetAndRemoveProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SetAndRemoveProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SetAndRemoveProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SetAndRemoveProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SetAndRemoveProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SetAndRemoveProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SetAndRemoveProcessor_Access_Array_Access_Array_Object'Class then SetAndRemoveProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_References;
 
 with org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_References;
@@ -373,10 +399,14 @@ package org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package is
    function "=" (Left, Right : SetAndRemoveProcessor_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_References."=";
    subtype SetAndRemoveProcessor_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_References.SetAndRemoveProcessor_Access_Array_Access;
    function "=" (Left, Right : SetAndRemoveProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_References."=";
+   function Java_Box (Value : SetAndRemoveProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_References.Java_Box;
+   function Java_Unbox_SetAndRemoveProcessor_Access_Array (Value : access Java_Object'Class) return SetAndRemoveProcessor_Access_Array_Access renames org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_References.Java_Unbox_SetAndRemoveProcessor_Access_Array;
    subtype SetAndRemoveProcessor_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_References.SetAndRemoveProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : SetAndRemoveProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_References."=";
    subtype SetAndRemoveProcessor_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_References.SetAndRemoveProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SetAndRemoveProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_References."=";
+   function Java_Box (Value : SetAndRemoveProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_References.Java_Box;
+   function Java_Unbox_SetAndRemoveProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return SetAndRemoveProcessor_Access_Array_Access_Array_Access renames org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package_References.Java_Unbox_SetAndRemoveProcessor_Access_Array_Access_Array;
 
    type SetAndRemoveProcessor is new Processor with record
       updateMeasurementProcessor : PlayerGameNotificationHud_Access;
@@ -388,6 +418,7 @@ package org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package is
 
 end org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package;
 package org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_References is
    type NextUnremoveableProcessor_Access is access all org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package.NextUnremoveableProcessor'Class;
@@ -395,6 +426,16 @@ package org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_
    type NextUnremoveableProcessor_Access_Array_Access is access all NextUnremoveableProcessor_Access_Array;
    type NextUnremoveableProcessor_Access_Array_Access_Array is array (Natural range <>) of NextUnremoveableProcessor_Access_Array_Access;
    type NextUnremoveableProcessor_Access_Array_Access_Array_Access is access all NextUnremoveableProcessor_Access_Array_Access_Array;
+   type NextUnremoveableProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NextUnremoveableProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NextUnremoveableProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NextUnremoveableProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NextUnremoveableProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NextUnremoveableProcessor_Access_Array_Access is (if Value /= null and then Value.all in NextUnremoveableProcessor_Access_Array_Object'Class then NextUnremoveableProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type NextUnremoveableProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NextUnremoveableProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NextUnremoveableProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NextUnremoveableProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NextUnremoveableProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NextUnremoveableProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NextUnremoveableProcessor_Access_Array_Access_Array_Object'Class then NextUnremoveableProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_References;
 
 with org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_References;
@@ -555,10 +596,14 @@ package org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package 
    function "=" (Left, Right : NextUnremoveableProcessor_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_References."=";
    subtype NextUnremoveableProcessor_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_References.NextUnremoveableProcessor_Access_Array_Access;
    function "=" (Left, Right : NextUnremoveableProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_References."=";
+   function Java_Box (Value : NextUnremoveableProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_References.Java_Box;
+   function Java_Unbox_NextUnremoveableProcessor_Access_Array (Value : access Java_Object'Class) return NextUnremoveableProcessor_Access_Array_Access renames org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_References.Java_Unbox_NextUnremoveableProcessor_Access_Array;
    subtype NextUnremoveableProcessor_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_References.NextUnremoveableProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : NextUnremoveableProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_References."=";
    subtype NextUnremoveableProcessor_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_References.NextUnremoveableProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NextUnremoveableProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_References."=";
+   function Java_Box (Value : NextUnremoveableProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_References.Java_Box;
+   function Java_Unbox_NextUnremoveableProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return NextUnremoveableProcessor_Access_Array_Access_Array_Access renames org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package_References.Java_Unbox_NextUnremoveableProcessor_Access_Array_Access_Array;
 
    type NextUnremoveableProcessor is new Processor with record
       updateMeasurementProcessor : PlayerGameNotificationHud_Access;

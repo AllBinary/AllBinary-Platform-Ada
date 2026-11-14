@@ -86,7 +86,7 @@ package body org.allbinary.media.image.ImagePersistanceUtil_Package is
 
    function getInstance return ImagePersistanceUtil_Access is
    begin
-        return ImagePersistanceUtil_Access (ImagePersistanceUtil_Package.instance);
+        return ImagePersistanceUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

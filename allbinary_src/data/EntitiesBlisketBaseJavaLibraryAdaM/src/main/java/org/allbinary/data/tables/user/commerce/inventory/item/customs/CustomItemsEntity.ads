@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package;
 package org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package_References is
    type CustomItemsEntity_Access is access all org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package.CustomItemsEntity'Class;
@@ -19,6 +20,16 @@ package org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomIte
    type CustomItemsEntity_Access_Array_Access is access all CustomItemsEntity_Access_Array;
    type CustomItemsEntity_Access_Array_Access_Array is array (Natural range <>) of CustomItemsEntity_Access_Array_Access;
    type CustomItemsEntity_Access_Array_Access_Array_Access is access all CustomItemsEntity_Access_Array_Access_Array;
+   type CustomItemsEntity_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CustomItemsEntity_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CustomItemsEntity_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CustomItemsEntity_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CustomItemsEntity_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CustomItemsEntity_Access_Array_Access is (if Value /= null and then Value.all in CustomItemsEntity_Access_Array_Object'Class then CustomItemsEntity_Access_Array_Object'Class (Value.all).Value else null);
+   type CustomItemsEntity_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CustomItemsEntity_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CustomItemsEntity_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CustomItemsEntity_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CustomItemsEntity_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CustomItemsEntity_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CustomItemsEntity_Access_Array_Access_Array_Object'Class then CustomItemsEntity_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package_References;
 
 with org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package_References;
@@ -88,10 +99,14 @@ package org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomIte
    function "=" (Left, Right : CustomItemsEntity_Access_Array) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package_References."=";
    subtype CustomItemsEntity_Access_Array_Access is org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package_References.CustomItemsEntity_Access_Array_Access;
    function "=" (Left, Right : CustomItemsEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package_References."=";
+   function Java_Box (Value : CustomItemsEntity_Access_Array_Access) return Java_Object_Access renames org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package_References.Java_Box;
+   function Java_Unbox_CustomItemsEntity_Access_Array (Value : access Java_Object'Class) return CustomItemsEntity_Access_Array_Access renames org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package_References.Java_Unbox_CustomItemsEntity_Access_Array;
    subtype CustomItemsEntity_Access_Array_Access_Array is org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package_References.CustomItemsEntity_Access_Array_Access_Array;
    function "=" (Left, Right : CustomItemsEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package_References."=";
    subtype CustomItemsEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package_References.CustomItemsEntity_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CustomItemsEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package_References."=";
+   function Java_Box (Value : CustomItemsEntity_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package_References.Java_Box;
+   function Java_Unbox_CustomItemsEntity_Access_Array_Access_Array (Value : access Java_Object'Class) return CustomItemsEntity_Access_Array_Access_Array_Access renames org.allbinary.data.tables.user.commerce.inventory.item.customs.CustomItemsEntity_Package_References.Java_Unbox_CustomItemsEntity_Access_Array_Access_Array;
 
    type CustomItemsEntity is new AbSqlBean and CustomItemsEntityInterface with record
       logUtil : LogUtil_Access;

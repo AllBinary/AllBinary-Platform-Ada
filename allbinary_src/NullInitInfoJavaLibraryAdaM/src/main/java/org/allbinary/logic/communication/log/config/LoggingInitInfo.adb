@@ -125,7 +125,7 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
    function get return BasicArrayList_Access is
    begin
         LoggingInitInfo_Package.updateIfNeeded;
-        return BasicArrayList_Access (LoggingInitInfo_Package.logConfigInfoList);
+        return LoggingInitInfo_Package.logConfigInfoList;
    end get;
 
    --  throws Exception

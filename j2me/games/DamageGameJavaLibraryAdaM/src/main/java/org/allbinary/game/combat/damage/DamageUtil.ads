@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.combat.damage.DamageUtil_Package;
 package org.allbinary.game.combat.damage.DamageUtil_Package_References is
    type DamageUtil_Access is access all org.allbinary.game.combat.damage.DamageUtil_Package.DamageUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.combat.damage.DamageUtil_Package_References is
    type DamageUtil_Access_Array_Access is access all DamageUtil_Access_Array;
    type DamageUtil_Access_Array_Access_Array is array (Natural range <>) of DamageUtil_Access_Array_Access;
    type DamageUtil_Access_Array_Access_Array_Access is access all DamageUtil_Access_Array_Access_Array;
+   type DamageUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DamageUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DamageUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DamageUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DamageUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DamageUtil_Access_Array_Access is (if Value /= null and then Value.all in DamageUtil_Access_Array_Object'Class then DamageUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type DamageUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DamageUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DamageUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DamageUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DamageUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DamageUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in DamageUtil_Access_Array_Access_Array_Object'Class then DamageUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.combat.damage.DamageUtil_Package_References;
 
 with org.allbinary.game.combat.damage.DamageUtil_Package_References;
@@ -82,10 +93,14 @@ package org.allbinary.game.combat.damage.DamageUtil_Package is
    function "=" (Left, Right : DamageUtil_Access_Array) return Boolean renames org.allbinary.game.combat.damage.DamageUtil_Package_References."=";
    subtype DamageUtil_Access_Array_Access is org.allbinary.game.combat.damage.DamageUtil_Package_References.DamageUtil_Access_Array_Access;
    function "=" (Left, Right : DamageUtil_Access_Array_Access) return Boolean renames org.allbinary.game.combat.damage.DamageUtil_Package_References."=";
+   function Java_Box (Value : DamageUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.combat.damage.DamageUtil_Package_References.Java_Box;
+   function Java_Unbox_DamageUtil_Access_Array (Value : access Java_Object'Class) return DamageUtil_Access_Array_Access renames org.allbinary.game.combat.damage.DamageUtil_Package_References.Java_Unbox_DamageUtil_Access_Array;
    subtype DamageUtil_Access_Array_Access_Array is org.allbinary.game.combat.damage.DamageUtil_Package_References.DamageUtil_Access_Array_Access_Array;
    function "=" (Left, Right : DamageUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.game.combat.damage.DamageUtil_Package_References."=";
    subtype DamageUtil_Access_Array_Access_Array_Access is org.allbinary.game.combat.damage.DamageUtil_Package_References.DamageUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : DamageUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.combat.damage.DamageUtil_Package_References."=";
+   function Java_Box (Value : DamageUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.combat.damage.DamageUtil_Package_References.Java_Box;
+   function Java_Unbox_DamageUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return DamageUtil_Access_Array_Access_Array_Access renames org.allbinary.game.combat.damage.DamageUtil_Package_References.Java_Unbox_DamageUtil_Access_Array_Access_Array;
 
    type DamageUtil is new Java_Object with record
       logUtil : LogUtil_Access;

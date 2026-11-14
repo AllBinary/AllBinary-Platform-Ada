@@ -29,7 +29,9 @@ with org.allbinary.business.user.role.UserRoleB_Package; use org.allbinary.busin
 with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
 with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.logic.java.bool.BooleanFactory_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionData_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
 
 package body org.allbinary.logic.communication.http.request.session.WeblisketSession_Package is
 
@@ -44,6 +46,7 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
    package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
    package BooleanFactory_Package renames Standard.org.allbinary.logic.java.bool.BooleanFactory_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    subtype OrderInterface_Access is org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References.OrderInterface_Access;
    function "=" (Left, Right : OrderInterface_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References."=";
    subtype OrderInterface_Access_Array is org.allbinary.business.user.commerce.inventory.order.OrderInterface_Package_References.OrderInterface_Access_Array;
@@ -155,7 +158,7 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
 
    function getWebAppPath (This : in out WeblisketSession) return Unbounded_String is
    begin
-        return Java_Unbox (This.session.getAttribute (org_Package.allbinary.globals.GLOBALS2.WEBAPPPATH));
+        return Java_Unbox (This.session.getAttribute (GLOBALS2_Package.WEBAPPPATH));
    end getWebAppPath;
 
    function getUserName (This : in out WeblisketSession) return Unbounded_String is

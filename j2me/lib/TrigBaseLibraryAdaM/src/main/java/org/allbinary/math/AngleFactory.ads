@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.math.AngleFactory_Package;
 package org.allbinary.math.AngleFactory_Package_References is
    type AngleFactory_Access is access all org.allbinary.math.AngleFactory_Package.AngleFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.math.AngleFactory_Package_References is
    type AngleFactory_Access_Array_Access is access all AngleFactory_Access_Array;
    type AngleFactory_Access_Array_Access_Array is array (Natural range <>) of AngleFactory_Access_Array_Access;
    type AngleFactory_Access_Array_Access_Array_Access is access all AngleFactory_Access_Array_Access_Array;
+   type AngleFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AngleFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AngleFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AngleFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AngleFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AngleFactory_Access_Array_Access is (if Value /= null and then Value.all in AngleFactory_Access_Array_Object'Class then AngleFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type AngleFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AngleFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AngleFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AngleFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AngleFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AngleFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AngleFactory_Access_Array_Access_Array_Object'Class then AngleFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.math.AngleFactory_Package_References;
 
 with org.allbinary.math.AngleFactory_Package_References;
@@ -93,10 +104,14 @@ package org.allbinary.math.AngleFactory_Package is
    function "=" (Left, Right : AngleFactory_Access_Array) return Boolean renames org.allbinary.math.AngleFactory_Package_References."=";
    subtype AngleFactory_Access_Array_Access is org.allbinary.math.AngleFactory_Package_References.AngleFactory_Access_Array_Access;
    function "=" (Left, Right : AngleFactory_Access_Array_Access) return Boolean renames org.allbinary.math.AngleFactory_Package_References."=";
+   function Java_Box (Value : AngleFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.math.AngleFactory_Package_References.Java_Box;
+   function Java_Unbox_AngleFactory_Access_Array (Value : access Java_Object'Class) return AngleFactory_Access_Array_Access renames org.allbinary.math.AngleFactory_Package_References.Java_Unbox_AngleFactory_Access_Array;
    subtype AngleFactory_Access_Array_Access_Array is org.allbinary.math.AngleFactory_Package_References.AngleFactory_Access_Array_Access_Array;
    function "=" (Left, Right : AngleFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.math.AngleFactory_Package_References."=";
    subtype AngleFactory_Access_Array_Access_Array_Access is org.allbinary.math.AngleFactory_Package_References.AngleFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AngleFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.math.AngleFactory_Package_References."=";
+   function Java_Box (Value : AngleFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.math.AngleFactory_Package_References.Java_Box;
+   function Java_Unbox_AngleFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return AngleFactory_Access_Array_Access_Array_Access renames org.allbinary.math.AngleFactory_Package_References.Java_Unbox_AngleFactory_Access_Array_Access_Array;
 
    type AngleFactory is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -31,6 +31,8 @@ with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbina
 with org.allbinary.string_Id.CommonPhoneStrings_Package; use org.allbinary.string_Id.CommonPhoneStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package; use org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package;
 with org.allbinary.business.user.commerce.inventory.item.BasicItemData_Package_References;
 with org.allbinary.util.ABHashMap_Package;
@@ -56,6 +58,8 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -149,7 +153,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
       itemHashMap : constant HashMap_Access := HashMap_Access (itemHashMap_Param);
    begin
       Initialize_Fields (This);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRODUCTSEARCHLOGGING) then
             This.logUtil.putF (This.commonStrings.START, BasicItem_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap)"));
         end if;
         This.itemId := Java_Unbox (itemHashMap.get (This.basicItemData.ID));
@@ -194,7 +198,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
       EMPTY : Unbounded_String;
    begin
       Initialize_Fields (This);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRODUCTSEARCHLOGGING) then
             This.logUtil.putF (This.commonStrings.START, BasicItem_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         EMPTY := StringUtil_Package.getInstance.EMPTY_STRING;
@@ -557,10 +561,10 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
       calendar : Calendar_Access;
       time : Unbounded_String;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRODUCTSEARCHLOGGING) then
             This.logUtil.putF (This.commonStrings.START, BasicItem_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap"));
         end if;
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (This.basicItemData.ID, Java_Box (This.itemId));
         hashMap.put (This.basicItemData.NUMBER, Java_Box (This.number));
         hashMap.put (This.basicItemData.INBASKETS, Java_Box (This.inBaskets));
@@ -599,41 +603,41 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
       calendar : Calendar_Access;
       time : Unbounded_String;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRODUCTSEARCHLOGGING) then
             This.logUtil.putF (This.commonStrings.START, BasicItem_Access'(This'Unchecked_Access), To_Unbounded_String ("toVector"));
         end if;
         values := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        values.add (This.itemId);
-        values.add (This.number);
-        values.add (This.inBaskets);
-        values.add (This.weight);
-        values.add (This.enabled);
-        values.add (This.newOrUsed);
-        values.add (This.summary);
-        values.add (This.distributor);
-        values.add (This.idUsedByDistributor);
-        values.add (This.producedBy);
-        values.add (This.productionDate);
-        values.add (This.startProductionDate);
-        values.add (This.description);
-        values.add (This.keywords);
-        values.add (This.category);
-        values.add (This.type_Id);
-        values.add (BasicItem'Class (This).getSmallImage);
-        values.add (BasicItem'Class (This).getMediumImage);
-        values.add (BasicItem'Class (This).getLargeImage);
+        values.add (Java_Box (This.itemId));
+        values.add (Java_Box (This.number));
+        values.add (Java_Box (This.inBaskets));
+        values.add (Java_Box (This.weight));
+        values.add (Java_Box (This.enabled));
+        values.add (Java_Box (This.newOrUsed));
+        values.add (Java_Box (This.summary));
+        values.add (Java_Box (This.distributor));
+        values.add (Java_Box (This.idUsedByDistributor));
+        values.add (Java_Box (This.producedBy));
+        values.add (Java_Box (This.productionDate));
+        values.add (Java_Box (This.startProductionDate));
+        values.add (Java_Box (This.description));
+        values.add (Java_Box (This.keywords));
+        values.add (Java_Box (This.category));
+        values.add (Java_Box (This.type_Id));
+        values.add (Java_Box (BasicItem'Class (This).getSmallImage));
+        values.add (Java_Box (BasicItem'Class (This).getMediumImage));
+        values.add (Java_Box (BasicItem'Class (This).getLargeImage));
         calendar := Calendar_Package.getInstance;
         time := To_Unbounded_String (Java_Image (calendar.getTimeInMillis));
-        values.add (time);
-        values.add (time);
-        values.add (This.price.toString);
-        values.add (This.comment);
-        values.add (This.customs);
-        values.add (BasicItem'Class (This).getDownloads);
-        values.add (This.groups);
-        values.add (This.options);
-        values.add (This.permissions);
-        values.add (This.specials);
+        values.add (Java_Box (time));
+        values.add (Java_Box (time));
+        values.add (Java_Box (This.price.toString));
+        values.add (Java_Box (This.comment));
+        values.add (Java_Box (This.customs));
+        values.add (Java_Box (BasicItem'Class (This).getDownloads));
+        values.add (Java_Box (This.groups));
+        values.add (Java_Box (This.options));
+        values.add (Java_Box (This.permissions));
+        values.add (Java_Box (This.specials));
         return values;
    end toVector;
 

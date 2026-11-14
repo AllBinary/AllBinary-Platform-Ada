@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
 package org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References is
    type ConcurrentImageLoadingProcessor_Access is access all org.allbinary.thread.ConcurrentImageLoadingProcessor_Package.ConcurrentImageLoadingProcessor'Class;
@@ -19,6 +20,16 @@ package org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References 
    type ConcurrentImageLoadingProcessor_Access_Array_Access is access all ConcurrentImageLoadingProcessor_Access_Array;
    type ConcurrentImageLoadingProcessor_Access_Array_Access_Array is array (Natural range <>) of ConcurrentImageLoadingProcessor_Access_Array_Access;
    type ConcurrentImageLoadingProcessor_Access_Array_Access_Array_Access is access all ConcurrentImageLoadingProcessor_Access_Array_Access_Array;
+   type ConcurrentImageLoadingProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ConcurrentImageLoadingProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ConcurrentImageLoadingProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ConcurrentImageLoadingProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ConcurrentImageLoadingProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ConcurrentImageLoadingProcessor_Access_Array_Access is (if Value /= null and then Value.all in ConcurrentImageLoadingProcessor_Access_Array_Object'Class then ConcurrentImageLoadingProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type ConcurrentImageLoadingProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ConcurrentImageLoadingProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ConcurrentImageLoadingProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ConcurrentImageLoadingProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ConcurrentImageLoadingProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ConcurrentImageLoadingProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ConcurrentImageLoadingProcessor_Access_Array_Access_Array_Object'Class then ConcurrentImageLoadingProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References;
 
 with org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References;
@@ -72,10 +83,14 @@ package org.allbinary.thread.ConcurrentImageLoadingProcessor_Package is
    function "=" (Left, Right : ConcurrentImageLoadingProcessor_Access_Array) return Boolean renames org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References."=";
    subtype ConcurrentImageLoadingProcessor_Access_Array_Access is org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References.ConcurrentImageLoadingProcessor_Access_Array_Access;
    function "=" (Left, Right : ConcurrentImageLoadingProcessor_Access_Array_Access) return Boolean renames org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References."=";
+   function Java_Box (Value : ConcurrentImageLoadingProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References.Java_Box;
+   function Java_Unbox_ConcurrentImageLoadingProcessor_Access_Array (Value : access Java_Object'Class) return ConcurrentImageLoadingProcessor_Access_Array_Access renames org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References.Java_Unbox_ConcurrentImageLoadingProcessor_Access_Array;
    subtype ConcurrentImageLoadingProcessor_Access_Array_Access_Array is org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References.ConcurrentImageLoadingProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : ConcurrentImageLoadingProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References."=";
    subtype ConcurrentImageLoadingProcessor_Access_Array_Access_Array_Access is org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References.ConcurrentImageLoadingProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ConcurrentImageLoadingProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References."=";
+   function Java_Box (Value : ConcurrentImageLoadingProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References.Java_Box;
+   function Java_Unbox_ConcurrentImageLoadingProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return ConcurrentImageLoadingProcessor_Access_Array_Access_Array_Access renames org.allbinary.thread.ConcurrentImageLoadingProcessor_Package_References.Java_Unbox_ConcurrentImageLoadingProcessor_Access_Array_Access_Array;
 
    type ConcurrentImageLoadingProcessor is new BaseImageLoadingProcessor with record
       logUtil : LogUtil_Access;
@@ -88,6 +103,7 @@ package org.allbinary.thread.ConcurrentImageLoadingProcessor_Package is
 
 end org.allbinary.thread.ConcurrentImageLoadingProcessor_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.thread.ImageCacheRunnable_Package;
 package org.allbinary.thread.ImageCacheRunnable_Package_References is
    type ImageCacheRunnable_Access is access all org.allbinary.thread.ImageCacheRunnable_Package.ImageCacheRunnable'Class;
@@ -95,6 +111,16 @@ package org.allbinary.thread.ImageCacheRunnable_Package_References is
    type ImageCacheRunnable_Access_Array_Access is access all ImageCacheRunnable_Access_Array;
    type ImageCacheRunnable_Access_Array_Access_Array is array (Natural range <>) of ImageCacheRunnable_Access_Array_Access;
    type ImageCacheRunnable_Access_Array_Access_Array_Access is access all ImageCacheRunnable_Access_Array_Access_Array;
+   type ImageCacheRunnable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageCacheRunnable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageCacheRunnable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageCacheRunnable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageCacheRunnable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageCacheRunnable_Access_Array_Access is (if Value /= null and then Value.all in ImageCacheRunnable_Access_Array_Object'Class then ImageCacheRunnable_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageCacheRunnable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageCacheRunnable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageCacheRunnable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageCacheRunnable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageCacheRunnable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageCacheRunnable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageCacheRunnable_Access_Array_Access_Array_Object'Class then ImageCacheRunnable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.thread.ImageCacheRunnable_Package_References;
 
 with org.allbinary.thread.ImageCacheRunnable_Package_References;
@@ -148,10 +174,14 @@ package org.allbinary.thread.ImageCacheRunnable_Package is
    function "=" (Left, Right : ImageCacheRunnable_Access_Array) return Boolean renames org.allbinary.thread.ImageCacheRunnable_Package_References."=";
    subtype ImageCacheRunnable_Access_Array_Access is org.allbinary.thread.ImageCacheRunnable_Package_References.ImageCacheRunnable_Access_Array_Access;
    function "=" (Left, Right : ImageCacheRunnable_Access_Array_Access) return Boolean renames org.allbinary.thread.ImageCacheRunnable_Package_References."=";
+   function Java_Box (Value : ImageCacheRunnable_Access_Array_Access) return Java_Object_Access renames org.allbinary.thread.ImageCacheRunnable_Package_References.Java_Box;
+   function Java_Unbox_ImageCacheRunnable_Access_Array (Value : access Java_Object'Class) return ImageCacheRunnable_Access_Array_Access renames org.allbinary.thread.ImageCacheRunnable_Package_References.Java_Unbox_ImageCacheRunnable_Access_Array;
    subtype ImageCacheRunnable_Access_Array_Access_Array is org.allbinary.thread.ImageCacheRunnable_Package_References.ImageCacheRunnable_Access_Array_Access_Array;
    function "=" (Left, Right : ImageCacheRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.ImageCacheRunnable_Package_References."=";
    subtype ImageCacheRunnable_Access_Array_Access_Array_Access is org.allbinary.thread.ImageCacheRunnable_Package_References.ImageCacheRunnable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageCacheRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.ImageCacheRunnable_Package_References."=";
+   function Java_Box (Value : ImageCacheRunnable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.thread.ImageCacheRunnable_Package_References.Java_Box;
+   function Java_Unbox_ImageCacheRunnable_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageCacheRunnable_Access_Array_Access_Array_Access renames org.allbinary.thread.ImageCacheRunnable_Package_References.Java_Unbox_ImageCacheRunnable_Access_Array_Access_Array;
 
    type ImageCacheRunnable is new ABRunnable with record
       imageCache : ImageCache_Access;

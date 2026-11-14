@@ -108,7 +108,8 @@ package body org.allbinary.log.FileLog_Package is
             line := Null_Unbounded_String;
             tmpOut := BufferedWriter_Package.Create (FileWriter_Package.Create (logFileBak));
             tmpIn := BufferedReader_Package.Create (FileReader_Package.Create (logFile));
-            while ((Java_Assign (line, tmpIn.readLine))) /= (null) loop
+            while tmpIn.ready loop
+                line := tmpIn.readLine;
                 tmpOut.write (line, 0, Ada.Strings.Unbounded.Length (line));
                 tmpOut.newLine;
             end loop;

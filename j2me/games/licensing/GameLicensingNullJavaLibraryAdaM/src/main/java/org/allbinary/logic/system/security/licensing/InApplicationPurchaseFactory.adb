@@ -39,7 +39,7 @@ package body org.allbinary.logic.system.security.licensing.InApplicationPurchase
 
    function getInstance return InApplicationPurchaseFactory_Access is
    begin
-        return InApplicationPurchaseFactory_Access (InApplicationPurchaseFactory_Package.instance);
+        return InApplicationPurchaseFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out InApplicationPurchaseFactory'Class) is

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.motion.button.TouchButtonFactory_Package;
 package org.allbinary.input.motion.button.TouchButtonFactory_Package_References is
    type TouchButtonFactory_Access is access all org.allbinary.input.motion.button.TouchButtonFactory_Package.TouchButtonFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.motion.button.TouchButtonFactory_Package_References 
    type TouchButtonFactory_Access_Array_Access is access all TouchButtonFactory_Access_Array;
    type TouchButtonFactory_Access_Array_Access_Array is array (Natural range <>) of TouchButtonFactory_Access_Array_Access;
    type TouchButtonFactory_Access_Array_Access_Array_Access is access all TouchButtonFactory_Access_Array_Access_Array;
+   type TouchButtonFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TouchButtonFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TouchButtonFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TouchButtonFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TouchButtonFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TouchButtonFactory_Access_Array_Access is (if Value /= null and then Value.all in TouchButtonFactory_Access_Array_Object'Class then TouchButtonFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type TouchButtonFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TouchButtonFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TouchButtonFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TouchButtonFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TouchButtonFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TouchButtonFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TouchButtonFactory_Access_Array_Access_Array_Object'Class then TouchButtonFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.motion.button.TouchButtonFactory_Package_References;
 
 with org.allbinary.input.motion.button.TouchButtonFactory_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.input.motion.button.TouchButtonFactory_Package is
    function "=" (Left, Right : TouchButtonFactory_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonFactory_Package_References."=";
    subtype TouchButtonFactory_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonFactory_Package_References.TouchButtonFactory_Access_Array_Access;
    function "=" (Left, Right : TouchButtonFactory_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonFactory_Package_References."=";
+   function Java_Box (Value : TouchButtonFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.TouchButtonFactory_Package_References.Java_Box;
+   function Java_Unbox_TouchButtonFactory_Access_Array (Value : access Java_Object'Class) return TouchButtonFactory_Access_Array_Access renames org.allbinary.input.motion.button.TouchButtonFactory_Package_References.Java_Unbox_TouchButtonFactory_Access_Array;
    subtype TouchButtonFactory_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonFactory_Package_References.TouchButtonFactory_Access_Array_Access_Array;
    function "=" (Left, Right : TouchButtonFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonFactory_Package_References."=";
    subtype TouchButtonFactory_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonFactory_Package_References.TouchButtonFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TouchButtonFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonFactory_Package_References."=";
+   function Java_Box (Value : TouchButtonFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.TouchButtonFactory_Package_References.Java_Box;
+   function Java_Unbox_TouchButtonFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return TouchButtonFactory_Access_Array_Access_Array_Access renames org.allbinary.input.motion.button.TouchButtonFactory_Package_References.Java_Unbox_TouchButtonFactory_Access_Array_Access_Array;
 
    type TouchButtonFactory is new Java_Object with record
       LIST : BasicArrayList_Access;

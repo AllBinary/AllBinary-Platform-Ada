@@ -29,7 +29,7 @@ package body org.allbinary.business.context.configuration.ContextConfigurationDa
 
    function getInstance return ContextConfigurationData_Access is
    begin
-        return ContextConfigurationData_Access (ContextConfigurationData_Package.instance);
+        return ContextConfigurationData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ContextConfigurationData'Class) is

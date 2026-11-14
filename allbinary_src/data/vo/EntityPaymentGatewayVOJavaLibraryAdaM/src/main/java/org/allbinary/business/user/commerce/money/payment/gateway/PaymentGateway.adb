@@ -581,7 +581,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
       paymentGatewayHashMap : HashMap_Access;
       superCrypt : SuperCrypt_Access;
    begin
-        paymentGatewayHashMap := StdUtil_Package.getInstance.createHashMap;
+        paymentGatewayHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         paymentGatewayHashMap.put (EntryData_Package.getInstance.ENABLE, Java_Box (This.enable));
         paymentGatewayHashMap.put (Java_Box (StoreFrontData_Package.getInstance.NAME.toString), Java_Box (This.storeName));
         paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (PaymentGateway'Class (This).getName));
@@ -646,35 +646,35 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
       superCrypt : SuperCrypt_Access;
    begin
         updateVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        updateVector.add (This.enable);
-        updateVector.add (This.storeName);
-        updateVector.add (PaymentGateway'Class (This).getName);
-        updateVector.add (This.paymentMethod);
-        updateVector.add (This.mode);
-        updateVector.add (This.testProtocol);
-        updateVector.add (This.testServer);
-        updateVector.add (This.testPort);
-        updateVector.add (This.testPath);
-        updateVector.add (This.serverProtocol);
-        updateVector.add (This.server);
-        updateVector.add (This.serverPort);
-        updateVector.add (This.serverPath);
+        updateVector.add (Java_Box (This.enable));
+        updateVector.add (Java_Box (This.storeName));
+        updateVector.add (Java_Box (PaymentGateway'Class (This).getName));
+        updateVector.add (Java_Box (This.paymentMethod));
+        updateVector.add (Java_Box (This.mode));
+        updateVector.add (Java_Box (This.testProtocol));
+        updateVector.add (Java_Box (This.testServer));
+        updateVector.add (Java_Box (This.testPort));
+        updateVector.add (Java_Box (This.testPath));
+        updateVector.add (Java_Box (This.serverProtocol));
+        updateVector.add (Java_Box (This.server));
+        updateVector.add (Java_Box (This.serverPort));
+        updateVector.add (Java_Box (This.serverPath));
         if isEncrypted then
             superCrypt := SuperCrypt_Package.Create (PaymentGatewayData_Package.CRYPTNUM);
             updateVector.add (superCrypt.encrypt (This.userName));
             updateVector.add (superCrypt.encrypt (This.password));
         else
-            updateVector.add (This.userName);
-            updateVector.add (This.password);
+            updateVector.add (Java_Box (This.userName));
+            updateVector.add (Java_Box (This.password));
         end if;
-        updateVector.add (This.timeout);
-        updateVector.add (This.proxyProtocol);
-        updateVector.add (This.proxyServer);
-        updateVector.add (This.proxyPort);
-        updateVector.add (This.proxyPath);
-        updateVector.add (This.proxyUserName);
-        updateVector.add (This.proxyPassword);
-        updateVector.add (This.proxyTimeout);
+        updateVector.add (Java_Box (This.timeout));
+        updateVector.add (Java_Box (This.proxyProtocol));
+        updateVector.add (Java_Box (This.proxyServer));
+        updateVector.add (Java_Box (This.proxyPort));
+        updateVector.add (Java_Box (This.proxyPath));
+        updateVector.add (Java_Box (This.proxyUserName));
+        updateVector.add (Java_Box (This.proxyPassword));
+        updateVector.add (Java_Box (This.proxyTimeout));
         if isEncrypted then
             superCrypt := SuperCrypt_Package.Create (PaymentGatewayData_Package.CRYPTNUM);
             updateVector.add (superCrypt.encrypt (This.special1));
@@ -687,15 +687,15 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
             updateVector.add (superCrypt.encrypt (This.special8));
             updateVector.add (superCrypt.encrypt (This.special9));
         else
-            updateVector.add (This.special1);
-            updateVector.add (This.special2);
-            updateVector.add (This.special3);
-            updateVector.add (This.special4);
-            updateVector.add (This.special5);
-            updateVector.add (This.special6);
-            updateVector.add (This.special7);
-            updateVector.add (This.special8);
-            updateVector.add (This.special9);
+            updateVector.add (Java_Box (This.special1));
+            updateVector.add (Java_Box (This.special2));
+            updateVector.add (Java_Box (This.special3));
+            updateVector.add (Java_Box (This.special4));
+            updateVector.add (Java_Box (This.special5));
+            updateVector.add (Java_Box (This.special6));
+            updateVector.add (Java_Box (This.special7));
+            updateVector.add (Java_Box (This.special8));
+            updateVector.add (Java_Box (This.special9));
         end if;
         return updateVector;
    end toVector;

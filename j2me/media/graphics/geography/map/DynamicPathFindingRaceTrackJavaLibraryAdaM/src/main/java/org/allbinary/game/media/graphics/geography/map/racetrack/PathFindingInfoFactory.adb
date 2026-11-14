@@ -131,7 +131,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
 
    function getInstance return PathFindingInfoFactory_Access is
    begin
-        return PathFindingInfoFactory_Access (PathFindingInfoFactory_Package.instance);
+        return PathFindingInfoFactory_Package.instance;
    end getInstance;
 
    procedure initMax (max : Integer) is

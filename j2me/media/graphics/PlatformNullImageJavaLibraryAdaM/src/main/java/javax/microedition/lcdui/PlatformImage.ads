@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with javax.microedition.lcdui.PlatformImage_Package;
 package javax.microedition.lcdui.PlatformImage_Package_References is
    type PlatformImage_Access is access all javax.microedition.lcdui.PlatformImage_Package.PlatformImage'Class;
@@ -19,6 +20,16 @@ package javax.microedition.lcdui.PlatformImage_Package_References is
    type PlatformImage_Access_Array_Access is access all PlatformImage_Access_Array;
    type PlatformImage_Access_Array_Access_Array is array (Natural range <>) of PlatformImage_Access_Array_Access;
    type PlatformImage_Access_Array_Access_Array_Access is access all PlatformImage_Access_Array_Access_Array;
+   type PlatformImage_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PlatformImage_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PlatformImage_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PlatformImage_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PlatformImage_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PlatformImage_Access_Array_Access is (if Value /= null and then Value.all in PlatformImage_Access_Array_Object'Class then PlatformImage_Access_Array_Object'Class (Value.all).Value else null);
+   type PlatformImage_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PlatformImage_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PlatformImage_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PlatformImage_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PlatformImage_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PlatformImage_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PlatformImage_Access_Array_Access_Array_Object'Class then PlatformImage_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end javax.microedition.lcdui.PlatformImage_Package_References;
 
 with javax.microedition.lcdui.PlatformImage_Package_References;
@@ -68,10 +79,14 @@ package javax.microedition.lcdui.PlatformImage_Package is
    function "=" (Left, Right : PlatformImage_Access_Array) return Boolean renames javax.microedition.lcdui.PlatformImage_Package_References."=";
    subtype PlatformImage_Access_Array_Access is javax.microedition.lcdui.PlatformImage_Package_References.PlatformImage_Access_Array_Access;
    function "=" (Left, Right : PlatformImage_Access_Array_Access) return Boolean renames javax.microedition.lcdui.PlatformImage_Package_References."=";
+   function Java_Box (Value : PlatformImage_Access_Array_Access) return Java_Object_Access renames javax.microedition.lcdui.PlatformImage_Package_References.Java_Box;
+   function Java_Unbox_PlatformImage_Access_Array (Value : access Java_Object'Class) return PlatformImage_Access_Array_Access renames javax.microedition.lcdui.PlatformImage_Package_References.Java_Unbox_PlatformImage_Access_Array;
    subtype PlatformImage_Access_Array_Access_Array is javax.microedition.lcdui.PlatformImage_Package_References.PlatformImage_Access_Array_Access_Array;
    function "=" (Left, Right : PlatformImage_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.PlatformImage_Package_References."=";
    subtype PlatformImage_Access_Array_Access_Array_Access is javax.microedition.lcdui.PlatformImage_Package_References.PlatformImage_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PlatformImage_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.PlatformImage_Package_References."=";
+   function Java_Box (Value : PlatformImage_Access_Array_Access_Array_Access) return Java_Object_Access renames javax.microedition.lcdui.PlatformImage_Package_References.Java_Box;
+   function Java_Unbox_PlatformImage_Access_Array_Access_Array (Value : access Java_Object'Class) return PlatformImage_Access_Array_Access_Array_Access renames javax.microedition.lcdui.PlatformImage_Package_References.Java_Unbox_PlatformImage_Access_Array_Access_Array;
 
    type PlatformImage is new Java_Object with null record;
 

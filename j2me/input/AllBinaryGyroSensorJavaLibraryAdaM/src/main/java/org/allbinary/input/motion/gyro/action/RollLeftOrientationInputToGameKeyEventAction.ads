@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package;
 package org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package_References is
    type RollLeftOrientationInputToGameKeyEventAction_Access is access all org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package.RollLeftOrientationInputToGameKeyEventAction'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKey
    type RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access is access all RollLeftOrientationInputToGameKeyEventAction_Access_Array;
    type RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access;
    type RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array;
+   type RollLeftOrientationInputToGameKeyEventAction_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RollLeftOrientationInputToGameKeyEventAction_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RollLeftOrientationInputToGameKeyEventAction_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access is (if Value /= null and then Value.all in RollLeftOrientationInputToGameKeyEventAction_Access_Array_Object'Class then RollLeftOrientationInputToGameKeyEventAction_Access_Array_Object'Class (Value.all).Value else null);
+   type RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Object'Class then RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package_References;
 
 with org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package_References;
@@ -46,10 +57,14 @@ package org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKey
    function "=" (Left, Right : RollLeftOrientationInputToGameKeyEventAction_Access_Array) return Boolean renames org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package_References."=";
    subtype RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access is org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package_References.RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access;
    function "=" (Left, Right : RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package_References."=";
+   function Java_Box (Value : RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package_References.Java_Box;
+   function Java_Unbox_RollLeftOrientationInputToGameKeyEventAction_Access_Array (Value : access Java_Object'Class) return RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access renames org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package_References.Java_Unbox_RollLeftOrientationInputToGameKeyEventAction_Access_Array;
    subtype RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array is org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package_References.RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array;
    function "=" (Left, Right : RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package_References."=";
    subtype RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access is org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package_References.RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access;
    function "=" (Left, Right : RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package_References."=";
+   function Java_Box (Value : RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package_References.Java_Box;
+   function Java_Unbox_RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array (Value : access Java_Object'Class) return RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array_Access renames org.allbinary.input.motion.gyro.action.RollLeftOrientationInputToGameKeyEventAction_Package_References.Java_Unbox_RollLeftOrientationInputToGameKeyEventAction_Access_Array_Access_Array;
 
    type RollLeftOrientationInputToGameKeyEventAction is new GameKeyCompleteMotionGestureInputEvent with null record;
    instance : Java_Object_Access;

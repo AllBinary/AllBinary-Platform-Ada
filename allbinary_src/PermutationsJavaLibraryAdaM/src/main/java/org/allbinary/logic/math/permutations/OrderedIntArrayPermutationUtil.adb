@@ -15,13 +15,14 @@
 
 with org.allbinary.logic.util.visitor.Visitor_Package; use org.allbinary.logic.util.visitor.Visitor_Package;
 with org.allbinary.logic.util.visitor.Visitor_Package_References;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.math.permutations.IntPermutationVisitor_Package; use org.allbinary.logic.math.permutations.IntPermutationVisitor_Package;
 with org.allbinary.logic.math.permutations.IntPermutationVisitor_Package;
 with org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.string_Id.StringMaker_Package;
 
 package body org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUtil_Package is
 
+   package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    subtype Visitor_Access is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access;
    function "=" (Left, Right : Visitor_Access) return Boolean renames org.allbinary.logic.util.visitor.Visitor_Package_References."=";
    subtype Visitor_Access_Array is org.allbinary.logic.util.visitor.Visitor_Package_References.Visitor_Access_Array;
@@ -42,7 +43,7 @@ package body org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUti
 
    function getInstance return OrderedIntArrayPermutationUtil_Access is
    begin
-        return OrderedIntArrayPermutationUtil_Access (OrderedIntArrayPermutationUtil_Package.instance);
+        return OrderedIntArrayPermutationUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out OrderedIntArrayPermutationUtil'Class) is
@@ -133,7 +134,7 @@ package body org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUti
         permutationVisitor := IntPermutationVisitor_Package.Create (data);
         ORIGINAL_DATA_LABEL := To_Unbounded_String ("Original Data: ");
         Ada.Text_IO.Put (Java_Image (ORIGINAL_DATA_LABEL));
-        permutationVisitor.print (data);
+        permutationVisitor.print (data, StringMaker_Package.Create);
         OrderedIntArrayPermutationUtil_Package.getInstance.generate (data, permutationVisitor);
    end main;
 

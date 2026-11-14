@@ -24,6 +24,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
 with org.allbinary.media.image.ImageCreationUtil_Package_References;
+with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
@@ -80,7 +81,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
 
    function getInstance return ImageCopyUtil_Access is
    begin
-        return ImageCopyUtil_Access (ImageCopyUtil_Package.instance);
+        return ImageCopyUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageCopyUtil'Class) is

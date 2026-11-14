@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.image.AlphaBaseProcessor_Package;
 package org.allbinary.animation.image.AlphaBaseProcessor_Package_References is
    type AlphaBaseProcessor_Access is access all org.allbinary.animation.image.AlphaBaseProcessor_Package.AlphaBaseProcessor'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.image.AlphaBaseProcessor_Package_References is
    type AlphaBaseProcessor_Access_Array_Access is access all AlphaBaseProcessor_Access_Array;
    type AlphaBaseProcessor_Access_Array_Access_Array is array (Natural range <>) of AlphaBaseProcessor_Access_Array_Access;
    type AlphaBaseProcessor_Access_Array_Access_Array_Access is access all AlphaBaseProcessor_Access_Array_Access_Array;
+   type AlphaBaseProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AlphaBaseProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AlphaBaseProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AlphaBaseProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AlphaBaseProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AlphaBaseProcessor_Access_Array_Access is (if Value /= null and then Value.all in AlphaBaseProcessor_Access_Array_Object'Class then AlphaBaseProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type AlphaBaseProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AlphaBaseProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AlphaBaseProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AlphaBaseProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AlphaBaseProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AlphaBaseProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AlphaBaseProcessor_Access_Array_Access_Array_Object'Class then AlphaBaseProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.image.AlphaBaseProcessor_Package_References;
 
 with org.allbinary.animation.image.AlphaBaseProcessor_Package_References;
@@ -70,10 +81,14 @@ package org.allbinary.animation.image.AlphaBaseProcessor_Package is
    function "=" (Left, Right : AlphaBaseProcessor_Access_Array) return Boolean renames org.allbinary.animation.image.AlphaBaseProcessor_Package_References."=";
    subtype AlphaBaseProcessor_Access_Array_Access is org.allbinary.animation.image.AlphaBaseProcessor_Package_References.AlphaBaseProcessor_Access_Array_Access;
    function "=" (Left, Right : AlphaBaseProcessor_Access_Array_Access) return Boolean renames org.allbinary.animation.image.AlphaBaseProcessor_Package_References."=";
+   function Java_Box (Value : AlphaBaseProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.image.AlphaBaseProcessor_Package_References.Java_Box;
+   function Java_Unbox_AlphaBaseProcessor_Access_Array (Value : access Java_Object'Class) return AlphaBaseProcessor_Access_Array_Access renames org.allbinary.animation.image.AlphaBaseProcessor_Package_References.Java_Unbox_AlphaBaseProcessor_Access_Array;
    subtype AlphaBaseProcessor_Access_Array_Access_Array is org.allbinary.animation.image.AlphaBaseProcessor_Package_References.AlphaBaseProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : AlphaBaseProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.AlphaBaseProcessor_Package_References."=";
    subtype AlphaBaseProcessor_Access_Array_Access_Array_Access is org.allbinary.animation.image.AlphaBaseProcessor_Package_References.AlphaBaseProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AlphaBaseProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.AlphaBaseProcessor_Package_References."=";
+   function Java_Box (Value : AlphaBaseProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.image.AlphaBaseProcessor_Package_References.Java_Box;
+   function Java_Unbox_AlphaBaseProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return AlphaBaseProcessor_Access_Array_Access_Array_Access renames org.allbinary.animation.image.AlphaBaseProcessor_Package_References.Java_Unbox_AlphaBaseProcessor_Access_Array_Access_Array;
 
    type AlphaBaseProcessor is new Java_Object with null record;
    instance : AlphaBaseProcessor_Access;

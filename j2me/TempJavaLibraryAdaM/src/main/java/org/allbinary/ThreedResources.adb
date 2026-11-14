@@ -36,7 +36,7 @@ package body org.allbinary.ThreedResources_Package is
 
    function getThreedResources return ThreedResources_Access is
    begin
-        return ThreedResources_Access (ThreedResources_Package.threedResources_Var);
+        return ThreedResources_Package.threedResources_Var;
    end getThreedResources;
 
    procedure add (This : in out ThreedResources) is

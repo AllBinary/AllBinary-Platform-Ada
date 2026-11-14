@@ -89,7 +89,7 @@ package body org.allbinary.media.image.ImageUnifierUtil_Package is
 
    function getInstance return ImageUnifierUtil_Access is
    begin
-        return ImageUnifierUtil_Access (ImageUnifierUtil_Package.instance);
+        return ImageUnifierUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageUnifierUtil'Class) is

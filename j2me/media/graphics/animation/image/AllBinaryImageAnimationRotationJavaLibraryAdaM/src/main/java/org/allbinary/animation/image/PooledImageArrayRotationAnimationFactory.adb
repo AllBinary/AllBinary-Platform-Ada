@@ -40,7 +40,11 @@ with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.DirectionUtil_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.allbinary.math.FrameUtil_Package;
@@ -48,13 +52,17 @@ with javax.microedition.khronos.opengles.GL_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimation_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimationInfo_Package;
+with org.allbinary.media.image.ImageModifierUtil_Package;
+with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.math.NamedAngle_Package;
+with org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -160,7 +168,7 @@ package body org.allbinary.animation.image.PooledImageArrayRotationAnimationFact
    --  throws Exception
    function getInstance (This : in out PooledImageArrayRotationAnimationFactory; instanceId : Integer) return Animation_Access is
    begin
-        return AdjustedImageArrayRotationAnimation_Package.createAdjustedImageArrayRotationAnimationInfo (This.allBinaryImageRotationAnimationInfo, This.animationBehaviorFactory.getOrCreateInstance);
+        return Animation_Access (AdjustedImageArrayRotationAnimation_Package.createAdjustedImageArrayRotationAnimationInfo (This.allBinaryImageRotationAnimationInfo, This.animationBehaviorFactory.getOrCreateInstance));
    end getInstance;
 
    procedure setInitialScale (This : in out PooledImageArrayRotationAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is

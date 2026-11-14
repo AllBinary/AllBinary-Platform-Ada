@@ -25,7 +25,7 @@ package body org.allbinary.logic.visual.theme.ThemesData_Package is
 
    function getInstance return ThemesData_Access is
    begin
-        return ThemesData_Access (ThemesData_Package.instance);
+        return ThemesData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ThemesData'Class) is

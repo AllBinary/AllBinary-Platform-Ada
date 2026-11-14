@@ -29,6 +29,7 @@ with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.math.AngleInfo_Package;
 with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.thread.BaseImageLoadingProcessor_Package;
 with org.allbinary.util.BasicArrayList_Package;
@@ -42,6 +43,8 @@ with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.math.FrameUtil_Package;
 with org.allbinary.game.gd.resource.GDResources_Package;
 with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.canvas.GameGlobalsFactory_Package;
 with org.allbinary.image.ImageCache_Package;
 with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.image.LazyImageRotationAnimation_Package;
@@ -109,7 +112,7 @@ package body org.allbinary.animation.image.LazyImageRotationAnimationFactory_Pac
         This.layoutIndex := layoutIndex;
         This.animationInterfaceFactoryInterface := animationInterfaceFactoryInterface;
         ImageCacheFactory_Package.getInstance.hasAnyLazyAnimationFactories := True;
-        if (This.animationInterfaceFactoryInterface.animationBehaviorFactory) = (AnimationBehaviorFactory_Package.getInstance) then
+        if (Java_Object_Access (This.animationInterfaceFactoryInterface.animationBehaviorFactory)) = (Java_Object_Access (AnimationBehaviorFactory_Package.getInstance)) then
             ForcedLogUtil_Package.log (To_Unbounded_String ("Using default AnimationBehaviorFactory with IndexedAnimationFactory"), LazyImageRotationAnimationFactory_Access'(This'Unchecked_Access));
         end if;
    end Initialize;

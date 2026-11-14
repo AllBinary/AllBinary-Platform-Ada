@@ -29,7 +29,7 @@ package body org.allbinary.time.TimeTypeUtil_Package is
 
    function getInstance return TimeTypeUtil_Access is
    begin
-        return TimeTypeUtil_Access (TimeTypeUtil_Package.instance);
+        return TimeTypeUtil_Package.instance;
    end getInstance;
 
    function isNight (This : in out TimeTypeUtil) return Boolean is

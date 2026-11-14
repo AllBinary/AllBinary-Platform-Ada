@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package;
 package org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References is
    type ToolJPanel_Access is access all org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package.ToolJPanel'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References
    type ToolJPanel_Access_Array_Access is access all ToolJPanel_Access_Array;
    type ToolJPanel_Access_Array_Access_Array is array (Natural range <>) of ToolJPanel_Access_Array_Access;
    type ToolJPanel_Access_Array_Access_Array_Access is access all ToolJPanel_Access_Array_Access_Array;
+   type ToolJPanel_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ToolJPanel_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ToolJPanel_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ToolJPanel_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ToolJPanel_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ToolJPanel_Access_Array_Access is (if Value /= null and then Value.all in ToolJPanel_Access_Array_Object'Class then ToolJPanel_Access_Array_Object'Class (Value.all).Value else null);
+   type ToolJPanel_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ToolJPanel_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ToolJPanel_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ToolJPanel_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ToolJPanel_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ToolJPanel_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ToolJPanel_Access_Array_Access_Array_Object'Class then ToolJPanel_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References;
 
 with org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References;
@@ -30,7 +41,13 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.graphics.j2me.workarea.tools.JPanel_Package; use org.allbinary.graphics.j2me.workarea.tools.JPanel_Package;
+--  with java.awt.Font_Package; use java.awt.Font_Package;
+--  with java.awt.GridLayout_Package; use java.awt.GridLayout_Package;
+--  with java.awt.event.MouseAdapter_Package; use java.awt.event.MouseAdapter_Package;
+--  with java.awt.event.MouseEvent_Package; use java.awt.event.MouseEvent_Package;
+--  with javax.swing.JButton_Package; use javax.swing.JButton_Package;
+--  with javax.swing.JList_Package; use javax.swing.JList_Package;
+--  with javax.swing.JPanel_Package; use javax.swing.JPanel_Package;
 
 package org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 
@@ -45,12 +62,16 @@ package org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
    function "=" (Left, Right : ToolJPanel_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References."=";
    subtype ToolJPanel_Access_Array_Access is org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References.ToolJPanel_Access_Array_Access;
    function "=" (Left, Right : ToolJPanel_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References."=";
+   function Java_Box (Value : ToolJPanel_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References.Java_Box;
+   function Java_Unbox_ToolJPanel_Access_Array (Value : access Java_Object'Class) return ToolJPanel_Access_Array_Access renames org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References.Java_Unbox_ToolJPanel_Access_Array;
    subtype ToolJPanel_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References.ToolJPanel_Access_Array_Access_Array;
    function "=" (Left, Right : ToolJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References."=";
    subtype ToolJPanel_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References.ToolJPanel_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ToolJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References."=";
+   function Java_Box (Value : ToolJPanel_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References.Java_Box;
+   function Java_Unbox_ToolJPanel_Access_Array_Access_Array (Value : access Java_Object'Class) return ToolJPanel_Access_Array_Access_Array_Access renames org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package_References.Java_Unbox_ToolJPanel_Access_Array_Access_Array;
 
-   type ToolJPanel is new JPanel with record
+   type ToolJPanel is new Java_Object with record
       arcJButton : JButton_Access;
       charJButton : JButton_Access;
       colorJList : JList_Access;

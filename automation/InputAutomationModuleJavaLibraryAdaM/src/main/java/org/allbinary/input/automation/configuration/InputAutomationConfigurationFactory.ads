@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package;
 package org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package_References is
    type InputAutomationConfigurationFactory_Access is access all org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package.InputAutomationConfigurationFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.configuration.InputAutomationConfiguratio
    type InputAutomationConfigurationFactory_Access_Array_Access is access all InputAutomationConfigurationFactory_Access_Array;
    type InputAutomationConfigurationFactory_Access_Array_Access_Array is array (Natural range <>) of InputAutomationConfigurationFactory_Access_Array_Access;
    type InputAutomationConfigurationFactory_Access_Array_Access_Array_Access is access all InputAutomationConfigurationFactory_Access_Array_Access_Array;
+   type InputAutomationConfigurationFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InputAutomationConfigurationFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InputAutomationConfigurationFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InputAutomationConfigurationFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InputAutomationConfigurationFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InputAutomationConfigurationFactory_Access_Array_Access is (if Value /= null and then Value.all in InputAutomationConfigurationFactory_Access_Array_Object'Class then InputAutomationConfigurationFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type InputAutomationConfigurationFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InputAutomationConfigurationFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InputAutomationConfigurationFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InputAutomationConfigurationFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InputAutomationConfigurationFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InputAutomationConfigurationFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in InputAutomationConfigurationFactory_Access_Array_Access_Array_Object'Class then InputAutomationConfigurationFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package_References;
 
 with org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package_References;
@@ -87,10 +98,14 @@ package org.allbinary.input.automation.configuration.InputAutomationConfiguratio
    function "=" (Left, Right : InputAutomationConfigurationFactory_Access_Array) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package_References."=";
    subtype InputAutomationConfigurationFactory_Access_Array_Access is org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package_References.InputAutomationConfigurationFactory_Access_Array_Access;
    function "=" (Left, Right : InputAutomationConfigurationFactory_Access_Array_Access) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package_References."=";
+   function Java_Box (Value : InputAutomationConfigurationFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package_References.Java_Box;
+   function Java_Unbox_InputAutomationConfigurationFactory_Access_Array (Value : access Java_Object'Class) return InputAutomationConfigurationFactory_Access_Array_Access renames org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package_References.Java_Unbox_InputAutomationConfigurationFactory_Access_Array;
    subtype InputAutomationConfigurationFactory_Access_Array_Access_Array is org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package_References.InputAutomationConfigurationFactory_Access_Array_Access_Array;
    function "=" (Left, Right : InputAutomationConfigurationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package_References."=";
    subtype InputAutomationConfigurationFactory_Access_Array_Access_Array_Access is org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package_References.InputAutomationConfigurationFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InputAutomationConfigurationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package_References."=";
+   function Java_Box (Value : InputAutomationConfigurationFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package_References.Java_Box;
+   function Java_Unbox_InputAutomationConfigurationFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return InputAutomationConfigurationFactory_Access_Array_Access_Array_Access renames org.allbinary.input.automation.configuration.InputAutomationConfigurationFactory_Package_References.Java_Unbox_InputAutomationConfigurationFactory_Access_Array_Access_Array;
 
    type InputAutomationConfigurationFactory is new Java_Object with record
       logUtil : LogUtil_Access;

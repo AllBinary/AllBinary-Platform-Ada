@@ -109,7 +109,7 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
       dimension : constant Dimension_Access := Dimension_Access (dimension_Param);
       submitButton : JButton_Access;
    begin
-        JDialog_Package.Initialize (This, Frame_Access (parent), modal);
+        null;
         Initialize_Fields (This);
         begin
             NewWorkAreaJDialog'Class (This).initComponents;

@@ -81,7 +81,6 @@ with org.microemu.device.MutableImage_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
-with org.allbinary.graphics.paint.Paintable_Package;
 with javax.microedition.media.Player_Package;
 with javax.microedition.media.PlayerListener_Package;
 with org.microemu.device.ui.PointerEvent_Package;

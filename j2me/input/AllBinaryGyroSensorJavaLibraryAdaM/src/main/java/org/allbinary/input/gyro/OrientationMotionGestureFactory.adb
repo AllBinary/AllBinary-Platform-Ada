@@ -56,7 +56,7 @@ package body org.allbinary.input.gyro.OrientationMotionGestureFactory_Package is
 
    function getInstance return OrientationMotionGestureFactory_Access is
    begin
-        if (OrientationMotionGestureFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (OrientationMotionGestureFactory_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             OrientationMotionGestureFactory_Package.instance := Java_Object_Access (OrientationMotionGestureFactory_Package.Create);
         end if;
         return OrientationMotionGestureFactory_Access (OrientationMotionGestureFactory_Package.instance);

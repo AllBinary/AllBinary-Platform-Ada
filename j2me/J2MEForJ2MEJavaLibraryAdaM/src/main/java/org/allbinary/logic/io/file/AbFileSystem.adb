@@ -73,7 +73,7 @@ package body org.allbinary.logic.io.file.AbFileSystem_Package is
 
    function getInstance return AbFileSystem_Access is
    begin
-        return AbFileSystem_Access (AbFileSystem_Package.instance);
+        return AbFileSystem_Package.instance;
    end getInstance;
 
    function isDirectoryOrFile (This : in out AbFileSystem; path : Unbounded_String) return Boolean is

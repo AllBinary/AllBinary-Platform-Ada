@@ -53,6 +53,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package; use org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package; use org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
@@ -93,6 +94,8 @@ with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.animation.VectorAnimationUtil_Package;
+with org.allbinary.animation.VectorExplosionType_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References;
 
@@ -291,7 +294,6 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
       workAreaJTreeJPanel : constant WorkAreaJTreeJPanel_Access := WorkAreaJTreeJPanel_Access (workAreaJTreeJPanel_Param);
       dimension : constant Dimension_Access := Dimension_Access (dimension_Param);
    begin
-      JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         This.grid := Grid_Package.Create;
         begin
@@ -328,7 +330,6 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
       graphicItemTreeNode : MutableTreeNode_Access;
       index : Integer;
    begin
-      JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         This.grid := Grid_Package.Create (canvasDom.getGrid);
         begin
@@ -375,7 +376,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         This.canvasTreeNode := DefaultMutableTreeNode_Package.Create (This.frameLabel);
         CanvasJPanel_Package.frame := CanvasJPanel_Package.frame + 1;
         This.workAreaJTreeJPanel.add (CanvasJPanel'Class (This).getTreeNode);
-        This.graphicItemHashMap := StdUtil_Package.getInstance.createHashMap;
+        This.graphicItemHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         This.grid.grid := PointFactory_Package.getInstance.createXY (0, 0);
         CanvasJPanel'Class (This).setCanvasDimension (IntegerDimension_Package.Create (0, 0));
         This.selectedTool := null;
@@ -531,7 +532,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
             newPoints.addPoints (basicArrayList);
             item.setPointsInterface (newPoints);
             angleDelta := RandomRotationFactory_Package.getInstance.getNextRandomAngle (howMuch);
-            item.setAngle (angleDelta);
+            item.setAngle (Long_Float (angleDelta));
         end loop;
         CanvasJPanel'Class (This).repaint;
    end explode;
@@ -744,11 +745,11 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    begin
         StatusFactory_Package.getInstance.setStatusNoLog (MouseStrings_Package.getInstance.MOUSE_CLICKED_LABEL & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
         if ((not org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=" (CanvasJPanel'Class (This).getSelectedTool, null))) and then (CanvasJPanel'Class (This).getSelectedTool.isActive) then
-            graphicItem := GraphicItemInterface_Access (CanvasJPanel'Class (This).getSelectedTool);
+            graphicItem := CanvasJPanel'Class (This).getSelectedTool;
             graphicItem.mouseClicked (mouseEvent, CanvasJPanel'Class (This).getXPixelsPerWorkAreaPixel, CanvasJPanel'Class (This).getYPixelsPerWorkAreaPixel);
         else
             CanvasJPanel'Class (This).setNewTool;
-            graphicItem := GraphicItemInterface_Access (CanvasJPanel'Class (This).getSelectedTool);
+            graphicItem := CanvasJPanel'Class (This).getSelectedTool;
             if (not org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=" (graphicItem, null)) then
                 graphicItem.mouseClicked (mouseEvent, CanvasJPanel'Class (This).getXPixelsPerWorkAreaPixel, CanvasJPanel'Class (This).getYPixelsPerWorkAreaPixel);
             end if;
@@ -778,7 +779,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    begin
         StatusFactory_Package.getInstance.setStatusNoLog (MouseStrings_Package.getInstance.MOUSE_PRESSED_LABEL & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
         if (not org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=" (CanvasJPanel'Class (This).getSelectedTool, null)) then
-            graphicItem := GraphicItemInterface_Access (CanvasJPanel'Class (This).getSelectedTool);
+            graphicItem := CanvasJPanel'Class (This).getSelectedTool;
             graphicItem.mousePressed (mouseEvent, CanvasJPanel'Class (This).getXPixelsPerWorkAreaPixel, CanvasJPanel'Class (This).getYPixelsPerWorkAreaPixel);
         end if;
         CanvasJPanel'Class (This).requestFocus;
@@ -791,7 +792,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
       graphicItem : GraphicItemInterface_Access;
    begin
         StatusFactory_Package.getInstance.setStatusNoLog (MouseStrings_Package.getInstance.MOUSE_RELEASED_LABEL & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
-        graphicItem := GraphicItemInterface_Access (CanvasJPanel'Class (This).getSelectedTool);
+        graphicItem := CanvasJPanel'Class (This).getSelectedTool;
         if (not org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=" (graphicItem, null)) then
             graphicItem.mouseReleased (mouseEvent, CanvasJPanel'Class (This).getXPixelsPerWorkAreaPixel, CanvasJPanel'Class (This).getYPixelsPerWorkAreaPixel);
         end if;
@@ -805,7 +806,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
       graphicItem : GraphicItemInterface_Access;
    begin
         StatusFactory_Package.getInstance.setStatusNoLog (MouseStrings_Package.getInstance.MOUSE_DRAGGED_LABEL & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
-        graphicItem := GraphicItemInterface_Access (CanvasJPanel'Class (This).getSelectedTool);
+        graphicItem := CanvasJPanel'Class (This).getSelectedTool;
         if (not org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=" (graphicItem, null)) then
             graphicItem.mouseDragged (mouseEvent, CanvasJPanel'Class (This).getXPixelsPerWorkAreaPixel, CanvasJPanel'Class (This).getYPixelsPerWorkAreaPixel);
         end if;
@@ -820,7 +821,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    begin
         StatusFactory_Package.getInstance.setStatusNoLog (MouseStrings_Package.getInstance.MOUSE_MOVED_LABEL & CanvasJPanel'Class (This).logMouseEvent (mouseEvent));
         if ((not org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=" (CanvasJPanel'Class (This).getSelectedTool, null))) and then (CanvasJPanel'Class (This).getSelectedTool.isActive) then
-            graphicItem := GraphicItemInterface_Access (CanvasJPanel'Class (This).getSelectedTool);
+            graphicItem := CanvasJPanel'Class (This).getSelectedTool;
             graphicItem.mouseMoved (mouseEvent, CanvasJPanel'Class (This).getXPixelsPerWorkAreaPixel, CanvasJPanel'Class (This).getYPixelsPerWorkAreaPixel);
         end if;
         CanvasJPanel'Class (This).requestFocus;
@@ -881,7 +882,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
         end;
         if ((not org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=" (CanvasJPanel'Class (This).getSelectedTool, null))) and then (CanvasJPanel'Class (This).getSelectedTool.isActive) then
             StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Key Pressed for Tool"));
-            graphicItem := GraphicItemInterface_Access (CanvasJPanel'Class (This).getSelectedTool);
+            graphicItem := CanvasJPanel'Class (This).getSelectedTool;
             graphicItem.keyPressed (keyEvent);
         else
             CanvasJPanel'Class (This).setNewTool;

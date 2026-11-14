@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.BasicComponentView_Package;
 package views.BasicComponentView_Package_References is
    type BasicComponentView_Access is access all views.BasicComponentView_Package.BasicComponentView'Class;
@@ -19,6 +20,16 @@ package views.BasicComponentView_Package_References is
    type BasicComponentView_Access_Array_Access is access all BasicComponentView_Access_Array;
    type BasicComponentView_Access_Array_Access_Array is array (Natural range <>) of BasicComponentView_Access_Array_Access;
    type BasicComponentView_Access_Array_Access_Array_Access is access all BasicComponentView_Access_Array_Access_Array;
+   type BasicComponentView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicComponentView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicComponentView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicComponentView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicComponentView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicComponentView_Access_Array_Access is (if Value /= null and then Value.all in BasicComponentView_Access_Array_Object'Class then BasicComponentView_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicComponentView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicComponentView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicComponentView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicComponentView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicComponentView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicComponentView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicComponentView_Access_Array_Access_Array_Object'Class then BasicComponentView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.BasicComponentView_Package_References;
 
 with views.BasicComponentView_Package_References;
@@ -124,10 +135,14 @@ package views.BasicComponentView_Package is
    function "=" (Left, Right : BasicComponentView_Access_Array) return Boolean renames views.BasicComponentView_Package_References."=";
    subtype BasicComponentView_Access_Array_Access is views.BasicComponentView_Package_References.BasicComponentView_Access_Array_Access;
    function "=" (Left, Right : BasicComponentView_Access_Array_Access) return Boolean renames views.BasicComponentView_Package_References."=";
+   function Java_Box (Value : BasicComponentView_Access_Array_Access) return Java_Object_Access renames views.BasicComponentView_Package_References.Java_Box;
+   function Java_Unbox_BasicComponentView_Access_Array (Value : access Java_Object'Class) return BasicComponentView_Access_Array_Access renames views.BasicComponentView_Package_References.Java_Unbox_BasicComponentView_Access_Array;
    subtype BasicComponentView_Access_Array_Access_Array is views.BasicComponentView_Package_References.BasicComponentView_Access_Array_Access_Array;
    function "=" (Left, Right : BasicComponentView_Access_Array_Access_Array) return Boolean renames views.BasicComponentView_Package_References."=";
    subtype BasicComponentView_Access_Array_Access_Array_Access is views.BasicComponentView_Package_References.BasicComponentView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicComponentView_Access_Array_Access_Array_Access) return Boolean renames views.BasicComponentView_Package_References."=";
+   function Java_Box (Value : BasicComponentView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.BasicComponentView_Package_References.Java_Box;
+   function Java_Unbox_BasicComponentView_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicComponentView_Access_Array_Access_Array_Access renames views.BasicComponentView_Package_References.Java_Unbox_BasicComponentView_Access_Array_Access_Array;
 
    type BasicComponentView is new Java_Object and TransformInterface with record
       logUtil : LogUtil_Access;

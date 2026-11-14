@@ -29,12 +29,21 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 with org.allbinary.logic.io.path.AbPath_Package_References;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
@@ -49,6 +58,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
    package AbSqlData_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlData_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package TransformInfoObjectConfig_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype AbContext_Access is org.allbinary.business.context.AbContext_Package_References.AbContext_Access;
    function "=" (Left, Right : AbContext_Access) return Boolean renames org.allbinary.business.context.AbContext_Package_References."=";
    subtype AbContext_Access_Array is org.allbinary.business.context.AbContext_Package_References.AbContext_Access_Array;
@@ -104,7 +115,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         TransformInfo_Package.Initialize (This);
         Initialize_Fields (This);
         This.abContext := AbContext_Package.Create (propertiesHashMap, pageContext);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.TransformInfoHttp_Field_logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, PageContext, boolean)"));
         end if;
         TransformInfoHttp'Class (This).override (propertiesHashMap);
@@ -125,7 +136,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         TransformInfo_Package.Initialize (This);
         Initialize_Fields (This);
         This.abContext := AbContext_Package.Create (propertiesHashMap, pageContext);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.TransformInfoHttp_Field_logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HttpServletRequest, HashMap, PageContext)"));
         end if;
         TransformInfoHttp'Class (This).set (RequestParams_Package.Create (HttpServletRequest_Access (request)).toHashMap);
@@ -147,7 +158,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         TransformInfo_Package.Initialize (This);
         Initialize_Fields (This);
         This.abContext := AbContext_Package.Create (propertiesHashMap, pageContext);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.TransformInfoHttp_Field_logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, HashMap, PageContext)"));
         end if;
         TransformInfoHttp'Class (This).set (databaseHashMap);
@@ -167,7 +178,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         TransformInfo_Package.Initialize (This);
         Initialize_Fields (This);
         This.abContext := AbContext_Package.Create (propertiesHashMap, pageContext);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.TransformInfoHttp_Field_logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & propertiesHashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("Constructor(HashMap, PageContext)"));
         end if;
         TransformInfoHttp'Class (This).set (propertiesHashMap);
@@ -202,7 +213,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
       stringValidationUtil : StringValidationUtil_Access;
       objectConfigString : Unbounded_String;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.TransformInfoHttp_Field_logUtil.putF (To_Unbounded_String ("Properties HashMap: ") & hashMap.toString, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
         end if;
         transformInfoData := TransformInfoData_Package.getInstance;
@@ -224,7 +235,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package
         TransformInfoHttp'Class (This).setTemplate (Java_Unbox (hashMap.get (transformInfoData.TEMPLATE)));
         TransformInfoHttp'Class (This).setDataFile (Java_Unbox (hashMap.get (transformInfoData.DATAFILENAME)));
         TransformInfoHttp'Class (This).setData (Java_Unbox (hashMap.get (transformInfoData.DATA)));
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORY) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.TAGHELPERFACTORY) then
             This.TransformInfoHttp_Field_logUtil.putF (TransformInfoHttp'Class (This).log, TransformInfoHttp_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
         end if;
    end set;

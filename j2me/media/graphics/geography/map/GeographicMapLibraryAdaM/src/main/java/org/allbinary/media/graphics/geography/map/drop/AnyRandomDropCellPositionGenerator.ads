@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package;
 package org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package_References is
    type AnyRandomDropCellPositionGenerator_Access is access all org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package.AnyRandomDropCellPositionGenerator'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositio
    type AnyRandomDropCellPositionGenerator_Access_Array_Access is access all AnyRandomDropCellPositionGenerator_Access_Array;
    type AnyRandomDropCellPositionGenerator_Access_Array_Access_Array is array (Natural range <>) of AnyRandomDropCellPositionGenerator_Access_Array_Access;
    type AnyRandomDropCellPositionGenerator_Access_Array_Access_Array_Access is access all AnyRandomDropCellPositionGenerator_Access_Array_Access_Array;
+   type AnyRandomDropCellPositionGenerator_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AnyRandomDropCellPositionGenerator_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AnyRandomDropCellPositionGenerator_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AnyRandomDropCellPositionGenerator_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AnyRandomDropCellPositionGenerator_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AnyRandomDropCellPositionGenerator_Access_Array_Access is (if Value /= null and then Value.all in AnyRandomDropCellPositionGenerator_Access_Array_Object'Class then AnyRandomDropCellPositionGenerator_Access_Array_Object'Class (Value.all).Value else null);
+   type AnyRandomDropCellPositionGenerator_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AnyRandomDropCellPositionGenerator_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AnyRandomDropCellPositionGenerator_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AnyRandomDropCellPositionGenerator_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AnyRandomDropCellPositionGenerator_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AnyRandomDropCellPositionGenerator_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AnyRandomDropCellPositionGenerator_Access_Array_Access_Array_Object'Class then AnyRandomDropCellPositionGenerator_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package_References;
 
 with org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package_References;
@@ -97,10 +108,14 @@ package org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositio
    function "=" (Left, Right : AnyRandomDropCellPositionGenerator_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package_References."=";
    subtype AnyRandomDropCellPositionGenerator_Access_Array_Access is org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package_References.AnyRandomDropCellPositionGenerator_Access_Array_Access;
    function "=" (Left, Right : AnyRandomDropCellPositionGenerator_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package_References."=";
+   function Java_Box (Value : AnyRandomDropCellPositionGenerator_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package_References.Java_Box;
+   function Java_Unbox_AnyRandomDropCellPositionGenerator_Access_Array (Value : access Java_Object'Class) return AnyRandomDropCellPositionGenerator_Access_Array_Access renames org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package_References.Java_Unbox_AnyRandomDropCellPositionGenerator_Access_Array;
    subtype AnyRandomDropCellPositionGenerator_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package_References.AnyRandomDropCellPositionGenerator_Access_Array_Access_Array;
    function "=" (Left, Right : AnyRandomDropCellPositionGenerator_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package_References."=";
    subtype AnyRandomDropCellPositionGenerator_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package_References.AnyRandomDropCellPositionGenerator_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AnyRandomDropCellPositionGenerator_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package_References."=";
+   function Java_Box (Value : AnyRandomDropCellPositionGenerator_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package_References.Java_Box;
+   function Java_Unbox_AnyRandomDropCellPositionGenerator_Access_Array_Access_Array (Value : access Java_Object'Class) return AnyRandomDropCellPositionGenerator_Access_Array_Access_Array_Access renames org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package_References.Java_Unbox_AnyRandomDropCellPositionGenerator_Access_Array_Access_Array;
 
    type AnyRandomDropCellPositionGenerator is new BaseDropCellPositionGenerator with record
       list : BasicArrayList_Access;

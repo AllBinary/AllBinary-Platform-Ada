@@ -50,7 +50,7 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
 
    function getInstance return ImageCompleteUtil_Access is
    begin
-        return ImageCompleteUtil_Access (ImageCompleteUtil_Package.instance);
+        return ImageCompleteUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

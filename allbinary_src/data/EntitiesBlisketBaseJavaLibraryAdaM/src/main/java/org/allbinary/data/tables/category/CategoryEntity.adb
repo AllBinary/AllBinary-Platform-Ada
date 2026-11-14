@@ -28,6 +28,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -46,6 +48,8 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
    package CategoryData_Package renames Standard.org.allbinary.business.category.CategoryData_Package;
    package InventoryDbInitInfo_Package renames Standard.org.allbinary.business.init.db.InventoryDbInitInfo_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -134,7 +138,7 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
             values.add (categoryVector.get (0));
             values.add (categoryVector.get (1));
             AbSqlBean_Package.AbSqlBean (This).insert (values);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, CategoryEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
         exception
@@ -142,7 +146,7 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, CategoryEntity_Access'(This'Unchecked_Access), INSERT, e);
             end if;
                 end;
@@ -153,7 +157,7 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
    begin
         begin
             AbSqlBean_Package.AbSqlBean (This).deleteWhere (CategoryData_Package.getInstance.NAME, value);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, CategoryEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
         exception
@@ -161,7 +165,7 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, CategoryEntity_Access'(This'Unchecked_Access), This.commonStrings.delete, e);
             end if;
                 end;

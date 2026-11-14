@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package;
 package org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package_References is
    type RightTrackballInputToGameKeyEventAction_Access is access all org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package.RightTrackballInputToGameKeyEventAction'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKey
    type RightTrackballInputToGameKeyEventAction_Access_Array_Access is access all RightTrackballInputToGameKeyEventAction_Access_Array;
    type RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array is array (Natural range <>) of RightTrackballInputToGameKeyEventAction_Access_Array_Access;
    type RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array_Access is access all RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array;
+   type RightTrackballInputToGameKeyEventAction_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RightTrackballInputToGameKeyEventAction_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RightTrackballInputToGameKeyEventAction_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RightTrackballInputToGameKeyEventAction_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RightTrackballInputToGameKeyEventAction_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RightTrackballInputToGameKeyEventAction_Access_Array_Access is (if Value /= null and then Value.all in RightTrackballInputToGameKeyEventAction_Access_Array_Object'Class then RightTrackballInputToGameKeyEventAction_Access_Array_Object'Class (Value.all).Value else null);
+   type RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array_Object'Class then RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package_References;
 
 with org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package_References;
@@ -46,10 +57,14 @@ package org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKey
    function "=" (Left, Right : RightTrackballInputToGameKeyEventAction_Access_Array) return Boolean renames org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package_References."=";
    subtype RightTrackballInputToGameKeyEventAction_Access_Array_Access is org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package_References.RightTrackballInputToGameKeyEventAction_Access_Array_Access;
    function "=" (Left, Right : RightTrackballInputToGameKeyEventAction_Access_Array_Access) return Boolean renames org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package_References."=";
+   function Java_Box (Value : RightTrackballInputToGameKeyEventAction_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package_References.Java_Box;
+   function Java_Unbox_RightTrackballInputToGameKeyEventAction_Access_Array (Value : access Java_Object'Class) return RightTrackballInputToGameKeyEventAction_Access_Array_Access renames org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package_References.Java_Unbox_RightTrackballInputToGameKeyEventAction_Access_Array;
    subtype RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array is org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package_References.RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array;
    function "=" (Left, Right : RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package_References."=";
    subtype RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array_Access is org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package_References.RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array_Access;
    function "=" (Left, Right : RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package_References."=";
+   function Java_Box (Value : RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package_References.Java_Box;
+   function Java_Unbox_RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array (Value : access Java_Object'Class) return RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array_Access renames org.allbinary.input.motion.trackball.action.RightTrackballInputToGameKeyEventAction_Package_References.Java_Unbox_RightTrackballInputToGameKeyEventAction_Access_Array_Access_Array;
 
    type RightTrackballInputToGameKeyEventAction is new GameKeyCompleteMotionGestureInputEvent with null record;
    instance : Java_Object_Access;

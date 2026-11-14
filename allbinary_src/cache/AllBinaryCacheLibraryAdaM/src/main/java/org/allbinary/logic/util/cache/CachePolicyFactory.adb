@@ -56,7 +56,7 @@ package body org.allbinary.logic.util.cache.CachePolicyFactory_Package is
 
    function getInstance return CachePolicyFactory_Access is
    begin
-        return CachePolicyFactory_Access (CachePolicyFactory_Package.instance);
+        return CachePolicyFactory_Package.instance;
    end getInstance;
 
 begin

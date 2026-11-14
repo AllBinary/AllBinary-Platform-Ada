@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package;
 package org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References is
    type UpDownVectorAIFactory_Access is access all org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package.UpDownVectorAIFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References is
    type UpDownVectorAIFactory_Access_Array_Access is access all UpDownVectorAIFactory_Access_Array;
    type UpDownVectorAIFactory_Access_Array_Access_Array is array (Natural range <>) of UpDownVectorAIFactory_Access_Array_Access;
    type UpDownVectorAIFactory_Access_Array_Access_Array_Access is access all UpDownVectorAIFactory_Access_Array_Access_Array;
+   type UpDownVectorAIFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UpDownVectorAIFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UpDownVectorAIFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UpDownVectorAIFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UpDownVectorAIFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UpDownVectorAIFactory_Access_Array_Access is (if Value /= null and then Value.all in UpDownVectorAIFactory_Access_Array_Object'Class then UpDownVectorAIFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type UpDownVectorAIFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UpDownVectorAIFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UpDownVectorAIFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UpDownVectorAIFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UpDownVectorAIFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UpDownVectorAIFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in UpDownVectorAIFactory_Access_Array_Access_Array_Object'Class then UpDownVectorAIFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References;
 
 with org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References;
@@ -98,10 +109,14 @@ package org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package is
    function "=" (Left, Right : UpDownVectorAIFactory_Access_Array) return Boolean renames org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References."=";
    subtype UpDownVectorAIFactory_Access_Array_Access is org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References.UpDownVectorAIFactory_Access_Array_Access;
    function "=" (Left, Right : UpDownVectorAIFactory_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References."=";
+   function Java_Box (Value : UpDownVectorAIFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References.Java_Box;
+   function Java_Unbox_UpDownVectorAIFactory_Access_Array (Value : access Java_Object'Class) return UpDownVectorAIFactory_Access_Array_Access renames org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References.Java_Unbox_UpDownVectorAIFactory_Access_Array;
    subtype UpDownVectorAIFactory_Access_Array_Access_Array is org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References.UpDownVectorAIFactory_Access_Array_Access_Array;
    function "=" (Left, Right : UpDownVectorAIFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References."=";
    subtype UpDownVectorAIFactory_Access_Array_Access_Array_Access is org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References.UpDownVectorAIFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : UpDownVectorAIFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References."=";
+   function Java_Box (Value : UpDownVectorAIFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References.Java_Box;
+   function Java_Unbox_UpDownVectorAIFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return UpDownVectorAIFactory_Access_Array_Access_Array_Access renames org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package_References.Java_Unbox_UpDownVectorAIFactory_Access_Array_Access_Array;
 
    type UpDownVectorAIFactory is new Java_Object and ArtificialIntelligenceInterfaceFactoryInterface with null record;
 

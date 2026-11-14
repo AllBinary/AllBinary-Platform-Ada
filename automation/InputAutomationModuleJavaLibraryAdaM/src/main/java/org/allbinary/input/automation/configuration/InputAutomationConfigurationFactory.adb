@@ -72,7 +72,7 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
 
    function getInstance return InputAutomationConfigurationFactory_Access is
    begin
-        return InputAutomationConfigurationFactory_Access (InputAutomationConfigurationFactory_Package.instance);
+        return InputAutomationConfigurationFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out InputAutomationConfigurationFactory'Class) is

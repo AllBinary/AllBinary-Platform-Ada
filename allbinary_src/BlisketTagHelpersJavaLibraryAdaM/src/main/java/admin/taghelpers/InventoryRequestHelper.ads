@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.InventoryRequestHelper_Package;
 package admin.taghelpers.InventoryRequestHelper_Package_References is
    type InventoryRequestHelper_Access is access all admin.taghelpers.InventoryRequestHelper_Package.InventoryRequestHelper'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.InventoryRequestHelper_Package_References is
    type InventoryRequestHelper_Access_Array_Access is access all InventoryRequestHelper_Access_Array;
    type InventoryRequestHelper_Access_Array_Access_Array is array (Natural range <>) of InventoryRequestHelper_Access_Array_Access;
    type InventoryRequestHelper_Access_Array_Access_Array_Access is access all InventoryRequestHelper_Access_Array_Access_Array;
+   type InventoryRequestHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InventoryRequestHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InventoryRequestHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InventoryRequestHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InventoryRequestHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InventoryRequestHelper_Access_Array_Access is (if Value /= null and then Value.all in InventoryRequestHelper_Access_Array_Object'Class then InventoryRequestHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type InventoryRequestHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InventoryRequestHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InventoryRequestHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InventoryRequestHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InventoryRequestHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InventoryRequestHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in InventoryRequestHelper_Access_Array_Access_Array_Object'Class then InventoryRequestHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.InventoryRequestHelper_Package_References;
 
 with admin.taghelpers.InventoryRequestHelper_Package_References;
@@ -87,10 +98,14 @@ package admin.taghelpers.InventoryRequestHelper_Package is
    function "=" (Left, Right : InventoryRequestHelper_Access_Array) return Boolean renames admin.taghelpers.InventoryRequestHelper_Package_References."=";
    subtype InventoryRequestHelper_Access_Array_Access is admin.taghelpers.InventoryRequestHelper_Package_References.InventoryRequestHelper_Access_Array_Access;
    function "=" (Left, Right : InventoryRequestHelper_Access_Array_Access) return Boolean renames admin.taghelpers.InventoryRequestHelper_Package_References."=";
+   function Java_Box (Value : InventoryRequestHelper_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.InventoryRequestHelper_Package_References.Java_Box;
+   function Java_Unbox_InventoryRequestHelper_Access_Array (Value : access Java_Object'Class) return InventoryRequestHelper_Access_Array_Access renames admin.taghelpers.InventoryRequestHelper_Package_References.Java_Unbox_InventoryRequestHelper_Access_Array;
    subtype InventoryRequestHelper_Access_Array_Access_Array is admin.taghelpers.InventoryRequestHelper_Package_References.InventoryRequestHelper_Access_Array_Access_Array;
    function "=" (Left, Right : InventoryRequestHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.InventoryRequestHelper_Package_References."=";
    subtype InventoryRequestHelper_Access_Array_Access_Array_Access is admin.taghelpers.InventoryRequestHelper_Package_References.InventoryRequestHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InventoryRequestHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.InventoryRequestHelper_Package_References."=";
+   function Java_Box (Value : InventoryRequestHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.InventoryRequestHelper_Package_References.Java_Box;
+   function Java_Unbox_InventoryRequestHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return InventoryRequestHelper_Access_Array_Access_Array_Access renames admin.taghelpers.InventoryRequestHelper_Package_References.Java_Unbox_InventoryRequestHelper_Access_Array_Access_Array;
 
    type InventoryRequestHelper is new ModifyTable with record
       logUtil : LogUtil_Access;

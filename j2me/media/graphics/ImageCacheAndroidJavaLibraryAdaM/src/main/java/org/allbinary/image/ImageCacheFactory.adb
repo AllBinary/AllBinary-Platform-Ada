@@ -100,7 +100,7 @@ package body org.allbinary.image.ImageCacheFactory_Package is
 
    function getInstance return ImageCache_Access is
    begin
-        return ImageCache_Access (ImageCacheFactory_Package.IMAGE_CACHE);
+        return ImageCacheFactory_Package.IMAGE_CACHE;
    end getInstance;
 
    procedure init is

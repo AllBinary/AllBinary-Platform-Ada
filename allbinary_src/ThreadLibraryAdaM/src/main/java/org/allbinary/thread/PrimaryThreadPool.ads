@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.thread.PrimaryThreadPool_Package;
 package org.allbinary.thread.PrimaryThreadPool_Package_References is
    type PrimaryThreadPool_Access is access all org.allbinary.thread.PrimaryThreadPool_Package.PrimaryThreadPool'Class;
@@ -19,6 +20,16 @@ package org.allbinary.thread.PrimaryThreadPool_Package_References is
    type PrimaryThreadPool_Access_Array_Access is access all PrimaryThreadPool_Access_Array;
    type PrimaryThreadPool_Access_Array_Access_Array is array (Natural range <>) of PrimaryThreadPool_Access_Array_Access;
    type PrimaryThreadPool_Access_Array_Access_Array_Access is access all PrimaryThreadPool_Access_Array_Access_Array;
+   type PrimaryThreadPool_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PrimaryThreadPool_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PrimaryThreadPool_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PrimaryThreadPool_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PrimaryThreadPool_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PrimaryThreadPool_Access_Array_Access is (if Value /= null and then Value.all in PrimaryThreadPool_Access_Array_Object'Class then PrimaryThreadPool_Access_Array_Object'Class (Value.all).Value else null);
+   type PrimaryThreadPool_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PrimaryThreadPool_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PrimaryThreadPool_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PrimaryThreadPool_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PrimaryThreadPool_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PrimaryThreadPool_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PrimaryThreadPool_Access_Array_Access_Array_Object'Class then PrimaryThreadPool_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.thread.PrimaryThreadPool_Package_References;
 
 with org.allbinary.thread.PrimaryThreadPool_Package_References;
@@ -47,10 +58,14 @@ package org.allbinary.thread.PrimaryThreadPool_Package is
    function "=" (Left, Right : PrimaryThreadPool_Access_Array) return Boolean renames org.allbinary.thread.PrimaryThreadPool_Package_References."=";
    subtype PrimaryThreadPool_Access_Array_Access is org.allbinary.thread.PrimaryThreadPool_Package_References.PrimaryThreadPool_Access_Array_Access;
    function "=" (Left, Right : PrimaryThreadPool_Access_Array_Access) return Boolean renames org.allbinary.thread.PrimaryThreadPool_Package_References."=";
+   function Java_Box (Value : PrimaryThreadPool_Access_Array_Access) return Java_Object_Access renames org.allbinary.thread.PrimaryThreadPool_Package_References.Java_Box;
+   function Java_Unbox_PrimaryThreadPool_Access_Array (Value : access Java_Object'Class) return PrimaryThreadPool_Access_Array_Access renames org.allbinary.thread.PrimaryThreadPool_Package_References.Java_Unbox_PrimaryThreadPool_Access_Array;
    subtype PrimaryThreadPool_Access_Array_Access_Array is org.allbinary.thread.PrimaryThreadPool_Package_References.PrimaryThreadPool_Access_Array_Access_Array;
    function "=" (Left, Right : PrimaryThreadPool_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.PrimaryThreadPool_Package_References."=";
    subtype PrimaryThreadPool_Access_Array_Access_Array_Access is org.allbinary.thread.PrimaryThreadPool_Package_References.PrimaryThreadPool_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PrimaryThreadPool_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.PrimaryThreadPool_Package_References."=";
+   function Java_Box (Value : PrimaryThreadPool_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.thread.PrimaryThreadPool_Package_References.Java_Box;
+   function Java_Unbox_PrimaryThreadPool_Access_Array_Access_Array (Value : access Java_Object'Class) return PrimaryThreadPool_Access_Array_Access_Array_Access renames org.allbinary.thread.PrimaryThreadPool_Package_References.Java_Unbox_PrimaryThreadPool_Access_Array_Access_Array;
 
    type PrimaryThreadPool is new ThreadPool with null record;
    THREAD_POOL : ThreadPool_Access;

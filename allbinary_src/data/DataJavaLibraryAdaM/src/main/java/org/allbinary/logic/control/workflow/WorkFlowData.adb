@@ -28,7 +28,7 @@ package body org.allbinary.logic.control.workflow.WorkFlowData_Package is
 
    function getInstance return WorkFlowData_Access is
    begin
-        return WorkFlowData_Access (WorkFlowData_Package.instance);
+        return WorkFlowData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out WorkFlowData'Class) is

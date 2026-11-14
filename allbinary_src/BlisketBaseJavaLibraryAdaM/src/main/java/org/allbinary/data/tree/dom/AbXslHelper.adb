@@ -63,7 +63,7 @@ package body org.allbinary.data.tree.dom.AbXslHelper_Package is
 
    function getInstance return AbXslHelper_Access is
    begin
-        return AbXslHelper_Access (AbXslHelper_Package.instance);
+        return AbXslHelper_Package.instance;
    end getInstance;
 
    --  throws Exception

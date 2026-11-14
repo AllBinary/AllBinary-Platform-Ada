@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;
 package org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package_References is
    type ProfileActionScriptConditionInterface_Access is access all org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package.ProfileActionScriptConditionInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.actions.script.condition.ProfileActionScr
    type ProfileActionScriptConditionInterface_Access_Array_Access is access all ProfileActionScriptConditionInterface_Access_Array;
    type ProfileActionScriptConditionInterface_Access_Array_Access_Array is array (Natural range <>) of ProfileActionScriptConditionInterface_Access_Array_Access;
    type ProfileActionScriptConditionInterface_Access_Array_Access_Array_Access is access all ProfileActionScriptConditionInterface_Access_Array_Access_Array;
+   type ProfileActionScriptConditionInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ProfileActionScriptConditionInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ProfileActionScriptConditionInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ProfileActionScriptConditionInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ProfileActionScriptConditionInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ProfileActionScriptConditionInterface_Access_Array_Access is (if Value /= null and then Value.all in ProfileActionScriptConditionInterface_Access_Array_Object'Class then ProfileActionScriptConditionInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type ProfileActionScriptConditionInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ProfileActionScriptConditionInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ProfileActionScriptConditionInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ProfileActionScriptConditionInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ProfileActionScriptConditionInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ProfileActionScriptConditionInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ProfileActionScriptConditionInterface_Access_Array_Access_Array_Object'Class then ProfileActionScriptConditionInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package_References;
 
 with org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package_References;
@@ -63,10 +74,14 @@ package org.allbinary.input.automation.actions.script.condition.ProfileActionScr
    function "=" (Left, Right : ProfileActionScriptConditionInterface_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package_References."=";
    subtype ProfileActionScriptConditionInterface_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package_References.ProfileActionScriptConditionInterface_Access_Array_Access;
    function "=" (Left, Right : ProfileActionScriptConditionInterface_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package_References."=";
+   function Java_Box (Value : ProfileActionScriptConditionInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package_References.Java_Box;
+   function Java_Unbox_ProfileActionScriptConditionInterface_Access_Array (Value : access Java_Object'Class) return ProfileActionScriptConditionInterface_Access_Array_Access renames org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package_References.Java_Unbox_ProfileActionScriptConditionInterface_Access_Array;
    subtype ProfileActionScriptConditionInterface_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package_References.ProfileActionScriptConditionInterface_Access_Array_Access_Array;
    function "=" (Left, Right : ProfileActionScriptConditionInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package_References."=";
    subtype ProfileActionScriptConditionInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package_References.ProfileActionScriptConditionInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ProfileActionScriptConditionInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package_References."=";
+   function Java_Box (Value : ProfileActionScriptConditionInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package_References.Java_Box;
+   function Java_Unbox_ProfileActionScriptConditionInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return ProfileActionScriptConditionInterface_Access_Array_Access_Array_Access renames org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package_References.Java_Unbox_ProfileActionScriptConditionInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_ProfileActionScriptConditionInterface (Value : ProfileActionScriptConditionInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure addProcessor (This : in out ProfileActionScriptConditionInterface; profileActionProcessorInterface_Param : access ProfileActionScriptProcessorInterface_Package.ProfileActionScriptProcessorInterface'Class) is abstract;
    procedure removeProcessor (This : in out ProfileActionScriptConditionInterface; profileActionProcessorInterface_Param : access ProfileActionScriptProcessorInterface_Package.ProfileActionScriptProcessorInterface'Class) is abstract;

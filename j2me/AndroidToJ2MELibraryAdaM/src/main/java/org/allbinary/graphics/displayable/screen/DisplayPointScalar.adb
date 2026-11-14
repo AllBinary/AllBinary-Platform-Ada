@@ -48,7 +48,7 @@ package body org.allbinary.graphics.displayable.screen.DisplayPointScalar_Packag
 
    function getInstance return DisplayPointScalar_Access is
    begin
-        return DisplayPointScalar_Access (DisplayPointScalar_Package.instance);
+        return DisplayPointScalar_Package.instance;
    end getInstance;
 
    function process (This : in out DisplayPointScalar; point_Param : access GPoint_Package.GPoint'Class) return GPoint_Access is

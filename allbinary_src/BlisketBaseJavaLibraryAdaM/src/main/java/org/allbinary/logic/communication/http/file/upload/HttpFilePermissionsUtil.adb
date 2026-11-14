@@ -50,7 +50,7 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFilePermissi
 
    function getInstance return HttpFilePermissionsUtil_Access is
    begin
-        return HttpFilePermissionsUtil_Access (HttpFilePermissionsUtil_Package.instance);
+        return HttpFilePermissionsUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

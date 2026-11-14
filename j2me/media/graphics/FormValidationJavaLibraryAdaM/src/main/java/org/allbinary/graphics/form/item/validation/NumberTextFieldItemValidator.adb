@@ -198,10 +198,10 @@ package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemVali
                 number := smallIntegerSingletonFactory.createInstance (Integer'Value (To_String (This.textFieldItem.getString)));
                 if (Integer (number)) > (This.min) then
                     stringMaker.delete (0, stringMaker.length);
-                    list.add (stringMaker.append (name).append (To_Unbounded_String (" is to small")).toString);
+                    list.add (Java_Box (stringMaker.append (name).append (To_Unbounded_String (" is to small")).toString));
                 elsif (Integer (number)) > (This.max) then
                     stringMaker.delete (0, stringMaker.length);
-                    list.add (stringMaker.append (name).append (To_Unbounded_String (" is to large")).toString);
+                    list.add (Java_Box (stringMaker.append (name).append (To_Unbounded_String (" is to large")).toString));
                 end if;
             exception
                 when Java_Occurrence : others =>
@@ -209,16 +209,16 @@ package body org.allbinary.graphics.form.item.validation.NumberTextFieldItemVali
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 stringMaker.delete (0, stringMaker.length);
-                list.add (stringMaker.append (name).append (To_Unbounded_String (" is not a number")).toString);
+                list.add (Java_Box (stringMaker.append (name).append (To_Unbounded_String (" is not a number")).toString));
                     end;
             end;
         else
             if (textLength) < (1) then
                 stringMaker.delete (0, stringMaker.length);
-                list.add (stringMaker.append (name).append (To_Unbounded_String (" is to short")).toString);
+                list.add (Java_Box (stringMaker.append (name).append (To_Unbounded_String (" is to short")).toString));
             elsif (textLength) > (This.maxChars) then
                 stringMaker.delete (0, stringMaker.length);
-                list.add (stringMaker.append (name).append (To_Unbounded_String (" is to long")).toString);
+                list.add (Java_Box (stringMaker.append (name).append (To_Unbounded_String (" is to long")).toString));
             end if;
         end if;
         return list;

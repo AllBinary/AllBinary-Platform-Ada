@@ -194,7 +194,7 @@ package body org.allbinary.image.sprite.AnimationFactorySpriteScaleUtil_Package 
 
    function getInstance return AnimationFactorySpriteScaleUtil_Access is
    begin
-        return AnimationFactorySpriteScaleUtil_Access (AnimationFactorySpriteScaleUtil_Package.instance);
+        return AnimationFactorySpriteScaleUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

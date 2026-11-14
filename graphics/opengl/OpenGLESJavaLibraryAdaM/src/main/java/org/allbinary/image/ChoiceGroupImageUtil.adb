@@ -87,7 +87,7 @@ package body org.allbinary.image.ChoiceGroupImageUtil_Package is
 
    function getInstance return ChoiceGroupImageUtil_Access is
    begin
-        return ChoiceGroupImageUtil_Access (ChoiceGroupImageUtil_Package.instance);
+        return ChoiceGroupImageUtil_Package.instance;
    end getInstance;
 
    procedure init (This : in out ChoiceGroupImageUtil) is

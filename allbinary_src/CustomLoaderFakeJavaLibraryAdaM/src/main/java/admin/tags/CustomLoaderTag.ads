@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.tags.CustomLoaderTag_Package;
 package admin.tags.CustomLoaderTag_Package_References is
    type CustomLoaderTag_Access is access all admin.tags.CustomLoaderTag_Package.CustomLoaderTag'Class;
@@ -19,6 +20,16 @@ package admin.tags.CustomLoaderTag_Package_References is
    type CustomLoaderTag_Access_Array_Access is access all CustomLoaderTag_Access_Array;
    type CustomLoaderTag_Access_Array_Access_Array is array (Natural range <>) of CustomLoaderTag_Access_Array_Access;
    type CustomLoaderTag_Access_Array_Access_Array_Access is access all CustomLoaderTag_Access_Array_Access_Array;
+   type CustomLoaderTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CustomLoaderTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CustomLoaderTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CustomLoaderTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CustomLoaderTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CustomLoaderTag_Access_Array_Access is (if Value /= null and then Value.all in CustomLoaderTag_Access_Array_Object'Class then CustomLoaderTag_Access_Array_Object'Class (Value.all).Value else null);
+   type CustomLoaderTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CustomLoaderTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CustomLoaderTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CustomLoaderTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CustomLoaderTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CustomLoaderTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CustomLoaderTag_Access_Array_Access_Array_Object'Class then CustomLoaderTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.tags.CustomLoaderTag_Package_References;
 
 with admin.tags.CustomLoaderTag_Package_References;
@@ -60,10 +71,14 @@ package admin.tags.CustomLoaderTag_Package is
    function "=" (Left, Right : CustomLoaderTag_Access_Array) return Boolean renames admin.tags.CustomLoaderTag_Package_References."=";
    subtype CustomLoaderTag_Access_Array_Access is admin.tags.CustomLoaderTag_Package_References.CustomLoaderTag_Access_Array_Access;
    function "=" (Left, Right : CustomLoaderTag_Access_Array_Access) return Boolean renames admin.tags.CustomLoaderTag_Package_References."=";
+   function Java_Box (Value : CustomLoaderTag_Access_Array_Access) return Java_Object_Access renames admin.tags.CustomLoaderTag_Package_References.Java_Box;
+   function Java_Unbox_CustomLoaderTag_Access_Array (Value : access Java_Object'Class) return CustomLoaderTag_Access_Array_Access renames admin.tags.CustomLoaderTag_Package_References.Java_Unbox_CustomLoaderTag_Access_Array;
    subtype CustomLoaderTag_Access_Array_Access_Array is admin.tags.CustomLoaderTag_Package_References.CustomLoaderTag_Access_Array_Access_Array;
    function "=" (Left, Right : CustomLoaderTag_Access_Array_Access_Array) return Boolean renames admin.tags.CustomLoaderTag_Package_References."=";
    subtype CustomLoaderTag_Access_Array_Access_Array_Access is admin.tags.CustomLoaderTag_Package_References.CustomLoaderTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CustomLoaderTag_Access_Array_Access_Array_Access) return Boolean renames admin.tags.CustomLoaderTag_Package_References."=";
+   function Java_Box (Value : CustomLoaderTag_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.tags.CustomLoaderTag_Package_References.Java_Box;
+   function Java_Unbox_CustomLoaderTag_Access_Array_Access_Array (Value : access Java_Object'Class) return CustomLoaderTag_Access_Array_Access_Array_Access renames admin.tags.CustomLoaderTag_Package_References.Java_Unbox_CustomLoaderTag_Access_Array_Access_Array;
 
    type CustomLoaderTag is new CustomTagSupport with record
       logUtil : LogUtil_Access;

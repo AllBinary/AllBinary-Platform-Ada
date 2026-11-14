@@ -21,6 +21,10 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 with org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package; use org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References;
+with org.allbinary.graphics.color.BasicColor_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
 with org.allbinary.graphics.canvas.transition.progress.LazyProgressCanvas_Package;
 
 package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFactory_Package is
@@ -68,7 +72,7 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvasFac
 
    function getInstance return ProgressCanvas_Access is
    begin
-        if (ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN := Java_Object_Access (LazyProgressCanvas_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE));
         end if;
         return ProgressCanvas_Access (ProgressCanvasFactory_Package.PROGRESS_FORM_SCREEN);

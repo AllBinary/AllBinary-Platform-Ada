@@ -41,11 +41,16 @@ with org.w3c.dom.NamedNodeMap_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -66,6 +71,8 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    package XslData_Package renames Standard.org.allbinary.logic.visual.transform.template.XslData_Package;
    package Attr_Package renames Standard.org.w3c.dom.Attr_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -154,7 +161,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
       Initialize_Fields (This);
         This.ownerTransformInfoInterface := transformInfoInterface;
         TransformInfoObjectConfig'Class (This).createDocument;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("TransformInfo: "));
             if (This.ownerTransformInfoInterface) /= (null) then
@@ -188,7 +195,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
         if (node) /= (null) then
             TransformInfoObjectConfig'Class (This).setOutputTypeName (DomNodeHelper_Package.getTextNodeValue (node));
         end if;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("TransformInfo: "));
             if (This.ownerTransformInfoInterface) /= (null) then
@@ -222,7 +229,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
         configNameAttr.setValue (name);
         objectConfigNode := This.document.getElementsByTagName (TransformInfoObjectConfigData_Package.getInstance.NAME).item (0);
         objectConfigNode.appendChild (configNameAttr);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("TransformInfo: "));
             if (This.ownerTransformInfoInterface) /= (null) then
@@ -327,7 +334,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
         if ((componentsNodeList) /= (null)) and then ((componentsNodeList.getLength) > (0)) then
             viewNodeVector := DomSearchHelper_Package.getAllNodes (TransformInfoData_Package.getInstance.NAME, componentsNodeList.item (0).getChildNodes);
             numberOfViews := viewNodeVector.size;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Number Of "));
                 stringBuffer.append (nodeName);
@@ -393,7 +400,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
       size : Integer;
       viewNode : Node_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Started: ") & group, TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformsGroup()"));
         end if;
         viewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
@@ -414,7 +421,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
             end loop;
             viewNodeVector := DomSearchHelper_Package.getAllNodes (TransformInfoData_Package.getInstance.NAME, componentsNode.getChildNodes);
             numberOfViews := viewNodeVector.size;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Number Of Nodes: ") & Java_Image (numberOfViews), TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformsGroup()"));
             end if;
             size := viewNodeVector.size;
@@ -423,7 +430,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
                 viewVector.add (Java_Object_Access (TransformInfoDomNode_Package.Create (viewNode)));
             end loop;
         else
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 if (componentsNodeList) = (null) then
                     This.logUtil.putF (To_Unbounded_String ("Number Of Nodes: NULL"), TransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformsGroup()"));
                 else
@@ -511,7 +518,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEWERROR) then
                 This.logUtil.putF (To_Unbounded_String ("DOM Document error"), TransformInfoObjectConfig_Access'(This'Unchecked_Access), This.commonStrings.TOSTRING);
             end if;
             return Null_Unbounded_String;

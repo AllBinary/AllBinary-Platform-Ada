@@ -18,6 +18,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.communication.smtp.Email_Package; use org.allbinary.logic.communication.smtp.Email_Package;
 with org.allbinary.logic.communication.smtp.Email_Package_References;
 with org.allbinary.string_Id.CommonSeps_Package;
@@ -34,6 +36,8 @@ with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.communication.smtp.AbEmail_Package is
 
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
    function "=" (Left, Right : Document_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
    subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
@@ -74,7 +78,7 @@ package body org.allbinary.logic.communication.smtp.AbEmail_Package is
    procedure Initialize (This : in out AbEmail'Class; server : Unbounded_String; from : Unbounded_String; to : Unbounded_String; subject : Unbounded_String; textBody : Unbounded_String; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGINGERROR) then
             This.email := Email_Package.Create (from, to, subject, server, textBody, htmlAttachment, contentBase, True);
         else
             This.email := Email_Package.Create (from, to, subject, server, textBody, htmlAttachment, contentBase);

@@ -34,6 +34,8 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
 with views.admin.inventory.listings.InventoryViewFactory_Package; use views.admin.inventory.listings.InventoryViewFactory_Package;
 with views.admin.inventory.listings.InventoryViewSearchInterface_Package; use views.admin.inventory.listings.InventoryViewSearchInterface_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -53,6 +55,8 @@ package body taghelpers.InventoryHelper_Package is
    package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
    package InventoryViewFactory_Package renames Standard.views.admin.inventory.listings.InventoryViewFactory_Package;
    package InventoryViewSearchInterface_Package renames Standard.views.admin.inventory.listings.InventoryViewSearchInterface_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype StreetAddress_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access;
    function "=" (Left, Right : StreetAddress_Access) return Boolean renames org.allbinary.business.user.address.StreetAddress_Package_References."=";
    subtype StreetAddress_Access_Array is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array;
@@ -161,7 +165,7 @@ package body taghelpers.InventoryHelper_Package is
         begin
             inventoryViewSearchInterface := InventoryViewSearchInterface_Access (InventoryViewFactory_Package.getInstance (This.searchRequest));
             result := inventoryViewSearchInterface.getProduct (This.id);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (To_Unbounded_String ("Successfull Inventory View Summary"), InventoryHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("viewSummary()"));
             end if;
             return result;
@@ -171,7 +175,7 @@ package body taghelpers.InventoryHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to View Summary");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, InventoryHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("viewSummary()"), e);
             end if;
             return error & To_Unbounded_String ("<br>") & To_Unbounded_String ("Exception: ") & Java_Image (e) & To_Unbounded_String ("<br>");
@@ -194,7 +198,7 @@ package body taghelpers.InventoryHelper_Package is
             end if;
             inventoryViewSearchInterface := InventoryViewSearchInterface_Access (InventoryViewFactory_Package.getInstance (This.searchRequest));
             result := inventoryViewSearchInterface.searchSingleDynamicPage;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (To_Unbounded_String ("Successful Inventory Dynamic Search"), InventoryHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("searchSingleDynamicPage()"));
             end if;
             return result;
@@ -204,7 +208,7 @@ package body taghelpers.InventoryHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to search Inventory by keyword");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, InventoryHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("searchSingleDynamicPage()"), e);
             end if;
             return error & To_Unbounded_String ("<br>") & To_Unbounded_String ("Exception: ") & Java_Image (e) & To_Unbounded_String ("<br>");

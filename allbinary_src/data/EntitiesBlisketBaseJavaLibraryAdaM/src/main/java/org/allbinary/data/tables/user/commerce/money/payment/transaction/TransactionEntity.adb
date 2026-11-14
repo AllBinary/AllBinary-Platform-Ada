@@ -29,6 +29,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -54,6 +56,8 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
    package PaymentTransactionKeysFactory_Package renames Standard.org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionKeysFactory_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype PaymentTransactionInterface_Access is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package_References.PaymentTransactionInterface_Access;
    function "=" (Left, Right : PaymentTransactionInterface_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package_References."=";
    subtype PaymentTransactionInterface_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterface_Package_References.PaymentTransactionInterface_Access_Array;
@@ -100,11 +104,11 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
       whereHashMap : HashMap_Access;
    begin
         begin
-            whereHashMap := StdUtil_Package.getInstance.createHashMap;
+            whereHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             whereHashMap.put (OrderData_Package.ID, orderNumber);
             whereHashMap.put (UserData_Package.USERNAME, Java_Box (userName));
             AbSqlBean_Package.AbSqlBean (This).deleteWhere (whereHashMap);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, TransactionEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));
             end if;
         exception
@@ -112,7 +116,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, TransactionEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"), e);
             end if;
                 end;
@@ -127,15 +131,15 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
    begin
         begin
             values := BasicArrayList_Access (BasicArrayListD_Package.Create);
-            values.add (orderNumber);
-            values.add (userName);
+            values.add (Java_Box (orderNumber));
+            values.add (Java_Box (userName));
             values.addAllList (paymentTransactionInterface.toVector);
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
-            values.add (time);
-            values.add (time);
+            values.add (Java_Box (time));
+            values.add (Java_Box (time));
             AbSqlBean_Package.AbSqlBean (This).insert (values);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, TransactionEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
             end if;
         exception
@@ -143,7 +147,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, TransactionEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"), e);
             end if;
                 end;

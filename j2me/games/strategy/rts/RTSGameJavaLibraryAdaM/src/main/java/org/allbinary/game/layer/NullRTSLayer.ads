@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.NullRTSLayer_Package;
 package org.allbinary.game.layer.NullRTSLayer_Package_References is
    type NullRTSLayer_Access is access all org.allbinary.game.layer.NullRTSLayer_Package.NullRTSLayer'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.NullRTSLayer_Package_References is
    type NullRTSLayer_Access_Array_Access is access all NullRTSLayer_Access_Array;
    type NullRTSLayer_Access_Array_Access_Array is array (Natural range <>) of NullRTSLayer_Access_Array_Access;
    type NullRTSLayer_Access_Array_Access_Array_Access is access all NullRTSLayer_Access_Array_Access_Array;
+   type NullRTSLayer_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NullRTSLayer_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NullRTSLayer_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NullRTSLayer_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NullRTSLayer_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NullRTSLayer_Access_Array_Access is (if Value /= null and then Value.all in NullRTSLayer_Access_Array_Object'Class then NullRTSLayer_Access_Array_Object'Class (Value.all).Value else null);
+   type NullRTSLayer_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NullRTSLayer_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NullRTSLayer_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NullRTSLayer_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NullRTSLayer_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NullRTSLayer_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NullRTSLayer_Access_Array_Access_Array_Object'Class then NullRTSLayer_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.NullRTSLayer_Package_References;
 
 with org.allbinary.game.layer.NullRTSLayer_Package_References;
@@ -175,10 +186,14 @@ package org.allbinary.game.layer.NullRTSLayer_Package is
    function "=" (Left, Right : NullRTSLayer_Access_Array) return Boolean renames org.allbinary.game.layer.NullRTSLayer_Package_References."=";
    subtype NullRTSLayer_Access_Array_Access is org.allbinary.game.layer.NullRTSLayer_Package_References.NullRTSLayer_Access_Array_Access;
    function "=" (Left, Right : NullRTSLayer_Access_Array_Access) return Boolean renames org.allbinary.game.layer.NullRTSLayer_Package_References."=";
+   function Java_Box (Value : NullRTSLayer_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.NullRTSLayer_Package_References.Java_Box;
+   function Java_Unbox_NullRTSLayer_Access_Array (Value : access Java_Object'Class) return NullRTSLayer_Access_Array_Access renames org.allbinary.game.layer.NullRTSLayer_Package_References.Java_Unbox_NullRTSLayer_Access_Array;
    subtype NullRTSLayer_Access_Array_Access_Array is org.allbinary.game.layer.NullRTSLayer_Package_References.NullRTSLayer_Access_Array_Access_Array;
    function "=" (Left, Right : NullRTSLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.NullRTSLayer_Package_References."=";
    subtype NullRTSLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.NullRTSLayer_Package_References.NullRTSLayer_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NullRTSLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.NullRTSLayer_Package_References."=";
+   function Java_Box (Value : NullRTSLayer_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.NullRTSLayer_Package_References.Java_Box;
+   function Java_Unbox_NullRTSLayer_Access_Array_Access_Array (Value : access Java_Object'Class) return NullRTSLayer_Access_Array_Access_Array_Access renames org.allbinary.game.layer.NullRTSLayer_Package_References.Java_Unbox_NullRTSLayer_Access_Array_Access_Array;
 
    type NullRTSLayer is new NullPathFindingLayer and RTSPlayerLayerInterface with null record;
    NULL_RTS_LAYER : NullRTSLayer_Access;

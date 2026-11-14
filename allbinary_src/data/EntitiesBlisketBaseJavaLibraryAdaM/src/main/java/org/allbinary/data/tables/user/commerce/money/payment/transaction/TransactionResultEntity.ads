@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package;
 package org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References is
    type TransactionResultEntity_Access is access all org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package.TransactionResultEntity'Class;
@@ -19,6 +20,16 @@ package org.allbinary.data.tables.user.commerce.money.payment.transaction.Transa
    type TransactionResultEntity_Access_Array_Access is access all TransactionResultEntity_Access_Array;
    type TransactionResultEntity_Access_Array_Access_Array is array (Natural range <>) of TransactionResultEntity_Access_Array_Access;
    type TransactionResultEntity_Access_Array_Access_Array_Access is access all TransactionResultEntity_Access_Array_Access_Array;
+   type TransactionResultEntity_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransactionResultEntity_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransactionResultEntity_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransactionResultEntity_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransactionResultEntity_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransactionResultEntity_Access_Array_Access is (if Value /= null and then Value.all in TransactionResultEntity_Access_Array_Object'Class then TransactionResultEntity_Access_Array_Object'Class (Value.all).Value else null);
+   type TransactionResultEntity_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransactionResultEntity_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransactionResultEntity_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransactionResultEntity_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransactionResultEntity_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransactionResultEntity_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TransactionResultEntity_Access_Array_Access_Array_Object'Class then TransactionResultEntity_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References;
 
 with org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References;
@@ -73,10 +84,14 @@ package org.allbinary.data.tables.user.commerce.money.payment.transaction.Transa
    function "=" (Left, Right : TransactionResultEntity_Access_Array) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References."=";
    subtype TransactionResultEntity_Access_Array_Access is org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References.TransactionResultEntity_Access_Array_Access;
    function "=" (Left, Right : TransactionResultEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References."=";
+   function Java_Box (Value : TransactionResultEntity_Access_Array_Access) return Java_Object_Access renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References.Java_Box;
+   function Java_Unbox_TransactionResultEntity_Access_Array (Value : access Java_Object'Class) return TransactionResultEntity_Access_Array_Access renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References.Java_Unbox_TransactionResultEntity_Access_Array;
    subtype TransactionResultEntity_Access_Array_Access_Array is org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References.TransactionResultEntity_Access_Array_Access_Array;
    function "=" (Left, Right : TransactionResultEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References."=";
    subtype TransactionResultEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References.TransactionResultEntity_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TransactionResultEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References."=";
+   function Java_Box (Value : TransactionResultEntity_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References.Java_Box;
+   function Java_Unbox_TransactionResultEntity_Access_Array_Access_Array (Value : access Java_Object'Class) return TransactionResultEntity_Access_Array_Access_Array_Access renames org.allbinary.data.tables.user.commerce.money.payment.transaction.TransactionResultEntity_Package_References.Java_Unbox_TransactionResultEntity_Access_Array_Access_Array;
 
    type TransactionResultEntity is new AbSqlBean and TransactionResultEntityInterface with record
       logUtil : LogUtil_Access;

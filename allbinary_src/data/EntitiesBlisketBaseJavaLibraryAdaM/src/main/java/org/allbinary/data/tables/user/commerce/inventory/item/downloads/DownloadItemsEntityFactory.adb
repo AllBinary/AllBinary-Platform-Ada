@@ -16,6 +16,8 @@
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntity_Package;
 with org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntity_Package_References;
 with org.allbinary.string_Id.CommonSeps_Package;
@@ -31,6 +33,8 @@ with org.allbinary.time.TimeStampUtil_Package;
 package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntityFactory_Package is
 
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -60,7 +64,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
 
    function getInstance return DownloadItemsEntityFactory_Access is
    begin
-        return DownloadItemsEntityFactory_Access (DownloadItemsEntityFactory_Package.instance);
+        return DownloadItemsEntityFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out DownloadItemsEntityFactory'Class) is
@@ -87,7 +91,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.downloads.Do
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (commonStrings.EXCEPTION_Id, DownloadItemsEntityFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             return null;

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.graphics.hud.BasicHudFactory_Package;
 package org.allbinary.game.graphics.hud.BasicHudFactory_Package_References is
    type BasicHudFactory_Access is access all org.allbinary.game.graphics.hud.BasicHudFactory_Package.BasicHudFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.graphics.hud.BasicHudFactory_Package_References is
    type BasicHudFactory_Access_Array_Access is access all BasicHudFactory_Access_Array;
    type BasicHudFactory_Access_Array_Access_Array is array (Natural range <>) of BasicHudFactory_Access_Array_Access;
    type BasicHudFactory_Access_Array_Access_Array_Access is access all BasicHudFactory_Access_Array_Access_Array;
+   type BasicHudFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicHudFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicHudFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicHudFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicHudFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicHudFactory_Access_Array_Access is (if Value /= null and then Value.all in BasicHudFactory_Access_Array_Object'Class then BasicHudFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicHudFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicHudFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicHudFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicHudFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicHudFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicHudFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicHudFactory_Access_Array_Access_Array_Object'Class then BasicHudFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.graphics.hud.BasicHudFactory_Package_References;
 
 with org.allbinary.game.graphics.hud.BasicHudFactory_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.game.graphics.hud.BasicHudFactory_Package is
    function "=" (Left, Right : BasicHudFactory_Access_Array) return Boolean renames org.allbinary.game.graphics.hud.BasicHudFactory_Package_References."=";
    subtype BasicHudFactory_Access_Array_Access is org.allbinary.game.graphics.hud.BasicHudFactory_Package_References.BasicHudFactory_Access_Array_Access;
    function "=" (Left, Right : BasicHudFactory_Access_Array_Access) return Boolean renames org.allbinary.game.graphics.hud.BasicHudFactory_Package_References."=";
+   function Java_Box (Value : BasicHudFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.graphics.hud.BasicHudFactory_Package_References.Java_Box;
+   function Java_Unbox_BasicHudFactory_Access_Array (Value : access Java_Object'Class) return BasicHudFactory_Access_Array_Access renames org.allbinary.game.graphics.hud.BasicHudFactory_Package_References.Java_Unbox_BasicHudFactory_Access_Array;
    subtype BasicHudFactory_Access_Array_Access_Array is org.allbinary.game.graphics.hud.BasicHudFactory_Package_References.BasicHudFactory_Access_Array_Access_Array;
    function "=" (Left, Right : BasicHudFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.graphics.hud.BasicHudFactory_Package_References."=";
    subtype BasicHudFactory_Access_Array_Access_Array_Access is org.allbinary.game.graphics.hud.BasicHudFactory_Package_References.BasicHudFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicHudFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.graphics.hud.BasicHudFactory_Package_References."=";
+   function Java_Box (Value : BasicHudFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.graphics.hud.BasicHudFactory_Package_References.Java_Box;
+   function Java_Unbox_BasicHudFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicHudFactory_Access_Array_Access_Array_Access renames org.allbinary.game.graphics.hud.BasicHudFactory_Package_References.Java_Unbox_BasicHudFactory_Access_Array_Access_Array;
 
    type BasicHudFactory is new Java_Object with record
       DIRECTION_EXCEPTION : Unbounded_String;

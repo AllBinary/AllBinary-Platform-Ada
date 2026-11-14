@@ -26,7 +26,7 @@ package body org.allbinary.animation.PGUtil_Package is
 
    function getInstance return PGUtil_Access is
    begin
-        return PGUtil_Access (PGUtil_Package.instance);
+        return PGUtil_Package.instance;
    end getInstance;
 
    procedure flattenCubicBezier (This : in out PGUtil; x0 : Integer; y0 : Integer; x1 : Integer; y1 : Integer; x2 : Integer; y2 : Integer; x3 : Integer; y3 : Integer; outX : Integer_Array_Access; outY : Integer_Array_Access; count : Integer_Array_Access; maxPoints : Integer) is

@@ -41,7 +41,7 @@ package body org.allbinary.graphics.paint.NullLocationPaintable_Package is
 
    function getInstance return NullLocationPaintable_Access is
    begin
-        return NullLocationPaintable_Access (NullLocationPaintable_Package.instanceC);
+        return NullLocationPaintable_Package.instanceC;
    end getInstance;
 
 begin

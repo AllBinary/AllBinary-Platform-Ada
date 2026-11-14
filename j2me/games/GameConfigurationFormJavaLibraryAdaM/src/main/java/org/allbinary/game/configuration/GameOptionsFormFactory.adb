@@ -24,6 +24,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.configuration.GameOptionsForm_Package; use org.allbinary.game.configuration.GameOptionsForm_Package;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
@@ -75,6 +76,7 @@ with org.microemu.device.MutableImage_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.microemu.device.ui.PointerEvent_Package;
+with org.allbinary.canvas.Processor_Package;
 with javax.microedition.lcdui.Screen_Package;
 with javax.microedition.lcdui.StringComponent_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
@@ -152,7 +154,7 @@ package body org.allbinary.game.configuration.GameOptionsFormFactory_Package is
 
    function getInstance return GameOptionsFormFactory_Access is
    begin
-        return GameOptionsFormFactory_Access (GameOptionsFormFactory_Package.instance);
+        return GameOptionsFormFactory_Package.instance;
    end getInstance;
 
    function init (This : in out GameOptionsFormFactory; commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return CommandForm_Access is

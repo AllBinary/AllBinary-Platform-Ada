@@ -50,7 +50,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResourceInf
 
    function getInstance return GeologicalResourceInfoHudPaintable_Access is
    begin
-        return GeologicalResourceInfoHudPaintable_Access (GeologicalResourceInfoHudPaintableSingleton_Package.instance);
+        return GeologicalResourceInfoHudPaintableSingleton_Package.instance;
    end getInstance;
 
 begin

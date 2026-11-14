@@ -31,7 +31,7 @@ package body org.allbinary.logic.java.bool.BooleanUtil_Package is
 
    function getInstance return BooleanUtil_Access is
    begin
-        return BooleanUtil_Access (BooleanUtil_Package.instance);
+        return BooleanUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out BooleanUtil'Class) is

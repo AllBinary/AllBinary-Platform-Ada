@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.BasicOptionItemsRequestHelper_Package;
 package admin.taghelpers.BasicOptionItemsRequestHelper_Package_References is
    type BasicOptionItemsRequestHelper_Access is access all admin.taghelpers.BasicOptionItemsRequestHelper_Package.BasicOptionItemsRequestHelper'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.BasicOptionItemsRequestHelper_Package_References is
    type BasicOptionItemsRequestHelper_Access_Array_Access is access all BasicOptionItemsRequestHelper_Access_Array;
    type BasicOptionItemsRequestHelper_Access_Array_Access_Array is array (Natural range <>) of BasicOptionItemsRequestHelper_Access_Array_Access;
    type BasicOptionItemsRequestHelper_Access_Array_Access_Array_Access is access all BasicOptionItemsRequestHelper_Access_Array_Access_Array;
+   type BasicOptionItemsRequestHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicOptionItemsRequestHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicOptionItemsRequestHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicOptionItemsRequestHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicOptionItemsRequestHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicOptionItemsRequestHelper_Access_Array_Access is (if Value /= null and then Value.all in BasicOptionItemsRequestHelper_Access_Array_Object'Class then BasicOptionItemsRequestHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicOptionItemsRequestHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicOptionItemsRequestHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicOptionItemsRequestHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicOptionItemsRequestHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicOptionItemsRequestHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicOptionItemsRequestHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicOptionItemsRequestHelper_Access_Array_Access_Array_Object'Class then BasicOptionItemsRequestHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.BasicOptionItemsRequestHelper_Package_References;
 
 with admin.taghelpers.BasicOptionItemsRequestHelper_Package_References;
@@ -88,10 +99,14 @@ package admin.taghelpers.BasicOptionItemsRequestHelper_Package is
    function "=" (Left, Right : BasicOptionItemsRequestHelper_Access_Array) return Boolean renames admin.taghelpers.BasicOptionItemsRequestHelper_Package_References."=";
    subtype BasicOptionItemsRequestHelper_Access_Array_Access is admin.taghelpers.BasicOptionItemsRequestHelper_Package_References.BasicOptionItemsRequestHelper_Access_Array_Access;
    function "=" (Left, Right : BasicOptionItemsRequestHelper_Access_Array_Access) return Boolean renames admin.taghelpers.BasicOptionItemsRequestHelper_Package_References."=";
+   function Java_Box (Value : BasicOptionItemsRequestHelper_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.BasicOptionItemsRequestHelper_Package_References.Java_Box;
+   function Java_Unbox_BasicOptionItemsRequestHelper_Access_Array (Value : access Java_Object'Class) return BasicOptionItemsRequestHelper_Access_Array_Access renames admin.taghelpers.BasicOptionItemsRequestHelper_Package_References.Java_Unbox_BasicOptionItemsRequestHelper_Access_Array;
    subtype BasicOptionItemsRequestHelper_Access_Array_Access_Array is admin.taghelpers.BasicOptionItemsRequestHelper_Package_References.BasicOptionItemsRequestHelper_Access_Array_Access_Array;
    function "=" (Left, Right : BasicOptionItemsRequestHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.BasicOptionItemsRequestHelper_Package_References."=";
    subtype BasicOptionItemsRequestHelper_Access_Array_Access_Array_Access is admin.taghelpers.BasicOptionItemsRequestHelper_Package_References.BasicOptionItemsRequestHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicOptionItemsRequestHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.BasicOptionItemsRequestHelper_Package_References."=";
+   function Java_Box (Value : BasicOptionItemsRequestHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.BasicOptionItemsRequestHelper_Package_References.Java_Box;
+   function Java_Unbox_BasicOptionItemsRequestHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicOptionItemsRequestHelper_Access_Array_Access_Array_Access renames admin.taghelpers.BasicOptionItemsRequestHelper_Package_References.Java_Unbox_BasicOptionItemsRequestHelper_Access_Array_Access_Array;
 
    type BasicOptionItemsRequestHelper is new ModifyTable with record
       logUtil : LogUtil_Access;

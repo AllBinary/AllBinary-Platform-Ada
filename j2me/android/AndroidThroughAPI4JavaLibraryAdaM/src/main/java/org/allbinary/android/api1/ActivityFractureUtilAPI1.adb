@@ -52,7 +52,7 @@ package body org.allbinary.android.api1.ActivityFractureUtilAPI1_Package is
 
    function getInstance return ActivityFractureUtilAPI1_Access is
    begin
-        return ActivityFractureUtilAPI1_Access (ActivityFractureUtilAPI1_Package.instance);
+        return ActivityFractureUtilAPI1_Package.instance;
    end getInstance;
 
    --  throws Exception

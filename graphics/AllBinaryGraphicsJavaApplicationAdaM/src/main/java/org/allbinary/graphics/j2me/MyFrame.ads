@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.j2me.MyFrame_Package;
 package org.allbinary.graphics.j2me.MyFrame_Package_References is
    type MyFrame_Access is access all org.allbinary.graphics.j2me.MyFrame_Package.MyFrame'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.j2me.MyFrame_Package_References is
    type MyFrame_Access_Array_Access is access all MyFrame_Access_Array;
    type MyFrame_Access_Array_Access_Array is array (Natural range <>) of MyFrame_Access_Array_Access;
    type MyFrame_Access_Array_Access_Array_Access is access all MyFrame_Access_Array_Access_Array;
+   type MyFrame_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MyFrame_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MyFrame_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MyFrame_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MyFrame_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MyFrame_Access_Array_Access is (if Value /= null and then Value.all in MyFrame_Access_Array_Object'Class then MyFrame_Access_Array_Object'Class (Value.all).Value else null);
+   type MyFrame_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MyFrame_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MyFrame_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MyFrame_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MyFrame_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MyFrame_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MyFrame_Access_Array_Access_Array_Object'Class then MyFrame_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.j2me.MyFrame_Package_References;
 
 with org.allbinary.graphics.j2me.MyFrame_Package_References;
@@ -48,10 +59,28 @@ limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 limited with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
-with org.allbinary.graphics.j2me.JFrame_Package; use org.allbinary.graphics.j2me.JFrame_Package;
-with org.allbinary.graphics.j2me.KeyListener_Package; use org.allbinary.graphics.j2me.KeyListener_Package;
-limited with org.allbinary.graphics.j2me.JPanel_Package;
-with org.allbinary.graphics.j2me.JPanel_Package_References;
+--  with java.awt.BorderLayout_Package; use java.awt.BorderLayout_Package;
+--  with java.awt.Dimension_Package; use java.awt.Dimension_Package;
+--  with java.awt.GridLayout_Package; use java.awt.GridLayout_Package;
+--  with java.awt.event.ActionEvent_Package; use java.awt.event.ActionEvent_Package;
+--  with java.awt.event.ActionListener_Package; use java.awt.event.ActionListener_Package;
+with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
+--  with java.awt.event.KeyListener_Package; use java.awt.event.KeyListener_Package;
+--  with java.awt.event.MouseAdapter_Package; use java.awt.event.MouseAdapter_Package;
+--  with java.awt.event.MouseEvent_Package; use java.awt.event.MouseEvent_Package;
+--  with java.awt.event.WindowAdapter_Package; use java.awt.event.WindowAdapter_Package;
+--  with java.awt.event.WindowEvent_Package; use java.awt.event.WindowEvent_Package;
+--  with javax.swing.JButton_Package; use javax.swing.JButton_Package;
+--  with javax.swing.JFrame_Package; use javax.swing.JFrame_Package;
+--  with javax.swing.JLabel_Package; use javax.swing.JLabel_Package;
+--  with javax.swing.JMenu_Package; use javax.swing.JMenu_Package;
+--  with javax.swing.JMenuBar_Package; use javax.swing.JMenuBar_Package;
+--  with javax.swing.JMenuItem_Package; use javax.swing.JMenuItem_Package;
+--  with javax.swing.JPanel_Package; use javax.swing.JPanel_Package;
+--  with javax.swing.JTabbedPane_Package; use javax.swing.JTabbedPane_Package;
+--  with javax.swing.JToolBar_Package; use javax.swing.JToolBar_Package;
+--  with javax.swing.event.ChangeEvent_Package; use javax.swing.event.ChangeEvent_Package;
+--  with javax.swing.event.ChangeListener_Package; use javax.swing.event.ChangeListener_Package;
 
 package org.allbinary.graphics.j2me.MyFrame_Package is
 
@@ -66,6 +95,7 @@ package org.allbinary.graphics.j2me.MyFrame_Package is
    package GuiLog_Package renames Standard.org.allbinary.logic.communication.log.GuiLog_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package KeyEvent_Package renames Standard.java.awt.event.KeyEvent_Package;
    package Reference_Types is
    subtype XslHelper_Access is org.allbinary.data.tree.dom.XslHelper_Package_References.XslHelper_Access;
    use type XslHelper_Access;
@@ -137,16 +167,6 @@ package org.allbinary.graphics.j2me.MyFrame_Package is
    use type CommonStrings_Access_Array_Access_Array;
    subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
    use type CommonStrings_Access_Array_Access_Array_Access;
-   subtype JPanel_Access is org.allbinary.graphics.j2me.JPanel_Package_References.JPanel_Access;
-   use type JPanel_Access;
-   subtype JPanel_Access_Array is org.allbinary.graphics.j2me.JPanel_Package_References.JPanel_Access_Array;
-   use type JPanel_Access_Array;
-   subtype JPanel_Access_Array_Access is org.allbinary.graphics.j2me.JPanel_Package_References.JPanel_Access_Array_Access;
-   use type JPanel_Access_Array_Access;
-   subtype JPanel_Access_Array_Access_Array is org.allbinary.graphics.j2me.JPanel_Package_References.JPanel_Access_Array_Access_Array;
-   use type JPanel_Access_Array_Access_Array;
-   subtype JPanel_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.JPanel_Package_References.JPanel_Access_Array_Access_Array_Access;
-   use type JPanel_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -157,12 +177,16 @@ package org.allbinary.graphics.j2me.MyFrame_Package is
    function "=" (Left, Right : MyFrame_Access_Array) return Boolean renames org.allbinary.graphics.j2me.MyFrame_Package_References."=";
    subtype MyFrame_Access_Array_Access is org.allbinary.graphics.j2me.MyFrame_Package_References.MyFrame_Access_Array_Access;
    function "=" (Left, Right : MyFrame_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.MyFrame_Package_References."=";
+   function Java_Box (Value : MyFrame_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.j2me.MyFrame_Package_References.Java_Box;
+   function Java_Unbox_MyFrame_Access_Array (Value : access Java_Object'Class) return MyFrame_Access_Array_Access renames org.allbinary.graphics.j2me.MyFrame_Package_References.Java_Unbox_MyFrame_Access_Array;
    subtype MyFrame_Access_Array_Access_Array is org.allbinary.graphics.j2me.MyFrame_Package_References.MyFrame_Access_Array_Access_Array;
    function "=" (Left, Right : MyFrame_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.MyFrame_Package_References."=";
    subtype MyFrame_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.MyFrame_Package_References.MyFrame_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MyFrame_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.MyFrame_Package_References."=";
+   function Java_Box (Value : MyFrame_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.j2me.MyFrame_Package_References.Java_Box;
+   function Java_Unbox_MyFrame_Access_Array_Access_Array (Value : access Java_Object'Class) return MyFrame_Access_Array_Access_Array_Access renames org.allbinary.graphics.j2me.MyFrame_Package_References.Java_Unbox_MyFrame_Access_Array_Access_Array;
 
-   type MyFrame is new JFrame and FileJDialogListenerInterface and HashMapJDialogListenerInterface and KeyListener with record
+   type MyFrame is new Java_Object and FileJDialogListenerInterface and HashMapJDialogListenerInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       guiLog : GuiLog_Access;

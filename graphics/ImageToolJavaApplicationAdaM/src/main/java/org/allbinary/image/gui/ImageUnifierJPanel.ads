@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.image.gui.ImageUnifierJPanel_Package;
 package org.allbinary.image.gui.ImageUnifierJPanel_Package_References is
    type ImageUnifierJPanel_Access is access all org.allbinary.image.gui.ImageUnifierJPanel_Package.ImageUnifierJPanel'Class;
@@ -19,6 +20,16 @@ package org.allbinary.image.gui.ImageUnifierJPanel_Package_References is
    type ImageUnifierJPanel_Access_Array_Access is access all ImageUnifierJPanel_Access_Array;
    type ImageUnifierJPanel_Access_Array_Access_Array is array (Natural range <>) of ImageUnifierJPanel_Access_Array_Access;
    type ImageUnifierJPanel_Access_Array_Access_Array_Access is access all ImageUnifierJPanel_Access_Array_Access_Array;
+   type ImageUnifierJPanel_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageUnifierJPanel_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageUnifierJPanel_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageUnifierJPanel_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageUnifierJPanel_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageUnifierJPanel_Access_Array_Access is (if Value /= null and then Value.all in ImageUnifierJPanel_Access_Array_Object'Class then ImageUnifierJPanel_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageUnifierJPanel_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageUnifierJPanel_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageUnifierJPanel_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageUnifierJPanel_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageUnifierJPanel_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageUnifierJPanel_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageUnifierJPanel_Access_Array_Access_Array_Object'Class then ImageUnifierJPanel_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.image.gui.ImageUnifierJPanel_Package_References;
 
 with org.allbinary.image.gui.ImageUnifierJPanel_Package_References;
@@ -44,11 +55,23 @@ limited with org.allbinary.media.image.ImagesRatioUtil_Package;
 with org.allbinary.media.image.ImagesRatioUtil_Package_References;
 limited with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
-with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
+--  with java.awt.Dimension_Package; use java.awt.Dimension_Package;
+--  with java.awt.event.ActionEvent_Package; use java.awt.event.ActionEvent_Package;
+--  with java.awt.event.ActionListener_Package; use java.awt.event.ActionListener_Package;
+--  with java.awt.event.KeyAdapter_Package; use java.awt.event.KeyAdapter_Package;
+with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
+--  with java.beans.PropertyChangeEvent_Package; use java.beans.PropertyChangeEvent_Package;
+--  with java.beans.PropertyChangeListener_Package; use java.beans.PropertyChangeListener_Package;
+--  with javax.swing.GroupLayout_Package; use javax.swing.GroupLayout_Package;
+--  with javax.swing.JButton_Package; use javax.swing.JButton_Package;
+--  with javax.swing.JLabel_Package; use javax.swing.JLabel_Package;
+--  with javax.swing.JList_Package; use javax.swing.JList_Package;
+--  with javax.swing.JPanel_Package; use javax.swing.JPanel_Package;
+--  with javax.swing.JScrollPane_Package; use javax.swing.JScrollPane_Package;
+--  with javax.swing.JTextField_Package; use javax.swing.JTextField_Package;
+--  with javax.swing.LayoutStyle_Package; use javax.swing.LayoutStyle_Package;
 limited with org.allbinary.image.gui.ImageIconUnique_Package;
 with org.allbinary.image.gui.ImageIconUnique_Package_References;
-limited with org.allbinary.image.gui.JLabel_Package;
-with org.allbinary.image.gui.JLabel_Package_References;
 
 package org.allbinary.image.gui.ImageUnifierJPanel_Package is
 
@@ -59,6 +82,7 @@ package org.allbinary.image.gui.ImageUnifierJPanel_Package is
    package ImageUnifierProperties_Package renames Standard.org.allbinary.media.image.ImageUnifierProperties_Package;
    package ImagesRatioUtil_Package renames Standard.org.allbinary.media.image.ImagesRatioUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package KeyEvent_Package renames Standard.java.awt.event.KeyEvent_Package;
    package Reference_Types is
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    use type LogUtil_Access;
@@ -130,16 +154,6 @@ package org.allbinary.image.gui.ImageUnifierJPanel_Package is
    use type ImageIconUnique_Access_Array_Access_Array;
    subtype ImageIconUnique_Access_Array_Access_Array_Access is org.allbinary.image.gui.ImageIconUnique_Package_References.ImageIconUnique_Access_Array_Access_Array_Access;
    use type ImageIconUnique_Access_Array_Access_Array_Access;
-   subtype JLabel_Access is org.allbinary.image.gui.JLabel_Package_References.JLabel_Access;
-   use type JLabel_Access;
-   subtype JLabel_Access_Array is org.allbinary.image.gui.JLabel_Package_References.JLabel_Access_Array;
-   use type JLabel_Access_Array;
-   subtype JLabel_Access_Array_Access is org.allbinary.image.gui.JLabel_Package_References.JLabel_Access_Array_Access;
-   use type JLabel_Access_Array_Access;
-   subtype JLabel_Access_Array_Access_Array is org.allbinary.image.gui.JLabel_Package_References.JLabel_Access_Array_Access_Array;
-   use type JLabel_Access_Array_Access_Array;
-   subtype JLabel_Access_Array_Access_Array_Access is org.allbinary.image.gui.JLabel_Package_References.JLabel_Access_Array_Access_Array_Access;
-   use type JLabel_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -150,12 +164,16 @@ package org.allbinary.image.gui.ImageUnifierJPanel_Package is
    function "=" (Left, Right : ImageUnifierJPanel_Access_Array) return Boolean renames org.allbinary.image.gui.ImageUnifierJPanel_Package_References."=";
    subtype ImageUnifierJPanel_Access_Array_Access is org.allbinary.image.gui.ImageUnifierJPanel_Package_References.ImageUnifierJPanel_Access_Array_Access;
    function "=" (Left, Right : ImageUnifierJPanel_Access_Array_Access) return Boolean renames org.allbinary.image.gui.ImageUnifierJPanel_Package_References."=";
+   function Java_Box (Value : ImageUnifierJPanel_Access_Array_Access) return Java_Object_Access renames org.allbinary.image.gui.ImageUnifierJPanel_Package_References.Java_Box;
+   function Java_Unbox_ImageUnifierJPanel_Access_Array (Value : access Java_Object'Class) return ImageUnifierJPanel_Access_Array_Access renames org.allbinary.image.gui.ImageUnifierJPanel_Package_References.Java_Unbox_ImageUnifierJPanel_Access_Array;
    subtype ImageUnifierJPanel_Access_Array_Access_Array is org.allbinary.image.gui.ImageUnifierJPanel_Package_References.ImageUnifierJPanel_Access_Array_Access_Array;
    function "=" (Left, Right : ImageUnifierJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.image.gui.ImageUnifierJPanel_Package_References."=";
    subtype ImageUnifierJPanel_Access_Array_Access_Array_Access is org.allbinary.image.gui.ImageUnifierJPanel_Package_References.ImageUnifierJPanel_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageUnifierJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.gui.ImageUnifierJPanel_Package_References."=";
+   function Java_Box (Value : ImageUnifierJPanel_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.image.gui.ImageUnifierJPanel_Package_References.Java_Box;
+   function Java_Unbox_ImageUnifierJPanel_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageUnifierJPanel_Access_Array_Access_Array_Access renames org.allbinary.image.gui.ImageUnifierJPanel_Package_References.Java_Unbox_ImageUnifierJPanel_Access_Array_Access_Array;
 
-   type ImageUnifierJPanel is new JPanel and ImageProcessorInputCompositeInterface with record
+   type ImageUnifierJPanel is new Java_Object and ImageProcessorInputCompositeInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       imageStrings : ImageStrings_Access;

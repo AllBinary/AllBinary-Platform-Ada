@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.CellPosition_Package;
 package org.allbinary.graphics.CellPosition_Package_References is
    type CellPosition_Access is access all org.allbinary.graphics.CellPosition_Package.CellPosition'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.CellPosition_Package_References is
    type CellPosition_Access_Array_Access is access all CellPosition_Access_Array;
    type CellPosition_Access_Array_Access_Array is array (Natural range <>) of CellPosition_Access_Array_Access;
    type CellPosition_Access_Array_Access_Array_Access is access all CellPosition_Access_Array_Access_Array;
+   type CellPosition_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CellPosition_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CellPosition_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CellPosition_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CellPosition_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CellPosition_Access_Array_Access is (if Value /= null and then Value.all in CellPosition_Access_Array_Object'Class then CellPosition_Access_Array_Object'Class (Value.all).Value else null);
+   type CellPosition_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CellPosition_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CellPosition_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CellPosition_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CellPosition_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CellPosition_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CellPosition_Access_Array_Access_Array_Object'Class then CellPosition_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.CellPosition_Package_References;
 
 with org.allbinary.graphics.CellPosition_Package_References;
@@ -46,10 +57,14 @@ package org.allbinary.graphics.CellPosition_Package is
    function "=" (Left, Right : CellPosition_Access_Array) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
    subtype CellPosition_Access_Array_Access is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access;
    function "=" (Left, Right : CellPosition_Access_Array_Access) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   function Java_Box (Value : CellPosition_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.CellPosition_Package_References.Java_Box;
+   function Java_Unbox_CellPosition_Access_Array (Value : access Java_Object'Class) return CellPosition_Access_Array_Access renames org.allbinary.graphics.CellPosition_Package_References.Java_Unbox_CellPosition_Access_Array;
    subtype CellPosition_Access_Array_Access_Array is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access_Array;
    function "=" (Left, Right : CellPosition_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
    subtype CellPosition_Access_Array_Access_Array_Access is org.allbinary.graphics.CellPosition_Package_References.CellPosition_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CellPosition_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.CellPosition_Package_References."=";
+   function Java_Box (Value : CellPosition_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.CellPosition_Package_References.Java_Box;
+   function Java_Unbox_CellPosition_Access_Array_Access_Array (Value : access Java_Object'Class) return CellPosition_Access_Array_Access_Array_Access renames org.allbinary.graphics.CellPosition_Package_References.Java_Unbox_CellPosition_Access_Array_Access_Array;
 
    type CellPosition is new V with record
       id : Integer;

@@ -15,6 +15,13 @@
 
 with com.jogamp.opengl.glu.GLU_Package; use com.jogamp.opengl.glu.GLU_Package;
 with com.jogamp.opengl.glu.GLU_Package_References;
+with com.jogamp.opengl.GL_Package; use com.jogamp.opengl.GL_Package;
+with com.jogamp.opengl.GL2_Package; use com.jogamp.opengl.GL2_Package;
+with com.jogamp.opengl.GL2_Package_References;
+with java.nio.Buffer_Package; use java.nio.Buffer_Package;
+with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
+with java.nio.IntBuffer_Package; use java.nio.IntBuffer_Package;
+with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 
 package body org.allbinary.opengles.JOGL10_Package is
 
@@ -28,6 +35,16 @@ package body org.allbinary.opengles.JOGL10_Package is
    function "=" (Left, Right : GLU_Access_Array_Access_Array) return Boolean renames com.jogamp.opengl.glu.GLU_Package_References."=";
    subtype GLU_Access_Array_Access_Array_Access is com.jogamp.opengl.glu.GLU_Package_References.GLU_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GLU_Access_Array_Access_Array_Access) return Boolean renames com.jogamp.opengl.glu.GLU_Package_References."=";
+   subtype GL2_Access is com.jogamp.opengl.GL2_Package_References.GL2_Access;
+   function "=" (Left, Right : GL2_Access) return Boolean renames com.jogamp.opengl.GL2_Package_References."=";
+   subtype GL2_Access_Array is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array;
+   function "=" (Left, Right : GL2_Access_Array) return Boolean renames com.jogamp.opengl.GL2_Package_References."=";
+   subtype GL2_Access_Array_Access is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array_Access;
+   function "=" (Left, Right : GL2_Access_Array_Access) return Boolean renames com.jogamp.opengl.GL2_Package_References."=";
+   subtype GL2_Access_Array_Access_Array is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array_Access_Array;
+   function "=" (Left, Right : GL2_Access_Array_Access_Array) return Boolean renames com.jogamp.opengl.GL2_Package_References."=";
+   subtype GL2_Access_Array_Access_Array_Access is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : GL2_Access_Array_Access_Array_Access) return Boolean renames com.jogamp.opengl.GL2_Package_References."=";
    procedure Initialize_Fields (This : in out JOGL10'Class) is
    begin
       null;
@@ -56,8 +73,8 @@ package body org.allbinary.opengles.JOGL10_Package is
       Initialize_Fields (This);
         This.gl10 := gl2;
         This.glu := GLU_Package.createGLU (This.gl10);
-        This.GL_LINE := com_Package.jogamp.opengl.GL2.GL_LINE;
-        This.GL_QUAD_STRIP := com_Package.jogamp.opengl.GL2.GL_QUAD_STRIP;
+        This.GL_LINE := GL2_Package.GL_LINE;
+        This.GL_QUAD_STRIP := GL2_Package.GL_QUAD_STRIP;
    end Initialize;
 
    function Create (gl_Param : access GL_Package.GL'Class; gl2_Param : access GL2_Package.GL2'Class) return JOGL10_Access is
@@ -439,7 +456,7 @@ package body org.allbinary.opengles.JOGL10_Package is
 
    procedure glRotatex (This : in out JOGL10; angle : Integer; x : Integer; y : Integer; z : Integer) is
    begin
-        This.gl10.glRotatef (angle, x, y, z);
+        This.gl10.glRotatef (Float (angle), Float (x), Float (y), Float (z));
    end glRotatex;
 
    procedure glSampleCoverage (This : in out JOGL10; value : Float; invert : Boolean) is
@@ -454,7 +471,7 @@ package body org.allbinary.opengles.JOGL10_Package is
 
    procedure glScalex (This : in out JOGL10; x : Integer; y : Integer; z : Integer) is
    begin
-        This.gl10.glScalef (x, y, z);
+        This.gl10.glScalef (Float (x), Float (y), Float (z));
    end glScalex;
 
    procedure glScissor (This : in out JOGL10; x : Integer; y : Integer; width : Integer; height : Integer) is

@@ -36,6 +36,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -64,6 +66,8 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype CategoryHierarchyInterface_Access is org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package_References.CategoryHierarchyInterface_Access;
    function "=" (Left, Right : CategoryHierarchyInterface_Access) return Boolean renames org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package_References."=";
    subtype CategoryHierarchyInterface_Access_Array is org.allbinary.business.category.hierarchy.CategoryHierarchyInterface_Package_References.CategoryHierarchyInterface_Access_Array;
@@ -215,10 +219,10 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
                     exit;
                 end if;
                 if nextParentCategoryInterface.getProperties.isRoot then
-                    list.addAt (0, nextParentCategoryInterface.getPath.toString);
+                    list.addAt (0, Java_Box (nextParentCategoryInterface.getPath.toString));
                 else
                     pathStringBuffer.delete (0, pathStringBuffer.length);
-                    list.addAt (0, pathStringBuffer.append (abPathData.SEPARATOR).append (nextParentCategoryInterface.getProperties.getValue).toString);
+                    list.addAt (0, Java_Box (pathStringBuffer.append (abPathData.SEPARATOR).append (nextParentCategoryInterface.getProperties.getValue).toString));
                 end if;
                 if (Java_Object_Access (nextParentCategoryInterface)) = (Java_Object_Access (nextParentCategoryInterface.getHierarchy.getParent)) then
                     exit;
@@ -237,7 +241,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
             pathStringBuffer.append (Java_Unbox (list.get (index)));
         end loop;
         pathStringBuffer.append (abPathData.SEPARATOR);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
             This.logUtil.putF (To_Unbounded_String ("path = ") & pathStringBuffer.toString, CategoryProperties_Access'(This'Unchecked_Access), To_Unbounded_String ("getPath"));
         end if;
         return AbPath_Package.Create (pathStringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
@@ -273,7 +277,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
    function toHashMap (This : in out CategoryProperties) return HashMap_Access is
       categoryHashMap : HashMap_Access;
    begin
-        categoryHashMap := StdUtil_Package.getInstance.createHashMap;
+        categoryHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         categoryHashMap.put (CategoryData_Package.getInstance.NAME, Java_Box (This.category));
         return categoryHashMap;
    end toHashMap;
@@ -282,7 +286,7 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
       categoryVector : BasicArrayList_Access;
    begin
         categoryVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        categoryVector.add (This.category);
+        categoryVector.add (Java_Box (This.category));
         return categoryVector;
    end toVector;
 

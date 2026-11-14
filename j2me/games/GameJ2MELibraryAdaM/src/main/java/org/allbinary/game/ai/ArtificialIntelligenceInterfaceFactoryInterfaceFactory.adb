@@ -173,7 +173,7 @@ package body org.allbinary.game.ai.ArtificialIntelligenceInterfaceFactoryInterfa
 
    function getInstance return ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access is
    begin
-        return ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Access (ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Package.SINGLETON);
+        return ArtificialIntelligenceInterfaceFactoryInterfaceFactory_Package.SINGLETON;
    end getInstance;
 
    function getInstanceFromCollection (This : in out ArtificialIntelligenceInterfaceFactoryInterfaceFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) return ArtificialIntelligenceInterfaceFactoryInterface_Access is

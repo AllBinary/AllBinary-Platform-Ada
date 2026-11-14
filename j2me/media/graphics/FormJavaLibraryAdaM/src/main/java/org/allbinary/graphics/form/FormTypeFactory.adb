@@ -122,7 +122,7 @@ package body org.allbinary.graphics.form.FormTypeFactory_Package is
 
    function getInstance return FormTypeFactory_Access is
    begin
-        return FormTypeFactory_Access (FormTypeFactory_Package.instance);
+        return FormTypeFactory_Package.instance;
    end getInstance;
 
    function getFormType (This : in out FormTypeFactory) return FormType_Access is

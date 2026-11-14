@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package;
 package org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package_References is
    type CompoundIndexedAnimationInterfaceFactory_Access is access all org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package.CompoundIndexedAnimationInterfaceFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactor
    type CompoundIndexedAnimationInterfaceFactory_Access_Array_Access is access all CompoundIndexedAnimationInterfaceFactory_Access_Array;
    type CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of CompoundIndexedAnimationInterfaceFactory_Access_Array_Access;
    type CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array_Access is access all CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array;
+   type CompoundIndexedAnimationInterfaceFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CompoundIndexedAnimationInterfaceFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CompoundIndexedAnimationInterfaceFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CompoundIndexedAnimationInterfaceFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CompoundIndexedAnimationInterfaceFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CompoundIndexedAnimationInterfaceFactory_Access_Array_Access is (if Value /= null and then Value.all in CompoundIndexedAnimationInterfaceFactory_Access_Array_Object'Class then CompoundIndexedAnimationInterfaceFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array_Object'Class then CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package_References;
 
 with org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package_References;
@@ -73,10 +84,14 @@ package org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactor
    function "=" (Left, Right : CompoundIndexedAnimationInterfaceFactory_Access_Array) return Boolean renames org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package_References."=";
    subtype CompoundIndexedAnimationInterfaceFactory_Access_Array_Access is org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package_References.CompoundIndexedAnimationInterfaceFactory_Access_Array_Access;
    function "=" (Left, Right : CompoundIndexedAnimationInterfaceFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package_References."=";
+   function Java_Box (Value : CompoundIndexedAnimationInterfaceFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package_References.Java_Box;
+   function Java_Unbox_CompoundIndexedAnimationInterfaceFactory_Access_Array (Value : access Java_Object'Class) return CompoundIndexedAnimationInterfaceFactory_Access_Array_Access renames org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package_References.Java_Unbox_CompoundIndexedAnimationInterfaceFactory_Access_Array;
    subtype CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array is org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package_References.CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array;
    function "=" (Left, Right : CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package_References."=";
    subtype CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array_Access is org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package_References.CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package_References."=";
+   function Java_Box (Value : CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package_References.Java_Box;
+   function Java_Unbox_CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array_Access renames org.allbinary.animation.compound.CompoundIndexedAnimationInterfaceFactory_Package_References.Java_Unbox_CompoundIndexedAnimationInterfaceFactory_Access_Array_Access_Array;
 
    type CompoundIndexedAnimationInterfaceFactory is new CompoundAnimationInterfaceFactory with null record;
 

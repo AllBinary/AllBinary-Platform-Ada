@@ -141,7 +141,7 @@ package body org.allbinary.game.input.event.GameKeyEventHandler_Package is
 
    function getInstance return GameKeyEventHandler_Access is
    begin
-        return GameKeyEventHandler_Access (GameKeyEventHandler_Package.instance);
+        return GameKeyEventHandler_Package.instance;
    end getInstance;
 
    procedure removeAllListeners (This : in out GameKeyEventHandler) is

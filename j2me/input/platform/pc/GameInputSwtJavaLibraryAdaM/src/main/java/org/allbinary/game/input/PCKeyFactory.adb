@@ -148,7 +148,7 @@ package body org.allbinary.game.input.PCKeyFactory_Package is
 
    function getInstance return PCKeyFactory_Access is
    begin
-        return PCKeyFactory_Access (PCKeyFactory_Package.SINGLETON);
+        return PCKeyFactory_Package.SINGLETON;
    end getInstance;
 
    function isSubmission (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is

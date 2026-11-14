@@ -76,7 +76,7 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
    function toHashMap (This : in out FtpConfigurationMapping) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (FtpConfigurationData_Package.SERVER, Java_Box (This.ftpConfigurationInterface.getServer));
         hashMap.put (FtpConfigurationData_Package.USERNAME, Java_Box (This.ftpConfigurationInterface.getUserName));
         hashMap.put (FtpConfigurationData_Package.PASSWORD, Java_Box (This.ftpConfigurationInterface.getPassword));
@@ -95,10 +95,10 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
       vector : BasicArrayList_Access;
    begin
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        vector.add (This.ftpConfigurationInterface.getServer);
-        vector.add (This.ftpConfigurationInterface.getUserName);
-        vector.add (This.ftpConfigurationInterface.getPassword);
-        vector.add (This.ftpConfigurationInterface.getPath);
+        vector.add (Java_Box (This.ftpConfigurationInterface.getServer));
+        vector.add (Java_Box (This.ftpConfigurationInterface.getUserName));
+        vector.add (Java_Box (This.ftpConfigurationInterface.getPassword));
+        vector.add (Java_Box (This.ftpConfigurationInterface.getPath));
         return vector;
    end toVector;
 

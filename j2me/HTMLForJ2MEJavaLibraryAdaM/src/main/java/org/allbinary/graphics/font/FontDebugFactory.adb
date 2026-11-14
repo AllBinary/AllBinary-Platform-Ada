@@ -61,7 +61,7 @@ package body org.allbinary.graphics.font.FontDebugFactory_Package is
 
    function getInstance return FontDebugFactory_Access is
    begin
-        return FontDebugFactory_Access (FontDebugFactory_Package.instance);
+        return FontDebugFactory_Package.instance;
    end getInstance;
 
    procedure setFont (This : in out FontDebugFactory; font_Param : access Font_Package.Font'Class; graphics_Param : access Graphics_Package.Graphics'Class) is

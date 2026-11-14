@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.module.game.skill.GameSkill_Package;
 package org.allbinary.input.automation.module.game.skill.GameSkill_Package_References is
    type GameSkill_Access is access all org.allbinary.input.automation.module.game.skill.GameSkill_Package.GameSkill'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.module.game.skill.GameSkill_Package_Refer
    type GameSkill_Access_Array_Access is access all GameSkill_Access_Array;
    type GameSkill_Access_Array_Access_Array is array (Natural range <>) of GameSkill_Access_Array_Access;
    type GameSkill_Access_Array_Access_Array_Access is access all GameSkill_Access_Array_Access_Array;
+   type GameSkill_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameSkill_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameSkill_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameSkill_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameSkill_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameSkill_Access_Array_Access is (if Value /= null and then Value.all in GameSkill_Access_Array_Object'Class then GameSkill_Access_Array_Object'Class (Value.all).Value else null);
+   type GameSkill_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameSkill_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameSkill_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameSkill_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameSkill_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameSkill_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GameSkill_Access_Array_Access_Array_Object'Class then GameSkill_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.module.game.skill.GameSkill_Package_References;
 
 with org.allbinary.input.automation.module.game.skill.GameSkill_Package_References;
@@ -83,10 +94,14 @@ package org.allbinary.input.automation.module.game.skill.GameSkill_Package is
    function "=" (Left, Right : GameSkill_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkill_Package_References."=";
    subtype GameSkill_Access_Array_Access is org.allbinary.input.automation.module.game.skill.GameSkill_Package_References.GameSkill_Access_Array_Access;
    function "=" (Left, Right : GameSkill_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkill_Package_References."=";
+   function Java_Box (Value : GameSkill_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.module.game.skill.GameSkill_Package_References.Java_Box;
+   function Java_Unbox_GameSkill_Access_Array (Value : access Java_Object'Class) return GameSkill_Access_Array_Access renames org.allbinary.input.automation.module.game.skill.GameSkill_Package_References.Java_Unbox_GameSkill_Access_Array;
    subtype GameSkill_Access_Array_Access_Array is org.allbinary.input.automation.module.game.skill.GameSkill_Package_References.GameSkill_Access_Array_Access_Array;
    function "=" (Left, Right : GameSkill_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkill_Package_References."=";
    subtype GameSkill_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.game.skill.GameSkill_Package_References.GameSkill_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GameSkill_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.game.skill.GameSkill_Package_References."=";
+   function Java_Box (Value : GameSkill_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.module.game.skill.GameSkill_Package_References.Java_Box;
+   function Java_Unbox_GameSkill_Access_Array_Access_Array (Value : access Java_Object'Class) return GameSkill_Access_Array_Access_Array_Access renames org.allbinary.input.automation.module.game.skill.GameSkill_Package_References.Java_Unbox_GameSkill_Access_Array_Access_Array;
 
    type GameSkill is new Java_Object with record
       gameSkillType : GameSkillType_Access;

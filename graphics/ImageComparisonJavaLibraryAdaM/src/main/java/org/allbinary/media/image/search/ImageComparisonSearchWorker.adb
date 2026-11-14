@@ -125,8 +125,8 @@ package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Packag
    procedure Initialize_Fields (This : in out ImageComparisonSearchWorker'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
-      This.commonStrings := CommonStrings_Package.getInstance;
+      This.ImageComparisonSearchWorker_Field_logUtil := LogUtil_Package.getInstance;
+      This.ImageComparisonSearchWorker_Field_commonStrings := CommonStrings_Package.getInstance;
       
       This.index := 0;
       This.running := False;
@@ -179,24 +179,24 @@ package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Packag
       latestBufferedImage : BufferedImage_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.ImageComparisonSearchWorker_Field_logUtil.putF (This.ImageComparisonSearchWorker_Field_commonStrings.START, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.ImageComparisonSearchWorker_Field_commonStrings.RUN);
             ImageComparisonSearchWorker'Class (This).setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
             imageComparisonInfo := ImageComparisonResult_Access (This.imageComparisonInfoVector.get (0));
-            This.logUtil.putF (imageComparisonInfo.toString, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.ImageComparisonSearchWorker_Field_logUtil.putF (imageComparisonInfo.toString, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.ImageComparisonSearchWorker_Field_commonStrings.RUN);
             latestBufferedImage := imageComparisonInfo.getBufferedImages (1);
             This.imageComparisonInfoVector.remove (Java_Object_Access (imageComparisonInfo));
             This.index := This.index + 1;
-            This.logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.ImageComparisonSearchWorker_Field_logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.ImageComparisonSearchWorker_Field_commonStrings.RUN);
             ImageComparisonSearchWorker'Class (This).setRunning (False);
-            This.logUtil.putF (This.commonStrings.END_Id, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.ImageComparisonSearchWorker_Field_logUtil.putF (This.ImageComparisonSearchWorker_Field_commonStrings.END_Id, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.ImageComparisonSearchWorker_Field_commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
+            This.ImageComparisonSearchWorker_Field_logUtil.put (This.ImageComparisonSearchWorker_Field_commonStrings.EXCEPTION_Id, ImageComparisonSearchWorker_Access'(This'Unchecked_Access), This.ImageComparisonSearchWorker_Field_commonStrings.RUN, e);
                 end;
         end;
    end run;

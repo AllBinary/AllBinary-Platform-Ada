@@ -58,7 +58,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
 
    function getInstance return ResourceUtil_Access is
    begin
-        return ResourceUtil_Access (ResourceUtil_Package.instance);
+        return ResourceUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ResourceUtil'Class) is

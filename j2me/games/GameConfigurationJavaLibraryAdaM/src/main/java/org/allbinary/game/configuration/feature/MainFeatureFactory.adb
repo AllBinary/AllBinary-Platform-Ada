@@ -55,7 +55,7 @@ package body org.allbinary.game.configuration.feature.MainFeatureFactory_Package
 
    function getInstance return MainFeatureFactory_Access is
    begin
-        return MainFeatureFactory_Access (MainFeatureFactory_Package.instance);
+        return MainFeatureFactory_Package.instance;
    end getInstance;
 
 begin

@@ -118,7 +118,7 @@ package body org.allbinary.game.displayable.canvas.FormUtil_Package is
 
    function getInstance return FormUtil_Access is
    begin
-        return FormUtil_Access (FormUtil_Package.instance);
+        return FormUtil_Package.instance;
    end getInstance;
 
    function createFormRectangle (This : in out FormUtil) return Rectangle_Access is

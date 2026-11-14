@@ -17,11 +17,14 @@ with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectan
 with org.allbinary.graphics.Rectangle_Package_References;
 with org.allbinary.bounds.BoundsVisitorInterface_Package; use org.allbinary.bounds.BoundsVisitorInterface_Package;
 with org.allbinary.bounds.BoundsVisitorInterface_Package_References;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.bounds.event.BoundsChangeEvent_Package;
 with org.allbinary.bounds.event.BoundsChangeEventListener_Package;
 with org.allbinary.bounds.BoundsVisitorInterface_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;

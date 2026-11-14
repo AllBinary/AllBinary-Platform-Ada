@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.motion.button.TouchButtonsPaintable_Package;
 package org.allbinary.input.motion.button.TouchButtonsPaintable_Package_References is
    type TouchButtonsPaintable_Access is access all org.allbinary.input.motion.button.TouchButtonsPaintable_Package.TouchButtonsPaintable'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.motion.button.TouchButtonsPaintable_Package_Referenc
    type TouchButtonsPaintable_Access_Array_Access is access all TouchButtonsPaintable_Access_Array;
    type TouchButtonsPaintable_Access_Array_Access_Array is array (Natural range <>) of TouchButtonsPaintable_Access_Array_Access;
    type TouchButtonsPaintable_Access_Array_Access_Array_Access is access all TouchButtonsPaintable_Access_Array_Access_Array;
+   type TouchButtonsPaintable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TouchButtonsPaintable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TouchButtonsPaintable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TouchButtonsPaintable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TouchButtonsPaintable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TouchButtonsPaintable_Access_Array_Access is (if Value /= null and then Value.all in TouchButtonsPaintable_Access_Array_Object'Class then TouchButtonsPaintable_Access_Array_Object'Class (Value.all).Value else null);
+   type TouchButtonsPaintable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TouchButtonsPaintable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TouchButtonsPaintable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TouchButtonsPaintable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TouchButtonsPaintable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TouchButtonsPaintable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TouchButtonsPaintable_Access_Array_Access_Array_Object'Class then TouchButtonsPaintable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.motion.button.TouchButtonsPaintable_Package_References;
 
 with org.allbinary.input.motion.button.TouchButtonsPaintable_Package_References;
@@ -97,10 +108,14 @@ package org.allbinary.input.motion.button.TouchButtonsPaintable_Package is
    function "=" (Left, Right : TouchButtonsPaintable_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonsPaintable_Package_References."=";
    subtype TouchButtonsPaintable_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonsPaintable_Package_References.TouchButtonsPaintable_Access_Array_Access;
    function "=" (Left, Right : TouchButtonsPaintable_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonsPaintable_Package_References."=";
+   function Java_Box (Value : TouchButtonsPaintable_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.TouchButtonsPaintable_Package_References.Java_Box;
+   function Java_Unbox_TouchButtonsPaintable_Access_Array (Value : access Java_Object'Class) return TouchButtonsPaintable_Access_Array_Access renames org.allbinary.input.motion.button.TouchButtonsPaintable_Package_References.Java_Unbox_TouchButtonsPaintable_Access_Array;
    subtype TouchButtonsPaintable_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonsPaintable_Package_References.TouchButtonsPaintable_Access_Array_Access_Array;
    function "=" (Left, Right : TouchButtonsPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonsPaintable_Package_References."=";
    subtype TouchButtonsPaintable_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonsPaintable_Package_References.TouchButtonsPaintable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TouchButtonsPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonsPaintable_Package_References."=";
+   function Java_Box (Value : TouchButtonsPaintable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.TouchButtonsPaintable_Package_References.Java_Box;
+   function Java_Unbox_TouchButtonsPaintable_Access_Array_Access_Array (Value : access Java_Object'Class) return TouchButtonsPaintable_Access_Array_Access_Array_Access renames org.allbinary.input.motion.button.TouchButtonsPaintable_Package_References.Java_Unbox_TouchButtonsPaintable_Access_Array_Access_Array;
 
    type TouchButtonsPaintable is new Paintable with record
       foregroundBasicColor : BasicColor_Access;

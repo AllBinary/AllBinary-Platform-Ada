@@ -108,7 +108,7 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
 
    function getInstance return ImageAnalysis_Access is
    begin
-        return ImageAnalysis_Access (ImageAnalysis_Package.instance);
+        return ImageAnalysis_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageAnalysis'Class) is

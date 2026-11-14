@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.bounds.event.BoundsChangeEventListener_Package;
 package org.allbinary.bounds.event.BoundsChangeEventListener_Package_References is
    type BoundsChangeEventListener_Access is access all org.allbinary.bounds.event.BoundsChangeEventListener_Package.BoundsChangeEventListener'Class;
@@ -19,6 +20,16 @@ package org.allbinary.bounds.event.BoundsChangeEventListener_Package_References 
    type BoundsChangeEventListener_Access_Array_Access is access all BoundsChangeEventListener_Access_Array;
    type BoundsChangeEventListener_Access_Array_Access_Array is array (Natural range <>) of BoundsChangeEventListener_Access_Array_Access;
    type BoundsChangeEventListener_Access_Array_Access_Array_Access is access all BoundsChangeEventListener_Access_Array_Access_Array;
+   type BoundsChangeEventListener_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BoundsChangeEventListener_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BoundsChangeEventListener_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BoundsChangeEventListener_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BoundsChangeEventListener_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BoundsChangeEventListener_Access_Array_Access is (if Value /= null and then Value.all in BoundsChangeEventListener_Access_Array_Object'Class then BoundsChangeEventListener_Access_Array_Object'Class (Value.all).Value else null);
+   type BoundsChangeEventListener_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BoundsChangeEventListener_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BoundsChangeEventListener_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BoundsChangeEventListener_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BoundsChangeEventListener_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BoundsChangeEventListener_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BoundsChangeEventListener_Access_Array_Access_Array_Object'Class then BoundsChangeEventListener_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.bounds.event.BoundsChangeEventListener_Package_References;
 
 with org.allbinary.bounds.event.BoundsChangeEventListener_Package_References;
@@ -59,10 +70,14 @@ package org.allbinary.bounds.event.BoundsChangeEventListener_Package is
    function "=" (Left, Right : BoundsChangeEventListener_Access_Array) return Boolean renames org.allbinary.bounds.event.BoundsChangeEventListener_Package_References."=";
    subtype BoundsChangeEventListener_Access_Array_Access is org.allbinary.bounds.event.BoundsChangeEventListener_Package_References.BoundsChangeEventListener_Access_Array_Access;
    function "=" (Left, Right : BoundsChangeEventListener_Access_Array_Access) return Boolean renames org.allbinary.bounds.event.BoundsChangeEventListener_Package_References."=";
+   function Java_Box (Value : BoundsChangeEventListener_Access_Array_Access) return Java_Object_Access renames org.allbinary.bounds.event.BoundsChangeEventListener_Package_References.Java_Box;
+   function Java_Unbox_BoundsChangeEventListener_Access_Array (Value : access Java_Object'Class) return BoundsChangeEventListener_Access_Array_Access renames org.allbinary.bounds.event.BoundsChangeEventListener_Package_References.Java_Unbox_BoundsChangeEventListener_Access_Array;
    subtype BoundsChangeEventListener_Access_Array_Access_Array is org.allbinary.bounds.event.BoundsChangeEventListener_Package_References.BoundsChangeEventListener_Access_Array_Access_Array;
    function "=" (Left, Right : BoundsChangeEventListener_Access_Array_Access_Array) return Boolean renames org.allbinary.bounds.event.BoundsChangeEventListener_Package_References."=";
    subtype BoundsChangeEventListener_Access_Array_Access_Array_Access is org.allbinary.bounds.event.BoundsChangeEventListener_Package_References.BoundsChangeEventListener_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BoundsChangeEventListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.bounds.event.BoundsChangeEventListener_Package_References."=";
+   function Java_Box (Value : BoundsChangeEventListener_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.bounds.event.BoundsChangeEventListener_Package_References.Java_Box;
+   function Java_Unbox_BoundsChangeEventListener_Access_Array_Access_Array (Value : access Java_Object'Class) return BoundsChangeEventListener_Access_Array_Access_Array_Access renames org.allbinary.bounds.event.BoundsChangeEventListener_Package_References.Java_Unbox_BoundsChangeEventListener_Access_Array_Access_Array;
    function Java_Object_Access_From_BoundsChangeEventListener (Value : BoundsChangeEventListener_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure onBoundsChangeEvent (This : in out BoundsChangeEventListener; boundsChangeEvent_Param : access BoundsChangeEvent_Package.BoundsChangeEvent'Class) is abstract;
 

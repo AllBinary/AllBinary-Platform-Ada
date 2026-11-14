@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.servlet.ImageServlet_Package;
 package org.allbinary.servlet.ImageServlet_Package_References is
    type ImageServlet_Access is access all org.allbinary.servlet.ImageServlet_Package.ImageServlet'Class;
@@ -19,6 +20,16 @@ package org.allbinary.servlet.ImageServlet_Package_References is
    type ImageServlet_Access_Array_Access is access all ImageServlet_Access_Array;
    type ImageServlet_Access_Array_Access_Array is array (Natural range <>) of ImageServlet_Access_Array_Access;
    type ImageServlet_Access_Array_Access_Array_Access is access all ImageServlet_Access_Array_Access_Array;
+   type ImageServlet_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageServlet_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageServlet_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageServlet_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageServlet_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageServlet_Access_Array_Access is (if Value /= null and then Value.all in ImageServlet_Access_Array_Object'Class then ImageServlet_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageServlet_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageServlet_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageServlet_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageServlet_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageServlet_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageServlet_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageServlet_Access_Array_Access_Array_Object'Class then ImageServlet_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.servlet.ImageServlet_Package_References;
 
 with org.allbinary.servlet.ImageServlet_Package_References;
@@ -75,10 +86,14 @@ package org.allbinary.servlet.ImageServlet_Package is
    function "=" (Left, Right : ImageServlet_Access_Array) return Boolean renames org.allbinary.servlet.ImageServlet_Package_References."=";
    subtype ImageServlet_Access_Array_Access is org.allbinary.servlet.ImageServlet_Package_References.ImageServlet_Access_Array_Access;
    function "=" (Left, Right : ImageServlet_Access_Array_Access) return Boolean renames org.allbinary.servlet.ImageServlet_Package_References."=";
+   function Java_Box (Value : ImageServlet_Access_Array_Access) return Java_Object_Access renames org.allbinary.servlet.ImageServlet_Package_References.Java_Box;
+   function Java_Unbox_ImageServlet_Access_Array (Value : access Java_Object'Class) return ImageServlet_Access_Array_Access renames org.allbinary.servlet.ImageServlet_Package_References.Java_Unbox_ImageServlet_Access_Array;
    subtype ImageServlet_Access_Array_Access_Array is org.allbinary.servlet.ImageServlet_Package_References.ImageServlet_Access_Array_Access_Array;
    function "=" (Left, Right : ImageServlet_Access_Array_Access_Array) return Boolean renames org.allbinary.servlet.ImageServlet_Package_References."=";
    subtype ImageServlet_Access_Array_Access_Array_Access is org.allbinary.servlet.ImageServlet_Package_References.ImageServlet_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageServlet_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.servlet.ImageServlet_Package_References."=";
+   function Java_Box (Value : ImageServlet_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.servlet.ImageServlet_Package_References.Java_Box;
+   function Java_Unbox_ImageServlet_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageServlet_Access_Array_Access_Array_Access renames org.allbinary.servlet.ImageServlet_Package_References.Java_Unbox_ImageServlet_Access_Array_Access_Array;
 
    type ImageServlet is new Java_Object with record
       logUtil : LogUtil_Access;

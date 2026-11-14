@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package;
 package org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References is
    type BasicDirectionAIHelper_Access is access all org.allbinary.game.ai.path.BasicDirectionAIHelper_Package.BasicDirectionAIHelper'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References is
    type BasicDirectionAIHelper_Access_Array_Access is access all BasicDirectionAIHelper_Access_Array;
    type BasicDirectionAIHelper_Access_Array_Access_Array is array (Natural range <>) of BasicDirectionAIHelper_Access_Array_Access;
    type BasicDirectionAIHelper_Access_Array_Access_Array_Access is access all BasicDirectionAIHelper_Access_Array_Access_Array;
+   type BasicDirectionAIHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicDirectionAIHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicDirectionAIHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicDirectionAIHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicDirectionAIHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicDirectionAIHelper_Access_Array_Access is (if Value /= null and then Value.all in BasicDirectionAIHelper_Access_Array_Object'Class then BasicDirectionAIHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicDirectionAIHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicDirectionAIHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicDirectionAIHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicDirectionAIHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicDirectionAIHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicDirectionAIHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicDirectionAIHelper_Access_Array_Access_Array_Object'Class then BasicDirectionAIHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References;
 
 with org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References;
@@ -70,10 +81,14 @@ package org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
    function "=" (Left, Right : BasicDirectionAIHelper_Access_Array) return Boolean renames org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References."=";
    subtype BasicDirectionAIHelper_Access_Array_Access is org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References.BasicDirectionAIHelper_Access_Array_Access;
    function "=" (Left, Right : BasicDirectionAIHelper_Access_Array_Access) return Boolean renames org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References."=";
+   function Java_Box (Value : BasicDirectionAIHelper_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References.Java_Box;
+   function Java_Unbox_BasicDirectionAIHelper_Access_Array (Value : access Java_Object'Class) return BasicDirectionAIHelper_Access_Array_Access renames org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References.Java_Unbox_BasicDirectionAIHelper_Access_Array;
    subtype BasicDirectionAIHelper_Access_Array_Access_Array is org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References.BasicDirectionAIHelper_Access_Array_Access_Array;
    function "=" (Left, Right : BasicDirectionAIHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References."=";
    subtype BasicDirectionAIHelper_Access_Array_Access_Array_Access is org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References.BasicDirectionAIHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicDirectionAIHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References."=";
+   function Java_Box (Value : BasicDirectionAIHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References.Java_Box;
+   function Java_Unbox_BasicDirectionAIHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicDirectionAIHelper_Access_Array_Access_Array_Access renames org.allbinary.game.ai.path.BasicDirectionAIHelper_Package_References.Java_Unbox_BasicDirectionAIHelper_Access_Array_Access_Array;
 
    type BasicDirectionAIHelper is new Java_Object with record
       name : Unbounded_String;

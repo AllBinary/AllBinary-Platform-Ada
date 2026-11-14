@@ -21,6 +21,8 @@ with org.microemu.device.j2se.J2SEMutableImage_Package; use org.microemu.device.
 with org.allbinary.media.image.ImageJ2SERotationUtil_Package; use org.allbinary.media.image.ImageJ2SERotationUtil_Package;
 with org.allbinary.media.image.ImageJ2SERotationUtil_Package_References;
 with org.allbinary.media.image.ImageCreationUtil_Package; use org.allbinary.media.image.ImageCreationUtil_Package;
+with java.awt.Image_Package;
+with java.awt.Image_Package_References; use type java.awt.Image_Package_References.Image_Access;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with javax.microedition.lcdui.Font_Package;
@@ -64,7 +66,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
 
    function getInstance return ImageRotationUtil_Access is
    begin
-        return ImageRotationUtil_Access (ImageRotationUtil_Package.instance);
+        return ImageRotationUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageRotationUtil'Class) is
@@ -85,7 +87,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
       image : constant Image_Access := Image_Access (image_Param);
       j2seImage : J2SEMutableImage_Access;
       newBufferedImage : BufferedImage_Access;
-      originalAwtImage : Image_Access;
+      originalAwtImage : java.awt.Image_Package_References.Image_Access;
       originalJ2SEImage : J2SEImmutableImage_Access;
       originalJ2SEImage_2 : J2SEMutableImage_Access;
    begin
@@ -95,10 +97,10 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
             originalAwtImage := null;
             if originalImage.isMutable then
                 originalJ2SEImage_2 := J2SEMutableImage_Access (originalImage);
-                originalAwtImage := Image_Access (originalJ2SEImage_2.getImage);
+                originalAwtImage := java.awt.Image_Package_References.Image_Access (originalJ2SEImage_2.getImage);
             else
                 originalJ2SEImage := J2SEImmutableImage_Access (originalImage);
-                originalAwtImage := Image_Access (originalJ2SEImage.getImage);
+                originalAwtImage := java.awt.Image_Package_References.Image_Access (originalJ2SEImage.getImage);
             end if;
             This.imageJ2SERotationUtil.rotateImage (originalAwtImage, newBufferedImage, totalAngle);
         else
@@ -110,7 +112,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
    function createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; rotationInDegrees : Integer) return Image_Access is
       originalImage : constant Image_Access := Image_Access (originalImage_Param);
       image : Image_Access;
-      originalAwtImage : Image_Access;
+      originalAwtImage : java.awt.Image_Package_References.Image_Access;
       originalJ2SEImage : J2SEImmutableImage_Access;
       originalJ2SEImage_2 : J2SEMutableImage_Access;
       j2seImage : J2SEMutableImage_Access;
@@ -122,10 +124,10 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
             originalAwtImage := null;
             if originalImage.isMutable then
                 originalJ2SEImage_2 := J2SEMutableImage_Access (originalImage);
-                originalAwtImage := Image_Access (originalJ2SEImage_2.getImage);
+                originalAwtImage := java.awt.Image_Package_References.Image_Access (originalJ2SEImage_2.getImage);
             else
                 originalJ2SEImage := J2SEImmutableImage_Access (originalImage);
-                originalAwtImage := Image_Access (originalJ2SEImage.getImage);
+                originalAwtImage := java.awt.Image_Package_References.Image_Access (originalJ2SEImage.getImage);
             end if;
             j2seImage := J2SEMutableImage_Access (image);
             newBufferedImage := BufferedImage_Access (j2seImage.getImage);

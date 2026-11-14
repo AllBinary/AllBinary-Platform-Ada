@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.score.displayable.HighScoresCanvas_Package;
 package org.allbinary.game.score.displayable.HighScoresCanvas_Package_References is
    type HighScoresCanvas_Access is access all org.allbinary.game.score.displayable.HighScoresCanvas_Package.HighScoresCanvas'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.score.displayable.HighScoresCanvas_Package_References
    type HighScoresCanvas_Access_Array_Access is access all HighScoresCanvas_Access_Array;
    type HighScoresCanvas_Access_Array_Access_Array is array (Natural range <>) of HighScoresCanvas_Access_Array_Access;
    type HighScoresCanvas_Access_Array_Access_Array_Access is access all HighScoresCanvas_Access_Array_Access_Array;
+   type HighScoresCanvas_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HighScoresCanvas_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HighScoresCanvas_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HighScoresCanvas_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HighScoresCanvas_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HighScoresCanvas_Access_Array_Access is (if Value /= null and then Value.all in HighScoresCanvas_Access_Array_Object'Class then HighScoresCanvas_Access_Array_Object'Class (Value.all).Value else null);
+   type HighScoresCanvas_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HighScoresCanvas_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HighScoresCanvas_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HighScoresCanvas_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HighScoresCanvas_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HighScoresCanvas_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in HighScoresCanvas_Access_Array_Access_Array_Object'Class then HighScoresCanvas_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.score.displayable.HighScoresCanvas_Package_References;
 
 with org.allbinary.game.score.displayable.HighScoresCanvas_Package_References;
@@ -62,6 +73,7 @@ limited with org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.graphics.paint.Paintable_Package_References;
 limited with org.allbinary.graphics.paint.SimpleTextPaintable_Package;
 with org.allbinary.graphics.paint.SimpleTextPaintable_Package_References;
+with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 
 package org.allbinary.game.score.displayable.HighScoresCanvas_Package is
 
@@ -82,6 +94,7 @@ package org.allbinary.game.score.displayable.HighScoresCanvas_Package is
    package HighScoresResultsListener_Package renames Standard.org.allbinary.game.score.HighScoresResultsListener_Package;
    package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
    package SimpleTextPaintable_Package renames Standard.org.allbinary.graphics.paint.SimpleTextPaintable_Package;
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    package Reference_Types is
    subtype Command_Access is javax.microedition.lcdui.Command_Package_References.Command_Access;
    use type Command_Access;
@@ -243,10 +256,14 @@ package org.allbinary.game.score.displayable.HighScoresCanvas_Package is
    function "=" (Left, Right : HighScoresCanvas_Access_Array) return Boolean renames org.allbinary.game.score.displayable.HighScoresCanvas_Package_References."=";
    subtype HighScoresCanvas_Access_Array_Access is org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.HighScoresCanvas_Access_Array_Access;
    function "=" (Left, Right : HighScoresCanvas_Access_Array_Access) return Boolean renames org.allbinary.game.score.displayable.HighScoresCanvas_Package_References."=";
+   function Java_Box (Value : HighScoresCanvas_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.Java_Box;
+   function Java_Unbox_HighScoresCanvas_Access_Array (Value : access Java_Object'Class) return HighScoresCanvas_Access_Array_Access renames org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.Java_Unbox_HighScoresCanvas_Access_Array;
    subtype HighScoresCanvas_Access_Array_Access_Array is org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.HighScoresCanvas_Access_Array_Access_Array;
    function "=" (Left, Right : HighScoresCanvas_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.displayable.HighScoresCanvas_Package_References."=";
    subtype HighScoresCanvas_Access_Array_Access_Array_Access is org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.HighScoresCanvas_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HighScoresCanvas_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.displayable.HighScoresCanvas_Package_References."=";
+   function Java_Box (Value : HighScoresCanvas_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.Java_Box;
+   function Java_Unbox_HighScoresCanvas_Access_Array_Access_Array (Value : access Java_Object'Class) return HighScoresCanvas_Access_Array_Access_Array_Access renames org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.Java_Unbox_HighScoresCanvas_Access_Array_Access_Array;
 
    type HighScoresCanvas is new GameCommandCanvas and HighScoresResultsListener with record
       paintable : Paintable_Access;
@@ -277,5 +294,280 @@ package org.allbinary.game.score.displayable.HighScoresCanvas_Package is
    procedure setPaintable (This : in out HighScoresCanvas; paintable_Param : access Paintable_Package.Paintable'Class);
 
 end org.allbinary.game.score.displayable.HighScoresCanvas_Package;
+
+with AllBinary_Java;
+limited with org.allbinary.game.score.displayable.HighScoreRunnable_Package;
+package org.allbinary.game.score.displayable.HighScoreRunnable_Package_References is
+   type HighScoreRunnable_Access is access all org.allbinary.game.score.displayable.HighScoreRunnable_Package.HighScoreRunnable'Class;
+   type HighScoreRunnable_Access_Array is array (Natural range <>) of HighScoreRunnable_Access;
+   type HighScoreRunnable_Access_Array_Access is access all HighScoreRunnable_Access_Array;
+   type HighScoreRunnable_Access_Array_Access_Array is array (Natural range <>) of HighScoreRunnable_Access_Array_Access;
+   type HighScoreRunnable_Access_Array_Access_Array_Access is access all HighScoreRunnable_Access_Array_Access_Array;
+   type HighScoreRunnable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HighScoreRunnable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HighScoreRunnable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HighScoreRunnable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HighScoreRunnable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HighScoreRunnable_Access_Array_Access is (if Value /= null and then Value.all in HighScoreRunnable_Access_Array_Object'Class then HighScoreRunnable_Access_Array_Object'Class (Value.all).Value else null);
+   type HighScoreRunnable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HighScoreRunnable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HighScoreRunnable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HighScoreRunnable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HighScoreRunnable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HighScoreRunnable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in HighScoreRunnable_Access_Array_Access_Array_Object'Class then HighScoreRunnable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
+end org.allbinary.game.score.displayable.HighScoreRunnable_Package_References;
+
+with org.allbinary.game.score.displayable.HighScoreRunnable_Package_References;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+limited with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.Command_Package_References;
+limited with javax.microedition.lcdui.CommandListener_Package;
+with javax.microedition.lcdui.CommandListener_Package_References;
+limited with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Graphics_Package_References;
+limited with org.allbinary.game.GameInfo_Package;
+with org.allbinary.game.GameInfo_Package_References;
+with org.allbinary.game.displayable.canvas.GameCommandCanvas_Package; use org.allbinary.game.displayable.canvas.GameCommandCanvas_Package;
+limited with org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References;
+limited with org.allbinary.game.paint.ColorFillBasePaintable_Package;
+with org.allbinary.game.paint.ColorFillBasePaintable_Package_References;
+limited with org.allbinary.game.score.HighScoreCommandsFactory_Package;
+with org.allbinary.game.score.HighScoreCommandsFactory_Package_References;
+limited with org.allbinary.game.score.HighScores_Package;
+with org.allbinary.game.score.HighScores_Package_References;
+limited with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;
+with org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References;
+limited with org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package;
+with org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package_References;
+limited with org.allbinary.game.score.HighScoresFactoryInterface_Package;
+with org.allbinary.game.score.HighScoresFactoryInterface_Package_References;
+limited with org.allbinary.game.score.HighScoresHelperBase_Package;
+with org.allbinary.game.score.HighScoresHelperBase_Package_References;
+limited with org.allbinary.game.score.HighScoresPaintable_Package;
+with org.allbinary.game.score.HighScoresPaintable_Package_References;
+with org.allbinary.game.score.HighScoresResultsListener_Package; use org.allbinary.game.score.HighScoresResultsListener_Package;
+limited with org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.graphics.paint.Paintable_Package_References;
+limited with org.allbinary.graphics.paint.SimpleTextPaintable_Package;
+with org.allbinary.graphics.paint.SimpleTextPaintable_Package_References;
+with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
+limited with org.allbinary.game.score.displayable.HighScoresCanvas_Package;
+with org.allbinary.game.score.displayable.HighScoresCanvas_Package_References;
+
+package org.allbinary.game.score.displayable.HighScoreRunnable_Package is
+
+   package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
+   package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
+   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
+   package GameInfo_Package renames Standard.org.allbinary.game.GameInfo_Package;
+   package GameCommandCanvas_Package renames Standard.org.allbinary.game.displayable.canvas.GameCommandCanvas_Package;
+   package AllBinaryGameLayerManager_Package renames Standard.org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package ColorFillBasePaintable_Package renames Standard.org.allbinary.game.paint.ColorFillBasePaintable_Package;
+   package HighScoreCommandsFactory_Package renames Standard.org.allbinary.game.score.HighScoreCommandsFactory_Package;
+   package HighScores_Package renames Standard.org.allbinary.game.score.HighScores_Package;
+   package HighScoresCanvasInputProcessor_Package renames Standard.org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;
+   package HighScoresCanvasInputProcessorFactoryInterface_Package renames Standard.org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package;
+   package HighScoresFactoryInterface_Package renames Standard.org.allbinary.game.score.HighScoresFactoryInterface_Package;
+   package HighScoresHelperBase_Package renames Standard.org.allbinary.game.score.HighScoresHelperBase_Package;
+   package HighScoresPaintable_Package renames Standard.org.allbinary.game.score.HighScoresPaintable_Package;
+   package HighScoresResultsListener_Package renames Standard.org.allbinary.game.score.HighScoresResultsListener_Package;
+   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
+   package SimpleTextPaintable_Package renames Standard.org.allbinary.graphics.paint.SimpleTextPaintable_Package;
+   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
+   package Reference_Types is
+   subtype Command_Access is javax.microedition.lcdui.Command_Package_References.Command_Access;
+   use type Command_Access;
+   subtype Command_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array;
+   use type Command_Access_Array;
+   subtype Command_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access;
+   use type Command_Access_Array_Access;
+   subtype Command_Access_Array_Access_Array is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array;
+   use type Command_Access_Array_Access_Array;
+   subtype Command_Access_Array_Access_Array_Access is javax.microedition.lcdui.Command_Package_References.Command_Access_Array_Access_Array_Access;
+   use type Command_Access_Array_Access_Array_Access;
+   subtype CommandListener_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access;
+   use type CommandListener_Access;
+   subtype CommandListener_Access_Array is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array;
+   use type CommandListener_Access_Array;
+   subtype CommandListener_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access;
+   use type CommandListener_Access_Array_Access;
+   subtype CommandListener_Access_Array_Access_Array is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array;
+   use type CommandListener_Access_Array_Access_Array;
+   subtype CommandListener_Access_Array_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array_Access;
+   use type CommandListener_Access_Array_Access_Array_Access;
+   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
+   use type Graphics_Access;
+   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
+   use type Graphics_Access_Array;
+   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
+   use type Graphics_Access_Array_Access;
+   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
+   use type Graphics_Access_Array_Access_Array;
+   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
+   use type Graphics_Access_Array_Access_Array_Access;
+   subtype GameInfo_Access is org.allbinary.game.GameInfo_Package_References.GameInfo_Access;
+   use type GameInfo_Access;
+   subtype GameInfo_Access_Array is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array;
+   use type GameInfo_Access_Array;
+   subtype GameInfo_Access_Array_Access is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array_Access;
+   use type GameInfo_Access_Array_Access;
+   subtype GameInfo_Access_Array_Access_Array is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array_Access_Array;
+   use type GameInfo_Access_Array_Access_Array;
+   subtype GameInfo_Access_Array_Access_Array_Access is org.allbinary.game.GameInfo_Package_References.GameInfo_Access_Array_Access_Array_Access;
+   use type GameInfo_Access_Array_Access_Array_Access;
+   subtype AllBinaryGameLayerManager_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access;
+   use type AllBinaryGameLayerManager_Access;
+   subtype AllBinaryGameLayerManager_Access_Array is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array;
+   use type AllBinaryGameLayerManager_Access_Array;
+   subtype AllBinaryGameLayerManager_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access;
+   use type AllBinaryGameLayerManager_Access_Array_Access;
+   subtype AllBinaryGameLayerManager_Access_Array_Access_Array is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access_Array;
+   use type AllBinaryGameLayerManager_Access_Array_Access_Array;
+   subtype AllBinaryGameLayerManager_Access_Array_Access_Array_Access is org.allbinary.game.layer.AllBinaryGameLayerManager_Package_References.AllBinaryGameLayerManager_Access_Array_Access_Array_Access;
+   use type AllBinaryGameLayerManager_Access_Array_Access_Array_Access;
+   subtype ColorFillBasePaintable_Access is org.allbinary.game.paint.ColorFillBasePaintable_Package_References.ColorFillBasePaintable_Access;
+   use type ColorFillBasePaintable_Access;
+   subtype ColorFillBasePaintable_Access_Array is org.allbinary.game.paint.ColorFillBasePaintable_Package_References.ColorFillBasePaintable_Access_Array;
+   use type ColorFillBasePaintable_Access_Array;
+   subtype ColorFillBasePaintable_Access_Array_Access is org.allbinary.game.paint.ColorFillBasePaintable_Package_References.ColorFillBasePaintable_Access_Array_Access;
+   use type ColorFillBasePaintable_Access_Array_Access;
+   subtype ColorFillBasePaintable_Access_Array_Access_Array is org.allbinary.game.paint.ColorFillBasePaintable_Package_References.ColorFillBasePaintable_Access_Array_Access_Array;
+   use type ColorFillBasePaintable_Access_Array_Access_Array;
+   subtype ColorFillBasePaintable_Access_Array_Access_Array_Access is org.allbinary.game.paint.ColorFillBasePaintable_Package_References.ColorFillBasePaintable_Access_Array_Access_Array_Access;
+   use type ColorFillBasePaintable_Access_Array_Access_Array_Access;
+   subtype HighScoreCommandsFactory_Access is org.allbinary.game.score.HighScoreCommandsFactory_Package_References.HighScoreCommandsFactory_Access;
+   use type HighScoreCommandsFactory_Access;
+   subtype HighScoreCommandsFactory_Access_Array is org.allbinary.game.score.HighScoreCommandsFactory_Package_References.HighScoreCommandsFactory_Access_Array;
+   use type HighScoreCommandsFactory_Access_Array;
+   subtype HighScoreCommandsFactory_Access_Array_Access is org.allbinary.game.score.HighScoreCommandsFactory_Package_References.HighScoreCommandsFactory_Access_Array_Access;
+   use type HighScoreCommandsFactory_Access_Array_Access;
+   subtype HighScoreCommandsFactory_Access_Array_Access_Array is org.allbinary.game.score.HighScoreCommandsFactory_Package_References.HighScoreCommandsFactory_Access_Array_Access_Array;
+   use type HighScoreCommandsFactory_Access_Array_Access_Array;
+   subtype HighScoreCommandsFactory_Access_Array_Access_Array_Access is org.allbinary.game.score.HighScoreCommandsFactory_Package_References.HighScoreCommandsFactory_Access_Array_Access_Array_Access;
+   use type HighScoreCommandsFactory_Access_Array_Access_Array_Access;
+   subtype HighScores_Access is org.allbinary.game.score.HighScores_Package_References.HighScores_Access;
+   use type HighScores_Access;
+   subtype HighScores_Access_Array is org.allbinary.game.score.HighScores_Package_References.HighScores_Access_Array;
+   use type HighScores_Access_Array;
+   subtype HighScores_Access_Array_Access is org.allbinary.game.score.HighScores_Package_References.HighScores_Access_Array_Access;
+   use type HighScores_Access_Array_Access;
+   subtype HighScores_Access_Array_Access_Array is org.allbinary.game.score.HighScores_Package_References.HighScores_Access_Array_Access_Array;
+   use type HighScores_Access_Array_Access_Array;
+   subtype HighScores_Access_Array_Access_Array_Access is org.allbinary.game.score.HighScores_Package_References.HighScores_Access_Array_Access_Array_Access;
+   use type HighScores_Access_Array_Access_Array_Access;
+   subtype HighScoresCanvasInputProcessor_Access is org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References.HighScoresCanvasInputProcessor_Access;
+   use type HighScoresCanvasInputProcessor_Access;
+   subtype HighScoresCanvasInputProcessor_Access_Array is org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References.HighScoresCanvasInputProcessor_Access_Array;
+   use type HighScoresCanvasInputProcessor_Access_Array;
+   subtype HighScoresCanvasInputProcessor_Access_Array_Access is org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References.HighScoresCanvasInputProcessor_Access_Array_Access;
+   use type HighScoresCanvasInputProcessor_Access_Array_Access;
+   subtype HighScoresCanvasInputProcessor_Access_Array_Access_Array is org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References.HighScoresCanvasInputProcessor_Access_Array_Access_Array;
+   use type HighScoresCanvasInputProcessor_Access_Array_Access_Array;
+   subtype HighScoresCanvasInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.score.HighScoresCanvasInputProcessor_Package_References.HighScoresCanvasInputProcessor_Access_Array_Access_Array_Access;
+   use type HighScoresCanvasInputProcessor_Access_Array_Access_Array_Access;
+   subtype HighScoresCanvasInputProcessorFactoryInterface_Access is org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package_References.HighScoresCanvasInputProcessorFactoryInterface_Access;
+   use type HighScoresCanvasInputProcessorFactoryInterface_Access;
+   subtype HighScoresCanvasInputProcessorFactoryInterface_Access_Array is org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package_References.HighScoresCanvasInputProcessorFactoryInterface_Access_Array;
+   use type HighScoresCanvasInputProcessorFactoryInterface_Access_Array;
+   subtype HighScoresCanvasInputProcessorFactoryInterface_Access_Array_Access is org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package_References.HighScoresCanvasInputProcessorFactoryInterface_Access_Array_Access;
+   use type HighScoresCanvasInputProcessorFactoryInterface_Access_Array_Access;
+   subtype HighScoresCanvasInputProcessorFactoryInterface_Access_Array_Access_Array is org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package_References.HighScoresCanvasInputProcessorFactoryInterface_Access_Array_Access_Array;
+   use type HighScoresCanvasInputProcessorFactoryInterface_Access_Array_Access_Array;
+   subtype HighScoresCanvasInputProcessorFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.game.score.HighScoresCanvasInputProcessorFactoryInterface_Package_References.HighScoresCanvasInputProcessorFactoryInterface_Access_Array_Access_Array_Access;
+   use type HighScoresCanvasInputProcessorFactoryInterface_Access_Array_Access_Array_Access;
+   subtype HighScoresFactoryInterface_Access is org.allbinary.game.score.HighScoresFactoryInterface_Package_References.HighScoresFactoryInterface_Access;
+   use type HighScoresFactoryInterface_Access;
+   subtype HighScoresFactoryInterface_Access_Array is org.allbinary.game.score.HighScoresFactoryInterface_Package_References.HighScoresFactoryInterface_Access_Array;
+   use type HighScoresFactoryInterface_Access_Array;
+   subtype HighScoresFactoryInterface_Access_Array_Access is org.allbinary.game.score.HighScoresFactoryInterface_Package_References.HighScoresFactoryInterface_Access_Array_Access;
+   use type HighScoresFactoryInterface_Access_Array_Access;
+   subtype HighScoresFactoryInterface_Access_Array_Access_Array is org.allbinary.game.score.HighScoresFactoryInterface_Package_References.HighScoresFactoryInterface_Access_Array_Access_Array;
+   use type HighScoresFactoryInterface_Access_Array_Access_Array;
+   subtype HighScoresFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.game.score.HighScoresFactoryInterface_Package_References.HighScoresFactoryInterface_Access_Array_Access_Array_Access;
+   use type HighScoresFactoryInterface_Access_Array_Access_Array_Access;
+   subtype HighScoresHelperBase_Access is org.allbinary.game.score.HighScoresHelperBase_Package_References.HighScoresHelperBase_Access;
+   use type HighScoresHelperBase_Access;
+   subtype HighScoresHelperBase_Access_Array is org.allbinary.game.score.HighScoresHelperBase_Package_References.HighScoresHelperBase_Access_Array;
+   use type HighScoresHelperBase_Access_Array;
+   subtype HighScoresHelperBase_Access_Array_Access is org.allbinary.game.score.HighScoresHelperBase_Package_References.HighScoresHelperBase_Access_Array_Access;
+   use type HighScoresHelperBase_Access_Array_Access;
+   subtype HighScoresHelperBase_Access_Array_Access_Array is org.allbinary.game.score.HighScoresHelperBase_Package_References.HighScoresHelperBase_Access_Array_Access_Array;
+   use type HighScoresHelperBase_Access_Array_Access_Array;
+   subtype HighScoresHelperBase_Access_Array_Access_Array_Access is org.allbinary.game.score.HighScoresHelperBase_Package_References.HighScoresHelperBase_Access_Array_Access_Array_Access;
+   use type HighScoresHelperBase_Access_Array_Access_Array_Access;
+   subtype HighScoresPaintable_Access is org.allbinary.game.score.HighScoresPaintable_Package_References.HighScoresPaintable_Access;
+   use type HighScoresPaintable_Access;
+   subtype HighScoresPaintable_Access_Array is org.allbinary.game.score.HighScoresPaintable_Package_References.HighScoresPaintable_Access_Array;
+   use type HighScoresPaintable_Access_Array;
+   subtype HighScoresPaintable_Access_Array_Access is org.allbinary.game.score.HighScoresPaintable_Package_References.HighScoresPaintable_Access_Array_Access;
+   use type HighScoresPaintable_Access_Array_Access;
+   subtype HighScoresPaintable_Access_Array_Access_Array is org.allbinary.game.score.HighScoresPaintable_Package_References.HighScoresPaintable_Access_Array_Access_Array;
+   use type HighScoresPaintable_Access_Array_Access_Array;
+   subtype HighScoresPaintable_Access_Array_Access_Array_Access is org.allbinary.game.score.HighScoresPaintable_Package_References.HighScoresPaintable_Access_Array_Access_Array_Access;
+   use type HighScoresPaintable_Access_Array_Access_Array_Access;
+   subtype Paintable_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access;
+   use type Paintable_Access;
+   subtype Paintable_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array;
+   use type Paintable_Access_Array;
+   subtype Paintable_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access;
+   use type Paintable_Access_Array_Access;
+   subtype Paintable_Access_Array_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array;
+   use type Paintable_Access_Array_Access_Array;
+   subtype Paintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array_Access;
+   use type Paintable_Access_Array_Access_Array_Access;
+   subtype SimpleTextPaintable_Access is org.allbinary.graphics.paint.SimpleTextPaintable_Package_References.SimpleTextPaintable_Access;
+   use type SimpleTextPaintable_Access;
+   subtype SimpleTextPaintable_Access_Array is org.allbinary.graphics.paint.SimpleTextPaintable_Package_References.SimpleTextPaintable_Access_Array;
+   use type SimpleTextPaintable_Access_Array;
+   subtype SimpleTextPaintable_Access_Array_Access is org.allbinary.graphics.paint.SimpleTextPaintable_Package_References.SimpleTextPaintable_Access_Array_Access;
+   use type SimpleTextPaintable_Access_Array_Access;
+   subtype SimpleTextPaintable_Access_Array_Access_Array is org.allbinary.graphics.paint.SimpleTextPaintable_Package_References.SimpleTextPaintable_Access_Array_Access_Array;
+   use type SimpleTextPaintable_Access_Array_Access_Array;
+   subtype SimpleTextPaintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.SimpleTextPaintable_Package_References.SimpleTextPaintable_Access_Array_Access_Array_Access;
+   use type SimpleTextPaintable_Access_Array_Access_Array_Access;
+   subtype HighScoresCanvas_Access is org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.HighScoresCanvas_Access;
+   use type HighScoresCanvas_Access;
+   subtype HighScoresCanvas_Access_Array is org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.HighScoresCanvas_Access_Array;
+   use type HighScoresCanvas_Access_Array;
+   subtype HighScoresCanvas_Access_Array_Access is org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.HighScoresCanvas_Access_Array_Access;
+   use type HighScoresCanvas_Access_Array_Access;
+   subtype HighScoresCanvas_Access_Array_Access_Array is org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.HighScoresCanvas_Access_Array_Access_Array;
+   use type HighScoresCanvas_Access_Array_Access_Array;
+   subtype HighScoresCanvas_Access_Array_Access_Array_Access is org.allbinary.game.score.displayable.HighScoresCanvas_Package_References.HighScoresCanvas_Access_Array_Access_Array_Access;
+   use type HighScoresCanvas_Access_Array_Access_Array_Access;
+   end Reference_Types;
+   use Reference_Types;
+
+
+   subtype HighScoreRunnable_Access is org.allbinary.game.score.displayable.HighScoreRunnable_Package_References.HighScoreRunnable_Access;
+   function "=" (Left, Right : HighScoreRunnable_Access) return Boolean renames org.allbinary.game.score.displayable.HighScoreRunnable_Package_References."=";
+   subtype HighScoreRunnable_Access_Array is org.allbinary.game.score.displayable.HighScoreRunnable_Package_References.HighScoreRunnable_Access_Array;
+   function "=" (Left, Right : HighScoreRunnable_Access_Array) return Boolean renames org.allbinary.game.score.displayable.HighScoreRunnable_Package_References."=";
+   subtype HighScoreRunnable_Access_Array_Access is org.allbinary.game.score.displayable.HighScoreRunnable_Package_References.HighScoreRunnable_Access_Array_Access;
+   function "=" (Left, Right : HighScoreRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.score.displayable.HighScoreRunnable_Package_References."=";
+   function Java_Box (Value : HighScoreRunnable_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.score.displayable.HighScoreRunnable_Package_References.Java_Box;
+   function Java_Unbox_HighScoreRunnable_Access_Array (Value : access Java_Object'Class) return HighScoreRunnable_Access_Array_Access renames org.allbinary.game.score.displayable.HighScoreRunnable_Package_References.Java_Unbox_HighScoreRunnable_Access_Array;
+   subtype HighScoreRunnable_Access_Array_Access_Array is org.allbinary.game.score.displayable.HighScoreRunnable_Package_References.HighScoreRunnable_Access_Array_Access_Array;
+   function "=" (Left, Right : HighScoreRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.displayable.HighScoreRunnable_Package_References."=";
+   subtype HighScoreRunnable_Access_Array_Access_Array_Access is org.allbinary.game.score.displayable.HighScoreRunnable_Package_References.HighScoreRunnable_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : HighScoreRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.displayable.HighScoreRunnable_Package_References."=";
+   function Java_Box (Value : HighScoreRunnable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.score.displayable.HighScoreRunnable_Package_References.Java_Box;
+   function Java_Unbox_HighScoreRunnable_Access_Array_Access_Array (Value : access Java_Object'Class) return HighScoreRunnable_Access_Array_Access_Array_Access renames org.allbinary.game.score.displayable.HighScoreRunnable_Package_References.Java_Unbox_HighScoreRunnable_Access_Array_Access_Array;
+
+   type HighScoreRunnable is new ARunnable with record
+      highScoresCanvas_Var : HighScoresCanvas_Access;
+   end record;
+
+   procedure Initialize (This : in out HighScoreRunnable'Class; highScoresCanvas_Var_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class);
+   function Create (highScoresCanvas_Var_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class) return HighScoreRunnable_Access;
+   procedure run (This : in out HighScoreRunnable);
+
+end org.allbinary.game.score.displayable.HighScoreRunnable_Package;
 
 

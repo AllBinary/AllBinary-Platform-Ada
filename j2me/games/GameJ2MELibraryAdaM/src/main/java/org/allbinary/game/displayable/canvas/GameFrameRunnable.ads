@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.displayable.canvas.GameFrameRunnable_Package;
 package org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_References is
    type GameFrameRunnable_Access is access all org.allbinary.game.displayable.canvas.GameFrameRunnable_Package.GameFrameRunnable'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_Referenc
    type GameFrameRunnable_Access_Array_Access is access all GameFrameRunnable_Access_Array;
    type GameFrameRunnable_Access_Array_Access_Array is array (Natural range <>) of GameFrameRunnable_Access_Array_Access;
    type GameFrameRunnable_Access_Array_Access_Array_Access is access all GameFrameRunnable_Access_Array_Access_Array;
+   type GameFrameRunnable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameFrameRunnable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameFrameRunnable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameFrameRunnable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameFrameRunnable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameFrameRunnable_Access_Array_Access is (if Value /= null and then Value.all in GameFrameRunnable_Access_Array_Object'Class then GameFrameRunnable_Access_Array_Object'Class (Value.all).Value else null);
+   type GameFrameRunnable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameFrameRunnable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameFrameRunnable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameFrameRunnable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameFrameRunnable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameFrameRunnable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GameFrameRunnable_Access_Array_Access_Array_Object'Class then GameFrameRunnable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_References;
 
 with org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_References;
@@ -96,10 +107,14 @@ package org.allbinary.game.displayable.canvas.GameFrameRunnable_Package is
    function "=" (Left, Right : GameFrameRunnable_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_References."=";
    subtype GameFrameRunnable_Access_Array_Access is org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_References.GameFrameRunnable_Access_Array_Access;
    function "=" (Left, Right : GameFrameRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_References."=";
+   function Java_Box (Value : GameFrameRunnable_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_References.Java_Box;
+   function Java_Unbox_GameFrameRunnable_Access_Array (Value : access Java_Object'Class) return GameFrameRunnable_Access_Array_Access renames org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_References.Java_Unbox_GameFrameRunnable_Access_Array;
    subtype GameFrameRunnable_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_References.GameFrameRunnable_Access_Array_Access_Array;
    function "=" (Left, Right : GameFrameRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_References."=";
    subtype GameFrameRunnable_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_References.GameFrameRunnable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GameFrameRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_References."=";
+   function Java_Box (Value : GameFrameRunnable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_References.Java_Box;
+   function Java_Unbox_GameFrameRunnable_Access_Array_Access_Array (Value : access Java_Object'Class) return GameFrameRunnable_Access_Array_Access_Array_Access renames org.allbinary.game.displayable.canvas.GameFrameRunnable_Package_References.Java_Unbox_GameFrameRunnable_Access_Array_Access_Array;
 
    type GameFrameRunnable is new GameRunnable with record
       logUtil : LogUtil_Access;

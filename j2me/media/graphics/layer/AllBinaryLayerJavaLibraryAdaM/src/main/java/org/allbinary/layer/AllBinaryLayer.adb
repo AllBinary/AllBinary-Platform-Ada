@@ -183,11 +183,7 @@ package body org.allbinary.layer.AllBinaryLayer_Package is
         Layer_Package.Initialize (This, rectangle.getWidth, rectangle.getHeight);
         Initialize_Fields (This);
         localName := Null_Unbounded_String;
-        if (name) = (Null_Unbounded_String) then
-            localName := To_Unbounded_String (Ada.Tags.Expanded_Name (Java_Object'Class (This)'Tag));
-        else
-            localName := StringMaker_Package.Create.append (name).append (CommonSeps_Package.getInstance.COLON).append (To_Unbounded_String (Java_To_Unsigned_String (TsUtil_Package.getInstance.hashCode (AllBinaryLayer_Access'(This'Unchecked_Access)), 16))).toString;
-        end if;
+        localName := StringMaker_Package.Create.append (name).append (CommonSeps_Package.getInstance.COLON).append (To_Unbounded_String (Java_To_Unsigned_String (TsUtil_Package.getInstance.hashCode (AllBinaryLayer_Access'(This'Unchecked_Access)), 16))).toString;
         This.name := localName;
         point := rectangle.getPoint;
         AllBinaryLayer'Class (This).setPosition (point.getX, point.getY, point.getZ);

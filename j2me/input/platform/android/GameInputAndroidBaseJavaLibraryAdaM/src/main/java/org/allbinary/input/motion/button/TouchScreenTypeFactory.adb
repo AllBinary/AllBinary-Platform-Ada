@@ -20,6 +20,18 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
 with org.allbinary.input.motion.button.TouchScreenTypesFactory_Package; use org.allbinary.input.motion.button.TouchScreenTypesFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.input.motion.button.TouchScreenFactory_Package;
+with org.allbinary.input.motion.button.TouchScreenType_Package;
+with org.allbinary.input.motion.button.TouchScreenTypesFactory_Package;
 
 package body org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
 
@@ -56,7 +68,7 @@ package body org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
 
    function getInstance return TouchScreenTypeFactory_Access is
    begin
-        return TouchScreenTypeFactory_Access (TouchScreenTypeFactory_Package.instance);
+        return TouchScreenTypeFactory_Package.instance;
    end getInstance;
 
    procedure update (This : in out TouchScreenTypeFactory; activity_Param : access Activity_Package.Activity'Class) is

@@ -119,7 +119,7 @@ package body org.allbinary.graphics.form.ItemPaintableFactory_Package is
 
    function getInstance return ItemPaintableFactory_Access is
    begin
-        return ItemPaintableFactory_Access (ItemPaintableFactory_Package.instance);
+        return ItemPaintableFactory_Package.instance;
    end getInstance;
 
    --  throws Exception

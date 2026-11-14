@@ -39,6 +39,8 @@ with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectC
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package_References;
 with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactoryInterface_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -63,6 +65,8 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
    package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -170,7 +174,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
    begin
         begin
             AbSqlBean_Package.AbSqlBean (This).insert (values);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, TransformInfoEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
         exception
@@ -178,7 +182,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, TransformInfoEntity_Access'(This'Unchecked_Access), INSERT, e);
             end if;
                 end;
@@ -189,7 +193,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
    begin
         begin
             AbSqlBean_Package.AbSqlBean (This).deleteWhere (TransformInfoData_Package.getInstance.NAME, value);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, TransformInfoEntity_Access'(This'Unchecked_Access), This.commonStrings.delete);
             end if;
         exception
@@ -197,7 +201,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, TransformInfoEntity_Access'(This'Unchecked_Access), This.commonStrings.delete, e);
             end if;
                 end;
@@ -216,7 +220,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
       objectData : Java_Object_Access;
    begin
         transformInfoData := TransformInfoData_Package.getInstance;
-        keysAndValues := StdUtil_Package.getInstance.createHashMap;
+        keysAndValues := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         keysAndValues.put (transformInfoData.NAME, Java_Box (name));
         hashMap := AbSqlBean_Package.AbSqlBean (This).getRow (keysAndValues);
         if (hashMap) /= (null) then
@@ -268,7 +272,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
         size := columnVector.size;
         for i in 0 .. (size) - 1 loop
             viewNameString := Java_Unbox (columnVector.get (i));
-            viewNameVector.add (viewNameString);
+            viewNameVector.add (Java_Box (viewNameString));
         end loop;
         return viewNameVector;
    end getNames;

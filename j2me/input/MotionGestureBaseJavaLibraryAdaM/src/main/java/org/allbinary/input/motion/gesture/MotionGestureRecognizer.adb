@@ -234,7 +234,7 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
       diagonalToleranceLower : Long_Float;
       event : MotionGestureEvent_Access;
    begin
-        if ((This.previous) = (This.origin)) or else ((This.intermediate) = (This.origin)) then
+        if ((Java_Object_Access (This.previous)) = (Java_Object_Access (This.origin))) or else ((Java_Object_Access (This.intermediate)) = (Java_Object_Access (This.origin))) then
             This.previous := current;
             This.intermediate := current;
             return;
@@ -242,7 +242,7 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
         This.line.setP1 (This.previous);
         This.line.setP2 (current);
         minimumMotionGesture := MotionGestureConfigurationFactory_Package.getInstance.getMinimumMotionGesture;
-        if ((This.j2seMath.abs_Id (Float (This.line.getDeltaX))) < (minimumMotionGesture)) and then ((This.j2seMath.abs_Id (Float (This.line.getDeltaY))) < (minimumMotionGesture)) then
+        if ((This.j2seMath.abs_Id (Float (This.line.getDeltaX))) < (Float (minimumMotionGesture))) and then ((This.j2seMath.abs_Id (Float (This.line.getDeltaY))) < (Float (minimumMotionGesture))) then
             This.intermediate := current;
             return;
         end if;
@@ -257,14 +257,14 @@ package body org.allbinary.input.motion.gesture.MotionGestureRecognizer_Package 
             diagonalToleranceHigher := Long_Float (((90) - (conf.getDiagonalTolerance)));
             diagonalToleranceLower := Long_Float (conf.getDiagonalTolerance);
         end if;
-        if (absGradient) > (Ada.Numerics.Long_Elementary_Functions.Tan (Ada.Numerics.Long_Elementary_Functions.ToRadians (diagonalToleranceHigher))) then
+        if (absGradient) > (Ada.Numerics.Long_Elementary_Functions.Tan ((Long_Float (diagonalToleranceHigher) * Ada.Numerics.Pi / 180.0))) then
             if (This.line.getDeltaY) > (0.0) then
                 newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.UP);
             else
                 newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.DOWN);
             end if;
         else
-            if (absGradient) < (Ada.Numerics.Long_Elementary_Functions.Tan (Ada.Numerics.Long_Elementary_Functions.ToRadians (diagonalToleranceLower))) then
+            if (absGradient) < (Ada.Numerics.Long_Elementary_Functions.Tan ((Long_Float (diagonalToleranceLower) * Ada.Numerics.Pi / 180.0))) then
                 if (This.line.getDeltaX) > (0.0) then
                     newMotionGesture := MotionGestureInput_Access (touchMotionGestureFactory.LEFT);
                 else

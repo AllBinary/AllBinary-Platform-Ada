@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.unit.CollidableUnitBehavior_Package;
 package org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References is
    type CollidableUnitBehavior_Access is access all org.allbinary.game.layer.unit.CollidableUnitBehavior_Package.CollidableUnitBehavior'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References 
    type CollidableUnitBehavior_Access_Array_Access is access all CollidableUnitBehavior_Access_Array;
    type CollidableUnitBehavior_Access_Array_Access_Array is array (Natural range <>) of CollidableUnitBehavior_Access_Array_Access;
    type CollidableUnitBehavior_Access_Array_Access_Array_Access is access all CollidableUnitBehavior_Access_Array_Access_Array;
+   type CollidableUnitBehavior_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CollidableUnitBehavior_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CollidableUnitBehavior_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CollidableUnitBehavior_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CollidableUnitBehavior_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CollidableUnitBehavior_Access_Array_Access is (if Value /= null and then Value.all in CollidableUnitBehavior_Access_Array_Object'Class then CollidableUnitBehavior_Access_Array_Object'Class (Value.all).Value else null);
+   type CollidableUnitBehavior_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CollidableUnitBehavior_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CollidableUnitBehavior_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CollidableUnitBehavior_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CollidableUnitBehavior_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CollidableUnitBehavior_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CollidableUnitBehavior_Access_Array_Access_Array_Object'Class then CollidableUnitBehavior_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References;
 
 with org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References;
@@ -98,10 +109,14 @@ package org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    function "=" (Left, Right : CollidableUnitBehavior_Access_Array) return Boolean renames org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References."=";
    subtype CollidableUnitBehavior_Access_Array_Access is org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References.CollidableUnitBehavior_Access_Array_Access;
    function "=" (Left, Right : CollidableUnitBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References."=";
+   function Java_Box (Value : CollidableUnitBehavior_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References.Java_Box;
+   function Java_Unbox_CollidableUnitBehavior_Access_Array (Value : access Java_Object'Class) return CollidableUnitBehavior_Access_Array_Access renames org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References.Java_Unbox_CollidableUnitBehavior_Access_Array;
    subtype CollidableUnitBehavior_Access_Array_Access_Array is org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References.CollidableUnitBehavior_Access_Array_Access_Array;
    function "=" (Left, Right : CollidableUnitBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References."=";
    subtype CollidableUnitBehavior_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References.CollidableUnitBehavior_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CollidableUnitBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References."=";
+   function Java_Box (Value : CollidableUnitBehavior_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References.Java_Box;
+   function Java_Unbox_CollidableUnitBehavior_Access_Array_Access_Array (Value : access Java_Object'Class) return CollidableUnitBehavior_Access_Array_Access_Array_Access renames org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References.Java_Unbox_CollidableUnitBehavior_Access_Array_Access_Array;
 
    type CollidableUnitBehavior is new CollidableRTSBehavior with record
       layerPartialCellPositionsUtil : LayerPartialCellPositionsUtil_Access;
@@ -118,6 +133,7 @@ package org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
 
 end org.allbinary.game.layer.unit.CollidableUnitBehavior_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package;
 package org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References is
    type SimpleSteeringVisitor_Access is access all org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package.SimpleSteeringVisitor'Class;
@@ -125,6 +141,16 @@ package org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References i
    type SimpleSteeringVisitor_Access_Array_Access is access all SimpleSteeringVisitor_Access_Array;
    type SimpleSteeringVisitor_Access_Array_Access_Array is array (Natural range <>) of SimpleSteeringVisitor_Access_Array_Access;
    type SimpleSteeringVisitor_Access_Array_Access_Array_Access is access all SimpleSteeringVisitor_Access_Array_Access_Array;
+   type SimpleSteeringVisitor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SimpleSteeringVisitor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SimpleSteeringVisitor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SimpleSteeringVisitor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SimpleSteeringVisitor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SimpleSteeringVisitor_Access_Array_Access is (if Value /= null and then Value.all in SimpleSteeringVisitor_Access_Array_Object'Class then SimpleSteeringVisitor_Access_Array_Object'Class (Value.all).Value else null);
+   type SimpleSteeringVisitor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SimpleSteeringVisitor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SimpleSteeringVisitor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SimpleSteeringVisitor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SimpleSteeringVisitor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SimpleSteeringVisitor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SimpleSteeringVisitor_Access_Array_Access_Array_Object'Class then SimpleSteeringVisitor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References;
 
 with org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References;
@@ -193,10 +219,14 @@ package org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
    function "=" (Left, Right : SimpleSteeringVisitor_Access_Array) return Boolean renames org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References."=";
    subtype SimpleSteeringVisitor_Access_Array_Access is org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References.SimpleSteeringVisitor_Access_Array_Access;
    function "=" (Left, Right : SimpleSteeringVisitor_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References."=";
+   function Java_Box (Value : SimpleSteeringVisitor_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References.Java_Box;
+   function Java_Unbox_SimpleSteeringVisitor_Access_Array (Value : access Java_Object'Class) return SimpleSteeringVisitor_Access_Array_Access renames org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References.Java_Unbox_SimpleSteeringVisitor_Access_Array;
    subtype SimpleSteeringVisitor_Access_Array_Access_Array is org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References.SimpleSteeringVisitor_Access_Array_Access_Array;
    function "=" (Left, Right : SimpleSteeringVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References."=";
    subtype SimpleSteeringVisitor_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References.SimpleSteeringVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SimpleSteeringVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References."=";
+   function Java_Box (Value : SimpleSteeringVisitor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References.Java_Box;
+   function Java_Unbox_SimpleSteeringVisitor_Access_Array_Access_Array (Value : access Java_Object'Class) return SimpleSteeringVisitor_Access_Array_Access_Array_Access renames org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package_References.Java_Unbox_SimpleSteeringVisitor_Access_Array_Access_Array;
 
    type SimpleSteeringVisitor is new SteeringVisitor with record
       Java_Outer : org.allbinary.game.layer.unit.CollidableUnitBehavior_Package_References.CollidableUnitBehavior_Access;

@@ -120,7 +120,7 @@ package body org.allbinary.media.image.SpriteSplitterUtil_Package is
 
    function getInstance return SpriteSplitterUtil_Access is
    begin
-        return SpriteSplitterUtil_Access (SpriteSplitterUtil_Package.instance);
+        return SpriteSplitterUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

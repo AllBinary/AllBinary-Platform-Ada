@@ -42,10 +42,18 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
 with views.admin.inventory.listings.ProductListingFactory_Package; use views.admin.inventory.listings.ProductListingFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -73,6 +81,8 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
    package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
    package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
    package ProductListingFactory_Package renames Standard.views.admin.inventory.listings.ProductListingFactory_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -152,7 +162,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
       storeAdminUserEmailEventHandler : UserEmailEventHandler_Access;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("Generated Static Pages Notification Email"), StaticPagesRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("email"));
             end if;
             storeFrontInterface := StoreFrontInterface_Access (StoreFrontFactory_Package.getInstance (This.storeName));
@@ -171,7 +181,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.FAILURE, StaticPagesRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("email"), e);
             end if;
                 end;
@@ -189,7 +199,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
             searchRequest := SearchRequest_Package.Create (null, This.searchParams, This.xslFile, contentType, StaticPagesRequestHelper'Class (This).getPropertiesHashMap, StaticPagesRequestHelper'Class (This).getPageContext);
             success := ProductListingFactory_Package.getInstance (searchRequest).generateAll (This.storeName);
             StaticPagesRequestHelper'Class (This).email;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, StaticPagesRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("generateStaticPages()"));
             end if;
             return success;
@@ -199,7 +209,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to generate staticpages table");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StaticPagesRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("generateStaticPages()"), e);
             end if;
             return error;
@@ -220,7 +230,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
             toAbPath := AbPath_Package.Create (Java_Image (URLGLOBALS_Package.getWebappPath) & storeFrontInterface.getName & AbPathData_Package.getInstance.SEPARATOR & Java_Image (storeFrontInterface.getStaticPath), StringUtil_Package.getInstance.EMPTY_STRING);
             FileUtil_Package.getInstance.copy (fromAbPath, toAbPath);
             success := To_Unbounded_String ("Made Public");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, StaticPagesRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("makePublic()"));
             end if;
             return success;
@@ -230,7 +240,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to makePublic");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StaticPagesRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("makePublic()"), e);
             end if;
             return error;

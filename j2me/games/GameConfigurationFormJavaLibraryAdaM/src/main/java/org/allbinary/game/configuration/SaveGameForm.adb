@@ -23,6 +23,7 @@ with org.allbinary.graphics.displayable.screen.CommandForm_Package; use org.allb
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.logic.MEUtil_Package; use org.allbinary.logic.MEUtil_Package;
 with org.allbinary.logic.MEUtil_Package_References;
+with org.allbinary.util.ABStack_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
@@ -33,6 +34,8 @@ with javax.microedition.lcdui.ChoiceGroup_Package;
 with javax.microedition.lcdui.ChoiceItem_Package;
 with javax.microedition.lcdui.Command_Package;
 with org.microemu.device.ui.CommandUI_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.microemu.device.Device_Package;
 with org.microemu.device.DeviceDisplay_Package;
 with javax.microedition.lcdui.Display_Package;
@@ -41,6 +44,7 @@ with javax.microedition.lcdui.Displayable_Package;
 with org.microemu.device.ui.DisplayableUI_Package;
 with javax.microedition.lcdui.Event_Package;
 with org.microemu.device.ui.EventDispatcher_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.microemu.device.FontManager_Package;
 with javax.microedition.lcdui.Form_Package;
@@ -57,17 +61,24 @@ with javax.microedition.lcdui.ItemCommandListener_Package;
 with javax.microedition.lcdui.ItemStateListener_Package;
 with javax.microedition.lcdui.List_Package;
 with org.microemu.device.ui.ListUI_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
 with javax.microedition.midlet.MIDlet_Package;
 with org.microemu.device.MutableImage_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.microemu.device.ui.PointerEvent_Package;
+with org.allbinary.canvas.Processor_Package;
 with javax.microedition.lcdui.Screen_Package;
 with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.thread.SynchObject_Package;
 with javax.microedition.lcdui.TextBox_Package;
 with org.microemu.device.ui.TextBoxUI_Package;
 with javax.microedition.lcdui.Ticker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.game.configuration.SaveGameForm_Package is
@@ -119,12 +130,12 @@ package body org.allbinary.game.configuration.SaveGameForm_Package is
       foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         SaveGameForm_Package.FORM := CommandForm_Access (SaveGameForm_Package.Create (commandListener, title, backgrounBasicColor, foregroundBasicColor));
-        return CommandForm_Access (SaveGameForm_Package.FORM);
+        return SaveGameForm_Package.FORM;
    end createForm;
 
    function getInstance return CommandForm_Access is
    begin
-        return CommandForm_Access (SaveGameForm_Package.FORM);
+        return SaveGameForm_Package.FORM;
    end getInstance;
 
    procedure Initialize (This : in out SaveGameForm'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is

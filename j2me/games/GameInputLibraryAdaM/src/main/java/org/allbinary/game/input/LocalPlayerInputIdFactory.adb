@@ -76,7 +76,7 @@ package body org.allbinary.game.input.LocalPlayerInputIdFactory_Package is
 
    function getInstance return LocalPlayerInputIdFactory_Access is
    begin
-        return LocalPlayerInputIdFactory_Access (LocalPlayerInputIdFactory_Package.instance);
+        return LocalPlayerInputIdFactory_Package.instance;
    end getInstance;
 
    function getDeviceId (This : in out LocalPlayerInputIdFactory; playerInputId : Integer) return Integer is

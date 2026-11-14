@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package;
 package org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package_References is
    type NonPlayerTopViewCharacterBehavior_Access is access all org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package.NonPlayerTopViewCharacterBehavior'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Pa
    type NonPlayerTopViewCharacterBehavior_Access_Array_Access is access all NonPlayerTopViewCharacterBehavior_Access_Array;
    type NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array is array (Natural range <>) of NonPlayerTopViewCharacterBehavior_Access_Array_Access;
    type NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array_Access is access all NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array;
+   type NonPlayerTopViewCharacterBehavior_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NonPlayerTopViewCharacterBehavior_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NonPlayerTopViewCharacterBehavior_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NonPlayerTopViewCharacterBehavior_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NonPlayerTopViewCharacterBehavior_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NonPlayerTopViewCharacterBehavior_Access_Array_Access is (if Value /= null and then Value.all in NonPlayerTopViewCharacterBehavior_Access_Array_Object'Class then NonPlayerTopViewCharacterBehavior_Access_Array_Object'Class (Value.all).Value else null);
+   type NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array_Object'Class then NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package_References;
 
 with org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package_References;
@@ -136,10 +147,14 @@ package org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Pa
    function "=" (Left, Right : NonPlayerTopViewCharacterBehavior_Access_Array) return Boolean renames org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package_References."=";
    subtype NonPlayerTopViewCharacterBehavior_Access_Array_Access is org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package_References.NonPlayerTopViewCharacterBehavior_Access_Array_Access;
    function "=" (Left, Right : NonPlayerTopViewCharacterBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package_References."=";
+   function Java_Box (Value : NonPlayerTopViewCharacterBehavior_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package_References.Java_Box;
+   function Java_Unbox_NonPlayerTopViewCharacterBehavior_Access_Array (Value : access Java_Object'Class) return NonPlayerTopViewCharacterBehavior_Access_Array_Access renames org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package_References.Java_Unbox_NonPlayerTopViewCharacterBehavior_Access_Array;
    subtype NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array is org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package_References.NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array;
    function "=" (Left, Right : NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package_References."=";
    subtype NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array_Access is org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package_References.NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package_References."=";
+   function Java_Box (Value : NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package_References.Java_Box;
+   function Java_Unbox_NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array (Value : access Java_Object'Class) return NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array_Access renames org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavior_Package_References.Java_Unbox_NonPlayerTopViewCharacterBehavior_Access_Array_Access_Array;
 
    type NonPlayerTopViewCharacterBehavior is new TopViewCharacterBehavior with record
       geographicMapBehavior : MultiGeographicMapBehavior_Access;

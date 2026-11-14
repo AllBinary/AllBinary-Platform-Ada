@@ -67,7 +67,7 @@ package body org.allbinary.graphics.displayable.event.LastDisplayChangeEventHand
 
    function getInstance return LastDisplayChangeEventHandler_Access is
    begin
-        return LastDisplayChangeEventHandler_Access (LastDisplayChangeEventHandler_Package.SINGLETON);
+        return LastDisplayChangeEventHandler_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out LastDisplayChangeEventHandler'Class) is

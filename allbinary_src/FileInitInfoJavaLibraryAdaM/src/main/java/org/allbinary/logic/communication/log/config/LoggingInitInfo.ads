@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.communication.log.config.LoggingInitInfo_Package;
 package org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_References is
    type LoggingInitInfo_Access is access all org.allbinary.logic.communication.log.config.LoggingInitInfo_Package.LoggingInitInfo'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_Ref
    type LoggingInitInfo_Access_Array_Access is access all LoggingInitInfo_Access_Array;
    type LoggingInitInfo_Access_Array_Access_Array is array (Natural range <>) of LoggingInitInfo_Access_Array_Access;
    type LoggingInitInfo_Access_Array_Access_Array_Access is access all LoggingInitInfo_Access_Array_Access_Array;
+   type LoggingInitInfo_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LoggingInitInfo_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LoggingInitInfo_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LoggingInitInfo_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LoggingInitInfo_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LoggingInitInfo_Access_Array_Access is (if Value /= null and then Value.all in LoggingInitInfo_Access_Array_Object'Class then LoggingInitInfo_Access_Array_Object'Class (Value.all).Value else null);
+   type LoggingInitInfo_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LoggingInitInfo_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LoggingInitInfo_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LoggingInitInfo_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LoggingInitInfo_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LoggingInitInfo_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in LoggingInitInfo_Access_Array_Access_Array_Object'Class then LoggingInitInfo_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_References;
 
 with org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_References;
@@ -70,10 +81,14 @@ package org.allbinary.logic.communication.log.config.LoggingInitInfo_Package is
    function "=" (Left, Right : LoggingInitInfo_Access_Array) return Boolean renames org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_References."=";
    subtype LoggingInitInfo_Access_Array_Access is org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_References.LoggingInitInfo_Access_Array_Access;
    function "=" (Left, Right : LoggingInitInfo_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_References."=";
+   function Java_Box (Value : LoggingInitInfo_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_References.Java_Box;
+   function Java_Unbox_LoggingInitInfo_Access_Array (Value : access Java_Object'Class) return LoggingInitInfo_Access_Array_Access renames org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_References.Java_Unbox_LoggingInitInfo_Access_Array;
    subtype LoggingInitInfo_Access_Array_Access_Array is org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_References.LoggingInitInfo_Access_Array_Access_Array;
    function "=" (Left, Right : LoggingInitInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_References."=";
    subtype LoggingInitInfo_Access_Array_Access_Array_Access is org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_References.LoggingInitInfo_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LoggingInitInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_References."=";
+   function Java_Box (Value : LoggingInitInfo_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_References.Java_Box;
+   function Java_Unbox_LoggingInitInfo_Access_Array_Access_Array (Value : access Java_Object'Class) return LoggingInitInfo_Access_Array_Access_Array_Access renames org.allbinary.logic.communication.log.config.LoggingInitInfo_Package_References.Java_Unbox_LoggingInitInfo_Access_Array_Access_Array;
 
    type LoggingInitInfo is new Java_Object with null record;
    INITFILENAME : Unbounded_String;

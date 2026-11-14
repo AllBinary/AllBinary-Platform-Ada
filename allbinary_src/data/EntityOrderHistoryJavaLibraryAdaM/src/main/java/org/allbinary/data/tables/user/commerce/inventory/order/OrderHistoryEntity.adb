@@ -58,6 +58,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -104,6 +106,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package AbeClientInformationInterface_Package renames Standard.org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
    package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -220,72 +224,72 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
             vector.add (OrderHistoryIdGenerator_Package.Create.getNext);
             ZERO := TableDataFactory_Package.getInstance.ZERO_STRING;
             vector.add (order.getId);
-            vector.add (userName);
+            vector.add (Java_Box (userName));
             vector.add (order.getStoreName);
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
-            vector.add (ZERO);
-            vector.add (time);
-            vector.add (ZERO);
-            vector.add (ZERO);
+            vector.add (Java_Box (ZERO));
+            vector.add (Java_Box (time));
+            vector.add (Java_Box (ZERO));
+            vector.add (Java_Box (ZERO));
             vector.add (OrderHistoryData_Package.PREPROCESSING);
             vector.add (order.getPaymentMethod);
             if (paymentInterface) /= (null) then
-                vector.add (paymentInterface.getName);
+                vector.add (Java_Box (paymentInterface.getName));
                 vector.add (paymentInterface.getType);
                 vector.add (paymentInterface.getExpiration);
                 random := Random_Package.Create.nextInt (SuperCrypt_Package.KEYMAX);
                 vector.add (SuperCrypt_Package.Create (random).encrypt (paymentInterface.getNumber));
-                vector.add (To_Unbounded_String (Java_Image (random)));
+                vector.add (Java_Box (To_Unbounded_String (Java_Image (random))));
             else
-                vector.add (empty);
-                vector.add (empty);
-                vector.add (empty);
-                vector.add (empty);
-                vector.add (ZERO);
+                vector.add (Java_Box (empty));
+                vector.add (Java_Box (empty));
+                vector.add (Java_Box (empty));
+                vector.add (Java_Box (empty));
+                vector.add (Java_Box (ZERO));
             end if;
             if (billingAddress) /= (null) then
-                vector.add (billingAddress.getName);
+                vector.add (Java_Box (billingAddress.getName));
                 vector.add (billingAddress.getStreet);
                 vector.add (billingAddress.getCity);
                 vector.add (billingAddress.getState);
                 vector.add (billingAddress.getCode);
                 vector.add (billingAddress.getCountry);
             else
-                vector.add (empty);
-                vector.add (empty);
-                vector.add (empty);
-                vector.add (empty);
-                vector.add (empty);
-                vector.add (empty);
+                vector.add (Java_Box (empty));
+                vector.add (Java_Box (empty));
+                vector.add (Java_Box (empty));
+                vector.add (Java_Box (empty));
+                vector.add (Java_Box (empty));
+                vector.add (Java_Box (empty));
             end if;
             if (shippingAddress) /= (null) then
-                vector.add (shippingAddress.getName);
+                vector.add (Java_Box (shippingAddress.getName));
                 vector.add (shippingAddress.getStreet);
                 vector.add (shippingAddress.getCity);
                 vector.add (shippingAddress.getState);
                 vector.add (shippingAddress.getCode);
                 vector.add (shippingAddress.getCountry);
             else
-                vector.add (empty);
-                vector.add (empty);
-                vector.add (empty);
-                vector.add (empty);
-                vector.add (empty);
-                vector.add (empty);
+                vector.add (Java_Box (empty));
+                vector.add (Java_Box (empty));
+                vector.add (Java_Box (empty));
+                vector.add (Java_Box (empty));
+                vector.add (Java_Box (empty));
+                vector.add (Java_Box (empty));
             end if;
             vector.add (order.getShippingMethod);
-            vector.add (subTotal.toString);
-            vector.add (shippingCost.toString);
-            vector.add (tax.toString);
-            vector.add (total.toString);
+            vector.add (Java_Box (subTotal.toString));
+            vector.add (Java_Box (shippingCost.toString));
+            vector.add (Java_Box (tax.toString));
+            vector.add (Java_Box (total.toString));
             vector.add (order.getSpecial);
             vector.add (order.getUserComments);
             vector.add (order.getUserCancelComments);
             vector.add (order.getStoreComments);
             vector.add (order.getStoreCancelComments);
             OrderHistoryEntity'Class (This).insert (vector);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, OrderHistoryEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
         exception
@@ -293,7 +297,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (To_Unbounded_String ("Command Failed: ") & Java_Image (vector), OrderHistoryEntity_Access'(This'Unchecked_Access), INSERT, e);
             end if;
                 end;
@@ -305,7 +309,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    begin
         begin
             AbSqlBean_Package.AbSqlBean (This).insert (values);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, OrderHistoryEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
         exception
@@ -313,7 +317,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, OrderHistoryEntity_Access'(This'Unchecked_Access), INSERT, e);
             end if;
                 end;
@@ -328,7 +332,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
         begin
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
-            updateHashMap := StdUtil_Package.getInstance.createHashMap;
+            updateHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             updateHashMap.put (OrderHistoryData_Package.STATUS, Java_Box (status));
             if (Java_Compare_To (status, OrderHistoryData_Package.CANCELLED)) = (0) then
                 updateHashMap.put (OrderHistoryData_Package.CANCELDATE, Java_Box (time));
@@ -341,7 +345,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, OrderHistoryEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("setStatus"), e);
             end if;
                 end;
@@ -356,7 +360,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
         begin
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
-            updateHashMap := StdUtil_Package.getInstance.createHashMap;
+            updateHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             updateHashMap.put (PaymentData_Package.METHOD, Java_Box (paymentMethod));
             updateHashMap.put (OrderHistoryData_Package.TRANSDATE, Java_Box (time));
             AbSqlBean_Package.AbSqlBean (This).updateWhere (OrderData_Package.ID, orderId, updateHashMap);
@@ -365,7 +369,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, OrderHistoryEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("setPaymentMethod"), e);
             end if;
                 end;
@@ -384,7 +388,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       i : Integer;
    begin
         orderReviewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        whereHashMap := StdUtil_Package.getInstance.createHashMap;
+        whereHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         whereHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeFrontInterface.getName));
         orderHashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (whereHashMap);
         size := orderHashMapVector.size;
@@ -407,7 +411,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       index : Integer;
    begin
         orderReviewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        whereHashMap := StdUtil_Package.getInstance.createHashMap;
+        whereHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         whereHashMap.put (UserData_Package.USERNAME, Java_Box (userName));
         orderHashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (whereHashMap);
         size := orderHashMapVector.size;
@@ -430,7 +434,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       index : Integer;
    begin
         orderReviewVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        whereHashMap := StdUtil_Package.getInstance.createHashMap;
+        whereHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         whereHashMap.put (OrderHistoryData_Package.STATUS, Java_Box (status));
         orderHashMapVector := AbSqlBean_Package.AbSqlBean (This).getRowsWhereBetween (whereHashMap, OrderHistoryData_Package.ORDERDATE, fromDate, toDate);
         size := orderHashMapVector.size;
@@ -468,7 +472,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       orderReviewHashMap : HashMap_Access;
       orderHistory : OrderHistory_Access;
    begin
-        whereHashMap := StdUtil_Package.getInstance.createHashMap;
+        whereHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         whereHashMap.put (OrderData_Package.ID, Java_Box (id));
         orderReviewHashMap := AbSqlBean_Package.AbSqlBean (This).getRow (whereHashMap);
         if (orderReviewHashMap) /= (null) then

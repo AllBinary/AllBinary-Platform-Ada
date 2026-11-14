@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 package org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References is
    type GeographicMapCellPosition_Access is access all org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package.GeographicMapCellPosition'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Pac
    type GeographicMapCellPosition_Access_Array_Access is access all GeographicMapCellPosition_Access_Array;
    type GeographicMapCellPosition_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPosition_Access_Array_Access;
    type GeographicMapCellPosition_Access_Array_Access_Array_Access is access all GeographicMapCellPosition_Access_Array_Access_Array;
+   type GeographicMapCellPosition_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GeographicMapCellPosition_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GeographicMapCellPosition_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GeographicMapCellPosition_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GeographicMapCellPosition_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GeographicMapCellPosition_Access_Array_Access is (if Value /= null and then Value.all in GeographicMapCellPosition_Access_Array_Object'Class then GeographicMapCellPosition_Access_Array_Object'Class (Value.all).Value else null);
+   type GeographicMapCellPosition_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GeographicMapCellPosition_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GeographicMapCellPosition_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GeographicMapCellPosition_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GeographicMapCellPosition_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GeographicMapCellPosition_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GeographicMapCellPosition_Access_Array_Access_Array_Object'Class then GeographicMapCellPosition_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
 
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References;
@@ -59,10 +70,14 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Pac
    function "=" (Left, Right : GeographicMapCellPosition_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=";
    subtype GeographicMapCellPosition_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access;
    function "=" (Left, Right : GeographicMapCellPosition_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=";
+   function Java_Box (Value : GeographicMapCellPosition_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.Java_Box;
+   function Java_Unbox_GeographicMapCellPosition_Access_Array (Value : access Java_Object'Class) return GeographicMapCellPosition_Access_Array_Access renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.Java_Unbox_GeographicMapCellPosition_Access_Array;
    subtype GeographicMapCellPosition_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array;
    function "=" (Left, Right : GeographicMapCellPosition_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=";
    subtype GeographicMapCellPosition_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.GeographicMapCellPosition_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GeographicMapCellPosition_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References."=";
+   function Java_Box (Value : GeographicMapCellPosition_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.Java_Box;
+   function Java_Unbox_GeographicMapCellPosition_Access_Array_Access_Array (Value : access Java_Object'Class) return GeographicMapCellPosition_Access_Array_Access_Array_Access renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package_References.Java_Unbox_GeographicMapCellPosition_Access_Array_Access_Array;
 
    type GeographicMapCellPosition is new CellPosition with record
       point : GPoint_Access;

@@ -76,7 +76,7 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
 
    function getInstance return ImageScaleUtil_Access is
    begin
-        return ImageScaleUtil_Access (ImageScaleUtil_Package.instance);
+        return ImageScaleUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageScaleUtil'Class) is

@@ -64,7 +64,7 @@ package body org.allbinary.logic.system.hardware.components.ComponentFactory_Pac
 
    function getInstance return ComponentFactory_Access is
    begin
-        return ComponentFactory_Access (ComponentFactory_Package.instance);
+        return ComponentFactory_Package.instance;
    end getInstance;
 
 begin

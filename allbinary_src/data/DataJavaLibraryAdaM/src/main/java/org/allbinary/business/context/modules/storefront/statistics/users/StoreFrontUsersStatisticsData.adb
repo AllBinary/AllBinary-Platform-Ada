@@ -39,7 +39,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
 
    function getInstance return StoreFrontUsersStatisticsData_Access is
    begin
-        return StoreFrontUsersStatisticsData_Access (StoreFrontUsersStatisticsData_Package.instance);
+        return StoreFrontUsersStatisticsData_Package.instance;
    end getInstance;
 
 begin

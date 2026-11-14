@@ -35,7 +35,7 @@ package body org.allbinary.logic.io.InputOutputTypeData_Package is
 
    function getInstance return InputOutputTypeData_Access is
    begin
-        return InputOutputTypeData_Access (InputOutputTypeData_Package.instance);
+        return InputOutputTypeData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out InputOutputTypeData'Class) is

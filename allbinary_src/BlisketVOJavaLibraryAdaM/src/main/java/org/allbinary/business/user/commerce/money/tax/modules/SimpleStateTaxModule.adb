@@ -39,6 +39,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -65,6 +67,8 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
    package CommonPhoneStrings_Package renames Standard.org.allbinary.string_Id.CommonPhoneStrings_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype StoreFrontInterface_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access;
    function "=" (Left, Right : StoreFrontInterface_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References."=";
    subtype StoreFrontInterface_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array;
@@ -166,7 +170,7 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
         fileAbPath := AbPath_Package.Create (Java_Image ((URLGLOBALS_Package.getMainPath) + (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH)) & This.storeFrontInterface.getName & This.STATETAXPATH, This.STATETAXFILE);
         data := CryptFileReader_Package.Create (TransformInfoObjectConfigData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoObjectConfigData_Package.getInstance.ENCRYPTED_EXTENSION).get (fileAbPath);
         This.document := DomDocumentHelper_Package.create (data);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAX) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.TAX) then
             This.logUtil.putF (To_Unbounded_String ("Tax Doc: ") & XmlDocumentHelper_Package.toString (This.document), SimpleStateTaxModule_Access'(This'Unchecked_Access), To_Unbounded_String ("getTaxRate"));
         end if;
         state := This.streetAddress.getState;
@@ -214,7 +218,7 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
             fileAbPath := AbPath_Package.Create (Java_Image ((URLGLOBALS_Package.getMainPath) + (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH)) & This.storeFrontInterface.getName & This.STATETAXPATH, This.STATETAXFILE);
             data := CryptFileReader_Package.Create (TransformInfoObjectConfigData_Package.getInstance.UNCRYPTED_EXTENSION, TransformInfoObjectConfigData_Package.getInstance.ENCRYPTED_EXTENSION).get (fileAbPath);
             This.document := DomDocumentHelper_Package.create (data);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAX) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.TAX) then
                 This.logUtil.putF (To_Unbounded_String ("Tax Doc: ") & XmlDocumentHelper_Package.toString (This.document), SimpleStateTaxModule_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             country := This.streetAddress.getCountry;
@@ -224,7 +228,7 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
                 node := nodeList.item (index);
                 taxNodeChildren := node.getChildNodes;
                 streetAddressNode := DomSearchHelper_Package.getNode (StreetAddressData_Package.NAME, taxNodeChildren);
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAX) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.TAX) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (To_Unbounded_String ("StreetAddress Node: "));
                     stringBuffer.append (streetAddressNode.getNodeName);
@@ -252,7 +256,7 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEWERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to validate"), SimpleStateTaxModule_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;

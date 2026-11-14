@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package;
 package org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package_References is
    type PermissionItemData_Access is access all org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package.PermissionItemData'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.commerce.inventory.item.permission.Permissio
    type PermissionItemData_Access_Array_Access is access all PermissionItemData_Access_Array;
    type PermissionItemData_Access_Array_Access_Array is array (Natural range <>) of PermissionItemData_Access_Array_Access;
    type PermissionItemData_Access_Array_Access_Array_Access is access all PermissionItemData_Access_Array_Access_Array;
+   type PermissionItemData_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PermissionItemData_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PermissionItemData_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PermissionItemData_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PermissionItemData_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PermissionItemData_Access_Array_Access is (if Value /= null and then Value.all in PermissionItemData_Access_Array_Object'Class then PermissionItemData_Access_Array_Object'Class (Value.all).Value else null);
+   type PermissionItemData_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PermissionItemData_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PermissionItemData_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PermissionItemData_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PermissionItemData_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PermissionItemData_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PermissionItemData_Access_Array_Access_Array_Object'Class then PermissionItemData_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package_References;
 
 with org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.business.user.commerce.inventory.item.permission.Permissio
    function "=" (Left, Right : PermissionItemData_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package_References."=";
    subtype PermissionItemData_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package_References.PermissionItemData_Access_Array_Access;
    function "=" (Left, Right : PermissionItemData_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package_References."=";
+   function Java_Box (Value : PermissionItemData_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package_References.Java_Box;
+   function Java_Unbox_PermissionItemData_Access_Array (Value : access Java_Object'Class) return PermissionItemData_Access_Array_Access renames org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package_References.Java_Unbox_PermissionItemData_Access_Array;
    subtype PermissionItemData_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package_References.PermissionItemData_Access_Array_Access_Array;
    function "=" (Left, Right : PermissionItemData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package_References."=";
    subtype PermissionItemData_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package_References.PermissionItemData_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PermissionItemData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package_References."=";
+   function Java_Box (Value : PermissionItemData_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package_References.Java_Box;
+   function Java_Unbox_PermissionItemData_Access_Array_Access_Array (Value : access Java_Object'Class) return PermissionItemData_Access_Array_Access_Array_Access renames org.allbinary.business.user.commerce.inventory.item.permission.PermissionItemData_Package_References.Java_Unbox_PermissionItemData_Access_Array_Access_Array;
 
    type PermissionItemData is new Java_Object with null record;
    WHO : Unbounded_String;

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.time.TimeDelayHelper_Package;
 package org.allbinary.time.TimeDelayHelper_Package_References is
    type TimeDelayHelper_Access is access all org.allbinary.time.TimeDelayHelper_Package.TimeDelayHelper'Class;
@@ -19,6 +20,16 @@ package org.allbinary.time.TimeDelayHelper_Package_References is
    type TimeDelayHelper_Access_Array_Access is access all TimeDelayHelper_Access_Array;
    type TimeDelayHelper_Access_Array_Access_Array is array (Natural range <>) of TimeDelayHelper_Access_Array_Access;
    type TimeDelayHelper_Access_Array_Access_Array_Access is access all TimeDelayHelper_Access_Array_Access_Array;
+   type TimeDelayHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TimeDelayHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TimeDelayHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TimeDelayHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TimeDelayHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TimeDelayHelper_Access_Array_Access is (if Value /= null and then Value.all in TimeDelayHelper_Access_Array_Object'Class then TimeDelayHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type TimeDelayHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TimeDelayHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TimeDelayHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TimeDelayHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TimeDelayHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TimeDelayHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TimeDelayHelper_Access_Array_Access_Array_Object'Class then TimeDelayHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.time.TimeDelayHelper_Package_References;
 
 with org.allbinary.time.TimeDelayHelper_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.time.TimeDelayHelper_Package is
    function "=" (Left, Right : TimeDelayHelper_Access_Array) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
    subtype TimeDelayHelper_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access;
    function "=" (Left, Right : TimeDelayHelper_Access_Array_Access) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
+   function Java_Box (Value : TimeDelayHelper_Access_Array_Access) return Java_Object_Access renames org.allbinary.time.TimeDelayHelper_Package_References.Java_Box;
+   function Java_Unbox_TimeDelayHelper_Access_Array (Value : access Java_Object'Class) return TimeDelayHelper_Access_Array_Access renames org.allbinary.time.TimeDelayHelper_Package_References.Java_Unbox_TimeDelayHelper_Access_Array;
    subtype TimeDelayHelper_Access_Array_Access_Array is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array;
    function "=" (Left, Right : TimeDelayHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
    subtype TimeDelayHelper_Access_Array_Access_Array_Access is org.allbinary.time.TimeDelayHelper_Package_References.TimeDelayHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TimeDelayHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.time.TimeDelayHelper_Package_References."=";
+   function Java_Box (Value : TimeDelayHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.time.TimeDelayHelper_Package_References.Java_Box;
+   function Java_Unbox_TimeDelayHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return TimeDelayHelper_Access_Array_Access_Array_Access renames org.allbinary.time.TimeDelayHelper_Package_References.Java_Unbox_TimeDelayHelper_Access_Array_Access_Array;
 
    type TimeDelayHelper is new Java_Object with record
       startTime : Long_Long_Integer;

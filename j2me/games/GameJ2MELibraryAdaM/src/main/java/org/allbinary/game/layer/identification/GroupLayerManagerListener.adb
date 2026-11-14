@@ -119,10 +119,14 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
    function "=" (Left, Right : Group_Access_Array) return Boolean renames org.allbinary.game.identification.Group_Package_References."=";
    subtype Group_Access_Array_Access is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access;
    function "=" (Left, Right : Group_Access_Array_Access) return Boolean renames org.allbinary.game.identification.Group_Package_References."=";
+   function Java_Box (Value : Group_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.identification.Group_Package_References.Java_Box;
+   function Java_Unbox_Group_Access_Array (Value : access Java_Object'Class) return Group_Access_Array_Access renames org.allbinary.game.identification.Group_Package_References.Java_Unbox_Group_Access_Array;
    subtype Group_Access_Array_Access_Array is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access_Array;
    function "=" (Left, Right : Group_Access_Array_Access_Array) return Boolean renames org.allbinary.game.identification.Group_Package_References."=";
    subtype Group_Access_Array_Access_Array_Access is org.allbinary.game.identification.Group_Package_References.Group_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Group_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.identification.Group_Package_References."=";
+   function Java_Box (Value : Group_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.identification.Group_Package_References.Java_Box;
+   function Java_Unbox_Group_Access_Array_Access_Array (Value : access Java_Object'Class) return Group_Access_Array_Access_Array_Access renames org.allbinary.game.identification.Group_Package_References.Java_Unbox_Group_Access_Array_Access_Array;
    subtype GroupInterfaceCompositeInterface_Access is org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package_References.GroupInterfaceCompositeInterface_Access;
    function "=" (Left, Right : GroupInterfaceCompositeInterface_Access) return Boolean renames org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package_References."=";
    subtype GroupInterfaceCompositeInterface_Access_Array is org.allbinary.game.identification.GroupInterfaceCompositeInterface_Package_References.GroupInterfaceCompositeInterface_Access_Array;
@@ -183,7 +187,7 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
 
    function getInstance return GroupLayerManagerListener_Access is
    begin
-        return GroupLayerManagerListener_Access (GroupLayerManagerListener_Package.SINGLETON);
+        return GroupLayerManagerListener_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out GroupLayerManagerListener'Class) is
@@ -289,7 +293,7 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
         groupInterface := null;
         groupId := 0;
         for index in reverse 0 .. (size) - (1) loop
-            groupInterfaceArray := Group_Access_Array_Access (excludeGroupList.objectArray (index));
+            groupInterfaceArray := Java_Unbox_Group_Access_Array (excludeGroupList.objectArray (index));
             size2 := groupInterfaceArray'Length;
             for index2 in 0 .. (size2) - 1 loop
                 groupInterface := groupInterfaceArray (index2);

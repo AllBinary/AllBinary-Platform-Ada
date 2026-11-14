@@ -1,5 +1,6 @@
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package;
 package org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References is
    type AllBinaryTiledLayerFactoryInterface_Access is access all org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package.AllBinaryTiledLayerFactoryInterface'Class;
@@ -7,6 +8,16 @@ package org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayer
    type AllBinaryTiledLayerFactoryInterface_Access_Array_Access is access all AllBinaryTiledLayerFactoryInterface_Access_Array;
    type AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of AllBinaryTiledLayerFactoryInterface_Access_Array_Access;
    type AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array_Access is access all AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array;
+   type AllBinaryTiledLayerFactoryInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AllBinaryTiledLayerFactoryInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AllBinaryTiledLayerFactoryInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AllBinaryTiledLayerFactoryInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AllBinaryTiledLayerFactoryInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AllBinaryTiledLayerFactoryInterface_Access_Array_Access is (if Value /= null and then Value.all in AllBinaryTiledLayerFactoryInterface_Access_Array_Object'Class then AllBinaryTiledLayerFactoryInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array_Object'Class then AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References;
 
 with org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References;
@@ -70,10 +81,14 @@ package org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayer
    function "=" (Left, Right : AllBinaryTiledLayerFactoryInterface_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References."=";
    subtype AllBinaryTiledLayerFactoryInterface_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References.AllBinaryTiledLayerFactoryInterface_Access_Array_Access;
    function "=" (Left, Right : AllBinaryTiledLayerFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References."=";
+   function Java_Box (Value : AllBinaryTiledLayerFactoryInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References.Java_Box;
+   function Java_Unbox_AllBinaryTiledLayerFactoryInterface_Access_Array (Value : access Java_Object'Class) return AllBinaryTiledLayerFactoryInterface_Access_Array_Access renames org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References.Java_Unbox_AllBinaryTiledLayerFactoryInterface_Access_Array;
    subtype AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References.AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array;
    function "=" (Left, Right : AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References."=";
    subtype AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References.AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References."=";
+   function Java_Box (Value : AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References.Java_Box;
+   function Java_Unbox_AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array_Access renames org.allbinary.media.graphics.geography.map.racetrack.AllBinaryTiledLayerFactoryInterface_Package_References.Java_Unbox_AllBinaryTiledLayerFactoryInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_AllBinaryTiledLayerFactoryInterface (Value : AllBinaryTiledLayerFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out AllBinaryTiledLayerFactoryInterface; raceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) return AllBinaryTiledLayer_Access is abstract;
    procedure getInstance (This : in out AllBinaryTiledLayerFactoryInterface; raceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is abstract;

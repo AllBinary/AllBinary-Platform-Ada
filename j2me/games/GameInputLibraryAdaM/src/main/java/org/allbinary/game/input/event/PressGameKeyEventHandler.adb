@@ -100,7 +100,7 @@ package body org.allbinary.game.input.event.PressGameKeyEventHandler_Package is
 
    function getInstance return PressGameKeyEventHandler_Access is
    begin
-        return PressGameKeyEventHandler_Access (PressGameKeyEventHandler_Package.instance);
+        return PressGameKeyEventHandler_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out PressGameKeyEventHandler'Class) is

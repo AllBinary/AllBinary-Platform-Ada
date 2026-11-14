@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package;
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package_References is
    type GenericProfileActions_Access is access all org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package.GenericProfileActions'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    type GenericProfileActions_Access_Array_Access is access all GenericProfileActions_Access_Array;
    type GenericProfileActions_Access_Array_Access_Array is array (Natural range <>) of GenericProfileActions_Access_Array_Access;
    type GenericProfileActions_Access_Array_Access_Array_Access is access all GenericProfileActions_Access_Array_Access_Array;
+   type GenericProfileActions_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GenericProfileActions_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GenericProfileActions_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GenericProfileActions_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GenericProfileActions_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GenericProfileActions_Access_Array_Access is (if Value /= null and then Value.all in GenericProfileActions_Access_Array_Object'Class then GenericProfileActions_Access_Array_Object'Class (Value.all).Value else null);
+   type GenericProfileActions_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GenericProfileActions_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GenericProfileActions_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GenericProfileActions_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GenericProfileActions_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GenericProfileActions_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GenericProfileActions_Access_Array_Access_Array_Object'Class then GenericProfileActions_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package_References;
 
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package_References;
@@ -169,10 +180,14 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    function "=" (Left, Right : GenericProfileActions_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package_References."=";
    subtype GenericProfileActions_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package_References.GenericProfileActions_Access_Array_Access;
    function "=" (Left, Right : GenericProfileActions_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package_References."=";
+   function Java_Box (Value : GenericProfileActions_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package_References.Java_Box;
+   function Java_Unbox_GenericProfileActions_Access_Array (Value : access Java_Object'Class) return GenericProfileActions_Access_Array_Access renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package_References.Java_Unbox_GenericProfileActions_Access_Array;
    subtype GenericProfileActions_Access_Array_Access_Array is org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package_References.GenericProfileActions_Access_Array_Access_Array;
    function "=" (Left, Right : GenericProfileActions_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package_References."=";
    subtype GenericProfileActions_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package_References.GenericProfileActions_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GenericProfileActions_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package_References."=";
+   function Java_Box (Value : GenericProfileActions_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package_References.Java_Box;
+   function Java_Unbox_GenericProfileActions_Access_Array_Access_Array (Value : access Java_Object'Class) return GenericProfileActions_Access_Array_Access_Array_Access renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActions_Package_References.Java_Unbox_GenericProfileActions_Access_Array_Access_Array;
 
    type GenericProfileActions is new Java_Object and DomNodeInterface and DomDocumentMappingInterface with record
       logUtil : LogUtil_Access;

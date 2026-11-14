@@ -102,7 +102,7 @@ package body org.allbinary.media.image.ImageCreationUtil_Package is
 
    function getInstance return ImageCreationUtil_Access is
    begin
-        return ImageCreationUtil_Access (ImageCreationUtil_Package.instance);
+        return ImageCreationUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageCreationUtil'Class) is

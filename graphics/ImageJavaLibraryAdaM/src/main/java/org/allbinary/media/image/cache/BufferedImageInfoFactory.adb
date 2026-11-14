@@ -85,7 +85,7 @@ package body org.allbinary.media.image.cache.BufferedImageInfoFactory_Package is
 
 begin
    null;
-   hashMap := StdUtil_Package.getInstance.createHashMap;
+   hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
 
 end org.allbinary.media.image.cache.BufferedImageInfoFactory_Package;
 

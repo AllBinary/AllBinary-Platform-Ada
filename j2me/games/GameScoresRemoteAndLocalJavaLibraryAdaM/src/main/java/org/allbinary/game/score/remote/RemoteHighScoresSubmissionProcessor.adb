@@ -75,6 +75,7 @@ with org.allbinary.game.GameType_Package;
 with javax.microedition.lcdui.Gauge_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.game.score.HighScores_Package;
 with javax.microedition.lcdui.Image_Package;
 with javax.microedition.lcdui.ImageStringItem_Package;
 with org.microemu.device.InputMethod_Package;

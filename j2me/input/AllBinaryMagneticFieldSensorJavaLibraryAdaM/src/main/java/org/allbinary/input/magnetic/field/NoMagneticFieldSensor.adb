@@ -17,6 +17,7 @@ with org.allbinary.input.AllBinarySensorListener_Package; use org.allbinary.inpu
 with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.Orientation_Package;
 with org.allbinary.logic.math.Orientation_Package_References;
 with org.allbinary.input.AllBinarySensor_Package;
+with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package;
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References is
    type GenericProfileDataWorkerType_Access is access all org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package.GenericProfileDataWorkerType'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.G
    type GenericProfileDataWorkerType_Access_Array_Access is access all GenericProfileDataWorkerType_Access_Array;
    type GenericProfileDataWorkerType_Access_Array_Access_Array is array (Natural range <>) of GenericProfileDataWorkerType_Access_Array_Access;
    type GenericProfileDataWorkerType_Access_Array_Access_Array_Access is access all GenericProfileDataWorkerType_Access_Array_Access_Array;
+   type GenericProfileDataWorkerType_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GenericProfileDataWorkerType_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GenericProfileDataWorkerType_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GenericProfileDataWorkerType_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GenericProfileDataWorkerType_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GenericProfileDataWorkerType_Access_Array_Access is (if Value /= null and then Value.all in GenericProfileDataWorkerType_Access_Array_Object'Class then GenericProfileDataWorkerType_Access_Array_Object'Class (Value.all).Value else null);
+   type GenericProfileDataWorkerType_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GenericProfileDataWorkerType_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GenericProfileDataWorkerType_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GenericProfileDataWorkerType_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GenericProfileDataWorkerType_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GenericProfileDataWorkerType_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GenericProfileDataWorkerType_Access_Array_Access_Array_Object'Class then GenericProfileDataWorkerType_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References;
 
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References;
@@ -73,10 +84,14 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.G
    function "=" (Left, Right : GenericProfileDataWorkerType_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References."=";
    subtype GenericProfileDataWorkerType_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References.GenericProfileDataWorkerType_Access_Array_Access;
    function "=" (Left, Right : GenericProfileDataWorkerType_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References."=";
+   function Java_Box (Value : GenericProfileDataWorkerType_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References.Java_Box;
+   function Java_Unbox_GenericProfileDataWorkerType_Access_Array (Value : access Java_Object'Class) return GenericProfileDataWorkerType_Access_Array_Access renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References.Java_Unbox_GenericProfileDataWorkerType_Access_Array;
    subtype GenericProfileDataWorkerType_Access_Array_Access_Array is org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References.GenericProfileDataWorkerType_Access_Array_Access_Array;
    function "=" (Left, Right : GenericProfileDataWorkerType_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References."=";
    subtype GenericProfileDataWorkerType_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References.GenericProfileDataWorkerType_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GenericProfileDataWorkerType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References."=";
+   function Java_Box (Value : GenericProfileDataWorkerType_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References.Java_Box;
+   function Java_Unbox_GenericProfileDataWorkerType_Access_Array_Access_Array (Value : access Java_Object'Class) return GenericProfileDataWorkerType_Access_Array_Access_Array_Access renames org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package_References.Java_Unbox_GenericProfileDataWorkerType_Access_Array_Access_Array;
 
    type GenericProfileDataWorkerType is new Java_Object and GenericProfileDataWorkerTypeInterface with record
       name : Unbounded_String;

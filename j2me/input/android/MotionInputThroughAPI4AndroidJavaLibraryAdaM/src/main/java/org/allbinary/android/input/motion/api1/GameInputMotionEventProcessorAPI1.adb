@@ -74,7 +74,7 @@ package body org.allbinary.android.input.motion.api1.GameInputMotionEventProcess
 
    function getInstance return GameInputMotionEventProcessorAPI1_Access is
    begin
-        if (GameInputMotionEventProcessorAPI1_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (GameInputMotionEventProcessorAPI1_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             GameInputMotionEventProcessorAPI1_Package.instance := Java_Object_Access (GameInputMotionEventProcessorAPI1_Package.Create);
         end if;
         return GameInputMotionEventProcessorAPI1_Access (GameInputMotionEventProcessorAPI1_Package.instance);

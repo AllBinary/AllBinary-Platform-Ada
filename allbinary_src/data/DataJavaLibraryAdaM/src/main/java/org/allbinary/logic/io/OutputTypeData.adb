@@ -38,7 +38,7 @@ package body org.allbinary.logic.io.OutputTypeData_Package is
 
    function getInstance return OutputTypeData_Access is
    begin
-        return OutputTypeData_Access (OutputTypeData_Package.instance);
+        return OutputTypeData_Package.instance;
    end getInstance;
 
 begin

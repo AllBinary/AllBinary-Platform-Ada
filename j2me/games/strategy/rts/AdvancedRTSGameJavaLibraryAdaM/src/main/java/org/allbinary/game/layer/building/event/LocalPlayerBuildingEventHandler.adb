@@ -80,7 +80,7 @@ package body org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHan
 
    function getInstance return LocalPlayerBuildingEventHandler_Access is
    begin
-        return LocalPlayerBuildingEventHandler_Access (LocalPlayerBuildingEventHandler_Package.eventHandler);
+        return LocalPlayerBuildingEventHandler_Package.eventHandler;
    end getInstance;
 
    --  throws Exception

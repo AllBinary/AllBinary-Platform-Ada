@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package;
 package org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package_References is
    type TouchButtonStrafeRightResource_Access is access all org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package.TouchButtonStrafeRightResource'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package
    type TouchButtonStrafeRightResource_Access_Array_Access is access all TouchButtonStrafeRightResource_Access_Array;
    type TouchButtonStrafeRightResource_Access_Array_Access_Array is array (Natural range <>) of TouchButtonStrafeRightResource_Access_Array_Access;
    type TouchButtonStrafeRightResource_Access_Array_Access_Array_Access is access all TouchButtonStrafeRightResource_Access_Array_Access_Array;
+   type TouchButtonStrafeRightResource_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TouchButtonStrafeRightResource_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TouchButtonStrafeRightResource_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TouchButtonStrafeRightResource_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TouchButtonStrafeRightResource_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TouchButtonStrafeRightResource_Access_Array_Access is (if Value /= null and then Value.all in TouchButtonStrafeRightResource_Access_Array_Object'Class then TouchButtonStrafeRightResource_Access_Array_Object'Class (Value.all).Value else null);
+   type TouchButtonStrafeRightResource_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TouchButtonStrafeRightResource_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TouchButtonStrafeRightResource_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TouchButtonStrafeRightResource_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TouchButtonStrafeRightResource_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TouchButtonStrafeRightResource_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TouchButtonStrafeRightResource_Access_Array_Access_Array_Object'Class then TouchButtonStrafeRightResource_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package_References;
 
 with org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package_References;
@@ -45,10 +56,14 @@ package org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package
    function "=" (Left, Right : TouchButtonStrafeRightResource_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package_References."=";
    subtype TouchButtonStrafeRightResource_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package_References.TouchButtonStrafeRightResource_Access_Array_Access;
    function "=" (Left, Right : TouchButtonStrafeRightResource_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package_References."=";
+   function Java_Box (Value : TouchButtonStrafeRightResource_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package_References.Java_Box;
+   function Java_Unbox_TouchButtonStrafeRightResource_Access_Array (Value : access Java_Object'Class) return TouchButtonStrafeRightResource_Access_Array_Access renames org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package_References.Java_Unbox_TouchButtonStrafeRightResource_Access_Array;
    subtype TouchButtonStrafeRightResource_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package_References.TouchButtonStrafeRightResource_Access_Array_Access_Array;
    function "=" (Left, Right : TouchButtonStrafeRightResource_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package_References."=";
    subtype TouchButtonStrafeRightResource_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package_References.TouchButtonStrafeRightResource_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TouchButtonStrafeRightResource_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package_References."=";
+   function Java_Box (Value : TouchButtonStrafeRightResource_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package_References.Java_Box;
+   function Java_Unbox_TouchButtonStrafeRightResource_Access_Array_Access_Array (Value : access Java_Object'Class) return TouchButtonStrafeRightResource_Access_Array_Access_Array_Access renames org.allbinary.input.motion.button.TouchButtonStrafeRightResource_Package_References.Java_Unbox_TouchButtonStrafeRightResource_Access_Array_Access_Array;
 
    type TouchButtonStrafeRightResource is new TouchButtonResource with null record;
    instance : TouchButtonResource_Access;

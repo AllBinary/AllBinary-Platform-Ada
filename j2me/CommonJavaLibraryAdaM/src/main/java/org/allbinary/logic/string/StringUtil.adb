@@ -38,7 +38,7 @@ package body org.allbinary.logic.string_Id.StringUtil_Package is
 
    function getInstance return StringUtil_Access is
    begin
-        return StringUtil_Access (StringUtil_Package.instance);
+        return StringUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out StringUtil'Class) is
@@ -56,11 +56,7 @@ package body org.allbinary.logic.string_Id.StringUtil_Package is
 
    function getNonNull (This : in out StringUtil; string_Id : Unbounded_String) return Unbounded_String is
    begin
-        if (string_Id) = (Null_Unbounded_String) then
-            return This.EMPTY_STRING;
-        else
-            return string_Id;
-        end if;
+        return string_Id;
    end getNonNull;
 
    function getArrayInstance (This : in out StringUtil) return Unbounded_String_Array_Access is

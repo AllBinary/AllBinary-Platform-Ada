@@ -43,7 +43,7 @@ package body org.allbinary.graphics.opengles.shader.SimpleShaderInitializer_Pack
 
    function getInstance return SimpleShaderInitializer_Access is
    begin
-        return SimpleShaderInitializer_Access (SimpleShaderInitializer_Package.instanceC);
+        return SimpleShaderInitializer_Package.instanceC;
    end getInstance;
 
 begin

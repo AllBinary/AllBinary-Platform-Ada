@@ -63,7 +63,7 @@ package body org.allbinary.animation.image.AlphaProcessor_Package is
 
    function getInstance return AlphaProcessor_Access is
    begin
-        return AlphaProcessor_Access (AlphaProcessor_Package.instanceC);
+        return AlphaProcessor_Package.instanceC;
    end getInstance;
 
    procedure setAlpha (This : in out AlphaProcessor; imageModifierUtil_Param : access ImageModifierUtil_Package.ImageModifierUtil'Class; originalImage_Param : access Image_Package.Image'Class; imageToShow_Param : access Image_Package.Image'Class; alpha : Integer) is

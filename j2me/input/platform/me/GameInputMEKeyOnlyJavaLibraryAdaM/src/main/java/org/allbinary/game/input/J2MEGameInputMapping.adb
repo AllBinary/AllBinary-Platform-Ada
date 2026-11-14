@@ -74,6 +74,7 @@ with org.allbinary.game.input.mapping.InputToGameKeyMapping_Package;
 with javax.microedition.lcdui.Item_Package;
 with javax.microedition.lcdui.ItemCommandListener_Package;
 with javax.microedition.lcdui.ItemStateListener_Package;
+with org.allbinary.game.input.J2MEKeyFactory_Package;
 with javax.microedition.lcdui.List_Package;
 with org.microemu.device.ui.ListUI_Package;
 with org.allbinary.logic.communication.log.Log_Package;

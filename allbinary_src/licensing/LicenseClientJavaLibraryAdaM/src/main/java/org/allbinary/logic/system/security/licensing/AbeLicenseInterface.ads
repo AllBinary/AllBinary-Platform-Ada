@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package;
 package org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References is
    type AbeLicenseInterface_Access is access all org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package.AbeLicenseInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Packag
    type AbeLicenseInterface_Access_Array_Access is access all AbeLicenseInterface_Access_Array;
    type AbeLicenseInterface_Access_Array_Access_Array is array (Natural range <>) of AbeLicenseInterface_Access_Array_Access;
    type AbeLicenseInterface_Access_Array_Access_Array_Access is access all AbeLicenseInterface_Access_Array_Access_Array;
+   type AbeLicenseInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AbeLicenseInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AbeLicenseInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AbeLicenseInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AbeLicenseInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AbeLicenseInterface_Access_Array_Access is (if Value /= null and then Value.all in AbeLicenseInterface_Access_Array_Object'Class then AbeLicenseInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type AbeLicenseInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AbeLicenseInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AbeLicenseInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AbeLicenseInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AbeLicenseInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AbeLicenseInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AbeLicenseInterface_Access_Array_Access_Array_Object'Class then AbeLicenseInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References;
 
 with org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References;
@@ -70,10 +81,14 @@ package org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Packag
    function "=" (Left, Right : AbeLicenseInterface_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References."=";
    subtype AbeLicenseInterface_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References.AbeLicenseInterface_Access_Array_Access;
    function "=" (Left, Right : AbeLicenseInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References."=";
+   function Java_Box (Value : AbeLicenseInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References.Java_Box;
+   function Java_Unbox_AbeLicenseInterface_Access_Array (Value : access Java_Object'Class) return AbeLicenseInterface_Access_Array_Access renames org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References.Java_Unbox_AbeLicenseInterface_Access_Array;
    subtype AbeLicenseInterface_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References.AbeLicenseInterface_Access_Array_Access_Array;
    function "=" (Left, Right : AbeLicenseInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References."=";
    subtype AbeLicenseInterface_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References.AbeLicenseInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AbeLicenseInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References."=";
+   function Java_Box (Value : AbeLicenseInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References.Java_Box;
+   function Java_Unbox_AbeLicenseInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return AbeLicenseInterface_Access_Array_Access_Array_Access renames org.allbinary.logic.system.security.licensing.AbeLicenseInterface_Package_References.Java_Unbox_AbeLicenseInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_AbeLicenseInterface (Value : AbeLicenseInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function hasKey (This : in out AbeLicenseInterface) return Boolean is abstract;
    function getKey (This : in out AbeLicenseInterface; keyName : Unbounded_String) return Unbounded_String is abstract;

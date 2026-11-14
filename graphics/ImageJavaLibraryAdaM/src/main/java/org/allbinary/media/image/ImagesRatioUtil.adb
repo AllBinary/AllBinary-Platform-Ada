@@ -62,7 +62,7 @@ package body org.allbinary.media.image.ImagesRatioUtil_Package is
 
    function getInstance return ImagesRatioUtil_Access is
    begin
-        return ImagesRatioUtil_Access (ImagesRatioUtil_Package.instance);
+        return ImagesRatioUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImagesRatioUtil'Class) is

@@ -23,12 +23,70 @@ with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableU
 with org.microemu.device.playn.PlaynImage_Package; use org.microemu.device.playn.PlaynImage_Package;
 with org.allbinary.media.image.Hashtable_Package; use org.allbinary.media.image.Hashtable_Package;
 with org.allbinary.util.ABHashtable_Package;
+with javax.microedition.lcdui.Alert_Package;
+with javax.microedition.lcdui.AlertType_Package;
+with org.microemu.device.ui.AlertUI_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with javax.microedition.lcdui.Canvas_Package;
+with org.microemu.device.ui.CanvasUI_Package;
+with javax.microedition.lcdui.ChoiceGroup_Package;
+with javax.microedition.lcdui.ChoiceItem_Package;
+with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.CommandListener_Package;
+with org.microemu.device.ui.CommandUI_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.microemu.device.Device_Package;
+with org.microemu.device.DeviceDisplay_Package;
+with javax.microedition.lcdui.Display_Package;
+with javax.microedition.lcdui.DisplayAccessor_Package;
+with javax.microedition.lcdui.Displayable_Package;
+with org.microemu.device.ui.DisplayableUI_Package;
 with org.allbinary.util.EnumerationUtil_Package;
+with javax.microedition.lcdui.Event_Package;
+with org.microemu.device.ui.EventDispatcher_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
+with org.microemu.device.FontManager_Package;
+with javax.microedition.lcdui.Form_Package;
+with org.microemu.device.ui.FormUI_Package;
+with javax.microedition.lcdui.Gauge_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.image.ImageCache_Package;
+with org.allbinary.image.ImageCacheBase_Package;
+with org.allbinary.image.ImageFactory_Package;
+with javax.microedition.lcdui.ImageStringItem_Package;
+with org.microemu.device.InputMethod_Package;
+with org.microemu.device.InputMethodEvent_Package;
+with org.microemu.device.InputMethodListener_Package;
+with javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.ItemStateListener_Package;
+with javax.microedition.lcdui.List_Package;
+with org.microemu.device.ui.ListUI_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with javax.microedition.midlet.MIDlet_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.microemu.device.MutableImage_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.microemu.device.ui.PaintEvent_Package;
+with org.microemu.device.ui.PointerEvent_Package;
+with javax.microedition.lcdui.Screen_Package;
+with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.SynchObject_Package;
+with javax.microedition.lcdui.TextBox_Package;
+with org.microemu.device.ui.TextBoxUI_Package;
+with javax.microedition.lcdui.TextField_Package;
+with javax.microedition.lcdui.Ticker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.TsUtil_Package;
+with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.media.image.ImageCompleteUtil_Package is
 
@@ -78,14 +136,14 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
 
    function getInstance return ImageCompleteUtil_Access is
    begin
-        return ImageCompleteUtil_Access (ImageCompleteUtil_Package.instance);
+        return ImageCompleteUtil_Package.instance;
    end getInstance;
 
    --  throws Exception
    procedure waitForImage (This : in out ImageCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String) is
       image : constant Image_Access := Image_Access (image_Param);
    begin
-        This.timeDelayHelper.setStartTime;
+        This.timeDelayHelper.setStartTimeTNT;
         ImageCompleteUtil'Class (This).waitForATime (image, name, This.timeDelayHelper);
    end waitForImage;
 
@@ -97,7 +155,7 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
    begin
         playnImage := PlaynImage_Access (image);
         if (not (playnImage.getImage.isReady)) and then (((playnImage.getImage.width) + (playnImage.getImage.height)) = (0)) then
-            if timeDelayHelper.isTime then
+            if timeDelayHelper.isTimeTNT then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("isReady: Timeout Waiting or GameHtmlHasLoadedResourcesProcessor does not have this Image: ") & name));
             end if;
             return False;
@@ -113,7 +171,7 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
    begin
         playnImage := PlaynImage_Access (image);
         while (not (playnImage.getImage.isReady)) and then (((playnImage.getImage.width) + (playnImage.getImage.height)) = (0)) loop
-            if timeDelayHelper.isTime then
+            if timeDelayHelper.isTimeTNT then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("waitFor: Timeout Waiting or GameHtmlHasLoadedResourcesProcessor does not have this Image: ") & name));
             end if;
         end loop;
@@ -126,7 +184,7 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
       size : Integer;
       index : Integer;
    begin
-        This.allTimeDelayHelper.setStartTime;
+        This.allTimeDelayHelper.setStartTimeTNT;
         hashtable := GameFeatureImageCacheFactory_Package.getInstance.getHashtable;
         objectArray := HashtableUtil_Package.getInstance.getKeysAsArray (hashtable);
         size := objectArray'Length;

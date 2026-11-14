@@ -37,7 +37,7 @@ package body org.allbinary.graphics.opengles.WithNormalAttributePointerOpenGLPro
 
    function getInstance return WithNormalAttributePointerOpenGLProcessor_Access is
    begin
-        return WithNormalAttributePointerOpenGLProcessor_Access (WithNormalAttributePointerOpenGLProcessor_Package.instance);
+        return WithNormalAttributePointerOpenGLProcessor_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out WithNormalAttributePointerOpenGLProcessor'Class) is

@@ -222,7 +222,7 @@ package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
 
    function getNullInstance return PersistentInputMapping_Access is
    begin
-        if (PersistentInputMapping_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (PersistentInputMapping_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             PersistentInputMapping_Package.instance := Java_Object_Access (PersistentInputMapping_Package.Create (GamePersistanceStrings_Package.getInstance.SAVED_INPUT_CONFIGURATION_RECORD_ID));
         end if;
         return PersistentInputMapping_Access (PersistentInputMapping_Package.instance);

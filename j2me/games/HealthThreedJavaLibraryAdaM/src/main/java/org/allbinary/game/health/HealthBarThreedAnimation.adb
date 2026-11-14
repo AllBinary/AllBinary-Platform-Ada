@@ -30,9 +30,26 @@ with org.allbinary.graphics.color.BasicColorFactory_Package_References;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.layer.AllBinaryLayer_Package_References;
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.animation.Animation_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.game.identification.Group_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.layer.Layer_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package;
 
 package body org.allbinary.game.health.HealthBarThreedAnimation_Package is
 
@@ -97,7 +114,7 @@ package body org.allbinary.game.health.HealthBarThreedAnimation_Package is
    begin
       null;
       
-      This.basicColorFactory := BasicColorFactory_Package.getInstance;
+      This.HealthBarThreedAnimation_Field_basicColorFactory := BasicColorFactory_Package.getInstance;
       This.object3dProcessor := Object3dProcessorUtil_Package.getInstance.getInstanceObject3dProcessor;
    end Initialize_Fields;
 
@@ -107,7 +124,7 @@ package body org.allbinary.game.health.HealthBarThreedAnimation_Package is
    begin
         HealthBarAnimation_Package.Initialize (This, layerInterface, location);
         Initialize_Fields (This);
-        This.basicColor := This.basicColorFactory.GREEN;
+        This.basicColor := This.HealthBarThreedAnimation_Field_basicColorFactory.GREEN;
         This.colorP := This.basicColor.intValue;
         This.rectangle := Rectangle_Package.Create (0, 0, 1, 1, This.basicColor);
         This.rectangle.setDoubleSidedEnabled (True);
@@ -186,9 +203,9 @@ package body org.allbinary.game.health.HealthBarThreedAnimation_Package is
         gl := openGLESGraphics.getGl10;
         viewPosition := This.allbinaryLayer.getViewPosition;
         positionNumber3d := This.rectangle.getPosition;
-        positionNumber3d.x := -((Float (viewPosition.getX)));
-        positionNumber3d.z := -((Float (viewPosition.getY)));
-        positionNumber3d.y := (viewPosition.getZ) + (This.allbinaryLayer.getHeight);
+        positionNumber3d.x := -((Float (viewPosition.getX2)));
+        positionNumber3d.z := -((Float (viewPosition.getY2)));
+        positionNumber3d.y := (viewPosition.getZ2) + (This.allbinaryLayer.getHeight);
         This.object3dProcessor.drawObject (gl, This.rectangle);
    end paintThreedXYZ;
 

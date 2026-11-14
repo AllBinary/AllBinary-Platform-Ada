@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.image.ImageArrayAnimation_Package;
 package org.allbinary.animation.image.ImageArrayAnimation_Package_References is
    type ImageArrayAnimation_Access is access all org.allbinary.animation.image.ImageArrayAnimation_Package.ImageArrayAnimation'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.image.ImageArrayAnimation_Package_References is
    type ImageArrayAnimation_Access_Array_Access is access all ImageArrayAnimation_Access_Array;
    type ImageArrayAnimation_Access_Array_Access_Array is array (Natural range <>) of ImageArrayAnimation_Access_Array_Access;
    type ImageArrayAnimation_Access_Array_Access_Array_Access is access all ImageArrayAnimation_Access_Array_Access_Array;
+   type ImageArrayAnimation_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageArrayAnimation_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageArrayAnimation_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageArrayAnimation_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageArrayAnimation_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageArrayAnimation_Access_Array_Access is (if Value /= null and then Value.all in ImageArrayAnimation_Access_Array_Object'Class then ImageArrayAnimation_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageArrayAnimation_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageArrayAnimation_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageArrayAnimation_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageArrayAnimation_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageArrayAnimation_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageArrayAnimation_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageArrayAnimation_Access_Array_Access_Array_Object'Class then ImageArrayAnimation_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.image.ImageArrayAnimation_Package_References;
 
 with org.allbinary.animation.image.ImageArrayAnimation_Package_References;
@@ -98,10 +109,14 @@ package org.allbinary.animation.image.ImageArrayAnimation_Package is
    function "=" (Left, Right : ImageArrayAnimation_Access_Array) return Boolean renames org.allbinary.animation.image.ImageArrayAnimation_Package_References."=";
    subtype ImageArrayAnimation_Access_Array_Access is org.allbinary.animation.image.ImageArrayAnimation_Package_References.ImageArrayAnimation_Access_Array_Access;
    function "=" (Left, Right : ImageArrayAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.image.ImageArrayAnimation_Package_References."=";
+   function Java_Box (Value : ImageArrayAnimation_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.image.ImageArrayAnimation_Package_References.Java_Box;
+   function Java_Unbox_ImageArrayAnimation_Access_Array (Value : access Java_Object'Class) return ImageArrayAnimation_Access_Array_Access renames org.allbinary.animation.image.ImageArrayAnimation_Package_References.Java_Unbox_ImageArrayAnimation_Access_Array;
    subtype ImageArrayAnimation_Access_Array_Access_Array is org.allbinary.animation.image.ImageArrayAnimation_Package_References.ImageArrayAnimation_Access_Array_Access_Array;
    function "=" (Left, Right : ImageArrayAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.ImageArrayAnimation_Package_References."=";
    subtype ImageArrayAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.image.ImageArrayAnimation_Package_References.ImageArrayAnimation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageArrayAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.ImageArrayAnimation_Package_References."=";
+   function Java_Box (Value : ImageArrayAnimation_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.image.ImageArrayAnimation_Package_References.Java_Box;
+   function Java_Unbox_ImageArrayAnimation_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageArrayAnimation_Access_Array_Access_Array_Access renames org.allbinary.animation.image.ImageArrayAnimation_Package_References.Java_Unbox_ImageArrayAnimation_Access_Array_Access_Array;
 
    type ImageArrayAnimation is new IndexedAnimation with record
       imageArray : Image_Access_Array_Access;

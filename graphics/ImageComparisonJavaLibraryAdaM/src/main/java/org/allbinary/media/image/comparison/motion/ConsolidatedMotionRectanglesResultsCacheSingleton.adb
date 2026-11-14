@@ -78,9 +78,9 @@ package body org.allbinary.media.image.comparison.motion.ConsolidatedMotionRecta
         STATIC_BLOCK := To_Unbounded_String ("Static Block");
         instance := To_Unbounded_String ("MotionRectanglesResultsCacheSingleton");
         begin
-            logUtil.putF (commonStrings.START, Java_Box (instance), STATIC_BLOCK);
+            logUtil.putFS (commonStrings.START, Java_Box (instance), STATIC_BLOCK);
             ConsolidatedMotionRectanglesResultsCacheSingleton_Package.cacheInterface := CacheInterfaceFactory_Package.getInstance (CacheTypeFactory_Package.getInstance.CACHE, CachePolicyFactory_Package.getInstance.ONE_MINUTE_FIVE_MAX);
-            logUtil.putF (commonStrings.END_Id, Java_Box (instance), STATIC_BLOCK);
+            logUtil.putFS (commonStrings.END_Id, Java_Box (instance), STATIC_BLOCK);
         exception
             when Java_Occurrence : others =>
                 declare
@@ -106,7 +106,7 @@ package body org.allbinary.media.image.comparison.motion.ConsolidatedMotionRecta
 
    function getInstance return CacheInterface_Access is
    begin
-        return CacheInterface_Access (ConsolidatedMotionRectanglesResultsCacheSingleton_Package.cacheInterface);
+        return ConsolidatedMotionRectanglesResultsCacheSingleton_Package.cacheInterface;
    end getInstance;
 
 begin

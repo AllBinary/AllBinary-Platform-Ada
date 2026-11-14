@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.android.activity.SimpleProgressActivityInterface_Package;
 package org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References is
    type SimpleProgressActivityInterface_Access is access all org.allbinary.android.activity.SimpleProgressActivityInterface_Package.SimpleProgressActivityInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.android.activity.SimpleProgressActivityInterface_Package_R
    type SimpleProgressActivityInterface_Access_Array_Access is access all SimpleProgressActivityInterface_Access_Array;
    type SimpleProgressActivityInterface_Access_Array_Access_Array is array (Natural range <>) of SimpleProgressActivityInterface_Access_Array_Access;
    type SimpleProgressActivityInterface_Access_Array_Access_Array_Access is access all SimpleProgressActivityInterface_Access_Array_Access_Array;
+   type SimpleProgressActivityInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SimpleProgressActivityInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SimpleProgressActivityInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SimpleProgressActivityInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SimpleProgressActivityInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SimpleProgressActivityInterface_Access_Array_Access is (if Value /= null and then Value.all in SimpleProgressActivityInterface_Access_Array_Object'Class then SimpleProgressActivityInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type SimpleProgressActivityInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SimpleProgressActivityInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SimpleProgressActivityInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SimpleProgressActivityInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SimpleProgressActivityInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SimpleProgressActivityInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SimpleProgressActivityInterface_Access_Array_Access_Array_Object'Class then SimpleProgressActivityInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References;
 
 with org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References;
@@ -47,10 +58,14 @@ package org.allbinary.android.activity.SimpleProgressActivityInterface_Package i
    function "=" (Left, Right : SimpleProgressActivityInterface_Access_Array) return Boolean renames org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References."=";
    subtype SimpleProgressActivityInterface_Access_Array_Access is org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References.SimpleProgressActivityInterface_Access_Array_Access;
    function "=" (Left, Right : SimpleProgressActivityInterface_Access_Array_Access) return Boolean renames org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References."=";
+   function Java_Box (Value : SimpleProgressActivityInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References.Java_Box;
+   function Java_Unbox_SimpleProgressActivityInterface_Access_Array (Value : access Java_Object'Class) return SimpleProgressActivityInterface_Access_Array_Access renames org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References.Java_Unbox_SimpleProgressActivityInterface_Access_Array;
    subtype SimpleProgressActivityInterface_Access_Array_Access_Array is org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References.SimpleProgressActivityInterface_Access_Array_Access_Array;
    function "=" (Left, Right : SimpleProgressActivityInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References."=";
    subtype SimpleProgressActivityInterface_Access_Array_Access_Array_Access is org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References.SimpleProgressActivityInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SimpleProgressActivityInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References."=";
+   function Java_Box (Value : SimpleProgressActivityInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References.Java_Box;
+   function Java_Unbox_SimpleProgressActivityInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return SimpleProgressActivityInterface_Access_Array_Access_Array_Access renames org.allbinary.android.activity.SimpleProgressActivityInterface_Package_References.Java_Unbox_SimpleProgressActivityInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_SimpleProgressActivityInterface (Value : SimpleProgressActivityInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure runOnUiThread (This : in out SimpleProgressActivityInterface; action_Param : access Runnable_Package.Runnable'Class) is abstract;
    procedure onSetProgress (This : in out SimpleProgressActivityInterface; value : Integer; text : Unbounded_String) is abstract;

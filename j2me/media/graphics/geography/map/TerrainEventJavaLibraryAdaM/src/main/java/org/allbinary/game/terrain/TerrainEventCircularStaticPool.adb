@@ -83,7 +83,7 @@ package body org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package i
 
    function getInstance return TerrainEventCircularStaticPool_Access is
    begin
-        return TerrainEventCircularStaticPool_Access (TerrainEventCircularStaticPool_Package.instance);
+        return TerrainEventCircularStaticPool_Package.instance;
    end getInstance;
 
    procedure init (This : in out TerrainEventCircularStaticPool) is

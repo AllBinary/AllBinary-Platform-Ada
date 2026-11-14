@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.input.event.PressGameKeyEventHandler_Package;
 package org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References is
    type PressGameKeyEventHandler_Access is access all org.allbinary.game.input.event.PressGameKeyEventHandler_Package.PressGameKeyEventHandler'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.input.event.PressGameKeyEventHandler_Package_Referenc
    type PressGameKeyEventHandler_Access_Array_Access is access all PressGameKeyEventHandler_Access_Array;
    type PressGameKeyEventHandler_Access_Array_Access_Array is array (Natural range <>) of PressGameKeyEventHandler_Access_Array_Access;
    type PressGameKeyEventHandler_Access_Array_Access_Array_Access is access all PressGameKeyEventHandler_Access_Array_Access_Array;
+   type PressGameKeyEventHandler_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PressGameKeyEventHandler_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PressGameKeyEventHandler_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PressGameKeyEventHandler_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PressGameKeyEventHandler_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PressGameKeyEventHandler_Access_Array_Access is (if Value /= null and then Value.all in PressGameKeyEventHandler_Access_Array_Object'Class then PressGameKeyEventHandler_Access_Array_Object'Class (Value.all).Value else null);
+   type PressGameKeyEventHandler_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PressGameKeyEventHandler_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PressGameKeyEventHandler_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PressGameKeyEventHandler_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PressGameKeyEventHandler_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PressGameKeyEventHandler_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PressGameKeyEventHandler_Access_Array_Access_Array_Object'Class then PressGameKeyEventHandler_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References;
 
 with org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References;
@@ -98,10 +109,14 @@ package org.allbinary.game.input.event.PressGameKeyEventHandler_Package is
    function "=" (Left, Right : PressGameKeyEventHandler_Access_Array) return Boolean renames org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References."=";
    subtype PressGameKeyEventHandler_Access_Array_Access is org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References.PressGameKeyEventHandler_Access_Array_Access;
    function "=" (Left, Right : PressGameKeyEventHandler_Access_Array_Access) return Boolean renames org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References."=";
+   function Java_Box (Value : PressGameKeyEventHandler_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References.Java_Box;
+   function Java_Unbox_PressGameKeyEventHandler_Access_Array (Value : access Java_Object'Class) return PressGameKeyEventHandler_Access_Array_Access renames org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References.Java_Unbox_PressGameKeyEventHandler_Access_Array;
    subtype PressGameKeyEventHandler_Access_Array_Access_Array is org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References.PressGameKeyEventHandler_Access_Array_Access_Array;
    function "=" (Left, Right : PressGameKeyEventHandler_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References."=";
    subtype PressGameKeyEventHandler_Access_Array_Access_Array_Access is org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References.PressGameKeyEventHandler_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PressGameKeyEventHandler_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References."=";
+   function Java_Box (Value : PressGameKeyEventHandler_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References.Java_Box;
+   function Java_Unbox_PressGameKeyEventHandler_Access_Array_Access_Array (Value : access Java_Object'Class) return PressGameKeyEventHandler_Access_Array_Access_Array_Access renames org.allbinary.game.input.event.PressGameKeyEventHandler_Package_References.Java_Unbox_PressGameKeyEventHandler_Access_Array_Access_Array;
 
    type PressGameKeyEventHandler is new BasicEventHandler with record
       list : BasicArrayList_Access;

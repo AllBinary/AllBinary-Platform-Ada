@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.image.analysis.ImageColorRangeResults_Package;
 package org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References is
    type ImageColorRangeResults_Access is access all org.allbinary.media.image.analysis.ImageColorRangeResults_Package.ImageColorRangeResults'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.image.analysis.ImageColorRangeResults_Package_Refere
    type ImageColorRangeResults_Access_Array_Access is access all ImageColorRangeResults_Access_Array;
    type ImageColorRangeResults_Access_Array_Access_Array is array (Natural range <>) of ImageColorRangeResults_Access_Array_Access;
    type ImageColorRangeResults_Access_Array_Access_Array_Access is access all ImageColorRangeResults_Access_Array_Access_Array;
+   type ImageColorRangeResults_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageColorRangeResults_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageColorRangeResults_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageColorRangeResults_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageColorRangeResults_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageColorRangeResults_Access_Array_Access is (if Value /= null and then Value.all in ImageColorRangeResults_Access_Array_Object'Class then ImageColorRangeResults_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageColorRangeResults_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageColorRangeResults_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageColorRangeResults_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageColorRangeResults_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageColorRangeResults_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageColorRangeResults_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageColorRangeResults_Access_Array_Access_Array_Object'Class then ImageColorRangeResults_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References;
 
 with org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References;
@@ -56,10 +67,14 @@ package org.allbinary.media.image.analysis.ImageColorRangeResults_Package is
    function "=" (Left, Right : ImageColorRangeResults_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References."=";
    subtype ImageColorRangeResults_Access_Array_Access is org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.ImageColorRangeResults_Access_Array_Access;
    function "=" (Left, Right : ImageColorRangeResults_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References."=";
+   function Java_Box (Value : ImageColorRangeResults_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.Java_Box;
+   function Java_Unbox_ImageColorRangeResults_Access_Array (Value : access Java_Object'Class) return ImageColorRangeResults_Access_Array_Access renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.Java_Unbox_ImageColorRangeResults_Access_Array;
    subtype ImageColorRangeResults_Access_Array_Access_Array is org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.ImageColorRangeResults_Access_Array_Access_Array;
    function "=" (Left, Right : ImageColorRangeResults_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References."=";
    subtype ImageColorRangeResults_Access_Array_Access_Array_Access is org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.ImageColorRangeResults_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageColorRangeResults_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References."=";
+   function Java_Box (Value : ImageColorRangeResults_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.Java_Box;
+   function Java_Unbox_ImageColorRangeResults_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageColorRangeResults_Access_Array_Access_Array_Access renames org.allbinary.media.image.analysis.ImageColorRangeResults_Package_References.Java_Unbox_ImageColorRangeResults_Access_Array_Access_Array;
 
    type ImageColorRangeResults is new Java_Object with record
       colorRangeInterface : ColorRangeInterface_Access;

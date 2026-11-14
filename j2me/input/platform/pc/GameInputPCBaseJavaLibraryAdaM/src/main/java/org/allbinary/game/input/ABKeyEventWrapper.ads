@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.input.ABKeyEventWrapper_Package;
 package org.allbinary.game.input.ABKeyEventWrapper_Package_References is
    type ABKeyEventWrapper_Access is access all org.allbinary.game.input.ABKeyEventWrapper_Package.ABKeyEventWrapper'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.input.ABKeyEventWrapper_Package_References is
    type ABKeyEventWrapper_Access_Array_Access is access all ABKeyEventWrapper_Access_Array;
    type ABKeyEventWrapper_Access_Array_Access_Array is array (Natural range <>) of ABKeyEventWrapper_Access_Array_Access;
    type ABKeyEventWrapper_Access_Array_Access_Array_Access is access all ABKeyEventWrapper_Access_Array_Access_Array;
+   type ABKeyEventWrapper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ABKeyEventWrapper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ABKeyEventWrapper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ABKeyEventWrapper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ABKeyEventWrapper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ABKeyEventWrapper_Access_Array_Access is (if Value /= null and then Value.all in ABKeyEventWrapper_Access_Array_Object'Class then ABKeyEventWrapper_Access_Array_Object'Class (Value.all).Value else null);
+   type ABKeyEventWrapper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ABKeyEventWrapper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ABKeyEventWrapper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ABKeyEventWrapper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ABKeyEventWrapper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ABKeyEventWrapper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ABKeyEventWrapper_Access_Array_Access_Array_Object'Class then ABKeyEventWrapper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.input.ABKeyEventWrapper_Package_References;
 
 with org.allbinary.game.input.ABKeyEventWrapper_Package_References;
@@ -30,7 +41,6 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
---  with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
 
 package org.allbinary.game.input.ABKeyEventWrapper_Package is
 
@@ -45,10 +55,14 @@ package org.allbinary.game.input.ABKeyEventWrapper_Package is
    function "=" (Left, Right : ABKeyEventWrapper_Access_Array) return Boolean renames org.allbinary.game.input.ABKeyEventWrapper_Package_References."=";
    subtype ABKeyEventWrapper_Access_Array_Access is org.allbinary.game.input.ABKeyEventWrapper_Package_References.ABKeyEventWrapper_Access_Array_Access;
    function "=" (Left, Right : ABKeyEventWrapper_Access_Array_Access) return Boolean renames org.allbinary.game.input.ABKeyEventWrapper_Package_References."=";
+   function Java_Box (Value : ABKeyEventWrapper_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.ABKeyEventWrapper_Package_References.Java_Box;
+   function Java_Unbox_ABKeyEventWrapper_Access_Array (Value : access Java_Object'Class) return ABKeyEventWrapper_Access_Array_Access renames org.allbinary.game.input.ABKeyEventWrapper_Package_References.Java_Unbox_ABKeyEventWrapper_Access_Array;
    subtype ABKeyEventWrapper_Access_Array_Access_Array is org.allbinary.game.input.ABKeyEventWrapper_Package_References.ABKeyEventWrapper_Access_Array_Access_Array;
    function "=" (Left, Right : ABKeyEventWrapper_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.ABKeyEventWrapper_Package_References."=";
    subtype ABKeyEventWrapper_Access_Array_Access_Array_Access is org.allbinary.game.input.ABKeyEventWrapper_Package_References.ABKeyEventWrapper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ABKeyEventWrapper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.ABKeyEventWrapper_Package_References."=";
+   function Java_Box (Value : ABKeyEventWrapper_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.ABKeyEventWrapper_Package_References.Java_Box;
+   function Java_Unbox_ABKeyEventWrapper_Access_Array_Access_Array (Value : access Java_Object'Class) return ABKeyEventWrapper_Access_Array_Access_Array_Access renames org.allbinary.game.input.ABKeyEventWrapper_Package_References.Java_Unbox_ABKeyEventWrapper_Access_Array_Access_Array;
 
    type ABKeyEventWrapper is new Java_Object with record
       VK_ENTER : Integer;

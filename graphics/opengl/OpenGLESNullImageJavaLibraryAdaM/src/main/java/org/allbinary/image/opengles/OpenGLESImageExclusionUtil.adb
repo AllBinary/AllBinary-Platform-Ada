@@ -68,7 +68,7 @@ package body org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package is
 
    function getInstance return OpenGLESImageExclusionUtil_Access is
    begin
-        return OpenGLESImageExclusionUtil_Access (OpenGLESImageExclusionUtil_Package.instance);
+        return OpenGLESImageExclusionUtil_Package.instance;
    end getInstance;
 
    function isCustomScaling (This : in out OpenGLESImageExclusionUtil; image_Param : access Image_Package.Image'Class) return Boolean is

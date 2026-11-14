@@ -17,6 +17,7 @@ with admin.taghelpers.InventoryHelperFactory_Package; use admin.taghelpers.Inven
 with admin.taghelpers.InventoryRequestHelperFactory_Package; use admin.taghelpers.InventoryRequestHelperFactory_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with admin.tags.ParentInventoryTagHelper_Package; use admin.tags.ParentInventoryTagHelper_Package;
 with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
 with admin.tags.ParentInventoryTagHelper_Package;
@@ -27,6 +28,7 @@ package body admin.tags.InventoryTag_Package is
    package InventoryRequestHelperFactory_Package renames Standard.admin.taghelpers.InventoryRequestHelperFactory_Package;
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    procedure Initialize_Fields (This : in out InventoryTag'Class) is
    begin
       null;
@@ -61,7 +63,7 @@ package body admin.tags.InventoryTag_Package is
         begin
             if InventoryTag'Class (This).isEnabled then
                 if (InventoryTag'Class (This).getCommand) /= (null) then
-                    if ((((InventoryTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) /= (0)) and then ((InventoryTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) /= (0))) and then ((InventoryTag'Class (This).getCommand.compareTo (This.commonStrings.CREATE)) /= (0))) and then ((InventoryTag'Class (This).getCommand.compareTo (This.commonStrings.DROP)) /= (0)) then
+                    if ((((InventoryTag'Class (This).getCommand.compareTo (GLOBALS2_Package.BACKUP)) /= (0)) and then ((InventoryTag'Class (This).getCommand.compareTo (GLOBALS2_Package.RESTORE)) /= (0))) and then ((InventoryTag'Class (This).getCommand.compareTo (This.commonStrings.CREATE)) /= (0))) and then ((InventoryTag'Class (This).getCommand.compareTo (This.commonStrings.DROP)) /= (0)) then
                         parentTag := InventoryTag'Class (This).getParent;
                         ParentInventoryTagHelper_Package.getInstance.isValid (InventoryTag_Access'(This'Unchecked_Access), parentTag);
                         InventoryTag'Class (This).getPropertiesHashMap.put (AbTagData_Package.PARENT, parentTag);

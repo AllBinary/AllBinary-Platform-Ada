@@ -98,13 +98,13 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Packa
 
    function getInstance return GraphicItemFactory_Access is
    begin
-        return GraphicItemFactory_Access (GraphicItemFactory_Package.instance);
+        return GraphicItemFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out GraphicItemFactory'Class) is
    begin
       Initialize_Fields (This);
-        This.graphicItems := StdUtil_Package.getInstance.createHashMap;
+        This.graphicItems := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         This.graphicItems.put (Java_Box (LinesGraphicItem_Package.getStaticName), LinesGraphicItemFactory_Package.Create);
    end Initialize;
 
@@ -134,13 +134,13 @@ package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Packa
       index : Integer;
    begin
         numberOfItems := graphicItemNodeList.size;
-        graphicItemHashMap := StdUtil_Package.getInstance.createHashMap;
+        graphicItemHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         if LOGGING_Package.contains (LOGGING_Package.MENUEVENT) then
             null;
         end if;
         for index in 0 .. (numberOfItems) - 1 loop
             graphicItem := GraphicItemInterface_Access (GraphicItemBuilder_Package.getInstance (Node_Access (graphicItemNodeList.get (index))));
-            graphicItemHashMap.put (graphicItem.getTreeNode, graphicItem);
+            graphicItemHashMap.put (graphicItem.getTreeNode, GraphicItemInterface_Package.Java_Object_Access_From_GraphicItemInterface (graphicItem));
         end loop;
         return graphicItemHashMap;
    end getInstance;

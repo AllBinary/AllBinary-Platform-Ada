@@ -50,7 +50,7 @@ package body org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Pac
 
    function getInstance return GraphicsFeatureFactory_Access is
    begin
-        return GraphicsFeatureFactory_Access (GraphicsFeatureFactory_Package.instance);
+        return GraphicsFeatureFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out GraphicsFeatureFactory'Class) is

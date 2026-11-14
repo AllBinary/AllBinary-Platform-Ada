@@ -57,7 +57,7 @@ package body org.allbinary.media.image.ImageJ2SERotationUtil_Package is
 
    function getInstance return ImageJ2SERotationUtil_Access is
    begin
-        return ImageJ2SERotationUtil_Access (ImageJ2SERotationUtil_Package.instance);
+        return ImageJ2SERotationUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageJ2SERotationUtil'Class) is

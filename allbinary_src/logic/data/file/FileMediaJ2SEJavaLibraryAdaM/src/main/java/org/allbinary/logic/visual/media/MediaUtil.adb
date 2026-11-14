@@ -80,7 +80,7 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
 
    function getInstance return MediaUtil_Access is
    begin
-        return MediaUtil_Access (MediaUtil_Package.instance);
+        return MediaUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out MediaUtil'Class) is
@@ -158,7 +158,7 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
       propertyObject : Java_Object_Access;
       index : Integer;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         propertyStringArray := bufferedImage.getPropertyNames;
         if (propertyStringArray) /= (null) then
             for index in 0 .. (propertyStringArray'Length) - 1 loop

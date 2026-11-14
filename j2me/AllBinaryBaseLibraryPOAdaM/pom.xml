@@ -49,11 +49,11 @@
         <module>../../allbinary_src/LogNoPlatformJavaLibraryAdaM</module>
         <module>../../allbinary_src/LogJ2MEJavaLibraryAdaM</module>
         <module>../../allbinary_src/LogJ2SEJavaLibraryAdaM</module>
-        <module>../../allbinary_src/LogAndroidJavaLibraryAdaM</module>
+<!--        <module>../../allbinary_src/LogAndroidJavaLibraryAdaM</module>-->
         <module>../logging/LoggingNoneAdaM</module>
         <module>../logging/LoggingJ2MEAllAdaM</module>
         <module>../logging/LoggingJ2MEExceptionAdaM</module>
-        <module>../logging/LoggingAndroidAllAdaM</module>
+<!--        <module>../logging/LoggingAndroidAllAdaM</module>-->
         <!--
         //While it is a possible dependency option it really does not fit here
         //as such it is actually build in the final POM builds instead

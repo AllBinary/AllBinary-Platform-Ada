@@ -84,7 +84,7 @@ package body org.allbinary.game.displayable.GameLevelDisplayChangeEventListeners
 
    function getInstance return GameLevelDisplayChangeEventListenersFactory_Access is
    begin
-        return GameLevelDisplayChangeEventListenersFactory_Access (GameLevelDisplayChangeEventListenersFactory_Package.instance);
+        return GameLevelDisplayChangeEventListenersFactory_Package.instance;
    end getInstance;
 
    procedure add (This : in out GameLevelDisplayChangeEventListenersFactory; displayChangeEventListener_Param : access DisplayChangeEventListener_Package.DisplayChangeEventListener'Class) is

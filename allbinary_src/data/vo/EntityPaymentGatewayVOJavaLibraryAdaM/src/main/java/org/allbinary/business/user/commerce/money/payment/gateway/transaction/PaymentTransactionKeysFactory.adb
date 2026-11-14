@@ -130,7 +130,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
 
    function getInstance return PaymentTransactionKeysFactory_Access is
    begin
-        return PaymentTransactionKeysFactory_Access (PaymentTransactionKeysFactory_Package.instance);
+        return PaymentTransactionKeysFactory_Package.instance;
    end getInstance;
 
 begin

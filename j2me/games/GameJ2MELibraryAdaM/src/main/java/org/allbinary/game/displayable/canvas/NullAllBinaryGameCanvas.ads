@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package;
 package org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_References is
    type NullAllBinaryGameCanvas_Access is access all org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package.NullAllBinaryGameCanvas'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_Re
    type NullAllBinaryGameCanvas_Access_Array_Access is access all NullAllBinaryGameCanvas_Access_Array;
    type NullAllBinaryGameCanvas_Access_Array_Access_Array is array (Natural range <>) of NullAllBinaryGameCanvas_Access_Array_Access;
    type NullAllBinaryGameCanvas_Access_Array_Access_Array_Access is access all NullAllBinaryGameCanvas_Access_Array_Access_Array;
+   type NullAllBinaryGameCanvas_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NullAllBinaryGameCanvas_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NullAllBinaryGameCanvas_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NullAllBinaryGameCanvas_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NullAllBinaryGameCanvas_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NullAllBinaryGameCanvas_Access_Array_Access is (if Value /= null and then Value.all in NullAllBinaryGameCanvas_Access_Array_Object'Class then NullAllBinaryGameCanvas_Access_Array_Object'Class (Value.all).Value else null);
+   type NullAllBinaryGameCanvas_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NullAllBinaryGameCanvas_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NullAllBinaryGameCanvas_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NullAllBinaryGameCanvas_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NullAllBinaryGameCanvas_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NullAllBinaryGameCanvas_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NullAllBinaryGameCanvas_Access_Array_Access_Array_Object'Class then NullAllBinaryGameCanvas_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_References;
 
 with org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_References;
@@ -84,10 +95,14 @@ package org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package is
    function "=" (Left, Right : NullAllBinaryGameCanvas_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_References."=";
    subtype NullAllBinaryGameCanvas_Access_Array_Access is org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_References.NullAllBinaryGameCanvas_Access_Array_Access;
    function "=" (Left, Right : NullAllBinaryGameCanvas_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_References."=";
+   function Java_Box (Value : NullAllBinaryGameCanvas_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_References.Java_Box;
+   function Java_Unbox_NullAllBinaryGameCanvas_Access_Array (Value : access Java_Object'Class) return NullAllBinaryGameCanvas_Access_Array_Access renames org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_References.Java_Unbox_NullAllBinaryGameCanvas_Access_Array;
    subtype NullAllBinaryGameCanvas_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_References.NullAllBinaryGameCanvas_Access_Array_Access_Array;
    function "=" (Left, Right : NullAllBinaryGameCanvas_Access_Array_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_References."=";
    subtype NullAllBinaryGameCanvas_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_References.NullAllBinaryGameCanvas_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NullAllBinaryGameCanvas_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_References."=";
+   function Java_Box (Value : NullAllBinaryGameCanvas_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_References.Java_Box;
+   function Java_Unbox_NullAllBinaryGameCanvas_Access_Array_Access_Array (Value : access Java_Object'Class) return NullAllBinaryGameCanvas_Access_Array_Access_Array_Access renames org.allbinary.game.displayable.canvas.NullAllBinaryGameCanvas_Package_References.Java_Unbox_NullAllBinaryGameCanvas_Access_Array_Access_Array;
 
    type NullAllBinaryGameCanvas is new Java_Object and AllBinaryGameCanvasInterface with null record;
    NULL_ALLBINARY_GAME_CANVAS : NullAllBinaryGameCanvas_Access;

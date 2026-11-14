@@ -67,7 +67,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureFactory_Package
 
    function getInstance return GameFeatureFactory_Access is
    begin
-        return GameFeatureFactory_Access (GameFeatureFactory_Package.instance);
+        return GameFeatureFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out GameFeatureFactory'Class) is

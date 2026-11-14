@@ -43,6 +43,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
+with java.io.File_Package; use java.io.File_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFile_Package_References;
 with org.allbinary.logic.io.file.FilePathData_Package; use org.allbinary.logic.io.file.FilePathData_Package;
@@ -79,6 +81,8 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonLabels_Package renames Standard.org.allbinary.string_Id.CommonLabels_Package;
+   package File_Package renames Standard.java.io.File_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -195,7 +199,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
 
    function getInstance return FileUtil_Access is
    begin
-        return FileUtil_Access (FileUtil_Package.instance);
+        return FileUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out FileUtil'Class) is
@@ -285,7 +289,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
         fixedPath := AbPath_Package.Create (fixedPathString, StringUtil_Package.getInstance.EMPTY_STRING);
         This.directory.create (fixedPath);
         string_Id := fixedPath.toFileSystemString;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+        if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
             This.logUtil.putF (string_Id, FileUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("fixPath"));
         end if;
         outPath := AbPath_Package.Create (string_Id, file.getName);
@@ -318,7 +322,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             if not (FileUtil'Class (This).copyPrepare (file, outFile, overwriteNewer, overwriteAll)) then
                 return;
             else
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+                if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (To_Unbounded_String ("Out File: "));
                     stringBuffer.append (outFile.getPath);
@@ -336,7 +340,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Error Copying File File: "));
                 stringBuffer.append (file.toString);
@@ -369,7 +373,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             if not (FileUtil'Class (This).copyPrepare (file, outFile, overwriteNewer, overwriteAll)) then
                 return;
             else
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+                if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                     stringBuffer.delete (0, stringBuffer.length);
                     stringBuffer.append (To_Unbounded_String ("Out File: "));
                     stringBuffer.append (outFile.getPath);
@@ -387,7 +391,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Error Copying File File: "));
                 stringBuffer.append (file.toString);
@@ -408,7 +412,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
         if toFile.exists then
             stringBuffer := StringMaker_Package.Create;
             if overwriteAll then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+                if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                     stringBuffer.delete (0, stringBuffer.length);
                     stringBuffer.append (To_Unbounded_String ("Overwriting File: "));
                     stringBuffer.append (toFile.getPath);
@@ -417,7 +421,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 declare Java_Result renames toFile.delete; pragma Unreferenced (Java_Result); begin null; end;
                 declare Java_Result renames toFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
             elsif ((toFile.lastModified) < (fromFile.lastModified)) and then (overwriteNewer) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+                if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                     stringBuffer.delete (0, stringBuffer.length);
                     stringBuffer.append (To_Unbounded_String ("Newer by: "));
                     stringBuffer.appendlong ((fromFile.lastModified) - (toFile.lastModified));
@@ -429,7 +433,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 declare Java_Result renames toFile.delete; pragma Unreferenced (Java_Result); begin null; end;
                 declare Java_Result renames toFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
             else
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+                if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                     stringBuffer.delete (0, stringBuffer.length);
                     stringBuffer.append (To_Unbounded_String ("File Already Exists"));
                     if overwriteNewer then
@@ -466,7 +470,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
       fileInputStream : AbFileInputStream_Access;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+            if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Copying "));
                 stringBuffer.appendlong (fromFile.length);
@@ -480,14 +484,14 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 return;
             end if;
             dataOutputStream := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (toFile);
-            fileInputStream := AbFileInputStream_Package.Create (fromFile);
+            fileInputStream := AbFileInputStream_Package.createFromAbFile (fromFile);
             FileUtil'Class (This).copy (fileInputStream, dataOutputStream);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Error Copying File fromFile: "));
                 stringBuffer.append (fromFile.toString);
@@ -558,7 +562,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
         stringBuffer.appendint (start);
         stringBuffer.append (To_Unbounded_String (" - "));
         stringBuffer.appendint (end_Id);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+        if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
             This.logUtil.putF (stringBuffer.toString, getInstance, To_Unbounded_String ("copySomeFilesToDirectory()"));
         end if;
         nextFile := null;
@@ -592,7 +596,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
       index : Integer;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+            if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Copying Directory from: "));
                 stringBuffer.append (fromFile.getPath);
@@ -607,7 +611,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
             end if;
             fileArray := FileWrapperUtil_Package.wrapFiles (fromFile.listFiles);
             size := fileArray'Length;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+            if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Copying "));
                 stringBuffer.appendint (size);
@@ -633,7 +637,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Error Copying Directory fromFile: "));
                 stringBuffer.append (fromFile.toString);
@@ -661,7 +665,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    begin
         COPY := To_Unbounded_String ("copy");
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+            if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Copying AbPaths from: "));
                 stringBuffer.append (fromAbPath.toString);
@@ -681,7 +685,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 if toLocationFile.isDirectory then
                     file := AbFile_Package.createAbFileWithChild (toLocationFile, fromLocationFile.getName);
                     FileUtil'Class (This).copyFile (fromLocationFile, file);
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+                    if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                         stringBuffer := StringMaker_Package.Create;
                         stringBuffer.append (To_Unbounded_String ("Copied file="));
                         stringBuffer.append (fromLocationFile.getName);
@@ -693,7 +697,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                     end if;
                 else
                     FileUtil'Class (This).copyFile (fromLocationFile, toLocationFile);
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+                    if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                         stringBuffer := StringMaker_Package.Create;
                         stringBuffer.append (To_Unbounded_String ("Copied file with new name "));
                         stringBuffer.append (To_Unbounded_String (" from: "));
@@ -704,8 +708,8 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                     end if;
                 end if;
             elsif (fromLocationFile.isDirectory) and then (toLocationFile.isDirectory) then
-                if (Element (fromAbPath.toFileSystemString, ((Ada.Strings.Unbounded.Length (fromAbPath.toFileSystemString)) - (1)) + 1)) = (java_Package.io.File.separatorChar) then
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+                if (Element (fromAbPath.toFileSystemString, ((Ada.Strings.Unbounded.Length (fromAbPath.toFileSystemString)) - (1)) + 1)) = (File_Package.separatorChar) then
+                    if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                         This.logUtil.putF (To_Unbounded_String ("Copying subdirectories"), getInstance, COPY);
                     end if;
                     fileArray := FileWrapperUtil_Package.wrapFiles (fromLocationFile.listFiles);
@@ -720,15 +724,15 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("File Copy Error")));
                         end if;
                     end loop;
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+                    if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                         This.logUtil.putF (To_Unbounded_String ("Copied subdirectories"), getInstance, COPY);
                     end if;
                 else
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+                    if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                         This.logUtil.putF (To_Unbounded_String ("Copyinhg directory"), getInstance, COPY);
                     end if;
                     FileUtil'Class (This).copyDirectory (fromLocationFile, toLocationFile);
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILE) then
+                    if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILE) then
                         This.logUtil.putF (To_Unbounded_String ("Copied directory"), getInstance, COPY);
                     end if;
                 end if;
@@ -739,7 +743,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (This.logConfigTypeFactory.FILEERROR) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Error Copying fromAbPath: "));
                 stringBuffer.append (fromAbPath.toString);
@@ -779,7 +783,7 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
         begin
             PreLogUtil_Package.put (StringMaker_Package.Create.append (This.WRITE_LABEL).append (filePath).append (This.DATA_LABEL).append (string_Id).toString, FileUtil_Access'(This'Unchecked_Access), This.WRITE_METHOD);
             fileInputStreamFactory := FileStreamFactory_Package.getInstance;
-            fileOutputStream := fileInputStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, filePath);
+            fileOutputStream := OutputStream_Access (fileInputStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, filePath));
             dataOutputStream := AbDataOutputStream_Package.Create (fileOutputStream);
             dataOutputStream.write (Java_Get_Bytes (string_Id), 0, Ada.Strings.Unbounded.Length (string_Id));
             dataOutputStream.flush;

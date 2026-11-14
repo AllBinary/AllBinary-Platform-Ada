@@ -48,7 +48,7 @@ package body org.allbinary.logic.NullUtil_Package is
 
    function getInstance return NullUtil_Access is
    begin
-        return NullUtil_Access (NullUtil_Package.instance);
+        return NullUtil_Package.instance;
    end getInstance;
 
 begin

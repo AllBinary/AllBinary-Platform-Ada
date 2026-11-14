@@ -47,6 +47,7 @@ with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.media.graphics.geography.pathfinding.StaticPathGenerator_Package is
 

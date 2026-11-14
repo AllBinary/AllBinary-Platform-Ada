@@ -15,7 +15,7 @@ package body org.allbinary.game.BasicGameInfoFactory_Package is
 
    function getInstance return BasicGameInfoFactory_Access is
    begin
-        return BasicGameInfoFactory_Access (BasicGameInfoFactory_Package.SINGLETON);
+        return BasicGameInfoFactory_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out BasicGameInfoFactory'Class) is

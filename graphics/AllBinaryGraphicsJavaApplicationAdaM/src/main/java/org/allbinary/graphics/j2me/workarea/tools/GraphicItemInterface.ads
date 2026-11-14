@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package;
 package org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References is
    type GraphicItemInterface_Access is access all org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package.GraphicItemInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_
    type GraphicItemInterface_Access_Array_Access is access all GraphicItemInterface_Access_Array;
    type GraphicItemInterface_Access_Array_Access_Array is array (Natural range <>) of GraphicItemInterface_Access_Array_Access;
    type GraphicItemInterface_Access_Array_Access_Array_Access is access all GraphicItemInterface_Access_Array_Access_Array;
+   type GraphicItemInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GraphicItemInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GraphicItemInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GraphicItemInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GraphicItemInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GraphicItemInterface_Access_Array_Access is (if Value /= null and then Value.all in GraphicItemInterface_Access_Array_Object'Class then GraphicItemInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type GraphicItemInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GraphicItemInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GraphicItemInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GraphicItemInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GraphicItemInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GraphicItemInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GraphicItemInterface_Access_Array_Access_Array_Object'Class then GraphicItemInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References;
 
 with org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References;
@@ -39,6 +50,8 @@ limited with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Packag
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References;
 limited with org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
+--  with java.awt.event.MouseEvent_Package; use java.awt.event.MouseEvent_Package;
 limited with org.allbinary.graphics.j2me.workarea.tools.Color_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Color_Package_References;
 limited with org.allbinary.graphics.j2me.workarea.tools.Points_Package;
@@ -52,6 +65,7 @@ package org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package 
    package CanvasDom_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;
    package IntegerDimension_Package renames Standard.org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package KeyEvent_Package renames Standard.java.awt.event.KeyEvent_Package;
    package Reference_Types is
    subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
    use type GPoint_Access;
@@ -134,10 +148,14 @@ package org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package 
    function "=" (Left, Right : GraphicItemInterface_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=";
    subtype GraphicItemInterface_Access_Array_Access is org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References.GraphicItemInterface_Access_Array_Access;
    function "=" (Left, Right : GraphicItemInterface_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=";
+   function Java_Box (Value : GraphicItemInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References.Java_Box;
+   function Java_Unbox_GraphicItemInterface_Access_Array (Value : access Java_Object'Class) return GraphicItemInterface_Access_Array_Access renames org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References.Java_Unbox_GraphicItemInterface_Access_Array;
    subtype GraphicItemInterface_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References.GraphicItemInterface_Access_Array_Access_Array;
    function "=" (Left, Right : GraphicItemInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=";
    subtype GraphicItemInterface_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References.GraphicItemInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GraphicItemInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References."=";
+   function Java_Box (Value : GraphicItemInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References.Java_Box;
+   function Java_Unbox_GraphicItemInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return GraphicItemInterface_Access_Array_Access_Array_Access renames org.allbinary.graphics.j2me.workarea.tools.GraphicItemInterface_Package_References.Java_Unbox_GraphicItemInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_GraphicItemInterface (Value : GraphicItemInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getName (This : in out GraphicItemInterface) return Unbounded_String is abstract;
    procedure setColor (This : in out GraphicItemInterface; color_Param : access Color_Package.Color'Class) is abstract;

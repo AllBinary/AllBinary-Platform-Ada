@@ -62,7 +62,7 @@ package body org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Pack
 
    function getInstance return EmailQueueInterface_Access is
    begin
-        return EmailQueueInterface_Access (EmailQueueFactory_Package.emailQueueInterface);
+        return EmailQueueFactory_Package.emailQueueInterface;
    end getInstance;
 
 begin

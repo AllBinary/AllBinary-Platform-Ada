@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with taghelpers.ViewHelper_Package;
 package taghelpers.ViewHelper_Package_References is
    type ViewHelper_Access is access all taghelpers.ViewHelper_Package.ViewHelper'Class;
@@ -19,6 +20,16 @@ package taghelpers.ViewHelper_Package_References is
    type ViewHelper_Access_Array_Access is access all ViewHelper_Access_Array;
    type ViewHelper_Access_Array_Access_Array is array (Natural range <>) of ViewHelper_Access_Array_Access;
    type ViewHelper_Access_Array_Access_Array_Access is access all ViewHelper_Access_Array_Access_Array;
+   type ViewHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ViewHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ViewHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ViewHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ViewHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ViewHelper_Access_Array_Access is (if Value /= null and then Value.all in ViewHelper_Access_Array_Object'Class then ViewHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type ViewHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ViewHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ViewHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ViewHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ViewHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ViewHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ViewHelper_Access_Array_Access_Array_Object'Class then ViewHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end taghelpers.ViewHelper_Package_References;
 
 with taghelpers.ViewHelper_Package_References;
@@ -127,10 +138,14 @@ package taghelpers.ViewHelper_Package is
    function "=" (Left, Right : ViewHelper_Access_Array) return Boolean renames taghelpers.ViewHelper_Package_References."=";
    subtype ViewHelper_Access_Array_Access is taghelpers.ViewHelper_Package_References.ViewHelper_Access_Array_Access;
    function "=" (Left, Right : ViewHelper_Access_Array_Access) return Boolean renames taghelpers.ViewHelper_Package_References."=";
+   function Java_Box (Value : ViewHelper_Access_Array_Access) return Java_Object_Access renames taghelpers.ViewHelper_Package_References.Java_Box;
+   function Java_Unbox_ViewHelper_Access_Array (Value : access Java_Object'Class) return ViewHelper_Access_Array_Access renames taghelpers.ViewHelper_Package_References.Java_Unbox_ViewHelper_Access_Array;
    subtype ViewHelper_Access_Array_Access_Array is taghelpers.ViewHelper_Package_References.ViewHelper_Access_Array_Access_Array;
    function "=" (Left, Right : ViewHelper_Access_Array_Access_Array) return Boolean renames taghelpers.ViewHelper_Package_References."=";
    subtype ViewHelper_Access_Array_Access_Array_Access is taghelpers.ViewHelper_Package_References.ViewHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ViewHelper_Access_Array_Access_Array_Access) return Boolean renames taghelpers.ViewHelper_Package_References."=";
+   function Java_Box (Value : ViewHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames taghelpers.ViewHelper_Package_References.Java_Box;
+   function Java_Unbox_ViewHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return ViewHelper_Access_Array_Access_Array_Access renames taghelpers.ViewHelper_Package_References.Java_Unbox_ViewHelper_Access_Array_Access_Array;
 
    type ViewHelper is new Java_Object and TransformInterface with record
       logUtil : LogUtil_Access;

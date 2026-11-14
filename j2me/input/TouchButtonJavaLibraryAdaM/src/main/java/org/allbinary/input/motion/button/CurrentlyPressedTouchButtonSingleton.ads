@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package;
 package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References is
    type CurrentlyPressedTouchButtonSingleton_Access is access all org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package.CurrentlyPressedTouchButtonSingleton'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_P
    type CurrentlyPressedTouchButtonSingleton_Access_Array_Access is access all CurrentlyPressedTouchButtonSingleton_Access_Array;
    type CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array is array (Natural range <>) of CurrentlyPressedTouchButtonSingleton_Access_Array_Access;
    type CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access is access all CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array;
+   type CurrentlyPressedTouchButtonSingleton_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CurrentlyPressedTouchButtonSingleton_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CurrentlyPressedTouchButtonSingleton_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CurrentlyPressedTouchButtonSingleton_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CurrentlyPressedTouchButtonSingleton_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CurrentlyPressedTouchButtonSingleton_Access_Array_Access is (if Value /= null and then Value.all in CurrentlyPressedTouchButtonSingleton_Access_Array_Object'Class then CurrentlyPressedTouchButtonSingleton_Access_Array_Object'Class (Value.all).Value else null);
+   type CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Object'Class then CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References;
 
 with org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References;
@@ -69,10 +80,14 @@ package org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_P
    function "=" (Left, Right : CurrentlyPressedTouchButtonSingleton_Access_Array) return Boolean renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References."=";
    subtype CurrentlyPressedTouchButtonSingleton_Access_Array_Access is org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References.CurrentlyPressedTouchButtonSingleton_Access_Array_Access;
    function "=" (Left, Right : CurrentlyPressedTouchButtonSingleton_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References."=";
+   function Java_Box (Value : CurrentlyPressedTouchButtonSingleton_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References.Java_Box;
+   function Java_Unbox_CurrentlyPressedTouchButtonSingleton_Access_Array (Value : access Java_Object'Class) return CurrentlyPressedTouchButtonSingleton_Access_Array_Access renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References.Java_Unbox_CurrentlyPressedTouchButtonSingleton_Access_Array;
    subtype CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array is org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References.CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array;
    function "=" (Left, Right : CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References."=";
    subtype CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References.CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References."=";
+   function Java_Box (Value : CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References.Java_Box;
+   function Java_Unbox_CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array (Value : access Java_Object'Class) return CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array_Access renames org.allbinary.input.motion.button.CurrentlyPressedTouchButtonSingleton_Package_References.Java_Unbox_CurrentlyPressedTouchButtonSingleton_Access_Array_Access_Array;
 
    type CurrentlyPressedTouchButtonSingleton is new Java_Object with record
       list : BasicArrayList_Access;

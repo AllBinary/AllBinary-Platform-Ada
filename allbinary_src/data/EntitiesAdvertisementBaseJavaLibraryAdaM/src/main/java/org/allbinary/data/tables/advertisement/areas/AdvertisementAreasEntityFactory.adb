@@ -15,6 +15,8 @@
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package; use org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntity_Package;
 with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package; use org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package;
 with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package_References;
@@ -33,6 +35,8 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype AdvertisementAreasEntityInterface_Access is org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package_References.AdvertisementAreasEntityInterface_Access;
    function "=" (Left, Right : AdvertisementAreasEntityInterface_Access) return Boolean renames org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package_References."=";
    subtype AdvertisementAreasEntityInterface_Access_Array is org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package_References.AdvertisementAreasEntityInterface_Access_Array;
@@ -74,7 +78,7 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 logUtil.put (commonStrings.EXCEPTION_Id, Java_Box (To_Unbounded_String ("AdvertisementAreasEntityFactory")), commonStrings.GET_INSTANCE, e);
             end if;

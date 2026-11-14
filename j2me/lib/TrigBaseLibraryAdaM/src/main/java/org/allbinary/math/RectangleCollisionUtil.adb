@@ -30,7 +30,7 @@ package body org.allbinary.math.RectangleCollisionUtil_Package is
 
    function getInstance return RectangleCollisionUtil_Access is
    begin
-        return RectangleCollisionUtil_Access (RectangleCollisionUtil_Package.instance);
+        return RectangleCollisionUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out RectangleCollisionUtil'Class) is

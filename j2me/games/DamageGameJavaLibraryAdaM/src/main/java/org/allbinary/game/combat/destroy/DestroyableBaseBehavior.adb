@@ -39,7 +39,7 @@ package body org.allbinary.game.combat.destroy.DestroyableBaseBehavior_Package i
 
    function getInstance return DestroyableBaseBehavior_Access is
    begin
-        return DestroyableBaseBehavior_Access (DestroyableBaseBehavior_Package.instance);
+        return DestroyableBaseBehavior_Package.instance;
    end getInstance;
 
    function getName (This : in out DestroyableBaseBehavior) return Unbounded_String is

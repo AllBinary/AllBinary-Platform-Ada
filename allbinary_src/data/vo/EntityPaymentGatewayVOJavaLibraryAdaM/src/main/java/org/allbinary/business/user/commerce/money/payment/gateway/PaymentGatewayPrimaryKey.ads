@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package;
 package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package_References is
    type PaymentGatewayPrimaryKey_Access is access all org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package.PaymentGatewayPrimaryKey'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
    type PaymentGatewayPrimaryKey_Access_Array_Access is access all PaymentGatewayPrimaryKey_Access_Array;
    type PaymentGatewayPrimaryKey_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayPrimaryKey_Access_Array_Access;
    type PaymentGatewayPrimaryKey_Access_Array_Access_Array_Access is access all PaymentGatewayPrimaryKey_Access_Array_Access_Array;
+   type PaymentGatewayPrimaryKey_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PaymentGatewayPrimaryKey_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PaymentGatewayPrimaryKey_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PaymentGatewayPrimaryKey_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PaymentGatewayPrimaryKey_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PaymentGatewayPrimaryKey_Access_Array_Access is (if Value /= null and then Value.all in PaymentGatewayPrimaryKey_Access_Array_Object'Class then PaymentGatewayPrimaryKey_Access_Array_Object'Class (Value.all).Value else null);
+   type PaymentGatewayPrimaryKey_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PaymentGatewayPrimaryKey_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PaymentGatewayPrimaryKey_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PaymentGatewayPrimaryKey_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PaymentGatewayPrimaryKey_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PaymentGatewayPrimaryKey_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PaymentGatewayPrimaryKey_Access_Array_Access_Array_Object'Class then PaymentGatewayPrimaryKey_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package_References;
 
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package_References;
@@ -30,7 +41,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-with org.allbinary.business.user.commerce.money.payment.gateway.Serializable_Package; use org.allbinary.business.user.commerce.money.payment.gateway.Serializable_Package;
+--  with java.io.Serializable_Package; use java.io.Serializable_Package;
 
 package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package is
 
@@ -45,12 +56,16 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
    function "=" (Left, Right : PaymentGatewayPrimaryKey_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package_References."=";
    subtype PaymentGatewayPrimaryKey_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package_References.PaymentGatewayPrimaryKey_Access_Array_Access;
    function "=" (Left, Right : PaymentGatewayPrimaryKey_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package_References."=";
+   function Java_Box (Value : PaymentGatewayPrimaryKey_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package_References.Java_Box;
+   function Java_Unbox_PaymentGatewayPrimaryKey_Access_Array (Value : access Java_Object'Class) return PaymentGatewayPrimaryKey_Access_Array_Access renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package_References.Java_Unbox_PaymentGatewayPrimaryKey_Access_Array;
    subtype PaymentGatewayPrimaryKey_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package_References.PaymentGatewayPrimaryKey_Access_Array_Access_Array;
    function "=" (Left, Right : PaymentGatewayPrimaryKey_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package_References."=";
    subtype PaymentGatewayPrimaryKey_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package_References.PaymentGatewayPrimaryKey_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PaymentGatewayPrimaryKey_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package_References."=";
+   function Java_Box (Value : PaymentGatewayPrimaryKey_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package_References.Java_Box;
+   function Java_Unbox_PaymentGatewayPrimaryKey_Access_Array_Access_Array (Value : access Java_Object'Class) return PaymentGatewayPrimaryKey_Access_Array_Access_Array_Access renames org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayPrimaryKey_Package_References.Java_Unbox_PaymentGatewayPrimaryKey_Access_Array_Access_Array;
 
-   type PaymentGatewayPrimaryKey is new Java_Object and Serializable with record
+   type PaymentGatewayPrimaryKey is new Java_Object with record
       storeName : Unbounded_String;
       name : Unbounded_String;
    end record;

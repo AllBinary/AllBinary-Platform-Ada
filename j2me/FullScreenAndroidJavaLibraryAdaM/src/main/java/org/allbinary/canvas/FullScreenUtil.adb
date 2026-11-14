@@ -60,7 +60,7 @@ package body org.allbinary.canvas.FullScreenUtil_Package is
 
    function getInstance return FullScreenUtil_Access is
    begin
-        return FullScreenUtil_Access (FullScreenUtil_Package.instance);
+        return FullScreenUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

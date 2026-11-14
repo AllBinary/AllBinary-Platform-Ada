@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package;
 package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package_References is
    type LogoValidation_Access is access all org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package.LogoValidation'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.Lo
    type LogoValidation_Access_Array_Access is access all LogoValidation_Access_Array;
    type LogoValidation_Access_Array_Access_Array is array (Natural range <>) of LogoValidation_Access_Array_Access;
    type LogoValidation_Access_Array_Access_Array_Access is access all LogoValidation_Access_Array_Access_Array;
+   type LogoValidation_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LogoValidation_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LogoValidation_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LogoValidation_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LogoValidation_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LogoValidation_Access_Array_Access is (if Value /= null and then Value.all in LogoValidation_Access_Array_Object'Class then LogoValidation_Access_Array_Object'Class (Value.all).Value else null);
+   type LogoValidation_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LogoValidation_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LogoValidation_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LogoValidation_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LogoValidation_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LogoValidation_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in LogoValidation_Access_Array_Access_Array_Object'Class then LogoValidation_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package_References;
 
 with org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package_References;
@@ -115,10 +126,14 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.Lo
    function "=" (Left, Right : LogoValidation_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package_References."=";
    subtype LogoValidation_Access_Array_Access is org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package_References.LogoValidation_Access_Array_Access;
    function "=" (Left, Right : LogoValidation_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package_References."=";
+   function Java_Box (Value : LogoValidation_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package_References.Java_Box;
+   function Java_Unbox_LogoValidation_Access_Array (Value : access Java_Object'Class) return LogoValidation_Access_Array_Access renames org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package_References.Java_Unbox_LogoValidation_Access_Array;
    subtype LogoValidation_Access_Array_Access_Array is org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package_References.LogoValidation_Access_Array_Access_Array;
    function "=" (Left, Right : LogoValidation_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package_References."=";
    subtype LogoValidation_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package_References.LogoValidation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LogoValidation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package_References."=";
+   function Java_Box (Value : LogoValidation_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package_References.Java_Box;
+   function Java_Unbox_LogoValidation_Access_Array_Access_Array (Value : access Java_Object'Class) return LogoValidation_Access_Array_Access_Array_Access renames org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoValidation_Package_References.Java_Unbox_LogoValidation_Access_Array_Access_Array;
 
    type LogoValidation is new Validation and DomNodeInterface with record
       logUtil : LogUtil_Access;

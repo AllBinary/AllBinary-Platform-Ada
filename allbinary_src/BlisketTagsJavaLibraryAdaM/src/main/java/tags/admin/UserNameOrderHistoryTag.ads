@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with tags.admin.UserNameOrderHistoryTag_Package;
 package tags.admin.UserNameOrderHistoryTag_Package_References is
    type UserNameOrderHistoryTag_Access is access all tags.admin.UserNameOrderHistoryTag_Package.UserNameOrderHistoryTag'Class;
@@ -19,6 +20,16 @@ package tags.admin.UserNameOrderHistoryTag_Package_References is
    type UserNameOrderHistoryTag_Access_Array_Access is access all UserNameOrderHistoryTag_Access_Array;
    type UserNameOrderHistoryTag_Access_Array_Access_Array is array (Natural range <>) of UserNameOrderHistoryTag_Access_Array_Access;
    type UserNameOrderHistoryTag_Access_Array_Access_Array_Access is access all UserNameOrderHistoryTag_Access_Array_Access_Array;
+   type UserNameOrderHistoryTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UserNameOrderHistoryTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UserNameOrderHistoryTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UserNameOrderHistoryTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UserNameOrderHistoryTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UserNameOrderHistoryTag_Access_Array_Access is (if Value /= null and then Value.all in UserNameOrderHistoryTag_Access_Array_Object'Class then UserNameOrderHistoryTag_Access_Array_Object'Class (Value.all).Value else null);
+   type UserNameOrderHistoryTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UserNameOrderHistoryTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UserNameOrderHistoryTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UserNameOrderHistoryTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UserNameOrderHistoryTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UserNameOrderHistoryTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in UserNameOrderHistoryTag_Access_Array_Access_Array_Object'Class then UserNameOrderHistoryTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end tags.admin.UserNameOrderHistoryTag_Package_References;
 
 with tags.admin.UserNameOrderHistoryTag_Package_References;
@@ -47,10 +58,14 @@ package tags.admin.UserNameOrderHistoryTag_Package is
    function "=" (Left, Right : UserNameOrderHistoryTag_Access_Array) return Boolean renames tags.admin.UserNameOrderHistoryTag_Package_References."=";
    subtype UserNameOrderHistoryTag_Access_Array_Access is tags.admin.UserNameOrderHistoryTag_Package_References.UserNameOrderHistoryTag_Access_Array_Access;
    function "=" (Left, Right : UserNameOrderHistoryTag_Access_Array_Access) return Boolean renames tags.admin.UserNameOrderHistoryTag_Package_References."=";
+   function Java_Box (Value : UserNameOrderHistoryTag_Access_Array_Access) return Java_Object_Access renames tags.admin.UserNameOrderHistoryTag_Package_References.Java_Box;
+   function Java_Unbox_UserNameOrderHistoryTag_Access_Array (Value : access Java_Object'Class) return UserNameOrderHistoryTag_Access_Array_Access renames tags.admin.UserNameOrderHistoryTag_Package_References.Java_Unbox_UserNameOrderHistoryTag_Access_Array;
    subtype UserNameOrderHistoryTag_Access_Array_Access_Array is tags.admin.UserNameOrderHistoryTag_Package_References.UserNameOrderHistoryTag_Access_Array_Access_Array;
    function "=" (Left, Right : UserNameOrderHistoryTag_Access_Array_Access_Array) return Boolean renames tags.admin.UserNameOrderHistoryTag_Package_References."=";
    subtype UserNameOrderHistoryTag_Access_Array_Access_Array_Access is tags.admin.UserNameOrderHistoryTag_Package_References.UserNameOrderHistoryTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : UserNameOrderHistoryTag_Access_Array_Access_Array_Access) return Boolean renames tags.admin.UserNameOrderHistoryTag_Package_References."=";
+   function Java_Box (Value : UserNameOrderHistoryTag_Access_Array_Access_Array_Access) return Java_Object_Access renames tags.admin.UserNameOrderHistoryTag_Package_References.Java_Box;
+   function Java_Unbox_UserNameOrderHistoryTag_Access_Array_Access_Array (Value : access Java_Object'Class) return UserNameOrderHistoryTag_Access_Array_Access_Array_Access renames tags.admin.UserNameOrderHistoryTag_Package_References.Java_Unbox_UserNameOrderHistoryTag_Access_Array_Access_Array;
 
    type UserNameOrderHistoryTag is new StoreValidationTransformTag with record
       status : Unbounded_String;

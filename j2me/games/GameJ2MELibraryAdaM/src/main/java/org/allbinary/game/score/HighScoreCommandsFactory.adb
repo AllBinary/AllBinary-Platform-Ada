@@ -83,7 +83,7 @@ package body org.allbinary.game.score.HighScoreCommandsFactory_Package is
 
    function getInstance return HighScoreCommandsFactory_Access is
    begin
-        return HighScoreCommandsFactory_Access (HighScoreCommandsFactory_Package.instance);
+        return HighScoreCommandsFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out HighScoreCommandsFactory'Class) is

@@ -96,7 +96,7 @@ package body org.allbinary.graphics.color.ColorCacheFactory_Package is
 
    function getInstance return AutomaticCacheInterface_Access is
    begin
-        return AutomaticCacheInterface_Access (ColorCacheFactory_Package.cacheInterface);
+        return ColorCacheFactory_Package.cacheInterface;
    end getInstance;
 
 begin

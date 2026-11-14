@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package;
 package org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References is
    type MultiPlayerGameLayer_Access is access all org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package.MultiPlayerGameLayer'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_Refere
    type MultiPlayerGameLayer_Access_Array_Access is access all MultiPlayerGameLayer_Access_Array;
    type MultiPlayerGameLayer_Access_Array_Access_Array is array (Natural range <>) of MultiPlayerGameLayer_Access_Array_Access;
    type MultiPlayerGameLayer_Access_Array_Access_Array_Access is access all MultiPlayerGameLayer_Access_Array_Access_Array;
+   type MultiPlayerGameLayer_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MultiPlayerGameLayer_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MultiPlayerGameLayer_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MultiPlayerGameLayer_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MultiPlayerGameLayer_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MultiPlayerGameLayer_Access_Array_Access is (if Value /= null and then Value.all in MultiPlayerGameLayer_Access_Array_Object'Class then MultiPlayerGameLayer_Access_Array_Object'Class (Value.all).Value else null);
+   type MultiPlayerGameLayer_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MultiPlayerGameLayer_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MultiPlayerGameLayer_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MultiPlayerGameLayer_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MultiPlayerGameLayer_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MultiPlayerGameLayer_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MultiPlayerGameLayer_Access_Array_Access_Array_Object'Class then MultiPlayerGameLayer_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References;
 
 with org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References;
@@ -110,10 +121,14 @@ package org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package is
    function "=" (Left, Right : MultiPlayerGameLayer_Access_Array) return Boolean renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References."=";
    subtype MultiPlayerGameLayer_Access_Array_Access is org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References.MultiPlayerGameLayer_Access_Array_Access;
    function "=" (Left, Right : MultiPlayerGameLayer_Access_Array_Access) return Boolean renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References."=";
+   function Java_Box (Value : MultiPlayerGameLayer_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References.Java_Box;
+   function Java_Unbox_MultiPlayerGameLayer_Access_Array (Value : access Java_Object'Class) return MultiPlayerGameLayer_Access_Array_Access renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References.Java_Unbox_MultiPlayerGameLayer_Access_Array;
    subtype MultiPlayerGameLayer_Access_Array_Access_Array is org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References.MultiPlayerGameLayer_Access_Array_Access_Array;
    function "=" (Left, Right : MultiPlayerGameLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References."=";
    subtype MultiPlayerGameLayer_Access_Array_Access_Array_Access is org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References.MultiPlayerGameLayer_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MultiPlayerGameLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References."=";
+   function Java_Box (Value : MultiPlayerGameLayer_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References.Java_Box;
+   function Java_Unbox_MultiPlayerGameLayer_Access_Array_Access_Array (Value : access Java_Object'Class) return MultiPlayerGameLayer_Access_Array_Access_Array_Access renames org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package_References.Java_Unbox_MultiPlayerGameLayer_Access_Array_Access_Array;
 
    type MultiPlayerGameLayer is new CollidableDestroyableDamageableLayer and MultiPlayerGameLayerInterface with null record;
 

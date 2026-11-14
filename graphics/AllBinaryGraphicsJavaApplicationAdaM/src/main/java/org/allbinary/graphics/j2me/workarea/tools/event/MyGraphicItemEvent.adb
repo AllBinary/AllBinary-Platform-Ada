@@ -27,7 +27,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
    procedure Initialize (This : in out MyGraphicItemEvent'Class; source_Param : access Java_Object'Class) is
       source : constant Java_Object_Access := Java_Object_Access (source_Param);
    begin
-        EventObject_Package.Initialize (This, source);
+        null;
    end Initialize;
 
    function Create (source_Param : access Java_Object'Class) return MyGraphicItemEvent_Access is

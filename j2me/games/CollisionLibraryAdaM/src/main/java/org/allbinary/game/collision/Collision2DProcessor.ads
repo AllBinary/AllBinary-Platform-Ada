@@ -1,5 +1,6 @@
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.collision.Collision2DProcessor_Package;
 package org.allbinary.game.collision.Collision2DProcessor_Package_References is
    type Collision2DProcessor_Access is access all org.allbinary.game.collision.Collision2DProcessor_Package.Collision2DProcessor'Class;
@@ -7,6 +8,16 @@ package org.allbinary.game.collision.Collision2DProcessor_Package_References is
    type Collision2DProcessor_Access_Array_Access is access all Collision2DProcessor_Access_Array;
    type Collision2DProcessor_Access_Array_Access_Array is array (Natural range <>) of Collision2DProcessor_Access_Array_Access;
    type Collision2DProcessor_Access_Array_Access_Array_Access is access all Collision2DProcessor_Access_Array_Access_Array;
+   type Collision2DProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Collision2DProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Collision2DProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Collision2DProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Collision2DProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Collision2DProcessor_Access_Array_Access is (if Value /= null and then Value.all in Collision2DProcessor_Access_Array_Object'Class then Collision2DProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type Collision2DProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Collision2DProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Collision2DProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Collision2DProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Collision2DProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Collision2DProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in Collision2DProcessor_Access_Array_Access_Array_Object'Class then Collision2DProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.collision.Collision2DProcessor_Package_References;
 
 with org.allbinary.game.collision.Collision2DProcessor_Package_References;
@@ -46,10 +57,14 @@ package org.allbinary.game.collision.Collision2DProcessor_Package is
    function "=" (Left, Right : Collision2DProcessor_Access_Array) return Boolean renames org.allbinary.game.collision.Collision2DProcessor_Package_References."=";
    subtype Collision2DProcessor_Access_Array_Access is org.allbinary.game.collision.Collision2DProcessor_Package_References.Collision2DProcessor_Access_Array_Access;
    function "=" (Left, Right : Collision2DProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.collision.Collision2DProcessor_Package_References."=";
+   function Java_Box (Value : Collision2DProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.collision.Collision2DProcessor_Package_References.Java_Box;
+   function Java_Unbox_Collision2DProcessor_Access_Array (Value : access Java_Object'Class) return Collision2DProcessor_Access_Array_Access renames org.allbinary.game.collision.Collision2DProcessor_Package_References.Java_Unbox_Collision2DProcessor_Access_Array;
    subtype Collision2DProcessor_Access_Array_Access_Array is org.allbinary.game.collision.Collision2DProcessor_Package_References.Collision2DProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : Collision2DProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.collision.Collision2DProcessor_Package_References."=";
    subtype Collision2DProcessor_Access_Array_Access_Array_Access is org.allbinary.game.collision.Collision2DProcessor_Package_References.Collision2DProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Collision2DProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.collision.Collision2DProcessor_Package_References."=";
+   function Java_Box (Value : Collision2DProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.collision.Collision2DProcessor_Package_References.Java_Box;
+   function Java_Unbox_Collision2DProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return Collision2DProcessor_Access_Array_Access_Array_Access renames org.allbinary.game.collision.Collision2DProcessor_Package_References.Java_Unbox_Collision2DProcessor_Access_Array_Access_Array;
 
    type Collision2DProcessor is new CollisionProcessor with null record;
 

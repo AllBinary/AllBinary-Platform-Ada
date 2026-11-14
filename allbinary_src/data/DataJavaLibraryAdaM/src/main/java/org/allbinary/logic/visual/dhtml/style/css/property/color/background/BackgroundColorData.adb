@@ -25,7 +25,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.color.backgroun
 
    function getInstance return BackgroundColorData_Access is
    begin
-        return BackgroundColorData_Access (BackgroundColorData_Package.instance);
+        return BackgroundColorData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out BackgroundColorData'Class) is

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package;
 package org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package_References is
    type OrderStatusEmail_Access is access all org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package.OrderStatusEmail'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.commerce.inventory.order.status.OrderStatusE
    type OrderStatusEmail_Access_Array_Access is access all OrderStatusEmail_Access_Array;
    type OrderStatusEmail_Access_Array_Access_Array is array (Natural range <>) of OrderStatusEmail_Access_Array_Access;
    type OrderStatusEmail_Access_Array_Access_Array_Access is access all OrderStatusEmail_Access_Array_Access_Array;
+   type OrderStatusEmail_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OrderStatusEmail_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OrderStatusEmail_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OrderStatusEmail_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OrderStatusEmail_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OrderStatusEmail_Access_Array_Access is (if Value /= null and then Value.all in OrderStatusEmail_Access_Array_Object'Class then OrderStatusEmail_Access_Array_Object'Class (Value.all).Value else null);
+   type OrderStatusEmail_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OrderStatusEmail_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OrderStatusEmail_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OrderStatusEmail_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OrderStatusEmail_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OrderStatusEmail_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in OrderStatusEmail_Access_Array_Access_Array_Object'Class then OrderStatusEmail_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package_References;
 
 with org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package_References;
@@ -122,10 +133,14 @@ package org.allbinary.business.user.commerce.inventory.order.status.OrderStatusE
    function "=" (Left, Right : OrderStatusEmail_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package_References."=";
    subtype OrderStatusEmail_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package_References.OrderStatusEmail_Access_Array_Access;
    function "=" (Left, Right : OrderStatusEmail_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package_References."=";
+   function Java_Box (Value : OrderStatusEmail_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package_References.Java_Box;
+   function Java_Unbox_OrderStatusEmail_Access_Array (Value : access Java_Object'Class) return OrderStatusEmail_Access_Array_Access renames org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package_References.Java_Unbox_OrderStatusEmail_Access_Array;
    subtype OrderStatusEmail_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package_References.OrderStatusEmail_Access_Array_Access_Array;
    function "=" (Left, Right : OrderStatusEmail_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package_References."=";
    subtype OrderStatusEmail_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package_References.OrderStatusEmail_Access_Array_Access_Array_Access;
    function "=" (Left, Right : OrderStatusEmail_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package_References."=";
+   function Java_Box (Value : OrderStatusEmail_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package_References.Java_Box;
+   function Java_Unbox_OrderStatusEmail_Access_Array_Access_Array (Value : access Java_Object'Class) return OrderStatusEmail_Access_Array_Access_Array_Access renames org.allbinary.business.user.commerce.inventory.order.status.OrderStatusEmail_Package_References.Java_Unbox_OrderStatusEmail_Access_Array_Access_Array;
 
    type OrderStatusEmail is new Java_Object with record
       logUtil : LogUtil_Access;

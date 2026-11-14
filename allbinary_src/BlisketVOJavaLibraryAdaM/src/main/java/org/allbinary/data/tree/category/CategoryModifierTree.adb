@@ -25,6 +25,8 @@ with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -37,6 +39,8 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
 
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype CategoryFactoryInterface_Access is org.allbinary.business.category.CategoryFactoryInterface_Package_References.CategoryFactoryInterface_Access;
    function "=" (Left, Right : CategoryFactoryInterface_Access) return Boolean renames org.allbinary.business.category.CategoryFactoryInterface_Package_References."=";
    subtype CategoryFactoryInterface_Access_Array is org.allbinary.business.category.CategoryFactoryInterface_Package_References.CategoryFactoryInterface_Access_Array;
@@ -101,7 +105,7 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
    begin
         CategoryPrivateTree_Package.Initialize (This, categoryFactoryInterface);
         Initialize_Fields (This);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
             This.CategoryModifierTree_Field_logUtil.putF (This.commonStrings.START, CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("CategoryModifierTree(CategoryFactoryInterface categoryFactoryInterface)"));
         end if;
    end Initialize;
@@ -119,14 +123,14 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
       directoryToBeCreatedAbPath : AbPath_Access;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
                 This.CategoryModifierTree_Field_logUtil.putF (To_Unbounded_String ("Inserting"), CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             if parentCategoryInterface.isValid.booleanValue then
                 parentCategoryInterface.addChild (newChildCategoryInterface);
                 directoryToBeCreatedAbPath := AbPath_Package.Create (newChildCategoryInterface.getRootFilePath.toString & newChildCategoryInterface.getPath.toString, StringUtil_Package.getInstance.EMPTY_STRING);
                 This.directory.create (directoryToBeCreatedAbPath);
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
                     This.CategoryModifierTree_Field_logUtil.putF (To_Unbounded_String ("Saving"), CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
                 end if;
                 CategoryModifierTree'Class (This).save (parentCategoryInterface);
@@ -139,7 +143,7 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.CategoryModifierTree_Field_logUtil.put (This.commonStrings.FAILURE, CategoryModifierTree_Access'(This'Unchecked_Access), To_Unbounded_String ("insert"), e);
             end if;
                 end;
@@ -167,7 +171,7 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.CategoryModifierTree_Field_logUtil.put (This.commonStrings.FAILURE, CategoryModifierTree_Access'(This'Unchecked_Access), This.commonStrings.delete, e);
             end if;
                 end;

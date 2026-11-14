@@ -56,7 +56,7 @@ package body org.allbinary.game.GameTypeFactory_Package is
 
    function getInstance return GameTypeFactory_Access is
    begin
-        return GameTypeFactory_Access (GameTypeFactory_Package.instance);
+        return GameTypeFactory_Package.instance;
    end getInstance;
 
 begin

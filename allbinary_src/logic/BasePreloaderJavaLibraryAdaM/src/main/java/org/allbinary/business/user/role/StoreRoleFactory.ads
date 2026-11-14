@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.role.StoreRoleFactory_Package;
 package org.allbinary.business.user.role.StoreRoleFactory_Package_References is
    type StoreRoleFactory_Access is access all org.allbinary.business.user.role.StoreRoleFactory_Package.StoreRoleFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.role.StoreRoleFactory_Package_References is
    type StoreRoleFactory_Access_Array_Access is access all StoreRoleFactory_Access_Array;
    type StoreRoleFactory_Access_Array_Access_Array is array (Natural range <>) of StoreRoleFactory_Access_Array_Access;
    type StoreRoleFactory_Access_Array_Access_Array_Access is access all StoreRoleFactory_Access_Array_Access_Array;
+   type StoreRoleFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreRoleFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreRoleFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreRoleFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreRoleFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreRoleFactory_Access_Array_Access is (if Value /= null and then Value.all in StoreRoleFactory_Access_Array_Object'Class then StoreRoleFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type StoreRoleFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreRoleFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreRoleFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreRoleFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreRoleFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreRoleFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StoreRoleFactory_Access_Array_Access_Array_Object'Class then StoreRoleFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.role.StoreRoleFactory_Package_References;
 
 with org.allbinary.business.user.role.StoreRoleFactory_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.business.user.role.StoreRoleFactory_Package is
    function "=" (Left, Right : StoreRoleFactory_Access_Array) return Boolean renames org.allbinary.business.user.role.StoreRoleFactory_Package_References."=";
    subtype StoreRoleFactory_Access_Array_Access is org.allbinary.business.user.role.StoreRoleFactory_Package_References.StoreRoleFactory_Access_Array_Access;
    function "=" (Left, Right : StoreRoleFactory_Access_Array_Access) return Boolean renames org.allbinary.business.user.role.StoreRoleFactory_Package_References."=";
+   function Java_Box (Value : StoreRoleFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.role.StoreRoleFactory_Package_References.Java_Box;
+   function Java_Unbox_StoreRoleFactory_Access_Array (Value : access Java_Object'Class) return StoreRoleFactory_Access_Array_Access renames org.allbinary.business.user.role.StoreRoleFactory_Package_References.Java_Unbox_StoreRoleFactory_Access_Array;
    subtype StoreRoleFactory_Access_Array_Access_Array is org.allbinary.business.user.role.StoreRoleFactory_Package_References.StoreRoleFactory_Access_Array_Access_Array;
    function "=" (Left, Right : StoreRoleFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.role.StoreRoleFactory_Package_References."=";
    subtype StoreRoleFactory_Access_Array_Access_Array_Access is org.allbinary.business.user.role.StoreRoleFactory_Package_References.StoreRoleFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StoreRoleFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.role.StoreRoleFactory_Package_References."=";
+   function Java_Box (Value : StoreRoleFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.role.StoreRoleFactory_Package_References.Java_Box;
+   function Java_Unbox_StoreRoleFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return StoreRoleFactory_Access_Array_Access_Array_Access renames org.allbinary.business.user.role.StoreRoleFactory_Package_References.Java_Unbox_StoreRoleFactory_Access_Array_Access_Array;
 
    type StoreRoleFactory is new Java_Object with record
       roles : BasicArrayList_Access;

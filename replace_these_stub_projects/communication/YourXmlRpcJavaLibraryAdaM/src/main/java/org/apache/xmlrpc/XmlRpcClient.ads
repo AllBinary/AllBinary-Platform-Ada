@@ -1,5 +1,6 @@
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.apache.xmlrpc.XmlRpcClient_Package;
 package org.apache.xmlrpc.XmlRpcClient_Package_References is
    type XmlRpcClient_Access is access all org.apache.xmlrpc.XmlRpcClient_Package.XmlRpcClient'Class;
@@ -7,6 +8,16 @@ package org.apache.xmlrpc.XmlRpcClient_Package_References is
    type XmlRpcClient_Access_Array_Access is access all XmlRpcClient_Access_Array;
    type XmlRpcClient_Access_Array_Access_Array is array (Natural range <>) of XmlRpcClient_Access_Array_Access;
    type XmlRpcClient_Access_Array_Access_Array_Access is access all XmlRpcClient_Access_Array_Access_Array;
+   type XmlRpcClient_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : XmlRpcClient_Access_Array_Access;
+   end record;
+   function Java_Box (Value : XmlRpcClient_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new XmlRpcClient_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_XmlRpcClient_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return XmlRpcClient_Access_Array_Access is (if Value /= null and then Value.all in XmlRpcClient_Access_Array_Object'Class then XmlRpcClient_Access_Array_Object'Class (Value.all).Value else null);
+   type XmlRpcClient_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : XmlRpcClient_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : XmlRpcClient_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new XmlRpcClient_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_XmlRpcClient_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return XmlRpcClient_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in XmlRpcClient_Access_Array_Access_Array_Object'Class then XmlRpcClient_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.apache.xmlrpc.XmlRpcClient_Package_References;
 
 with org.apache.xmlrpc.XmlRpcClient_Package_References;
@@ -63,10 +74,14 @@ package org.apache.xmlrpc.XmlRpcClient_Package is
    function "=" (Left, Right : XmlRpcClient_Access_Array) return Boolean renames org.apache.xmlrpc.XmlRpcClient_Package_References."=";
    subtype XmlRpcClient_Access_Array_Access is org.apache.xmlrpc.XmlRpcClient_Package_References.XmlRpcClient_Access_Array_Access;
    function "=" (Left, Right : XmlRpcClient_Access_Array_Access) return Boolean renames org.apache.xmlrpc.XmlRpcClient_Package_References."=";
+   function Java_Box (Value : XmlRpcClient_Access_Array_Access) return Java_Object_Access renames org.apache.xmlrpc.XmlRpcClient_Package_References.Java_Box;
+   function Java_Unbox_XmlRpcClient_Access_Array (Value : access Java_Object'Class) return XmlRpcClient_Access_Array_Access renames org.apache.xmlrpc.XmlRpcClient_Package_References.Java_Unbox_XmlRpcClient_Access_Array;
    subtype XmlRpcClient_Access_Array_Access_Array is org.apache.xmlrpc.XmlRpcClient_Package_References.XmlRpcClient_Access_Array_Access_Array;
    function "=" (Left, Right : XmlRpcClient_Access_Array_Access_Array) return Boolean renames org.apache.xmlrpc.XmlRpcClient_Package_References."=";
    subtype XmlRpcClient_Access_Array_Access_Array_Access is org.apache.xmlrpc.XmlRpcClient_Package_References.XmlRpcClient_Access_Array_Access_Array_Access;
    function "=" (Left, Right : XmlRpcClient_Access_Array_Access_Array_Access) return Boolean renames org.apache.xmlrpc.XmlRpcClient_Package_References."=";
+   function Java_Box (Value : XmlRpcClient_Access_Array_Access_Array_Access) return Java_Object_Access renames org.apache.xmlrpc.XmlRpcClient_Package_References.Java_Box;
+   function Java_Unbox_XmlRpcClient_Access_Array_Access_Array (Value : access Java_Object'Class) return XmlRpcClient_Access_Array_Access_Array_Access renames org.apache.xmlrpc.XmlRpcClient_Package_References.Java_Unbox_XmlRpcClient_Access_Array_Access_Array;
 
    type XmlRpcClient is new Java_Object and XmlRpcHandler with record
       url : URL_Access;
@@ -78,8 +93,8 @@ package org.apache.xmlrpc.XmlRpcClient_Package is
    procedure setBasicAuthentication (This : in out XmlRpcClient; user : Unbounded_String; password : Unbounded_String);
    function execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class) return Java_Object_Access;
    procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class);
-   function execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) return Java_Object_Access;
-   procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class);
+   function executeWithCrypt (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) return Java_Object_Access;
+   procedure executeWithCrypt (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class);
 
 end org.apache.xmlrpc.XmlRpcClient_Package;
 

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package;
 package org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package_References is
    type NoShippingModuleView_Access is access all org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package.NoShippingModuleView'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleVi
    type NoShippingModuleView_Access_Array_Access is access all NoShippingModuleView_Access_Array;
    type NoShippingModuleView_Access_Array_Access_Array is array (Natural range <>) of NoShippingModuleView_Access_Array_Access;
    type NoShippingModuleView_Access_Array_Access_Array_Access is access all NoShippingModuleView_Access_Array_Access_Array;
+   type NoShippingModuleView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NoShippingModuleView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NoShippingModuleView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NoShippingModuleView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NoShippingModuleView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NoShippingModuleView_Access_Array_Access is (if Value /= null and then Value.all in NoShippingModuleView_Access_Array_Object'Class then NoShippingModuleView_Access_Array_Object'Class (Value.all).Value else null);
+   type NoShippingModuleView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NoShippingModuleView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NoShippingModuleView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NoShippingModuleView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NoShippingModuleView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NoShippingModuleView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NoShippingModuleView_Access_Array_Access_Array_Object'Class then NoShippingModuleView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package_References;
 
 with org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package_References;
@@ -35,6 +46,8 @@ limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 limited with org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+limited with org.w3c.dom.Document_Package;
+with org.w3c.dom.Document_Package_References;
 with org.allbinary.business.user.commerce.shipping.modules.NoShippingModule_Package; use org.allbinary.business.user.commerce.shipping.modules.NoShippingModule_Package;
 
 package org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package is
@@ -42,6 +55,7 @@ package org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleVi
    package DomNodeInterface_Package renames Standard.org.allbinary.data.tree.dom.DomNodeInterface_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Reference_Types is
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    use type LogUtil_Access;
@@ -63,6 +77,16 @@ package org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleVi
    use type Node_Access_Array_Access_Array;
    subtype Node_Access_Array_Access_Array_Access is org.w3c.dom.Node_Package_References.Node_Access_Array_Access_Array_Access;
    use type Node_Access_Array_Access_Array_Access;
+   subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
+   use type Document_Access;
+   subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
+   use type Document_Access_Array;
+   subtype Document_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access;
+   use type Document_Access_Array_Access;
+   subtype Document_Access_Array_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array;
+   use type Document_Access_Array_Access_Array;
+   subtype Document_Access_Array_Access_Array_Access is org.w3c.dom.Document_Package_References.Document_Access_Array_Access_Array_Access;
+   use type Document_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -73,10 +97,14 @@ package org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleVi
    function "=" (Left, Right : NoShippingModuleView_Access_Array) return Boolean renames org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package_References."=";
    subtype NoShippingModuleView_Access_Array_Access is org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package_References.NoShippingModuleView_Access_Array_Access;
    function "=" (Left, Right : NoShippingModuleView_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package_References."=";
+   function Java_Box (Value : NoShippingModuleView_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package_References.Java_Box;
+   function Java_Unbox_NoShippingModuleView_Access_Array (Value : access Java_Object'Class) return NoShippingModuleView_Access_Array_Access renames org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package_References.Java_Unbox_NoShippingModuleView_Access_Array;
    subtype NoShippingModuleView_Access_Array_Access_Array is org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package_References.NoShippingModuleView_Access_Array_Access_Array;
    function "=" (Left, Right : NoShippingModuleView_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package_References."=";
    subtype NoShippingModuleView_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package_References.NoShippingModuleView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NoShippingModuleView_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package_References."=";
+   function Java_Box (Value : NoShippingModuleView_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package_References.Java_Box;
+   function Java_Unbox_NoShippingModuleView_Access_Array_Access_Array (Value : access Java_Object'Class) return NoShippingModuleView_Access_Array_Access_Array_Access renames org.allbinary.business.user.commerce.shipping.modules.NoShippingModuleView_Package_References.Java_Unbox_NoShippingModuleView_Access_Array_Access_Array;
 
    type NoShippingModuleView is new NoShippingModule and DomNodeInterface with record
       logUtil : LogUtil_Access;

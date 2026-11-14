@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.configuration.event.GameFeatureEventHandler_Package;
 package org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_References is
    type GameFeatureEventHandler_Access is access all org.allbinary.game.configuration.event.GameFeatureEventHandler_Package.GameFeatureEventHandler'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_R
    type GameFeatureEventHandler_Access_Array_Access is access all GameFeatureEventHandler_Access_Array;
    type GameFeatureEventHandler_Access_Array_Access_Array is array (Natural range <>) of GameFeatureEventHandler_Access_Array_Access;
    type GameFeatureEventHandler_Access_Array_Access_Array_Access is access all GameFeatureEventHandler_Access_Array_Access_Array;
+   type GameFeatureEventHandler_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameFeatureEventHandler_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameFeatureEventHandler_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameFeatureEventHandler_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameFeatureEventHandler_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameFeatureEventHandler_Access_Array_Access is (if Value /= null and then Value.all in GameFeatureEventHandler_Access_Array_Object'Class then GameFeatureEventHandler_Access_Array_Object'Class (Value.all).Value else null);
+   type GameFeatureEventHandler_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameFeatureEventHandler_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameFeatureEventHandler_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameFeatureEventHandler_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameFeatureEventHandler_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameFeatureEventHandler_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GameFeatureEventHandler_Access_Array_Access_Array_Object'Class then GameFeatureEventHandler_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_References;
 
 with org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_References;
@@ -72,10 +83,14 @@ package org.allbinary.game.configuration.event.GameFeatureEventHandler_Package i
    function "=" (Left, Right : GameFeatureEventHandler_Access_Array) return Boolean renames org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_References."=";
    subtype GameFeatureEventHandler_Access_Array_Access is org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_References.GameFeatureEventHandler_Access_Array_Access;
    function "=" (Left, Right : GameFeatureEventHandler_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_References."=";
+   function Java_Box (Value : GameFeatureEventHandler_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_References.Java_Box;
+   function Java_Unbox_GameFeatureEventHandler_Access_Array (Value : access Java_Object'Class) return GameFeatureEventHandler_Access_Array_Access renames org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_References.Java_Unbox_GameFeatureEventHandler_Access_Array;
    subtype GameFeatureEventHandler_Access_Array_Access_Array is org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_References.GameFeatureEventHandler_Access_Array_Access_Array;
    function "=" (Left, Right : GameFeatureEventHandler_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_References."=";
    subtype GameFeatureEventHandler_Access_Array_Access_Array_Access is org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_References.GameFeatureEventHandler_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GameFeatureEventHandler_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_References."=";
+   function Java_Box (Value : GameFeatureEventHandler_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_References.Java_Box;
+   function Java_Unbox_GameFeatureEventHandler_Access_Array_Access_Array (Value : access Java_Object'Class) return GameFeatureEventHandler_Access_Array_Access_Array_Access renames org.allbinary.game.configuration.event.GameFeatureEventHandler_Package_References.Java_Unbox_GameFeatureEventHandler_Access_Array_Access_Array;
 
    type GameFeatureEventHandler is new BasicEventHandler with null record;
    gameKeyEventHandler : GameFeatureEventHandler_Access;

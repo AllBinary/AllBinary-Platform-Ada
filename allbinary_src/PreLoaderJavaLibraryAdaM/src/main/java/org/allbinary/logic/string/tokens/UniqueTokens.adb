@@ -65,12 +65,12 @@ package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
       Initialize_Fields (This);
         This.specialCharacters.add (Java_Box (To_Unbounded_String ("!")));
         This.specialCharacters.add (Java_Box (To_Unbounded_String ("@")));
-        This.specialCharacters.add (CommonPhoneStrings_Package.getInstance.POUND);
+        This.specialCharacters.add (Java_Box (CommonPhoneStrings_Package.getInstance.POUND));
         This.specialCharacters.add (Java_Box (To_Unbounded_String ("$")));
         This.specialCharacters.add (Java_Box (To_Unbounded_String ("%")));
         This.specialCharacters.add (Java_Box (To_Unbounded_String ("^")));
-        This.specialCharacters.add (CommonSeps_Package.getInstance.AMPERSAND);
-        This.specialCharacters.add (CommonPhoneStrings_Package.getInstance.STAR);
+        This.specialCharacters.add (Java_Box (CommonSeps_Package.getInstance.AMPERSAND));
+        This.specialCharacters.add (Java_Box (CommonPhoneStrings_Package.getInstance.STAR));
         This.specialCharacters.add (Java_Box (To_Unbounded_String ("(")));
         This.specialCharacters.add (Java_Box (To_Unbounded_String (")")));
         This.specialCharacters.add (Java_Box (To_Unbounded_String ("-")));
@@ -79,7 +79,7 @@ package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
         This.specialCharacters.add (Java_Box (To_Unbounded_String ("=")));
         This.specialCharacters.add (Java_Box (To_Unbounded_String ("\")));
         This.specialCharacters.add (Java_Box (To_Unbounded_String ("|")));
-        This.specialCharacters.add (AbPathData_Package.getInstance.EXTENSION_SEP);
+        This.specialCharacters.add (Java_Box (AbPathData_Package.getInstance.EXTENSION_SEP));
         This.specialCharacters.add (Java_Box (To_Unbounded_String (",")));
         This.specialCharacters.add (Java_Box (To_Unbounded_String ("<")));
         This.specialCharacters.add (Java_Box (To_Unbounded_String (">")));

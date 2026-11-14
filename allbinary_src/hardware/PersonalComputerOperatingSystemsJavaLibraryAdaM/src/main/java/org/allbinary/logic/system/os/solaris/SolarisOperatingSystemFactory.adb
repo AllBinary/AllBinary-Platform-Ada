@@ -76,7 +76,7 @@ package body org.allbinary.logic.system.os.solaris.SolarisOperatingSystemFactory
 
    function getInstance return SolarisOperatingSystemFactory_Access is
    begin
-        return SolarisOperatingSystemFactory_Access (SolarisOperatingSystemFactory_Package.instance);
+        return SolarisOperatingSystemFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out SolarisOperatingSystemFactory'Class) is

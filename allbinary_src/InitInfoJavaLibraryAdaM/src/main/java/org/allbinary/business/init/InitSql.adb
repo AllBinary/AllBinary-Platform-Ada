@@ -206,7 +206,7 @@ package body org.allbinary.business.init.InitSql_Package is
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("Creating Table: "));
             stringBuffer.append (tableData);
-            PreLogUtil_Package.put (stringBuffer.toString, Java_Box (This.INIT_SQL), To_Unbounded_String ("createTable()"));
+            PreLogUtil_Package.putS (stringBuffer.toString, Java_Box (This.INIT_SQL), To_Unbounded_String ("createTable()"));
             InitSql'Class (This).executeSQLStatement (tableData);
             return True;
         exception
@@ -281,25 +281,25 @@ package body org.allbinary.business.init.InitSql_Package is
                 end if;
             end loop;
             sqlStatement := stringBuffer.toString;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 PreLogUtil_Package.put (Java_Image (This.sqlStrings.SQL_STATEMENT_LABEL) & sqlStatement, This.INIT_SQL, This.METHOD_GET_ROW);
             end if;
             rset := InitSql'Class (This).executeSQLStatement (sqlStatement);
             resultSetMetaData := rset.getMetaData;
             while rset.next loop
-                result := This.stdUtil.createHashMap;
+                result := HashMap_Access (This.stdUtil.createHashMap);
                 columnCount := resultSetMetaData.getColumnCount;
                 for index in 1 .. columnCount loop
                     columnName := resultSetMetaData.getColumnName (index);
                     field := rset.getString (columnName);
                     result.put (Java_Box (columnName), Java_Box (field));
                 end loop;
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                     PreLogUtil_Package.put (This.ROW_VALUE_LABEL & result.toString, This.INIT_SQL, This.METHOD_GET_ROW);
                 end if;
                 return result;
             end loop;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 PreLogUtil_Package.put (This.NO_RESULTS_IN_RESULT_SET, This.INIT_SQL, This.METHOD_GET_ROW);
             end if;
             return null;
@@ -308,7 +308,7 @@ package body org.allbinary.business.init.InitSql_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 PreLogUtil_Package.putOE (This.FAILED_SQL_STATEMENT & Java_Image (stringBuffer), This.INIT_SQL, This.METHOD_GET_ROW, e);
             end if;
             return null;
@@ -357,7 +357,7 @@ package body org.allbinary.business.init.InitSql_Package is
             stringBuffer.append (This.sqlStrings.CLOSE_QUOTE);
             sqlStatement := stringBuffer.toString;
             InitSql'Class (This).executeSQLStatement (sqlStatement);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 PreLogUtil_Package.put (This.SUCCESS_SQL_STATEMENT & sqlStatement, This.INIT_SQL, This.METHOD_UPDATE_WHERE);
             end if;
         exception
@@ -365,7 +365,7 @@ package body org.allbinary.business.init.InitSql_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 PreLogUtil_Package.putOE (This.FAILED_SQL_STATEMENT & Java_Image (stringBuffer), This.INIT_SQL, This.METHOD_UPDATE_WHERE, e);
             end if;
                 end;
@@ -396,7 +396,7 @@ package body org.allbinary.business.init.InitSql_Package is
             stringBuffer.append (This.INSERT_END);
             sqlStatement := stringBuffer.toString;
             InitSql'Class (This).executeSQLStatement (sqlStatement);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 PreLogUtil_Package.put (This.SUCCESS_SQL_STATEMENT & sqlStatement, This.INIT_SQL, This.INSERT_Field);
             end if;
         exception
@@ -404,7 +404,7 @@ package body org.allbinary.business.init.InitSql_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 PreLogUtil_Package.putOE (This.FAILED_SQL_STATEMENT & stringBuffer.toString, This.INIT_SQL, This.INSERT_Field, e);
             end if;
                 end;

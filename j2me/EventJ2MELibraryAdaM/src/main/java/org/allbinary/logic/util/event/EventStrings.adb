@@ -40,7 +40,7 @@ package body org.allbinary.logic.util.event.EventStrings_Package is
 
    function getInstance return EventStrings_Access is
    begin
-        return EventStrings_Access (EventStrings_Package.instance);
+        return EventStrings_Package.instance;
    end getInstance;
 
 begin

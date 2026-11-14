@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package;
 package org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References is
    type ImageAnalysisResultsJPanel_Access is access all org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package.ImageAnalysisResultsJPanel'Class;
@@ -19,6 +20,16 @@ package org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References is
    type ImageAnalysisResultsJPanel_Access_Array_Access is access all ImageAnalysisResultsJPanel_Access_Array;
    type ImageAnalysisResultsJPanel_Access_Array_Access_Array is array (Natural range <>) of ImageAnalysisResultsJPanel_Access_Array_Access;
    type ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access is access all ImageAnalysisResultsJPanel_Access_Array_Access_Array;
+   type ImageAnalysisResultsJPanel_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageAnalysisResultsJPanel_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageAnalysisResultsJPanel_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageAnalysisResultsJPanel_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageAnalysisResultsJPanel_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageAnalysisResultsJPanel_Access_Array_Access is (if Value /= null and then Value.all in ImageAnalysisResultsJPanel_Access_Array_Object'Class then ImageAnalysisResultsJPanel_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageAnalysisResultsJPanel_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageAnalysisResultsJPanel_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageAnalysisResultsJPanel_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageAnalysisResultsJPanel_Access_Array_Access_Array_Object'Class then ImageAnalysisResultsJPanel_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References;
 
 with org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References;
@@ -32,7 +43,13 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 limited with org.allbinary.media.image.analysis.ImageAnalysisResults_Package;
 with org.allbinary.media.image.analysis.ImageAnalysisResults_Package_References;
-with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
+--  with javax.swing.DefaultComboBoxModel_Package; use javax.swing.DefaultComboBoxModel_Package;
+--  with javax.swing.GroupLayout_Package; use javax.swing.GroupLayout_Package;
+--  with javax.swing.JComboBox_Package; use javax.swing.JComboBox_Package;
+--  with javax.swing.JLabel_Package; use javax.swing.JLabel_Package;
+--  with javax.swing.JPanel_Package; use javax.swing.JPanel_Package;
+--  with javax.swing.JTextField_Package; use javax.swing.JTextField_Package;
+--  with javax.swing.LayoutStyle_Package; use javax.swing.LayoutStyle_Package;
 
 package org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package is
 
@@ -58,12 +75,16 @@ package org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package is
    function "=" (Left, Right : ImageAnalysisResultsJPanel_Access_Array) return Boolean renames org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References."=";
    subtype ImageAnalysisResultsJPanel_Access_Array_Access is org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References.ImageAnalysisResultsJPanel_Access_Array_Access;
    function "=" (Left, Right : ImageAnalysisResultsJPanel_Access_Array_Access) return Boolean renames org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References."=";
+   function Java_Box (Value : ImageAnalysisResultsJPanel_Access_Array_Access) return Java_Object_Access renames org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References.Java_Box;
+   function Java_Unbox_ImageAnalysisResultsJPanel_Access_Array (Value : access Java_Object'Class) return ImageAnalysisResultsJPanel_Access_Array_Access renames org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References.Java_Unbox_ImageAnalysisResultsJPanel_Access_Array;
    subtype ImageAnalysisResultsJPanel_Access_Array_Access_Array is org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References.ImageAnalysisResultsJPanel_Access_Array_Access_Array;
    function "=" (Left, Right : ImageAnalysisResultsJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References."=";
    subtype ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access is org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References.ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References."=";
+   function Java_Box (Value : ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References.Java_Box;
+   function Java_Unbox_ImageAnalysisResultsJPanel_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageAnalysisResultsJPanel_Access_Array_Access_Array_Access renames org.allbinary.image.gui.ImageAnalysisResultsJPanel_Package_References.Java_Unbox_ImageAnalysisResultsJPanel_Access_Array_Access_Array;
 
-   type ImageAnalysisResultsJPanel is new JPanel with record
+   type ImageAnalysisResultsJPanel is new Java_Object with record
       avgBlueJTextField : JTextField_Access;
       avgGreenJTextField : JTextField_Access;
       avgRedJTextField : JTextField_Access;

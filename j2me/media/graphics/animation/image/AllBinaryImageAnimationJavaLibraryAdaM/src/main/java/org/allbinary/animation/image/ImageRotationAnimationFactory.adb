@@ -52,6 +52,7 @@ with org.allbinary.game.configuration.GameConfiguration_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.image.ImageBaseRotationAnimation_Package;
+with org.allbinary.media.image.ImageJ2MEScaleUtil_Package;
 with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;

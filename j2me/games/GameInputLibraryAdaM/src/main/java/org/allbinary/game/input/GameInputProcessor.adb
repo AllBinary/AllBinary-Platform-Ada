@@ -127,7 +127,7 @@ package body org.allbinary.game.input.GameInputProcessor_Package is
 
    function getInstance return GameInputProcessor_Access is
    begin
-        return GameInputProcessor_Access (GameInputProcessor_Package.instance);
+        return GameInputProcessor_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out GameInputProcessor'Class) is

@@ -34,7 +34,7 @@ package body org.allbinary.logic.math.MathData_Package is
 
    function getInstance return MathData_Access is
    begin
-        return MathData_Access (MathData_Package.instance);
+        return MathData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out MathData'Class) is

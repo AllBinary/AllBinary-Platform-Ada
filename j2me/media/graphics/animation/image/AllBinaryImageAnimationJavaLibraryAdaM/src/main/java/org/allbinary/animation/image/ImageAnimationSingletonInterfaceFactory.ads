@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package;
 package org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package_References is
    type ImageAnimationSingletonInterfaceFactory_Access is access all org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package.ImageAnimationSingletonInterfaceFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Pa
    type ImageAnimationSingletonInterfaceFactory_Access_Array_Access is access all ImageAnimationSingletonInterfaceFactory_Access_Array;
    type ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array is array (Natural range <>) of ImageAnimationSingletonInterfaceFactory_Access_Array_Access;
    type ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array_Access is access all ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array;
+   type ImageAnimationSingletonInterfaceFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageAnimationSingletonInterfaceFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageAnimationSingletonInterfaceFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageAnimationSingletonInterfaceFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageAnimationSingletonInterfaceFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageAnimationSingletonInterfaceFactory_Access_Array_Access is (if Value /= null and then Value.all in ImageAnimationSingletonInterfaceFactory_Access_Array_Object'Class then ImageAnimationSingletonInterfaceFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array_Object'Class then ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package_References;
 
 with org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package_References;
@@ -59,10 +70,14 @@ package org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Pa
    function "=" (Left, Right : ImageAnimationSingletonInterfaceFactory_Access_Array) return Boolean renames org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package_References."=";
    subtype ImageAnimationSingletonInterfaceFactory_Access_Array_Access is org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package_References.ImageAnimationSingletonInterfaceFactory_Access_Array_Access;
    function "=" (Left, Right : ImageAnimationSingletonInterfaceFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package_References."=";
+   function Java_Box (Value : ImageAnimationSingletonInterfaceFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package_References.Java_Box;
+   function Java_Unbox_ImageAnimationSingletonInterfaceFactory_Access_Array (Value : access Java_Object'Class) return ImageAnimationSingletonInterfaceFactory_Access_Array_Access renames org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package_References.Java_Unbox_ImageAnimationSingletonInterfaceFactory_Access_Array;
    subtype ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array is org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package_References.ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array;
    function "=" (Left, Right : ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package_References."=";
    subtype ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array_Access is org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package_References.ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package_References."=";
+   function Java_Box (Value : ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package_References.Java_Box;
+   function Java_Unbox_ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array_Access renames org.allbinary.animation.image.ImageAnimationSingletonInterfaceFactory_Package_References.Java_Unbox_ImageAnimationSingletonInterfaceFactory_Access_Array_Access_Array;
 
    type ImageAnimationSingletonInterfaceFactory is new SingletonAnimationInterfaceFactory with null record;
 

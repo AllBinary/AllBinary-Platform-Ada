@@ -112,7 +112,7 @@ package body org.allbinary.business.user.role.UserRoleFactory_Package is
 
    function getInstance return UserRoleFactory_Access is
    begin
-        return UserRoleFactory_Access (UserRoleFactory_Package.instance);
+        return UserRoleFactory_Package.instance;
    end getInstance;
 
 begin

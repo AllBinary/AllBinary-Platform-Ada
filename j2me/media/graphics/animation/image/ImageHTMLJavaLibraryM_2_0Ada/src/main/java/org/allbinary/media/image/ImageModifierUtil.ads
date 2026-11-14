@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.image.ImageModifierUtil_Package;
 package org.allbinary.media.image.ImageModifierUtil_Package_References is
    type ImageModifierUtil_Access is access all org.allbinary.media.image.ImageModifierUtil_Package.ImageModifierUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.image.ImageModifierUtil_Package_References is
    type ImageModifierUtil_Access_Array_Access is access all ImageModifierUtil_Access_Array;
    type ImageModifierUtil_Access_Array_Access_Array is array (Natural range <>) of ImageModifierUtil_Access_Array_Access;
    type ImageModifierUtil_Access_Array_Access_Array_Access is access all ImageModifierUtil_Access_Array_Access_Array;
+   type ImageModifierUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageModifierUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageModifierUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageModifierUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageModifierUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageModifierUtil_Access_Array_Access is (if Value /= null and then Value.all in ImageModifierUtil_Access_Array_Object'Class then ImageModifierUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageModifierUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageModifierUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageModifierUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageModifierUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageModifierUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageModifierUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageModifierUtil_Access_Array_Access_Array_Object'Class then ImageModifierUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.image.ImageModifierUtil_Package_References;
 
 with org.allbinary.media.image.ImageModifierUtil_Package_References;
@@ -137,10 +148,14 @@ package org.allbinary.media.image.ImageModifierUtil_Package is
    function "=" (Left, Right : ImageModifierUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageModifierUtil_Package_References."=";
    subtype ImageModifierUtil_Access_Array_Access is org.allbinary.media.image.ImageModifierUtil_Package_References.ImageModifierUtil_Access_Array_Access;
    function "=" (Left, Right : ImageModifierUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageModifierUtil_Package_References."=";
+   function Java_Box (Value : ImageModifierUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.ImageModifierUtil_Package_References.Java_Box;
+   function Java_Unbox_ImageModifierUtil_Access_Array (Value : access Java_Object'Class) return ImageModifierUtil_Access_Array_Access renames org.allbinary.media.image.ImageModifierUtil_Package_References.Java_Unbox_ImageModifierUtil_Access_Array;
    subtype ImageModifierUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageModifierUtil_Package_References.ImageModifierUtil_Access_Array_Access_Array;
    function "=" (Left, Right : ImageModifierUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageModifierUtil_Package_References."=";
    subtype ImageModifierUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageModifierUtil_Package_References.ImageModifierUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageModifierUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageModifierUtil_Package_References."=";
+   function Java_Box (Value : ImageModifierUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.ImageModifierUtil_Package_References.Java_Box;
+   function Java_Unbox_ImageModifierUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageModifierUtil_Access_Array_Access_Array_Access renames org.allbinary.media.image.ImageModifierUtil_Package_References.Java_Unbox_ImageModifierUtil_Access_Array_Access_Array;
 
    type ImageModifierUtil is new Java_Object with record
       logUtil : LogUtil_Access;
@@ -167,6 +182,7 @@ package org.allbinary.media.image.ImageModifierUtil_Package is
 
 end org.allbinary.media.image.ImageModifierUtil_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.media.image.ImageCopyCallback_Package;
 package org.allbinary.media.image.ImageCopyCallback_Package_References is
    type ImageCopyCallback_Access is access all org.allbinary.media.image.ImageCopyCallback_Package.ImageCopyCallback'Class;
@@ -174,6 +190,16 @@ package org.allbinary.media.image.ImageCopyCallback_Package_References is
    type ImageCopyCallback_Access_Array_Access is access all ImageCopyCallback_Access_Array;
    type ImageCopyCallback_Access_Array_Access_Array is array (Natural range <>) of ImageCopyCallback_Access_Array_Access;
    type ImageCopyCallback_Access_Array_Access_Array_Access is access all ImageCopyCallback_Access_Array_Access_Array;
+   type ImageCopyCallback_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageCopyCallback_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageCopyCallback_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageCopyCallback_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageCopyCallback_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageCopyCallback_Access_Array_Access is (if Value /= null and then Value.all in ImageCopyCallback_Access_Array_Object'Class then ImageCopyCallback_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageCopyCallback_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageCopyCallback_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageCopyCallback_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageCopyCallback_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageCopyCallback_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageCopyCallback_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageCopyCallback_Access_Array_Access_Array_Object'Class then ImageCopyCallback_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.image.ImageCopyCallback_Package_References;
 
 with org.allbinary.media.image.ImageCopyCallback_Package_References;
@@ -304,10 +330,14 @@ package org.allbinary.media.image.ImageCopyCallback_Package is
    function "=" (Left, Right : ImageCopyCallback_Access_Array) return Boolean renames org.allbinary.media.image.ImageCopyCallback_Package_References."=";
    subtype ImageCopyCallback_Access_Array_Access is org.allbinary.media.image.ImageCopyCallback_Package_References.ImageCopyCallback_Access_Array_Access;
    function "=" (Left, Right : ImageCopyCallback_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageCopyCallback_Package_References."=";
+   function Java_Box (Value : ImageCopyCallback_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.ImageCopyCallback_Package_References.Java_Box;
+   function Java_Unbox_ImageCopyCallback_Access_Array (Value : access Java_Object'Class) return ImageCopyCallback_Access_Array_Access renames org.allbinary.media.image.ImageCopyCallback_Package_References.Java_Unbox_ImageCopyCallback_Access_Array;
    subtype ImageCopyCallback_Access_Array_Access_Array is org.allbinary.media.image.ImageCopyCallback_Package_References.ImageCopyCallback_Access_Array_Access_Array;
    function "=" (Left, Right : ImageCopyCallback_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageCopyCallback_Package_References."=";
    subtype ImageCopyCallback_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageCopyCallback_Package_References.ImageCopyCallback_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageCopyCallback_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageCopyCallback_Package_References."=";
+   function Java_Box (Value : ImageCopyCallback_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.ImageCopyCallback_Package_References.Java_Box;
+   function Java_Unbox_ImageCopyCallback_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageCopyCallback_Access_Array_Access_Array_Access renames org.allbinary.media.image.ImageCopyCallback_Package_References.Java_Unbox_ImageCopyCallback_Access_Array_Access_Array;
 
    type ImageCopyCallback is new Java_Object and Callback with record
       imageModifierUtil_Var : ImageModifierUtil_Access;

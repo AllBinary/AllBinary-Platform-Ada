@@ -32,6 +32,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.business.category.store.theme.StoreThemeCategory_Package; use org.allbinary.business.category.store.theme.StoreThemeCategory_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.visual.transform.template.customizer.includes.style.css.template.retail.CssStyleValidation_Package;
@@ -53,6 +55,8 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
    package CategoryPropertiesFactoryInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
    package RootStoreThemeCategoryPropertiesFactory_Package renames Standard.org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryPropertiesFactory_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype CategoryInterface_Access is org.allbinary.business.category.CategoryInterface_Package_References.CategoryInterface_Access;
    function "=" (Left, Right : CategoryInterface_Access) return Boolean renames org.allbinary.business.category.CategoryInterface_Package_References."=";
    subtype CategoryInterface_Access_Array is org.allbinary.business.category.CategoryInterface_Package_References.CategoryInterface_Access_Array;
@@ -126,7 +130,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
       transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
       Initialize_Fields (This);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
             This.logUtil.putF (This.commonStrings.START, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("StoreCategoryFactory(TransformInfoInterface transformInfoInterface)"));
         end if;
         This.transformInfoInterface := transformInfoInterface;
@@ -150,7 +154,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getRootInstance()"), e);
             end if;
             return null;
@@ -172,7 +176,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getRootInstance(String)"), e);
             end if;
             return null;
@@ -196,7 +200,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getRootInstance(node)"), e);
             end if;
             return null;
@@ -215,7 +219,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(String, int)"), e);
             end if;
             return null;
@@ -236,7 +240,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface , String, int)"), e);
             end if;
             return null;
@@ -256,7 +260,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(Node, int)"), e);
             end if;
             return null;
@@ -278,7 +282,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface, Node, int)"), e);
             end if;
             return null;
@@ -298,7 +302,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(HashMap)"), e);
             end if;
             return null;
@@ -320,7 +324,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryFacto
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreThemeCategoryFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface, HashMap)"), e);
             end if;
             return null;

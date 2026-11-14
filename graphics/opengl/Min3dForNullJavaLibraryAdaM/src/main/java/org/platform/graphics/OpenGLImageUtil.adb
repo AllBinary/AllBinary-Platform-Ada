@@ -2,6 +2,12 @@
 
 
 with org.allbinary.image.opengles.OpenGLImageUtilBase_Package; use org.allbinary.image.opengles.OpenGLImageUtilBase_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.OpenGLBitmap_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
 
 package body org.platform.graphics.OpenGLImageUtil_Package is
 
@@ -26,7 +32,7 @@ package body org.platform.graphics.OpenGLImageUtil_Package is
 
    function getInstance return OpenGLImageUtil_Access is
    begin
-        return OpenGLImageUtil_Access (OpenGLImageUtil_Package.instance);
+        return OpenGLImageUtil_Package.instance;
    end getInstance;
 
 begin

@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package;
 package org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References is
    type UserEmailEventHandlerSingletons_Access is access all org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package.UserEmailEventHandlerSingletons'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEv
    type UserEmailEventHandlerSingletons_Access_Array_Access is access all UserEmailEventHandlerSingletons_Access_Array;
    type UserEmailEventHandlerSingletons_Access_Array_Access_Array is array (Natural range <>) of UserEmailEventHandlerSingletons_Access_Array_Access;
    type UserEmailEventHandlerSingletons_Access_Array_Access_Array_Access is access all UserEmailEventHandlerSingletons_Access_Array_Access_Array;
+   type UserEmailEventHandlerSingletons_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UserEmailEventHandlerSingletons_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UserEmailEventHandlerSingletons_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UserEmailEventHandlerSingletons_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UserEmailEventHandlerSingletons_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UserEmailEventHandlerSingletons_Access_Array_Access is (if Value /= null and then Value.all in UserEmailEventHandlerSingletons_Access_Array_Object'Class then UserEmailEventHandlerSingletons_Access_Array_Object'Class (Value.all).Value else null);
+   type UserEmailEventHandlerSingletons_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UserEmailEventHandlerSingletons_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UserEmailEventHandlerSingletons_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UserEmailEventHandlerSingletons_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UserEmailEventHandlerSingletons_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UserEmailEventHandlerSingletons_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in UserEmailEventHandlerSingletons_Access_Array_Access_Array_Object'Class then UserEmailEventHandlerSingletons_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References;
 
 with org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References;
@@ -124,10 +135,14 @@ package org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEv
    function "=" (Left, Right : UserEmailEventHandlerSingletons_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References."=";
    subtype UserEmailEventHandlerSingletons_Access_Array_Access is org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References.UserEmailEventHandlerSingletons_Access_Array_Access;
    function "=" (Left, Right : UserEmailEventHandlerSingletons_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References."=";
+   function Java_Box (Value : UserEmailEventHandlerSingletons_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References.Java_Box;
+   function Java_Unbox_UserEmailEventHandlerSingletons_Access_Array (Value : access Java_Object'Class) return UserEmailEventHandlerSingletons_Access_Array_Access renames org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References.Java_Unbox_UserEmailEventHandlerSingletons_Access_Array;
    subtype UserEmailEventHandlerSingletons_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References.UserEmailEventHandlerSingletons_Access_Array_Access_Array;
    function "=" (Left, Right : UserEmailEventHandlerSingletons_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References."=";
    subtype UserEmailEventHandlerSingletons_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References.UserEmailEventHandlerSingletons_Access_Array_Access_Array_Access;
    function "=" (Left, Right : UserEmailEventHandlerSingletons_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References."=";
+   function Java_Box (Value : UserEmailEventHandlerSingletons_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References.Java_Box;
+   function Java_Unbox_UserEmailEventHandlerSingletons_Access_Array_Access_Array (Value : access Java_Object'Class) return UserEmailEventHandlerSingletons_Access_Array_Access_Array_Access renames org.allbinary.logic.communication.smtp.event.handler.factory.UserEmailEventHandlerSingletons_Package_References.Java_Unbox_UserEmailEventHandlerSingletons_Access_Array_Access_Array;
 
    type UserEmailEventHandlerSingletons is new Java_Object with record
       logUtil : LogUtil_Access;

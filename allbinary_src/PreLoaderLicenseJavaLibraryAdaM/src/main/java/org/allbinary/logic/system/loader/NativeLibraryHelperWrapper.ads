@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package;
 package org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References is
    type NativeLibraryHelperWrapper_Access is access all org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package.NativeLibraryHelperWrapper'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_Ref
    type NativeLibraryHelperWrapper_Access_Array_Access is access all NativeLibraryHelperWrapper_Access_Array;
    type NativeLibraryHelperWrapper_Access_Array_Access_Array is array (Natural range <>) of NativeLibraryHelperWrapper_Access_Array_Access;
    type NativeLibraryHelperWrapper_Access_Array_Access_Array_Access is access all NativeLibraryHelperWrapper_Access_Array_Access_Array;
+   type NativeLibraryHelperWrapper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NativeLibraryHelperWrapper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NativeLibraryHelperWrapper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NativeLibraryHelperWrapper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NativeLibraryHelperWrapper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NativeLibraryHelperWrapper_Access_Array_Access is (if Value /= null and then Value.all in NativeLibraryHelperWrapper_Access_Array_Object'Class then NativeLibraryHelperWrapper_Access_Array_Object'Class (Value.all).Value else null);
+   type NativeLibraryHelperWrapper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NativeLibraryHelperWrapper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NativeLibraryHelperWrapper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NativeLibraryHelperWrapper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NativeLibraryHelperWrapper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NativeLibraryHelperWrapper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NativeLibraryHelperWrapper_Access_Array_Access_Array_Object'Class then NativeLibraryHelperWrapper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References;
 
 with org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References;
@@ -48,10 +59,14 @@ package org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package is
    function "=" (Left, Right : NativeLibraryHelperWrapper_Access_Array) return Boolean renames org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References."=";
    subtype NativeLibraryHelperWrapper_Access_Array_Access is org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References.NativeLibraryHelperWrapper_Access_Array_Access;
    function "=" (Left, Right : NativeLibraryHelperWrapper_Access_Array_Access) return Boolean renames org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References."=";
+   function Java_Box (Value : NativeLibraryHelperWrapper_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References.Java_Box;
+   function Java_Unbox_NativeLibraryHelperWrapper_Access_Array (Value : access Java_Object'Class) return NativeLibraryHelperWrapper_Access_Array_Access renames org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References.Java_Unbox_NativeLibraryHelperWrapper_Access_Array;
    subtype NativeLibraryHelperWrapper_Access_Array_Access_Array is org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References.NativeLibraryHelperWrapper_Access_Array_Access_Array;
    function "=" (Left, Right : NativeLibraryHelperWrapper_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References."=";
    subtype NativeLibraryHelperWrapper_Access_Array_Access_Array_Access is org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References.NativeLibraryHelperWrapper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NativeLibraryHelperWrapper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References."=";
+   function Java_Box (Value : NativeLibraryHelperWrapper_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References.Java_Box;
+   function Java_Unbox_NativeLibraryHelperWrapper_Access_Array_Access_Array (Value : access Java_Object'Class) return NativeLibraryHelperWrapper_Access_Array_Access_Array_Access renames org.allbinary.logic.system.loader.NativeLibraryHelperWrapper_Package_References.Java_Unbox_NativeLibraryHelperWrapper_Access_Array_Access_Array;
 
    type NativeLibraryHelperWrapper is new Java_Object with record
       libraryName : Unbounded_String;

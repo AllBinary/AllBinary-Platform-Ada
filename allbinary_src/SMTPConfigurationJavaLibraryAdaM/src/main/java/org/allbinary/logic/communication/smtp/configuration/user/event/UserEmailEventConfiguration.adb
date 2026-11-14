@@ -17,6 +17,8 @@ with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationData_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
@@ -29,6 +31,8 @@ with org.allbinary.time.TimeStampUtil_Package;
 package body org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfiguration_Package is
 
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -53,7 +57,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       Initialize_Fields (This);
         UserEmailEventConfiguration'Class (This).setName (StringUtil_Package.getInstance.EMPTY_STRING);
         UserEmailEventConfiguration'Class (This).setEventListenerClassPath (StringUtil_Package.getInstance.EMPTY_STRING);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("New"), UserEmailEventConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String (" Constructor"));
         end if;
    end Initialize;
@@ -71,7 +75,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       Initialize_Fields (This);
         UserEmailEventConfiguration'Class (This).setName (Java_Unbox (hashMap.get (UserEmailEventConfigurationData_Package.NAME)));
         UserEmailEventConfiguration'Class (This).setEventListenerClassPath (Java_Unbox (hashMap.get (UserEmailEventConfigurationData_Package.LISTENER_CLASSPATH)));
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("Log: ") & UserEmailEventConfiguration'Class (This).log, UserEmailEventConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String (" Constructor"));
         end if;
    end Initialize;

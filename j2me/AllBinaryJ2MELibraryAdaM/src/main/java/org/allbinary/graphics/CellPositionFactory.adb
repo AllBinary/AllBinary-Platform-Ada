@@ -67,7 +67,7 @@ package body org.allbinary.graphics.CellPositionFactory_Package is
 
    function getInstance return CellPositionFactory_Access is
    begin
-        return CellPositionFactory_Access (CellPositionFactory_Package.SINGLETON);
+        return CellPositionFactory_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out CellPositionFactory'Class) is

@@ -42,6 +42,7 @@ with javax.microedition.lcdui.Font_Package;
 with org.microemu.device.FontManager_Package;
 with javax.microedition.lcdui.Form_Package;
 with org.microemu.device.ui.FormUI_Package;
+with org.allbinary.math.FrameUtil_Package;
 with javax.microedition.lcdui.Gauge_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
@@ -146,7 +147,7 @@ package body org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
       angle : Short_Integer;
    begin
         angle := Short_Integer (This.angleInfo.getAngleIncrementInfo.getFrameAngle (Integer (frame)));
-        if (This.angleInfo.getAngle) /= (angle) then
+        if (Integer (This.angleInfo.getAngle)) /= (Integer (angle)) then
             return BasicDirectionAIHelper'Class (This).turnAI (Integer (frame));
         else
             return Canvas_Package.UP;

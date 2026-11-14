@@ -91,6 +91,7 @@ with org.microemu.device.ui.TextBoxUI_Package;
 with javax.microedition.lcdui.TextField_Package;
 with javax.microedition.lcdui.Ticker_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.input.motion.button.TouchScreenType_Package;
 with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.game.paint.PressStartMenuPaintable_Package is

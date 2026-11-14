@@ -169,7 +169,7 @@ package body org.allbinary.game.displayable.canvas.MyFormUtil_Package is
 
    function getInstance return MyFormUtil_Access is
    begin
-        return MyFormUtil_Access (MyFormUtil_Package.instance);
+        return MyFormUtil_Package.instance;
    end getInstance;
 
    procedure updateMeasurement (This : in out MyFormUtil; graphics_Param : access Graphics_Package.Graphics'Class) is

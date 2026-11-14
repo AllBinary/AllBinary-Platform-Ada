@@ -64,7 +64,7 @@ package body org.allbinary.graphics.opengles.OrthogonalLightingOpenGLProcessorFa
 
    function getInstance return OrthogonalLightingOpenGLProcessorFactory_Access is
    begin
-        return OrthogonalLightingOpenGLProcessorFactory_Access (OrthogonalLightingOpenGLProcessorFactory_Package.instance);
+        return OrthogonalLightingOpenGLProcessorFactory_Package.instance;
    end getInstance;
 
 begin

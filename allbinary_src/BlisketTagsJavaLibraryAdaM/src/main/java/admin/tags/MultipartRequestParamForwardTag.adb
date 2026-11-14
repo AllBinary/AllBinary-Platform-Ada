@@ -96,7 +96,7 @@ package body admin.tags.MultipartRequestParamForwardTag_Package is
         begin
             parentTag := HelperTag_Access (MultipartRequestParamForwardTag'Class (This).getParent);
             ParentInventoryTagHelper_Package.getInstance.isValid (MultipartRequestParamForwardTag_Access'(This'Unchecked_Access), parentTag);
-            hashMap := StdUtil_Package.getInstance.createHashMap;
+            hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             hashMap.put (AbTagData_Package.PARENT, parentTag);
             multipartRequestParamForwardHelper := MultipartRequestParamForwardHelper_Package.Create (parentTag, This.page, This.command, This.paramVector, This.pageContext);
             multipartRequestParamForwardHelper.forward;

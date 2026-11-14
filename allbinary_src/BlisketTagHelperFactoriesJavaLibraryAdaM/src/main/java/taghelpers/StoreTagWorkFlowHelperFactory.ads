@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with taghelpers.StoreTagWorkFlowHelperFactory_Package;
 package taghelpers.StoreTagWorkFlowHelperFactory_Package_References is
    type StoreTagWorkFlowHelperFactory_Access is access all taghelpers.StoreTagWorkFlowHelperFactory_Package.StoreTagWorkFlowHelperFactory'Class;
@@ -19,6 +20,16 @@ package taghelpers.StoreTagWorkFlowHelperFactory_Package_References is
    type StoreTagWorkFlowHelperFactory_Access_Array_Access is access all StoreTagWorkFlowHelperFactory_Access_Array;
    type StoreTagWorkFlowHelperFactory_Access_Array_Access_Array is array (Natural range <>) of StoreTagWorkFlowHelperFactory_Access_Array_Access;
    type StoreTagWorkFlowHelperFactory_Access_Array_Access_Array_Access is access all StoreTagWorkFlowHelperFactory_Access_Array_Access_Array;
+   type StoreTagWorkFlowHelperFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreTagWorkFlowHelperFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreTagWorkFlowHelperFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreTagWorkFlowHelperFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreTagWorkFlowHelperFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreTagWorkFlowHelperFactory_Access_Array_Access is (if Value /= null and then Value.all in StoreTagWorkFlowHelperFactory_Access_Array_Object'Class then StoreTagWorkFlowHelperFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type StoreTagWorkFlowHelperFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreTagWorkFlowHelperFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreTagWorkFlowHelperFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreTagWorkFlowHelperFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreTagWorkFlowHelperFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreTagWorkFlowHelperFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StoreTagWorkFlowHelperFactory_Access_Array_Access_Array_Object'Class then StoreTagWorkFlowHelperFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end taghelpers.StoreTagWorkFlowHelperFactory_Package_References;
 
 with taghelpers.StoreTagWorkFlowHelperFactory_Package_References;
@@ -62,10 +73,14 @@ package taghelpers.StoreTagWorkFlowHelperFactory_Package is
    function "=" (Left, Right : StoreTagWorkFlowHelperFactory_Access_Array) return Boolean renames taghelpers.StoreTagWorkFlowHelperFactory_Package_References."=";
    subtype StoreTagWorkFlowHelperFactory_Access_Array_Access is taghelpers.StoreTagWorkFlowHelperFactory_Package_References.StoreTagWorkFlowHelperFactory_Access_Array_Access;
    function "=" (Left, Right : StoreTagWorkFlowHelperFactory_Access_Array_Access) return Boolean renames taghelpers.StoreTagWorkFlowHelperFactory_Package_References."=";
+   function Java_Box (Value : StoreTagWorkFlowHelperFactory_Access_Array_Access) return Java_Object_Access renames taghelpers.StoreTagWorkFlowHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_StoreTagWorkFlowHelperFactory_Access_Array (Value : access Java_Object'Class) return StoreTagWorkFlowHelperFactory_Access_Array_Access renames taghelpers.StoreTagWorkFlowHelperFactory_Package_References.Java_Unbox_StoreTagWorkFlowHelperFactory_Access_Array;
    subtype StoreTagWorkFlowHelperFactory_Access_Array_Access_Array is taghelpers.StoreTagWorkFlowHelperFactory_Package_References.StoreTagWorkFlowHelperFactory_Access_Array_Access_Array;
    function "=" (Left, Right : StoreTagWorkFlowHelperFactory_Access_Array_Access_Array) return Boolean renames taghelpers.StoreTagWorkFlowHelperFactory_Package_References."=";
    subtype StoreTagWorkFlowHelperFactory_Access_Array_Access_Array_Access is taghelpers.StoreTagWorkFlowHelperFactory_Package_References.StoreTagWorkFlowHelperFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StoreTagWorkFlowHelperFactory_Access_Array_Access_Array_Access) return Boolean renames taghelpers.StoreTagWorkFlowHelperFactory_Package_References."=";
+   function Java_Box (Value : StoreTagWorkFlowHelperFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames taghelpers.StoreTagWorkFlowHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_StoreTagWorkFlowHelperFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return StoreTagWorkFlowHelperFactory_Access_Array_Access_Array_Access renames taghelpers.StoreTagWorkFlowHelperFactory_Package_References.Java_Unbox_StoreTagWorkFlowHelperFactory_Access_Array_Access_Array;
 
    type StoreTagWorkFlowHelperFactory is new TagHelperFactory with record
       logUtil : LogUtil_Access;

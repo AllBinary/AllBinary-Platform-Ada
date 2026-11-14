@@ -25,6 +25,8 @@ with org.allbinary.media.image.ImageStrings_Package_References;
 with org.allbinary.media.image.MirrorImageUtil_Package; use org.allbinary.media.image.MirrorImageUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.jdesktop.layout.GroupLayout_Package; use org.jdesktop.layout.GroupLayout_Package;
+with org.jdesktop.layout.LayoutStyle_Package; use org.jdesktop.layout.LayoutStyle_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.image.gui.Graphics_Package; use org.allbinary.image.gui.Graphics_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
@@ -38,6 +40,8 @@ with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
 
+   package GroupLayout_Package renames Standard.org.jdesktop.layout.GroupLayout_Package;
+   package LayoutStyle_Package renames Standard.org.jdesktop.layout.LayoutStyle_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
@@ -103,7 +107,7 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
    procedure Initialize (This : in out MirrorSpriteImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) is
       imageProcessorInput : constant ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
-        JPanel_Package.Initialize (This);
+        null;
         Initialize_Fields (This);
         This.logUtil.putF (To_Unbounded_String ("Starting"), MirrorSpriteImageJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         MirrorSpriteImageJPanel'Class (This).initComponents;
@@ -191,8 +195,8 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
         This.jLabel2 := JLabel_Package.Create;
         jPanel1Layout := GroupLayout_Package.Create (This.jPanel1);
         This.jPanel1.setLayout (jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup (jPanel1Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (0, 507, Short_Integer'Last));
-        jPanel1Layout.setVerticalGroup (jPanel1Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (0, 230, Short_Integer'Last));
+        jPanel1Layout.setHorizontalGroup (jPanel1Layout.createParallelGroup (GroupLayout_Package.LEADING).add (0, 507, Short_Integer'Last));
+        jPanel1Layout.setVerticalGroup (jPanel1Layout.createParallelGroup (GroupLayout_Package.LEADING).add (0, 230, Short_Integer'Last));
         This.imageHeightIsFrameSizeJCheckBox.setSelected (True);
         This.imageHeightIsFrameSizeJCheckBox.setText (To_Unbounded_String ("Image Height Is Frame Size"));
         This.imageHeightIsFrameSizeJCheckBox.setEnabled (False);
@@ -221,17 +225,17 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
 );
         jPanel2Layout := GroupLayout_Package.Create (This.jPanel2);
         This.jPanel2.setLayout (jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup (jPanel2Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (jPanel2Layout.createSequentialGroup.addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last).add (This.verticleJCheckBox).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.UNRELATED).add (This.horizontalJCheckBox).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.imageHeightIsFrameSizeJCheckBox).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.writeOverOriginalJCheckBox).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.generateJButton)));
-        jPanel2Layout.setVerticalGroup (jPanel2Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (jPanel2Layout.createSequentialGroup.add (jPanel2Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.BASELINE).add (This.imageHeightIsFrameSizeJCheckBox, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last).add (This.horizontalJCheckBox).add (This.verticleJCheckBox).add (This.writeOverOriginalJCheckBox).add (This.generateJButton, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE)).addContainerGap));
+        jPanel2Layout.setHorizontalGroup (jPanel2Layout.createParallelGroup (GroupLayout_Package.LEADING).add (jPanel2Layout.createSequentialGroup.addContainerGap (GroupLayout_Package.DEFAULT_SIZE, Short_Integer'Last).add (This.verticleJCheckBox).addPreferredGap (LayoutStyle_Package.UNRELATED).add (This.horizontalJCheckBox).addPreferredGap (LayoutStyle_Package.RELATED).add (This.imageHeightIsFrameSizeJCheckBox).addPreferredGap (LayoutStyle_Package.RELATED).add (This.writeOverOriginalJCheckBox).addPreferredGap (LayoutStyle_Package.RELATED).add (This.generateJButton)));
+        jPanel2Layout.setVerticalGroup (jPanel2Layout.createParallelGroup (GroupLayout_Package.LEADING).add (jPanel2Layout.createSequentialGroup.add (jPanel2Layout.createParallelGroup (GroupLayout_Package.BASELINE).add (This.imageHeightIsFrameSizeJCheckBox, GroupLayout_Package.DEFAULT_SIZE, GroupLayout_Package.DEFAULT_SIZE, Short_Integer'Last).add (This.horizontalJCheckBox).add (This.verticleJCheckBox).add (This.writeOverOriginalJCheckBox).add (This.generateJButton, GroupLayout_Package.PREFERRED_SIZE, 25, GroupLayout_Package.PREFERRED_SIZE)).addContainerGap));
         This.jLabel2.setText (To_Unbounded_String ("Results:"));
         jPanel3Layout := GroupLayout_Package.Create (This.jPanel3);
         This.jPanel3.setLayout (jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (jPanel3Layout.createSequentialGroup.add (This.jLabel2).addContainerGap (448, Short_Integer'Last)));
-        jPanel3Layout.setVerticalGroup (jPanel3Layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (This.jLabel2));
+        jPanel3Layout.setHorizontalGroup (jPanel3Layout.createParallelGroup (GroupLayout_Package.LEADING).add (jPanel3Layout.createSequentialGroup.add (This.jLabel2).addContainerGap (448, Short_Integer'Last)));
+        jPanel3Layout.setVerticalGroup (jPanel3Layout.createParallelGroup (GroupLayout_Package.LEADING).add (This.jLabel2));
         layout := GroupLayout_Package.Create (MirrorSpriteImageJPanel_Access'(This'Unchecked_Access));
         MirrorSpriteImageJPanel'Class (This).setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup.addContainerGap.add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last).addContainerGap).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last).add (layout.createSequentialGroup.add (This.jPanel2, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last)));
-        layout.setVerticalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (layout.createSequentialGroup.add (This.jPanel2, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Integer'Last)));
+        layout.setHorizontalGroup (layout.createParallelGroup (GroupLayout_Package.LEADING).add (GroupLayout_Package.TRAILING, layout.createSequentialGroup.addContainerGap.add (This.jPanel3, GroupLayout_Package.DEFAULT_SIZE, GroupLayout_Package.DEFAULT_SIZE, Short_Integer'Last).addContainerGap).add (This.jPanel1, GroupLayout_Package.DEFAULT_SIZE, GroupLayout_Package.DEFAULT_SIZE, Short_Integer'Last).add (layout.createSequentialGroup.add (This.jPanel2, GroupLayout_Package.PREFERRED_SIZE, GroupLayout_Package.DEFAULT_SIZE, GroupLayout_Package.PREFERRED_SIZE).addContainerGap (GroupLayout_Package.DEFAULT_SIZE, Short_Integer'Last)));
+        layout.setVerticalGroup (layout.createParallelGroup (GroupLayout_Package.LEADING).add (layout.createSequentialGroup.add (This.jPanel2, GroupLayout_Package.PREFERRED_SIZE, 25, GroupLayout_Package.PREFERRED_SIZE).addPreferredGap (LayoutStyle_Package.RELATED).add (This.jPanel3, GroupLayout_Package.PREFERRED_SIZE, GroupLayout_Package.DEFAULT_SIZE, GroupLayout_Package.PREFERRED_SIZE).addPreferredGap (LayoutStyle_Package.RELATED).add (This.jPanel1, GroupLayout_Package.DEFAULT_SIZE, GroupLayout_Package.DEFAULT_SIZE, Short_Integer'Last)));
    end initComponents;
 
    procedure generateJButtonActionPerformed (This : in out MirrorSpriteImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is

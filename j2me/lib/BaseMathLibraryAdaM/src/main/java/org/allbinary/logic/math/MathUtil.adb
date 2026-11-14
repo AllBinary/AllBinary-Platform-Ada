@@ -27,7 +27,7 @@ package body org.allbinary.logic.math.MathUtil_Package is
 
    function getInstance return MathUtil_Access is
    begin
-        return MathUtil_Access (MathUtil_Package.instance);
+        return MathUtil_Package.instance;
    end getInstance;
 
    function getTotalDigits (This : in out MathUtil; digits_Id_Param : Integer) return Integer is

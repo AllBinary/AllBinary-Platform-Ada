@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package;
 package org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References is
    type SimpleStateTaxModule_Access is access all org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package.SimpleStateTaxModule'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxMod
    type SimpleStateTaxModule_Access_Array_Access is access all SimpleStateTaxModule_Access_Array;
    type SimpleStateTaxModule_Access_Array_Access_Array is array (Natural range <>) of SimpleStateTaxModule_Access_Array_Access;
    type SimpleStateTaxModule_Access_Array_Access_Array_Access is access all SimpleStateTaxModule_Access_Array_Access_Array;
+   type SimpleStateTaxModule_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SimpleStateTaxModule_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SimpleStateTaxModule_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SimpleStateTaxModule_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SimpleStateTaxModule_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SimpleStateTaxModule_Access_Array_Access is (if Value /= null and then Value.all in SimpleStateTaxModule_Access_Array_Object'Class then SimpleStateTaxModule_Access_Array_Object'Class (Value.all).Value else null);
+   type SimpleStateTaxModule_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SimpleStateTaxModule_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SimpleStateTaxModule_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SimpleStateTaxModule_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SimpleStateTaxModule_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SimpleStateTaxModule_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SimpleStateTaxModule_Access_Array_Access_Array_Object'Class then SimpleStateTaxModule_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References;
 
 with org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References;
@@ -110,10 +121,14 @@ package org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxMod
    function "=" (Left, Right : SimpleStateTaxModule_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References."=";
    subtype SimpleStateTaxModule_Access_Array_Access is org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References.SimpleStateTaxModule_Access_Array_Access;
    function "=" (Left, Right : SimpleStateTaxModule_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References."=";
+   function Java_Box (Value : SimpleStateTaxModule_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References.Java_Box;
+   function Java_Unbox_SimpleStateTaxModule_Access_Array (Value : access Java_Object'Class) return SimpleStateTaxModule_Access_Array_Access renames org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References.Java_Unbox_SimpleStateTaxModule_Access_Array;
    subtype SimpleStateTaxModule_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References.SimpleStateTaxModule_Access_Array_Access_Array;
    function "=" (Left, Right : SimpleStateTaxModule_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References."=";
    subtype SimpleStateTaxModule_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References.SimpleStateTaxModule_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SimpleStateTaxModule_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References."=";
+   function Java_Box (Value : SimpleStateTaxModule_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References.Java_Box;
+   function Java_Unbox_SimpleStateTaxModule_Access_Array_Access_Array (Value : access Java_Object'Class) return SimpleStateTaxModule_Access_Array_Access_Array_Access renames org.allbinary.business.user.commerce.money.tax.modules.SimpleStateTaxModule_Package_References.Java_Unbox_SimpleStateTaxModule_Access_Array_Access_Array;
 
    type SimpleStateTaxModule is new Java_Object and TaxModuleInterface with record
       logUtil : LogUtil_Access;

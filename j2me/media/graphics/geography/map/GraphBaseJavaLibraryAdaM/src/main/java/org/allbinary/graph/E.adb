@@ -24,7 +24,7 @@ package body org.allbinary.graph.E_Package is
 
    function newInstance (This : in out E) return E_Access is
    begin
-        return E_Access (E_Package.e_Var);
+        return E_Package.e_Var;
    end newInstance;
 
 begin

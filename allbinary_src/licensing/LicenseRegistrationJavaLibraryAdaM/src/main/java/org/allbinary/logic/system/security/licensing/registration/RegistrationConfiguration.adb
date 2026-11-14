@@ -98,7 +98,7 @@ package body org.allbinary.logic.system.security.licensing.registration.Registra
 
    function getInstance return RegistrationConfiguration_Access is
    begin
-        return RegistrationConfiguration_Access (RegistrationConfiguration_Package.SINGLETON);
+        return RegistrationConfiguration_Package.SINGLETON;
    end getInstance;
 
    --  throws Exception
@@ -108,7 +108,7 @@ package body org.allbinary.logic.system.security.licensing.registration.Registra
       dataInputStream : DataInputStream_Access;
    begin
         fileInputStreamFactory := FileStreamFactory_Package.getInstance;
-        fileInputStream := fileInputStreamFactory.getFileInputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE);
+        fileInputStream := InputStream_Access (fileInputStreamFactory.getFileInputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE));
         dataInputStream := DataInputStream_Package.Create (fileInputStream);
         RegistrationConfiguration'Class (This).setRegistrationCode (dataInputStream.readUTF);
         PreLogUtil_Package.put (StringMaker_Package.Create.append (To_Unbounded_String ("Read Configuration: ")).append (RegistrationConfiguration'Class (This).toString).toString, RegistrationConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("read"));
@@ -124,7 +124,7 @@ package body org.allbinary.logic.system.security.licensing.registration.Registra
         begin
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Write Configuration: ")).append (RegistrationConfiguration'Class (This).toString).toString, RegistrationConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("write"));
             fileInputStreamFactory := FileStreamFactory_Package.getInstance;
-            fileOutputStream := fileInputStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE);
+            fileOutputStream := OutputStream_Access (fileInputStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE));
             dataOutputStream := AbDataOutputStream_Package.Create (fileOutputStream);
             dataOutputStream.writeUTF (RegistrationConfiguration'Class (This).getRegistrationCode);
             dataOutputStream.flush;

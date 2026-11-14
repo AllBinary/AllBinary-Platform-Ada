@@ -108,7 +108,7 @@ package body org.allbinary.view.event.ViewPositionEventHandler_Package is
 
    function getInstance return ViewPositionEventHandler_Access is
    begin
-        return ViewPositionEventHandler_Access (ViewPositionEventHandler_Package.SINGLETON);
+        return ViewPositionEventHandler_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out ViewPositionEventHandler'Class) is

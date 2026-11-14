@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.category.CategoryComponent_Package;
 package org.allbinary.business.category.CategoryComponent_Package_References is
    type CategoryComponent_Access is access all org.allbinary.business.category.CategoryComponent_Package.CategoryComponent'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.category.CategoryComponent_Package_References is
    type CategoryComponent_Access_Array_Access is access all CategoryComponent_Access_Array;
    type CategoryComponent_Access_Array_Access_Array is array (Natural range <>) of CategoryComponent_Access_Array_Access;
    type CategoryComponent_Access_Array_Access_Array_Access is access all CategoryComponent_Access_Array_Access_Array;
+   type CategoryComponent_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CategoryComponent_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CategoryComponent_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CategoryComponent_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CategoryComponent_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CategoryComponent_Access_Array_Access is (if Value /= null and then Value.all in CategoryComponent_Access_Array_Object'Class then CategoryComponent_Access_Array_Object'Class (Value.all).Value else null);
+   type CategoryComponent_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CategoryComponent_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CategoryComponent_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CategoryComponent_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CategoryComponent_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CategoryComponent_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CategoryComponent_Access_Array_Access_Array_Object'Class then CategoryComponent_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.category.CategoryComponent_Package_References;
 
 with org.allbinary.business.category.CategoryComponent_Package_References;
@@ -98,10 +109,14 @@ package org.allbinary.business.category.CategoryComponent_Package is
    function "=" (Left, Right : CategoryComponent_Access_Array) return Boolean renames org.allbinary.business.category.CategoryComponent_Package_References."=";
    subtype CategoryComponent_Access_Array_Access is org.allbinary.business.category.CategoryComponent_Package_References.CategoryComponent_Access_Array_Access;
    function "=" (Left, Right : CategoryComponent_Access_Array_Access) return Boolean renames org.allbinary.business.category.CategoryComponent_Package_References."=";
+   function Java_Box (Value : CategoryComponent_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.category.CategoryComponent_Package_References.Java_Box;
+   function Java_Unbox_CategoryComponent_Access_Array (Value : access Java_Object'Class) return CategoryComponent_Access_Array_Access renames org.allbinary.business.category.CategoryComponent_Package_References.Java_Unbox_CategoryComponent_Access_Array;
    subtype CategoryComponent_Access_Array_Access_Array is org.allbinary.business.category.CategoryComponent_Package_References.CategoryComponent_Access_Array_Access_Array;
    function "=" (Left, Right : CategoryComponent_Access_Array_Access_Array) return Boolean renames org.allbinary.business.category.CategoryComponent_Package_References."=";
    subtype CategoryComponent_Access_Array_Access_Array_Access is org.allbinary.business.category.CategoryComponent_Package_References.CategoryComponent_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CategoryComponent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.category.CategoryComponent_Package_References."=";
+   function Java_Box (Value : CategoryComponent_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.category.CategoryComponent_Package_References.Java_Box;
+   function Java_Unbox_CategoryComponent_Access_Array_Access_Array (Value : access Java_Object'Class) return CategoryComponent_Access_Array_Access_Array_Access renames org.allbinary.business.category.CategoryComponent_Package_References.Java_Unbox_CategoryComponent_Access_Array_Access_Array;
 
    type CategoryComponent is new CategoryView and TransformInterface with record
       NO_TYPE : Integer;

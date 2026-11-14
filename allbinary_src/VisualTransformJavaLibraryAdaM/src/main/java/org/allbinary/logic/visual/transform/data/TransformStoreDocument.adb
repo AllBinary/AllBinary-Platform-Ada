@@ -21,6 +21,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.control.search.SearchRequest_Package; use org.allbinary.logic.control.search.SearchRequest_Package;
 with org.allbinary.logic.control.search.SearchRequest_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
@@ -35,6 +37,8 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
 
    package StoreFrontViewFactory_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontViewFactory_Package;
    package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype WeblisketSession_Access is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access;
    function "=" (Left, Right : WeblisketSession_Access) return Boolean renames org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References."=";
    subtype WeblisketSession_Access_Array is org.allbinary.logic.communication.http.request.session.WeblisketSession_Package_References.WeblisketSession_Access_Array;
@@ -81,7 +85,7 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
         Initialize_Fields (This);
         begin
             storeName := weblisketSession.getStoreName;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.TransformStoreDocument_Field_logUtil.putF (To_Unbounded_String ("Using Session StoreName: ") & storeName, TransformStoreDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             end if;
             TransformStoreDocument'Class (This).getBaseNode.appendChild (StoreFrontViewFactory_Package.getInstance (storeName).toXmlNode (TransformStoreDocument'Class (This).getDoc));
@@ -91,7 +95,7 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEWERROR) then
                 This.TransformStoreDocument_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, TransformStoreDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);
@@ -119,7 +123,7 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEWERROR) then
                 This.TransformStoreDocument_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, TransformStoreDocument_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             end if;
             Java_Throw (e);

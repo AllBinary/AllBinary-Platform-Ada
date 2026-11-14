@@ -196,7 +196,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       index : Integer;
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getAllJarSymbolicNameHashMap"));
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         jarFileBasicArrayList := InputAutomationNewBundleRunnable'Class (This).getJarModuleFileBasicArrayList;
         This.logUtil.putF (To_Unbounded_String ("Jar Module Files: ") & Java_Image (jarFileBasicArrayList), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("getAllJarSymbolicNameHashMap"));
         size := jarFileBasicArrayList.size;

@@ -29,7 +29,6 @@ with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.data.CamelCaseUtil_Package is
 
-   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package Tokenizer_Package renames Standard.org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
@@ -75,7 +74,7 @@ package body org.allbinary.data.CamelCaseUtil_Package is
 
    function getInstance return CamelCaseUtil_Access is
    begin
-        return CamelCaseUtil_Access (CamelCaseUtil_Package.instance);
+        return CamelCaseUtil_Package.instance;
    end getInstance;
 
    --  throws Exception
@@ -88,9 +87,6 @@ package body org.allbinary.data.CamelCaseUtil_Package is
       word : Unbounded_String;
       i : Integer;
    begin
-        if (string_Id) = (Null_Unbounded_String) then
-            return StringUtil_Package.getInstance.EMPTY_STRING;
-        end if;
         stringValidationUtil := StringValidationUtil_Package.getInstance;
         stringBuilder.delete (0, stringBuilder.length);
         list := BasicArrayList_Access (BasicArrayListD_Package.Create);

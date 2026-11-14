@@ -1,5 +1,6 @@
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.form.item.ABCustomItem_Package;
 package org.allbinary.graphics.form.item.ABCustomItem_Package_References is
    type ABCustomItem_Access is access all org.allbinary.graphics.form.item.ABCustomItem_Package.ABCustomItem'Class;
@@ -7,6 +8,16 @@ package org.allbinary.graphics.form.item.ABCustomItem_Package_References is
    type ABCustomItem_Access_Array_Access is access all ABCustomItem_Access_Array;
    type ABCustomItem_Access_Array_Access_Array is array (Natural range <>) of ABCustomItem_Access_Array_Access;
    type ABCustomItem_Access_Array_Access_Array_Access is access all ABCustomItem_Access_Array_Access_Array;
+   type ABCustomItem_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ABCustomItem_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ABCustomItem_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ABCustomItem_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ABCustomItem_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ABCustomItem_Access_Array_Access is (if Value /= null and then Value.all in ABCustomItem_Access_Array_Object'Class then ABCustomItem_Access_Array_Object'Class (Value.all).Value else null);
+   type ABCustomItem_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ABCustomItem_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ABCustomItem_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ABCustomItem_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ABCustomItem_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ABCustomItem_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ABCustomItem_Access_Array_Access_Array_Object'Class then ABCustomItem_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.form.item.ABCustomItem_Package_References;
 
 with org.allbinary.graphics.form.item.ABCustomItem_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.graphics.form.item.ABCustomItem_Package is
    function "=" (Left, Right : ABCustomItem_Access_Array) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
    subtype ABCustomItem_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access;
    function "=" (Left, Right : ABCustomItem_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
+   function Java_Box (Value : ABCustomItem_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.item.ABCustomItem_Package_References.Java_Box;
+   function Java_Unbox_ABCustomItem_Access_Array (Value : access Java_Object'Class) return ABCustomItem_Access_Array_Access renames org.allbinary.graphics.form.item.ABCustomItem_Package_References.Java_Unbox_ABCustomItem_Access_Array;
    subtype ABCustomItem_Access_Array_Access_Array is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access_Array;
    function "=" (Left, Right : ABCustomItem_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
    subtype ABCustomItem_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomItem_Package_References.ABCustomItem_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ABCustomItem_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomItem_Package_References."=";
+   function Java_Box (Value : ABCustomItem_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.item.ABCustomItem_Package_References.Java_Box;
+   function Java_Unbox_ABCustomItem_Access_Array_Access_Array (Value : access Java_Object'Class) return ABCustomItem_Access_Array_Access_Array_Access renames org.allbinary.graphics.form.item.ABCustomItem_Package_References.Java_Unbox_ABCustomItem_Access_Array_Access_Array;
 
    type ABCustomItem is new Java_Object with null record;
    NULL_CUSTOM_ITEM : Java_Object_Access;

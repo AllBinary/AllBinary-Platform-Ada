@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package;
 package views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References is
    type InsertGlobalsValidationView_Access is access all views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package.InsertGlobalsValidationView'Class;
@@ -19,6 +20,16 @@ package views.business.context.modules.storefront.customizer.includes.globals.In
    type InsertGlobalsValidationView_Access_Array_Access is access all InsertGlobalsValidationView_Access_Array;
    type InsertGlobalsValidationView_Access_Array_Access_Array is array (Natural range <>) of InsertGlobalsValidationView_Access_Array_Access;
    type InsertGlobalsValidationView_Access_Array_Access_Array_Access is access all InsertGlobalsValidationView_Access_Array_Access_Array;
+   type InsertGlobalsValidationView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InsertGlobalsValidationView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InsertGlobalsValidationView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InsertGlobalsValidationView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InsertGlobalsValidationView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InsertGlobalsValidationView_Access_Array_Access is (if Value /= null and then Value.all in InsertGlobalsValidationView_Access_Array_Object'Class then InsertGlobalsValidationView_Access_Array_Object'Class (Value.all).Value else null);
+   type InsertGlobalsValidationView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InsertGlobalsValidationView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InsertGlobalsValidationView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InsertGlobalsValidationView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InsertGlobalsValidationView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InsertGlobalsValidationView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in InsertGlobalsValidationView_Access_Array_Access_Array_Object'Class then InsertGlobalsValidationView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References;
 
 with views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References;
@@ -99,10 +110,14 @@ package views.business.context.modules.storefront.customizer.includes.globals.In
    function "=" (Left, Right : InsertGlobalsValidationView_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References."=";
    subtype InsertGlobalsValidationView_Access_Array_Access is views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References.InsertGlobalsValidationView_Access_Array_Access;
    function "=" (Left, Right : InsertGlobalsValidationView_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References."=";
+   function Java_Box (Value : InsertGlobalsValidationView_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References.Java_Box;
+   function Java_Unbox_InsertGlobalsValidationView_Access_Array (Value : access Java_Object'Class) return InsertGlobalsValidationView_Access_Array_Access renames views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References.Java_Unbox_InsertGlobalsValidationView_Access_Array;
    subtype InsertGlobalsValidationView_Access_Array_Access_Array is views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References.InsertGlobalsValidationView_Access_Array_Access_Array;
    function "=" (Left, Right : InsertGlobalsValidationView_Access_Array_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References."=";
    subtype InsertGlobalsValidationView_Access_Array_Access_Array_Access is views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References.InsertGlobalsValidationView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InsertGlobalsValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References."=";
+   function Java_Box (Value : InsertGlobalsValidationView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References.Java_Box;
+   function Java_Unbox_InsertGlobalsValidationView_Access_Array_Access_Array (Value : access Java_Object'Class) return InsertGlobalsValidationView_Access_Array_Access_Array_Access renames views.business.context.modules.storefront.customizer.includes.globals.InsertGlobalsValidationView_Package_References.Java_Unbox_InsertGlobalsValidationView_Access_Array_Access_Array;
 
    type InsertGlobalsValidationView is new GlobalsView and ValidationComponentInterface with record
       InsertGlobalsValidationView_Field_logUtil : LogUtil_Access;

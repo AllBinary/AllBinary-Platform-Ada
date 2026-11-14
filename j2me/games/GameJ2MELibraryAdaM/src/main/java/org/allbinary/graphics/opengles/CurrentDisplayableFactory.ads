@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package;
 package org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References is
    type CurrentDisplayableFactory_Access is access all org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package.CurrentDisplayableFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_Refere
    type CurrentDisplayableFactory_Access_Array_Access is access all CurrentDisplayableFactory_Access_Array;
    type CurrentDisplayableFactory_Access_Array_Access_Array is array (Natural range <>) of CurrentDisplayableFactory_Access_Array_Access;
    type CurrentDisplayableFactory_Access_Array_Access_Array_Access is access all CurrentDisplayableFactory_Access_Array_Access_Array;
+   type CurrentDisplayableFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CurrentDisplayableFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CurrentDisplayableFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CurrentDisplayableFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CurrentDisplayableFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CurrentDisplayableFactory_Access_Array_Access is (if Value /= null and then Value.all in CurrentDisplayableFactory_Access_Array_Object'Class then CurrentDisplayableFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type CurrentDisplayableFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CurrentDisplayableFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CurrentDisplayableFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CurrentDisplayableFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CurrentDisplayableFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CurrentDisplayableFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CurrentDisplayableFactory_Access_Array_Access_Array_Object'Class then CurrentDisplayableFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References;
 
 with org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References;
@@ -135,10 +146,14 @@ package org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package is
    function "=" (Left, Right : CurrentDisplayableFactory_Access_Array) return Boolean renames org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References."=";
    subtype CurrentDisplayableFactory_Access_Array_Access is org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References.CurrentDisplayableFactory_Access_Array_Access;
    function "=" (Left, Right : CurrentDisplayableFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References."=";
+   function Java_Box (Value : CurrentDisplayableFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References.Java_Box;
+   function Java_Unbox_CurrentDisplayableFactory_Access_Array (Value : access Java_Object'Class) return CurrentDisplayableFactory_Access_Array_Access renames org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References.Java_Unbox_CurrentDisplayableFactory_Access_Array;
    subtype CurrentDisplayableFactory_Access_Array_Access_Array is org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References.CurrentDisplayableFactory_Access_Array_Access_Array;
    function "=" (Left, Right : CurrentDisplayableFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References."=";
    subtype CurrentDisplayableFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References.CurrentDisplayableFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CurrentDisplayableFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References."=";
+   function Java_Box (Value : CurrentDisplayableFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References.Java_Box;
+   function Java_Unbox_CurrentDisplayableFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return CurrentDisplayableFactory_Access_Array_Access_Array_Access renames org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package_References.Java_Unbox_CurrentDisplayableFactory_Access_Array_Access_Array;
 
    type CurrentDisplayableFactory is new Java_Object with record
       commonStrings : CommonStrings_Access;

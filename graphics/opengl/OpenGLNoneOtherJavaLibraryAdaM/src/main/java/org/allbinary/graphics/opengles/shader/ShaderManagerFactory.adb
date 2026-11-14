@@ -54,7 +54,7 @@ package body org.allbinary.graphics.opengles.shader.ShaderManagerFactory_Package
 
    function getInstance return ShaderManagerFactory_Access is
    begin
-        return ShaderManagerFactory_Access (ShaderManagerFactory_Package.instance);
+        return ShaderManagerFactory_Package.instance;
    end getInstance;
 
    function create (This : in out ShaderManagerFactory) return ShaderManager_Access is

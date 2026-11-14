@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.configuration.GameConfigurationCentral_Package;
 package org.allbinary.game.configuration.GameConfigurationCentral_Package_References is
    type GameConfigurationCentral_Access is access all org.allbinary.game.configuration.GameConfigurationCentral_Package.GameConfigurationCentral'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.configuration.GameConfigurationCentral_Package_Refere
    type GameConfigurationCentral_Access_Array_Access is access all GameConfigurationCentral_Access_Array;
    type GameConfigurationCentral_Access_Array_Access_Array is array (Natural range <>) of GameConfigurationCentral_Access_Array_Access;
    type GameConfigurationCentral_Access_Array_Access_Array_Access is access all GameConfigurationCentral_Access_Array_Access_Array;
+   type GameConfigurationCentral_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameConfigurationCentral_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameConfigurationCentral_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameConfigurationCentral_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameConfigurationCentral_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameConfigurationCentral_Access_Array_Access is (if Value /= null and then Value.all in GameConfigurationCentral_Access_Array_Object'Class then GameConfigurationCentral_Access_Array_Object'Class (Value.all).Value else null);
+   type GameConfigurationCentral_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameConfigurationCentral_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameConfigurationCentral_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameConfigurationCentral_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameConfigurationCentral_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameConfigurationCentral_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GameConfigurationCentral_Access_Array_Access_Array_Object'Class then GameConfigurationCentral_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.configuration.GameConfigurationCentral_Package_References;
 
 with org.allbinary.game.configuration.GameConfigurationCentral_Package_References;
@@ -82,10 +93,14 @@ package org.allbinary.game.configuration.GameConfigurationCentral_Package is
    function "=" (Left, Right : GameConfigurationCentral_Access_Array) return Boolean renames org.allbinary.game.configuration.GameConfigurationCentral_Package_References."=";
    subtype GameConfigurationCentral_Access_Array_Access is org.allbinary.game.configuration.GameConfigurationCentral_Package_References.GameConfigurationCentral_Access_Array_Access;
    function "=" (Left, Right : GameConfigurationCentral_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.GameConfigurationCentral_Package_References."=";
+   function Java_Box (Value : GameConfigurationCentral_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.configuration.GameConfigurationCentral_Package_References.Java_Box;
+   function Java_Unbox_GameConfigurationCentral_Access_Array (Value : access Java_Object'Class) return GameConfigurationCentral_Access_Array_Access renames org.allbinary.game.configuration.GameConfigurationCentral_Package_References.Java_Unbox_GameConfigurationCentral_Access_Array;
    subtype GameConfigurationCentral_Access_Array_Access_Array is org.allbinary.game.configuration.GameConfigurationCentral_Package_References.GameConfigurationCentral_Access_Array_Access_Array;
    function "=" (Left, Right : GameConfigurationCentral_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.GameConfigurationCentral_Package_References."=";
    subtype GameConfigurationCentral_Access_Array_Access_Array_Access is org.allbinary.game.configuration.GameConfigurationCentral_Package_References.GameConfigurationCentral_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GameConfigurationCentral_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.GameConfigurationCentral_Package_References."=";
+   function Java_Box (Value : GameConfigurationCentral_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.configuration.GameConfigurationCentral_Package_References.Java_Box;
+   function Java_Unbox_GameConfigurationCentral_Access_Array_Access_Array (Value : access Java_Object'Class) return GameConfigurationCentral_Access_Array_Access_Array_Access renames org.allbinary.game.configuration.GameConfigurationCentral_Package_References.Java_Unbox_GameConfigurationCentral_Access_Array_Access_Array;
 
    type GameConfigurationCentral is new Java_Object with record
       logUtil : LogUtil_Access;

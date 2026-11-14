@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.form.item.validation.TextItemVisitor_Package;
 package org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References is
    type TextItemVisitor_Access is access all org.allbinary.graphics.form.item.validation.TextItemVisitor_Package.TextItemVisitor'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_Refe
    type TextItemVisitor_Access_Array_Access is access all TextItemVisitor_Access_Array;
    type TextItemVisitor_Access_Array_Access_Array is array (Natural range <>) of TextItemVisitor_Access_Array_Access;
    type TextItemVisitor_Access_Array_Access_Array_Access is access all TextItemVisitor_Access_Array_Access_Array;
+   type TextItemVisitor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TextItemVisitor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TextItemVisitor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TextItemVisitor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TextItemVisitor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TextItemVisitor_Access_Array_Access is (if Value /= null and then Value.all in TextItemVisitor_Access_Array_Object'Class then TextItemVisitor_Access_Array_Object'Class (Value.all).Value else null);
+   type TextItemVisitor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TextItemVisitor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TextItemVisitor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TextItemVisitor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TextItemVisitor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TextItemVisitor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TextItemVisitor_Access_Array_Access_Array_Object'Class then TextItemVisitor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References;
 
 with org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References;
@@ -46,10 +57,14 @@ package org.allbinary.graphics.form.item.validation.TextItemVisitor_Package is
    function "=" (Left, Right : TextItemVisitor_Access_Array) return Boolean renames org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References."=";
    subtype TextItemVisitor_Access_Array_Access is org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References.TextItemVisitor_Access_Array_Access;
    function "=" (Left, Right : TextItemVisitor_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References."=";
+   function Java_Box (Value : TextItemVisitor_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References.Java_Box;
+   function Java_Unbox_TextItemVisitor_Access_Array (Value : access Java_Object'Class) return TextItemVisitor_Access_Array_Access renames org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References.Java_Unbox_TextItemVisitor_Access_Array;
    subtype TextItemVisitor_Access_Array_Access_Array is org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References.TextItemVisitor_Access_Array_Access_Array;
    function "=" (Left, Right : TextItemVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References."=";
    subtype TextItemVisitor_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References.TextItemVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TextItemVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References."=";
+   function Java_Box (Value : TextItemVisitor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References.Java_Box;
+   function Java_Unbox_TextItemVisitor_Access_Array_Access_Array (Value : access Java_Object'Class) return TextItemVisitor_Access_Array_Access_Array_Access renames org.allbinary.graphics.form.item.validation.TextItemVisitor_Package_References.Java_Unbox_TextItemVisitor_Access_Array_Access_Array;
 
    type TextItemVisitor is new Visitor_Package.Visitor with null record;
 

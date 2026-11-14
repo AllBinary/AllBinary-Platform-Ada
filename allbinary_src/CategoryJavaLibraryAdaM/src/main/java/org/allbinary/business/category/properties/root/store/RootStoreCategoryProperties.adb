@@ -43,6 +43,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -67,6 +69,8 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -335,7 +339,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
    function toHashMap (This : in out RootStoreCategoryProperties) return HashMap_Access is
       categoryHashMap : HashMap_Access;
    begin
-        categoryHashMap := StdUtil_Package.getInstance.createHashMap;
+        categoryHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         categoryHashMap.put (CategoryData_Package.getInstance.NAME, Java_Box (RootStoreCategoryProperties'Class (This).getValue));
         return categoryHashMap;
    end toHashMap;
@@ -344,7 +348,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
       categoryVector : BasicArrayList_Access;
    begin
         categoryVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        categoryVector.add (RootStoreCategoryProperties'Class (This).getValue);
+        categoryVector.add (Java_Box (RootStoreCategoryProperties'Class (This).getValue));
         return categoryVector;
    end toVector;
 
@@ -369,7 +373,7 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
 
    procedure log (This : in out RootStoreCategoryProperties) is
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
             This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("filePath = ")).append (This.fileAbPath.toString).append (To_Unbounded_String ("" & ASCII.LF & "path = ")).append (This.abPath.toString).append (To_Unbounded_String ("" & ASCII.LF & "category = ")).append (This.category).toString, RootStoreCategoryProperties_Access'(This'Unchecked_Access), To_Unbounded_String ("log()"));
         end if;
    end log;

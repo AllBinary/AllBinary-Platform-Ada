@@ -21,6 +21,7 @@ with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.
 with org.allbinary.media.AllBinaryNoVibration_Package; use org.allbinary.media.AllBinaryNoVibration_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.media.AllBinaryNoVibration_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;
@@ -75,7 +76,7 @@ package body org.allbinary.media.AllBinaryVibration_Package is
 
    function getInstance return AllBinaryVibrationME_Access is
    begin
-        return AllBinaryVibrationME_Access (AllBinaryVibration_Package.VIBRATION);
+        return AllBinaryVibration_Package.VIBRATION;
    end getInstance;
 
    procedure init is

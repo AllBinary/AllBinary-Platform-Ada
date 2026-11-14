@@ -78,7 +78,7 @@ package body org.allbinary.game.rts.technology.event.TechEventHandler_Package is
 
    function getInstance return TechEventHandler_Access is
    begin
-        return TechEventHandler_Access (TechEventHandler_Package.eventHandler);
+        return TechEventHandler_Package.eventHandler;
    end getInstance;
 
    --  throws Exception

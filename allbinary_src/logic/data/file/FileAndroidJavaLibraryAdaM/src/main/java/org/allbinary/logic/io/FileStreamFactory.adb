@@ -75,7 +75,7 @@ package body org.allbinary.logic.io.FileStreamFactory_Package is
 
    function getInstance return FileStreamFactory_Access is
    begin
-        if (FileStreamFactory_Package.SINGLETON) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (FileStreamFactory_Package.SINGLETON)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             FileStreamFactory_Package.SINGLETON := Java_Object_Access (FileStreamFactory_Package.Create (ResourceUtil_Package.getInstance.getContext));
         end if;
         return FileStreamFactory_Access (FileStreamFactory_Package.SINGLETON);

@@ -40,7 +40,7 @@ package body org.allbinary.emulator.swt.SWTProcessor_Package is
 
    function getInstance return SWTProcessor_Access is
    begin
-        return SWTProcessor_Access (SWTProcessor_Package.instance);
+        return SWTProcessor_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out SWTProcessor'Class) is

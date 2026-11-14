@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.BasketHelperFactory_Package;
 package admin.taghelpers.BasketHelperFactory_Package_References is
    type BasketHelperFactory_Access is access all admin.taghelpers.BasketHelperFactory_Package.BasketHelperFactory'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.BasketHelperFactory_Package_References is
    type BasketHelperFactory_Access_Array_Access is access all BasketHelperFactory_Access_Array;
    type BasketHelperFactory_Access_Array_Access_Array is array (Natural range <>) of BasketHelperFactory_Access_Array_Access;
    type BasketHelperFactory_Access_Array_Access_Array_Access is access all BasketHelperFactory_Access_Array_Access_Array;
+   type BasketHelperFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasketHelperFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasketHelperFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasketHelperFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasketHelperFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasketHelperFactory_Access_Array_Access is (if Value /= null and then Value.all in BasketHelperFactory_Access_Array_Object'Class then BasketHelperFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type BasketHelperFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasketHelperFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasketHelperFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasketHelperFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasketHelperFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasketHelperFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasketHelperFactory_Access_Array_Access_Array_Object'Class then BasketHelperFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.BasketHelperFactory_Package_References;
 
 with admin.taghelpers.BasketHelperFactory_Package_References;
@@ -61,10 +72,14 @@ package admin.taghelpers.BasketHelperFactory_Package is
    function "=" (Left, Right : BasketHelperFactory_Access_Array) return Boolean renames admin.taghelpers.BasketHelperFactory_Package_References."=";
    subtype BasketHelperFactory_Access_Array_Access is admin.taghelpers.BasketHelperFactory_Package_References.BasketHelperFactory_Access_Array_Access;
    function "=" (Left, Right : BasketHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.BasketHelperFactory_Package_References."=";
+   function Java_Box (Value : BasketHelperFactory_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.BasketHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_BasketHelperFactory_Access_Array (Value : access Java_Object'Class) return BasketHelperFactory_Access_Array_Access renames admin.taghelpers.BasketHelperFactory_Package_References.Java_Unbox_BasketHelperFactory_Access_Array;
    subtype BasketHelperFactory_Access_Array_Access_Array is admin.taghelpers.BasketHelperFactory_Package_References.BasketHelperFactory_Access_Array_Access_Array;
    function "=" (Left, Right : BasketHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.BasketHelperFactory_Package_References."=";
    subtype BasketHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.BasketHelperFactory_Package_References.BasketHelperFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasketHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.BasketHelperFactory_Package_References."=";
+   function Java_Box (Value : BasketHelperFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.BasketHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_BasketHelperFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return BasketHelperFactory_Access_Array_Access_Array_Access renames admin.taghelpers.BasketHelperFactory_Package_References.Java_Unbox_BasketHelperFactory_Access_Array_Access_Array;
 
    type BasketHelperFactory is new TagHelperFactory with record
       logUtil : LogUtil_Access;

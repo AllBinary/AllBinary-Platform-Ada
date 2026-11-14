@@ -21,15 +21,21 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.AbFileInputStream_Package;
 with org.allbinary.logic.io.AbFileOutputStream_Package;
+with org.allbinary.logic.io.path.AbFilePath_Package;
+with org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.io.file.FilePathData_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.io.path.PathUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.configuration.ApplicationConfiguration_Package is
@@ -82,7 +88,7 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
 
    function getInstance return ApplicationConfiguration_Access is
    begin
-        if (ApplicationConfiguration_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (ApplicationConfiguration_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             ApplicationConfiguration_Package.instance := Java_Object_Access (ApplicationConfiguration_Package.Create);
         end if;
         return ApplicationConfiguration_Access (ApplicationConfiguration_Package.instance);
@@ -126,7 +132,7 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
       showTitleBar : Integer;
    begin
         fileInputStreamFactory := FileStreamFactory_Package.getInstance;
-        fileInputStream := fileInputStreamFactory.getFileInputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE);
+        fileInputStream := InputStream_Access (fileInputStreamFactory.getFileInputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE));
         dataInputStream := AbDataInputStream_Package.Create (fileInputStream);
         fullScreen := dataInputStream.readInt;
         if (fullScreen) = (0) then
@@ -166,7 +172,7 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
         begin
             This.logUtil.putF (To_Unbounded_String ("Write Configuration: ") & ApplicationConfiguration'Class (This).toString, ApplicationConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("write"));
             fileInputStreamFactory := FileStreamFactory_Package.getInstance;
-            fileOutputStream := fileInputStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE);
+            fileOutputStream := OutputStream_Access (fileInputStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, This.FILE));
             dataOutputStream := AbDataOutputStream_Package.Create (fileOutputStream);
             closeable := Closeable_Access (dataOutputStream);
             if ApplicationConfiguration'Class (This).isFullscreen then

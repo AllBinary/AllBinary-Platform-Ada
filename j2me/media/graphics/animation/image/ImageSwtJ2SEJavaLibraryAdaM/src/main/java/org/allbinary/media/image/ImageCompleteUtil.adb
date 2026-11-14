@@ -15,6 +15,8 @@
 
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with javax.microedition.lcdui.Image_Package_References;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.lcdui.Graphics_Package;
 
 package body org.allbinary.media.image.ImageCompleteUtil_Package is
 
@@ -48,7 +50,7 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
 
    function getInstance return ImageCompleteUtil_Access is
    begin
-        return ImageCompleteUtil_Access (ImageCompleteUtil_Package.instance);
+        return ImageCompleteUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

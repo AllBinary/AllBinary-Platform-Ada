@@ -27,6 +27,7 @@ with javax.microedition.lcdui.ChoiceGroup_Package;
 with javax.microedition.lcdui.ChoiceItem_Package;
 with javax.microedition.lcdui.CommandListener_Package;
 with org.microemu.device.ui.CommandUI_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.microemu.device.Device_Package;
 with org.microemu.device.DeviceDisplay_Package;
 with javax.microedition.lcdui.Display_Package;
@@ -35,6 +36,7 @@ with javax.microedition.lcdui.Displayable_Package;
 with org.microemu.device.ui.DisplayableUI_Package;
 with javax.microedition.lcdui.Event_Package;
 with org.microemu.device.ui.EventDispatcher_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.microemu.device.FontManager_Package;
 with javax.microedition.lcdui.Form_Package;
@@ -51,18 +53,23 @@ with javax.microedition.lcdui.ItemCommandListener_Package;
 with javax.microedition.lcdui.ItemStateListener_Package;
 with javax.microedition.lcdui.List_Package;
 with org.microemu.device.ui.ListUI_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with javax.microedition.midlet.MIDlet_Package;
 with org.microemu.device.MutableImage_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.microemu.device.ui.PointerEvent_Package;
 with javax.microedition.lcdui.Screen_Package;
 with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.thread.SynchObject_Package;
 with javax.microedition.lcdui.TextBox_Package;
 with org.microemu.device.ui.TextBoxUI_Package;
 with javax.microedition.lcdui.TextField_Package;
 with javax.microedition.lcdui.Ticker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.content.CommandUriAction_Package is
@@ -108,7 +115,7 @@ package body org.allbinary.content.CommandUriAction_Package is
 
    function getInstance return CommandUriAction_Access is
    begin
-        return CommandUriAction_Access (CommandUriAction_Package.instance);
+        return CommandUriAction_Package.instance;
    end getInstance;
 
    procedure add (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class; url : Unbounded_String) is

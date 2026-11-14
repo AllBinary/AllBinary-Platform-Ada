@@ -69,7 +69,7 @@ package body org.allbinary.input.motion.gesture.configuration.MotionGestureConfi
 
    function getInstance return MotionGestureConfiguration_Access is
    begin
-        return MotionGestureConfiguration_Access (MotionGestureConfigurationFactory_Package.config);
+        return MotionGestureConfigurationFactory_Package.config;
    end getInstance;
 
 begin

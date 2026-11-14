@@ -17,6 +17,7 @@ with org.allbinary.business.user.address.ShippingAddressData_Package; use org.al
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -36,6 +37,7 @@ package body tags.generic_Id.address.shipping.ShippingAddressTag_Package is
    package ShippingAddressData_Package renames Standard.org.allbinary.business.user.address.ShippingAddressData_Package;
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    procedure Initialize_Fields (This : in out ShippingAddressTag'Class) is
    begin
       null;
@@ -62,13 +64,13 @@ package body tags.generic_Id.address.shipping.ShippingAddressTag_Package is
    begin
         begin
             if (ShippingAddressTag'Class (This).getCommand) /= (null) then
-                if (ShippingAddressTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                if (ShippingAddressTag'Class (This).getCommand.compareTo (GLOBALS2_Package.VIEW)) = (0) then
                     ShippingAddressTag'Class (This).setName (To_Unbounded_String ("Basic Shipping Address View"));
                     ShippingAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.shipping.ViewShippingAddressesView"));
-                elsif (ShippingAddressTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.EDIT)) = (0) then
+                elsif (ShippingAddressTag'Class (This).getCommand.compareTo (GLOBALS2_Package.EDIT)) = (0) then
                     ShippingAddressTag'Class (This).setName (To_Unbounded_String ("Basic Shipping Address View"));
                     ShippingAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.shipping.EditShippingAddressesView"));
-                elsif (ShippingAddressTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.NEW_Id)) = (0) then
+                elsif (ShippingAddressTag'Class (This).getCommand.compareTo (GLOBALS2_Package.NEW_Id)) = (0) then
                     ShippingAddressTag'Class (This).setName (To_Unbounded_String ("Basic Shipping Address View"));
                     ShippingAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.shipping.NewShippingAddressesView"));
                 elsif (ShippingAddressTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0) then

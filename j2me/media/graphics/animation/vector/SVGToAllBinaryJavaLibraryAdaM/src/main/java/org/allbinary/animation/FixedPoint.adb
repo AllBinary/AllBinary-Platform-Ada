@@ -25,7 +25,7 @@ package body org.allbinary.animation.FixedPoint_Package is
 
    function getInstance return FixedPoint_Access is
    begin
-        return FixedPoint_Access (FixedPoint_Package.instance);
+        return FixedPoint_Package.instance;
    end getInstance;
 
    function toFixed (This : in out FixedPoint; val : Long_Float) return Integer is

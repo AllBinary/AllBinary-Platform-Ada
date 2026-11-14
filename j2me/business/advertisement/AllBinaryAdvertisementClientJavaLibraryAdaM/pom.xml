@@ -135,7 +135,7 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-pluginAda</artifactId>
+                <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
                         <id>unpack-ada-dependencies</id>
@@ -185,7 +185,7 @@
 <!-- just this not the inner part
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-pluginAda</artifactId>
+        <artifactId>maven-javadoc-plugin</artifactId>
         <version>2.7</version>
         <executions>
 -->

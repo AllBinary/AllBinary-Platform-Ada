@@ -55,7 +55,7 @@ package body org.allbinary.input.motion.button.TouchScreenFactory_Package is
 
    function getInstance return TouchScreenFactory_Access is
    begin
-        return TouchScreenFactory_Access (TouchScreenFactory_Package.SINGLETON);
+        return TouchScreenFactory_Package.SINGLETON;
    end getInstance;
 
    function isMultiTouch (This : in out TouchScreenFactory) return Boolean is

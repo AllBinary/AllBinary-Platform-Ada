@@ -48,7 +48,7 @@ package body org.allbinary.image.opengles.OpenGLESImageProcessor_Package is
 
    function getInstance return OpenGLESImageProcessor_Access is
    begin
-        return OpenGLESImageProcessor_Access (OpenGLESImageProcessor_Package.instance);
+        return OpenGLESImageProcessor_Package.instance;
    end getInstance;
 
    procedure translate (This : in out OpenGLESImageProcessor; gl_Param : access GL10_Package.GL10'Class; translateX : Float; translateY : Float) is

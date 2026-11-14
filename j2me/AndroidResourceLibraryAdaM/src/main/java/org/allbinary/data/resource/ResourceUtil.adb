@@ -121,7 +121,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
 
    function getInstance return ResourceUtil_Access is
    begin
-        return ResourceUtil_Access (ResourceUtil_Package.instance);
+        return ResourceUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ResourceUtil'Class) is
@@ -163,7 +163,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
       value : Integer;
    begin
         value := Java_Unbox_Integer (This.hashMap.get (Java_Box (resource)));
-        if (DebugFactory_Package.getInstance) /= (NoDebug_Package.getInstance) then
+        if (Java_Object_Access (DebugFactory_Package.getInstance)) /= (Java_Object_Access (NoDebug_Package.getInstance)) then
             PreLogUtil_Package.put (StringMaker_Package.Create.append (resource).append (CommonSeps_Package.getInstance.COLON).append (To_Unbounded_String (Java_Image (value))).toString, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getResourceId"));
         end if;
         return value;
@@ -171,7 +171,7 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
 
    procedure addResource (This : in out ResourceUtil; resource : Unbounded_String; value : Integer) is
    begin
-        if (DebugFactory_Package.getInstance) /= (NoDebug_Package.getInstance) then
+        if (Java_Object_Access (DebugFactory_Package.getInstance)) /= (Java_Object_Access (NoDebug_Package.getInstance)) then
             PreLogUtil_Package.put (StringMaker_Package.Create.append (resource).append (CommonSeps_Package.getInstance.COLON).append (To_Unbounded_String (Java_Image (value))).toString, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("addResource"));
             if ResourceUtil'Class (This).containsDuplicate (resource, value) then
                 ForcedLogUtil_Package.log (StringMaker_Package.Create.append (To_Unbounded_String ("Found Duplicate Resource: ")).append (resource).toString, ResourceUtil_Access'(This'Unchecked_Access));

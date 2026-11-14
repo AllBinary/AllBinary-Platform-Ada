@@ -37,7 +37,7 @@ package body org.allbinary.emulator.InitEmulatorFactory_Package is
 
    function getInstance return InitEmulatorFactory_Access is
    begin
-        return InitEmulatorFactory_Access (InitEmulatorFactory_Package.instance);
+        return InitEmulatorFactory_Package.instance;
    end getInstance;
 
    procedure setInitEmulator (This : in out InitEmulatorFactory; initEmulator : Boolean) is

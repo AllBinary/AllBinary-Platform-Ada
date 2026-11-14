@@ -62,7 +62,7 @@ package body org.allbinary.image.ImageTool_Package is
 
    procedure main (args : Unbounded_String_Array_Access) is
    begin
-        java_Package.awt.EventQueue.invokeLater (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
+        EventQueue_Package.invokeLater (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure run (This : in out ) is
 --        logUtil : LogUtil_Access;

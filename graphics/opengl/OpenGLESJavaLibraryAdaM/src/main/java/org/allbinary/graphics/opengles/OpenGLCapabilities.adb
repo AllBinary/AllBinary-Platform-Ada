@@ -149,7 +149,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
 
    function getInstance return OpenGLCapabilities_Access is
    begin
-        return OpenGLCapabilities_Access (OpenGLCapabilities_Package.instance);
+        return OpenGLCapabilities_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out OpenGLCapabilities'Class) is

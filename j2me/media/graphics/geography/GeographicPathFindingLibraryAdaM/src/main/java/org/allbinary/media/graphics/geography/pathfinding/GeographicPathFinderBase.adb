@@ -21,6 +21,7 @@ with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; 
 with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
 
 package body org.allbinary.media.graphics.geography.pathfinding.GeographicPathFinderBase_Package is
 

@@ -78,7 +78,7 @@ package body org.allbinary.data.tree.dom.DomNodeListHelper_Package is
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         size := nodeList.getLength;
         for index in 0 .. (size) - 1 loop
-            vector.add (DomNodeHelper_Package.getTextNodeValue (nodeList.item (index)));
+            vector.add (Java_Box (DomNodeHelper_Package.getTextNodeValue (nodeList.item (index))));
         end loop;
         return vector;
    end getVector;

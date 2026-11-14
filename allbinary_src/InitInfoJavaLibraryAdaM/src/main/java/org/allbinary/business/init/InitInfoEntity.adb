@@ -101,7 +101,7 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
       hashMap : HashMap_Access;
    begin
         begin
-            keyAndValue := StdUtil_Package.getInstance.createHashMap;
+            keyAndValue := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             keyAndValue.put (Java_Box (This.NOTHING), Java_Box (This.NOTHING));
             hashMap := InitInfoEntity'Class (This).getRow (keyAndValue);
             if (hashMap) /= (null) then
@@ -109,7 +109,7 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
                 return True;
             else
                 if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-                    PreLogUtil_Package.put (This.NOT_IN_DB, Java_Box (This.NAME), This.METHOD_GET);
+                    PreLogUtil_Package.putS (This.NOT_IN_DB, Java_Box (This.NAME), This.METHOD_GET);
                 end if;
                 return False;
             end if;
@@ -131,7 +131,7 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
       hashMap : HashMap_Access;
    begin
         begin
-            keyAndValue := StdUtil_Package.getInstance.createHashMap;
+            keyAndValue := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             keyAndValue.put (Java_Box (This.NOTHING), Java_Box (This.NOTHING));
             hashMap := InitInfoEntity'Class (This).getRow (keyAndValue);
             if (hashMap) /= (null) then
@@ -165,10 +165,10 @@ package body org.allbinary.business.init.InitInfoEntity_Package is
    begin
         begin
             values := BasicArrayList_Access (BasicArrayListD_Package.Create);
-            values.add (This.NOTHING);
-            values.add (InitInfo_Package.getInstance.getTesting);
-            values.add (InitInfo_Package.getInstance.getTestHtmlPath);
-            values.add (InitInfo_Package.getInstance.getMainPath);
+            values.add (Java_Box (This.NOTHING));
+            values.add (Java_Box (InitInfo_Package.getInstance.getTesting));
+            values.add (Java_Box (InitInfo_Package.getInstance.getTestHtmlPath));
+            values.add (Java_Box (InitInfo_Package.getInstance.getMainPath));
             InitInfoEntity'Class (This).insert (values);
         exception
             when Java_Occurrence : others =>

@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.RotationAnimationFactory_Package;
 package org.allbinary.animation.RotationAnimationFactory_Package_References is
    type RotationAnimationFactory_Access is access all org.allbinary.animation.RotationAnimationFactory_Package.RotationAnimationFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.RotationAnimationFactory_Package_References is
    type RotationAnimationFactory_Access_Array_Access is access all RotationAnimationFactory_Access_Array;
    type RotationAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of RotationAnimationFactory_Access_Array_Access;
    type RotationAnimationFactory_Access_Array_Access_Array_Access is access all RotationAnimationFactory_Access_Array_Access_Array;
+   type RotationAnimationFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RotationAnimationFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RotationAnimationFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RotationAnimationFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RotationAnimationFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RotationAnimationFactory_Access_Array_Access is (if Value /= null and then Value.all in RotationAnimationFactory_Access_Array_Object'Class then RotationAnimationFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type RotationAnimationFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RotationAnimationFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RotationAnimationFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RotationAnimationFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RotationAnimationFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RotationAnimationFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in RotationAnimationFactory_Access_Array_Access_Array_Object'Class then RotationAnimationFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.RotationAnimationFactory_Package_References;
 
 with org.allbinary.animation.RotationAnimationFactory_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.animation.RotationAnimationFactory_Package is
    function "=" (Left, Right : RotationAnimationFactory_Access_Array) return Boolean renames org.allbinary.animation.RotationAnimationFactory_Package_References."=";
    subtype RotationAnimationFactory_Access_Array_Access is org.allbinary.animation.RotationAnimationFactory_Package_References.RotationAnimationFactory_Access_Array_Access;
    function "=" (Left, Right : RotationAnimationFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.RotationAnimationFactory_Package_References."=";
+   function Java_Box (Value : RotationAnimationFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.RotationAnimationFactory_Package_References.Java_Box;
+   function Java_Unbox_RotationAnimationFactory_Access_Array (Value : access Java_Object'Class) return RotationAnimationFactory_Access_Array_Access renames org.allbinary.animation.RotationAnimationFactory_Package_References.Java_Unbox_RotationAnimationFactory_Access_Array;
    subtype RotationAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.RotationAnimationFactory_Package_References.RotationAnimationFactory_Access_Array_Access_Array;
    function "=" (Left, Right : RotationAnimationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.RotationAnimationFactory_Package_References."=";
    subtype RotationAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.RotationAnimationFactory_Package_References.RotationAnimationFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : RotationAnimationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.RotationAnimationFactory_Package_References."=";
+   function Java_Box (Value : RotationAnimationFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.RotationAnimationFactory_Package_References.Java_Box;
+   function Java_Unbox_RotationAnimationFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return RotationAnimationFactory_Access_Array_Access_Array_Access renames org.allbinary.animation.RotationAnimationFactory_Package_References.Java_Unbox_RotationAnimationFactory_Access_Array_Access_Array;
 
    type RotationAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with record
       totalAngle : Short_Integer;

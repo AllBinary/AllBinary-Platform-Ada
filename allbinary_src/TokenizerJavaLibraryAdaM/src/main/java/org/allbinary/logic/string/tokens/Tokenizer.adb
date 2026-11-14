@@ -111,7 +111,7 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
    procedure Initialize (This : in out Tokenizer'Class; sep : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        if ((sep) = (Null_Unbounded_String)) or else ((TsUtil_Package.getInstance.compareTo (sep, StringUtil_Package.getInstance.EMPTY_STRING)) = (0)) then
+        if (TsUtil_Package.getInstance.compareTo (sep, StringUtil_Package.getInstance.EMPTY_STRING)) = (0) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Sep provided is not valid")));
         end if;
         This.sep := sep;
@@ -148,7 +148,7 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
             if (index) /= (-(1)) then
                 end_Id := Java_Index_Of (string_Id, Java_Image (This.endSep), (index) + (Ada.Strings.Unbounded.Length (This.sep)));
                 if (end_Id) /= (-(1)) then
-                    tokenList.add (Unbounded_Slice (string_Id, ((index) + (Ada.Strings.Unbounded.Length (This.sep))) + 1, (end_Id) - (((Ada.Strings.Unbounded.Length (This.endSep)) - (1)))));
+                    tokenList.add (Java_Box (Unbounded_Slice (string_Id, ((index) + (Ada.Strings.Unbounded.Length (This.sep))) + 1, (end_Id) - (((Ada.Strings.Unbounded.Length (This.endSep)) - (1))))));
                     index := (end_Id) + (Ada.Strings.Unbounded.Length (This.endSep));
                 else
                     null;
@@ -170,10 +170,10 @@ package body org.allbinary.logic.string_Id.tokens.Tokenizer_Package is
         while (index) < (Ada.Strings.Unbounded.Length (string_Id)) loop
             end_Id := Java_Index_Of (string_Id, Java_Image (This.sep), index);
             if (end_Id) /= (-(1)) then
-                tokenVector.add (Unbounded_Slice (string_Id, (index) + 1, end_Id));
+                tokenVector.add (Java_Box (Unbounded_Slice (string_Id, (index) + 1, end_Id)));
                 index := (end_Id) + (Ada.Strings.Unbounded.Length (This.sep));
             else
-                tokenVector.add (Unbounded_Slice (string_Id, (index) + 1, Ada.Strings.Unbounded.Length (string_Id)));
+                tokenVector.add (Java_Box (Unbounded_Slice (string_Id, (index) + 1, Ada.Strings.Unbounded.Length (string_Id))));
                 exit;
             end if;
         end loop;

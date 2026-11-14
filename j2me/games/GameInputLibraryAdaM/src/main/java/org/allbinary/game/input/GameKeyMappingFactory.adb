@@ -54,7 +54,7 @@ package body org.allbinary.game.input.GameKeyMappingFactory_Package is
 
    function getInstance return GameKeyMappingFactory_Access is
    begin
-        if (GameKeyMappingFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (GameKeyMappingFactory_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             GameKeyMappingFactory_Package.instance := Java_Object_Access (GameKeyMappingFactory_Package.Create);
         end if;
         return GameKeyMappingFactory_Access (GameKeyMappingFactory_Package.instance);

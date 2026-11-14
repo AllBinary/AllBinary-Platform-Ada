@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.paint.FullScreenPaintable_Package;
 package org.allbinary.game.paint.FullScreenPaintable_Package_References is
    type FullScreenPaintable_Access is access all org.allbinary.game.paint.FullScreenPaintable_Package.FullScreenPaintable'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.paint.FullScreenPaintable_Package_References is
    type FullScreenPaintable_Access_Array_Access is access all FullScreenPaintable_Access_Array;
    type FullScreenPaintable_Access_Array_Access_Array is array (Natural range <>) of FullScreenPaintable_Access_Array_Access;
    type FullScreenPaintable_Access_Array_Access_Array_Access is access all FullScreenPaintable_Access_Array_Access_Array;
+   type FullScreenPaintable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FullScreenPaintable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FullScreenPaintable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FullScreenPaintable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FullScreenPaintable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FullScreenPaintable_Access_Array_Access is (if Value /= null and then Value.all in FullScreenPaintable_Access_Array_Object'Class then FullScreenPaintable_Access_Array_Object'Class (Value.all).Value else null);
+   type FullScreenPaintable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FullScreenPaintable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FullScreenPaintable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FullScreenPaintable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FullScreenPaintable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FullScreenPaintable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in FullScreenPaintable_Access_Array_Access_Array_Object'Class then FullScreenPaintable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.paint.FullScreenPaintable_Package_References;
 
 with org.allbinary.game.paint.FullScreenPaintable_Package_References;
@@ -87,10 +98,14 @@ package org.allbinary.game.paint.FullScreenPaintable_Package is
    function "=" (Left, Right : FullScreenPaintable_Access_Array) return Boolean renames org.allbinary.game.paint.FullScreenPaintable_Package_References."=";
    subtype FullScreenPaintable_Access_Array_Access is org.allbinary.game.paint.FullScreenPaintable_Package_References.FullScreenPaintable_Access_Array_Access;
    function "=" (Left, Right : FullScreenPaintable_Access_Array_Access) return Boolean renames org.allbinary.game.paint.FullScreenPaintable_Package_References."=";
+   function Java_Box (Value : FullScreenPaintable_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.paint.FullScreenPaintable_Package_References.Java_Box;
+   function Java_Unbox_FullScreenPaintable_Access_Array (Value : access Java_Object'Class) return FullScreenPaintable_Access_Array_Access renames org.allbinary.game.paint.FullScreenPaintable_Package_References.Java_Unbox_FullScreenPaintable_Access_Array;
    subtype FullScreenPaintable_Access_Array_Access_Array is org.allbinary.game.paint.FullScreenPaintable_Package_References.FullScreenPaintable_Access_Array_Access_Array;
    function "=" (Left, Right : FullScreenPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.paint.FullScreenPaintable_Package_References."=";
    subtype FullScreenPaintable_Access_Array_Access_Array_Access is org.allbinary.game.paint.FullScreenPaintable_Package_References.FullScreenPaintable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : FullScreenPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.paint.FullScreenPaintable_Package_References."=";
+   function Java_Box (Value : FullScreenPaintable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.paint.FullScreenPaintable_Package_References.Java_Box;
+   function Java_Unbox_FullScreenPaintable_Access_Array_Access_Array (Value : access Java_Object'Class) return FullScreenPaintable_Access_Array_Access_Array_Access renames org.allbinary.game.paint.FullScreenPaintable_Package_References.Java_Unbox_FullScreenPaintable_Access_Array_Access_Array;
 
    type FullScreenPaintable is new Paintable and UpdateMyFontInterface with record
       displayInfo : DisplayInfoSingleton_Access;

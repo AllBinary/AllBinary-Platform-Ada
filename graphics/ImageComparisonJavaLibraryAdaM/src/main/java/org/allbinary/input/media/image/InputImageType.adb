@@ -81,7 +81,7 @@ package body org.allbinary.input.media.image.InputImageType_Package is
 
    function getAllAsVector return BasicArrayList_Access is
    begin
-        return BasicArrayList_Access (InputImageType_Package.TYPE_VECTOR);
+        return InputImageType_Package.TYPE_VECTOR;
    end getAllAsVector;
 
    function getIndex (This : in out InputImageType) return Integer is
@@ -98,7 +98,7 @@ package body org.allbinary.input.media.image.InputImageType_Package is
 
 begin
    null;
-   hashMap := StdUtil_Package.getInstance.createHashMap;
+   hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
    TYPE_VECTOR := BasicArrayList_Access (BasicArrayListD_Package.Create);
    CAPTURE := InputImageType_Package.Create (To_Unbounded_String ("Capture"), 0);
    COMPARISON := InputImageType_Package.Create (To_Unbounded_String ("Comparison"), 1);

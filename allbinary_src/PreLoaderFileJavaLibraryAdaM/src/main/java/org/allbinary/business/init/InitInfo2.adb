@@ -61,7 +61,7 @@ package body org.allbinary.business.init.InitInfo2_Package is
 
    function getInstance return InitInfo2_Access is
    begin
-        return InitInfo2_Access (InitInfo2_Package.instance);
+        return InitInfo2_Package.instance;
    end getInstance;
 
    function isTestHtmlPathValid (This : in out InitInfo2; value_Param : access AbPath_Package.AbPath'Class) return Boolean is

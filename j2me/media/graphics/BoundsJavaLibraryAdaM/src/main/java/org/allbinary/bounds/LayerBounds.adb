@@ -28,7 +28,9 @@ with org.allbinary.bounds.BoundsVisitorInterface_Package; use org.allbinary.boun
 with org.allbinary.bounds.BoundsVisitorInterface_Package_References;
 with org.allbinary.bounds.BoundsVisitorInterface_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.NullUtil_Package;

@@ -54,7 +54,7 @@ package body org.allbinary.game.midlet.DemoGameMidletStateFactory_Package is
 
    function getInstance return DemoGameMidletStateFactory_Access is
    begin
-        return DemoGameMidletStateFactory_Access (DemoGameMidletStateFactory_Package.STATE);
+        return DemoGameMidletStateFactory_Package.STATE;
    end getInstance;
 
 begin

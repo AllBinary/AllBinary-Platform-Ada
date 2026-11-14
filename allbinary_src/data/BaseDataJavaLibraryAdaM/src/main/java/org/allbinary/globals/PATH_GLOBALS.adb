@@ -35,7 +35,7 @@ package body org.allbinary.globals.PATH_GLOBALS_Package is
 
    function getInstance return PATH_GLOBALS_Access is
    begin
-        return PATH_GLOBALS_Access (PATH_GLOBALS_Package.instance);
+        return PATH_GLOBALS_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out PATH_GLOBALS'Class) is

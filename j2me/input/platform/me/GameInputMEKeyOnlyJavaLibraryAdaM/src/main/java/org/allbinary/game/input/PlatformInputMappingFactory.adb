@@ -144,7 +144,7 @@ package body org.allbinary.game.input.PlatformInputMappingFactory_Package is
 
    function getInstance return PlatformInputMappingFactory_Access is
    begin
-        return PlatformInputMappingFactory_Access (PlatformInputMappingFactory_Package.instance);
+        return PlatformInputMappingFactory_Package.instance;
    end getInstance;
 
    function getPersistentInputMappingInstance (This : in out PlatformInputMappingFactory) return PersistentInputMapping_Access is

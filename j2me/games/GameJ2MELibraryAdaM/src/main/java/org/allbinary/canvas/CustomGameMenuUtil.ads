@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.canvas.CustomGameMenuUtil_Package;
 package org.allbinary.canvas.CustomGameMenuUtil_Package_References is
    type CustomGameMenuUtil_Access is access all org.allbinary.canvas.CustomGameMenuUtil_Package.CustomGameMenuUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.canvas.CustomGameMenuUtil_Package_References is
    type CustomGameMenuUtil_Access_Array_Access is access all CustomGameMenuUtil_Access_Array;
    type CustomGameMenuUtil_Access_Array_Access_Array is array (Natural range <>) of CustomGameMenuUtil_Access_Array_Access;
    type CustomGameMenuUtil_Access_Array_Access_Array_Access is access all CustomGameMenuUtil_Access_Array_Access_Array;
+   type CustomGameMenuUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CustomGameMenuUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CustomGameMenuUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CustomGameMenuUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CustomGameMenuUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CustomGameMenuUtil_Access_Array_Access is (if Value /= null and then Value.all in CustomGameMenuUtil_Access_Array_Object'Class then CustomGameMenuUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type CustomGameMenuUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CustomGameMenuUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CustomGameMenuUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CustomGameMenuUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CustomGameMenuUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CustomGameMenuUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CustomGameMenuUtil_Access_Array_Access_Array_Object'Class then CustomGameMenuUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.canvas.CustomGameMenuUtil_Package_References;
 
 with org.allbinary.canvas.CustomGameMenuUtil_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.canvas.CustomGameMenuUtil_Package is
    function "=" (Left, Right : CustomGameMenuUtil_Access_Array) return Boolean renames org.allbinary.canvas.CustomGameMenuUtil_Package_References."=";
    subtype CustomGameMenuUtil_Access_Array_Access is org.allbinary.canvas.CustomGameMenuUtil_Package_References.CustomGameMenuUtil_Access_Array_Access;
    function "=" (Left, Right : CustomGameMenuUtil_Access_Array_Access) return Boolean renames org.allbinary.canvas.CustomGameMenuUtil_Package_References."=";
+   function Java_Box (Value : CustomGameMenuUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.canvas.CustomGameMenuUtil_Package_References.Java_Box;
+   function Java_Unbox_CustomGameMenuUtil_Access_Array (Value : access Java_Object'Class) return CustomGameMenuUtil_Access_Array_Access renames org.allbinary.canvas.CustomGameMenuUtil_Package_References.Java_Unbox_CustomGameMenuUtil_Access_Array;
    subtype CustomGameMenuUtil_Access_Array_Access_Array is org.allbinary.canvas.CustomGameMenuUtil_Package_References.CustomGameMenuUtil_Access_Array_Access_Array;
    function "=" (Left, Right : CustomGameMenuUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.canvas.CustomGameMenuUtil_Package_References."=";
    subtype CustomGameMenuUtil_Access_Array_Access_Array_Access is org.allbinary.canvas.CustomGameMenuUtil_Package_References.CustomGameMenuUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CustomGameMenuUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.canvas.CustomGameMenuUtil_Package_References."=";
+   function Java_Box (Value : CustomGameMenuUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.canvas.CustomGameMenuUtil_Package_References.Java_Box;
+   function Java_Unbox_CustomGameMenuUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return CustomGameMenuUtil_Access_Array_Access_Array_Access renames org.allbinary.canvas.CustomGameMenuUtil_Package_References.Java_Unbox_CustomGameMenuUtil_Access_Array_Access_Array;
 
    type CustomGameMenuUtil is new Java_Object with null record;
 

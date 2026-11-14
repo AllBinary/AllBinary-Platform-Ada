@@ -46,7 +46,7 @@ package body org.allbinary.game.GameStrings_Package is
 
    function getInstance return GameStrings_Access is
    begin
-        return GameStrings_Access (GameStrings_Package.instance);
+        return GameStrings_Package.instance;
    end getInstance;
 
 begin

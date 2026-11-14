@@ -61,7 +61,7 @@ package body org.allbinary.logic.control.validate.ValidatorBase_Package is
 
    function getInstance return ValidatorBase_Access is
    begin
-        return ValidatorBase_Access (ValidatorBase_Package.instance);
+        return ValidatorBase_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ValidatorBase'Class) is

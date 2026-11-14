@@ -76,11 +76,8 @@ package body org.allbinary.logic.io.BufferedIOUtil_Package is
         line := StringUtil_Package.getInstance.EMPTY_STRING;
         tmpOut := BufferedWriter_Package.Create (FileWriter_Package.Create (AbFileNativeUtil_Package.get (backupFileBak)));
         tmpIn := BufferedReader_Package.Create (FileReader_Package.Create (AbFileNativeUtil_Package.get (backupFile)));
-        while True loop
+        while tmpIn.ready loop
             line := tmpIn.readLine;
-            if (line) = (Null_Unbounded_String) then
-                exit;
-            end if;
             tmpOut.write (line, 0, Ada.Strings.Unbounded.Length (line));
             tmpOut.newLine;
         end loop;

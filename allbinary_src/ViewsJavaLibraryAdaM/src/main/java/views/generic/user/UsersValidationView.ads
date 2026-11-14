@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.generic_Id.user.UsersValidationView_Package;
 package views.generic_Id.user.UsersValidationView_Package_References is
    type UsersValidationView_Access is access all views.generic_Id.user.UsersValidationView_Package.UsersValidationView'Class;
@@ -19,6 +20,16 @@ package views.generic_Id.user.UsersValidationView_Package_References is
    type UsersValidationView_Access_Array_Access is access all UsersValidationView_Access_Array;
    type UsersValidationView_Access_Array_Access_Array is array (Natural range <>) of UsersValidationView_Access_Array_Access;
    type UsersValidationView_Access_Array_Access_Array_Access is access all UsersValidationView_Access_Array_Access_Array;
+   type UsersValidationView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UsersValidationView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UsersValidationView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UsersValidationView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UsersValidationView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UsersValidationView_Access_Array_Access is (if Value /= null and then Value.all in UsersValidationView_Access_Array_Object'Class then UsersValidationView_Access_Array_Object'Class (Value.all).Value else null);
+   type UsersValidationView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UsersValidationView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UsersValidationView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UsersValidationView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UsersValidationView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UsersValidationView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in UsersValidationView_Access_Array_Access_Array_Object'Class then UsersValidationView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.generic_Id.user.UsersValidationView_Package_References;
 
 with views.generic_Id.user.UsersValidationView_Package_References;
@@ -99,10 +110,14 @@ package views.generic_Id.user.UsersValidationView_Package is
    function "=" (Left, Right : UsersValidationView_Access_Array) return Boolean renames views.generic_Id.user.UsersValidationView_Package_References."=";
    subtype UsersValidationView_Access_Array_Access is views.generic_Id.user.UsersValidationView_Package_References.UsersValidationView_Access_Array_Access;
    function "=" (Left, Right : UsersValidationView_Access_Array_Access) return Boolean renames views.generic_Id.user.UsersValidationView_Package_References."=";
+   function Java_Box (Value : UsersValidationView_Access_Array_Access) return Java_Object_Access renames views.generic_Id.user.UsersValidationView_Package_References.Java_Box;
+   function Java_Unbox_UsersValidationView_Access_Array (Value : access Java_Object'Class) return UsersValidationView_Access_Array_Access renames views.generic_Id.user.UsersValidationView_Package_References.Java_Unbox_UsersValidationView_Access_Array;
    subtype UsersValidationView_Access_Array_Access_Array is views.generic_Id.user.UsersValidationView_Package_References.UsersValidationView_Access_Array_Access_Array;
    function "=" (Left, Right : UsersValidationView_Access_Array_Access_Array) return Boolean renames views.generic_Id.user.UsersValidationView_Package_References."=";
    subtype UsersValidationView_Access_Array_Access_Array_Access is views.generic_Id.user.UsersValidationView_Package_References.UsersValidationView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : UsersValidationView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.user.UsersValidationView_Package_References."=";
+   function Java_Box (Value : UsersValidationView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.generic_Id.user.UsersValidationView_Package_References.Java_Box;
+   function Java_Unbox_UsersValidationView_Access_Array_Access_Array (Value : access Java_Object'Class) return UsersValidationView_Access_Array_Access_Array_Access renames views.generic_Id.user.UsersValidationView_Package_References.Java_Unbox_UsersValidationView_Access_Array_Access_Array;
 
    type UsersValidationView is new UsersView and ValidationComponentInterface with record
       UsersValidationView_Field_logUtil_Hidden : LogUtil_Access;

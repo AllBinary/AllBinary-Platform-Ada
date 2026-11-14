@@ -171,7 +171,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
 
    function getInstance return GameFeatureUtil_Access is
    begin
-        return GameFeatureUtil_Access (GameFeatureUtil_Package.instance);
+        return GameFeatureUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

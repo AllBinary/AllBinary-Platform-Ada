@@ -47,7 +47,7 @@ package body org.allbinary.game.configuration.feature.SensorFeatureFactory_Packa
 
    function getInstance return SensorFeatureFactory_Access is
    begin
-        return SensorFeatureFactory_Access (SensorFeatureFactory_Package.instance);
+        return SensorFeatureFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out SensorFeatureFactory'Class) is

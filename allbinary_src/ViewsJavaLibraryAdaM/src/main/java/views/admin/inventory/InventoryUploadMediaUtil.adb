@@ -33,6 +33,8 @@ with org.allbinary.logic.visual.media.MediaTypeData_Package; use org.allbinary.l
 with org.allbinary.logic.visual.media.MediaUtil_Package; use org.allbinary.logic.visual.media.MediaUtil_Package;
 with org.allbinary.logic.visual.media.MediaUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -53,6 +55,8 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package MediaTypeData_Package renames Standard.org.allbinary.logic.visual.media.MediaTypeData_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype StoreFrontInterface_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access;
    function "=" (Left, Right : StoreFrontInterface_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References."=";
    subtype StoreFrontInterface_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array;
@@ -156,7 +160,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
       largeImageFile : AbFile_Access;
       commonStrings : CommonStrings_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
             This.logUtil.putF (To_Unbounded_String ("Start FileName: ") & fileName, InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
         end if;
         if StringValidationUtil_Package.getInstance.isEmpty (fileName) then
@@ -178,14 +182,14 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
         stringBuffer.append (AbPathData_Package.getInstance.EXTENSION_SEP);
         stringBuffer.append (mediaData.getName);
         originalImageFile := AbFile_Package.createAbFile (stringBuffer.toString);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
             This.logUtil.putF (To_Unbounded_String ("Saving Original Image: ") & Java_Image (originalImageFile), InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
         end if;
         declare Java_Result renames originalImageFile.createNewFile; pragma Unreferenced (Java_Result); begin null; end;
         fileUtil.write (ByteArrayInputStream_Package.Create (byteArray), originalImageFile);
         uploadMedia := UploadMediaSingleton_Package.getInstance;
         isMediaSupported := (uploadMedia.isWriterSupported (mediaData.getName)) or else (uploadMedia.isReaderSupported (mediaData.getName));
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
             stringBuffer.delete (0, stringBuffer.length);
             stringBuffer.append (To_Unbounded_String ("Is Image Type: "));
             stringBuffer.append (mediaData.getName);
@@ -197,7 +201,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
         InventoryUploadMediaUtil'Class (This).setFileNames (fileName);
         if isMediaSupported then
             isMediaResizable := uploadMedia.isWriterMedia (mediaData.getName, MediaTypeData_Package.getInstance.RESIZABLE_MEDIA);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (To_Unbounded_String ("Is "));
                 stringBuffer.append (mediaData.toString);
@@ -208,7 +212,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
                 This.logUtil.putF (stringBuffer.toString, InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
             end if;
             if isMediaResizable then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
                     This.logUtil.putF (To_Unbounded_String ("Saving Small Image: ") & Java_Image (This.itemInterface.getSmallImage), InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
                 end if;
                 This.mediaUtil.saveImageFile (originalImageFile, This.itemInterface.getSmallImage, fullPath, mediaData, This.SMALLWIDTH, This.SMALLHEIGHT);
@@ -216,7 +220,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
                 This.mediaUtil.saveImageFile (originalImageFile, This.itemInterface.getLargeImage, fullPath, mediaData, This.LARGEWIDTH, This.LARGEHEIGHT);
             else
                 isConvertable := mediaData.isConvertableTo (defaultMediaData);
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
                     stringBuffer.delete (0, stringBuffer.length);
                     stringBuffer.append (To_Unbounded_String ("Converting: "));
                     stringBuffer.append (defaultMediaData.getName);
@@ -227,7 +231,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
                     This.logUtil.putF (stringBuffer.toString, InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
                 end if;
                 if isConvertable then
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+                    if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
                         This.logUtil.putF (To_Unbounded_String ("Saving Small Image: ") & Java_Image (This.itemInterface.getSmallImage), InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
                     end if;
                     This.mediaUtil.saveImageFile (originalImageFile, This.itemInterface.getSmallImage, fullPath, defaultMediaData, This.SMALLWIDTH, This.SMALLHEIGHT);
@@ -246,7 +250,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
                 end if;
             end if;
         end if;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (commonStrings.END_Id, InventoryUploadMediaUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("saveFiles()"));
         end if;

@@ -53,7 +53,7 @@ package body org.allbinary.graphics.color.BasicColorUtil_Package is
 
    function getInstance return BasicColorUtil_Access is
    begin
-        return BasicColorUtil_Access (BasicColorUtil_Package.instance);
+        return BasicColorUtil_Package.instance;
    end getInstance;
 
    function getRGB (This : in out BasicColorUtil; red : Integer; green : Integer; blue : Integer) return Integer is

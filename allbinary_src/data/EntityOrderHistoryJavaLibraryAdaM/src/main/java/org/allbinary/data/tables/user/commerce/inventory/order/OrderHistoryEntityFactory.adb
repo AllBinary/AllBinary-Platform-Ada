@@ -15,6 +15,8 @@
 
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package; use org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
 with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References;
 with org.allbinary.string_Id.CommonSeps_Package;
@@ -32,6 +34,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
 
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype OrderHistoryEntity_Access is org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References.OrderHistoryEntity_Access;
    function "=" (Left, Right : OrderHistoryEntity_Access) return Boolean renames org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References."=";
    subtype OrderHistoryEntity_Access_Array is org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package_References.OrderHistoryEntity_Access_Array;
@@ -74,7 +78,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 logUtil.put (commonStrings.EXCEPTION_Id, Java_Box (To_Unbounded_String ("OrderHistoryEntityFactory")), commonStrings.GET_INSTANCE, e);
             end if;
             return null;

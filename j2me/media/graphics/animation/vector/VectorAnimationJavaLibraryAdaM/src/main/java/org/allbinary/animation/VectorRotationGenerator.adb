@@ -123,7 +123,7 @@ package body org.allbinary.animation.VectorRotationGenerator_Package is
 
    function getInstance return VectorRotationGenerator_Access is
    begin
-        return VectorRotationGenerator_Access (VectorRotationGenerator_Package.instance);
+        return VectorRotationGenerator_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out VectorRotationGenerator'Class) is
@@ -168,7 +168,7 @@ package body org.allbinary.animation.VectorRotationGenerator_Package is
             end loop;
             index := 0;
             while (index) < (Integer (totalAngle)) loop
-                pointsBasicArrayList.add (VectorRotationGenerator'Class (This).getListAtAngle (width, height, pointBasicArrayList, This.angleFactory.getAt (index)));
+                pointsBasicArrayList.add (Java_Object_Access (VectorRotationGenerator'Class (This).getListAtAngle (width, height, pointBasicArrayList, This.angleFactory.getAt (index))));
                 index := (index) + (angleIncrement);
             end loop;
             newPoints := This.vectorAnimationUtil.toAnimationArrayFromListOfPointListWithPointsPerFrame (pointsBasicArrayList, pointBasicArrayList.size);

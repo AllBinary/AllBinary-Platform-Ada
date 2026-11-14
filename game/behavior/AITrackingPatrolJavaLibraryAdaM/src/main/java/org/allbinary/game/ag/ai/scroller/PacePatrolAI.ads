@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package;
 package org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References is
    type PacePatrolAI_Access is access all org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package.PacePatrolAI'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References is
    type PacePatrolAI_Access_Array_Access is access all PacePatrolAI_Access_Array;
    type PacePatrolAI_Access_Array_Access_Array is array (Natural range <>) of PacePatrolAI_Access_Array_Access;
    type PacePatrolAI_Access_Array_Access_Array_Access is access all PacePatrolAI_Access_Array_Access_Array;
+   type PacePatrolAI_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PacePatrolAI_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PacePatrolAI_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PacePatrolAI_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PacePatrolAI_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PacePatrolAI_Access_Array_Access is (if Value /= null and then Value.all in PacePatrolAI_Access_Array_Object'Class then PacePatrolAI_Access_Array_Object'Class (Value.all).Value else null);
+   type PacePatrolAI_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PacePatrolAI_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PacePatrolAI_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PacePatrolAI_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PacePatrolAI_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PacePatrolAI_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PacePatrolAI_Access_Array_Access_Array_Object'Class then PacePatrolAI_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References;
 
 with org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References;
@@ -151,10 +162,14 @@ package org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
    function "=" (Left, Right : PacePatrolAI_Access_Array) return Boolean renames org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References."=";
    subtype PacePatrolAI_Access_Array_Access is org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References.PacePatrolAI_Access_Array_Access;
    function "=" (Left, Right : PacePatrolAI_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References."=";
+   function Java_Box (Value : PacePatrolAI_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References.Java_Box;
+   function Java_Unbox_PacePatrolAI_Access_Array (Value : access Java_Object'Class) return PacePatrolAI_Access_Array_Access renames org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References.Java_Unbox_PacePatrolAI_Access_Array;
    subtype PacePatrolAI_Access_Array_Access_Array is org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References.PacePatrolAI_Access_Array_Access_Array;
    function "=" (Left, Right : PacePatrolAI_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References."=";
    subtype PacePatrolAI_Access_Array_Access_Array_Access is org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References.PacePatrolAI_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PacePatrolAI_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References."=";
+   function Java_Box (Value : PacePatrolAI_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References.Java_Box;
+   function Java_Unbox_PacePatrolAI_Access_Array_Access_Array (Value : access Java_Object'Class) return PacePatrolAI_Access_Array_Access_Array_Access renames org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package_References.Java_Unbox_PacePatrolAI_Access_Array_Access_Array;
 
    type PacePatrolAI is new BasePatrolAI and TrackingEventListenerInterface with record
       trackingList : BasicArrayList_Access;

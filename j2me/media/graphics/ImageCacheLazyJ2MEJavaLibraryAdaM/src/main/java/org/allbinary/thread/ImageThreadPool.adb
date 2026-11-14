@@ -49,13 +49,13 @@ package body org.allbinary.thread.ImageThreadPool_Package is
    procedure Initialize_Fields (This : in out ImageThreadPool'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.ImageThreadPool_Field_logUtil := LogUtil_Package.getInstance;
    end Initialize_Fields;
 
 
    function getInstance return ThreadPool_Access is
    begin
-        return ThreadPool_Access (ImageThreadPool_Package.instance);
+        return ImageThreadPool_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageThreadPool'Class; poolName : Unbounded_String; numThreads : Integer; priority : Integer) is

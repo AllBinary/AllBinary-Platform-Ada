@@ -105,7 +105,7 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
 
    function getInstance return VectorExplosionGenerator_Access is
    begin
-        return VectorExplosionGenerator_Access (VectorExplosionGenerator_Package.instance);
+        return VectorExplosionGenerator_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out VectorExplosionGenerator'Class) is
@@ -164,7 +164,7 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
    begin
         begin
             pointsBasicArrayList := BasicArrayList_Access (BasicArrayListS_Package.Create (howMuch));
-            pointsBasicArrayList.add (VectorExplosionGenerator'Class (This).createPointsBasicArrayList (points));
+            pointsBasicArrayList.add (Java_Object_Access (VectorExplosionGenerator'Class (This).createPointsBasicArrayList (points)));
             frameIndex := 0;
             tempBasicArrayList := null;
             pointBasicArrayList := null;

@@ -26,6 +26,7 @@ with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animat
 with org.allbinary.animation.AnimationBehavior_Package_References;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
+with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
@@ -35,6 +36,7 @@ with org.allbinary.direction.DirectionUtil_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.allbinary.math.FrameUtil_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -132,12 +134,12 @@ package body org.allbinary.animation.VectorBaseRotationAnimation_Package is
 
    procedure nextFrame (This : in out VectorBaseRotationAnimation) is
    begin
-        This.circularIndexUtil.next;
+        declare Java_Result renames This.circularIndexUtil.next; pragma Unreferenced (Java_Result); begin null; end;
    end nextFrame;
 
    procedure previousFrame (This : in out VectorBaseRotationAnimation) is
    begin
-        This.circularIndexUtil.previous;
+        declare Java_Result renames This.circularIndexUtil.previous; pragma Unreferenced (Java_Result); begin null; end;
    end previousFrame;
 
    function getSize (This : in out VectorBaseRotationAnimation) return Integer is

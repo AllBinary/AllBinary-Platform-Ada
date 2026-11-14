@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.admin.orderhistory.UserNameOrderHistoryView_Package;
 package views.admin.orderhistory.UserNameOrderHistoryView_Package_References is
    type UserNameOrderHistoryView_Access is access all views.admin.orderhistory.UserNameOrderHistoryView_Package.UserNameOrderHistoryView'Class;
@@ -19,6 +20,16 @@ package views.admin.orderhistory.UserNameOrderHistoryView_Package_References is
    type UserNameOrderHistoryView_Access_Array_Access is access all UserNameOrderHistoryView_Access_Array;
    type UserNameOrderHistoryView_Access_Array_Access_Array is array (Natural range <>) of UserNameOrderHistoryView_Access_Array_Access;
    type UserNameOrderHistoryView_Access_Array_Access_Array_Access is access all UserNameOrderHistoryView_Access_Array_Access_Array;
+   type UserNameOrderHistoryView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UserNameOrderHistoryView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UserNameOrderHistoryView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UserNameOrderHistoryView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UserNameOrderHistoryView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UserNameOrderHistoryView_Access_Array_Access is (if Value /= null and then Value.all in UserNameOrderHistoryView_Access_Array_Object'Class then UserNameOrderHistoryView_Access_Array_Object'Class (Value.all).Value else null);
+   type UserNameOrderHistoryView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UserNameOrderHistoryView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UserNameOrderHistoryView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UserNameOrderHistoryView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UserNameOrderHistoryView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UserNameOrderHistoryView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in UserNameOrderHistoryView_Access_Array_Access_Array_Object'Class then UserNameOrderHistoryView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.admin.orderhistory.UserNameOrderHistoryView_Package_References;
 
 with views.admin.orderhistory.UserNameOrderHistoryView_Package_References;
@@ -103,10 +114,14 @@ package views.admin.orderhistory.UserNameOrderHistoryView_Package is
    function "=" (Left, Right : UserNameOrderHistoryView_Access_Array) return Boolean renames views.admin.orderhistory.UserNameOrderHistoryView_Package_References."=";
    subtype UserNameOrderHistoryView_Access_Array_Access is views.admin.orderhistory.UserNameOrderHistoryView_Package_References.UserNameOrderHistoryView_Access_Array_Access;
    function "=" (Left, Right : UserNameOrderHistoryView_Access_Array_Access) return Boolean renames views.admin.orderhistory.UserNameOrderHistoryView_Package_References."=";
+   function Java_Box (Value : UserNameOrderHistoryView_Access_Array_Access) return Java_Object_Access renames views.admin.orderhistory.UserNameOrderHistoryView_Package_References.Java_Box;
+   function Java_Unbox_UserNameOrderHistoryView_Access_Array (Value : access Java_Object'Class) return UserNameOrderHistoryView_Access_Array_Access renames views.admin.orderhistory.UserNameOrderHistoryView_Package_References.Java_Unbox_UserNameOrderHistoryView_Access_Array;
    subtype UserNameOrderHistoryView_Access_Array_Access_Array is views.admin.orderhistory.UserNameOrderHistoryView_Package_References.UserNameOrderHistoryView_Access_Array_Access_Array;
    function "=" (Left, Right : UserNameOrderHistoryView_Access_Array_Access_Array) return Boolean renames views.admin.orderhistory.UserNameOrderHistoryView_Package_References."=";
    subtype UserNameOrderHistoryView_Access_Array_Access_Array_Access is views.admin.orderhistory.UserNameOrderHistoryView_Package_References.UserNameOrderHistoryView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : UserNameOrderHistoryView_Access_Array_Access_Array_Access) return Boolean renames views.admin.orderhistory.UserNameOrderHistoryView_Package_References."=";
+   function Java_Box (Value : UserNameOrderHistoryView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.admin.orderhistory.UserNameOrderHistoryView_Package_References.Java_Box;
+   function Java_Unbox_UserNameOrderHistoryView_Access_Array_Access_Array (Value : access Java_Object'Class) return UserNameOrderHistoryView_Access_Array_Access_Array_Access renames views.admin.orderhistory.UserNameOrderHistoryView_Package_References.Java_Unbox_UserNameOrderHistoryView_Access_Array_Access_Array;
 
    type UserNameOrderHistoryView is new HttpStoreComponentView and ValidationComponentInterface and DomNodeInterface with record
       UserNameOrderHistoryView_Field_logUtil : LogUtil_Access;

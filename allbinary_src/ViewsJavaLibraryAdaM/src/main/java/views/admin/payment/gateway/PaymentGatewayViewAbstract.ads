@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.admin.payment.gateway.PaymentGatewayViewAbstract_Package;
 package views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_References is
    type PaymentGatewayViewAbstract_Access is access all views.admin.payment.gateway.PaymentGatewayViewAbstract_Package.PaymentGatewayViewAbstract'Class;
@@ -19,6 +20,16 @@ package views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_Reference
    type PaymentGatewayViewAbstract_Access_Array_Access is access all PaymentGatewayViewAbstract_Access_Array;
    type PaymentGatewayViewAbstract_Access_Array_Access_Array is array (Natural range <>) of PaymentGatewayViewAbstract_Access_Array_Access;
    type PaymentGatewayViewAbstract_Access_Array_Access_Array_Access is access all PaymentGatewayViewAbstract_Access_Array_Access_Array;
+   type PaymentGatewayViewAbstract_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PaymentGatewayViewAbstract_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PaymentGatewayViewAbstract_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PaymentGatewayViewAbstract_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PaymentGatewayViewAbstract_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PaymentGatewayViewAbstract_Access_Array_Access is (if Value /= null and then Value.all in PaymentGatewayViewAbstract_Access_Array_Object'Class then PaymentGatewayViewAbstract_Access_Array_Object'Class (Value.all).Value else null);
+   type PaymentGatewayViewAbstract_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PaymentGatewayViewAbstract_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PaymentGatewayViewAbstract_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PaymentGatewayViewAbstract_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PaymentGatewayViewAbstract_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PaymentGatewayViewAbstract_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PaymentGatewayViewAbstract_Access_Array_Access_Array_Object'Class then PaymentGatewayViewAbstract_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_References;
 
 with views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_References;
@@ -73,10 +84,14 @@ package views.admin.payment.gateway.PaymentGatewayViewAbstract_Package is
    function "=" (Left, Right : PaymentGatewayViewAbstract_Access_Array) return Boolean renames views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_References."=";
    subtype PaymentGatewayViewAbstract_Access_Array_Access is views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_References.PaymentGatewayViewAbstract_Access_Array_Access;
    function "=" (Left, Right : PaymentGatewayViewAbstract_Access_Array_Access) return Boolean renames views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_References."=";
+   function Java_Box (Value : PaymentGatewayViewAbstract_Access_Array_Access) return Java_Object_Access renames views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_References.Java_Box;
+   function Java_Unbox_PaymentGatewayViewAbstract_Access_Array (Value : access Java_Object'Class) return PaymentGatewayViewAbstract_Access_Array_Access renames views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_References.Java_Unbox_PaymentGatewayViewAbstract_Access_Array;
    subtype PaymentGatewayViewAbstract_Access_Array_Access_Array is views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_References.PaymentGatewayViewAbstract_Access_Array_Access_Array;
    function "=" (Left, Right : PaymentGatewayViewAbstract_Access_Array_Access_Array) return Boolean renames views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_References."=";
    subtype PaymentGatewayViewAbstract_Access_Array_Access_Array_Access is views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_References.PaymentGatewayViewAbstract_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PaymentGatewayViewAbstract_Access_Array_Access_Array_Access) return Boolean renames views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_References."=";
+   function Java_Box (Value : PaymentGatewayViewAbstract_Access_Array_Access_Array_Access) return Java_Object_Access renames views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_References.Java_Box;
+   function Java_Unbox_PaymentGatewayViewAbstract_Access_Array_Access_Array (Value : access Java_Object'Class) return PaymentGatewayViewAbstract_Access_Array_Access_Array_Access renames views.admin.payment.gateway.PaymentGatewayViewAbstract_Package_References.Java_Unbox_PaymentGatewayViewAbstract_Access_Array_Access_Array;
 
    type PaymentGatewayViewAbstract is new TransformInfoHttpComposite with record
       paymentGatewayPrimaryKey : PaymentGatewayPrimaryKey_Access;

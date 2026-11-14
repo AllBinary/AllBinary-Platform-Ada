@@ -50,7 +50,7 @@ package body org.osgi.framework.NullServiceReferenceFactory_Package is
 
    function getInstance return NullServiceReferenceFactory_Access is
    begin
-        return NullServiceReferenceFactory_Access (NullServiceReferenceFactory_Package.instance);
+        return NullServiceReferenceFactory_Package.instance;
    end getInstance;
 
 begin

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package;
 package org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References is
    type BasicStoreFrontInterface_Access is access all org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package.BasicStoreFrontInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterf
    type BasicStoreFrontInterface_Access_Array_Access is access all BasicStoreFrontInterface_Access_Array;
    type BasicStoreFrontInterface_Access_Array_Access_Array is array (Natural range <>) of BasicStoreFrontInterface_Access_Array_Access;
    type BasicStoreFrontInterface_Access_Array_Access_Array_Access is access all BasicStoreFrontInterface_Access_Array_Access_Array;
+   type BasicStoreFrontInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicStoreFrontInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicStoreFrontInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicStoreFrontInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicStoreFrontInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicStoreFrontInterface_Access_Array_Access is (if Value /= null and then Value.all in BasicStoreFrontInterface_Access_Array_Object'Class then BasicStoreFrontInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicStoreFrontInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicStoreFrontInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicStoreFrontInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicStoreFrontInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicStoreFrontInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicStoreFrontInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicStoreFrontInterface_Access_Array_Access_Array_Object'Class then BasicStoreFrontInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References;
 
 with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References;
@@ -58,10 +69,14 @@ package org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterf
    function "=" (Left, Right : BasicStoreFrontInterface_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References."=";
    subtype BasicStoreFrontInterface_Access_Array_Access is org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References.BasicStoreFrontInterface_Access_Array_Access;
    function "=" (Left, Right : BasicStoreFrontInterface_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References."=";
+   function Java_Box (Value : BasicStoreFrontInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References.Java_Box;
+   function Java_Unbox_BasicStoreFrontInterface_Access_Array (Value : access Java_Object'Class) return BasicStoreFrontInterface_Access_Array_Access renames org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References.Java_Unbox_BasicStoreFrontInterface_Access_Array;
    subtype BasicStoreFrontInterface_Access_Array_Access_Array is org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References.BasicStoreFrontInterface_Access_Array_Access_Array;
    function "=" (Left, Right : BasicStoreFrontInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References."=";
    subtype BasicStoreFrontInterface_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References.BasicStoreFrontInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicStoreFrontInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References."=";
+   function Java_Box (Value : BasicStoreFrontInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References.Java_Box;
+   function Java_Unbox_BasicStoreFrontInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicStoreFrontInterface_Access_Array_Access_Array_Access renames org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References.Java_Unbox_BasicStoreFrontInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_BasicStoreFrontInterface (Value : BasicStoreFrontInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getTestHtmlPath (This : in out BasicStoreFrontInterface) return Unbounded_String is abstract;
    function getCurrentHostName (This : in out BasicStoreFrontInterface) return Unbounded_String is abstract;

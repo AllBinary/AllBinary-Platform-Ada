@@ -1,5 +1,6 @@
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.audio.music.MusicManager_Package;
 package org.allbinary.media.audio.music.MusicManager_Package_References is
    type MusicManager_Access is access all org.allbinary.media.audio.music.MusicManager_Package.MusicManager'Class;
@@ -7,6 +8,16 @@ package org.allbinary.media.audio.music.MusicManager_Package_References is
    type MusicManager_Access_Array_Access is access all MusicManager_Access_Array;
    type MusicManager_Access_Array_Access_Array is array (Natural range <>) of MusicManager_Access_Array_Access;
    type MusicManager_Access_Array_Access_Array_Access is access all MusicManager_Access_Array_Access_Array;
+   type MusicManager_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MusicManager_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MusicManager_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MusicManager_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MusicManager_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MusicManager_Access_Array_Access is (if Value /= null and then Value.all in MusicManager_Access_Array_Object'Class then MusicManager_Access_Array_Object'Class (Value.all).Value else null);
+   type MusicManager_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MusicManager_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MusicManager_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MusicManager_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MusicManager_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MusicManager_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MusicManager_Access_Array_Access_Array_Object'Class then MusicManager_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.audio.music.MusicManager_Package_References;
 
 with org.allbinary.media.audio.music.MusicManager_Package_References;
@@ -151,10 +162,14 @@ package org.allbinary.media.audio.music.MusicManager_Package is
    function "=" (Left, Right : MusicManager_Access_Array) return Boolean renames org.allbinary.media.audio.music.MusicManager_Package_References."=";
    subtype MusicManager_Access_Array_Access is org.allbinary.media.audio.music.MusicManager_Package_References.MusicManager_Access_Array_Access;
    function "=" (Left, Right : MusicManager_Access_Array_Access) return Boolean renames org.allbinary.media.audio.music.MusicManager_Package_References."=";
+   function Java_Box (Value : MusicManager_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.audio.music.MusicManager_Package_References.Java_Box;
+   function Java_Unbox_MusicManager_Access_Array (Value : access Java_Object'Class) return MusicManager_Access_Array_Access renames org.allbinary.media.audio.music.MusicManager_Package_References.Java_Unbox_MusicManager_Access_Array;
    subtype MusicManager_Access_Array_Access_Array is org.allbinary.media.audio.music.MusicManager_Package_References.MusicManager_Access_Array_Access_Array;
    function "=" (Left, Right : MusicManager_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.music.MusicManager_Package_References."=";
    subtype MusicManager_Access_Array_Access_Array_Access is org.allbinary.media.audio.music.MusicManager_Package_References.MusicManager_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MusicManager_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.music.MusicManager_Package_References."=";
+   function Java_Box (Value : MusicManager_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.audio.music.MusicManager_Package_References.Java_Box;
+   function Java_Unbox_MusicManager_Access_Array_Access_Array (Value : access Java_Object'Class) return MusicManager_Access_Array_Access_Array_Access renames org.allbinary.media.audio.music.MusicManager_Package_References.Java_Unbox_MusicManager_Access_Array_Access_Array;
 
    type MusicManager is new Java_Object with record
       commonStrings : CommonStrings_Access;
@@ -191,6 +206,7 @@ package org.allbinary.media.audio.music.MusicManager_Package is
 
 end org.allbinary.media.audio.music.MusicManager_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.media.audio.music.MusicManagerPlayerListener_Package;
 package org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_References is
    type MusicManagerPlayerListener_Access is access all org.allbinary.media.audio.music.MusicManagerPlayerListener_Package.MusicManagerPlayerListener'Class;
@@ -198,6 +214,16 @@ package org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_Refer
    type MusicManagerPlayerListener_Access_Array_Access is access all MusicManagerPlayerListener_Access_Array;
    type MusicManagerPlayerListener_Access_Array_Access_Array is array (Natural range <>) of MusicManagerPlayerListener_Access_Array_Access;
    type MusicManagerPlayerListener_Access_Array_Access_Array_Access is access all MusicManagerPlayerListener_Access_Array_Access_Array;
+   type MusicManagerPlayerListener_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MusicManagerPlayerListener_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MusicManagerPlayerListener_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MusicManagerPlayerListener_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MusicManagerPlayerListener_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MusicManagerPlayerListener_Access_Array_Access is (if Value /= null and then Value.all in MusicManagerPlayerListener_Access_Array_Object'Class then MusicManagerPlayerListener_Access_Array_Object'Class (Value.all).Value else null);
+   type MusicManagerPlayerListener_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MusicManagerPlayerListener_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MusicManagerPlayerListener_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MusicManagerPlayerListener_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MusicManagerPlayerListener_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MusicManagerPlayerListener_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MusicManagerPlayerListener_Access_Array_Access_Array_Object'Class then MusicManagerPlayerListener_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_References;
 
 with org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_References;
@@ -354,10 +380,14 @@ package org.allbinary.media.audio.music.MusicManagerPlayerListener_Package is
    function "=" (Left, Right : MusicManagerPlayerListener_Access_Array) return Boolean renames org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_References."=";
    subtype MusicManagerPlayerListener_Access_Array_Access is org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_References.MusicManagerPlayerListener_Access_Array_Access;
    function "=" (Left, Right : MusicManagerPlayerListener_Access_Array_Access) return Boolean renames org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_References."=";
+   function Java_Box (Value : MusicManagerPlayerListener_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_References.Java_Box;
+   function Java_Unbox_MusicManagerPlayerListener_Access_Array (Value : access Java_Object'Class) return MusicManagerPlayerListener_Access_Array_Access renames org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_References.Java_Unbox_MusicManagerPlayerListener_Access_Array;
    subtype MusicManagerPlayerListener_Access_Array_Access_Array is org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_References.MusicManagerPlayerListener_Access_Array_Access_Array;
    function "=" (Left, Right : MusicManagerPlayerListener_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_References."=";
    subtype MusicManagerPlayerListener_Access_Array_Access_Array_Access is org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_References.MusicManagerPlayerListener_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MusicManagerPlayerListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_References."=";
+   function Java_Box (Value : MusicManagerPlayerListener_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_References.Java_Box;
+   function Java_Unbox_MusicManagerPlayerListener_Access_Array_Access_Array (Value : access Java_Object'Class) return MusicManagerPlayerListener_Access_Array_Access_Array_Access renames org.allbinary.media.audio.music.MusicManagerPlayerListener_Package_References.Java_Unbox_MusicManagerPlayerListener_Access_Array_Access_Array;
 
    type MusicManagerPlayerListener is new Java_Object and PlayerListener with record
       musicManager_Var : MusicManager_Access;

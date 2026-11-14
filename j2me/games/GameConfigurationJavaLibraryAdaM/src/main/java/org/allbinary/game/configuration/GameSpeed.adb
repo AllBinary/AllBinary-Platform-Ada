@@ -70,7 +70,7 @@ package body org.allbinary.game.configuration.GameSpeed_Package is
 
    function getInstance return GameSpeed_Access is
    begin
-        return GameSpeed_Access (GameSpeed_Package.instance);
+        return GameSpeed_Package.instance;
    end getInstance;
 
 begin

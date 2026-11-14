@@ -55,7 +55,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderProcessor
 
    function getInstance return OrderProcessorUtil_Access is
    begin
-        return OrderProcessorUtil_Access (OrderProcessorUtil_Package.instance);
+        return OrderProcessorUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

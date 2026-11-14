@@ -26,6 +26,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.configuration.InGameOptionsForm_Package; use org.allbinary.game.configuration.InGameOptionsForm_Package;
+with org.allbinary.util.ABStack_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
@@ -69,6 +70,7 @@ with javax.microedition.midlet.MIDlet_Package;
 with org.microemu.device.MutableImage_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.microemu.device.ui.PointerEvent_Package;
+with org.allbinary.canvas.Processor_Package;
 with javax.microedition.lcdui.Screen_Package;
 with javax.microedition.lcdui.StringComponent_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
@@ -157,7 +159,7 @@ package body org.allbinary.game.configuration.InGameOptionsFormFactory_Package i
 
    function getInstance return InGameOptionsFormFactory_Access is
    begin
-        if (InGameOptionsFormFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (InGameOptionsFormFactory_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             InGameOptionsFormFactory_Package.instance := Java_Object_Access (InGameOptionsFormFactory_Package.Create);
         end if;
         return InGameOptionsFormFactory_Access (InGameOptionsFormFactory_Package.instance);

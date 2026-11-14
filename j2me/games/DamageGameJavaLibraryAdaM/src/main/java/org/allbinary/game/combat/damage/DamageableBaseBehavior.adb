@@ -37,7 +37,7 @@ package body org.allbinary.game.combat.damage.DamageableBaseBehavior_Package is
 
    function getInstance return DamageableBaseBehavior_Access is
    begin
-        return DamageableBaseBehavior_Access (DamageableBaseBehavior_Package.instance);
+        return DamageableBaseBehavior_Package.instance;
    end getInstance;
 
    function getName (This : in out DamageableBaseBehavior) return Unbounded_String is

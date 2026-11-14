@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.apache.xmlrpc.XmlRpcClient_Package; use org.apache.xmlrpc.XmlRpcClient_Package;
 with org.apache.xmlrpc.XmlRpcException_Package; use org.apache.xmlrpc.XmlRpcException_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
@@ -27,11 +28,14 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package XmlRpcClient_Package renames Standard.org.apache.xmlrpc.XmlRpcClient_Package;
    package XmlRpcException_Package renames Standard.org.apache.xmlrpc.XmlRpcException_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
@@ -97,10 +101,10 @@ package body org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package
             serverUrl := Unbounded_Slice (serverUrl, (0) + 1, (index) + (1)) & To_Unbounded_String ("logservssl.php");
             xmlRpcClient := XmlRpcClient_Package.Create (serverUrl);
             XmlRpcRemoteLogClient'Class (This).setClient (xmlRpcClient);
-            xmlRpcClient.setBasicAuthentication (null, null);
+            xmlRpcClient.setBasicAuthentication (StringUtil_Package.getInstance.EMPTY_STRING, StringUtil_Package.getInstance.EMPTY_STRING);
             hashtable := ABHashtable_Access (anyType);
             param.add (Java_Object_Access (hashtable));
-            result := xmlRpcClient.execute (XmlRpcRemoteLogClient'Class (This).getRemoteMethod, param, This.noCrypt);
+            result := xmlRpcClient.executeWithCrypt (XmlRpcRemoteLogClient'Class (This).getRemoteMethod, param, This.noCrypt);
             Ada.Text_IO.Put_Line (Java_Image (Java_Image (CommonLabels_Package.getInstance.RESULT_U) & CommonSeps_Package.getInstance.NEW_LINE & result.toString));
             return result;
         exception

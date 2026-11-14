@@ -27,6 +27,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.communication.smtp.EmailData_Package; use org.allbinary.logic.communication.smtp.EmailData_Package;
 with org.allbinary.logic.communication.smtp.Email_Package; use org.allbinary.logic.communication.smtp.Email_Package;
 with org.allbinary.util.ABHashMap_Package;
@@ -48,6 +50,8 @@ package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
 
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package BasicErrorNodeUtil_Package renames Standard.org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -131,7 +135,7 @@ package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
       error : Unbounded_String;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PAYMENT) then
                 This.logUtil.putF (This.commonStrings.START, EmailsNotUsed_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
             end if;
             node := document.createElement (EmailData_Package.NAME);
@@ -143,7 +147,7 @@ package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
                     node.appendChild (emailNode);
                 end if;
             end loop;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PAYMENT) then
                 This.logUtil.putF (This.commonStrings.END_Id, EmailsNotUsed_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"));
             end if;
             return node;
@@ -152,7 +156,7 @@ package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, EmailsNotUsed_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"), e);
             end if;
             error := To_Unbounded_String ("Error Processing Order.  Please contact us if error persists.<p/>");

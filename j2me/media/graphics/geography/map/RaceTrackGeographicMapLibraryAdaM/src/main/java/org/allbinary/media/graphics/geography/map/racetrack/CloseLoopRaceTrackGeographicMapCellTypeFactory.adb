@@ -27,7 +27,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CloseLoopRaceT
 
    function getInstance return CloseLoopRaceTrackGeographicMapCellTypeFactory_Access is
    begin
-        return CloseLoopRaceTrackGeographicMapCellTypeFactory_Access (CloseLoopRaceTrackGeographicMapCellTypeFactory_Package.instanceC);
+        return CloseLoopRaceTrackGeographicMapCellTypeFactory_Package.instanceC;
    end getInstance;
 
    procedure Initialize (This : in out CloseLoopRaceTrackGeographicMapCellTypeFactory'Class) is

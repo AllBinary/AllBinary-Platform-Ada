@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.VectorAnimationFactory_Package;
 package org.allbinary.animation.VectorAnimationFactory_Package_References is
    type VectorAnimationFactory_Access is access all org.allbinary.animation.VectorAnimationFactory_Package.VectorAnimationFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.VectorAnimationFactory_Package_References is
    type VectorAnimationFactory_Access_Array_Access is access all VectorAnimationFactory_Access_Array;
    type VectorAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of VectorAnimationFactory_Access_Array_Access;
    type VectorAnimationFactory_Access_Array_Access_Array_Access is access all VectorAnimationFactory_Access_Array_Access_Array;
+   type VectorAnimationFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : VectorAnimationFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : VectorAnimationFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new VectorAnimationFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_VectorAnimationFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return VectorAnimationFactory_Access_Array_Access is (if Value /= null and then Value.all in VectorAnimationFactory_Access_Array_Object'Class then VectorAnimationFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type VectorAnimationFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : VectorAnimationFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : VectorAnimationFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new VectorAnimationFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_VectorAnimationFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return VectorAnimationFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in VectorAnimationFactory_Access_Array_Access_Array_Object'Class then VectorAnimationFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.VectorAnimationFactory_Package_References;
 
 with org.allbinary.animation.VectorAnimationFactory_Package_References;
@@ -70,10 +81,14 @@ package org.allbinary.animation.VectorAnimationFactory_Package is
    function "=" (Left, Right : VectorAnimationFactory_Access_Array) return Boolean renames org.allbinary.animation.VectorAnimationFactory_Package_References."=";
    subtype VectorAnimationFactory_Access_Array_Access is org.allbinary.animation.VectorAnimationFactory_Package_References.VectorAnimationFactory_Access_Array_Access;
    function "=" (Left, Right : VectorAnimationFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.VectorAnimationFactory_Package_References."=";
+   function Java_Box (Value : VectorAnimationFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.VectorAnimationFactory_Package_References.Java_Box;
+   function Java_Unbox_VectorAnimationFactory_Access_Array (Value : access Java_Object'Class) return VectorAnimationFactory_Access_Array_Access renames org.allbinary.animation.VectorAnimationFactory_Package_References.Java_Unbox_VectorAnimationFactory_Access_Array;
    subtype VectorAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.VectorAnimationFactory_Package_References.VectorAnimationFactory_Access_Array_Access_Array;
    function "=" (Left, Right : VectorAnimationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.VectorAnimationFactory_Package_References."=";
    subtype VectorAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.VectorAnimationFactory_Package_References.VectorAnimationFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : VectorAnimationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.VectorAnimationFactory_Package_References."=";
+   function Java_Box (Value : VectorAnimationFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.VectorAnimationFactory_Package_References.Java_Box;
+   function Java_Unbox_VectorAnimationFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return VectorAnimationFactory_Access_Array_Access_Array_Access renames org.allbinary.animation.VectorAnimationFactory_Package_References.Java_Unbox_VectorAnimationFactory_Access_Array_Access_Array;
 
    type VectorAnimationFactory is new Java_Object and VectorAnimationFactoryInterface with null record;
 

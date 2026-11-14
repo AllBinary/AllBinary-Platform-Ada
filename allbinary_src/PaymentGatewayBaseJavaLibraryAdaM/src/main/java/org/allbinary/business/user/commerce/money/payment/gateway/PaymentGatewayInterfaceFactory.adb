@@ -22,6 +22,8 @@ with org.allbinary.logic.communication.http.request.RequestParams_Package; use o
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterface_Package_References;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package; use org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayData_Package;
@@ -29,10 +31,13 @@ with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.modules.gateway.PaymentGatewayDomNodeFactoryInterface_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
@@ -45,6 +50,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package RequestParams_Package renames Standard.org.allbinary.logic.communication.http.request.RequestParams_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicPaymentType_Access is org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package_References.BasicPaymentType_Access;
    function "=" (Left, Right : BasicPaymentType_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package_References."=";
    subtype BasicPaymentType_Access_Array is org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package_References.BasicPaymentType_Access_Array;
@@ -102,16 +109,16 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    begin
         commonStrings := CommonStrings_Package.getInstance;
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PAYMENT) then
                 This.logUtil.putF (To_Unbounded_String ("Getting"), PaymentGatewayInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             end if;
-            return PaymentGatewayInterface_Access (PaymentGatewayInterfaceFactory'Class (This).getInstance (RequestParams_Package.Create (httpServletRequest).toHashMap));
+            return PaymentGatewayInterfaceFactory'Class (This).getInstance (RequestParams_Package.Create (httpServletRequest).toHashMap);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENTERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PAYMENTERROR) then
                 This.logUtil.put (commonStrings.EXCEPTION_Id, PaymentGatewayInterfaceFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(HttpServletRequest)"), e);
             end if;
             Java_Throw (e);
@@ -124,9 +131,9 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
       paymentType : constant BasicPaymentType_Access := BasicPaymentType_Access (paymentType_Param);
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (paymentType.getName));
-        return PaymentGatewayInterface_Access (PaymentGatewayInterfaceFactory'Class (This).getInstance (hashMap));
+        return PaymentGatewayInterfaceFactory'Class (This).getInstance (hashMap);
    end getInstance;
 
    --  throws Exception
@@ -141,7 +148,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
         begin
             gatewayName := Java_Unbox (hashMap.get (Java_Box (PaymentGatewayData_Package.NAME.toString)));
             paymentType := BasicPaymentTypeUtil_Package.getInstance.get (gatewayName);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PAYMENT) then
                 This.logUtil.putF (To_Unbounded_String ("Getting PaymentGatewayInterface for PaymentType: ") & paymentType.getName & To_Unbounded_String (" with: ") & Java_Image (hashMap), PaymentGatewayInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             end if;
             paymentGatewayInterfaceFactoryInterface := PaymentGatewayInterfaceFactoryInterface_Access (paymentType.getPaymentGatewayInterfaceFactoryInterface);
@@ -151,7 +158,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENTERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PAYMENTERROR) then
                 This.logUtil.put (commonStrings.EXCEPTION_Id, PaymentGatewayInterfaceFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE, e);
             end if;
             Java_Throw (e);

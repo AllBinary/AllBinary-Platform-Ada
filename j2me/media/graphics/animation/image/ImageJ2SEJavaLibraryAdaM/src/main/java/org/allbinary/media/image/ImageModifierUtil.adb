@@ -86,7 +86,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
 
    function getInstanceOrCreate return ImageModifierUtil_Access is
    begin
-        return ImageModifierUtil_Access (ImageModifierUtil_Package.instance);
+        return ImageModifierUtil_Package.instance;
    end getInstanceOrCreate;
 
    procedure setBasicColorP (This : in out ImageModifierUtil; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
@@ -182,9 +182,9 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
                 rx := colorModel.getRed (dataElements);
                 gx := colorModel.getGreen (dataElements);
                 bx := colorModel.getBlue (dataElements);
-                rx := Integer ((rx) * (r));
-                gx := Integer ((gx) * (g));
-                bx := Integer ((bx) * (b));
+                rx := Integer ((Float (rx)) * (r));
+                gx := Integer ((Float (gx)) * (g));
+                bx := Integer ((Float (bx)) * (b));
                 newBufferedImage.setRGB (index, index2, Java_Or (Java_Or (Java_Or ((Java_Shift_Left (ax, 24)), (Java_Shift_Left (rx, 16))), (Java_Shift_Left (gx, 8))), (bx)));
             end loop;
         end loop;

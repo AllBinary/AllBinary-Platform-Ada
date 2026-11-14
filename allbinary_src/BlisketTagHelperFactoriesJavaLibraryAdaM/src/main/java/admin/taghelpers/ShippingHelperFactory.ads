@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.ShippingHelperFactory_Package;
 package admin.taghelpers.ShippingHelperFactory_Package_References is
    type ShippingHelperFactory_Access is access all admin.taghelpers.ShippingHelperFactory_Package.ShippingHelperFactory'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.ShippingHelperFactory_Package_References is
    type ShippingHelperFactory_Access_Array_Access is access all ShippingHelperFactory_Access_Array;
    type ShippingHelperFactory_Access_Array_Access_Array is array (Natural range <>) of ShippingHelperFactory_Access_Array_Access;
    type ShippingHelperFactory_Access_Array_Access_Array_Access is access all ShippingHelperFactory_Access_Array_Access_Array;
+   type ShippingHelperFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ShippingHelperFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ShippingHelperFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ShippingHelperFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ShippingHelperFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ShippingHelperFactory_Access_Array_Access is (if Value /= null and then Value.all in ShippingHelperFactory_Access_Array_Object'Class then ShippingHelperFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type ShippingHelperFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ShippingHelperFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ShippingHelperFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ShippingHelperFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ShippingHelperFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ShippingHelperFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ShippingHelperFactory_Access_Array_Access_Array_Object'Class then ShippingHelperFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.ShippingHelperFactory_Package_References;
 
 with admin.taghelpers.ShippingHelperFactory_Package_References;
@@ -61,10 +72,14 @@ package admin.taghelpers.ShippingHelperFactory_Package is
    function "=" (Left, Right : ShippingHelperFactory_Access_Array) return Boolean renames admin.taghelpers.ShippingHelperFactory_Package_References."=";
    subtype ShippingHelperFactory_Access_Array_Access is admin.taghelpers.ShippingHelperFactory_Package_References.ShippingHelperFactory_Access_Array_Access;
    function "=" (Left, Right : ShippingHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.ShippingHelperFactory_Package_References."=";
+   function Java_Box (Value : ShippingHelperFactory_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.ShippingHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_ShippingHelperFactory_Access_Array (Value : access Java_Object'Class) return ShippingHelperFactory_Access_Array_Access renames admin.taghelpers.ShippingHelperFactory_Package_References.Java_Unbox_ShippingHelperFactory_Access_Array;
    subtype ShippingHelperFactory_Access_Array_Access_Array is admin.taghelpers.ShippingHelperFactory_Package_References.ShippingHelperFactory_Access_Array_Access_Array;
    function "=" (Left, Right : ShippingHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.ShippingHelperFactory_Package_References."=";
    subtype ShippingHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.ShippingHelperFactory_Package_References.ShippingHelperFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ShippingHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.ShippingHelperFactory_Package_References."=";
+   function Java_Box (Value : ShippingHelperFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.ShippingHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_ShippingHelperFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return ShippingHelperFactory_Access_Array_Access_Array_Access renames admin.taghelpers.ShippingHelperFactory_Package_References.Java_Unbox_ShippingHelperFactory_Access_Array_Access_Array;
 
    type ShippingHelperFactory is new TagHelperFactory with record
       logUtil : LogUtil_Access;

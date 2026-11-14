@@ -87,7 +87,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
 
    function getInstance return TrueTypeFontUtil_Access is
    begin
-        return TrueTypeFontUtil_Access (TrueTypeFontUtil_Package.instance);
+        return TrueTypeFontUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TrueTypeFontUtil'Class) is

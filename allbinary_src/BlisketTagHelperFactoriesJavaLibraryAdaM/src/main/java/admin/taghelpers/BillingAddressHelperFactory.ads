@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.BillingAddressHelperFactory_Package;
 package admin.taghelpers.BillingAddressHelperFactory_Package_References is
    type BillingAddressHelperFactory_Access is access all admin.taghelpers.BillingAddressHelperFactory_Package.BillingAddressHelperFactory'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.BillingAddressHelperFactory_Package_References is
    type BillingAddressHelperFactory_Access_Array_Access is access all BillingAddressHelperFactory_Access_Array;
    type BillingAddressHelperFactory_Access_Array_Access_Array is array (Natural range <>) of BillingAddressHelperFactory_Access_Array_Access;
    type BillingAddressHelperFactory_Access_Array_Access_Array_Access is access all BillingAddressHelperFactory_Access_Array_Access_Array;
+   type BillingAddressHelperFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BillingAddressHelperFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BillingAddressHelperFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BillingAddressHelperFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BillingAddressHelperFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BillingAddressHelperFactory_Access_Array_Access is (if Value /= null and then Value.all in BillingAddressHelperFactory_Access_Array_Object'Class then BillingAddressHelperFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type BillingAddressHelperFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BillingAddressHelperFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BillingAddressHelperFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BillingAddressHelperFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BillingAddressHelperFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BillingAddressHelperFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BillingAddressHelperFactory_Access_Array_Access_Array_Object'Class then BillingAddressHelperFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.BillingAddressHelperFactory_Package_References;
 
 with admin.taghelpers.BillingAddressHelperFactory_Package_References;
@@ -61,10 +72,14 @@ package admin.taghelpers.BillingAddressHelperFactory_Package is
    function "=" (Left, Right : BillingAddressHelperFactory_Access_Array) return Boolean renames admin.taghelpers.BillingAddressHelperFactory_Package_References."=";
    subtype BillingAddressHelperFactory_Access_Array_Access is admin.taghelpers.BillingAddressHelperFactory_Package_References.BillingAddressHelperFactory_Access_Array_Access;
    function "=" (Left, Right : BillingAddressHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.BillingAddressHelperFactory_Package_References."=";
+   function Java_Box (Value : BillingAddressHelperFactory_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.BillingAddressHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_BillingAddressHelperFactory_Access_Array (Value : access Java_Object'Class) return BillingAddressHelperFactory_Access_Array_Access renames admin.taghelpers.BillingAddressHelperFactory_Package_References.Java_Unbox_BillingAddressHelperFactory_Access_Array;
    subtype BillingAddressHelperFactory_Access_Array_Access_Array is admin.taghelpers.BillingAddressHelperFactory_Package_References.BillingAddressHelperFactory_Access_Array_Access_Array;
    function "=" (Left, Right : BillingAddressHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.BillingAddressHelperFactory_Package_References."=";
    subtype BillingAddressHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.BillingAddressHelperFactory_Package_References.BillingAddressHelperFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BillingAddressHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.BillingAddressHelperFactory_Package_References."=";
+   function Java_Box (Value : BillingAddressHelperFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.BillingAddressHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_BillingAddressHelperFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return BillingAddressHelperFactory_Access_Array_Access_Array_Access renames admin.taghelpers.BillingAddressHelperFactory_Package_References.Java_Unbox_BillingAddressHelperFactory_Access_Array_Access_Array;
 
    type BillingAddressHelperFactory is new TagHelperFactory with record
       logUtil : LogUtil_Access;

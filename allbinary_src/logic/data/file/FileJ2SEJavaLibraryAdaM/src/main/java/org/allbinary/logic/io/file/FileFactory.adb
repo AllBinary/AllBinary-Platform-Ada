@@ -56,7 +56,7 @@ package body org.allbinary.logic.io.file.FileFactory_Package is
 
    function getInstance return FileFactory_Access is
    begin
-        return FileFactory_Access (FileFactory_Package.instance);
+        return FileFactory_Package.instance;
    end getInstance;
 
    --  throws Exception

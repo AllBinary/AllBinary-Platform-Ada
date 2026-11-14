@@ -23,6 +23,8 @@ with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.grap
 with org.allbinary.graphics.font.MyFontProcessor_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 
 package body org.allbinary.game.layer.item.RTSLayerTextAnimation_Package is
 

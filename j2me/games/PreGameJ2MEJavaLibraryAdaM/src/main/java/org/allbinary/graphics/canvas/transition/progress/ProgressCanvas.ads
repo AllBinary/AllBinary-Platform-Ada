@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
 package org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References is
    type ProgressCanvas_Access is access all org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package.ProgressCanvas'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package
    type ProgressCanvas_Access_Array_Access is access all ProgressCanvas_Access_Array;
    type ProgressCanvas_Access_Array_Access_Array is array (Natural range <>) of ProgressCanvas_Access_Array_Access;
    type ProgressCanvas_Access_Array_Access_Array_Access is access all ProgressCanvas_Access_Array_Access_Array;
+   type ProgressCanvas_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ProgressCanvas_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ProgressCanvas_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ProgressCanvas_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ProgressCanvas_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ProgressCanvas_Access_Array_Access is (if Value /= null and then Value.all in ProgressCanvas_Access_Array_Object'Class then ProgressCanvas_Access_Array_Object'Class (Value.all).Value else null);
+   type ProgressCanvas_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ProgressCanvas_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ProgressCanvas_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ProgressCanvas_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ProgressCanvas_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ProgressCanvas_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ProgressCanvas_Access_Array_Access_Array_Object'Class then ProgressCanvas_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References;
 
 with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References;
@@ -44,7 +55,8 @@ with org.allbinary.graphics.font.MyFontProcessor_Package_References;
 with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 limited with org.allbinary.graphics.form.item.ABCustomGaugeItem_Package;
 with org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References;
-with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
+limited with org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.graphics.paint.Paintable_Package_References;
 with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
 limited with org.allbinary.midlet.AllBinaryMidlet_Package;
 with org.allbinary.midlet.AllBinaryMidlet_Package_References;
@@ -125,6 +137,16 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package
    use type ABCustomGaugeItem_Access_Array_Access_Array;
    subtype ABCustomGaugeItem_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.ABCustomGaugeItem_Access_Array_Access_Array_Access;
    use type ABCustomGaugeItem_Access_Array_Access_Array_Access;
+   subtype Paintable_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access;
+   use type Paintable_Access;
+   subtype Paintable_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array;
+   use type Paintable_Access_Array;
+   subtype Paintable_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access;
+   use type Paintable_Access_Array_Access;
+   subtype Paintable_Access_Array_Access_Array is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array;
+   use type Paintable_Access_Array_Access_Array;
+   subtype Paintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.Paintable_Package_References.Paintable_Access_Array_Access_Array_Access;
+   use type Paintable_Access_Array_Access_Array_Access;
    subtype AllBinaryMidlet_Access is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access;
    use type AllBinaryMidlet_Access;
    subtype AllBinaryMidlet_Access_Array is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access_Array;
@@ -155,10 +177,14 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package
    function "=" (Left, Right : ProgressCanvas_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
    subtype ProgressCanvas_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access;
    function "=" (Left, Right : ProgressCanvas_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   function Java_Box (Value : ProgressCanvas_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.Java_Box;
+   function Java_Unbox_ProgressCanvas_Access_Array (Value : access Java_Object'Class) return ProgressCanvas_Access_Array_Access renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.Java_Unbox_ProgressCanvas_Access_Array;
    subtype ProgressCanvas_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access_Array;
    function "=" (Left, Right : ProgressCanvas_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
    subtype ProgressCanvas_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ProgressCanvas_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References."=";
+   function Java_Box (Value : ProgressCanvas_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.Java_Box;
+   function Java_Unbox_ProgressCanvas_Access_Array_Access_Array (Value : access Java_Object'Class) return ProgressCanvas_Access_Array_Access_Array_Access renames org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.Java_Unbox_ProgressCanvas_Access_Array_Access_Array;
 
    type ProgressCanvas is new RunnableCanvas and PaintableInterface and UpdateMyFontInterface with record
       hasPainted : Boolean;
@@ -213,175 +239,5 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package
    function isBackground (This : in out ProgressCanvas) return Boolean;
 
 end org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
-
-limited with org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package;
-package org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package_References is
-   type ProgressPaintable_Access is access all org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package.ProgressPaintable'Class;
-   type ProgressPaintable_Access_Array is array (Natural range <>) of ProgressPaintable_Access;
-   type ProgressPaintable_Access_Array_Access is access all ProgressPaintable_Access_Array;
-   type ProgressPaintable_Access_Array_Access_Array is array (Natural range <>) of ProgressPaintable_Access_Array_Access;
-   type ProgressPaintable_Access_Array_Access_Array_Access is access all ProgressPaintable_Access_Array_Access_Array;
-end org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package_References;
-
-with org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package_References;
-with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
-with Ada.Strings.Maps.Constants;
-with Ada.Characters.Handling;
-with Ada.Exceptions;
-with Ada.Numerics.Long_Elementary_Functions;
-with Ada.Tags;
-with Ada.Text_IO;
-with AllBinary_Java; use AllBinary_Java;
-limited with javax.microedition.lcdui.CommandListener_Package;
-with javax.microedition.lcdui.CommandListener_Package_References;
-limited with javax.microedition.lcdui.Graphics_Package;
-with javax.microedition.lcdui.Graphics_Package_References;
-limited with org.allbinary.canvas.Processor_Package;
-with org.allbinary.canvas.Processor_Package_References;
-with org.allbinary.canvas.RunnableCanvas_Package; use org.allbinary.canvas.RunnableCanvas_Package;
-limited with org.allbinary.graphics.color.BasicColor_Package;
-with org.allbinary.graphics.color.BasicColor_Package_References;
-limited with org.allbinary.graphics.font.MyFontProcessor_Package;
-with org.allbinary.graphics.font.MyFontProcessor_Package_References;
-with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-limited with org.allbinary.graphics.form.item.ABCustomGaugeItem_Package;
-with org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References;
-with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
-with org.allbinary.graphics.paint.PaintableInterface_Package; use org.allbinary.graphics.paint.PaintableInterface_Package;
-limited with org.allbinary.midlet.AllBinaryMidlet_Package;
-with org.allbinary.midlet.AllBinaryMidlet_Package_References;
-limited with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package;
-with org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References;
-limited with org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package;
-with org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package_References;
-
-package org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package is
-
-   package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
-   package Graphics_Package renames Standard.javax.microedition.lcdui.Graphics_Package;
-   package Processor_Package renames Standard.org.allbinary.canvas.Processor_Package;
-   package RunnableCanvas_Package renames Standard.org.allbinary.canvas.RunnableCanvas_Package;
-   package BasicColor_Package renames Standard.org.allbinary.graphics.color.BasicColor_Package;
-   package MyFontProcessor_Package renames Standard.org.allbinary.graphics.font.MyFontProcessor_Package;
-   package UpdateMyFontInterface_Package renames Standard.org.allbinary.graphics.font.UpdateMyFontInterface_Package;
-   package ABCustomGaugeItem_Package renames Standard.org.allbinary.graphics.form.item.ABCustomGaugeItem_Package;
-   package Paintable_Package renames Standard.org.allbinary.graphics.paint.Paintable_Package;
-   package PaintableInterface_Package renames Standard.org.allbinary.graphics.paint.PaintableInterface_Package;
-   package AllBinaryMidlet_Package renames Standard.org.allbinary.midlet.AllBinaryMidlet_Package;
-   package Reference_Types is
-   subtype CommandListener_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access;
-   use type CommandListener_Access;
-   subtype CommandListener_Access_Array is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array;
-   use type CommandListener_Access_Array;
-   subtype CommandListener_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access;
-   use type CommandListener_Access_Array_Access;
-   subtype CommandListener_Access_Array_Access_Array is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array;
-   use type CommandListener_Access_Array_Access_Array;
-   subtype CommandListener_Access_Array_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array_Access;
-   use type CommandListener_Access_Array_Access_Array_Access;
-   subtype Graphics_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access;
-   use type Graphics_Access;
-   subtype Graphics_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array;
-   use type Graphics_Access_Array;
-   subtype Graphics_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access;
-   use type Graphics_Access_Array_Access;
-   subtype Graphics_Access_Array_Access_Array is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array;
-   use type Graphics_Access_Array_Access_Array;
-   subtype Graphics_Access_Array_Access_Array_Access is javax.microedition.lcdui.Graphics_Package_References.Graphics_Access_Array_Access_Array_Access;
-   use type Graphics_Access_Array_Access_Array_Access;
-   subtype Processor_Access is org.allbinary.canvas.Processor_Package_References.Processor_Access;
-   use type Processor_Access;
-   subtype Processor_Access_Array is org.allbinary.canvas.Processor_Package_References.Processor_Access_Array;
-   use type Processor_Access_Array;
-   subtype Processor_Access_Array_Access is org.allbinary.canvas.Processor_Package_References.Processor_Access_Array_Access;
-   use type Processor_Access_Array_Access;
-   subtype Processor_Access_Array_Access_Array is org.allbinary.canvas.Processor_Package_References.Processor_Access_Array_Access_Array;
-   use type Processor_Access_Array_Access_Array;
-   subtype Processor_Access_Array_Access_Array_Access is org.allbinary.canvas.Processor_Package_References.Processor_Access_Array_Access_Array_Access;
-   use type Processor_Access_Array_Access_Array_Access;
-   subtype BasicColor_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access;
-   use type BasicColor_Access;
-   subtype BasicColor_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array;
-   use type BasicColor_Access_Array;
-   subtype BasicColor_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access;
-   use type BasicColor_Access_Array_Access;
-   subtype BasicColor_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array;
-   use type BasicColor_Access_Array_Access_Array;
-   subtype BasicColor_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColor_Package_References.BasicColor_Access_Array_Access_Array_Access;
-   use type BasicColor_Access_Array_Access_Array_Access;
-   subtype MyFontProcessor_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access;
-   use type MyFontProcessor_Access;
-   subtype MyFontProcessor_Access_Array is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array;
-   use type MyFontProcessor_Access_Array;
-   subtype MyFontProcessor_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access;
-   use type MyFontProcessor_Access_Array_Access;
-   subtype MyFontProcessor_Access_Array_Access_Array is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array;
-   use type MyFontProcessor_Access_Array_Access_Array;
-   subtype MyFontProcessor_Access_Array_Access_Array_Access is org.allbinary.graphics.font.MyFontProcessor_Package_References.MyFontProcessor_Access_Array_Access_Array_Access;
-   use type MyFontProcessor_Access_Array_Access_Array_Access;
-   subtype ABCustomGaugeItem_Access is org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.ABCustomGaugeItem_Access;
-   use type ABCustomGaugeItem_Access;
-   subtype ABCustomGaugeItem_Access_Array is org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.ABCustomGaugeItem_Access_Array;
-   use type ABCustomGaugeItem_Access_Array;
-   subtype ABCustomGaugeItem_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.ABCustomGaugeItem_Access_Array_Access;
-   use type ABCustomGaugeItem_Access_Array_Access;
-   subtype ABCustomGaugeItem_Access_Array_Access_Array is org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.ABCustomGaugeItem_Access_Array_Access_Array;
-   use type ABCustomGaugeItem_Access_Array_Access_Array;
-   subtype ABCustomGaugeItem_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.ABCustomGaugeItem_Access_Array_Access_Array_Access;
-   use type ABCustomGaugeItem_Access_Array_Access_Array_Access;
-   subtype AllBinaryMidlet_Access is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access;
-   use type AllBinaryMidlet_Access;
-   subtype AllBinaryMidlet_Access_Array is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access_Array;
-   use type AllBinaryMidlet_Access_Array;
-   subtype AllBinaryMidlet_Access_Array_Access is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access_Array_Access;
-   use type AllBinaryMidlet_Access_Array_Access;
-   subtype AllBinaryMidlet_Access_Array_Access_Array is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access_Array_Access_Array;
-   use type AllBinaryMidlet_Access_Array_Access_Array;
-   subtype AllBinaryMidlet_Access_Array_Access_Array_Access is org.allbinary.midlet.AllBinaryMidlet_Package_References.AllBinaryMidlet_Access_Array_Access_Array_Access;
-   use type AllBinaryMidlet_Access_Array_Access_Array_Access;
-   subtype ProgressCanvas_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access;
-   use type ProgressCanvas_Access;
-   subtype ProgressCanvas_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array;
-   use type ProgressCanvas_Access_Array;
-   subtype ProgressCanvas_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access;
-   use type ProgressCanvas_Access_Array_Access;
-   subtype ProgressCanvas_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access_Array;
-   use type ProgressCanvas_Access_Array_Access_Array;
-   subtype ProgressCanvas_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package_References.ProgressCanvas_Access_Array_Access_Array_Access;
-   use type ProgressCanvas_Access_Array_Access_Array_Access;
-   subtype ProgressEndListener_Access is org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package_References.ProgressEndListener_Access;
-   use type ProgressEndListener_Access;
-   subtype ProgressEndListener_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package_References.ProgressEndListener_Access_Array;
-   use type ProgressEndListener_Access_Array;
-   subtype ProgressEndListener_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package_References.ProgressEndListener_Access_Array_Access;
-   use type ProgressEndListener_Access_Array_Access;
-   subtype ProgressEndListener_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package_References.ProgressEndListener_Access_Array_Access_Array;
-   use type ProgressEndListener_Access_Array_Access_Array;
-   subtype ProgressEndListener_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressEndListener_Package_References.ProgressEndListener_Access_Array_Access_Array_Access;
-   use type ProgressEndListener_Access_Array_Access_Array_Access;
-   end Reference_Types;
-   use Reference_Types;
-
-
-   subtype ProgressPaintable_Access is org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package_References.ProgressPaintable_Access;
-   function "=" (Left, Right : ProgressPaintable_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package_References."=";
-   subtype ProgressPaintable_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package_References.ProgressPaintable_Access_Array;
-   function "=" (Left, Right : ProgressPaintable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package_References."=";
-   subtype ProgressPaintable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package_References.ProgressPaintable_Access_Array_Access;
-   function "=" (Left, Right : ProgressPaintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package_References."=";
-   subtype ProgressPaintable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package_References.ProgressPaintable_Access_Array_Access_Array;
-   function "=" (Left, Right : ProgressPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package_References."=";
-   subtype ProgressPaintable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package_References.ProgressPaintable_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : ProgressPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package_References."=";
-
-   type ProgressPaintable is new Paintable with record
-      progressCanvas_Var : ProgressCanvas_Access;
-   end record;
-
-   procedure Initialize (This : in out ProgressPaintable'Class; progressCanvas_Var_Param : access ProgressCanvas_Package.ProgressCanvas'Class);
-   function Create (progressCanvas_Var_Param : access ProgressCanvas_Package.ProgressCanvas'Class) return ProgressPaintable_Access;
-   procedure paint (This : in out ProgressPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
-
-end org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package;
 
 

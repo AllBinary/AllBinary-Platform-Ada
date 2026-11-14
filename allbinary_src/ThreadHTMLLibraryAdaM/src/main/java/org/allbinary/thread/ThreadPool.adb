@@ -155,7 +155,7 @@ package body org.allbinary.thread.ThreadPool_Package is
         if not (This.currentPriorityRunnable.isDone) then
             This.currentPriorityRunnable.run;
         else
-            runnable := Runnable_Access (ThreadPool'Class (This).getTask);
+            runnable := ThreadPool'Class (This).getTask;
             if (Java_Object_Access (runnable)) = (Java_Object_Access (This.NULL_RUNNABLE)) then
                 return;
             end if;
@@ -171,7 +171,7 @@ package body org.allbinary.thread.ThreadPool_Package is
    procedure runATask (This : in out ThreadPool) is
       runnable : Runnable_Access;
    begin
-        runnable := Runnable_Access (ThreadPool'Class (This).getTask);
+        runnable := ThreadPool'Class (This).getTask;
         if (runnable) /= (null) then
             runnable.run;
         end if;

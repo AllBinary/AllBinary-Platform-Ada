@@ -187,7 +187,7 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
    function toHashMap (This : in out RootCategoryPropertiesAbstract) return HashMap_Access is
       categoryHashMap : HashMap_Access;
    begin
-        categoryHashMap := StdUtil_Package.getInstance.createHashMap;
+        categoryHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         categoryHashMap.put (CategoryData_Package.getInstance.NAME, Java_Box (This.category));
         return categoryHashMap;
    end toHashMap;
@@ -196,7 +196,7 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
       categoryVector : BasicArrayList_Access;
    begin
         categoryVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        categoryVector.add (This.category);
+        categoryVector.add (Java_Box (This.category));
         return categoryVector;
    end toVector;
 

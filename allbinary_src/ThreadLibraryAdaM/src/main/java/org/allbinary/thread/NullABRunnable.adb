@@ -38,7 +38,7 @@ package body org.allbinary.thread.NullABRunnable_Package is
 
    function getInstance return NullABRunnable_Access is
    begin
-        return NullABRunnable_Access (NullABRunnable_Package.instance);
+        return NullABRunnable_Package.instance;
    end getInstance;
 
    function isRunning (This : in out NullABRunnable) return Boolean is

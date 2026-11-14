@@ -96,7 +96,7 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
 
    function getInstance return FileItemUtil_Access is
    begin
-        return FileItemUtil_Access (FileItemUtil_Package.instance);
+        return FileItemUtil_Package.instance;
    end getInstance;
 
    --  throws Exception
@@ -136,7 +136,7 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
                 stringBuffer.append (fileItem.getName);
                 This.logUtil.putF (stringBuffer.toString, FileItemUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("write()"));
             end if;
-            outputStream := ByteArrayOutputStream_Access (streamUtil.get (inputStream, outputStream, new Short_Short_Integer_Array'(0 .. (16384) - 1 => 0)));
+            outputStream := ByteArrayOutputStream_Access (streamUtil.getByteArray (inputStream, outputStream, new Short_Short_Integer_Array'(0 .. (16384) - 1 => 0)));
             return outputStream.toByteArray;
         end;
         --  finally

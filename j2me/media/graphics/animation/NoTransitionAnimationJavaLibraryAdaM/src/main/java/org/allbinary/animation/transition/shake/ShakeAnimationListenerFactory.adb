@@ -16,6 +16,9 @@
 with org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package; use org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package;
 with org.allbinary.animation.transition.shake.ShakeAnimationListener_Package; use org.allbinary.animation.transition.shake.ShakeAnimationListener_Package;
 with org.allbinary.animation.transition.shake.ShakeAnimationListener_Package_References;
+with org.allbinary.animation.transition.shake.NoShakeAnimationListener_Package;
+with org.allbinary.animation.transition.shake.ShakeAnimationListener_Package;
+with org.allbinary.animation.transition.shake.ShakeEvent_Package;
 
 package body org.allbinary.animation.transition.shake.ShakeAnimationListenerFactory_Package is
 

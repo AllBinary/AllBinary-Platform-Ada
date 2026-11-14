@@ -135,7 +135,7 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
 
    function getInstance return SVGAsJSONSimpleLoader_Access is
    begin
-        return SVGAsJSONSimpleLoader_Access (SVGAsJSONSimpleLoader_Package.instance);
+        return SVGAsJSONSimpleLoader_Package.instance;
    end getInstance;
 
    --  throws Exception

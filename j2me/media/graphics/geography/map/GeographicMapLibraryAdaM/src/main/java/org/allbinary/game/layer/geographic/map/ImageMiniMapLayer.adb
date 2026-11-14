@@ -25,6 +25,7 @@ with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package_Refer
 with org.allbinary.view.ViewPositionBase_Package; use org.allbinary.view.ViewPositionBase_Package;
 with org.allbinary.view.ViewPositionBase_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.animation.Animation_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
@@ -49,16 +50,21 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;
+with org.allbinary.game.identification.Group_Package;
+with org.allbinary.layer.Layer_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.graph.V_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package;
 
 package body org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package is
 

@@ -60,7 +60,7 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
 
    function getInstance return ApplicationConfiguration_Access is
    begin
-        if (ApplicationConfiguration_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (ApplicationConfiguration_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             ApplicationConfiguration_Package.instance := Java_Object_Access (ApplicationConfiguration_Package.Create);
         end if;
         return ApplicationConfiguration_Access (ApplicationConfiguration_Package.instance);

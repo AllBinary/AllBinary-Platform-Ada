@@ -40,7 +40,7 @@ package body org.allbinary.media.audio.FireworksSound_Package is
 
    function getInstance return Sound_Access is
    begin
-        return Sound_Access (FireworksSound_Package.soundInterface);
+        return FireworksSound_Package.soundInterface;
    end getInstance;
 
 begin

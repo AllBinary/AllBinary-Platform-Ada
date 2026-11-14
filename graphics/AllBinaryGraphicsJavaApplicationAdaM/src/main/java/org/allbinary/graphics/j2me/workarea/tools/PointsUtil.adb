@@ -33,6 +33,8 @@ with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.animation.VectorAnimationUtil_Package;
+with org.allbinary.vector.VectorInfo_Package;
 
 package body org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package is
 
@@ -78,7 +80,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package is
 
    function getInstance return PointsUtil_Access is
    begin
-        return PointsUtil_Access (PointsUtil_Package.instance);
+        return PointsUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

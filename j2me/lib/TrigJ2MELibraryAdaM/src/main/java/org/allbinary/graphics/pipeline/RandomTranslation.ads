@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.pipeline.RandomTranslation_Package;
 package org.allbinary.graphics.pipeline.RandomTranslation_Package_References is
    type RandomTranslation_Access is access all org.allbinary.graphics.pipeline.RandomTranslation_Package.RandomTranslation'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.pipeline.RandomTranslation_Package_References is
    type RandomTranslation_Access_Array_Access is access all RandomTranslation_Access_Array;
    type RandomTranslation_Access_Array_Access_Array is array (Natural range <>) of RandomTranslation_Access_Array_Access;
    type RandomTranslation_Access_Array_Access_Array_Access is access all RandomTranslation_Access_Array_Access_Array;
+   type RandomTranslation_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RandomTranslation_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RandomTranslation_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RandomTranslation_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RandomTranslation_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RandomTranslation_Access_Array_Access is (if Value /= null and then Value.all in RandomTranslation_Access_Array_Object'Class then RandomTranslation_Access_Array_Object'Class (Value.all).Value else null);
+   type RandomTranslation_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RandomTranslation_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RandomTranslation_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RandomTranslation_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RandomTranslation_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RandomTranslation_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in RandomTranslation_Access_Array_Access_Array_Object'Class then RandomTranslation_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.pipeline.RandomTranslation_Package_References;
 
 with org.allbinary.graphics.pipeline.RandomTranslation_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.graphics.pipeline.RandomTranslation_Package is
    function "=" (Left, Right : RandomTranslation_Access_Array) return Boolean renames org.allbinary.graphics.pipeline.RandomTranslation_Package_References."=";
    subtype RandomTranslation_Access_Array_Access is org.allbinary.graphics.pipeline.RandomTranslation_Package_References.RandomTranslation_Access_Array_Access;
    function "=" (Left, Right : RandomTranslation_Access_Array_Access) return Boolean renames org.allbinary.graphics.pipeline.RandomTranslation_Package_References."=";
+   function Java_Box (Value : RandomTranslation_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.pipeline.RandomTranslation_Package_References.Java_Box;
+   function Java_Unbox_RandomTranslation_Access_Array (Value : access Java_Object'Class) return RandomTranslation_Access_Array_Access renames org.allbinary.graphics.pipeline.RandomTranslation_Package_References.Java_Unbox_RandomTranslation_Access_Array;
    subtype RandomTranslation_Access_Array_Access_Array is org.allbinary.graphics.pipeline.RandomTranslation_Package_References.RandomTranslation_Access_Array_Access_Array;
    function "=" (Left, Right : RandomTranslation_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.pipeline.RandomTranslation_Package_References."=";
    subtype RandomTranslation_Access_Array_Access_Array_Access is org.allbinary.graphics.pipeline.RandomTranslation_Package_References.RandomTranslation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : RandomTranslation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.pipeline.RandomTranslation_Package_References."=";
+   function Java_Box (Value : RandomTranslation_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.pipeline.RandomTranslation_Package_References.Java_Box;
+   function Java_Unbox_RandomTranslation_Access_Array_Access_Array (Value : access Java_Object'Class) return RandomTranslation_Access_Array_Access_Array_Access renames org.allbinary.graphics.pipeline.RandomTranslation_Package_References.Java_Unbox_RandomTranslation_Access_Array_Access_Array;
 
    type RandomTranslation is new Java_Object with null record;
 

@@ -27,24 +27,44 @@ with org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package; use org.a
 with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
 with org.allbinary.game.part.PartInterface_Package_References;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.AnimationInterfaceCompositeInterface_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.part.CountedLayerInterfaceFactoryPart_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.graphics.GPoint_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.layer.pickup.IconLayer_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.layer.Layer_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.game.part.PartInterface_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryBase_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
 with org.allbinary.logic.math.PrimitiveLongSingleton_Package;
 with org.allbinary.logic.math.PrimitiveLongUtil_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+with org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package;
 
 package body org.allbinary.game.part.MakeCountedPartsSingletonArrayFactory_Package is
 
@@ -106,7 +126,7 @@ package body org.allbinary.game.part.MakeCountedPartsSingletonArrayFactory_Packa
 
    function getInstance return MakeCountedPartsSingletonArrayFactory_Access is
    begin
-        return MakeCountedPartsSingletonArrayFactory_Access (MakeCountedPartsSingletonArrayFactory_Package.instance);
+        return MakeCountedPartsSingletonArrayFactory_Package.instance;
    end getInstance;
 
    --  throws Exception

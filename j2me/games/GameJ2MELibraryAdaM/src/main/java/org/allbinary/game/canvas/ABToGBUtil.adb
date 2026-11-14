@@ -155,7 +155,7 @@ package body org.allbinary.game.canvas.ABToGBUtil_Package is
 
    function getInstance return ABToGBUtil_Access is
    begin
-        return ABToGBUtil_Access (ABToGBUtil_Package.instance);
+        return ABToGBUtil_Package.instance;
    end getInstance;
 
 begin

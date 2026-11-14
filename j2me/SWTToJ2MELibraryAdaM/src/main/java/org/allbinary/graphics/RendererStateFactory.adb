@@ -38,7 +38,7 @@ package body org.allbinary.graphics.RendererStateFactory_Package is
 
    function getInstance return RendererStateFactory_Access is
    begin
-        return RendererStateFactory_Access (RendererStateFactory_Package.instance);
+        return RendererStateFactory_Package.instance;
    end getInstance;
 
    procedure setLoaded (This : in out RendererStateFactory; loaded : Boolean) is

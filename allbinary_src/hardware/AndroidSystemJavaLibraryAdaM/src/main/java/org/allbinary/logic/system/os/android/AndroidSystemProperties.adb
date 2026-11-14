@@ -55,7 +55,7 @@ package body org.allbinary.logic.system.os.android.AndroidSystemProperties_Packa
 
    function getInstance return AndroidSystemProperties_Access is
    begin
-        return AndroidSystemProperties_Access (AndroidSystemProperties_Package.SINGLETON);
+        return AndroidSystemProperties_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out AndroidSystemProperties'Class; context_Param : access Context_Package.Context'Class) is

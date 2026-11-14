@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.OrderHelper_Package;
 package admin.taghelpers.OrderHelper_Package_References is
    type OrderHelper_Access is access all admin.taghelpers.OrderHelper_Package.OrderHelper'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.OrderHelper_Package_References is
    type OrderHelper_Access_Array_Access is access all OrderHelper_Access_Array;
    type OrderHelper_Access_Array_Access_Array is array (Natural range <>) of OrderHelper_Access_Array_Access;
    type OrderHelper_Access_Array_Access_Array_Access is access all OrderHelper_Access_Array_Access_Array;
+   type OrderHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OrderHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OrderHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OrderHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OrderHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OrderHelper_Access_Array_Access is (if Value /= null and then Value.all in OrderHelper_Access_Array_Object'Class then OrderHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type OrderHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OrderHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OrderHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OrderHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OrderHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OrderHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in OrderHelper_Access_Array_Access_Array_Object'Class then OrderHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.OrderHelper_Package_References;
 
 with admin.taghelpers.OrderHelper_Package_References;
@@ -88,10 +99,14 @@ package admin.taghelpers.OrderHelper_Package is
    function "=" (Left, Right : OrderHelper_Access_Array) return Boolean renames admin.taghelpers.OrderHelper_Package_References."=";
    subtype OrderHelper_Access_Array_Access is admin.taghelpers.OrderHelper_Package_References.OrderHelper_Access_Array_Access;
    function "=" (Left, Right : OrderHelper_Access_Array_Access) return Boolean renames admin.taghelpers.OrderHelper_Package_References."=";
+   function Java_Box (Value : OrderHelper_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.OrderHelper_Package_References.Java_Box;
+   function Java_Unbox_OrderHelper_Access_Array (Value : access Java_Object'Class) return OrderHelper_Access_Array_Access renames admin.taghelpers.OrderHelper_Package_References.Java_Unbox_OrderHelper_Access_Array;
    subtype OrderHelper_Access_Array_Access_Array is admin.taghelpers.OrderHelper_Package_References.OrderHelper_Access_Array_Access_Array;
    function "=" (Left, Right : OrderHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.OrderHelper_Package_References."=";
    subtype OrderHelper_Access_Array_Access_Array_Access is admin.taghelpers.OrderHelper_Package_References.OrderHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : OrderHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.OrderHelper_Package_References."=";
+   function Java_Box (Value : OrderHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.OrderHelper_Package_References.Java_Box;
+   function Java_Unbox_OrderHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return OrderHelper_Access_Array_Access_Array_Access renames admin.taghelpers.OrderHelper_Package_References.Java_Unbox_OrderHelper_Access_Array_Access_Array;
 
    type OrderHelper is new TagHelper with record
       logUtil : LogUtil_Access;

@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.thread.ABRunnable_Package;
 package org.allbinary.thread.ABRunnable_Package_References is
    type ABRunnable_Access is access all org.allbinary.thread.ABRunnable_Package.ABRunnable'Class;
@@ -19,6 +20,16 @@ package org.allbinary.thread.ABRunnable_Package_References is
    type ABRunnable_Access_Array_Access is access all ABRunnable_Access_Array;
    type ABRunnable_Access_Array_Access_Array is array (Natural range <>) of ABRunnable_Access_Array_Access;
    type ABRunnable_Access_Array_Access_Array_Access is access all ABRunnable_Access_Array_Access_Array;
+   type ABRunnable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ABRunnable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ABRunnable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ABRunnable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ABRunnable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ABRunnable_Access_Array_Access is (if Value /= null and then Value.all in ABRunnable_Access_Array_Object'Class then ABRunnable_Access_Array_Object'Class (Value.all).Value else null);
+   type ABRunnable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ABRunnable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ABRunnable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ABRunnable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ABRunnable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ABRunnable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ABRunnable_Access_Array_Access_Array_Object'Class then ABRunnable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.thread.ABRunnable_Package_References;
 
 with org.allbinary.thread.ABRunnable_Package_References;
@@ -47,10 +58,14 @@ package org.allbinary.thread.ABRunnable_Package is
    function "=" (Left, Right : ABRunnable_Access_Array) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
    subtype ABRunnable_Access_Array_Access is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access;
    function "=" (Left, Right : ABRunnable_Access_Array_Access) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
+   function Java_Box (Value : ABRunnable_Access_Array_Access) return Java_Object_Access renames org.allbinary.thread.ABRunnable_Package_References.Java_Box;
+   function Java_Unbox_ABRunnable_Access_Array (Value : access Java_Object'Class) return ABRunnable_Access_Array_Access renames org.allbinary.thread.ABRunnable_Package_References.Java_Unbox_ABRunnable_Access_Array;
    subtype ABRunnable_Access_Array_Access_Array is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access_Array;
    function "=" (Left, Right : ABRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
    subtype ABRunnable_Access_Array_Access_Array_Access is org.allbinary.thread.ABRunnable_Package_References.ABRunnable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ABRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.ABRunnable_Package_References."=";
+   function Java_Box (Value : ABRunnable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.thread.ABRunnable_Package_References.Java_Box;
+   function Java_Unbox_ABRunnable_Access_Array_Access_Array (Value : access Java_Object'Class) return ABRunnable_Access_Array_Access_Array_Access renames org.allbinary.thread.ABRunnable_Package_References.Java_Unbox_ABRunnable_Access_Array_Access_Array;
 
    type ABRunnable is new Java_Object and RunnableInterface with record
       running : Boolean;

@@ -20,6 +20,8 @@ with org.allbinary.business.init.db.UserDbInitInfo_Package; use org.allbinary.bu
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package; use org.allbinary.business.context.modules.storefronts.BasicStoreFront_Package;
 with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package; use org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package;
 with org.allbinary.business.context.modules.storefronts.BasicStoreFrontInterface_Package_References;
@@ -47,6 +49,8 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFronts
    package StoreFrontData_Package renames Standard.org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
    package UserDbInitInfo_Package renames Standard.org.allbinary.business.init.db.UserDbInitInfo_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -94,13 +98,13 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFronts
       keysAndValues : HashMap_Access;
       storeHashMap : HashMap_Access;
    begin
-        keysAndValues := StdUtil_Package.getInstance.createHashMap;
+        keysAndValues := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (name));
         storeHashMap := InitSql_Package.InitSql (This).getRow (keysAndValues);
         if (storeHashMap) = (null) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such Store: ") & name));
         end if;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.FACTORYERROR) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.FACTORYERROR) then
             This.logUtil.putF (To_Unbounded_String ("StoreFront: ") & storeHashMap.toString, BasicStoreFrontsEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getStore()"));
         end if;
         return BasicStoreFrontInterface_Access (BasicStoreFront_Package.Create (storeHashMap));

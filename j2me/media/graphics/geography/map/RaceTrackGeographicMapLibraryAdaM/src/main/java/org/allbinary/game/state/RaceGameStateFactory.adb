@@ -17,6 +17,8 @@ with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Pack
 with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
 with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
 with org.allbinary.game.state.GameState_Package_References;
+with org.allbinary.game.state.GameState_Package;
+with org.allbinary.game.state.GameStateFactory_Package;
 
 package body org.allbinary.game.state.RaceGameStateFactory_Package is
 
@@ -54,7 +56,7 @@ package body org.allbinary.game.state.RaceGameStateFactory_Package is
 
    function getInstance return RaceGameStateFactory_Access is
    begin
-        if (RaceGameStateFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (RaceGameStateFactory_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             RaceGameStateFactory_Package.instance := Java_Object_Access (RaceGameStateFactory_Package.Create);
         end if;
         return RaceGameStateFactory_Access (RaceGameStateFactory_Package.instance);

@@ -25,7 +25,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementData_Package i
 
    function getInstance return CssElementData_Access is
    begin
-        return CssElementData_Access (CssElementData_Package.instance);
+        return CssElementData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out CssElementData'Class) is

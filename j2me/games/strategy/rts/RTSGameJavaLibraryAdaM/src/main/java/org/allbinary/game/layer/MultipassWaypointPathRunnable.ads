@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
 package org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References is
    type MultipassWaypointPathRunnable_Access is access all org.allbinary.game.layer.MultipassWaypointPathRunnable_Package.MultipassWaypointPathRunnable'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_Reference
    type MultipassWaypointPathRunnable_Access_Array_Access is access all MultipassWaypointPathRunnable_Access_Array;
    type MultipassWaypointPathRunnable_Access_Array_Access_Array is array (Natural range <>) of MultipassWaypointPathRunnable_Access_Array_Access;
    type MultipassWaypointPathRunnable_Access_Array_Access_Array_Access is access all MultipassWaypointPathRunnable_Access_Array_Access_Array;
+   type MultipassWaypointPathRunnable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MultipassWaypointPathRunnable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MultipassWaypointPathRunnable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MultipassWaypointPathRunnable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MultipassWaypointPathRunnable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MultipassWaypointPathRunnable_Access_Array_Access is (if Value /= null and then Value.all in MultipassWaypointPathRunnable_Access_Array_Object'Class then MultipassWaypointPathRunnable_Access_Array_Object'Class (Value.all).Value else null);
+   type MultipassWaypointPathRunnable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MultipassWaypointPathRunnable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MultipassWaypointPathRunnable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MultipassWaypointPathRunnable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MultipassWaypointPathRunnable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MultipassWaypointPathRunnable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MultipassWaypointPathRunnable_Access_Array_Access_Array_Object'Class then MultipassWaypointPathRunnable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References;
 
 with org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References;
@@ -101,10 +112,14 @@ package org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
    function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
    subtype MultipassWaypointPathRunnable_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access;
    function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   function Java_Box (Value : MultipassWaypointPathRunnable_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.Java_Box;
+   function Java_Unbox_MultipassWaypointPathRunnable_Access_Array (Value : access Java_Object'Class) return MultipassWaypointPathRunnable_Access_Array_Access renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.Java_Unbox_MultipassWaypointPathRunnable_Access_Array;
    subtype MultipassWaypointPathRunnable_Access_Array_Access_Array is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array;
    function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
    subtype MultipassWaypointPathRunnable_Access_Array_Access_Array_Access is org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.MultipassWaypointPathRunnable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MultipassWaypointPathRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References."=";
+   function Java_Box (Value : MultipassWaypointPathRunnable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.Java_Box;
+   function Java_Unbox_MultipassWaypointPathRunnable_Access_Array_Access_Array (Value : access Java_Object'Class) return MultipassWaypointPathRunnable_Access_Array_Access_Array_Access renames org.allbinary.game.layer.MultipassWaypointPathRunnable_Package_References.Java_Unbox_MultipassWaypointPathRunnable_Access_Array_Access_Array;
 
    type MultipassWaypointPathRunnable is new WaypointPathRunnableBase with record
       logUtil : LogUtil_Access;
@@ -134,6 +149,7 @@ package org.allbinary.game.layer.MultipassWaypointPathRunnable_Package is
 
 end org.allbinary.game.layer.MultipassWaypointPathRunnable_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.FirstRunnable_Package;
 package org.allbinary.game.layer.FirstRunnable_Package_References is
    type FirstRunnable_Access is access all org.allbinary.game.layer.FirstRunnable_Package.FirstRunnable'Class;
@@ -141,6 +157,16 @@ package org.allbinary.game.layer.FirstRunnable_Package_References is
    type FirstRunnable_Access_Array_Access is access all FirstRunnable_Access_Array;
    type FirstRunnable_Access_Array_Access_Array is array (Natural range <>) of FirstRunnable_Access_Array_Access;
    type FirstRunnable_Access_Array_Access_Array_Access is access all FirstRunnable_Access_Array_Access_Array;
+   type FirstRunnable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FirstRunnable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FirstRunnable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FirstRunnable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FirstRunnable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FirstRunnable_Access_Array_Access is (if Value /= null and then Value.all in FirstRunnable_Access_Array_Object'Class then FirstRunnable_Access_Array_Object'Class (Value.all).Value else null);
+   type FirstRunnable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FirstRunnable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FirstRunnable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FirstRunnable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FirstRunnable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FirstRunnable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in FirstRunnable_Access_Array_Access_Array_Object'Class then FirstRunnable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.FirstRunnable_Package_References;
 
 with org.allbinary.game.layer.FirstRunnable_Package_References;
@@ -235,10 +261,14 @@ package org.allbinary.game.layer.FirstRunnable_Package is
    function "=" (Left, Right : FirstRunnable_Access_Array) return Boolean renames org.allbinary.game.layer.FirstRunnable_Package_References."=";
    subtype FirstRunnable_Access_Array_Access is org.allbinary.game.layer.FirstRunnable_Package_References.FirstRunnable_Access_Array_Access;
    function "=" (Left, Right : FirstRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.FirstRunnable_Package_References."=";
+   function Java_Box (Value : FirstRunnable_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.FirstRunnable_Package_References.Java_Box;
+   function Java_Unbox_FirstRunnable_Access_Array (Value : access Java_Object'Class) return FirstRunnable_Access_Array_Access renames org.allbinary.game.layer.FirstRunnable_Package_References.Java_Unbox_FirstRunnable_Access_Array;
    subtype FirstRunnable_Access_Array_Access_Array is org.allbinary.game.layer.FirstRunnable_Package_References.FirstRunnable_Access_Array_Access_Array;
    function "=" (Left, Right : FirstRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.FirstRunnable_Package_References."=";
    subtype FirstRunnable_Access_Array_Access_Array_Access is org.allbinary.game.layer.FirstRunnable_Package_References.FirstRunnable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : FirstRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.FirstRunnable_Package_References."=";
+   function Java_Box (Value : FirstRunnable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.FirstRunnable_Package_References.Java_Box;
+   function Java_Unbox_FirstRunnable_Access_Array_Access_Array (Value : access Java_Object'Class) return FirstRunnable_Access_Array_Access_Array_Access renames org.allbinary.game.layer.FirstRunnable_Package_References.Java_Unbox_FirstRunnable_Access_Array_Access_Array;
 
    type FirstRunnable is new ARunnable with record
       multipassWaypointPathRunnable_Var : MultipassWaypointPathRunnable_Access;
@@ -250,6 +280,7 @@ package org.allbinary.game.layer.FirstRunnable_Package is
 
 end org.allbinary.game.layer.FirstRunnable_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.SecondRunnable_Package;
 package org.allbinary.game.layer.SecondRunnable_Package_References is
    type SecondRunnable_Access is access all org.allbinary.game.layer.SecondRunnable_Package.SecondRunnable'Class;
@@ -257,6 +288,16 @@ package org.allbinary.game.layer.SecondRunnable_Package_References is
    type SecondRunnable_Access_Array_Access is access all SecondRunnable_Access_Array;
    type SecondRunnable_Access_Array_Access_Array is array (Natural range <>) of SecondRunnable_Access_Array_Access;
    type SecondRunnable_Access_Array_Access_Array_Access is access all SecondRunnable_Access_Array_Access_Array;
+   type SecondRunnable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SecondRunnable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SecondRunnable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SecondRunnable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SecondRunnable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SecondRunnable_Access_Array_Access is (if Value /= null and then Value.all in SecondRunnable_Access_Array_Object'Class then SecondRunnable_Access_Array_Object'Class (Value.all).Value else null);
+   type SecondRunnable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SecondRunnable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SecondRunnable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SecondRunnable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SecondRunnable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SecondRunnable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SecondRunnable_Access_Array_Access_Array_Object'Class then SecondRunnable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.SecondRunnable_Package_References;
 
 with org.allbinary.game.layer.SecondRunnable_Package_References;
@@ -351,10 +392,14 @@ package org.allbinary.game.layer.SecondRunnable_Package is
    function "=" (Left, Right : SecondRunnable_Access_Array) return Boolean renames org.allbinary.game.layer.SecondRunnable_Package_References."=";
    subtype SecondRunnable_Access_Array_Access is org.allbinary.game.layer.SecondRunnable_Package_References.SecondRunnable_Access_Array_Access;
    function "=" (Left, Right : SecondRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.SecondRunnable_Package_References."=";
+   function Java_Box (Value : SecondRunnable_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.SecondRunnable_Package_References.Java_Box;
+   function Java_Unbox_SecondRunnable_Access_Array (Value : access Java_Object'Class) return SecondRunnable_Access_Array_Access renames org.allbinary.game.layer.SecondRunnable_Package_References.Java_Unbox_SecondRunnable_Access_Array;
    subtype SecondRunnable_Access_Array_Access_Array is org.allbinary.game.layer.SecondRunnable_Package_References.SecondRunnable_Access_Array_Access_Array;
    function "=" (Left, Right : SecondRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.SecondRunnable_Package_References."=";
    subtype SecondRunnable_Access_Array_Access_Array_Access is org.allbinary.game.layer.SecondRunnable_Package_References.SecondRunnable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SecondRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.SecondRunnable_Package_References."=";
+   function Java_Box (Value : SecondRunnable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.SecondRunnable_Package_References.Java_Box;
+   function Java_Unbox_SecondRunnable_Access_Array_Access_Array (Value : access Java_Object'Class) return SecondRunnable_Access_Array_Access_Array_Access renames org.allbinary.game.layer.SecondRunnable_Package_References.Java_Unbox_SecondRunnable_Access_Array_Access_Array;
 
    type SecondRunnable is new ARunnable with record
       multipassWaypointPathRunnable_Var : MultipassWaypointPathRunnable_Access;
@@ -366,6 +411,7 @@ package org.allbinary.game.layer.SecondRunnable_Package is
 
 end org.allbinary.game.layer.SecondRunnable_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.EndRunnable_Package;
 package org.allbinary.game.layer.EndRunnable_Package_References is
    type EndRunnable_Access is access all org.allbinary.game.layer.EndRunnable_Package.EndRunnable'Class;
@@ -373,6 +419,16 @@ package org.allbinary.game.layer.EndRunnable_Package_References is
    type EndRunnable_Access_Array_Access is access all EndRunnable_Access_Array;
    type EndRunnable_Access_Array_Access_Array is array (Natural range <>) of EndRunnable_Access_Array_Access;
    type EndRunnable_Access_Array_Access_Array_Access is access all EndRunnable_Access_Array_Access_Array;
+   type EndRunnable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : EndRunnable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : EndRunnable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new EndRunnable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_EndRunnable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return EndRunnable_Access_Array_Access is (if Value /= null and then Value.all in EndRunnable_Access_Array_Object'Class then EndRunnable_Access_Array_Object'Class (Value.all).Value else null);
+   type EndRunnable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : EndRunnable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : EndRunnable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new EndRunnable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_EndRunnable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return EndRunnable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in EndRunnable_Access_Array_Access_Array_Object'Class then EndRunnable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.EndRunnable_Package_References;
 
 with org.allbinary.game.layer.EndRunnable_Package_References;
@@ -467,10 +523,14 @@ package org.allbinary.game.layer.EndRunnable_Package is
    function "=" (Left, Right : EndRunnable_Access_Array) return Boolean renames org.allbinary.game.layer.EndRunnable_Package_References."=";
    subtype EndRunnable_Access_Array_Access is org.allbinary.game.layer.EndRunnable_Package_References.EndRunnable_Access_Array_Access;
    function "=" (Left, Right : EndRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.layer.EndRunnable_Package_References."=";
+   function Java_Box (Value : EndRunnable_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.EndRunnable_Package_References.Java_Box;
+   function Java_Unbox_EndRunnable_Access_Array (Value : access Java_Object'Class) return EndRunnable_Access_Array_Access renames org.allbinary.game.layer.EndRunnable_Package_References.Java_Unbox_EndRunnable_Access_Array;
    subtype EndRunnable_Access_Array_Access_Array is org.allbinary.game.layer.EndRunnable_Package_References.EndRunnable_Access_Array_Access_Array;
    function "=" (Left, Right : EndRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.EndRunnable_Package_References."=";
    subtype EndRunnable_Access_Array_Access_Array_Access is org.allbinary.game.layer.EndRunnable_Package_References.EndRunnable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : EndRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.EndRunnable_Package_References."=";
+   function Java_Box (Value : EndRunnable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.EndRunnable_Package_References.Java_Box;
+   function Java_Unbox_EndRunnable_Access_Array_Access_Array (Value : access Java_Object'Class) return EndRunnable_Access_Array_Access_Array_Access renames org.allbinary.game.layer.EndRunnable_Package_References.Java_Unbox_EndRunnable_Access_Array_Access_Array;
 
    type EndRunnable is new ARunnable with record
       multipassWaypointPathRunnable_Var : MultipassWaypointPathRunnable_Access;

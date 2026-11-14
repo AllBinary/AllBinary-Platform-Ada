@@ -28,13 +28,18 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -49,6 +54,8 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -148,7 +155,7 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
       calendar : Calendar_Access;
       time : Unbounded_String;
    begin
-        values := StdUtil_Package.getInstance.createHashMap;
+        values := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         values.put (This.basicItemData.ID, Java_Box (This.id));
         values.put (BasicOptionItemData_Package.OPTION_ONE_ONE_ITEM, This.optionItem.get (0));
         values.put (BasicOptionItemData_Package.OPTION_ONE_ONE_VALUE, This.optionValue.get (0));
@@ -187,17 +194,17 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
             values := BasicArrayList_Access (BasicArrayListD_Package.Create);
-            values.add (This.id);
+            values.add (Java_Box (This.id));
             size := This.optionValue.size;
             for index in 0 .. (size) - 1 loop
                 values.add (This.optionValue.get (index));
                 values.add (This.optionItem.get (index));
             end loop;
-            values.add (time);
-            values.add (time);
+            values.add (Java_Box (time));
+            values.add (Java_Box (time));
             BasicOptionItemsEntityFactory_Package.getInstance.getBasicOptionItemsEntityInstance.insert (values);
             success := To_Unbounded_String ("Successfully inserted ") & This.id & To_Unbounded_String (" into items table");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, BasicOptionItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             return success;
@@ -207,7 +214,7 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to insert ") & This.id & To_Unbounded_String (" into items table");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicOptionItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("inserts()"), e);
             end if;
             return error;
@@ -222,7 +229,7 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
         begin
             BasicOptionItemsEntityFactory_Package.getInstance.getBasicOptionItemsEntityInstance.delete (This.id);
             success := To_Unbounded_String ("Successfully deleted");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, BasicOptionItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"));
             end if;
             return success;
@@ -232,7 +239,7 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to delete");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicOptionItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e);
             end if;
             return error;
@@ -249,7 +256,7 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
             success := To_Unbounded_String ("Update Pricing Successful");
             values := BasicOptionItemsRequestHelper'Class (This).getHashMap;
             BasicOptionItemsEntityFactory_Package.getInstance.getBasicOptionItemsEntityInstance.update (values);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (StringMaker_Package.Create.append (This.id).append (CommonSeps_Package.getInstance.SPACE).append (success).toString, BasicOptionItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
@@ -259,7 +266,7 @@ package body admin.taghelpers.BasicOptionItemsRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to update: ") & This.id;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicOptionItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;

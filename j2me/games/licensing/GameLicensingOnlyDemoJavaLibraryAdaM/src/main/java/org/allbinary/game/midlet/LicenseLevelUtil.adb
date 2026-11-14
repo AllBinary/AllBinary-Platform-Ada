@@ -36,7 +36,7 @@ package body org.allbinary.game.midlet.LicenseLevelUtil_Package is
 
    function getInstance return LicenseLevelUtil_Access is
    begin
-        return LicenseLevelUtil_Access (LicenseLevelUtil_Package.instance);
+        return LicenseLevelUtil_Package.instance;
    end getInstance;
 
    function getMaxLevel (This : in out LicenseLevelUtil; maxLevel : Integer; demoLevel : Integer) return Integer is

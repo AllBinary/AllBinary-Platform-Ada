@@ -38,7 +38,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
    function getInstance return StringValidationUtil_Access is
    begin
-        return StringValidationUtil_Access (StringValidationUtil_Package.instance);
+        return StringValidationUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out StringValidationUtil'Class) is
@@ -93,7 +93,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
    function isValidRequired (This : in out StringValidationUtil; value : Unbounded_String; min : Integer; max : Integer) return Boolean is
    begin
-        if (((value) = (Null_Unbounded_String)) or else ((Ada.Strings.Unbounded.Length (value)) < (min))) or else ((Ada.Strings.Unbounded.Length (value)) > (max)) then
+        if ((Ada.Strings.Unbounded.Length (value)) < (min)) or else ((Ada.Strings.Unbounded.Length (value)) > (max)) then
             return False;
         end if;
         return True;
@@ -112,7 +112,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
    function isValidNotRequired (This : in out StringValidationUtil; value : Unbounded_String; min : Integer; max : Integer) return Boolean is
    begin
-        if (value) /= (Null_Unbounded_String) then
+        if (Ada.Strings.Unbounded.Length (value)) > (0) then
             if ((Ada.Strings.Unbounded.Length (value)) < (min)) or else ((Ada.Strings.Unbounded.Length (value)) > (max)) then
                 return False;
             end if;
@@ -122,7 +122,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
    function isValidNotRequiredNumber (This : in out StringValidationUtil; value : Unbounded_String; min : Integer; max : Integer) return Boolean is
    begin
-        if (value) /= (Null_Unbounded_String) then
+        if (Ada.Strings.Unbounded.Length (value)) > (0) then
             if (((Java_Compare_To (value, This.stringUtil.NULL_STRING)) = (0)) or else ((Ada.Strings.Unbounded.Length (value)) < (min))) or else ((Ada.Strings.Unbounded.Length (value)) > (max)) then
                 return False;
             end if;
@@ -135,7 +135,7 @@ package body org.allbinary.logic.string_Id.StringValidationUtil_Package is
 
    function isEmpty (This : in out StringValidationUtil; string_Id : Unbounded_String) return Boolean is
    begin
-        if (((string_Id) /= (Null_Unbounded_String)) and then ((Java_Compare_To (string_Id, This.stringUtil.NULL_STRING)) /= (0))) and then ((Java_Compare_To (string_Id, This.stringUtil.EMPTY_STRING)) /= (0)) then
+        if ((Java_Compare_To (string_Id, This.stringUtil.NULL_STRING)) /= (0)) and then ((Java_Compare_To (string_Id, This.stringUtil.EMPTY_STRING)) /= (0)) then
             return False;
         else
             return True;

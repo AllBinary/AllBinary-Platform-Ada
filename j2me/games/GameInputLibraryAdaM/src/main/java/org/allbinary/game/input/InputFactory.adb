@@ -80,7 +80,7 @@ package body org.allbinary.game.input.InputFactory_Package is
 
    function getInstance return InputFactory_Access is
    begin
-        if (InputFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (InputFactory_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             InputFactory_Package.instance := Java_Object_Access (InputFactory_Package.Create);
         end if;
         return InputFactory_Access (InputFactory_Package.instance);

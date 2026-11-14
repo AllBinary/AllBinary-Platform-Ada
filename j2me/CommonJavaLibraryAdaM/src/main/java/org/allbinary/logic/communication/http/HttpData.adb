@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.http.HttpData_Package is
 
    function getInstance return HttpData_Access is
    begin
-        return HttpData_Access (HttpData_Package.instance);
+        return HttpData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out HttpData'Class) is

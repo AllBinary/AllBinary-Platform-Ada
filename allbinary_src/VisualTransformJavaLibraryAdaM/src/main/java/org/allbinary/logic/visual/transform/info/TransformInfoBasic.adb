@@ -28,6 +28,9 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
 with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.visual.transform.info.TransformInfoBasic_Package is
 

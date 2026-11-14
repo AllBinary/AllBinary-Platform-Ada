@@ -28,6 +28,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.communication.smtp.EmailData_Package; use org.allbinary.logic.communication.smtp.EmailData_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
@@ -48,6 +50,8 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -154,7 +158,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGINGERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, Email_Access'(This'Unchecked_Access), To_Unbounded_String ("emailConstructor"), e);
             end if;
@@ -177,7 +181,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
         begin
             hostName := StringUtil_Package.getInstance.EMPTY_STRING;
             if StringValidationUtil_Package.getInstance.isEmpty (hostName) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGINGERROR) then
                     This.logUtil.putF (To_Unbounded_String ("Unable to get HostName so using fake"), Email_Access'(This'Unchecked_Access), To_Unbounded_String ("init()"));
                 end if;
                 This.properties.put (Email_Package.SMTP_LOCAL_HOST, To_Unbounded_String ("FakeHostName"));
@@ -187,7 +191,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGINGERROR) then
                 This.logUtil.put (To_Unbounded_String ("Continuing on Exception: Unable to get HostName"), Email_Access'(This'Unchecked_Access), To_Unbounded_String ("init()"), e);
             end if;
             This.properties.put (Email_Package.SMTP_LOCAL_HOST, To_Unbounded_String ("FakeHostName"));
@@ -245,7 +249,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
       content : Unbounded_String;
    begin
         begin
-            hashMap := StdUtil_Package.getInstance.createHashMap;
+            hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             hashMap.put (EmailData_Package.SERVER, Java_Unbox (This.properties.get (Email_Package.SMTP_HOST)));
             addresses := This.msg.getFrom;
             if (addresses) /= (null) then
@@ -285,7 +289,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, Email_Access'(This'Unchecked_Access), To_Unbounded_String ("toHashMap()"), e);
             end if;
             Java_Throw (e);

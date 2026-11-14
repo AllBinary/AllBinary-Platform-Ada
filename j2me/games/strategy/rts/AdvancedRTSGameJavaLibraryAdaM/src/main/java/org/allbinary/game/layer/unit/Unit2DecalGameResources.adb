@@ -18,6 +18,17 @@ with org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package; use or
 with org.allbinary.AndroidUtil_Package; use org.allbinary.AndroidUtil_Package;
 with org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package; use org.allbinary.game.configuration.feature.GraphicsFeatureFactory_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.GraphicsFeature_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.layer.unit.Unit2DecalGameResources_Package is
 
@@ -33,7 +44,7 @@ package body org.allbinary.game.layer.unit.Unit2DecalGameResources_Package is
 
    function getInstance return BasicGameResources_Access is
    begin
-        if (Unit2DecalGameResources_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (Unit2DecalGameResources_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             Unit2DecalGameResources_Package.instance := Java_Object_Access (Unit2DecalGameResources_Package.Create);
         end if;
         return BasicGameResources_Access (Unit2DecalGameResources_Access (Unit2DecalGameResources_Package.instance));

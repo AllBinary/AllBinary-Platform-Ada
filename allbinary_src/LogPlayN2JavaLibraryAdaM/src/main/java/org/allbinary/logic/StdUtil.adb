@@ -93,7 +93,7 @@ package body org.allbinary.logic.StdUtil_Package is
 
    function getInstance return StdUtil_Access is
    begin
-        return StdUtil_Access (StdUtil_Package.instance);
+        return StdUtil_Package.instance;
    end getInstance;
 
    function createStack (This : in out StdUtil) return ABStack_Access is

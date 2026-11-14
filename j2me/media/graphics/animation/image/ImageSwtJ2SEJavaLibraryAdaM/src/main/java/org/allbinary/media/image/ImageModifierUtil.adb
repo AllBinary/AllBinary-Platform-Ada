@@ -31,23 +31,52 @@ with org.microemu.device.swt.SwtImmutableImage_Package; use org.microemu.device.
 with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.swt.SwtMutableImage_Package;
 with org.allbinary.media.image.ImageCopyUtil_Package; use org.allbinary.media.image.ImageCopyUtil_Package;
 with org.allbinary.media.image.ImageCopyUtil_Package_References;
+with org.eclipse.swt.graphics.Image_Package;
+with org.eclipse.swt.graphics.Image_Package_References; use type org.eclipse.swt.graphics.Image_Package_References.Image_Access;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with org.eclipse.swt.graphics.Color_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.eclipse.swt.graphics.Device_Package;
+with org.eclipse.swt.graphics.Drawable_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.configuration.feature.Feature_Package;
+with org.eclipse.swt.graphics.Font_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.eclipse.swt.graphics.FontMetrics_Package;
+with org.eclipse.swt.graphics.GC_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.khronos.opengles.GL10_Package;
 with org.allbinary.game.configuration.feature.GameFeature_Package;
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.media.image.ImageCopyUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.microemu.device.MutableImage_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package;
+with org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
+with org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+with org.allbinary.image.opengles.OpenGLESImageTranslate_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package;
+with org.allbinary.graphics.opengles.OpenGLUtil_Package;
+with org.eclipse.swt.graphics.PaletteData_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+with org.eclipse.swt.graphics.Point_Package;
+with javax.microedition.lcdui.PostLoadImageProcessor_Package;
+with org.eclipse.swt.graphics.RGB_Package;
+with org.eclipse.swt.graphics.RGBA_Package;
+with org.eclipse.swt.graphics.Rectangle_Package;
+with org.eclipse.swt.graphics.Resource_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.eclipse.swt.graphics.Transform_Package;
 
 package body org.allbinary.media.image.ImageModifierUtil_Package is
 
@@ -132,7 +161,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
 
    function getInstanceOrCreate return ImageModifierUtil_Access is
    begin
-        return ImageModifierUtil_Access (ImageModifierUtil_Package.instance);
+        return ImageModifierUtil_Package.instance;
    end getInstanceOrCreate;
 
    procedure setBasicColorP (This : in out ImageModifierUtil; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
@@ -145,7 +174,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
       unusedOriginalImage : constant Image_Access := Image_Access (unusedOriginalImage_Param);
       image : constant Image_Access := Image_Access (image_Param);
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
-      newBufferedImage : Image_Access;
+      newBufferedImage : org.eclipse.swt.graphics.Image_Package_References.Image_Access;
       swtImage : SwtImmutableImage_Access;
       swtImage_2 : SwtMutableImage_Access;
       r : Short_Integer;
@@ -164,10 +193,10 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         newBufferedImage := null;
         if image.isMutable then
             swtImage_2 := SwtMutableImage_Access (image);
-            newBufferedImage := Image_Access (swtImage_2.getImage);
+            newBufferedImage := org.eclipse.swt.graphics.Image_Package_References.Image_Access (swtImage_2.getImage);
         else
             swtImage := SwtImmutableImage_Access (image);
-            newBufferedImage := Image_Access (swtImage.getImage);
+            newBufferedImage := org.eclipse.swt.graphics.Image_Package_References.Image_Access (swtImage.getImage);
         end if;
         r := basicColor.red;
         g := basicColor.green;
@@ -183,9 +212,9 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
             for index in 0 .. (width) - 1 loop
                 for index2 in 0 .. (height) - 1 loop
                     index3 := (((index2) * (imageData.bytesPerLine))) + (((index) * (4)));
-                    rx := Java_Shift_Left ((Java_And (imageData.data (index3), 16#FF#)), 16);
-                    gx := Java_Shift_Left ((Java_And (imageData.data ((index3) + (1)), 16#FF#)), 8);
-                    bx := (Java_And (imageData.data ((index3) + (2)), 16#FF#));
+                    rx := Java_Shift_Left ((Java_And (Integer (Integer (imageData.data (index3))), 16#FF#)), 16);
+                    gx := Java_Shift_Left ((Java_And (Integer (Integer (imageData.data ((index3) + (1)))), 16#FF#)), 8);
+                    bx := (Java_And (Integer (Integer (imageData.data ((index3) + (2)))), 16#FF#));
                     if (((rx) /= (0)) or else ((gx) /= (0))) or else ((bx) /= (0)) then
                         imageData.data (index3) := Short_Short_Integer (r);
                         imageData.data ((index3) + (1)) := Short_Short_Integer (g);
@@ -201,7 +230,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
       image : constant Image_Access := Image_Access (image_Param);
       basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
       openGLESImage : OpenGLESImage_Access;
-      newBufferedImage : Image_Access;
+      newBufferedImage : org.eclipse.swt.graphics.Image_Package_References.Image_Access;
       swtImage : SwtImmutableImage_Access;
       swtImage_2 : SwtMutableImage_Access;
       MAX : Float;
@@ -218,7 +247,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         if This.features.isFeature (OpenGLFeatureFactory_Package.getInstance.OPENGL) then
             if (image.getType) >= (OpenGLESImage_Package.TYPE_Id) then
                 openGLESImage := (OpenGLESImage_Access (image));
-                openGLESImage.imageProcessor := ModifierOpenGLESImageProcessor_Package.getInstance;
+                openGLESImage.imageProcessor := org.allbinary.image.opengles.OpenGLESImageProcessor_Package.OpenGLESImageProcessor_Access (ModifierOpenGLESImageProcessor_Package.getInstance);
                 openGLESImage.openGLESImageProperties.redf := basicColor.getRedComponent;
                 openGLESImage.openGLESImageProperties.greenf := basicColor.getGreenComponent;
                 openGLESImage.openGLESImageProperties.bluef := basicColor.getBlueComponent;
@@ -228,10 +257,10 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         newBufferedImage := null;
         if image.isMutable then
             swtImage_2 := SwtMutableImage_Access (image);
-            newBufferedImage := Image_Access (swtImage_2.getImage);
+            newBufferedImage := org.eclipse.swt.graphics.Image_Package_References.Image_Access (swtImage_2.getImage);
         else
             swtImage := SwtImmutableImage_Access (image);
-            newBufferedImage := Image_Access (swtImage.getImage);
+            newBufferedImage := org.eclipse.swt.graphics.Image_Package_References.Image_Access (swtImage.getImage);
         end if;
         MAX := 255.0;
         r := ((Float (basicColor.red))) / (MAX);
@@ -245,12 +274,12 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
             size := imageData.data'Length;
             index := 0;
             while (index) < (size) loop
-                rx := Java_Shift_Left ((Java_And (imageData.data (index), 16#FF#)), 16);
-                gx := Java_Shift_Left ((Java_And (imageData.data ((index) + (1)), 16#FF#)), 8);
-                bx := (Java_And (imageData.data ((index) + (2)), 16#FF#));
-                rx := Integer ((rx) * (r));
-                gx := Integer ((gx) * (g));
-                bx := Integer ((bx) * (b));
+                rx := Java_Shift_Left ((Java_And (Integer (Integer (imageData.data (index))), 16#FF#)), 16);
+                gx := Java_Shift_Left ((Java_And (Integer (Integer (imageData.data ((index) + (1)))), 16#FF#)), 8);
+                bx := (Java_And (Integer (Integer (imageData.data ((index) + (2)))), 16#FF#));
+                rx := Integer ((Float (rx)) * (r));
+                gx := Integer ((Float (gx)) * (g));
+                bx := Integer ((Float (bx)) * (b));
                 imageData.data (index) := Short_Short_Integer (rx);
                 imageData.data ((index) + (1)) := Short_Short_Integer (gx);
                 imageData.data ((index) + (2)) := Short_Short_Integer (bx);
@@ -267,7 +296,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         if This.features.isFeature (OpenGLFeatureFactory_Package.getInstance.OPENGL) then
             if (image.getType) >= (OpenGLESImage_Package.TYPE_Id) then
                 openGLESImage := (OpenGLESImage_Access (image));
-                openGLESImage.imageProcessor := ModifierOpenGLESImageProcessor_Package.getInstance;
+                openGLESImage.imageProcessor := org.allbinary.image.opengles.OpenGLESImageProcessor_Package.OpenGLESImageProcessor_Access (ModifierOpenGLESImageProcessor_Package.getInstance);
                 openGLESImage.openGLESImageProperties.alphaf := ((Float (alphaInt))) / (255.0);
                 return;
             end if;
@@ -278,7 +307,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
    procedure setAlphaSWT (This : in out ImageModifierUtil; image_Param : access Image_Package.Image'Class; alphaInt : Integer) is
       image : constant Image_Access := Image_Access (image_Param);
       alpha : Short_Short_Integer;
-      newBufferedImage : Image_Access;
+      newBufferedImage : org.eclipse.swt.graphics.Image_Package_References.Image_Access;
       swtImage : SwtImmutableImage_Access;
       swtImage_2 : SwtMutableImage_Access;
    begin
@@ -286,12 +315,12 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         newBufferedImage := null;
         if image.isMutable then
             swtImage_2 := SwtMutableImage_Access (image);
-            newBufferedImage := Image_Access (swtImage_2.getImage);
+            newBufferedImage := org.eclipse.swt.graphics.Image_Package_References.Image_Access (swtImage_2.getImage);
         else
             swtImage := SwtImmutableImage_Access (image);
-            newBufferedImage := Image_Access (swtImage.getImage);
+            newBufferedImage := org.eclipse.swt.graphics.Image_Package_References.Image_Access (swtImage.getImage);
         end if;
-        newBufferedImage.getImageData.alpha := alpha;
+        newBufferedImage.getImageData.alpha := Integer (Integer (alpha));
    end setAlphaSWT;
 
    function getImageArray (This : in out ImageModifierUtil; originalImageArray : Image_Access_Array_Access) return Image_Access_Array_Access is

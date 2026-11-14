@@ -23,6 +23,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.microemu.device.j2se.J2SEImmutableImage_Package; use org.microemu.device.j2se.J2SEImmutableImage_Package;
 with org.microemu.device.j2se.J2SEMutableImage_Package; use org.microemu.device.j2se.J2SEMutableImage_Package;
+with java.awt.Image_Package;
+with java.awt.Image_Package_References; use type java.awt.Image_Package_References.Image_Access;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package;
 
@@ -74,7 +76,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
 
    function getInstance return ImageUtil_Access is
    begin
-        return ImageUtil_Access (ImageUtil_Package.instance);
+        return ImageUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageUtil'Class) is
@@ -253,8 +255,8 @@ package body org.allbinary.media.image.ImageUtil_Package is
         return newBufferedImage;
    end createBufferedImageWithLargerCanvas;
 
-   function convertToBufferedImage (This : in out ImageUtil; toolkitImage_Param : access Image_Package.Image'Class) return BufferedImage_Access is
-      toolkitImage : constant Image_Access := Image_Access (toolkitImage_Param);
+   function convertToBufferedImage (This : in out ImageUtil; toolkitImage_Param : access java.awt.Image_Package.Image'Class) return BufferedImage_Access is
+      toolkitImage : constant java.awt.Image_Package_References.Image_Access := java.awt.Image_Package_References.Image_Access (toolkitImage_Param);
       bufferedImage : BufferedImage_Access;
       g2d : Graphics2D_Access;
    begin
@@ -358,7 +360,7 @@ package body org.allbinary.media.image.ImageUtil_Package is
       null;
    end createBufferedImageWithLargerCanvas;
 
-   procedure convertToBufferedImage (This : in out ImageUtil; toolkitImage_Param : access Image_Package.Image'Class) is
+   procedure convertToBufferedImage (This : in out ImageUtil; toolkitImage_Param : access java.awt.Image_Package.Image'Class) is
       Java_Result : constant BufferedImage_Access := ImageUtil'Class (This).convertToBufferedImage (toolkitImage_Param => toolkitImage_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -88,7 +88,7 @@ package body org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFact
 
    function getInstance return AppRendererShaderUpdaterFactory_Access is
    begin
-        return AppRendererShaderUpdaterFactory_Access (AppRendererShaderUpdaterFactory_Package.instanceC);
+        return AppRendererShaderUpdaterFactory_Package.instanceC;
    end getInstance;
 
    function getTestShaders (This : in out AppRendererShaderUpdaterFactory) return ShaderOpenGLProcessor_Access_Array_Access is

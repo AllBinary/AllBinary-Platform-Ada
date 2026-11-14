@@ -78,7 +78,7 @@ package body org.allbinary.android.input.VirtualKeyboardFactory_Package is
 
    function getInstance return VirtualKeyboard_Access is
    begin
-        return VirtualKeyboard_Access (VirtualKeyboardFactory_Package.virtualKeyboard);
+        return VirtualKeyboardFactory_Package.virtualKeyboard;
    end getInstance;
 
 begin

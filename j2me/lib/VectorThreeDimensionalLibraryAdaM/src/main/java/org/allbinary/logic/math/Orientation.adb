@@ -45,7 +45,7 @@ package body org.allbinary.logic.math.Orientation_Package is
         Orientation_Package.SINGLETON.yaw.setint (yaw);
         Orientation_Package.SINGLETON.pitch.setint (pitch);
         Orientation_Package.SINGLETON.roll.setint (roll);
-        return Orientation_Access (Orientation_Package.SINGLETON);
+        return Orientation_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out Orientation'Class; yaw : Integer; pitch : Integer; roll : Integer) is

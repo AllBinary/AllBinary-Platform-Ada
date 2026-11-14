@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.generic_Id.inventory.InventorySearchProductUtil_Package;
 package views.generic_Id.inventory.InventorySearchProductUtil_Package_References is
    type InventorySearchProductUtil_Access is access all views.generic_Id.inventory.InventorySearchProductUtil_Package.InventorySearchProductUtil'Class;
@@ -19,6 +20,16 @@ package views.generic_Id.inventory.InventorySearchProductUtil_Package_References
    type InventorySearchProductUtil_Access_Array_Access is access all InventorySearchProductUtil_Access_Array;
    type InventorySearchProductUtil_Access_Array_Access_Array is array (Natural range <>) of InventorySearchProductUtil_Access_Array_Access;
    type InventorySearchProductUtil_Access_Array_Access_Array_Access is access all InventorySearchProductUtil_Access_Array_Access_Array;
+   type InventorySearchProductUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InventorySearchProductUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InventorySearchProductUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InventorySearchProductUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InventorySearchProductUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InventorySearchProductUtil_Access_Array_Access is (if Value /= null and then Value.all in InventorySearchProductUtil_Access_Array_Object'Class then InventorySearchProductUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type InventorySearchProductUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InventorySearchProductUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InventorySearchProductUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InventorySearchProductUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InventorySearchProductUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InventorySearchProductUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in InventorySearchProductUtil_Access_Array_Access_Array_Object'Class then InventorySearchProductUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.generic_Id.inventory.InventorySearchProductUtil_Package_References;
 
 with views.generic_Id.inventory.InventorySearchProductUtil_Package_References;
@@ -96,10 +107,14 @@ package views.generic_Id.inventory.InventorySearchProductUtil_Package is
    function "=" (Left, Right : InventorySearchProductUtil_Access_Array) return Boolean renames views.generic_Id.inventory.InventorySearchProductUtil_Package_References."=";
    subtype InventorySearchProductUtil_Access_Array_Access is views.generic_Id.inventory.InventorySearchProductUtil_Package_References.InventorySearchProductUtil_Access_Array_Access;
    function "=" (Left, Right : InventorySearchProductUtil_Access_Array_Access) return Boolean renames views.generic_Id.inventory.InventorySearchProductUtil_Package_References."=";
+   function Java_Box (Value : InventorySearchProductUtil_Access_Array_Access) return Java_Object_Access renames views.generic_Id.inventory.InventorySearchProductUtil_Package_References.Java_Box;
+   function Java_Unbox_InventorySearchProductUtil_Access_Array (Value : access Java_Object'Class) return InventorySearchProductUtil_Access_Array_Access renames views.generic_Id.inventory.InventorySearchProductUtil_Package_References.Java_Unbox_InventorySearchProductUtil_Access_Array;
    subtype InventorySearchProductUtil_Access_Array_Access_Array is views.generic_Id.inventory.InventorySearchProductUtil_Package_References.InventorySearchProductUtil_Access_Array_Access_Array;
    function "=" (Left, Right : InventorySearchProductUtil_Access_Array_Access_Array) return Boolean renames views.generic_Id.inventory.InventorySearchProductUtil_Package_References."=";
    subtype InventorySearchProductUtil_Access_Array_Access_Array_Access is views.generic_Id.inventory.InventorySearchProductUtil_Package_References.InventorySearchProductUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InventorySearchProductUtil_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.inventory.InventorySearchProductUtil_Package_References."=";
+   function Java_Box (Value : InventorySearchProductUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames views.generic_Id.inventory.InventorySearchProductUtil_Package_References.Java_Box;
+   function Java_Unbox_InventorySearchProductUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return InventorySearchProductUtil_Access_Array_Access_Array_Access renames views.generic_Id.inventory.InventorySearchProductUtil_Package_References.Java_Unbox_InventorySearchProductUtil_Access_Array_Access_Array;
 
    type InventorySearchProductUtil is new Java_Object with record
       logUtil : LogUtil_Access;

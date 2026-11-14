@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.paint.AnimationCompositePaintable_Package;
 package org.allbinary.graphics.paint.AnimationCompositePaintable_Package_References is
    type AnimationCompositePaintable_Access is access all org.allbinary.graphics.paint.AnimationCompositePaintable_Package.AnimationCompositePaintable'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.paint.AnimationCompositePaintable_Package_Referen
    type AnimationCompositePaintable_Access_Array_Access is access all AnimationCompositePaintable_Access_Array;
    type AnimationCompositePaintable_Access_Array_Access_Array is array (Natural range <>) of AnimationCompositePaintable_Access_Array_Access;
    type AnimationCompositePaintable_Access_Array_Access_Array_Access is access all AnimationCompositePaintable_Access_Array_Access_Array;
+   type AnimationCompositePaintable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AnimationCompositePaintable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AnimationCompositePaintable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AnimationCompositePaintable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AnimationCompositePaintable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AnimationCompositePaintable_Access_Array_Access is (if Value /= null and then Value.all in AnimationCompositePaintable_Access_Array_Object'Class then AnimationCompositePaintable_Access_Array_Object'Class (Value.all).Value else null);
+   type AnimationCompositePaintable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AnimationCompositePaintable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AnimationCompositePaintable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AnimationCompositePaintable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AnimationCompositePaintable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AnimationCompositePaintable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AnimationCompositePaintable_Access_Array_Access_Array_Object'Class then AnimationCompositePaintable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.paint.AnimationCompositePaintable_Package_References;
 
 with org.allbinary.graphics.paint.AnimationCompositePaintable_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.graphics.paint.AnimationCompositePaintable_Package is
    function "=" (Left, Right : AnimationCompositePaintable_Access_Array) return Boolean renames org.allbinary.graphics.paint.AnimationCompositePaintable_Package_References."=";
    subtype AnimationCompositePaintable_Access_Array_Access is org.allbinary.graphics.paint.AnimationCompositePaintable_Package_References.AnimationCompositePaintable_Access_Array_Access;
    function "=" (Left, Right : AnimationCompositePaintable_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.AnimationCompositePaintable_Package_References."=";
+   function Java_Box (Value : AnimationCompositePaintable_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.paint.AnimationCompositePaintable_Package_References.Java_Box;
+   function Java_Unbox_AnimationCompositePaintable_Access_Array (Value : access Java_Object'Class) return AnimationCompositePaintable_Access_Array_Access renames org.allbinary.graphics.paint.AnimationCompositePaintable_Package_References.Java_Unbox_AnimationCompositePaintable_Access_Array;
    subtype AnimationCompositePaintable_Access_Array_Access_Array is org.allbinary.graphics.paint.AnimationCompositePaintable_Package_References.AnimationCompositePaintable_Access_Array_Access_Array;
    function "=" (Left, Right : AnimationCompositePaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.paint.AnimationCompositePaintable_Package_References."=";
    subtype AnimationCompositePaintable_Access_Array_Access_Array_Access is org.allbinary.graphics.paint.AnimationCompositePaintable_Package_References.AnimationCompositePaintable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AnimationCompositePaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.paint.AnimationCompositePaintable_Package_References."=";
+   function Java_Box (Value : AnimationCompositePaintable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.paint.AnimationCompositePaintable_Package_References.Java_Box;
+   function Java_Unbox_AnimationCompositePaintable_Access_Array_Access_Array (Value : access Java_Object'Class) return AnimationCompositePaintable_Access_Array_Access_Array_Access renames org.allbinary.graphics.paint.AnimationCompositePaintable_Package_References.Java_Unbox_AnimationCompositePaintable_Access_Array_Access_Array;
 
    type AnimationCompositePaintable is new InitUpdatePaintable with record
       animationInterface : Animation_Access;

@@ -23,6 +23,8 @@ with org.allbinary.logic.io.OutputTypeData_Package; use org.allbinary.logic.io.O
 with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
 with taghelpers.transform.info.TransformInfoRequestHelperFactory_Package; use taghelpers.transform.info.TransformInfoRequestHelperFactory_Package;
 with tags.ModifyTag_Package; use tags.ModifyTag_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -39,6 +41,8 @@ package body tags.transform.info.TransformInfoTag_Package is
    package OutputTypeData_Package renames Standard.org.allbinary.logic.io.OutputTypeData_Package;
    package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
    package TransformInfoRequestHelperFactory_Package renames Standard.taghelpers.transform.info.TransformInfoRequestHelperFactory_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype TagHelperFactoryInterface_Access is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access;
    function "=" (Left, Right : TagHelperFactoryInterface_Access) return Boolean renames admin.taghelpers.TagHelperFactoryInterface_Package_References."=";
    subtype TagHelperFactoryInterface_Access_Array is admin.taghelpers.TagHelperFactoryInterface_Package_References.TagHelperFactoryInterface_Access_Array;
@@ -168,7 +172,7 @@ package body tags.transform.info.TransformInfoTag_Package is
    begin
         This.type_Id := value;
         TransformInfoTag'Class (This).getPropertiesHashMap.put (OutputTypeData_Package.getInstance.NAME, This.type_Id);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
             This.TransformInfoTag_Field_logUtil.putF (To_Unbounded_String ("TransformInfoTag type set: ") & This.type_Id, TransformInfoTag_Access'(This'Unchecked_Access), To_Unbounded_String ("setType"));
         end if;
    end setType;

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package;
 package org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package_References is
    type BasicProfileActionScriptProcessorNode_Access is access all org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package.BasicProfileActionScriptProcessorNode'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.actions.script.condition.processors.Basic
    type BasicProfileActionScriptProcessorNode_Access_Array_Access is access all BasicProfileActionScriptProcessorNode_Access_Array;
    type BasicProfileActionScriptProcessorNode_Access_Array_Access_Array is array (Natural range <>) of BasicProfileActionScriptProcessorNode_Access_Array_Access;
    type BasicProfileActionScriptProcessorNode_Access_Array_Access_Array_Access is access all BasicProfileActionScriptProcessorNode_Access_Array_Access_Array;
+   type BasicProfileActionScriptProcessorNode_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicProfileActionScriptProcessorNode_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicProfileActionScriptProcessorNode_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicProfileActionScriptProcessorNode_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicProfileActionScriptProcessorNode_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicProfileActionScriptProcessorNode_Access_Array_Access is (if Value /= null and then Value.all in BasicProfileActionScriptProcessorNode_Access_Array_Object'Class then BasicProfileActionScriptProcessorNode_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicProfileActionScriptProcessorNode_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicProfileActionScriptProcessorNode_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicProfileActionScriptProcessorNode_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicProfileActionScriptProcessorNode_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicProfileActionScriptProcessorNode_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicProfileActionScriptProcessorNode_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicProfileActionScriptProcessorNode_Access_Array_Access_Array_Object'Class then BasicProfileActionScriptProcessorNode_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package_References;
 
 with org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package_References;
@@ -70,10 +81,14 @@ package org.allbinary.input.automation.actions.script.condition.processors.Basic
    function "=" (Left, Right : BasicProfileActionScriptProcessorNode_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package_References."=";
    subtype BasicProfileActionScriptProcessorNode_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package_References.BasicProfileActionScriptProcessorNode_Access_Array_Access;
    function "=" (Left, Right : BasicProfileActionScriptProcessorNode_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package_References."=";
+   function Java_Box (Value : BasicProfileActionScriptProcessorNode_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package_References.Java_Box;
+   function Java_Unbox_BasicProfileActionScriptProcessorNode_Access_Array (Value : access Java_Object'Class) return BasicProfileActionScriptProcessorNode_Access_Array_Access renames org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package_References.Java_Unbox_BasicProfileActionScriptProcessorNode_Access_Array;
    subtype BasicProfileActionScriptProcessorNode_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package_References.BasicProfileActionScriptProcessorNode_Access_Array_Access_Array;
    function "=" (Left, Right : BasicProfileActionScriptProcessorNode_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package_References."=";
    subtype BasicProfileActionScriptProcessorNode_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package_References.BasicProfileActionScriptProcessorNode_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicProfileActionScriptProcessorNode_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package_References."=";
+   function Java_Box (Value : BasicProfileActionScriptProcessorNode_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package_References.Java_Box;
+   function Java_Unbox_BasicProfileActionScriptProcessorNode_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicProfileActionScriptProcessorNode_Access_Array_Access_Array_Access renames org.allbinary.input.automation.actions.script.condition.processors.BasicProfileActionScriptProcessorNode_Package_References.Java_Unbox_BasicProfileActionScriptProcessorNode_Access_Array_Access_Array;
 
    type BasicProfileActionScriptProcessorNode is new Java_Object with null record;
 

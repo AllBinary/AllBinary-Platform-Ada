@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.admin.customizers.CustomizersValidationView_Package;
 package views.admin.customizers.CustomizersValidationView_Package_References is
    type CustomizersValidationView_Access is access all views.admin.customizers.CustomizersValidationView_Package.CustomizersValidationView'Class;
@@ -19,6 +20,16 @@ package views.admin.customizers.CustomizersValidationView_Package_References is
    type CustomizersValidationView_Access_Array_Access is access all CustomizersValidationView_Access_Array;
    type CustomizersValidationView_Access_Array_Access_Array is array (Natural range <>) of CustomizersValidationView_Access_Array_Access;
    type CustomizersValidationView_Access_Array_Access_Array_Access is access all CustomizersValidationView_Access_Array_Access_Array;
+   type CustomizersValidationView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CustomizersValidationView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CustomizersValidationView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CustomizersValidationView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CustomizersValidationView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CustomizersValidationView_Access_Array_Access is (if Value /= null and then Value.all in CustomizersValidationView_Access_Array_Object'Class then CustomizersValidationView_Access_Array_Object'Class (Value.all).Value else null);
+   type CustomizersValidationView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CustomizersValidationView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CustomizersValidationView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CustomizersValidationView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CustomizersValidationView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CustomizersValidationView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CustomizersValidationView_Access_Array_Access_Array_Object'Class then CustomizersValidationView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.admin.customizers.CustomizersValidationView_Package_References;
 
 with views.admin.customizers.CustomizersValidationView_Package_References;
@@ -99,10 +110,14 @@ package views.admin.customizers.CustomizersValidationView_Package is
    function "=" (Left, Right : CustomizersValidationView_Access_Array) return Boolean renames views.admin.customizers.CustomizersValidationView_Package_References."=";
    subtype CustomizersValidationView_Access_Array_Access is views.admin.customizers.CustomizersValidationView_Package_References.CustomizersValidationView_Access_Array_Access;
    function "=" (Left, Right : CustomizersValidationView_Access_Array_Access) return Boolean renames views.admin.customizers.CustomizersValidationView_Package_References."=";
+   function Java_Box (Value : CustomizersValidationView_Access_Array_Access) return Java_Object_Access renames views.admin.customizers.CustomizersValidationView_Package_References.Java_Box;
+   function Java_Unbox_CustomizersValidationView_Access_Array (Value : access Java_Object'Class) return CustomizersValidationView_Access_Array_Access renames views.admin.customizers.CustomizersValidationView_Package_References.Java_Unbox_CustomizersValidationView_Access_Array;
    subtype CustomizersValidationView_Access_Array_Access_Array is views.admin.customizers.CustomizersValidationView_Package_References.CustomizersValidationView_Access_Array_Access_Array;
    function "=" (Left, Right : CustomizersValidationView_Access_Array_Access_Array) return Boolean renames views.admin.customizers.CustomizersValidationView_Package_References."=";
    subtype CustomizersValidationView_Access_Array_Access_Array_Access is views.admin.customizers.CustomizersValidationView_Package_References.CustomizersValidationView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CustomizersValidationView_Access_Array_Access_Array_Access) return Boolean renames views.admin.customizers.CustomizersValidationView_Package_References."=";
+   function Java_Box (Value : CustomizersValidationView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.admin.customizers.CustomizersValidationView_Package_References.Java_Box;
+   function Java_Unbox_CustomizersValidationView_Access_Array_Access_Array (Value : access Java_Object'Class) return CustomizersValidationView_Access_Array_Access_Array_Access renames views.admin.customizers.CustomizersValidationView_Package_References.Java_Unbox_CustomizersValidationView_Access_Array_Access_Array;
 
    type CustomizersValidationView is new CustomizersView and ValidationComponentInterface with record
       CustomizersValidationView_Field_logUtil : LogUtil_Access;

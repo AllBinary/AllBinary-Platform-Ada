@@ -38,7 +38,7 @@ package body org.allbinary.game.ag.layer.pickup.health.HealthResources_Package i
 
    function getInstance return HealthResources_Access is
    begin
-        return HealthResources_Access (HealthResources_Package.SINGLETON);
+        return HealthResources_Package.SINGLETON;
    end getInstance;
 
 begin

@@ -112,7 +112,7 @@ package body org.allbinary.image.opengles.OpenGLImageCacheFactory_Package is
 
    function getInstance return ImageCache_Access is
    begin
-        return ImageCache_Access (OpenGLImageCacheFactory_Package.IMAGE_CACHE);
+        return OpenGLImageCacheFactory_Package.IMAGE_CACHE;
    end getInstance;
 
    procedure init is

@@ -72,7 +72,7 @@ package body org.allbinary.logic.system.os.OperatingSystemFactory_Package is
 
    function getInstance return OperatingSystemFactory_Access is
    begin
-        return OperatingSystemFactory_Access (OperatingSystemFactory_Package.instance);
+        return OperatingSystemFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out OperatingSystemFactory'Class) is

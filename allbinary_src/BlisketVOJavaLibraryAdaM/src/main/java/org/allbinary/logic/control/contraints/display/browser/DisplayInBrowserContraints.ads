@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package;
 package org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References is
    type DisplayInBrowserContraints_Access is access all org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package.DisplayInBrowserContraints'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserC
    type DisplayInBrowserContraints_Access_Array_Access is access all DisplayInBrowserContraints_Access_Array;
    type DisplayInBrowserContraints_Access_Array_Access_Array is array (Natural range <>) of DisplayInBrowserContraints_Access_Array_Access;
    type DisplayInBrowserContraints_Access_Array_Access_Array_Access is access all DisplayInBrowserContraints_Access_Array_Access_Array;
+   type DisplayInBrowserContraints_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DisplayInBrowserContraints_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DisplayInBrowserContraints_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DisplayInBrowserContraints_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DisplayInBrowserContraints_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DisplayInBrowserContraints_Access_Array_Access is (if Value /= null and then Value.all in DisplayInBrowserContraints_Access_Array_Object'Class then DisplayInBrowserContraints_Access_Array_Object'Class (Value.all).Value else null);
+   type DisplayInBrowserContraints_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DisplayInBrowserContraints_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DisplayInBrowserContraints_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DisplayInBrowserContraints_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DisplayInBrowserContraints_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DisplayInBrowserContraints_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in DisplayInBrowserContraints_Access_Array_Access_Array_Object'Class then DisplayInBrowserContraints_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References;
 
 with org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References;
@@ -58,10 +69,14 @@ package org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserC
    function "=" (Left, Right : DisplayInBrowserContraints_Access_Array) return Boolean renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References."=";
    subtype DisplayInBrowserContraints_Access_Array_Access is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References.DisplayInBrowserContraints_Access_Array_Access;
    function "=" (Left, Right : DisplayInBrowserContraints_Access_Array_Access) return Boolean renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References."=";
+   function Java_Box (Value : DisplayInBrowserContraints_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References.Java_Box;
+   function Java_Unbox_DisplayInBrowserContraints_Access_Array (Value : access Java_Object'Class) return DisplayInBrowserContraints_Access_Array_Access renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References.Java_Unbox_DisplayInBrowserContraints_Access_Array;
    subtype DisplayInBrowserContraints_Access_Array_Access_Array is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References.DisplayInBrowserContraints_Access_Array_Access_Array;
    function "=" (Left, Right : DisplayInBrowserContraints_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References."=";
    subtype DisplayInBrowserContraints_Access_Array_Access_Array_Access is org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References.DisplayInBrowserContraints_Access_Array_Access_Array_Access;
    function "=" (Left, Right : DisplayInBrowserContraints_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References."=";
+   function Java_Box (Value : DisplayInBrowserContraints_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References.Java_Box;
+   function Java_Unbox_DisplayInBrowserContraints_Access_Array_Access_Array (Value : access Java_Object'Class) return DisplayInBrowserContraints_Access_Array_Access_Array_Access renames org.allbinary.logic.control.contraints.display.browser.DisplayInBrowserContraints_Package_References.Java_Unbox_DisplayInBrowserContraints_Access_Array_Access_Array;
 
    type DisplayInBrowserContraints is new Java_Object and DisplayInBrowserContraintsInterface with record
       frameable : Boolean;

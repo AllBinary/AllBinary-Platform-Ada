@@ -151,7 +151,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
         begin
             fileReader := FileReader_Package.Create (filePath);
             lineNumberReader := LineNumberReader_Package.Create (fileReader);
-            This.cpuHashMap := StdUtil_Package.getInstance.createHashMap;
+            This.cpuHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             if (lineNumberReader) = (null) then
                 fileVector := SubDirectory_Package.getInstance.search (filePath, AbFile_Package.createAbFile (FilePathData_Package.getInstance.PATH_START));
                 if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.OS) then
@@ -164,7 +164,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
             end if;
             if (lineNumberReader) /= (null) then
                 nextLine := lineNumberReader.readLine;
-                while ((lineNumberReader) /= (null)) and then ((nextLine) /= (Null_Unbounded_String)) loop
+                while (nextLine) /= (Null_Unbounded_String) loop
                     index := Java_Index_Of (nextLine, Java_Image (':'));
                     if (index) >= (0) then
                         key := Unbounded_Slice (nextLine, (0) + 1, index);

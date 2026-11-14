@@ -55,7 +55,7 @@ package body org.allbinary.input.motion.button.NoButtonsTouchInputFactory_Packag
 
    function getInstance return BaseTouchInput_Access is
    begin
-        return BaseTouchInput_Access (NoButtonsTouchInputFactory_Package.instance);
+        return NoButtonsTouchInputFactory_Package.instance;
    end getInstance;
 
 begin

@@ -23,7 +23,10 @@ with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentType_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.modules.gateway.PaymentGatewayDomNodeFactoryInterface_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactoryInterface_Package;
 
@@ -65,7 +68,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
 
    function getInstance return BasicPaymentTypeUtil_Access is
    begin
-        return BasicPaymentTypeUtil_Access (BasicPaymentTypeUtil_Package.instance);
+        return BasicPaymentTypeUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out BasicPaymentTypeUtil'Class) is

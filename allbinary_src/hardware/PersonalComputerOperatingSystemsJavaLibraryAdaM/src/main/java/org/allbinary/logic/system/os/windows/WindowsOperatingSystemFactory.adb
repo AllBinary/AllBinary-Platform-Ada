@@ -76,7 +76,7 @@ package body org.allbinary.logic.system.os.windows.WindowsOperatingSystemFactory
 
    function getInstance return WindowsOperatingSystemFactory_Access is
    begin
-        return WindowsOperatingSystemFactory_Access (WindowsOperatingSystemFactory_Package.instance);
+        return WindowsOperatingSystemFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out WindowsOperatingSystemFactory'Class) is

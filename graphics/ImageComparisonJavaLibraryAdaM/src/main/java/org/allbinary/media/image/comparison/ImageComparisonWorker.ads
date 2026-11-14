@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
 package org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References is
    type ImageComparisonWorker_Access is access all org.allbinary.media.image.comparison.ImageComparisonWorker_Package.ImageComparisonWorker'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.image.comparison.ImageComparisonWorker_Package_Refer
    type ImageComparisonWorker_Access_Array_Access is access all ImageComparisonWorker_Access_Array;
    type ImageComparisonWorker_Access_Array_Access_Array is array (Natural range <>) of ImageComparisonWorker_Access_Array_Access;
    type ImageComparisonWorker_Access_Array_Access_Array_Access is access all ImageComparisonWorker_Access_Array_Access_Array;
+   type ImageComparisonWorker_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageComparisonWorker_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageComparisonWorker_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageComparisonWorker_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageComparisonWorker_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageComparisonWorker_Access_Array_Access is (if Value /= null and then Value.all in ImageComparisonWorker_Access_Array_Object'Class then ImageComparisonWorker_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageComparisonWorker_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageComparisonWorker_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageComparisonWorker_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageComparisonWorker_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageComparisonWorker_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageComparisonWorker_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageComparisonWorker_Access_Array_Access_Array_Object'Class then ImageComparisonWorker_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References;
 
 with org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References;
@@ -137,14 +148,18 @@ package org.allbinary.media.image.comparison.ImageComparisonWorker_Package is
    function "=" (Left, Right : ImageComparisonWorker_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References."=";
    subtype ImageComparisonWorker_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.ImageComparisonWorker_Access_Array_Access;
    function "=" (Left, Right : ImageComparisonWorker_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References."=";
+   function Java_Box (Value : ImageComparisonWorker_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.Java_Box;
+   function Java_Unbox_ImageComparisonWorker_Access_Array (Value : access Java_Object'Class) return ImageComparisonWorker_Access_Array_Access renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.Java_Unbox_ImageComparisonWorker_Access_Array;
    subtype ImageComparisonWorker_Access_Array_Access_Array is org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.ImageComparisonWorker_Access_Array_Access_Array;
    function "=" (Left, Right : ImageComparisonWorker_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References."=";
    subtype ImageComparisonWorker_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.ImageComparisonWorker_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageComparisonWorker_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References."=";
+   function Java_Box (Value : ImageComparisonWorker_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.Java_Box;
+   function Java_Unbox_ImageComparisonWorker_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageComparisonWorker_Access_Array_Access_Array_Access renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package_References.Java_Unbox_ImageComparisonWorker_Access_Array_Access_Array;
 
    type ImageComparisonWorker is new BasicEventHandler and CapturedImageWorkerResultsListener with record
-      logUtil : LogUtil_Access;
-      commonStrings : CommonStrings_Access;
+      ImageComparisonWorker_Field_logUtil : LogUtil_Access;
+      ImageComparisonWorker_Field_commonStrings : CommonStrings_Access;
       bufferedImageVector : BasicArrayList_Access;
       imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access;
       imageComparator : ImageComparator_Access;

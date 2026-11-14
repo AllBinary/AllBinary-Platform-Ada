@@ -51,7 +51,7 @@ package body org.allbinary.data.tree.dom.XslHelper_Package is
 
    function getInstance return XslHelper_Access is
    begin
-        return XslHelper_Access (XslHelper_Package.instance);
+        return XslHelper_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out XslHelper'Class) is

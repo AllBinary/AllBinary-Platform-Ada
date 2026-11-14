@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.context.configuration.ContextConfiguration_Package;
 package org.allbinary.business.context.configuration.ContextConfiguration_Package_References is
    type ContextConfiguration_Access is access all org.allbinary.business.context.configuration.ContextConfiguration_Package.ContextConfiguration'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.context.configuration.ContextConfiguration_Packag
    type ContextConfiguration_Access_Array_Access is access all ContextConfiguration_Access_Array;
    type ContextConfiguration_Access_Array_Access_Array is array (Natural range <>) of ContextConfiguration_Access_Array_Access;
    type ContextConfiguration_Access_Array_Access_Array_Access is access all ContextConfiguration_Access_Array_Access_Array;
+   type ContextConfiguration_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ContextConfiguration_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ContextConfiguration_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ContextConfiguration_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ContextConfiguration_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ContextConfiguration_Access_Array_Access is (if Value /= null and then Value.all in ContextConfiguration_Access_Array_Object'Class then ContextConfiguration_Access_Array_Object'Class (Value.all).Value else null);
+   type ContextConfiguration_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ContextConfiguration_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ContextConfiguration_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ContextConfiguration_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ContextConfiguration_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ContextConfiguration_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ContextConfiguration_Access_Array_Access_Array_Object'Class then ContextConfiguration_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.context.configuration.ContextConfiguration_Package_References;
 
 with org.allbinary.business.context.configuration.ContextConfiguration_Package_References;
@@ -86,10 +97,14 @@ package org.allbinary.business.context.configuration.ContextConfiguration_Packag
    function "=" (Left, Right : ContextConfiguration_Access_Array) return Boolean renames org.allbinary.business.context.configuration.ContextConfiguration_Package_References."=";
    subtype ContextConfiguration_Access_Array_Access is org.allbinary.business.context.configuration.ContextConfiguration_Package_References.ContextConfiguration_Access_Array_Access;
    function "=" (Left, Right : ContextConfiguration_Access_Array_Access) return Boolean renames org.allbinary.business.context.configuration.ContextConfiguration_Package_References."=";
+   function Java_Box (Value : ContextConfiguration_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.context.configuration.ContextConfiguration_Package_References.Java_Box;
+   function Java_Unbox_ContextConfiguration_Access_Array (Value : access Java_Object'Class) return ContextConfiguration_Access_Array_Access renames org.allbinary.business.context.configuration.ContextConfiguration_Package_References.Java_Unbox_ContextConfiguration_Access_Array;
    subtype ContextConfiguration_Access_Array_Access_Array is org.allbinary.business.context.configuration.ContextConfiguration_Package_References.ContextConfiguration_Access_Array_Access_Array;
    function "=" (Left, Right : ContextConfiguration_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.configuration.ContextConfiguration_Package_References."=";
    subtype ContextConfiguration_Access_Array_Access_Array_Access is org.allbinary.business.context.configuration.ContextConfiguration_Package_References.ContextConfiguration_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ContextConfiguration_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.configuration.ContextConfiguration_Package_References."=";
+   function Java_Box (Value : ContextConfiguration_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.context.configuration.ContextConfiguration_Package_References.Java_Box;
+   function Java_Unbox_ContextConfiguration_Access_Array_Access_Array (Value : access Java_Object'Class) return ContextConfiguration_Access_Array_Access_Array_Access renames org.allbinary.business.context.configuration.ContextConfiguration_Package_References.Java_Unbox_ContextConfiguration_Access_Array_Access_Array;
 
    type ContextConfiguration is new Java_Object and ContextConfigurationInterface with record
       logUtil : LogUtil_Access;

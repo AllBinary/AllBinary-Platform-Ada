@@ -37,7 +37,7 @@ package body org.allbinary.media.audio.NoSound_Package is
 
    function getInstance return NoSound_Access is
    begin
-        return NoSound_Access (NoSound_Package.instance);
+        return NoSound_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out NoSound'Class) is

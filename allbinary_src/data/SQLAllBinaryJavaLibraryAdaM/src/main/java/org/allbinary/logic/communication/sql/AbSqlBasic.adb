@@ -29,6 +29,8 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.string_Id.CommonSeps_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.communication.sql.SqlTypeStrings_Package; use org.allbinary.logic.communication.sql.SqlTypeStrings_Package;
 with org.allbinary.logic.communication.sql.SqlTypeStrings_Package_References;
 with org.allbinary.logic.communication.sql.SqlStrings_Package; use org.allbinary.logic.communication.sql.SqlStrings_Package;
@@ -39,15 +41,20 @@ with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
 
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    package Thread_Package renames Standard.java.lang.Thread_Package;
    package ClassLoader_Package renames Standard.java.lang.ClassLoader_Package;
    subtype DatabaseConnectionInfoInterface_Access is org.allbinary.business.init.db.DatabaseConnectionInfoInterface_Package_References.DatabaseConnectionInfoInterface_Access;
@@ -218,7 +225,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (This.FAILED_SQL_STATEMENT & statement, AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_EXECUTED_SQL_STATEMENT, e);
             end if;
             This.conn.close;
@@ -232,7 +239,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
    begin
         begin
             AbSqlBasic'Class (This).executeSQLStatement (Java_Image (This.sqlStrings.CREATE_DATABASE) & databaseName);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.DATABASE_CREATED_LABEL & databaseName, AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_CREATE);
             end if;
             return databaseName & Java_Image (This.sqlStrings.CREATE_RETURN);
@@ -241,7 +248,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (This.DATABASE_CREATION_FAILED_LABEL & databaseName, AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_CREATE, e);
             end if;
             return This.DATABASE_CREATION_FAILED_LABEL & databaseName;
@@ -258,7 +265,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                 declare
                     se : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (This.SQL_CONNECTION_RETRYING, AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_CREATE_CONNECTION, se);
             end if;
             begin
@@ -272,7 +279,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                     declare
                         e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                     This.logUtil.put (This.SQL_CONNECTION_RETRY & Java_Get_Message (se), AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_CREATE_CONNECTION, e);
                 end if;
                     end;
@@ -296,7 +303,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                         declare
                             e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                         begin
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+                    if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                         This.logUtil.put (This.LOAD_JDBC_DRIVER_FAILED_LABEL & Java_Image (AbSqlBasic'Class (This).getDatabaseConnectionInfoInterface.getJdbcDriver), AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_INITIALIZE, e);
                     end if;
                         end;
@@ -308,7 +315,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
                 declare
                     se : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 This.logUtil.put (This.SQL_CONNECTION_FAILED, AbSqlBasic_Access'(This'Unchecked_Access), This.METHOD_INITIALIZE, se);
             end if;
                 end;

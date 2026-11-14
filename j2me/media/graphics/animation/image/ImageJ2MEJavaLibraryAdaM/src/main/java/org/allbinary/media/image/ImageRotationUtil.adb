@@ -41,7 +41,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
 
    function getInstance return ImageRotationUtil_Access is
    begin
-        return ImageRotationUtil_Access (ImageRotationUtil_Package.instance);
+        return ImageRotationUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageRotationUtil'Class) is

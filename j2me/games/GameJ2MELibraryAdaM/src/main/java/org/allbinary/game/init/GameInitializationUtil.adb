@@ -229,7 +229,7 @@ package body org.allbinary.game.init.GameInitializationUtil_Package is
 
    function getInstance return GameInitializationUtil_Access is
    begin
-        return GameInitializationUtil_Access (GameInitializationUtil_Package.instance);
+        return GameInitializationUtil_Package.instance;
    end getInstance;
 
 begin

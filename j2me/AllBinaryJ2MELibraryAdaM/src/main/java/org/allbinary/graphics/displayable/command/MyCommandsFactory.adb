@@ -89,7 +89,7 @@ package body org.allbinary.graphics.displayable.command.MyCommandsFactory_Packag
 
    function getInstance return MyCommandsFactory_Access is
    begin
-        return MyCommandsFactory_Access (MyCommandsFactory_Package.instance);
+        return MyCommandsFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out MyCommandsFactory'Class) is

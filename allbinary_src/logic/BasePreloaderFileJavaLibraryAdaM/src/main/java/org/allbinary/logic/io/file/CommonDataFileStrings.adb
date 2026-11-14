@@ -156,7 +156,7 @@ package body org.allbinary.logic.io.file.CommonDataFileStrings_Package is
 
    function getInstance return CommonDataFileStrings_Access is
    begin
-        return CommonDataFileStrings_Access (CommonDataFileStrings_Package.instance);
+        return CommonDataFileStrings_Package.instance;
    end getInstance;
 
 begin

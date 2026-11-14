@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package;
 package org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package_References is
    type NoBuildingSelectedTouchButtonsBuilder_Access is access all org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package.NoBuildingSelectedTouchButtonsBuilder'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_
    type NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access is access all NoBuildingSelectedTouchButtonsBuilder_Access_Array;
    type NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array is array (Natural range <>) of NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access;
    type NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array_Access is access all NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array;
+   type NoBuildingSelectedTouchButtonsBuilder_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NoBuildingSelectedTouchButtonsBuilder_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NoBuildingSelectedTouchButtonsBuilder_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access is (if Value /= null and then Value.all in NoBuildingSelectedTouchButtonsBuilder_Access_Array_Object'Class then NoBuildingSelectedTouchButtonsBuilder_Access_Array_Object'Class (Value.all).Value else null);
+   type NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array_Object'Class then NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package_References;
 
 with org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_
    function "=" (Left, Right : NoBuildingSelectedTouchButtonsBuilder_Access_Array) return Boolean renames org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package_References."=";
    subtype NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access is org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package_References.NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access;
    function "=" (Left, Right : NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package_References."=";
+   function Java_Box (Value : NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package_References.Java_Box;
+   function Java_Unbox_NoBuildingSelectedTouchButtonsBuilder_Access_Array (Value : access Java_Object'Class) return NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access renames org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package_References.Java_Unbox_NoBuildingSelectedTouchButtonsBuilder_Access_Array;
    subtype NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array is org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package_References.NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array;
    function "=" (Left, Right : NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package_References."=";
    subtype NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package_References.NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package_References."=";
+   function Java_Box (Value : NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package_References.Java_Box;
+   function Java_Unbox_NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array (Value : access Java_Object'Class) return NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array_Access renames org.allbinary.input.motion.button.NoBuildingSelectedTouchButtonsBuilder_Package_References.Java_Unbox_NoBuildingSelectedTouchButtonsBuilder_Access_Array_Access_Array;
 
    type NoBuildingSelectedTouchButtonsBuilder is new BaseTouchInput with record
       logUtil : LogUtil_Access;

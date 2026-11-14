@@ -51,7 +51,7 @@ package body org.allbinary.graphics.color.BasicColorSetUtil_Package is
 
    function getInstance return BasicColorSetUtil_Access is
    begin
-        return BasicColorSetUtil_Access (BasicColorSetUtil_Package.instance);
+        return BasicColorSetUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out BasicColorSetUtil'Class) is

@@ -99,7 +99,7 @@ package body org.allbinary.graphics.form.item.CustomItemUtil_Package is
 
    function getInstance return CustomItemUtil_Access is
    begin
-        return CustomItemUtil_Access (CustomItemUtil_Package.instance);
+        return CustomItemUtil_Package.instance;
    end getInstance;
 
 begin

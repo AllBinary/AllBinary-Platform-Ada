@@ -41,7 +41,7 @@ package body org.allbinary.opengles.GLUtil_Package is
 
    function getInstance return GLUtil_Access is
    begin
-        return GLUtil_Access (GLUtil_Package.instance);
+        return GLUtil_Package.instance;
    end getInstance;
 
    function makeFloatBuffer3 (This : in out GLUtil; p_a : Float; p_b : Float; p_c : Float) return FloatBuffer_Access is
@@ -112,7 +112,7 @@ package body org.allbinary.opengles.GLUtil_Package is
       rv : Float;
       i : Integer;
    begin
-        angleRad := Ada.Numerics.Long_Elementary_Functions.ToRadians (Long_Float (angleDegrees));
+        angleRad := (Long_Float (Long_Float (angleDegrees)) * Ada.Numerics.Pi / 180.0);
         cosA := Ada.Numerics.Long_Elementary_Functions.Cos (angleRad);
         sinA := Ada.Numerics.Long_Elementary_Functions.Sin (angleRad);
         i := 0;

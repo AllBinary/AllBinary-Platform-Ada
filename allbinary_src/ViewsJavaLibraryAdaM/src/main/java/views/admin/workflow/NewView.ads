@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.admin.workflow.NewView_Package;
 package views.admin.workflow.NewView_Package_References is
    type NewView_Access is access all views.admin.workflow.NewView_Package.NewView'Class;
@@ -19,6 +20,16 @@ package views.admin.workflow.NewView_Package_References is
    type NewView_Access_Array_Access is access all NewView_Access_Array;
    type NewView_Access_Array_Access_Array is array (Natural range <>) of NewView_Access_Array_Access;
    type NewView_Access_Array_Access_Array_Access is access all NewView_Access_Array_Access_Array;
+   type NewView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NewView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NewView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NewView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NewView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NewView_Access_Array_Access is (if Value /= null and then Value.all in NewView_Access_Array_Object'Class then NewView_Access_Array_Object'Class (Value.all).Value else null);
+   type NewView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NewView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NewView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NewView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NewView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NewView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NewView_Access_Array_Access_Array_Object'Class then NewView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.admin.workflow.NewView_Package_References;
 
 with views.admin.workflow.NewView_Package_References;
@@ -112,10 +123,14 @@ package views.admin.workflow.NewView_Package is
    function "=" (Left, Right : NewView_Access_Array) return Boolean renames views.admin.workflow.NewView_Package_References."=";
    subtype NewView_Access_Array_Access is views.admin.workflow.NewView_Package_References.NewView_Access_Array_Access;
    function "=" (Left, Right : NewView_Access_Array_Access) return Boolean renames views.admin.workflow.NewView_Package_References."=";
+   function Java_Box (Value : NewView_Access_Array_Access) return Java_Object_Access renames views.admin.workflow.NewView_Package_References.Java_Box;
+   function Java_Unbox_NewView_Access_Array (Value : access Java_Object'Class) return NewView_Access_Array_Access renames views.admin.workflow.NewView_Package_References.Java_Unbox_NewView_Access_Array;
    subtype NewView_Access_Array_Access_Array is views.admin.workflow.NewView_Package_References.NewView_Access_Array_Access_Array;
    function "=" (Left, Right : NewView_Access_Array_Access_Array) return Boolean renames views.admin.workflow.NewView_Package_References."=";
    subtype NewView_Access_Array_Access_Array_Access is views.admin.workflow.NewView_Package_References.NewView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NewView_Access_Array_Access_Array_Access) return Boolean renames views.admin.workflow.NewView_Package_References."=";
+   function Java_Box (Value : NewView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.admin.workflow.NewView_Package_References.Java_Box;
+   function Java_Unbox_NewView_Access_Array_Access_Array (Value : access Java_Object'Class) return NewView_Access_Array_Access_Array_Access renames views.admin.workflow.NewView_Package_References.Java_Unbox_NewView_Access_Array_Access_Array;
 
    type NewView is new WorkFlowView and ValidationComponentInterface with record
       NewView_Field_logUtil : LogUtil_Access;

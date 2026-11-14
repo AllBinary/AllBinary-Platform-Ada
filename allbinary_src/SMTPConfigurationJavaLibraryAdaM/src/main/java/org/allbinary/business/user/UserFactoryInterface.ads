@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.UserFactoryInterface_Package;
 package org.allbinary.business.user.UserFactoryInterface_Package_References is
    type UserFactoryInterface_Access is access all org.allbinary.business.user.UserFactoryInterface_Package.UserFactoryInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.UserFactoryInterface_Package_References is
    type UserFactoryInterface_Access_Array_Access is access all UserFactoryInterface_Access_Array;
    type UserFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of UserFactoryInterface_Access_Array_Access;
    type UserFactoryInterface_Access_Array_Access_Array_Access is access all UserFactoryInterface_Access_Array_Access_Array;
+   type UserFactoryInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UserFactoryInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UserFactoryInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UserFactoryInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UserFactoryInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UserFactoryInterface_Access_Array_Access is (if Value /= null and then Value.all in UserFactoryInterface_Access_Array_Object'Class then UserFactoryInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type UserFactoryInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UserFactoryInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UserFactoryInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UserFactoryInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UserFactoryInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UserFactoryInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in UserFactoryInterface_Access_Array_Access_Array_Object'Class then UserFactoryInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.UserFactoryInterface_Package_References;
 
 with org.allbinary.business.user.UserFactoryInterface_Package_References;
@@ -60,10 +71,14 @@ package org.allbinary.business.user.UserFactoryInterface_Package is
    function "=" (Left, Right : UserFactoryInterface_Access_Array) return Boolean renames org.allbinary.business.user.UserFactoryInterface_Package_References."=";
    subtype UserFactoryInterface_Access_Array_Access is org.allbinary.business.user.UserFactoryInterface_Package_References.UserFactoryInterface_Access_Array_Access;
    function "=" (Left, Right : UserFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.business.user.UserFactoryInterface_Package_References."=";
+   function Java_Box (Value : UserFactoryInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.UserFactoryInterface_Package_References.Java_Box;
+   function Java_Unbox_UserFactoryInterface_Access_Array (Value : access Java_Object'Class) return UserFactoryInterface_Access_Array_Access renames org.allbinary.business.user.UserFactoryInterface_Package_References.Java_Unbox_UserFactoryInterface_Access_Array;
    subtype UserFactoryInterface_Access_Array_Access_Array is org.allbinary.business.user.UserFactoryInterface_Package_References.UserFactoryInterface_Access_Array_Access_Array;
    function "=" (Left, Right : UserFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.UserFactoryInterface_Package_References."=";
    subtype UserFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.business.user.UserFactoryInterface_Package_References.UserFactoryInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : UserFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.UserFactoryInterface_Package_References."=";
+   function Java_Box (Value : UserFactoryInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.UserFactoryInterface_Package_References.Java_Box;
+   function Java_Unbox_UserFactoryInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return UserFactoryInterface_Access_Array_Access_Array_Access renames org.allbinary.business.user.UserFactoryInterface_Package_References.Java_Unbox_UserFactoryInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_UserFactoryInterface (Value : UserFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getInstance (This : in out UserFactoryInterface; hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access is abstract;
    procedure getInstance (This : in out UserFactoryInterface; hashMap_Param : access HashMap_Package.HashMap'Class) is abstract;

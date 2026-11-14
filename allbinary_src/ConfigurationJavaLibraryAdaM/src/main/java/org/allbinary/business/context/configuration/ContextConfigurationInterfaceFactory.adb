@@ -63,7 +63,7 @@ package body org.allbinary.business.context.configuration.ContextConfigurationIn
 
    function getInstance return ContextConfigurationInterfaceFactory_Access is
    begin
-        return ContextConfigurationInterfaceFactory_Access (ContextConfigurationInterfaceFactory_Package.instance);
+        return ContextConfigurationInterfaceFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ContextConfigurationInterfaceFactory'Class) is
@@ -101,7 +101,7 @@ package body org.allbinary.business.context.configuration.ContextConfigurationIn
         contextConfigurationData := ContextConfigurationData_Package.getInstance;
         documentString := CryptFileReader_Package.Create (contextConfigurationData.UNCRYPTED_EXTENSION, contextConfigurationData.ENCRYPTED_EXTENSION).get (abPath);
         document := DomDocumentHelper_Package.create (documentString);
-        return ContextConfigurationInterface_Access (ContextConfigurationInterfaceFactory'Class (This).getInstance (document));
+        return ContextConfigurationInterfaceFactory'Class (This).getInstance (document);
    end getInstance;
 
    procedure getInstance (This : in out ContextConfigurationInterfaceFactory; document_Param : access Document_Package.Document'Class) is

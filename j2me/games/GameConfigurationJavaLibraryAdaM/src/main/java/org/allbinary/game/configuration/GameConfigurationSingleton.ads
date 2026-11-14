@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.configuration.GameConfigurationSingleton_Package;
 package org.allbinary.game.configuration.GameConfigurationSingleton_Package_References is
    type GameConfigurationSingleton_Access is access all org.allbinary.game.configuration.GameConfigurationSingleton_Package.GameConfigurationSingleton'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.configuration.GameConfigurationSingleton_Package_Refe
    type GameConfigurationSingleton_Access_Array_Access is access all GameConfigurationSingleton_Access_Array;
    type GameConfigurationSingleton_Access_Array_Access_Array is array (Natural range <>) of GameConfigurationSingleton_Access_Array_Access;
    type GameConfigurationSingleton_Access_Array_Access_Array_Access is access all GameConfigurationSingleton_Access_Array_Access_Array;
+   type GameConfigurationSingleton_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameConfigurationSingleton_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameConfigurationSingleton_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameConfigurationSingleton_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameConfigurationSingleton_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameConfigurationSingleton_Access_Array_Access is (if Value /= null and then Value.all in GameConfigurationSingleton_Access_Array_Object'Class then GameConfigurationSingleton_Access_Array_Object'Class (Value.all).Value else null);
+   type GameConfigurationSingleton_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameConfigurationSingleton_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameConfigurationSingleton_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameConfigurationSingleton_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameConfigurationSingleton_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameConfigurationSingleton_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GameConfigurationSingleton_Access_Array_Access_Array_Object'Class then GameConfigurationSingleton_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.configuration.GameConfigurationSingleton_Package_References;
 
 with org.allbinary.game.configuration.GameConfigurationSingleton_Package_References;
@@ -82,10 +93,14 @@ package org.allbinary.game.configuration.GameConfigurationSingleton_Package is
    function "=" (Left, Right : GameConfigurationSingleton_Access_Array) return Boolean renames org.allbinary.game.configuration.GameConfigurationSingleton_Package_References."=";
    subtype GameConfigurationSingleton_Access_Array_Access is org.allbinary.game.configuration.GameConfigurationSingleton_Package_References.GameConfigurationSingleton_Access_Array_Access;
    function "=" (Left, Right : GameConfigurationSingleton_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.GameConfigurationSingleton_Package_References."=";
+   function Java_Box (Value : GameConfigurationSingleton_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.configuration.GameConfigurationSingleton_Package_References.Java_Box;
+   function Java_Unbox_GameConfigurationSingleton_Access_Array (Value : access Java_Object'Class) return GameConfigurationSingleton_Access_Array_Access renames org.allbinary.game.configuration.GameConfigurationSingleton_Package_References.Java_Unbox_GameConfigurationSingleton_Access_Array;
    subtype GameConfigurationSingleton_Access_Array_Access_Array is org.allbinary.game.configuration.GameConfigurationSingleton_Package_References.GameConfigurationSingleton_Access_Array_Access_Array;
    function "=" (Left, Right : GameConfigurationSingleton_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.GameConfigurationSingleton_Package_References."=";
    subtype GameConfigurationSingleton_Access_Array_Access_Array_Access is org.allbinary.game.configuration.GameConfigurationSingleton_Package_References.GameConfigurationSingleton_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GameConfigurationSingleton_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.GameConfigurationSingleton_Package_References."=";
+   function Java_Box (Value : GameConfigurationSingleton_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.configuration.GameConfigurationSingleton_Package_References.Java_Box;
+   function Java_Unbox_GameConfigurationSingleton_Access_Array_Access_Array (Value : access Java_Object'Class) return GameConfigurationSingleton_Access_Array_Access_Array_Access renames org.allbinary.game.configuration.GameConfigurationSingleton_Package_References.Java_Unbox_GameConfigurationSingleton_Access_Array_Access_Array;
 
    type GameConfigurationSingleton is new Java_Object with record
       list : BasicArrayList_Access;

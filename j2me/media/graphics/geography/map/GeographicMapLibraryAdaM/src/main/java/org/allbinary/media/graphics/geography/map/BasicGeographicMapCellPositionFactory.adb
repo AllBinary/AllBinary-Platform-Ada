@@ -34,6 +34,7 @@ with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
 with org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
@@ -42,6 +43,9 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactory
 with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.layer.Layer_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
@@ -221,7 +225,7 @@ package body org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPo
    function createInstance (This : in out BasicGeographicMapCellPositionFactory; i_column : Integer; i_row : Integer; width : Integer; height : Integer) return GeographicMapCellPosition_Access is
       cellPositionCanBeNull : Java_Object_Access;
    begin
-        cellPositionCanBeNull := This.geographicMapCellPositionArray (i_row) (i_column);
+        cellPositionCanBeNull := Java_Object_Access (This.geographicMapCellPositionArray (i_row) (i_column));
         if (cellPositionCanBeNull) = (null) then
             cellPositionCanBeNull := Java_Object_Access (This.geographicMapCellPositionFactoryInterface.getInstance (This.geographicMapInterface, i_column, i_row, This.columns, This.rows, width, height));
             This.geographicMapCellPositionArray (i_row) (i_column) := GeographicMapCellPosition_Access (cellPositionCanBeNull);

@@ -30,7 +30,7 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfoDa
 
    function getInstance return AbeHttpRequestInfoData_Access is
    begin
-        return AbeHttpRequestInfoData_Access (AbeHttpRequestInfoData_Package.instance);
+        return AbeHttpRequestInfoData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AbeHttpRequestInfoData'Class) is

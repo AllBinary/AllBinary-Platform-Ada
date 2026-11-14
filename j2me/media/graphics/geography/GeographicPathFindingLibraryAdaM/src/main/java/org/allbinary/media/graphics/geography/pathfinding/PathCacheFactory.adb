@@ -82,7 +82,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathCacheFactory
 
    function getInstance return PathCacheFactory_Access is
    begin
-        return PathCacheFactory_Access (PathCacheFactory_Package.pathFactory);
+        return PathCacheFactory_Package.pathFactory;
    end getInstance;
 
    function getSize (This : in out PathCacheFactory) return Integer is

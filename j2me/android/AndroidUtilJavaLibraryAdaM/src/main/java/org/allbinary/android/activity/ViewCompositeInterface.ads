@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.android.activity.ViewCompositeInterface_Package;
 package org.allbinary.android.activity.ViewCompositeInterface_Package_References is
    type ViewCompositeInterface_Access is access all org.allbinary.android.activity.ViewCompositeInterface_Package.ViewCompositeInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.android.activity.ViewCompositeInterface_Package_References
    type ViewCompositeInterface_Access_Array_Access is access all ViewCompositeInterface_Access_Array;
    type ViewCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of ViewCompositeInterface_Access_Array_Access;
    type ViewCompositeInterface_Access_Array_Access_Array_Access is access all ViewCompositeInterface_Access_Array_Access_Array;
+   type ViewCompositeInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ViewCompositeInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ViewCompositeInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ViewCompositeInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ViewCompositeInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ViewCompositeInterface_Access_Array_Access is (if Value /= null and then Value.all in ViewCompositeInterface_Access_Array_Object'Class then ViewCompositeInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type ViewCompositeInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ViewCompositeInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ViewCompositeInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ViewCompositeInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ViewCompositeInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ViewCompositeInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ViewCompositeInterface_Access_Array_Access_Array_Object'Class then ViewCompositeInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.android.activity.ViewCompositeInterface_Package_References;
 
 with org.allbinary.android.activity.ViewCompositeInterface_Package_References;
@@ -60,10 +71,14 @@ package org.allbinary.android.activity.ViewCompositeInterface_Package is
    function "=" (Left, Right : ViewCompositeInterface_Access_Array) return Boolean renames org.allbinary.android.activity.ViewCompositeInterface_Package_References."=";
    subtype ViewCompositeInterface_Access_Array_Access is org.allbinary.android.activity.ViewCompositeInterface_Package_References.ViewCompositeInterface_Access_Array_Access;
    function "=" (Left, Right : ViewCompositeInterface_Access_Array_Access) return Boolean renames org.allbinary.android.activity.ViewCompositeInterface_Package_References."=";
+   function Java_Box (Value : ViewCompositeInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.android.activity.ViewCompositeInterface_Package_References.Java_Box;
+   function Java_Unbox_ViewCompositeInterface_Access_Array (Value : access Java_Object'Class) return ViewCompositeInterface_Access_Array_Access renames org.allbinary.android.activity.ViewCompositeInterface_Package_References.Java_Unbox_ViewCompositeInterface_Access_Array;
    subtype ViewCompositeInterface_Access_Array_Access_Array is org.allbinary.android.activity.ViewCompositeInterface_Package_References.ViewCompositeInterface_Access_Array_Access_Array;
    function "=" (Left, Right : ViewCompositeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.android.activity.ViewCompositeInterface_Package_References."=";
    subtype ViewCompositeInterface_Access_Array_Access_Array_Access is org.allbinary.android.activity.ViewCompositeInterface_Package_References.ViewCompositeInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ViewCompositeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.activity.ViewCompositeInterface_Package_References."=";
+   function Java_Box (Value : ViewCompositeInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.android.activity.ViewCompositeInterface_Package_References.Java_Box;
+   function Java_Unbox_ViewCompositeInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return ViewCompositeInterface_Access_Array_Access_Array_Access renames org.allbinary.android.activity.ViewCompositeInterface_Package_References.Java_Unbox_ViewCompositeInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_ViewCompositeInterface (Value : ViewCompositeInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getRootView (This : in out ViewCompositeInterface) return View_Access is abstract;
    function getView (This : in out ViewCompositeInterface) return View_Access is abstract;

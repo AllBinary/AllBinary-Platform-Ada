@@ -73,7 +73,7 @@ package body org.allbinary.logic.io.DataOutputStreamFactory_Package is
 
    function getInstance return DataOutputStreamFactory_Access is
    begin
-        return DataOutputStreamFactory_Access (DataOutputStreamFactory_Package.instance);
+        return DataOutputStreamFactory_Package.instance;
    end getInstance;
 
    --  throws Exception

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package;
 package org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package_References is
    type MouseInputAutomationProcessor_Access is access all org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package.MouseInputAutomationProcessor'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    type MouseInputAutomationProcessor_Access_Array_Access is access all MouseInputAutomationProcessor_Access_Array;
    type MouseInputAutomationProcessor_Access_Array_Access_Array is array (Natural range <>) of MouseInputAutomationProcessor_Access_Array_Access;
    type MouseInputAutomationProcessor_Access_Array_Access_Array_Access is access all MouseInputAutomationProcessor_Access_Array_Access_Array;
+   type MouseInputAutomationProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MouseInputAutomationProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MouseInputAutomationProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MouseInputAutomationProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MouseInputAutomationProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MouseInputAutomationProcessor_Access_Array_Access is (if Value /= null and then Value.all in MouseInputAutomationProcessor_Access_Array_Object'Class then MouseInputAutomationProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type MouseInputAutomationProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MouseInputAutomationProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MouseInputAutomationProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MouseInputAutomationProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MouseInputAutomationProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MouseInputAutomationProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MouseInputAutomationProcessor_Access_Array_Access_Array_Object'Class then MouseInputAutomationProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package_References;
 
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package_References;
@@ -56,10 +67,14 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    function "=" (Left, Right : MouseInputAutomationProcessor_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package_References."=";
    subtype MouseInputAutomationProcessor_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package_References.MouseInputAutomationProcessor_Access_Array_Access;
    function "=" (Left, Right : MouseInputAutomationProcessor_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package_References."=";
+   function Java_Box (Value : MouseInputAutomationProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package_References.Java_Box;
+   function Java_Unbox_MouseInputAutomationProcessor_Access_Array (Value : access Java_Object'Class) return MouseInputAutomationProcessor_Access_Array_Access renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package_References.Java_Unbox_MouseInputAutomationProcessor_Access_Array;
    subtype MouseInputAutomationProcessor_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package_References.MouseInputAutomationProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : MouseInputAutomationProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package_References."=";
    subtype MouseInputAutomationProcessor_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package_References.MouseInputAutomationProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MouseInputAutomationProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package_References."=";
+   function Java_Box (Value : MouseInputAutomationProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package_References.Java_Box;
+   function Java_Unbox_MouseInputAutomationProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return MouseInputAutomationProcessor_Access_Array_Access_Array_Access renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseInputAutomationProcessor_Package_References.Java_Unbox_MouseInputAutomationProcessor_Access_Array_Access_Array;
 
    type MouseInputAutomationProcessor is new Java_Object with null record;
 

@@ -48,6 +48,9 @@ with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
+with org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+with org.allbinary.image.opengles.OpenGLESImageTranslate_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -131,7 +134,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
 
    function getInstance return TrueTypeFontUtil_Access is
    begin
-        return TrueTypeFontUtil_Access (TrueTypeFontUtil_Package.instance);
+        return TrueTypeFontUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TrueTypeFontUtil'Class) is

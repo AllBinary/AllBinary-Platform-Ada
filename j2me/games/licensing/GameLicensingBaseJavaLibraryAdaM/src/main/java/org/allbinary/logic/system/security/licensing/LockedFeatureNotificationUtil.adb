@@ -24,7 +24,29 @@ with org.allbinary.logic.math.SmallIntegerSingletonFactory_Package; use org.allb
 with org.allbinary.media.audio.ErrorSound_Package; use org.allbinary.media.audio.ErrorSound_Package;
 with org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package; use org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package;
 with org.allbinary.logic.system.security.licensing.LicenseStrings_Package; use org.allbinary.logic.system.security.licensing.LicenseStrings_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.media.audio.CompositeSound_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.system.security.licensing.LicenseStrings_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with javax.microedition.media.Player_Package;
+with javax.microedition.media.PlayerListener_Package;
+with org.allbinary.media.audio.PlayerQueue_Package;
+with org.allbinary.media.audio.Sound_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package is
 
@@ -75,7 +97,7 @@ package body org.allbinary.logic.system.security.licensing.LockedFeatureNotifica
 
    function getInstance return LockedFeatureNotificationUtil_Access is
    begin
-        return LockedFeatureNotificationUtil_Access (LockedFeatureNotificationUtil_Package.instance);
+        return LockedFeatureNotificationUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.score.remote.RemoteHighScores_Package;
 package org.allbinary.game.score.remote.RemoteHighScores_Package_References is
    type RemoteHighScores_Access is access all org.allbinary.game.score.remote.RemoteHighScores_Package.RemoteHighScores'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.score.remote.RemoteHighScores_Package_References is
    type RemoteHighScores_Access_Array_Access is access all RemoteHighScores_Access_Array;
    type RemoteHighScores_Access_Array_Access_Array is array (Natural range <>) of RemoteHighScores_Access_Array_Access;
    type RemoteHighScores_Access_Array_Access_Array_Access is access all RemoteHighScores_Access_Array_Access_Array;
+   type RemoteHighScores_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RemoteHighScores_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RemoteHighScores_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RemoteHighScores_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RemoteHighScores_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RemoteHighScores_Access_Array_Access is (if Value /= null and then Value.all in RemoteHighScores_Access_Array_Object'Class then RemoteHighScores_Access_Array_Object'Class (Value.all).Value else null);
+   type RemoteHighScores_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RemoteHighScores_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RemoteHighScores_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RemoteHighScores_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RemoteHighScores_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RemoteHighScores_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in RemoteHighScores_Access_Array_Access_Array_Object'Class then RemoteHighScores_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.score.remote.RemoteHighScores_Package_References;
 
 with org.allbinary.game.score.remote.RemoteHighScores_Package_References;
@@ -137,10 +148,14 @@ package org.allbinary.game.score.remote.RemoteHighScores_Package is
    function "=" (Left, Right : RemoteHighScores_Access_Array) return Boolean renames org.allbinary.game.score.remote.RemoteHighScores_Package_References."=";
    subtype RemoteHighScores_Access_Array_Access is org.allbinary.game.score.remote.RemoteHighScores_Package_References.RemoteHighScores_Access_Array_Access;
    function "=" (Left, Right : RemoteHighScores_Access_Array_Access) return Boolean renames org.allbinary.game.score.remote.RemoteHighScores_Package_References."=";
+   function Java_Box (Value : RemoteHighScores_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.score.remote.RemoteHighScores_Package_References.Java_Box;
+   function Java_Unbox_RemoteHighScores_Access_Array (Value : access Java_Object'Class) return RemoteHighScores_Access_Array_Access renames org.allbinary.game.score.remote.RemoteHighScores_Package_References.Java_Unbox_RemoteHighScores_Access_Array;
    subtype RemoteHighScores_Access_Array_Access_Array is org.allbinary.game.score.remote.RemoteHighScores_Package_References.RemoteHighScores_Access_Array_Access_Array;
    function "=" (Left, Right : RemoteHighScores_Access_Array_Access_Array) return Boolean renames org.allbinary.game.score.remote.RemoteHighScores_Package_References."=";
    subtype RemoteHighScores_Access_Array_Access_Array_Access is org.allbinary.game.score.remote.RemoteHighScores_Package_References.RemoteHighScores_Access_Array_Access_Array_Access;
    function "=" (Left, Right : RemoteHighScores_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.score.remote.RemoteHighScores_Package_References."=";
+   function Java_Box (Value : RemoteHighScores_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.score.remote.RemoteHighScores_Package_References.Java_Box;
+   function Java_Unbox_RemoteHighScores_Access_Array_Access_Array (Value : access Java_Object'Class) return RemoteHighScores_Access_Array_Access_Array_Access renames org.allbinary.game.score.remote.RemoteHighScores_Package_References.Java_Unbox_RemoteHighScores_Access_Array_Access_Array;
 
    type RemoteHighScores is new HighScores with record
       logUtil : LogUtil_Access;

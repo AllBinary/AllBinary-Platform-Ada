@@ -63,7 +63,7 @@ package body org.allbinary.logic.system.security.licensing.PartnerIdentifierFile
 
    function getInstance return PartnerIdentifierFileUtil_Access is
    begin
-        return PartnerIdentifierFileUtil_Access (PartnerIdentifierFileUtil_Package.instance);
+        return PartnerIdentifierFileUtil_Package.instance;
    end getInstance;
 
    function get (This : in out PartnerIdentifierFileUtil) return Unbounded_String is

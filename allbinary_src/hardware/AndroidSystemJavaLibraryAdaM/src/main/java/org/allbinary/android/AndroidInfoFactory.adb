@@ -39,7 +39,7 @@ package body org.allbinary.android.AndroidInfoFactory_Package is
 
    function getInstance return AndroidInfoFactory_Access is
    begin
-        return AndroidInfoFactory_Access (AndroidInfoFactory_Package.instance);
+        return AndroidInfoFactory_Package.instance;
    end getInstance;
 
    function getVersion (This : in out AndroidInfoFactory) return Integer is

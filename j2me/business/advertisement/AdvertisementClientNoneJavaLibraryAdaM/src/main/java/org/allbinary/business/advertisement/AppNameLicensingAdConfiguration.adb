@@ -2,6 +2,8 @@
 
 
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.direction.Direction_Package;
+with org.allbinary.game.state.GameState_Package;
 
 package body org.allbinary.business.advertisement.AppNameLicensingAdConfiguration_Package is
 

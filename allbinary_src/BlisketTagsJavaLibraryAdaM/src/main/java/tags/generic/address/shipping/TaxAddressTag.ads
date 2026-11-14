@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with tags.generic_Id.address.shipping.TaxAddressTag_Package;
 package tags.generic_Id.address.shipping.TaxAddressTag_Package_References is
    type TaxAddressTag_Access is access all tags.generic_Id.address.shipping.TaxAddressTag_Package.TaxAddressTag'Class;
@@ -19,6 +20,16 @@ package tags.generic_Id.address.shipping.TaxAddressTag_Package_References is
    type TaxAddressTag_Access_Array_Access is access all TaxAddressTag_Access_Array;
    type TaxAddressTag_Access_Array_Access_Array is array (Natural range <>) of TaxAddressTag_Access_Array_Access;
    type TaxAddressTag_Access_Array_Access_Array_Access is access all TaxAddressTag_Access_Array_Access_Array;
+   type TaxAddressTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TaxAddressTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TaxAddressTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TaxAddressTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TaxAddressTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TaxAddressTag_Access_Array_Access is (if Value /= null and then Value.all in TaxAddressTag_Access_Array_Object'Class then TaxAddressTag_Access_Array_Object'Class (Value.all).Value else null);
+   type TaxAddressTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TaxAddressTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TaxAddressTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TaxAddressTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TaxAddressTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TaxAddressTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TaxAddressTag_Access_Array_Access_Array_Object'Class then TaxAddressTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end tags.generic_Id.address.shipping.TaxAddressTag_Package_References;
 
 with tags.generic_Id.address.shipping.TaxAddressTag_Package_References;
@@ -47,10 +58,14 @@ package tags.generic_Id.address.shipping.TaxAddressTag_Package is
    function "=" (Left, Right : TaxAddressTag_Access_Array) return Boolean renames tags.generic_Id.address.shipping.TaxAddressTag_Package_References."=";
    subtype TaxAddressTag_Access_Array_Access is tags.generic_Id.address.shipping.TaxAddressTag_Package_References.TaxAddressTag_Access_Array_Access;
    function "=" (Left, Right : TaxAddressTag_Access_Array_Access) return Boolean renames tags.generic_Id.address.shipping.TaxAddressTag_Package_References."=";
+   function Java_Box (Value : TaxAddressTag_Access_Array_Access) return Java_Object_Access renames tags.generic_Id.address.shipping.TaxAddressTag_Package_References.Java_Box;
+   function Java_Unbox_TaxAddressTag_Access_Array (Value : access Java_Object'Class) return TaxAddressTag_Access_Array_Access renames tags.generic_Id.address.shipping.TaxAddressTag_Package_References.Java_Unbox_TaxAddressTag_Access_Array;
    subtype TaxAddressTag_Access_Array_Access_Array is tags.generic_Id.address.shipping.TaxAddressTag_Package_References.TaxAddressTag_Access_Array_Access_Array;
    function "=" (Left, Right : TaxAddressTag_Access_Array_Access_Array) return Boolean renames tags.generic_Id.address.shipping.TaxAddressTag_Package_References."=";
    subtype TaxAddressTag_Access_Array_Access_Array_Access is tags.generic_Id.address.shipping.TaxAddressTag_Package_References.TaxAddressTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TaxAddressTag_Access_Array_Access_Array_Access) return Boolean renames tags.generic_Id.address.shipping.TaxAddressTag_Package_References."=";
+   function Java_Box (Value : TaxAddressTag_Access_Array_Access_Array_Access) return Java_Object_Access renames tags.generic_Id.address.shipping.TaxAddressTag_Package_References.Java_Box;
+   function Java_Unbox_TaxAddressTag_Access_Array_Access_Array (Value : access Java_Object'Class) return TaxAddressTag_Access_Array_Access_Array_Access renames tags.generic_Id.address.shipping.TaxAddressTag_Package_References.Java_Unbox_TaxAddressTag_Access_Array_Access_Array;
 
    type TaxAddressTag is new StoreValidationTransformTag with null record;
 

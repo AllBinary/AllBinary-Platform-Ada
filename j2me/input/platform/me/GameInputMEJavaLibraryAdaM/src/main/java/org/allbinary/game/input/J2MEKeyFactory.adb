@@ -65,7 +65,7 @@ package body org.allbinary.game.input.J2MEKeyFactory_Package is
 
    function getInstance return J2MEKeyFactory_Access is
    begin
-        return J2MEKeyFactory_Access (J2MEKeyFactory_Package.instance);
+        return J2MEKeyFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out J2MEKeyFactory'Class) is

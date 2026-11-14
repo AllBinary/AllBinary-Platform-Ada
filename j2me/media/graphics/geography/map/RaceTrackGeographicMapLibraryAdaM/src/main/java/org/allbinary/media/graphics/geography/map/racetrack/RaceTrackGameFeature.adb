@@ -14,6 +14,8 @@
 
 
 with org.allbinary.game.configuration.feature.GameFeature_Package; use org.allbinary.game.configuration.feature.GameFeature_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
 
 package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGameFeature_Package is
 

@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package;
 package org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_References is
    type StaticTileLayerIntoPositionViewPosition_Access is access all org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package.StaticTileLayerIntoPositionViewPosition'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_
    type StaticTileLayerIntoPositionViewPosition_Access_Array_Access is access all StaticTileLayerIntoPositionViewPosition_Access_Array;
    type StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array is array (Natural range <>) of StaticTileLayerIntoPositionViewPosition_Access_Array_Access;
    type StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array_Access is access all StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array;
+   type StaticTileLayerIntoPositionViewPosition_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StaticTileLayerIntoPositionViewPosition_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StaticTileLayerIntoPositionViewPosition_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StaticTileLayerIntoPositionViewPosition_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StaticTileLayerIntoPositionViewPosition_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StaticTileLayerIntoPositionViewPosition_Access_Array_Access is (if Value /= null and then Value.all in StaticTileLayerIntoPositionViewPosition_Access_Array_Object'Class then StaticTileLayerIntoPositionViewPosition_Access_Array_Object'Class (Value.all).Value else null);
+   type StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array_Object'Class then StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_References;
 
 with org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_References;
@@ -85,10 +96,14 @@ package org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package 
    function "=" (Left, Right : StaticTileLayerIntoPositionViewPosition_Access_Array) return Boolean renames org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_References."=";
    subtype StaticTileLayerIntoPositionViewPosition_Access_Array_Access is org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_References.StaticTileLayerIntoPositionViewPosition_Access_Array_Access;
    function "=" (Left, Right : StaticTileLayerIntoPositionViewPosition_Access_Array_Access) return Boolean renames org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_References."=";
+   function Java_Box (Value : StaticTileLayerIntoPositionViewPosition_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_References.Java_Box;
+   function Java_Unbox_StaticTileLayerIntoPositionViewPosition_Access_Array (Value : access Java_Object'Class) return StaticTileLayerIntoPositionViewPosition_Access_Array_Access renames org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_References.Java_Unbox_StaticTileLayerIntoPositionViewPosition_Access_Array;
    subtype StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array is org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_References.StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array;
    function "=" (Left, Right : StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array) return Boolean renames org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_References."=";
    subtype StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array_Access is org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_References.StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_References."=";
+   function Java_Box (Value : StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_References.Java_Box;
+   function Java_Unbox_StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array (Value : access Java_Object'Class) return StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array_Access renames org.allbinary.game.view.StaticTileLayerIntoPositionViewPosition_Package_References.Java_Unbox_StaticTileLayerIntoPositionViewPosition_Access_Array_Access_Array;
 
    type StaticTileLayerIntoPositionViewPosition is new ViewPosition with null record;
    tiledLayer : Layer_Access;

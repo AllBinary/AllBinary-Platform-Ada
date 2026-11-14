@@ -48,7 +48,7 @@ package body org.allbinary.graphics.opengles.NullOpenGLProcessorFactory_Package 
 
    function getInstance return OpenGLProcessor_Access is
    begin
-        return OpenGLProcessor_Access (NullOpenGLProcessorFactory_Package.instance);
+        return NullOpenGLProcessorFactory_Package.instance;
    end getInstance;
 
 begin

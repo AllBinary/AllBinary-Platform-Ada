@@ -56,7 +56,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseInterfaceSingl
 
    function getInstance return AbeLicenseInterface_Access is
    begin
-        return AbeLicenseInterface_Access (LicenseInterfaceSingleton_Package.licenseInterface);
+        return LicenseInterfaceSingleton_Package.licenseInterface;
    end getInstance;
 
    procedure init (licenseInterface_Param : access AbeLicenseInterface_Package.AbeLicenseInterface'Class) is

@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
 package org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References is
    type PlatformBitmapBaseFactory_Access is access all org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_Refere
    type PlatformBitmapBaseFactory_Access_Array_Access is access all PlatformBitmapBaseFactory_Access_Array;
    type PlatformBitmapBaseFactory_Access_Array_Access_Array is array (Natural range <>) of PlatformBitmapBaseFactory_Access_Array_Access;
    type PlatformBitmapBaseFactory_Access_Array_Access_Array_Access is access all PlatformBitmapBaseFactory_Access_Array_Access_Array;
+   type PlatformBitmapBaseFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PlatformBitmapBaseFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PlatformBitmapBaseFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PlatformBitmapBaseFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PlatformBitmapBaseFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PlatformBitmapBaseFactory_Access_Array_Access is (if Value /= null and then Value.all in PlatformBitmapBaseFactory_Access_Array_Object'Class then PlatformBitmapBaseFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type PlatformBitmapBaseFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PlatformBitmapBaseFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PlatformBitmapBaseFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PlatformBitmapBaseFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PlatformBitmapBaseFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PlatformBitmapBaseFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PlatformBitmapBaseFactory_Access_Array_Access_Array_Object'Class then PlatformBitmapBaseFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References;
 
 with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References;
@@ -69,10 +80,14 @@ package org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package is
    function "=" (Left, Right : PlatformBitmapBaseFactory_Access_Array) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
    subtype PlatformBitmapBaseFactory_Access_Array_Access is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access_Array_Access;
    function "=" (Left, Right : PlatformBitmapBaseFactory_Access_Array_Access) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
+   function Java_Box (Value : PlatformBitmapBaseFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.Java_Box;
+   function Java_Unbox_PlatformBitmapBaseFactory_Access_Array (Value : access Java_Object'Class) return PlatformBitmapBaseFactory_Access_Array_Access renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.Java_Unbox_PlatformBitmapBaseFactory_Access_Array;
    subtype PlatformBitmapBaseFactory_Access_Array_Access_Array is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access_Array_Access_Array;
    function "=" (Left, Right : PlatformBitmapBaseFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
    subtype PlatformBitmapBaseFactory_Access_Array_Access_Array_Access is org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.PlatformBitmapBaseFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PlatformBitmapBaseFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References."=";
+   function Java_Box (Value : PlatformBitmapBaseFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.Java_Box;
+   function Java_Unbox_PlatformBitmapBaseFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return PlatformBitmapBaseFactory_Access_Array_Access_Array_Access renames org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package_References.Java_Unbox_PlatformBitmapBaseFactory_Access_Array_Access_Array;
 
    type PlatformBitmapBaseFactory is new Java_Object with null record;
    NULL_PLATFORM_BITMAP_BASE_FACTORY : PlatformBitmapBaseFactory_Access;

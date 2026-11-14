@@ -16,6 +16,9 @@
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.logic.system.security.licensing.LockableFeatureFactory_Package is
 
@@ -51,7 +54,7 @@ package body org.allbinary.logic.system.security.licensing.LockableFeatureFactor
 
    function getInstance return LockableFeatureFactory_Access is
    begin
-        return LockableFeatureFactory_Access (LockableFeatureFactory_Package.instance);
+        return LockableFeatureFactory_Package.instance;
    end getInstance;
 
    function getList (This : in out LockableFeatureFactory) return BasicArrayList_Access is

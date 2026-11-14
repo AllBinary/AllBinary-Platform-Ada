@@ -51,7 +51,7 @@ package body org.allbinary.media.DisplaysUtil_Package is
 
    function getInstance return DisplaysUtil_Access is
    begin
-        return DisplaysUtil_Access (DisplaysUtil_Package.instance);
+        return DisplaysUtil_Package.instance;
    end getInstance;
 
    function getPrimaryScreenSize (This : in out DisplaysUtil) return Rectangle_Access is

@@ -102,7 +102,7 @@ package body org.allbinary.logic.system.security.AbCryptUtil_Package is
 
    function getInstance return AbCryptUtil_Access is
    begin
-        return AbCryptUtil_Access (AbCryptUtil_Package.instance);
+        return AbCryptUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AbCryptUtil'Class) is

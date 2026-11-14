@@ -41,7 +41,7 @@ package body org.allbinary.logic.util.cache.PoolTypeFactory_Package is
 
    function getInstance return PoolTypeFactory_Access is
    begin
-        return PoolTypeFactory_Access (PoolTypeFactory_Package.instance);
+        return PoolTypeFactory_Package.instance;
    end getInstance;
 
 begin

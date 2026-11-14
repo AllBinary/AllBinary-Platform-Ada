@@ -101,9 +101,9 @@ package body org.allbinary.media.image.comparison.pixel.PixelDeltaFactory_Packag
         STATIC_BLOCK := To_Unbounded_String ("Static Block");
         instance := To_Unbounded_String ("PixelDeltaFactory");
         begin
-            logUtil.putF (commonStrings.START, Java_Box (instance), STATIC_BLOCK);
+            logUtil.putFS (commonStrings.START, Java_Box (instance), STATIC_BLOCK);
             PixelDeltaFactory_Package.cacheInterface := AutomaticCacheInterface_Access (CacheInterfaceFactory_Package.getInstance (CacheTypeFactory_Package.getInstance.CACHE, CachePolicyFactory_Package.getInstance.THIRTY_MINUTES_TEN_THOUSAND_MAX));
-            logUtil.putF (commonStrings.END_Id, Java_Box (instance), STATIC_BLOCK);
+            logUtil.putFS (commonStrings.END_Id, Java_Box (instance), STATIC_BLOCK);
         exception
             when Java_Occurrence : others =>
                 declare

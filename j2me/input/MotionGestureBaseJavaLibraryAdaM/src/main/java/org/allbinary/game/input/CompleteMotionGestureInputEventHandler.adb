@@ -100,7 +100,7 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Pac
 
    function getInstance return CompleteMotionGestureInputEventHandler_Access is
    begin
-        return CompleteMotionGestureInputEventHandler_Access (CompleteMotionGestureInputEventHandler_Package.SINGLETON);
+        return CompleteMotionGestureInputEventHandler_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out CompleteMotionGestureInputEventHandler'Class) is

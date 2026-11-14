@@ -67,7 +67,7 @@ package body org.allbinary.game.physics.acceleration.GravityUtil_Package is
 
    function getInstance return GravityUtil_Access is
    begin
-        return GravityUtil_Access (GravityUtil_Package.instance);
+        return GravityUtil_Package.instance;
    end getInstance;
 
    procedure process (This : in out GravityUtil; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class; customGravity : Integer) is

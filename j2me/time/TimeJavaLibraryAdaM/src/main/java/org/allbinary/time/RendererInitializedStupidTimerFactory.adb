@@ -63,7 +63,7 @@ package body org.allbinary.time.RendererInitializedStupidTimerFactory_Package is
 
    function getInstance return StupidTimer_Access is
    begin
-        return StupidTimer_Access (RendererInitializedStupidTimerFactory_Package.instance);
+        return RendererInitializedStupidTimerFactory_Package.instance;
    end getInstance;
 
 begin

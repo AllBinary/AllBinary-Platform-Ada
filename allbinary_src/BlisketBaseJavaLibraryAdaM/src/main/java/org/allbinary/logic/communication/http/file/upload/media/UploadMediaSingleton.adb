@@ -24,6 +24,8 @@ with org.allbinary.logic.visual.media.MediaIOUtil_Package; use org.allbinary.log
 with org.allbinary.logic.visual.media.MediaTypeData_Package; use org.allbinary.logic.visual.media.MediaTypeData_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -45,6 +47,8 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
    package MediaData_Package renames Standard.org.allbinary.logic.visual.media.MediaData_Package;
    package MediaIOUtil_Package renames Standard.org.allbinary.logic.visual.media.MediaIOUtil_Package;
    package MediaTypeData_Package renames Standard.org.allbinary.logic.visual.media.MediaTypeData_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -90,8 +94,8 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
       stringBuffer : StringMaker_Access;
    begin
       Initialize_Fields (This);
-        This.readerFileTypesHashMap := StdUtil_Package.getInstance.createHashMap;
-        This.writerFileTypesHashMap := StdUtil_Package.getInstance.createHashMap;
+        This.readerFileTypesHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
+        This.writerFileTypesHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap := MediaData_Package.toHashMap;
         set := hashMap.keySet;
         mediaDataNameArray := set.toArray;
@@ -111,7 +115,7 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
         for index in 0 .. (writerFileTypes'Length) - 1 loop
             This.writerFileTypesHashMap.put (Java_Box (writerFileTypes (index)), Java_Box (RESIZABLE_MEDIA));
         end loop;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.HTTPREQUEST) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("Supported Media Readers: "));
             stringBuffer.append (This.readerFileTypesHashMap.toString);
@@ -133,7 +137,7 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
         if org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package_References."=" (UploadMediaSingleton_Package.uploadMedia, null) then
             UploadMediaSingleton_Package.uploadMedia := UploadMediaSingleton_Package.Create;
         end if;
-        return UploadMediaSingleton_Access (UploadMediaSingleton_Package.uploadMedia);
+        return UploadMediaSingleton_Package.uploadMedia;
    end getInstance;
 
    function isReaderSupported (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String) return Boolean is

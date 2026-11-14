@@ -21,6 +21,7 @@ with javax.crypto.SecretKeyFactory_Package; use javax.crypto.SecretKeyFactory_Pa
 with org.allbinary.init.crypt.jcehelper.CryptInterface_Package; use org.allbinary.init.crypt.jcehelper.CryptInterface_Package;
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with com.sun.crypto.provider.SunJCE_Package; use com.sun.crypto.provider.SunJCE_Package;
 with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package; use org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
 with org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_Package;
 
@@ -31,6 +32,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.AbBasicCrypt_Pa
    package SecretKeyFactory_Package renames Standard.javax.crypto.SecretKeyFactory_Package;
    package PreLogUtil_Package renames Standard.org.allbinary.logic.communication.log.PreLogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package SunJCE_Package renames Standard.com.sun.crypto.provider.SunJCE_Package;
    procedure Initialize_Fields (This : in out AbBasicCrypt'Class) is
    begin
       null;

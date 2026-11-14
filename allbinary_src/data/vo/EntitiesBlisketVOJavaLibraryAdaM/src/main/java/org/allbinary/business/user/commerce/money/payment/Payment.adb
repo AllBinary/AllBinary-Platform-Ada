@@ -24,6 +24,7 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package; use org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package;
 with org.allbinary.business.user.commerce.money.payment.PaymentData_Package; use org.allbinary.business.user.commerce.money.payment.PaymentData_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
@@ -37,6 +38,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package SuperCrypt_Package renames Standard.org.allbinary.logic.control.crypt.SuperCrypt_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package CreditCardType_Package renames Standard.org.allbinary.business.user.commerce.money.payment.types.CreditCardType_Package;
    subtype Document_Access is org.w3c.dom.Document_Package_References.Document_Access;
    function "=" (Left, Right : Document_Access) return Boolean renames org.w3c.dom.Document_Package_References."=";
    subtype Document_Access_Array is org.w3c.dom.Document_Package_References.Document_Access_Array;
@@ -174,7 +176,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
         if ((This.number) = (Null_Unbounded_String)) or else ((Java_Compare_To (This.number, stringUtil.EMPTY_STRING)) = (0)) then
             return aFalse;
         end if;
-        if (Ada.Strings.Unbounded.Length (This.number)) > (org_Package.allbinary.business.user.commerce.money.payment.types.CreditCardType.MAXLEN) then
+        if (Ada.Strings.Unbounded.Length (This.number)) > (CreditCardType_Package.MAXLEN) then
             return aFalse;
         end if;
         return True;
@@ -342,7 +344,7 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
    function toHashMap (This : in out Payment) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (PaymentData_Package.NAME, Java_Box (This.name));
         hashMap.put (PaymentData_Package.TYPE_Id, Java_Box (This.type_Id));
         hashMap.put (PaymentData_Package.EXPIRATION, Java_Box (This.expiration));

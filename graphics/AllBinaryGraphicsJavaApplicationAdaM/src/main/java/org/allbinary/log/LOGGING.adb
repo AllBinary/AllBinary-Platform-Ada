@@ -62,7 +62,7 @@ package body org.allbinary.log.LOGGING_Package is
    function contains (logType_Param : access LOGGING_Package.LOGGING'Class) return Boolean is
       logType : constant LOGGING_Access := LOGGING_Access (logType_Param);
    begin
-        return LOGGING_Package.logging_Var.contains (logType.toString);
+        return LOGGING_Package.logging_Var.contains (Java_Box (logType.toString));
    end contains;
 
    function toString (This : in out LOGGING) return Unbounded_String is

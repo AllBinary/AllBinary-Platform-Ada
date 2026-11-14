@@ -53,7 +53,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.CreditCard
 
    function getInstance return CreditCardTypeFactory_Access is
    begin
-        return CreditCardTypeFactory_Access (CreditCardTypeFactory_Package.instance);
+        return CreditCardTypeFactory_Package.instance;
    end getInstance;
 
 begin

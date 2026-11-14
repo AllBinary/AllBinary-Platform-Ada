@@ -29,6 +29,8 @@ with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectC
 with org.allbinary.logic.visual.transform.template.util.TransformTemplateCustomizerUtil_Package; use org.allbinary.logic.visual.transform.template.util.TransformTemplateCustomizerUtil_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -53,6 +55,8 @@ package body views.business.context.modules.storefront.customizer.template.objec
    package TransformInfoData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
    package TransformInfoObjectConfigData_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package;
    package TransformTemplateCustomizerUtil_Package renames Standard.org.allbinary.logic.visual.transform.template.util.TransformTemplateCustomizerUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -148,12 +152,12 @@ package body views.business.context.modules.storefront.customizer.template.objec
       newObjectConfigDocument : Document_Access;
    begin
         docString := XmlDocumentHelper_Package.toString (objectConfigDocument);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Initial ObjectConfig: ") & docString, NoTemplateTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("generate()"));
         end if;
         storeName := NoTemplateTransformInfoObjectConfig'Class (This).getTransformInfoInterface.getStoreName;
         viewName := NoTemplateTransformInfoObjectConfig'Class (This).getTransformInfoInterface.getName;
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         VARKEY := TransformInfoObjectConfigData_Package.getInstance.VARKEY;
         hashMap.put (Java_Box (VARKEY & Java_Image (StoreFrontData_Package.getInstance.NAME)), Java_Box (storeName));
         hashMap.put (Java_Box (VARKEY & Java_Image (TransformInfoData_Package.getInstance.OWNER)), Java_Box (viewName));
@@ -161,7 +165,7 @@ package body views.business.context.modules.storefront.customizer.template.objec
         hashMap.put (Java_Box (VARKEY & Java_Image (TransformInfoData_Package.getInstance.PARTIAL)), Java_Box (pageName));
         replace := Replace_Package.Create (hashMap);
         newObjectConfigDocument := DomDocumentHelper_Package.create (replace.all_Id (docString));
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Final ObjectConfig: ") & XmlDocumentHelper_Package.toString (newObjectConfigDocument), NoTemplateTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("generate()"));
         end if;
         return newObjectConfigDocument;

@@ -51,7 +51,7 @@ package body org.allbinary.input.motion.CompleteMotionGestureInputToGameMotionGe
 
    function getInstance return CompleteMotionGestureInputToGameMotionGestureInput_Access is
    begin
-        return CompleteMotionGestureInputToGameMotionGestureInput_Access (CompleteMotionGestureInputToGameMotionGestureInput_Package.instance);
+        return CompleteMotionGestureInputToGameMotionGestureInput_Package.instance;
    end getInstance;
 
    procedure init (This : in out CompleteMotionGestureInputToGameMotionGestureInput) is

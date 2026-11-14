@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.device.GraphicsInterface_Package;
 package org.allbinary.device.GraphicsInterface_Package_References is
    type GraphicsInterface_Access is access all org.allbinary.device.GraphicsInterface_Package.GraphicsInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.device.GraphicsInterface_Package_References is
    type GraphicsInterface_Access_Array_Access is access all GraphicsInterface_Access_Array;
    type GraphicsInterface_Access_Array_Access_Array is array (Natural range <>) of GraphicsInterface_Access_Array_Access;
    type GraphicsInterface_Access_Array_Access_Array_Access is access all GraphicsInterface_Access_Array_Access_Array;
+   type GraphicsInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GraphicsInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GraphicsInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GraphicsInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GraphicsInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GraphicsInterface_Access_Array_Access is (if Value /= null and then Value.all in GraphicsInterface_Access_Array_Object'Class then GraphicsInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type GraphicsInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GraphicsInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GraphicsInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GraphicsInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GraphicsInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GraphicsInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GraphicsInterface_Access_Array_Access_Array_Object'Class then GraphicsInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.device.GraphicsInterface_Package_References;
 
 with org.allbinary.device.GraphicsInterface_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.device.GraphicsInterface_Package is
    function "=" (Left, Right : GraphicsInterface_Access_Array) return Boolean renames org.allbinary.device.GraphicsInterface_Package_References."=";
    subtype GraphicsInterface_Access_Array_Access is org.allbinary.device.GraphicsInterface_Package_References.GraphicsInterface_Access_Array_Access;
    function "=" (Left, Right : GraphicsInterface_Access_Array_Access) return Boolean renames org.allbinary.device.GraphicsInterface_Package_References."=";
+   function Java_Box (Value : GraphicsInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.device.GraphicsInterface_Package_References.Java_Box;
+   function Java_Unbox_GraphicsInterface_Access_Array (Value : access Java_Object'Class) return GraphicsInterface_Access_Array_Access renames org.allbinary.device.GraphicsInterface_Package_References.Java_Unbox_GraphicsInterface_Access_Array;
    subtype GraphicsInterface_Access_Array_Access_Array is org.allbinary.device.GraphicsInterface_Package_References.GraphicsInterface_Access_Array_Access_Array;
    function "=" (Left, Right : GraphicsInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.device.GraphicsInterface_Package_References."=";
    subtype GraphicsInterface_Access_Array_Access_Array_Access is org.allbinary.device.GraphicsInterface_Package_References.GraphicsInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GraphicsInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.device.GraphicsInterface_Package_References."=";
+   function Java_Box (Value : GraphicsInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.device.GraphicsInterface_Package_References.Java_Box;
+   function Java_Unbox_GraphicsInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return GraphicsInterface_Access_Array_Access_Array_Access renames org.allbinary.device.GraphicsInterface_Package_References.Java_Unbox_GraphicsInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_GraphicsInterface (Value : GraphicsInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure setFontDebug (This : in out GraphicsInterface; font_Param : access Font_Package.Font'Class; fontDebug_Param : access FontDebugBase_Package.FontDebugBase'Class) is abstract;
 

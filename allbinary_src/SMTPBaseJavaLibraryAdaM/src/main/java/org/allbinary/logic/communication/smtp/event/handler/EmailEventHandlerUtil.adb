@@ -31,6 +31,8 @@ with org.allbinary.logic.communication.smtp.event.modules.log.LogUserEmailEventL
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package; use org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package;
 with org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package_References;
 with org.allbinary.util.ABHashMap_Package;
@@ -55,6 +57,8 @@ package body org.allbinary.logic.communication.smtp.event.handler.EmailEventHand
    package UserEmailEventListenerInterface_Package renames Standard.org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
    package LogUserEmailEventListenerModule_Package renames Standard.org.allbinary.logic.communication.smtp.event.modules.log.LogUserEmailEventListenerModule_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -124,7 +128,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.EmailEventHand
 
    function getInstance return EmailEventHandlerUtil_Access is
    begin
-        return EmailEventHandlerUtil_Access (EmailEventHandlerUtil_Package.instance);
+        return EmailEventHandlerUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out EmailEventHandlerUtil'Class) is
@@ -152,7 +156,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.EmailEventHand
       vector : BasicArrayList_Access;
       index : Integer;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("Returning UserEmailEventHandler for "));
             stringBuffer.appendint (userVector.size);

@@ -20,6 +20,23 @@ with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.eclipse.swt.graphics.Resource_Package; use org.eclipse.swt.graphics.Resource_Package;
 with org.eclipse.swt.graphics.Resource_Package_References;
 with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.swt.SwtMutableImage_Package;
+with org.eclipse.swt.graphics.Color_Package;
+with org.eclipse.swt.graphics.Device_Package;
+with org.eclipse.swt.graphics.Drawable_Package;
+with org.eclipse.swt.graphics.Font_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.eclipse.swt.graphics.FontMetrics_Package;
+with org.eclipse.swt.graphics.GC_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with org.eclipse.swt.graphics.ImageData_Package;
+with org.microemu.device.MutableImage_Package;
+with org.eclipse.swt.graphics.PaletteData_Package;
+with org.eclipse.swt.graphics.Point_Package;
+with javax.microedition.lcdui.PostLoadImageProcessor_Package;
+with org.eclipse.swt.graphics.RGB_Package;
+with org.eclipse.swt.graphics.RGBA_Package;
+with org.eclipse.swt.graphics.Rectangle_Package;
+with org.eclipse.swt.graphics.Transform_Package;
 
 package body org.allbinary.DisposalUtil_Package is
 
@@ -75,7 +92,7 @@ package body org.allbinary.DisposalUtil_Package is
 
    function getInstance return DisposalUtil_Access is
    begin
-        return DisposalUtil_Access (DisposalUtil_Package.instance);
+        return DisposalUtil_Package.instance;
    end getInstance;
 
    procedure disposeImage (This : in out DisposalUtil; image_Param : access Image_Package.Image'Class) is

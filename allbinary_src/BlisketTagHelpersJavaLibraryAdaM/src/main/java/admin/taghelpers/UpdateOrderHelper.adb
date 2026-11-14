@@ -27,6 +27,8 @@ with org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityF
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -53,6 +55,8 @@ package body admin.taghelpers.UpdateOrderHelper_Package is
    package ShippingMethodData_Package renames Standard.org.allbinary.business.user.commerce.shipping.ShippingMethodData_Package;
    package OrderHistoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityFactory_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -174,8 +178,8 @@ package body admin.taghelpers.UpdateOrderHelper_Package is
    begin
         begin
             success := To_Unbounded_String ("Successful update");
-            orderHashMap := StdUtil_Package.getInstance.createHashMap;
-            whereHashMap := StdUtil_Package.getInstance.createHashMap;
+            orderHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
+            whereHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             orderHashMap.put (EntryData_Package.getInstance.ID, Java_Box (This.entryId));
             orderHashMap.put (OrderData_Package.ID, Java_Box (This.orderId));
             orderHashMap.put (UserData_Package.USERNAME, Java_Box (This.userName));
@@ -213,7 +217,7 @@ package body admin.taghelpers.UpdateOrderHelper_Package is
             orderHashMap.put (OrderData_Package.STORECANCELCOMMENT, Java_Box (This.storeCancelComment));
             whereHashMap.put (OrderData_Package.ID, Java_Box (This.orderId));
             OrderHistoryEntityFactory_Package.getInstance.update (whereHashMap, orderHashMap);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, UpdateOrderHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
@@ -223,7 +227,7 @@ package body admin.taghelpers.UpdateOrderHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to update order table");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, UpdateOrderHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;

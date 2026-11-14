@@ -18,6 +18,9 @@ with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; u
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -32,6 +35,9 @@ package body admin.tags.PaymentGatewayTag_Package is
    package PaymentGatewayHelperFactory_Package renames Standard.admin.taghelpers.PaymentGatewayHelperFactory_Package;
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -94,12 +100,12 @@ package body admin.tags.PaymentGatewayTag_Package is
    begin
         begin
             if PaymentGatewayTag'Class (This).isEnabled then
-                if (((PaymentGatewayTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR)) = (0)) or else ((PaymentGatewayTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDERANDEVALBODY)) = (0))) or else ((PaymentGatewayTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
+                if (((PaymentGatewayTag'Class (This).getCommand.compareTo (GLOBALS2_Package.AUTHORIZEORDEREVALBODYONERROR)) = (0)) or else ((PaymentGatewayTag'Class (This).getCommand.compareTo (GLOBALS2_Package.AUTHORIZEORDERANDEVALBODY)) = (0))) or else ((PaymentGatewayTag'Class (This).getCommand.compareTo (GLOBALS2_Package.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
                     output := PaymentGatewayTag'Class (This).process;
                     begin
                         This.pageContext.getOut.print (output & To_Unbounded_String ("<br />"));
                     end;
-                    if (PaymentGatewayTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR)) = (0) then
+                    if (PaymentGatewayTag'Class (This).getCommand.compareTo (GLOBALS2_Package.AUTHORIZEORDEREVALBODYONERROR)) = (0) then
                         return This.SKIP_BODY;
                     else
                         return This.EVAL_BODY_INCLUDE;

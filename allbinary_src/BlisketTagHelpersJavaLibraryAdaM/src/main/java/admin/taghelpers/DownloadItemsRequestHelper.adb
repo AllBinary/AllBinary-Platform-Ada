@@ -25,11 +25,16 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with tags.HelperTag_Package; use tags.HelperTag_Package;
 with views.admin.inventory.download.DownloadableInventoryItemView_Package; use views.admin.inventory.download.DownloadableInventoryItemView_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with admin.taghelpers.InventoryItemViewParentTagHelper_Package; use admin.taghelpers.InventoryItemViewParentTagHelper_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with admin.taghelpers.InventoryItemViewParentTagHelper_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
@@ -43,6 +48,8 @@ package body admin.taghelpers.DownloadItemsRequestHelper_Package is
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package HelperTag_Package renames Standard.tags.HelperTag_Package;
    package DownloadableInventoryItemView_Package renames Standard.views.admin.inventory.download.DownloadableInventoryItemView_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype DownloadableItem_Access is org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package_References.DownloadableItem_Access;
    function "=" (Left, Right : DownloadableItem_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package_References."=";
    subtype DownloadableItem_Access_Array is org.allbinary.business.user.commerce.inventory.item.download.DownloadableItem_Package_References.DownloadableItem_Access_Array;
@@ -102,7 +109,7 @@ package body admin.taghelpers.DownloadItemsRequestHelper_Package is
             vector := This.downloadableItem.toVector;
             DownloadItemsEntityFactory_Package.getInstance.getDownloadItemsEntityInstance.insert (vector);
             success := To_Unbounded_String ("Successfully inserted ") & Java_Image (This.downloadableItem.getId) & To_Unbounded_String (" into downloaditems table");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, DownloadItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
             end if;
             return success;
@@ -112,7 +119,7 @@ package body admin.taghelpers.DownloadItemsRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to insert ") & Java_Image (This.downloadableItem.getId) & To_Unbounded_String (" into downloaditems table");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, DownloadItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("inserts()"), e);
             end if;
             return error;
@@ -127,7 +134,7 @@ package body admin.taghelpers.DownloadItemsRequestHelper_Package is
         begin
             DownloadItemsEntityFactory_Package.getInstance.getDownloadItemsEntityInstance.delete (This.downloadableItem.getId);
             success := To_Unbounded_String ("Successfully deleted");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, DownloadItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"));
             end if;
             return success;
@@ -137,7 +144,7 @@ package body admin.taghelpers.DownloadItemsRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to delete");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, DownloadItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e);
             end if;
             return error;
@@ -154,7 +161,7 @@ package body admin.taghelpers.DownloadItemsRequestHelper_Package is
             success := To_Unbounded_String ("Update Successful");
             values := This.downloadableItem.toHashMap;
             DownloadItemsEntityFactory_Package.getInstance.getDownloadItemsEntityInstance.update (values);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (Java_Image (This.downloadableItem.getId) & CommonSeps_Package.getInstance.SPACE & success, DownloadItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
@@ -164,7 +171,7 @@ package body admin.taghelpers.DownloadItemsRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to update: ") & Java_Image (This.downloadableItem.getId);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, DownloadItemsRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;

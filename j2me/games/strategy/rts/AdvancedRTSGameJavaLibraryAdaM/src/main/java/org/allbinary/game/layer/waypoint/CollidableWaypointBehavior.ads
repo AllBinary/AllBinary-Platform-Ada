@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package;
 package org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_References is
    type CollidableWaypointBehavior_Access is access all org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package.CollidableWaypointBehavior'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_Ref
    type CollidableWaypointBehavior_Access_Array_Access is access all CollidableWaypointBehavior_Access_Array;
    type CollidableWaypointBehavior_Access_Array_Access_Array is array (Natural range <>) of CollidableWaypointBehavior_Access_Array_Access;
    type CollidableWaypointBehavior_Access_Array_Access_Array_Access is access all CollidableWaypointBehavior_Access_Array_Access_Array;
+   type CollidableWaypointBehavior_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CollidableWaypointBehavior_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CollidableWaypointBehavior_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CollidableWaypointBehavior_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CollidableWaypointBehavior_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CollidableWaypointBehavior_Access_Array_Access is (if Value /= null and then Value.all in CollidableWaypointBehavior_Access_Array_Object'Class then CollidableWaypointBehavior_Access_Array_Object'Class (Value.all).Value else null);
+   type CollidableWaypointBehavior_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CollidableWaypointBehavior_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CollidableWaypointBehavior_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CollidableWaypointBehavior_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CollidableWaypointBehavior_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CollidableWaypointBehavior_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CollidableWaypointBehavior_Access_Array_Access_Array_Object'Class then CollidableWaypointBehavior_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_References;
 
 with org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_References;
@@ -72,10 +83,14 @@ package org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package is
    function "=" (Left, Right : CollidableWaypointBehavior_Access_Array) return Boolean renames org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_References."=";
    subtype CollidableWaypointBehavior_Access_Array_Access is org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_References.CollidableWaypointBehavior_Access_Array_Access;
    function "=" (Left, Right : CollidableWaypointBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_References."=";
+   function Java_Box (Value : CollidableWaypointBehavior_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_References.Java_Box;
+   function Java_Unbox_CollidableWaypointBehavior_Access_Array (Value : access Java_Object'Class) return CollidableWaypointBehavior_Access_Array_Access renames org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_References.Java_Unbox_CollidableWaypointBehavior_Access_Array;
    subtype CollidableWaypointBehavior_Access_Array_Access_Array is org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_References.CollidableWaypointBehavior_Access_Array_Access_Array;
    function "=" (Left, Right : CollidableWaypointBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_References."=";
    subtype CollidableWaypointBehavior_Access_Array_Access_Array_Access is org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_References.CollidableWaypointBehavior_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CollidableWaypointBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_References."=";
+   function Java_Box (Value : CollidableWaypointBehavior_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_References.Java_Box;
+   function Java_Unbox_CollidableWaypointBehavior_Access_Array_Access_Array (Value : access Java_Object'Class) return CollidableWaypointBehavior_Access_Array_Access_Array_Access renames org.allbinary.game.layer.waypoint.CollidableWaypointBehavior_Package_References.Java_Unbox_CollidableWaypointBehavior_Access_Array_Access_Array;
 
    type CollidableWaypointBehavior is new CollidableRTSBehavior with null record;
 

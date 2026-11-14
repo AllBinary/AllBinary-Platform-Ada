@@ -31,7 +31,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.BasicGeographicM
 
    function getInstance return BasicGeographicMapExtractedPathCacheFactory_Access is
    begin
-        return BasicGeographicMapExtractedPathCacheFactory_Access (BasicGeographicMapExtractedPathCacheFactory_Package.instance);
+        return BasicGeographicMapExtractedPathCacheFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out BasicGeographicMapExtractedPathCacheFactory'Class) is

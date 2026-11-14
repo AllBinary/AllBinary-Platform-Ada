@@ -94,7 +94,7 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
       index : Integer;
       araster : Raster_Access;
    begin
-        JPanel_Package.Initialize (This);
+        null;
         Initialize_Fields (This);
         CreateIconImagesJPanel'Class (This).initComponents;
         This.imageProcessorInput := imageProcessorInput;
@@ -217,8 +217,8 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
 );
         layout := GroupLayout_Package.Create (CreateIconImagesJPanel_Access'(This'Unchecked_Access));
         CreateIconImagesJPanel'Class (This).setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.aboveJButton).addGap (0, 335, Short_Integer'Last)));
-        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.aboveJButton).addContainerGap (286, Short_Integer'Last)));
+        layout.setHorizontalGroup (layout.createParallelGroup (GroupLayout_Package.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.aboveJButton).addGap (0, 335, Short_Integer'Last)));
+        layout.setVerticalGroup (layout.createParallelGroup (GroupLayout_Package.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.aboveJButton).addContainerGap (286, Short_Integer'Last)));
    end initComponents;
 
    procedure aboveJButtonActionPerformed (This : in out CreateIconImagesJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is

@@ -37,12 +37,21 @@ with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with views.business.context.modules.storefront.HttpStoreComponentView_Package; use views.business.context.modules.storefront.HttpStoreComponentView_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with views.HttpComponentView_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
@@ -60,6 +69,8 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package TimeUtil_Package renames Standard.org.allbinary.time.TimeUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -183,7 +194,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.TAGHELPERERROR) then
                 This.DateRangeOrderHistoryView_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, DateRangeOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);
@@ -201,7 +212,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
       index : Integer;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Attempt to View orders in (fromDate="));
                 stringBuffer.append (This.fromDate);
@@ -212,7 +223,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
             end if;
             node := document.createElement (OrderData_Package.ORDERS);
             if ((This.preprocessing) /= (Null_Unbounded_String)) and then ((Java_Compare_To (This.preprocessing, This.ON)) = (0)) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                     This.DateRangeOrderHistoryView_Field_logUtil.putF (To_Unbounded_String ("Adding Preprocessing Orders"), DateRangeOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
                 end if;
                 orderHistoryVector := OrderHistoryEntityFactory_Package.getInstance.getOrders (OrderHistoryData_Package.PREPROCESSING, This.fromDate, This.toDate);
@@ -223,7 +234,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                 end loop;
             end if;
             if ((This.shipped) /= (Null_Unbounded_String)) and then ((Java_Compare_To (This.shipped, This.ON)) = (0)) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                     This.DateRangeOrderHistoryView_Field_logUtil.putF (To_Unbounded_String ("Adding Shipped Orders"), DateRangeOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
                 end if;
                 orderHistoryVector := OrderHistoryEntityFactory_Package.getInstance.getOrders (OrderHistoryData_Package.SHIPPED, This.fromDate, This.toDate);
@@ -234,7 +245,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                 end loop;
             end if;
             if ((This.partiallyShipped) /= (Null_Unbounded_String)) and then ((Java_Compare_To (This.partiallyShipped, This.ON)) = (0)) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                     This.DateRangeOrderHistoryView_Field_logUtil.putF (To_Unbounded_String ("Adding Partially Shipped Orders"), DateRangeOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toDomNode"));
                 end if;
                 orderHistoryVector := OrderHistoryEntityFactory_Package.getInstance.getOrders (OrderHistoryData_Package.PARTIALLYSHIPPED, This.fromDate, This.toDate);
@@ -245,7 +256,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                 end loop;
             end if;
             if ((This.processing) /= (Null_Unbounded_String)) and then ((Java_Compare_To (This.processing, This.ON)) = (0)) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                     This.DateRangeOrderHistoryView_Field_logUtil.putF (To_Unbounded_String ("Adding Processing Orders"), DateRangeOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"));
                 end if;
                 orderHistoryVector := OrderHistoryEntityFactory_Package.getInstance.getOrders (OrderHistoryData_Package.PROCESSING, This.fromDate, This.toDate);
@@ -256,7 +267,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                 end loop;
             end if;
             if ((This.cancelled) /= (Null_Unbounded_String)) and then ((Java_Compare_To (This.cancelled, This.ON)) = (0)) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                     This.DateRangeOrderHistoryView_Field_logUtil.putF (To_Unbounded_String ("Adding Cancelled Orders"), DateRangeOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("view"));
                 end if;
                 orderHistoryVector := OrderHistoryEntityFactory_Package.getInstance.getOrders (OrderHistoryData_Package.CANCELLED, This.fromDate, This.toDate);
@@ -278,7 +289,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.XSLLOGGINGERROR) then
                 This.DateRangeOrderHistoryView_Field_logUtil.put (This.commonStrings.FAILURE, DateRangeOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode"), e);
             end if;
             return null;
@@ -342,7 +353,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                     isValid := False;
                 end if;
             end if;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Attempt to View orders in (fromDate="));
                 stringBuffer.append (This.fromDate);
@@ -357,7 +368,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.DateRangeOrderHistoryView_Field_logUtil.put (To_Unbounded_String ("Exception in validation"), DateRangeOrderHistoryView_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
@@ -397,7 +408,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEWERROR) then
                 This.DateRangeOrderHistoryView_Field_logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), DateRangeOrderHistoryView_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");

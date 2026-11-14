@@ -97,7 +97,7 @@ package body org.allbinary.media.image.CanvasExpandUtil_Package is
 
    function getInstance return CanvasExpandUtil_Access is
    begin
-        return CanvasExpandUtil_Access (CanvasExpandUtil_Package.instance);
+        return CanvasExpandUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

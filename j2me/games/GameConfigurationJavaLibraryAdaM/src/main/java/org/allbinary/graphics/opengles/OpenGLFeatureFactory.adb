@@ -61,7 +61,7 @@ package body org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package is
 
    function getInstance return OpenGLFeatureFactory_Access is
    begin
-        return OpenGLFeatureFactory_Access (OpenGLFeatureFactory_Package.instance);
+        return OpenGLFeatureFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out OpenGLFeatureFactory'Class) is

@@ -22,6 +22,7 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.game.input.PCKeyFactory_Package; use org.allbinary.game.input.PCKeyFactory_Package;
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.input.ABKeyEventWrapper_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
@@ -70,6 +71,8 @@ with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with javax.microedition.midlet.MIDlet_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.microemu.device.MutableImage_Package;
+with org.allbinary.game.input.PCGameKey_Package;
+with org.allbinary.game.input.PCKeyFactory_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.microemu.device.ui.PointerEvent_Package;
 with javax.microedition.lcdui.Screen_Package;
@@ -130,7 +133,7 @@ package body org.allbinary.game.input.PlatformFormInputMappingFactory_Package is
 
    function getInstance return PlatformFormInputMappingFactory_Access is
    begin
-        if (PlatformFormInputMappingFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (PlatformFormInputMappingFactory_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             PlatformFormInputMappingFactory_Package.instance := Java_Object_Access (PlatformFormInputMappingFactory_Package.Create);
         end if;
         return PlatformFormInputMappingFactory_Access (PlatformFormInputMappingFactory_Package.instance);

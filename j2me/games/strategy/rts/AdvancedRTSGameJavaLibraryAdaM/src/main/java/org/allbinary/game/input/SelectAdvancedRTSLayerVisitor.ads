@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package;
 package org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References is
    type SelectAdvancedRTSLayerVisitor_Access is access all org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package.SelectAdvancedRTSLayerVisitor'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_Reference
    type SelectAdvancedRTSLayerVisitor_Access_Array_Access is access all SelectAdvancedRTSLayerVisitor_Access_Array;
    type SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array is array (Natural range <>) of SelectAdvancedRTSLayerVisitor_Access_Array_Access;
    type SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access is access all SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array;
+   type SelectAdvancedRTSLayerVisitor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SelectAdvancedRTSLayerVisitor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SelectAdvancedRTSLayerVisitor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SelectAdvancedRTSLayerVisitor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SelectAdvancedRTSLayerVisitor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SelectAdvancedRTSLayerVisitor_Access_Array_Access is (if Value /= null and then Value.all in SelectAdvancedRTSLayerVisitor_Access_Array_Object'Class then SelectAdvancedRTSLayerVisitor_Access_Array_Object'Class (Value.all).Value else null);
+   type SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Object'Class then SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References;
 
 with org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References;
@@ -58,10 +69,14 @@ package org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package is
    function "=" (Left, Right : SelectAdvancedRTSLayerVisitor_Access_Array) return Boolean renames org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References."=";
    subtype SelectAdvancedRTSLayerVisitor_Access_Array_Access is org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References.SelectAdvancedRTSLayerVisitor_Access_Array_Access;
    function "=" (Left, Right : SelectAdvancedRTSLayerVisitor_Access_Array_Access) return Boolean renames org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References."=";
+   function Java_Box (Value : SelectAdvancedRTSLayerVisitor_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References.Java_Box;
+   function Java_Unbox_SelectAdvancedRTSLayerVisitor_Access_Array (Value : access Java_Object'Class) return SelectAdvancedRTSLayerVisitor_Access_Array_Access renames org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References.Java_Unbox_SelectAdvancedRTSLayerVisitor_Access_Array;
    subtype SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array is org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References.SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array;
    function "=" (Left, Right : SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References."=";
    subtype SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access is org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References.SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References."=";
+   function Java_Box (Value : SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References.Java_Box;
+   function Java_Unbox_SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array (Value : access Java_Object'Class) return SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array_Access renames org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package_References.Java_Unbox_SelectAdvancedRTSLayerVisitor_Access_Array_Access_Array;
 
    type SelectAdvancedRTSLayerVisitor is new Visitor_Package.Visitor with record
       selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access;

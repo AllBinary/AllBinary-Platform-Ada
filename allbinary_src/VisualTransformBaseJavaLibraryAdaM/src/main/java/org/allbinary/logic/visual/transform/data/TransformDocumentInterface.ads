@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package;
 package org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References is
    type TransformDocumentInterface_Access is access all org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package.TransformDocumentInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Pac
    type TransformDocumentInterface_Access_Array_Access is access all TransformDocumentInterface_Access_Array;
    type TransformDocumentInterface_Access_Array_Access_Array is array (Natural range <>) of TransformDocumentInterface_Access_Array_Access;
    type TransformDocumentInterface_Access_Array_Access_Array_Access is access all TransformDocumentInterface_Access_Array_Access_Array;
+   type TransformDocumentInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransformDocumentInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransformDocumentInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransformDocumentInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransformDocumentInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransformDocumentInterface_Access_Array_Access is (if Value /= null and then Value.all in TransformDocumentInterface_Access_Array_Object'Class then TransformDocumentInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type TransformDocumentInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransformDocumentInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransformDocumentInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransformDocumentInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransformDocumentInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransformDocumentInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TransformDocumentInterface_Access_Array_Access_Array_Object'Class then TransformDocumentInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References;
 
 with org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Pac
    function "=" (Left, Right : TransformDocumentInterface_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References."=";
    subtype TransformDocumentInterface_Access_Array_Access is org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References.TransformDocumentInterface_Access_Array_Access;
    function "=" (Left, Right : TransformDocumentInterface_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References."=";
+   function Java_Box (Value : TransformDocumentInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References.Java_Box;
+   function Java_Unbox_TransformDocumentInterface_Access_Array (Value : access Java_Object'Class) return TransformDocumentInterface_Access_Array_Access renames org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References.Java_Unbox_TransformDocumentInterface_Access_Array;
    subtype TransformDocumentInterface_Access_Array_Access_Array is org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References.TransformDocumentInterface_Access_Array_Access_Array;
    function "=" (Left, Right : TransformDocumentInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References."=";
    subtype TransformDocumentInterface_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References.TransformDocumentInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TransformDocumentInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References."=";
+   function Java_Box (Value : TransformDocumentInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References.Java_Box;
+   function Java_Unbox_TransformDocumentInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return TransformDocumentInterface_Access_Array_Access_Array_Access renames org.allbinary.logic.visual.transform.data.TransformDocumentInterface_Package_References.Java_Unbox_TransformDocumentInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_TransformDocumentInterface (Value : TransformDocumentInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getBaseNode (This : in out TransformDocumentInterface) return Node_Access is abstract;
    function getDoc (This : in out TransformDocumentInterface) return Document_Access is abstract;

@@ -108,7 +108,7 @@ package body org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Pac
 
    function getInstance return MirrorMotionGestureEventUtil_Access is
    begin
-        return MirrorMotionGestureEventUtil_Access (MirrorMotionGestureEventUtil_Package.instance);
+        return MirrorMotionGestureEventUtil_Package.instance;
    end getInstance;
 
    procedure mirrorVerticle (This : in out MirrorMotionGestureEventUtil; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class; halfWidth : Integer) is

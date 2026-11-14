@@ -134,7 +134,7 @@ package body org.allbinary.game.input.mapping.event.InputMappingEventHandler_Pac
 
    function getInstance return InputMappingEventHandler_Access is
    begin
-        return InputMappingEventHandler_Access (InputMappingEventHandler_Package.gameKeyEventHandler);
+        return InputMappingEventHandler_Package.gameKeyEventHandler;
    end getInstance;
 
    --  throws Exception

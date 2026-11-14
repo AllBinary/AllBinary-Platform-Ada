@@ -26,7 +26,7 @@ package body org.allbinary.logic.visual.transform.template.XslData_Package is
 
    function getInstance return XslData_Access is
    begin
-        return XslData_Access (XslData_Package.instance);
+        return XslData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out XslData'Class) is

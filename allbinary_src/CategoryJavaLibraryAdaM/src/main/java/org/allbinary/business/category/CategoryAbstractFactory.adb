@@ -24,6 +24,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.business.category.CategoryInterface_Package; use org.allbinary.business.category.CategoryInterface_Package;
 with org.allbinary.business.category.CategoryInterface_Package_References;
 with org.allbinary.business.category.Category_Package; use org.allbinary.business.category.Category_Package;
@@ -40,6 +42,8 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
 
    package CategoryPropertiesFactory_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactory_Package;
    package CategoryPropertiesFactoryInterface_Package renames Standard.org.allbinary.business.category.properties.CategoryPropertiesFactoryInterface_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -135,7 +139,7 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
                 This.logUtil.putF (This.commonStrings.START, CategoryAbstractFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(String)"));
             end if;
             categoryPropertiesFactoryInterface := CategoryPropertiesFactoryInterface_Access (CategoryPropertiesFactory_Package.Create (categoryName));
@@ -145,7 +149,7 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, CategoryAbstractFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(String, int)"), e);
             end if;
             return null;
@@ -159,7 +163,7 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
                 This.logUtil.putF (This.commonStrings.START, CategoryAbstractFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface, String)"));
             end if;
             categoryPropertiesFactoryInterface := CategoryPropertiesFactoryInterface_Access (CategoryPropertiesFactory_Package.Create (categoryName));
@@ -169,7 +173,7 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, CategoryAbstractFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface , String, int)"), e);
             end if;
             return null;
@@ -182,7 +186,7 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
                 This.logUtil.putF (This.commonStrings.START, CategoryAbstractFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(Node)"));
             end if;
             categoryPropertiesFactoryInterface := CategoryPropertiesFactoryInterface_Access (CategoryPropertiesFactory_Package.Create (node));
@@ -192,7 +196,7 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, CategoryAbstractFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(Node, int)"), e);
             end if;
             return null;
@@ -207,7 +211,7 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
                 This.logUtil.putF (This.commonStrings.START, CategoryAbstractFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface, Node)"));
             end if;
             categoryPropertiesFactoryInterface := CategoryPropertiesFactoryInterface_Access (CategoryPropertiesFactory_Package.Create (node));
@@ -217,7 +221,7 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.ENTITYFACTORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.ENTITYFACTORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, CategoryAbstractFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface, Node, int)"), e);
             end if;
             return null;
@@ -232,7 +236,7 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
                 This.logUtil.putF (This.commonStrings.START, CategoryAbstractFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface, HashMap)"));
             end if;
             categoryPropertiesFactoryInterface := CategoryPropertiesFactoryInterface_Access (CategoryPropertiesFactory_Package.Create (categoryPropertiesHashMap));
@@ -242,7 +246,7 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORYERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORYERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, CategoryAbstractFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstance(CategoryInterface, CategoryInterface, HashMap)"), e);
             end if;
             return null;

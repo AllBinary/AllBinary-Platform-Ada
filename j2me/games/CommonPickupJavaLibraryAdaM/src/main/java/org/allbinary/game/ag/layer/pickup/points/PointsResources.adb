@@ -41,7 +41,7 @@ package body org.allbinary.game.ag.layer.pickup.points.PointsResources_Package i
 
    function getInstance return PointsResources_Access is
    begin
-        return PointsResources_Access (PointsResources_Package.SINGLETON);
+        return PointsResources_Package.SINGLETON;
    end getInstance;
 
 begin

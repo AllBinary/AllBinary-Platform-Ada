@@ -53,7 +53,7 @@ package body org.platform.ThreedObjResources_Package is
 
    function getInstance return ThreedObjResources_Access is
    begin
-        return ThreedObjResources_Access (ThreedObjResources_Package.instance);
+        return ThreedObjResources_Package.instance;
    end getInstance;
 
    function get (This : in out ThreedObjResources; resourceName : Unbounded_String) return Unbounded_String is

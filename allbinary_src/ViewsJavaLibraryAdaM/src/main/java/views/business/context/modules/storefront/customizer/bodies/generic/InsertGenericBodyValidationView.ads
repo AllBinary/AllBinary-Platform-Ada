@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package;
 package views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package_References is
    type InsertGenericBodyValidationView_Access is access all views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package.InsertGenericBodyValidationView'Class;
@@ -19,6 +20,16 @@ package views.business.context.modules.storefront.customizer.bodies.generic_Id.I
    type InsertGenericBodyValidationView_Access_Array_Access is access all InsertGenericBodyValidationView_Access_Array;
    type InsertGenericBodyValidationView_Access_Array_Access_Array is array (Natural range <>) of InsertGenericBodyValidationView_Access_Array_Access;
    type InsertGenericBodyValidationView_Access_Array_Access_Array_Access is access all InsertGenericBodyValidationView_Access_Array_Access_Array;
+   type InsertGenericBodyValidationView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InsertGenericBodyValidationView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InsertGenericBodyValidationView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InsertGenericBodyValidationView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InsertGenericBodyValidationView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InsertGenericBodyValidationView_Access_Array_Access is (if Value /= null and then Value.all in InsertGenericBodyValidationView_Access_Array_Object'Class then InsertGenericBodyValidationView_Access_Array_Object'Class (Value.all).Value else null);
+   type InsertGenericBodyValidationView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InsertGenericBodyValidationView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InsertGenericBodyValidationView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InsertGenericBodyValidationView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InsertGenericBodyValidationView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InsertGenericBodyValidationView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in InsertGenericBodyValidationView_Access_Array_Access_Array_Object'Class then InsertGenericBodyValidationView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package_References;
 
 with views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package_References;
@@ -99,10 +110,14 @@ package views.business.context.modules.storefront.customizer.bodies.generic_Id.I
    function "=" (Left, Right : InsertGenericBodyValidationView_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package_References."=";
    subtype InsertGenericBodyValidationView_Access_Array_Access is views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package_References.InsertGenericBodyValidationView_Access_Array_Access;
    function "=" (Left, Right : InsertGenericBodyValidationView_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package_References."=";
+   function Java_Box (Value : InsertGenericBodyValidationView_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package_References.Java_Box;
+   function Java_Unbox_InsertGenericBodyValidationView_Access_Array (Value : access Java_Object'Class) return InsertGenericBodyValidationView_Access_Array_Access renames views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package_References.Java_Unbox_InsertGenericBodyValidationView_Access_Array;
    subtype InsertGenericBodyValidationView_Access_Array_Access_Array is views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package_References.InsertGenericBodyValidationView_Access_Array_Access_Array;
    function "=" (Left, Right : InsertGenericBodyValidationView_Access_Array_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package_References."=";
    subtype InsertGenericBodyValidationView_Access_Array_Access_Array_Access is views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package_References.InsertGenericBodyValidationView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InsertGenericBodyValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package_References."=";
+   function Java_Box (Value : InsertGenericBodyValidationView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package_References.Java_Box;
+   function Java_Unbox_InsertGenericBodyValidationView_Access_Array_Access_Array (Value : access Java_Object'Class) return InsertGenericBodyValidationView_Access_Array_Access_Array_Access renames views.business.context.modules.storefront.customizer.bodies.generic_Id.InsertGenericBodyValidationView_Package_References.Java_Unbox_InsertGenericBodyValidationView_Access_Array_Access_Array;
 
    type InsertGenericBodyValidationView is new GenericBodyCustomizerView and ValidationComponentInterface with record
       InsertGenericBodyValidationView_Field_logUtil : LogUtil_Access;

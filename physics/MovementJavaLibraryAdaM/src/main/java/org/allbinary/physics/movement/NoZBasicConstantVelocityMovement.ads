@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package;
 package org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References is
    type NoZBasicConstantVelocityMovement_Access is access all org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package.NoZBasicConstantVelocityMovement'Class;
@@ -19,6 +20,16 @@ package org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_
    type NoZBasicConstantVelocityMovement_Access_Array_Access is access all NoZBasicConstantVelocityMovement_Access_Array;
    type NoZBasicConstantVelocityMovement_Access_Array_Access_Array is array (Natural range <>) of NoZBasicConstantVelocityMovement_Access_Array_Access;
    type NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access is access all NoZBasicConstantVelocityMovement_Access_Array_Access_Array;
+   type NoZBasicConstantVelocityMovement_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NoZBasicConstantVelocityMovement_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NoZBasicConstantVelocityMovement_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NoZBasicConstantVelocityMovement_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NoZBasicConstantVelocityMovement_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NoZBasicConstantVelocityMovement_Access_Array_Access is (if Value /= null and then Value.all in NoZBasicConstantVelocityMovement_Access_Array_Object'Class then NoZBasicConstantVelocityMovement_Access_Array_Object'Class (Value.all).Value else null);
+   type NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NoZBasicConstantVelocityMovement_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Object'Class then NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References;
 
 with org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References;
@@ -112,10 +123,14 @@ package org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package 
    function "=" (Left, Right : NoZBasicConstantVelocityMovement_Access_Array) return Boolean renames org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References."=";
    subtype NoZBasicConstantVelocityMovement_Access_Array_Access is org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References.NoZBasicConstantVelocityMovement_Access_Array_Access;
    function "=" (Left, Right : NoZBasicConstantVelocityMovement_Access_Array_Access) return Boolean renames org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References."=";
+   function Java_Box (Value : NoZBasicConstantVelocityMovement_Access_Array_Access) return Java_Object_Access renames org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References.Java_Box;
+   function Java_Unbox_NoZBasicConstantVelocityMovement_Access_Array (Value : access Java_Object'Class) return NoZBasicConstantVelocityMovement_Access_Array_Access renames org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References.Java_Unbox_NoZBasicConstantVelocityMovement_Access_Array;
    subtype NoZBasicConstantVelocityMovement_Access_Array_Access_Array is org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References.NoZBasicConstantVelocityMovement_Access_Array_Access_Array;
    function "=" (Left, Right : NoZBasicConstantVelocityMovement_Access_Array_Access_Array) return Boolean renames org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References."=";
    subtype NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access is org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References.NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References."=";
+   function Java_Box (Value : NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References.Java_Box;
+   function Java_Unbox_NoZBasicConstantVelocityMovement_Access_Array_Access_Array (Value : access Java_Object'Class) return NoZBasicConstantVelocityMovement_Access_Array_Access_Array_Access renames org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package_References.Java_Unbox_NoZBasicConstantVelocityMovement_Access_Array_Access_Array;
 
    type NoZBasicConstantVelocityMovement is new Movement_Package.Movement and VelocityInterfaceCompositeInterface with record
       velocityProperties : BasicVelocityProperties_Access;

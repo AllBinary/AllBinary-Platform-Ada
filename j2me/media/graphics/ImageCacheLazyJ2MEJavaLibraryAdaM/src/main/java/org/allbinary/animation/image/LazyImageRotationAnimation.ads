@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.image.LazyImageRotationAnimation_Package;
 package org.allbinary.animation.image.LazyImageRotationAnimation_Package_References is
    type LazyImageRotationAnimation_Access is access all org.allbinary.animation.image.LazyImageRotationAnimation_Package.LazyImageRotationAnimation'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.image.LazyImageRotationAnimation_Package_Referen
    type LazyImageRotationAnimation_Access_Array_Access is access all LazyImageRotationAnimation_Access_Array;
    type LazyImageRotationAnimation_Access_Array_Access_Array is array (Natural range <>) of LazyImageRotationAnimation_Access_Array_Access;
    type LazyImageRotationAnimation_Access_Array_Access_Array_Access is access all LazyImageRotationAnimation_Access_Array_Access_Array;
+   type LazyImageRotationAnimation_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LazyImageRotationAnimation_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LazyImageRotationAnimation_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LazyImageRotationAnimation_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LazyImageRotationAnimation_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LazyImageRotationAnimation_Access_Array_Access is (if Value /= null and then Value.all in LazyImageRotationAnimation_Access_Array_Object'Class then LazyImageRotationAnimation_Access_Array_Object'Class (Value.all).Value else null);
+   type LazyImageRotationAnimation_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LazyImageRotationAnimation_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LazyImageRotationAnimation_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LazyImageRotationAnimation_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LazyImageRotationAnimation_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LazyImageRotationAnimation_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in LazyImageRotationAnimation_Access_Array_Access_Array_Object'Class then LazyImageRotationAnimation_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.image.LazyImageRotationAnimation_Package_References;
 
 with org.allbinary.animation.image.LazyImageRotationAnimation_Package_References;
@@ -138,13 +149,17 @@ package org.allbinary.animation.image.LazyImageRotationAnimation_Package is
    function "=" (Left, Right : LazyImageRotationAnimation_Access_Array) return Boolean renames org.allbinary.animation.image.LazyImageRotationAnimation_Package_References."=";
    subtype LazyImageRotationAnimation_Access_Array_Access is org.allbinary.animation.image.LazyImageRotationAnimation_Package_References.LazyImageRotationAnimation_Access_Array_Access;
    function "=" (Left, Right : LazyImageRotationAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.image.LazyImageRotationAnimation_Package_References."=";
+   function Java_Box (Value : LazyImageRotationAnimation_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.image.LazyImageRotationAnimation_Package_References.Java_Box;
+   function Java_Unbox_LazyImageRotationAnimation_Access_Array (Value : access Java_Object'Class) return LazyImageRotationAnimation_Access_Array_Access renames org.allbinary.animation.image.LazyImageRotationAnimation_Package_References.Java_Unbox_LazyImageRotationAnimation_Access_Array;
    subtype LazyImageRotationAnimation_Access_Array_Access_Array is org.allbinary.animation.image.LazyImageRotationAnimation_Package_References.LazyImageRotationAnimation_Access_Array_Access_Array;
    function "=" (Left, Right : LazyImageRotationAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.LazyImageRotationAnimation_Package_References."=";
    subtype LazyImageRotationAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.image.LazyImageRotationAnimation_Package_References.LazyImageRotationAnimation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LazyImageRotationAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.LazyImageRotationAnimation_Package_References."=";
+   function Java_Box (Value : LazyImageRotationAnimation_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.image.LazyImageRotationAnimation_Package_References.Java_Box;
+   function Java_Unbox_LazyImageRotationAnimation_Access_Array_Access_Array (Value : access Java_Object'Class) return LazyImageRotationAnimation_Access_Array_Access_Array_Access renames org.allbinary.animation.image.LazyImageRotationAnimation_Package_References.Java_Unbox_LazyImageRotationAnimation_Access_Array_Access_Array;
 
    type LazyImageRotationAnimation is new RotationAnimation with record
-      logUtil : LogUtil_Access;
+      LazyImageRotationAnimation_Field_logUtil : LogUtil_Access;
       layoutIndex : Integer;
       instanceId : Integer;
       animationInterfaceFactoryInterface : BaseImageAnimationFactory_Access;

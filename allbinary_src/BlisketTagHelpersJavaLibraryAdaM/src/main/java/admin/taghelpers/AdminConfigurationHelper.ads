@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.AdminConfigurationHelper_Package;
 package admin.taghelpers.AdminConfigurationHelper_Package_References is
    type AdminConfigurationHelper_Access is access all admin.taghelpers.AdminConfigurationHelper_Package.AdminConfigurationHelper'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.AdminConfigurationHelper_Package_References is
    type AdminConfigurationHelper_Access_Array_Access is access all AdminConfigurationHelper_Access_Array;
    type AdminConfigurationHelper_Access_Array_Access_Array is array (Natural range <>) of AdminConfigurationHelper_Access_Array_Access;
    type AdminConfigurationHelper_Access_Array_Access_Array_Access is access all AdminConfigurationHelper_Access_Array_Access_Array;
+   type AdminConfigurationHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AdminConfigurationHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AdminConfigurationHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AdminConfigurationHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AdminConfigurationHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AdminConfigurationHelper_Access_Array_Access is (if Value /= null and then Value.all in AdminConfigurationHelper_Access_Array_Object'Class then AdminConfigurationHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type AdminConfigurationHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AdminConfigurationHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AdminConfigurationHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AdminConfigurationHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AdminConfigurationHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AdminConfigurationHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AdminConfigurationHelper_Access_Array_Access_Array_Object'Class then AdminConfigurationHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.AdminConfigurationHelper_Package_References;
 
 with admin.taghelpers.AdminConfigurationHelper_Package_References;
@@ -61,10 +72,14 @@ package admin.taghelpers.AdminConfigurationHelper_Package is
    function "=" (Left, Right : AdminConfigurationHelper_Access_Array) return Boolean renames admin.taghelpers.AdminConfigurationHelper_Package_References."=";
    subtype AdminConfigurationHelper_Access_Array_Access is admin.taghelpers.AdminConfigurationHelper_Package_References.AdminConfigurationHelper_Access_Array_Access;
    function "=" (Left, Right : AdminConfigurationHelper_Access_Array_Access) return Boolean renames admin.taghelpers.AdminConfigurationHelper_Package_References."=";
+   function Java_Box (Value : AdminConfigurationHelper_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.AdminConfigurationHelper_Package_References.Java_Box;
+   function Java_Unbox_AdminConfigurationHelper_Access_Array (Value : access Java_Object'Class) return AdminConfigurationHelper_Access_Array_Access renames admin.taghelpers.AdminConfigurationHelper_Package_References.Java_Unbox_AdminConfigurationHelper_Access_Array;
    subtype AdminConfigurationHelper_Access_Array_Access_Array is admin.taghelpers.AdminConfigurationHelper_Package_References.AdminConfigurationHelper_Access_Array_Access_Array;
    function "=" (Left, Right : AdminConfigurationHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.AdminConfigurationHelper_Package_References."=";
    subtype AdminConfigurationHelper_Access_Array_Access_Array_Access is admin.taghelpers.AdminConfigurationHelper_Package_References.AdminConfigurationHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AdminConfigurationHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.AdminConfigurationHelper_Package_References."=";
+   function Java_Box (Value : AdminConfigurationHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.AdminConfigurationHelper_Package_References.Java_Box;
+   function Java_Unbox_AdminConfigurationHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return AdminConfigurationHelper_Access_Array_Access_Array_Access renames admin.taghelpers.AdminConfigurationHelper_Package_References.Java_Unbox_AdminConfigurationHelper_Access_Array_Access_Array;
 
    type AdminConfigurationHelper is new BasicTable with record
       logUtil : LogUtil_Access;

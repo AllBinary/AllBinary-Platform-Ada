@@ -162,7 +162,7 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
 
    function getNullInstance return InputToGameKeyMapping_Access is
    begin
-        if (InputToGameKeyMapping_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (InputToGameKeyMapping_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             InputToGameKeyMapping_Package.instance := Java_Object_Access (InputToGameKeyMapping_Package.Create);
         end if;
         return InputToGameKeyMapping_Access (InputToGameKeyMapping_Package.instance);

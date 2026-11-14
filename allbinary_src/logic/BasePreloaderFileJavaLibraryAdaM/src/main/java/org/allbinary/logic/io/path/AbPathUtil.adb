@@ -55,7 +55,7 @@ package body org.allbinary.logic.io.path.AbPathUtil_Package is
 
    function getInstance return AbPathUtil_Access is
    begin
-        return AbPathUtil_Access (AbPathUtil_Package.instance);
+        return AbPathUtil_Package.instance;
    end getInstance;
 
 begin

@@ -48,7 +48,7 @@ package body org.allbinary.util.EnumerationUtil_Package is
 
    function getInstance return EnumerationUtil_Access is
    begin
-        return EnumerationUtil_Access (EnumerationUtil_Package.instance);
+        return EnumerationUtil_Package.instance;
    end getInstance;
 
    function hasMoreElements (This : in out EnumerationUtil; enumeration_Param : access Enumeration_Package.Enumeration'Class) return Boolean is

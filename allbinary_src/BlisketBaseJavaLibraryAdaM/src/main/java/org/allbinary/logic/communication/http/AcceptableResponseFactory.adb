@@ -62,7 +62,7 @@ package body org.allbinary.logic.communication.http.AcceptableResponseFactory_Pa
 
    function getInstance return AcceptableResponseFactory_Access is
    begin
-        return AcceptableResponseFactory_Access (AcceptableResponseFactory_Package.instance);
+        return AcceptableResponseFactory_Package.instance;
    end getInstance;
 
 begin

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.admin.inventory.download.DeleteFileValidationView_Package;
 package views.admin.inventory.download.DeleteFileValidationView_Package_References is
    type DeleteFileValidationView_Access is access all views.admin.inventory.download.DeleteFileValidationView_Package.DeleteFileValidationView'Class;
@@ -19,6 +20,16 @@ package views.admin.inventory.download.DeleteFileValidationView_Package_Referenc
    type DeleteFileValidationView_Access_Array_Access is access all DeleteFileValidationView_Access_Array;
    type DeleteFileValidationView_Access_Array_Access_Array is array (Natural range <>) of DeleteFileValidationView_Access_Array_Access;
    type DeleteFileValidationView_Access_Array_Access_Array_Access is access all DeleteFileValidationView_Access_Array_Access_Array;
+   type DeleteFileValidationView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DeleteFileValidationView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DeleteFileValidationView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DeleteFileValidationView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DeleteFileValidationView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DeleteFileValidationView_Access_Array_Access is (if Value /= null and then Value.all in DeleteFileValidationView_Access_Array_Object'Class then DeleteFileValidationView_Access_Array_Object'Class (Value.all).Value else null);
+   type DeleteFileValidationView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DeleteFileValidationView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DeleteFileValidationView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DeleteFileValidationView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DeleteFileValidationView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DeleteFileValidationView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in DeleteFileValidationView_Access_Array_Access_Array_Object'Class then DeleteFileValidationView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.admin.inventory.download.DeleteFileValidationView_Package_References;
 
 with views.admin.inventory.download.DeleteFileValidationView_Package_References;
@@ -86,10 +97,14 @@ package views.admin.inventory.download.DeleteFileValidationView_Package is
    function "=" (Left, Right : DeleteFileValidationView_Access_Array) return Boolean renames views.admin.inventory.download.DeleteFileValidationView_Package_References."=";
    subtype DeleteFileValidationView_Access_Array_Access is views.admin.inventory.download.DeleteFileValidationView_Package_References.DeleteFileValidationView_Access_Array_Access;
    function "=" (Left, Right : DeleteFileValidationView_Access_Array_Access) return Boolean renames views.admin.inventory.download.DeleteFileValidationView_Package_References."=";
+   function Java_Box (Value : DeleteFileValidationView_Access_Array_Access) return Java_Object_Access renames views.admin.inventory.download.DeleteFileValidationView_Package_References.Java_Box;
+   function Java_Unbox_DeleteFileValidationView_Access_Array (Value : access Java_Object'Class) return DeleteFileValidationView_Access_Array_Access renames views.admin.inventory.download.DeleteFileValidationView_Package_References.Java_Unbox_DeleteFileValidationView_Access_Array;
    subtype DeleteFileValidationView_Access_Array_Access_Array is views.admin.inventory.download.DeleteFileValidationView_Package_References.DeleteFileValidationView_Access_Array_Access_Array;
    function "=" (Left, Right : DeleteFileValidationView_Access_Array_Access_Array) return Boolean renames views.admin.inventory.download.DeleteFileValidationView_Package_References."=";
    subtype DeleteFileValidationView_Access_Array_Access_Array_Access is views.admin.inventory.download.DeleteFileValidationView_Package_References.DeleteFileValidationView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : DeleteFileValidationView_Access_Array_Access_Array_Access) return Boolean renames views.admin.inventory.download.DeleteFileValidationView_Package_References."=";
+   function Java_Box (Value : DeleteFileValidationView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.admin.inventory.download.DeleteFileValidationView_Package_References.Java_Box;
+   function Java_Unbox_DeleteFileValidationView_Access_Array_Access_Array (Value : access Java_Object'Class) return DeleteFileValidationView_Access_Array_Access_Array_Access renames views.admin.inventory.download.DeleteFileValidationView_Package_References.Java_Unbox_DeleteFileValidationView_Access_Array_Access_Array;
 
    type DeleteFileValidationView is new DownloadableInventoryItemView and ValidationComponentInterface with record
       downloadItemId : Unbounded_String;

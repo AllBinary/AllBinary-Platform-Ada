@@ -27,6 +27,7 @@ with org.allbinary.game.configuration.event.GameInitializedEvent_Package_Referen
 with org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package; use org.allbinary.game.configuration.event.GameInitializedListenerInterface_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package_References;
+with org.allbinary.game.resource.ResourceLoadingLevel_Package;
 
 package body org.allbinary.android.activity.MidletActivityBase_Package is
 

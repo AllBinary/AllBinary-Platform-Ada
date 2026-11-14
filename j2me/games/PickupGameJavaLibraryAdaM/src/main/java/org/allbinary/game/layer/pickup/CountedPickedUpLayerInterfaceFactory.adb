@@ -28,20 +28,38 @@ with org.allbinary.game.layer.pickup.IconLayer_Package_References;
 with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Package; use org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package; use org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package_References;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactoryPool_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.graphics.GPoint_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.game.identification.Group_Package;
 with org.allbinary.game.layer.pickup.IconLayer_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.layer.Layer_Package;
+with org.allbinary.layer.LayerInterfaceFactoryInterface_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryBase_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
+with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package;
 
 package body org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package is
 

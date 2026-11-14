@@ -55,7 +55,7 @@ package body org.allbinary.graphics.color.ColorChangeEventHandler_Package is
 
    function getInstance return ColorChangeEventHandler_Access is
    begin
-        return ColorChangeEventHandler_Access (ColorChangeEventHandler_Package.eventHandler);
+        return ColorChangeEventHandler_Package.eventHandler;
    end getInstance;
 
 begin

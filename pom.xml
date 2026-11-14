@@ -30,6 +30,8 @@
 
     <modules>
 
+        <!--
+        -->
         <module>../working_thirdpartyada/embedded/j2me/microemulator/2_0_4/microemu-cldcAda</module>
         <module>../working_thirdpartyada/embedded/j2me/microemulator/2_0_4/microemu-midpAda</module>
         <module>../working_thirdpartyada/embedded/j2me/microemulator/2_0_4/microemu-extensions/microemu-jsr-135Ada</module>
@@ -39,6 +41,7 @@
         <module>./j2me/AllBinaryBaseLibraryPOAdaM</module>
         <module>./j2me/AllBinaryJ2MELibraryAdaP</module>
         <module>./AllBinaryPersistenceLibraryAdaP</module>
+
 <!--
         <module>./automation/InputAutomationToolsAdaP</module>
 -->

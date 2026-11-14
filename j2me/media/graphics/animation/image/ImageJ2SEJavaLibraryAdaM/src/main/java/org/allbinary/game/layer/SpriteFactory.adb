@@ -84,7 +84,7 @@ package body org.allbinary.game.layer.SpriteFactory_Package is
 
    function getInstance return SpriteFactory_Access is
    begin
-        return SpriteFactory_Access (SpriteFactory_Package.instance);
+        return SpriteFactory_Package.instance;
    end getInstance;
 
    function createSprite (This : in out SpriteFactory; image_Param : access Image_Package.Image'Class; frameWidth : Integer; frameHeight : Integer) return Sprite_Access is

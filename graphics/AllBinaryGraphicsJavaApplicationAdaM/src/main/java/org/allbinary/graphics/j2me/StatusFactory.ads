@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.j2me.StatusFactory_Package;
 package org.allbinary.graphics.j2me.StatusFactory_Package_References is
    type StatusFactory_Access is access all org.allbinary.graphics.j2me.StatusFactory_Package.StatusFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.j2me.StatusFactory_Package_References is
    type StatusFactory_Access_Array_Access is access all StatusFactory_Access_Array;
    type StatusFactory_Access_Array_Access_Array is array (Natural range <>) of StatusFactory_Access_Array_Access;
    type StatusFactory_Access_Array_Access_Array_Access is access all StatusFactory_Access_Array_Access_Array;
+   type StatusFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StatusFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StatusFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StatusFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StatusFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StatusFactory_Access_Array_Access is (if Value /= null and then Value.all in StatusFactory_Access_Array_Object'Class then StatusFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type StatusFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StatusFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StatusFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StatusFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StatusFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StatusFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StatusFactory_Access_Array_Access_Array_Object'Class then StatusFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.j2me.StatusFactory_Package_References;
 
 with org.allbinary.graphics.j2me.StatusFactory_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.graphics.j2me.StatusFactory_Package is
    function "=" (Left, Right : StatusFactory_Access_Array) return Boolean renames org.allbinary.graphics.j2me.StatusFactory_Package_References."=";
    subtype StatusFactory_Access_Array_Access is org.allbinary.graphics.j2me.StatusFactory_Package_References.StatusFactory_Access_Array_Access;
    function "=" (Left, Right : StatusFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.StatusFactory_Package_References."=";
+   function Java_Box (Value : StatusFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.j2me.StatusFactory_Package_References.Java_Box;
+   function Java_Unbox_StatusFactory_Access_Array (Value : access Java_Object'Class) return StatusFactory_Access_Array_Access renames org.allbinary.graphics.j2me.StatusFactory_Package_References.Java_Unbox_StatusFactory_Access_Array;
    subtype StatusFactory_Access_Array_Access_Array is org.allbinary.graphics.j2me.StatusFactory_Package_References.StatusFactory_Access_Array_Access_Array;
    function "=" (Left, Right : StatusFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.StatusFactory_Package_References."=";
    subtype StatusFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.StatusFactory_Package_References.StatusFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StatusFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.StatusFactory_Package_References."=";
+   function Java_Box (Value : StatusFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.j2me.StatusFactory_Package_References.Java_Box;
+   function Java_Unbox_StatusFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return StatusFactory_Access_Array_Access_Array_Access renames org.allbinary.graphics.j2me.StatusFactory_Package_References.Java_Unbox_StatusFactory_Access_Array_Access_Array;
 
    type StatusFactory is new Java_Object with record
       logUtil : LogUtil_Access;

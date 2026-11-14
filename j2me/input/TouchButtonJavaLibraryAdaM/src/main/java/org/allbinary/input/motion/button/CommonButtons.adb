@@ -109,7 +109,7 @@ package body org.allbinary.input.motion.button.CommonButtons_Package is
 
    function getInstance return CommonButtons_Access is
    begin
-        return CommonButtons_Access (CommonButtons_Package.instance);
+        return CommonButtons_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out CommonButtons'Class) is

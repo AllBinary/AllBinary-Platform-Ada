@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.generic_Id.address.StatesView_Package;
 package views.generic_Id.address.StatesView_Package_References is
    type StatesView_Access is access all views.generic_Id.address.StatesView_Package.StatesView'Class;
@@ -19,6 +20,16 @@ package views.generic_Id.address.StatesView_Package_References is
    type StatesView_Access_Array_Access is access all StatesView_Access_Array;
    type StatesView_Access_Array_Access_Array is array (Natural range <>) of StatesView_Access_Array_Access;
    type StatesView_Access_Array_Access_Array_Access is access all StatesView_Access_Array_Access_Array;
+   type StatesView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StatesView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StatesView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StatesView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StatesView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StatesView_Access_Array_Access is (if Value /= null and then Value.all in StatesView_Access_Array_Object'Class then StatesView_Access_Array_Object'Class (Value.all).Value else null);
+   type StatesView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StatesView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StatesView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StatesView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StatesView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StatesView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StatesView_Access_Array_Access_Array_Object'Class then StatesView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.generic_Id.address.StatesView_Package_References;
 
 with views.generic_Id.address.StatesView_Package_References;
@@ -98,10 +109,14 @@ package views.generic_Id.address.StatesView_Package is
    function "=" (Left, Right : StatesView_Access_Array) return Boolean renames views.generic_Id.address.StatesView_Package_References."=";
    subtype StatesView_Access_Array_Access is views.generic_Id.address.StatesView_Package_References.StatesView_Access_Array_Access;
    function "=" (Left, Right : StatesView_Access_Array_Access) return Boolean renames views.generic_Id.address.StatesView_Package_References."=";
+   function Java_Box (Value : StatesView_Access_Array_Access) return Java_Object_Access renames views.generic_Id.address.StatesView_Package_References.Java_Box;
+   function Java_Unbox_StatesView_Access_Array (Value : access Java_Object'Class) return StatesView_Access_Array_Access renames views.generic_Id.address.StatesView_Package_References.Java_Unbox_StatesView_Access_Array;
    subtype StatesView_Access_Array_Access_Array is views.generic_Id.address.StatesView_Package_References.StatesView_Access_Array_Access_Array;
    function "=" (Left, Right : StatesView_Access_Array_Access_Array) return Boolean renames views.generic_Id.address.StatesView_Package_References."=";
    subtype StatesView_Access_Array_Access_Array_Access is views.generic_Id.address.StatesView_Package_References.StatesView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StatesView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.address.StatesView_Package_References."=";
+   function Java_Box (Value : StatesView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.generic_Id.address.StatesView_Package_References.Java_Box;
+   function Java_Unbox_StatesView_Access_Array_Access_Array (Value : access Java_Object'Class) return StatesView_Access_Array_Access_Array_Access renames views.generic_Id.address.StatesView_Package_References.Java_Unbox_StatesView_Access_Array_Access_Array;
 
    type StatesView is new Java_Object and DomNodeInterface with record
       logUtil : LogUtil_Access;

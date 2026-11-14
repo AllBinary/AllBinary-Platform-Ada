@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.android.NullParcelable_Package;
 package org.allbinary.android.NullParcelable_Package_References is
    type NullParcelable_Access is access all org.allbinary.android.NullParcelable_Package.NullParcelable'Class;
@@ -19,6 +20,16 @@ package org.allbinary.android.NullParcelable_Package_References is
    type NullParcelable_Access_Array_Access is access all NullParcelable_Access_Array;
    type NullParcelable_Access_Array_Access_Array is array (Natural range <>) of NullParcelable_Access_Array_Access;
    type NullParcelable_Access_Array_Access_Array_Access is access all NullParcelable_Access_Array_Access_Array;
+   type NullParcelable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NullParcelable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NullParcelable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NullParcelable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NullParcelable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NullParcelable_Access_Array_Access is (if Value /= null and then Value.all in NullParcelable_Access_Array_Object'Class then NullParcelable_Access_Array_Object'Class (Value.all).Value else null);
+   type NullParcelable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NullParcelable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NullParcelable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NullParcelable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NullParcelable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NullParcelable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NullParcelable_Access_Array_Access_Array_Object'Class then NullParcelable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.android.NullParcelable_Package_References;
 
 with org.allbinary.android.NullParcelable_Package_References;
@@ -59,10 +70,14 @@ package org.allbinary.android.NullParcelable_Package is
    function "=" (Left, Right : NullParcelable_Access_Array) return Boolean renames org.allbinary.android.NullParcelable_Package_References."=";
    subtype NullParcelable_Access_Array_Access is org.allbinary.android.NullParcelable_Package_References.NullParcelable_Access_Array_Access;
    function "=" (Left, Right : NullParcelable_Access_Array_Access) return Boolean renames org.allbinary.android.NullParcelable_Package_References."=";
+   function Java_Box (Value : NullParcelable_Access_Array_Access) return Java_Object_Access renames org.allbinary.android.NullParcelable_Package_References.Java_Box;
+   function Java_Unbox_NullParcelable_Access_Array (Value : access Java_Object'Class) return NullParcelable_Access_Array_Access renames org.allbinary.android.NullParcelable_Package_References.Java_Unbox_NullParcelable_Access_Array;
    subtype NullParcelable_Access_Array_Access_Array is org.allbinary.android.NullParcelable_Package_References.NullParcelable_Access_Array_Access_Array;
    function "=" (Left, Right : NullParcelable_Access_Array_Access_Array) return Boolean renames org.allbinary.android.NullParcelable_Package_References."=";
    subtype NullParcelable_Access_Array_Access_Array_Access is org.allbinary.android.NullParcelable_Package_References.NullParcelable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NullParcelable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.NullParcelable_Package_References."=";
+   function Java_Box (Value : NullParcelable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.android.NullParcelable_Package_References.Java_Box;
+   function Java_Unbox_NullParcelable_Access_Array_Access_Array (Value : access Java_Object'Class) return NullParcelable_Access_Array_Access_Array_Access renames org.allbinary.android.NullParcelable_Package_References.Java_Unbox_NullParcelable_Access_Array_Access_Array;
 
    type NullParcelable is new Java_Object and Parcelable with null record;
    NULL_PARCELABLE : NullParcelable_Access;

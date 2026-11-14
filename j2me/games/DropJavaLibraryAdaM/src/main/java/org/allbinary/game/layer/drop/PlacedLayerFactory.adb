@@ -94,7 +94,7 @@ package body org.allbinary.game.layer.drop.PlacedLayerFactory_Package is
 
    function getInstance return PlacedLayerFactory_Access is
    begin
-        return PlacedLayerFactory_Access (PlacedLayerFactory_Package.instance);
+        return PlacedLayerFactory_Package.instance;
    end getInstance;
 
    function getSize (This : in out PlacedLayerFactory) return Integer is

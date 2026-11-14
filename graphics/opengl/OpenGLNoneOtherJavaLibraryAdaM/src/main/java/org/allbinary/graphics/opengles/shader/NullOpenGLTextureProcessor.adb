@@ -51,7 +51,7 @@ package body org.allbinary.graphics.opengles.shader.NullOpenGLTextureProcessor_P
 
    function getInstance return OpenGLObject3dProcessor_Access is
    begin
-        return OpenGLObject3dProcessor_Access (NullOpenGLTextureProcessor_Package.instance);
+        return NullOpenGLTextureProcessor_Package.instance;
    end getInstance;
 
 begin

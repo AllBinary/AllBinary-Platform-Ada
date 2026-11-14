@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.business.context.RootContextView_Package;
 package views.business.context.RootContextView_Package_References is
    type RootContextView_Access is access all views.business.context.RootContextView_Package.RootContextView'Class;
@@ -19,6 +20,16 @@ package views.business.context.RootContextView_Package_References is
    type RootContextView_Access_Array_Access is access all RootContextView_Access_Array;
    type RootContextView_Access_Array_Access_Array is array (Natural range <>) of RootContextView_Access_Array_Access;
    type RootContextView_Access_Array_Access_Array_Access is access all RootContextView_Access_Array_Access_Array;
+   type RootContextView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RootContextView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RootContextView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RootContextView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RootContextView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RootContextView_Access_Array_Access is (if Value /= null and then Value.all in RootContextView_Access_Array_Object'Class then RootContextView_Access_Array_Object'Class (Value.all).Value else null);
+   type RootContextView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RootContextView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RootContextView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RootContextView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RootContextView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RootContextView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in RootContextView_Access_Array_Access_Array_Object'Class then RootContextView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.business.context.RootContextView_Package_References;
 
 with views.business.context.RootContextView_Package_References;
@@ -74,10 +85,14 @@ package views.business.context.RootContextView_Package is
    function "=" (Left, Right : RootContextView_Access_Array) return Boolean renames views.business.context.RootContextView_Package_References."=";
    subtype RootContextView_Access_Array_Access is views.business.context.RootContextView_Package_References.RootContextView_Access_Array_Access;
    function "=" (Left, Right : RootContextView_Access_Array_Access) return Boolean renames views.business.context.RootContextView_Package_References."=";
+   function Java_Box (Value : RootContextView_Access_Array_Access) return Java_Object_Access renames views.business.context.RootContextView_Package_References.Java_Box;
+   function Java_Unbox_RootContextView_Access_Array (Value : access Java_Object'Class) return RootContextView_Access_Array_Access renames views.business.context.RootContextView_Package_References.Java_Unbox_RootContextView_Access_Array;
    subtype RootContextView_Access_Array_Access_Array is views.business.context.RootContextView_Package_References.RootContextView_Access_Array_Access_Array;
    function "=" (Left, Right : RootContextView_Access_Array_Access_Array) return Boolean renames views.business.context.RootContextView_Package_References."=";
    subtype RootContextView_Access_Array_Access_Array_Access is views.business.context.RootContextView_Package_References.RootContextView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : RootContextView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.RootContextView_Package_References."=";
+   function Java_Box (Value : RootContextView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.business.context.RootContextView_Package_References.Java_Box;
+   function Java_Unbox_RootContextView_Access_Array_Access_Array (Value : access Java_Object'Class) return RootContextView_Access_Array_Access_Array_Access renames views.business.context.RootContextView_Package_References.Java_Unbox_RootContextView_Access_Array_Access_Array;
 
    type RootContextView is new HttpStoreComponentView and TransformTemplateInterface with record
       RootContextView_Field_logUtil : LogUtil_Access;

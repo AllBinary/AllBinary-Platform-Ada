@@ -56,7 +56,7 @@ package body org.allbinary.graphics.paint.StatePaintableFactory_Package is
 
    function getInstance return StatePaintable_Access is
    begin
-        return StatePaintable_Access (StatePaintableFactory_Package.instance);
+        return StatePaintableFactory_Package.instance;
    end getInstance;
 
 begin

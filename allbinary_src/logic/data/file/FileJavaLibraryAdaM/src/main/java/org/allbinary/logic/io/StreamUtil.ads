@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.io.StreamUtil_Package;
 package org.allbinary.logic.io.StreamUtil_Package_References is
    type StreamUtil_Access is access all org.allbinary.logic.io.StreamUtil_Package.StreamUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.io.StreamUtil_Package_References is
    type StreamUtil_Access_Array_Access is access all StreamUtil_Access_Array;
    type StreamUtil_Access_Array_Access_Array is array (Natural range <>) of StreamUtil_Access_Array_Access;
    type StreamUtil_Access_Array_Access_Array_Access is access all StreamUtil_Access_Array_Access_Array;
+   type StreamUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StreamUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StreamUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StreamUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StreamUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StreamUtil_Access_Array_Access is (if Value /= null and then Value.all in StreamUtil_Access_Array_Object'Class then StreamUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type StreamUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StreamUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StreamUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StreamUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StreamUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StreamUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StreamUtil_Access_Array_Access_Array_Object'Class then StreamUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.io.StreamUtil_Package_References;
 
 with org.allbinary.logic.io.StreamUtil_Package_References;
@@ -65,10 +76,14 @@ package org.allbinary.logic.io.StreamUtil_Package is
    function "=" (Left, Right : StreamUtil_Access_Array) return Boolean renames org.allbinary.logic.io.StreamUtil_Package_References."=";
    subtype StreamUtil_Access_Array_Access is org.allbinary.logic.io.StreamUtil_Package_References.StreamUtil_Access_Array_Access;
    function "=" (Left, Right : StreamUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.io.StreamUtil_Package_References."=";
+   function Java_Box (Value : StreamUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.io.StreamUtil_Package_References.Java_Box;
+   function Java_Unbox_StreamUtil_Access_Array (Value : access Java_Object'Class) return StreamUtil_Access_Array_Access renames org.allbinary.logic.io.StreamUtil_Package_References.Java_Unbox_StreamUtil_Access_Array;
    subtype StreamUtil_Access_Array_Access_Array is org.allbinary.logic.io.StreamUtil_Package_References.StreamUtil_Access_Array_Access_Array;
    function "=" (Left, Right : StreamUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.StreamUtil_Package_References."=";
    subtype StreamUtil_Access_Array_Access_Array_Access is org.allbinary.logic.io.StreamUtil_Package_References.StreamUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StreamUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.StreamUtil_Package_References."=";
+   function Java_Box (Value : StreamUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.io.StreamUtil_Package_References.Java_Box;
+   function Java_Unbox_StreamUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return StreamUtil_Access_Array_Access_Array_Access renames org.allbinary.logic.io.StreamUtil_Package_References.Java_Unbox_StreamUtil_Access_Array_Access_Array;
 
    type StreamUtil is new Java_Object with record
       logUtil : LogUtil_Access;

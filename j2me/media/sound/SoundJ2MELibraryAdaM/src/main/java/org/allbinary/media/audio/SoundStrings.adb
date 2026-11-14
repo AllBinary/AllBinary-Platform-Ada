@@ -42,7 +42,7 @@ package body org.allbinary.media.audio.SoundStrings_Package is
 
    function getInstance return SoundStrings_Access is
    begin
-        return SoundStrings_Access (SoundStrings_Package.instance);
+        return SoundStrings_Package.instance;
    end getInstance;
 
 begin

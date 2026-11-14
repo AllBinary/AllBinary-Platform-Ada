@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package;
 package org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_References is
    type CompleteMotionGestureInputEventHandler_Access is access all org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package.CompleteMotionGestureInputEventHandler'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_
    type CompleteMotionGestureInputEventHandler_Access_Array_Access is access all CompleteMotionGestureInputEventHandler_Access_Array;
    type CompleteMotionGestureInputEventHandler_Access_Array_Access_Array is array (Natural range <>) of CompleteMotionGestureInputEventHandler_Access_Array_Access;
    type CompleteMotionGestureInputEventHandler_Access_Array_Access_Array_Access is access all CompleteMotionGestureInputEventHandler_Access_Array_Access_Array;
+   type CompleteMotionGestureInputEventHandler_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CompleteMotionGestureInputEventHandler_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CompleteMotionGestureInputEventHandler_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CompleteMotionGestureInputEventHandler_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CompleteMotionGestureInputEventHandler_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CompleteMotionGestureInputEventHandler_Access_Array_Access is (if Value /= null and then Value.all in CompleteMotionGestureInputEventHandler_Access_Array_Object'Class then CompleteMotionGestureInputEventHandler_Access_Array_Object'Class (Value.all).Value else null);
+   type CompleteMotionGestureInputEventHandler_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CompleteMotionGestureInputEventHandler_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CompleteMotionGestureInputEventHandler_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CompleteMotionGestureInputEventHandler_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CompleteMotionGestureInputEventHandler_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CompleteMotionGestureInputEventHandler_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CompleteMotionGestureInputEventHandler_Access_Array_Access_Array_Object'Class then CompleteMotionGestureInputEventHandler_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_References;
 
 with org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_References;
@@ -97,10 +108,14 @@ package org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package 
    function "=" (Left, Right : CompleteMotionGestureInputEventHandler_Access_Array) return Boolean renames org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_References."=";
    subtype CompleteMotionGestureInputEventHandler_Access_Array_Access is org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_References.CompleteMotionGestureInputEventHandler_Access_Array_Access;
    function "=" (Left, Right : CompleteMotionGestureInputEventHandler_Access_Array_Access) return Boolean renames org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_References."=";
+   function Java_Box (Value : CompleteMotionGestureInputEventHandler_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_References.Java_Box;
+   function Java_Unbox_CompleteMotionGestureInputEventHandler_Access_Array (Value : access Java_Object'Class) return CompleteMotionGestureInputEventHandler_Access_Array_Access renames org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_References.Java_Unbox_CompleteMotionGestureInputEventHandler_Access_Array;
    subtype CompleteMotionGestureInputEventHandler_Access_Array_Access_Array is org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_References.CompleteMotionGestureInputEventHandler_Access_Array_Access_Array;
    function "=" (Left, Right : CompleteMotionGestureInputEventHandler_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_References."=";
    subtype CompleteMotionGestureInputEventHandler_Access_Array_Access_Array_Access is org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_References.CompleteMotionGestureInputEventHandler_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CompleteMotionGestureInputEventHandler_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_References."=";
+   function Java_Box (Value : CompleteMotionGestureInputEventHandler_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_References.Java_Box;
+   function Java_Unbox_CompleteMotionGestureInputEventHandler_Access_Array_Access_Array (Value : access Java_Object'Class) return CompleteMotionGestureInputEventHandler_Access_Array_Access_Array_Access renames org.allbinary.game.input.CompleteMotionGestureInputEventHandler_Package_References.Java_Unbox_CompleteMotionGestureInputEventHandler_Access_Array_Access_Array;
 
    type CompleteMotionGestureInputEventHandler is new BasicEventHandler with record
       list : BasicArrayList_Access;

@@ -86,7 +86,7 @@ package body org.allbinary.logic.system.security.crypt.jcehelper.KeySpecFactory_
 
    function getInstance return KeySpecFactory_Access is
    begin
-        return KeySpecFactory_Access (KeySpecFactory_Package.instance);
+        return KeySpecFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out KeySpecFactory'Class) is

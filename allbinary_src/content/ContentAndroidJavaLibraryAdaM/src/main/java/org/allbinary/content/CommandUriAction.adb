@@ -150,7 +150,7 @@ package body org.allbinary.content.CommandUriAction_Package is
 
    function getInstance return CommandUriAction_Access is
    begin
-        return CommandUriAction_Access (CommandUriAction_Package.instance);
+        return CommandUriAction_Package.instance;
    end getInstance;
 
    procedure add (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class; url : Unbounded_String) is

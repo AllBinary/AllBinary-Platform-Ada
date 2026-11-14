@@ -98,7 +98,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    begin
       Initialize_Fields (This);
         childNodeList := node.getChildNodes;
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         name := DomNodeHelper_Package.getTextNodeValue (UserEmailEventConfigurationData_Package.NAME, childNodeList);
         hashMap.put (UserEmailEventConfigurationData_Package.NAME, Java_Box (name));
         eventListenerClassPath := DomNodeHelper_Package.getTextNodeValue (UserEmailEventConfigurationData_Package.LISTENER_CLASSPATH, childNodeList);

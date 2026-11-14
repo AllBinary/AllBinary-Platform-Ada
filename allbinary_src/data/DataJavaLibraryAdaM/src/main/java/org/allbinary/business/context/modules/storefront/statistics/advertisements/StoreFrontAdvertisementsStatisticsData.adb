@@ -25,7 +25,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.advert
 
    function getInstance return StoreFrontAdvertisementsStatisticsData_Access is
    begin
-        return StoreFrontAdvertisementsStatisticsData_Access (StoreFrontAdvertisementsStatisticsData_Package.instance);
+        return StoreFrontAdvertisementsStatisticsData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out StoreFrontAdvertisementsStatisticsData'Class) is

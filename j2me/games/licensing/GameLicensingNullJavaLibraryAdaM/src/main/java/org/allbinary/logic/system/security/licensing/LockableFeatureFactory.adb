@@ -54,7 +54,7 @@ package body org.allbinary.logic.system.security.licensing.LockableFeatureFactor
 
    function getInstance return LockableFeatureFactory_Access is
    begin
-        return LockableFeatureFactory_Access (LockableFeatureFactory_Package.instance);
+        return LockableFeatureFactory_Package.instance;
    end getInstance;
 
    function getList (This : in out LockableFeatureFactory) return BasicArrayList_Access is

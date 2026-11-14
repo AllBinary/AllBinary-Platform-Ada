@@ -18,6 +18,7 @@ with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.media.image.ImageRotationUtil_Package; use org.allbinary.media.image.ImageRotationUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.media.image.ImageRotationUtil_Package;
 
 package body org.allbinary.media.image.ImageToRotationImageArrayUtil_Package is
 
@@ -39,7 +40,7 @@ package body org.allbinary.media.image.ImageToRotationImageArrayUtil_Package is
 
    function getInstance return ImageToRotationImageArrayUtil_Access is
    begin
-        return ImageToRotationImageArrayUtil_Access (ImageToRotationImageArrayUtil_Package.instance);
+        return ImageToRotationImageArrayUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageToRotationImageArrayUtil'Class) is

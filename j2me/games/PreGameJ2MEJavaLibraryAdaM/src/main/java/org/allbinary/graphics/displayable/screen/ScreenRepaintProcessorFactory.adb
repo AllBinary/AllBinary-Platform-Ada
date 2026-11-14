@@ -25,7 +25,6 @@ with org.microemu.device.ui.AlertUI_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with javax.microedition.lcdui.Canvas_Package;
 with org.microemu.device.ui.CanvasUI_Package;
-with javax.microedition.lcdui.Choice_Package;
 with javax.microedition.lcdui.ChoiceGroup_Package;
 with javax.microedition.lcdui.ChoiceItem_Package;
 with javax.microedition.lcdui.Command_Package;
@@ -34,7 +33,6 @@ with org.microemu.device.ui.CommandUI_Package;
 with org.microemu.device.Device_Package;
 with org.microemu.device.DeviceDisplay_Package;
 with javax.microedition.lcdui.Display_Package;
-with org.microemu.DisplayAccess_Package;
 with javax.microedition.lcdui.DisplayAccessor_Package;
 with org.microemu.device.ui.DisplayableUI_Package;
 with javax.microedition.lcdui.Event_Package;
@@ -56,7 +54,6 @@ with javax.microedition.lcdui.ItemStateListener_Package;
 with javax.microedition.lcdui.List_Package;
 with org.microemu.device.ui.ListUI_Package;
 with javax.microedition.midlet.MIDlet_Package;
-with org.microemu.MIDletAccess_Package;
 with org.microemu.device.MutableImage_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.microemu.device.ui.PointerEvent_Package;
@@ -102,7 +99,7 @@ package body org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFac
 
    function getInstance return ScreenRepaintProcessorFactory_Access is
    begin
-        return ScreenRepaintProcessorFactory_Access (ScreenRepaintProcessorFactory_Package.instance);
+        return ScreenRepaintProcessorFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ScreenRepaintProcessorFactory'Class) is

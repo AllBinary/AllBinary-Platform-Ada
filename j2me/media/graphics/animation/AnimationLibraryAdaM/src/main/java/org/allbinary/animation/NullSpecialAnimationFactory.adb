@@ -90,7 +90,7 @@ package body org.allbinary.animation.NullSpecialAnimationFactory_Package is
 
    function getFactoryInstance return NullSpecialAnimationFactory_Access is
    begin
-        return NullSpecialAnimationFactory_Access (NullSpecialAnimationFactory_Package.NULL_SPECIAL_ANIMATION_FACTORY);
+        return NullSpecialAnimationFactory_Package.NULL_SPECIAL_ANIMATION_FACTORY;
    end getFactoryInstance;
 
    --  throws Exception

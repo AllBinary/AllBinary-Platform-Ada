@@ -33,6 +33,7 @@ with org.allbinary.animation.AnimationBehavior_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
@@ -52,6 +53,7 @@ with org.allbinary.graphics.pipeline.RandomRotationFactory_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.animation.VectorAnimation_Package;
 with org.allbinary.animation.VectorAnimationFactoryInterface_Package;
 with org.allbinary.animation.VectorAnimationUtil_Package;
 with org.allbinary.animation.VectorExplosionGenerator_Package;
@@ -160,7 +162,7 @@ package body org.allbinary.animation.IndependentVectorExplosionRotationAnimation
             frame := rotationAnimationInterface.getFrame;
         end if;
         points := This.vectorExplosionGenerator.getInstance (This.framePoints (frame), 6, This.vectorExplosionGenerator.ROTATION);
-        return This.vectorAnimationFactoryInterface.getInstance (points, This.basicColor);
+        return Animation_Access (This.vectorAnimationFactoryInterface.getInstance (points, This.basicColor));
    end getInstanceAnimation;
 
    procedure getInstanceAnimation (This : in out IndependentVectorExplosionRotationAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) is

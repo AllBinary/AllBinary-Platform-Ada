@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package;
 package views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References is
    type NewMetaValidationView_Access is access all views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package.NewMetaValidationView'Class;
@@ -19,6 +20,16 @@ package views.business.context.modules.storefront.customizer.includes.meta.NewMe
    type NewMetaValidationView_Access_Array_Access is access all NewMetaValidationView_Access_Array;
    type NewMetaValidationView_Access_Array_Access_Array is array (Natural range <>) of NewMetaValidationView_Access_Array_Access;
    type NewMetaValidationView_Access_Array_Access_Array_Access is access all NewMetaValidationView_Access_Array_Access_Array;
+   type NewMetaValidationView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NewMetaValidationView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NewMetaValidationView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NewMetaValidationView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NewMetaValidationView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NewMetaValidationView_Access_Array_Access is (if Value /= null and then Value.all in NewMetaValidationView_Access_Array_Object'Class then NewMetaValidationView_Access_Array_Object'Class (Value.all).Value else null);
+   type NewMetaValidationView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NewMetaValidationView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NewMetaValidationView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NewMetaValidationView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NewMetaValidationView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NewMetaValidationView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NewMetaValidationView_Access_Array_Access_Array_Object'Class then NewMetaValidationView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References;
 
 with views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References;
@@ -99,10 +110,14 @@ package views.business.context.modules.storefront.customizer.includes.meta.NewMe
    function "=" (Left, Right : NewMetaValidationView_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References."=";
    subtype NewMetaValidationView_Access_Array_Access is views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References.NewMetaValidationView_Access_Array_Access;
    function "=" (Left, Right : NewMetaValidationView_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References."=";
+   function Java_Box (Value : NewMetaValidationView_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References.Java_Box;
+   function Java_Unbox_NewMetaValidationView_Access_Array (Value : access Java_Object'Class) return NewMetaValidationView_Access_Array_Access renames views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References.Java_Unbox_NewMetaValidationView_Access_Array;
    subtype NewMetaValidationView_Access_Array_Access_Array is views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References.NewMetaValidationView_Access_Array_Access_Array;
    function "=" (Left, Right : NewMetaValidationView_Access_Array_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References."=";
    subtype NewMetaValidationView_Access_Array_Access_Array_Access is views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References.NewMetaValidationView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NewMetaValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References."=";
+   function Java_Box (Value : NewMetaValidationView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References.Java_Box;
+   function Java_Unbox_NewMetaValidationView_Access_Array_Access_Array (Value : access Java_Object'Class) return NewMetaValidationView_Access_Array_Access_Array_Access renames views.business.context.modules.storefront.customizer.includes.meta.NewMetaValidationView_Package_References.Java_Unbox_NewMetaValidationView_Access_Array_Access_Array;
 
    type NewMetaValidationView is new MetaView and ValidationComponentInterface with record
       NewMetaValidationView_Field_logUtil : LogUtil_Access;

@@ -63,7 +63,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
 
    function getInstance return LogUtil_Access is
    begin
-        return LogUtil_Access (LogUtil_Package.instance);
+        return LogUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out LogUtil'Class) is

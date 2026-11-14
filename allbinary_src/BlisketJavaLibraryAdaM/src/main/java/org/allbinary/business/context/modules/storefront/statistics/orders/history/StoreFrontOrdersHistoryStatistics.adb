@@ -147,7 +147,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.orders
       hashMap : HashMap_Access;
       storeFrontOrdersHistoryStatisticsData : StoreFrontOrdersHistoryStatisticsData_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         storeFrontOrdersHistoryStatisticsData := StoreFrontOrdersHistoryStatisticsData_Package.getInstance;
         hashMap.put (storeFrontOrdersHistoryStatisticsData.NUMBEROFORDERS, Java_Box (StoreFrontOrdersHistoryStatistics'Class (This).getNumberOfOrders.toString));
         hashMap.put (storeFrontOrdersHistoryStatisticsData.SUBTOTAL, Java_Box (StoreFrontOrdersHistoryStatistics'Class (This).getSubTotal.toString));

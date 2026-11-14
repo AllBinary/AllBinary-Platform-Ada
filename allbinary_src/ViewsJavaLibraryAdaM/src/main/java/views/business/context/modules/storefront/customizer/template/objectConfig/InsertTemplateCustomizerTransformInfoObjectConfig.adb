@@ -24,6 +24,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -40,6 +42,8 @@ package body views.business.context.modules.storefront.customizer.template.objec
    package TransformInfoObjectConfigData_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigData_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -131,13 +135,13 @@ package body views.business.context.modules.storefront.customizer.template.objec
       transformInfoDomNodeView : TransformInfoDomNodeView_Access;
       componentNode : Node_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.InsertTemplateCustomizerTransformInfoObjectConfig_Field_logUtil.putF (To_Unbounded_String ("Setting: ") & aParentViewName, InsertTemplateCustomizerTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
         end if;
         document := InsertTemplateCustomizerTransformInfoObjectConfig'Class (This).toXmlDoc;
         parentComponentsNodeList := document.getElementsByTagName (TransformInfosData_Package.getInstance.NAME);
         if ((parentComponentsNodeList) /= (null)) and then ((parentComponentsNodeList.getLength) > (0)) then
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.InsertTemplateCustomizerTransformInfoObjectConfig_Field_logUtil.putF (To_Unbounded_String ("Replacing"), InsertTemplateCustomizerTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
             end if;
             componentNode := parentComponentsNodeList.item (0).getChildNodes.item (0);
@@ -146,7 +150,7 @@ package body views.business.context.modules.storefront.customizer.template.objec
             end if;
             parentComponentsNodeList.item (0).appendChild (TransformInfoDomNodeView_Package.Create (aParentViewName).toXmlNode (document));
         else
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.InsertTemplateCustomizerTransformInfoObjectConfig_Field_logUtil.putF (To_Unbounded_String ("Setting"), InsertTemplateCustomizerTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("set()"));
             end if;
             objectConfigNode := document.getElementsByTagName (TransformInfoObjectConfigData_Package.getInstance.NAME).item (0);

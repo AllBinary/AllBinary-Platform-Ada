@@ -52,7 +52,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.TenderType
 
    function getInstance return TenderTypeFactory_Access is
    begin
-        return TenderTypeFactory_Access (TenderTypeFactory_Package.instance);
+        return TenderTypeFactory_Package.instance;
    end getInstance;
 
 begin

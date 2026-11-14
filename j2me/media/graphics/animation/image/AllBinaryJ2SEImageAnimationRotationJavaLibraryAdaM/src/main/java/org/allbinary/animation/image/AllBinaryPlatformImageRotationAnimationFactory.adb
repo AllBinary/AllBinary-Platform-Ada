@@ -19,11 +19,16 @@ with org.allbinary.animation.AnimationBehaviorFactory_Package; use org.allbinary
 with org.allbinary.animation.AnimationBehaviorFactory_Package_References;
 with org.allbinary.animation.Animation_Package;
 with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
+with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
+with org.allbinary.animation.image.BaseImageAnimationFactory_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.media.image.ImageJ2MEScaleUtil_Package;
+with org.allbinary.media.ScaleProperties_Package;
 
 package body org.allbinary.animation.image.AllBinaryPlatformImageRotationAnimationFactory_Package is
 

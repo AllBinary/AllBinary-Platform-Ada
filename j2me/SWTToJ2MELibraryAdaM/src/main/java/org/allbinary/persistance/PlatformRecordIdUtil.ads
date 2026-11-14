@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.persistance.PlatformRecordIdUtil_Package;
 package org.allbinary.persistance.PlatformRecordIdUtil_Package_References is
    type PlatformRecordIdUtil_Access is access all org.allbinary.persistance.PlatformRecordIdUtil_Package.PlatformRecordIdUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.persistance.PlatformRecordIdUtil_Package_References is
    type PlatformRecordIdUtil_Access_Array_Access is access all PlatformRecordIdUtil_Access_Array;
    type PlatformRecordIdUtil_Access_Array_Access_Array is array (Natural range <>) of PlatformRecordIdUtil_Access_Array_Access;
    type PlatformRecordIdUtil_Access_Array_Access_Array_Access is access all PlatformRecordIdUtil_Access_Array_Access_Array;
+   type PlatformRecordIdUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PlatformRecordIdUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PlatformRecordIdUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PlatformRecordIdUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PlatformRecordIdUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PlatformRecordIdUtil_Access_Array_Access is (if Value /= null and then Value.all in PlatformRecordIdUtil_Access_Array_Object'Class then PlatformRecordIdUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type PlatformRecordIdUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PlatformRecordIdUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PlatformRecordIdUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PlatformRecordIdUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PlatformRecordIdUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PlatformRecordIdUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PlatformRecordIdUtil_Access_Array_Access_Array_Object'Class then PlatformRecordIdUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.persistance.PlatformRecordIdUtil_Package_References;
 
 with org.allbinary.persistance.PlatformRecordIdUtil_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.persistance.PlatformRecordIdUtil_Package is
    function "=" (Left, Right : PlatformRecordIdUtil_Access_Array) return Boolean renames org.allbinary.persistance.PlatformRecordIdUtil_Package_References."=";
    subtype PlatformRecordIdUtil_Access_Array_Access is org.allbinary.persistance.PlatformRecordIdUtil_Package_References.PlatformRecordIdUtil_Access_Array_Access;
    function "=" (Left, Right : PlatformRecordIdUtil_Access_Array_Access) return Boolean renames org.allbinary.persistance.PlatformRecordIdUtil_Package_References."=";
+   function Java_Box (Value : PlatformRecordIdUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.persistance.PlatformRecordIdUtil_Package_References.Java_Box;
+   function Java_Unbox_PlatformRecordIdUtil_Access_Array (Value : access Java_Object'Class) return PlatformRecordIdUtil_Access_Array_Access renames org.allbinary.persistance.PlatformRecordIdUtil_Package_References.Java_Unbox_PlatformRecordIdUtil_Access_Array;
    subtype PlatformRecordIdUtil_Access_Array_Access_Array is org.allbinary.persistance.PlatformRecordIdUtil_Package_References.PlatformRecordIdUtil_Access_Array_Access_Array;
    function "=" (Left, Right : PlatformRecordIdUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.persistance.PlatformRecordIdUtil_Package_References."=";
    subtype PlatformRecordIdUtil_Access_Array_Access_Array_Access is org.allbinary.persistance.PlatformRecordIdUtil_Package_References.PlatformRecordIdUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PlatformRecordIdUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.persistance.PlatformRecordIdUtil_Package_References."=";
+   function Java_Box (Value : PlatformRecordIdUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.persistance.PlatformRecordIdUtil_Package_References.Java_Box;
+   function Java_Unbox_PlatformRecordIdUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return PlatformRecordIdUtil_Access_Array_Access_Array_Access renames org.allbinary.persistance.PlatformRecordIdUtil_Package_References.Java_Unbox_PlatformRecordIdUtil_Access_Array_Access_Array;
 
    type PlatformRecordIdUtil is new Java_Object with record
       PLATFORM_SHORT_NAME : Unbounded_String;

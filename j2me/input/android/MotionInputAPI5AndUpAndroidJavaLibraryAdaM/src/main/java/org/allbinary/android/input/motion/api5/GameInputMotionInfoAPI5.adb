@@ -25,7 +25,7 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionInfoAPI5_Pac
 
    function getInstance return GameInputMotionInfoAPI5_Access is
    begin
-        return GameInputMotionInfoAPI5_Access (GameInputMotionInfoAPI5_Package.instance);
+        return GameInputMotionInfoAPI5_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out GameInputMotionInfoAPI5'Class) is

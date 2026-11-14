@@ -97,12 +97,12 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes
       logConfigTypeVector : BasicArrayList_Access;
    begin
         begin
-            PreLogUtil_Package.put (To_Unbounded_String ("Initialize LogconfigTypes"), Java_Box (To_Unbounded_String ("LogConfigTypes")), To_Unbounded_String ("init()"));
+            PreLogUtil_Package.putS (To_Unbounded_String ("Initialize LogconfigTypes"), Java_Box (To_Unbounded_String ("LogConfigTypes")), To_Unbounded_String ("init()"));
             LogConfigTypeFactory_Package.getInstance;
             loggingInitInfo := LoggingInitInfo_Package.Create;
             logConfigTypeVector := loggingInitInfo.getTypeList;
-            PreLogUtil_Package.put (To_Unbounded_String ("Number Of Log Configs: ") & Java_Image (loggingInitInfo.getNumberOfLogConfigs), Java_Box (To_Unbounded_String ("LogConfigTypes")), To_Unbounded_String ("init()"));
-            PreLogUtil_Package.put (To_Unbounded_String ("Number Of Log Config Type Names: ") & Java_Image (logConfigTypeVector.size), Java_Box (To_Unbounded_String ("LogConfigTypes")), To_Unbounded_String ("init()"));
+            PreLogUtil_Package.putS (To_Unbounded_String ("Number Of Log Configs: ") & Java_Image (loggingInitInfo.getNumberOfLogConfigs), Java_Box (To_Unbounded_String ("LogConfigTypes")), To_Unbounded_String ("init()"));
+            PreLogUtil_Package.putS (To_Unbounded_String ("Number Of Log Config Type Names: ") & Java_Image (logConfigTypeVector.size), Java_Box (To_Unbounded_String ("LogConfigTypes")), To_Unbounded_String ("init()"));
             LogConfigTypes_Package.LOGGING.addAllList (logConfigTypeVector);
             LogConfigTypes_Package.LOGGING.add (LogConfigTypeFactory_Package.getInstance.NETBEANS_MODULE);
         exception

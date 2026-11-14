@@ -24,7 +24,7 @@ package body org.allbinary.input.motion.button.TouchButtonTurnRightResource_Pack
 
    function getInstance return TouchButtonResource_Access is
    begin
-        return TouchButtonResource_Access (TouchButtonTurnRightResource_Package.instance);
+        return TouchButtonTurnRightResource_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TouchButtonTurnRightResource'Class) is

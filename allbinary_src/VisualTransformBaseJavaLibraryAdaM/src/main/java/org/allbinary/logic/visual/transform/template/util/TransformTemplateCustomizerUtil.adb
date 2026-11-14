@@ -25,6 +25,8 @@ with org.allbinary.logic.visual.transform.template.customizer.bodies.BodyData_Pa
 with org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package; use org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -48,6 +50,8 @@ package body org.allbinary.logic.visual.transform.template.util.TransformTemplat
    package TitleData_Package renames Standard.org.allbinary.logic.visual.transform.template.customizer.widgets.title.TitleData_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -75,7 +79,7 @@ package body org.allbinary.logic.visual.transform.template.util.TransformTemplat
 
    function getInstance return TransformTemplateCustomizerUtil_Access is
    begin
-        return TransformTemplateCustomizerUtil_Access (TransformTemplateCustomizerUtil_Package.instance);
+        return TransformTemplateCustomizerUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TransformTemplateCustomizerUtil'Class) is
@@ -111,7 +115,7 @@ package body org.allbinary.logic.visual.transform.template.util.TransformTemplat
    begin
         SPACE := CommonSeps_Package.getInstance.SPACE;
         ONE_EMPTY_STRING_ARRAY := StringUtil_Package.getInstance.ONE_EMPTY_STRING_ARRAY;
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (new Unbounded_String_Array'(0 => viewName & SPACE), Java_Box (ONE_EMPTY_STRING_ARRAY));
         hashMap.put (new Unbounded_String_Array'(0 => storeName & SPACE), Java_Box (ONE_EMPTY_STRING_ARRAY));
         hashMap.put (new Unbounded_String_Array'(0 => This.CUSTOMIZER_NAME), Java_Box (ONE_EMPTY_STRING_ARRAY));
@@ -124,7 +128,7 @@ package body org.allbinary.logic.visual.transform.template.util.TransformTemplat
         hashMap.put (new Unbounded_String_Array'(0 => This.GLOBALS_UPDATE), Java_Box (ONE_EMPTY_STRING_ARRAY));
         replace := null;
         rootViewName := replace.all_Id (viewName);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("RootViewName for ObjectConfig: ") & rootViewName, TransformTemplateCustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getPageNameHack"));
         end if;
         return rootViewName;

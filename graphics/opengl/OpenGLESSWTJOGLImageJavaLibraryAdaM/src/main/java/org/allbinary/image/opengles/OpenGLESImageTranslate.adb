@@ -23,6 +23,7 @@ with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
@@ -31,6 +32,7 @@ with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.image.opengles.OpenGLESImage_Package;
 with org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
 with org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+with org.allbinary.image.opengles.OpenGLSurfaceChangedInterface_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -77,7 +79,7 @@ package body org.allbinary.image.opengles.OpenGLESImageTranslate_Package is
 
    function getInstance return OpenGLESImageTranslate_Access is
    begin
-        return OpenGLESImageTranslate_Access (OpenGLESImageTranslate_Package.instance);
+        return OpenGLESImageTranslate_Package.instance;
    end getInstance;
 
    procedure translate (This : in out OpenGLESImageTranslate; gl_Param : access GL10_Package.GL10'Class; openGLESImage_Param : access OpenGLESImage_Package.OpenGLESImage'Class; x : Float; y : Float) is

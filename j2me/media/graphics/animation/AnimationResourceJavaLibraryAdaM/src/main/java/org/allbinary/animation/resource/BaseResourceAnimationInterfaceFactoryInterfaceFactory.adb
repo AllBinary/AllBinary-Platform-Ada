@@ -123,10 +123,14 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
    function "=" (Left, Right : Rectangle_Access_Array) return Boolean renames org.allbinary.graphics.Rectangle_Package_References."=";
    subtype Rectangle_Access_Array_Access is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array_Access;
    function "=" (Left, Right : Rectangle_Access_Array_Access) return Boolean renames org.allbinary.graphics.Rectangle_Package_References."=";
+   function Java_Box (Value : Rectangle_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.Rectangle_Package_References.Java_Box;
+   function Java_Unbox_Rectangle_Access_Array (Value : access Java_Object'Class) return Rectangle_Access_Array_Access renames org.allbinary.graphics.Rectangle_Package_References.Java_Unbox_Rectangle_Access_Array;
    subtype Rectangle_Access_Array_Access_Array is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array_Access_Array;
    function "=" (Left, Right : Rectangle_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.Rectangle_Package_References."=";
    subtype Rectangle_Access_Array_Access_Array_Access is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Rectangle_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.Rectangle_Package_References."=";
+   function Java_Box (Value : Rectangle_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.Rectangle_Package_References.Java_Box;
+   function Java_Unbox_Rectangle_Access_Array_Access_Array (Value : access Java_Object'Class) return Rectangle_Access_Array_Access_Array_Access renames org.allbinary.graphics.Rectangle_Package_References.Java_Unbox_Rectangle_Access_Array_Access_Array;
    subtype ImageCache_Access is org.allbinary.image.ImageCache_Package_References.ImageCache_Access;
    function "=" (Left, Right : ImageCache_Access) return Boolean renames org.allbinary.image.ImageCache_Package_References."=";
    subtype ImageCache_Access_Array is org.allbinary.image.ImageCache_Package_References.ImageCache_Access_Array;
@@ -227,7 +231,7 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
         if This.hashtable.containsKey (Java_Box (resource)) then
             Java_Throw (Java_New_Exception ("Exception", StringMaker_Package.Create.append (To_Unbounded_String ("Resource Already Created: ")).append (resource).toString));
         end if;
-        This.hashtable.put (Java_Box (resource), animationInterfaceFactoryInterface);
+        This.hashtable.put (Java_Box (resource), BasicAnimationInterfaceFactoryInterface_Package.Java_Object_Access_From_BasicAnimationInterfaceFactoryInterface (animationInterfaceFactoryInterface));
    end add;
 
    --  throws Exception
@@ -266,7 +270,7 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
    begin
         valueCanBeNull := This.rectangleArrayOfArraysHashtable.get (Java_Box (resource));
         if (valueCanBeNull) /= (null) then
-            rectangleArrayOfArrays := Rectangle_Access_Array_Access_Array_Access (valueCanBeNull);
+            rectangleArrayOfArrays := Java_Unbox_Rectangle_Access_Array_Access_Array (valueCanBeNull);
             return rectangleArrayOfArrays;
         else
             return RectangleFactory_Package.ARRAY_OF_ARRAYS;
@@ -276,7 +280,7 @@ package body org.allbinary.animation.resource.BaseResourceAnimationInterfaceFact
    --  throws Exception
    procedure addRectangleArrayOfArrays (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory; resource : Unbounded_String; rectangleArrayOfArrays : Rectangle_Access_Array_Access_Array_Access) is
    begin
-        This.rectangleArrayOfArraysHashtable.put (Java_Box (resource), rectangleArrayOfArrays);
+        This.rectangleArrayOfArraysHashtable.put (Java_Box (resource), Java_Box (rectangleArrayOfArrays));
    end addRectangleArrayOfArrays;
 
    function isFeature (This : in out BaseResourceAnimationInterfaceFactoryInterfaceFactory) return Boolean is

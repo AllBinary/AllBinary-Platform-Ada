@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package;
 package org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References is
    type BasicProfileActionScriptCondition_Access is access all org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package.BasicProfileActionScriptCondition'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.actions.script.condition.BasicProfileActi
    type BasicProfileActionScriptCondition_Access_Array_Access is access all BasicProfileActionScriptCondition_Access_Array;
    type BasicProfileActionScriptCondition_Access_Array_Access_Array is array (Natural range <>) of BasicProfileActionScriptCondition_Access_Array_Access;
    type BasicProfileActionScriptCondition_Access_Array_Access_Array_Access is access all BasicProfileActionScriptCondition_Access_Array_Access_Array;
+   type BasicProfileActionScriptCondition_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicProfileActionScriptCondition_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicProfileActionScriptCondition_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicProfileActionScriptCondition_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicProfileActionScriptCondition_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicProfileActionScriptCondition_Access_Array_Access is (if Value /= null and then Value.all in BasicProfileActionScriptCondition_Access_Array_Object'Class then BasicProfileActionScriptCondition_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicProfileActionScriptCondition_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicProfileActionScriptCondition_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicProfileActionScriptCondition_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicProfileActionScriptCondition_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicProfileActionScriptCondition_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicProfileActionScriptCondition_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicProfileActionScriptCondition_Access_Array_Access_Array_Object'Class then BasicProfileActionScriptCondition_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References;
 
 with org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References;
@@ -128,10 +139,14 @@ package org.allbinary.input.automation.actions.script.condition.BasicProfileActi
    function "=" (Left, Right : BasicProfileActionScriptCondition_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References."=";
    subtype BasicProfileActionScriptCondition_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References.BasicProfileActionScriptCondition_Access_Array_Access;
    function "=" (Left, Right : BasicProfileActionScriptCondition_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References."=";
+   function Java_Box (Value : BasicProfileActionScriptCondition_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References.Java_Box;
+   function Java_Unbox_BasicProfileActionScriptCondition_Access_Array (Value : access Java_Object'Class) return BasicProfileActionScriptCondition_Access_Array_Access renames org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References.Java_Unbox_BasicProfileActionScriptCondition_Access_Array;
    subtype BasicProfileActionScriptCondition_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References.BasicProfileActionScriptCondition_Access_Array_Access_Array;
    function "=" (Left, Right : BasicProfileActionScriptCondition_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References."=";
    subtype BasicProfileActionScriptCondition_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References.BasicProfileActionScriptCondition_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicProfileActionScriptCondition_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References."=";
+   function Java_Box (Value : BasicProfileActionScriptCondition_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References.Java_Box;
+   function Java_Unbox_BasicProfileActionScriptCondition_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicProfileActionScriptCondition_Access_Array_Access_Array_Access renames org.allbinary.input.automation.actions.script.condition.BasicProfileActionScriptCondition_Package_References.Java_Unbox_BasicProfileActionScriptCondition_Access_Array_Access_Array;
 
    type BasicProfileActionScriptCondition is new ProfileActionScriptItem and ProfileActionScriptConditionInterface with record
       BasicProfileActionScriptCondition_Field_logUtil : LogUtil_Access;

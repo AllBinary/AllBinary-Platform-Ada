@@ -66,7 +66,7 @@ package body org.allbinary.graphics.opengles.shader.ShaderManager_Package is
 
    function getInstance return ShaderManager_Access is
    begin
-        return ShaderManager_Access (ShaderManager_Package.instance);
+        return ShaderManager_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ShaderManager'Class; GL_VERTEX_SHADER : Integer; GL_FRAGMENT_SHADER : Integer) is

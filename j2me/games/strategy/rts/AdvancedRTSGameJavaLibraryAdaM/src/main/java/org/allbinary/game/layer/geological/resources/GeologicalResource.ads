@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.geological.resources.GeologicalResource_Package;
 package org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References is
    type GeologicalResource_Access is access all org.allbinary.game.layer.geological.resources.GeologicalResource_Package.GeologicalResource'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.geological.resources.GeologicalResource_Package
    type GeologicalResource_Access_Array_Access is access all GeologicalResource_Access_Array;
    type GeologicalResource_Access_Array_Access_Array is array (Natural range <>) of GeologicalResource_Access_Array_Access;
    type GeologicalResource_Access_Array_Access_Array_Access is access all GeologicalResource_Access_Array_Access_Array;
+   type GeologicalResource_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GeologicalResource_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GeologicalResource_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GeologicalResource_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GeologicalResource_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GeologicalResource_Access_Array_Access is (if Value /= null and then Value.all in GeologicalResource_Access_Array_Object'Class then GeologicalResource_Access_Array_Object'Class (Value.all).Value else null);
+   type GeologicalResource_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GeologicalResource_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GeologicalResource_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GeologicalResource_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GeologicalResource_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GeologicalResource_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GeologicalResource_Access_Array_Access_Array_Object'Class then GeologicalResource_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References;
 
 with org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.game.layer.geological.resources.GeologicalResource_Package
    function "=" (Left, Right : GeologicalResource_Access_Array) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References."=";
    subtype GeologicalResource_Access_Array_Access is org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References.GeologicalResource_Access_Array_Access;
    function "=" (Left, Right : GeologicalResource_Access_Array_Access) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References."=";
+   function Java_Box (Value : GeologicalResource_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References.Java_Box;
+   function Java_Unbox_GeologicalResource_Access_Array (Value : access Java_Object'Class) return GeologicalResource_Access_Array_Access renames org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References.Java_Unbox_GeologicalResource_Access_Array;
    subtype GeologicalResource_Access_Array_Access_Array is org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References.GeologicalResource_Access_Array_Access_Array;
    function "=" (Left, Right : GeologicalResource_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References."=";
    subtype GeologicalResource_Access_Array_Access_Array_Access is org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References.GeologicalResource_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GeologicalResource_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References."=";
+   function Java_Box (Value : GeologicalResource_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References.Java_Box;
+   function Java_Unbox_GeologicalResource_Access_Array_Access_Array (Value : access Java_Object'Class) return GeologicalResource_Access_Array_Access_Array_Access renames org.allbinary.game.layer.geological.resources.GeologicalResource_Package_References.Java_Unbox_GeologicalResource_Access_Array_Access_Array;
 
    type GeologicalResource is new Java_Object with record
       total : Integer;

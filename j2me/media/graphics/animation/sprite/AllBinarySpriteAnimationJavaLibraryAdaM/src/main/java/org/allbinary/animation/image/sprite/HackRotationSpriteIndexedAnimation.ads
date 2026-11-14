@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package;
 package org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package_References is
    type HackRotationSpriteIndexedAnimation_Access is access all org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package.HackRotationSpriteIndexedAnimation'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_
    type HackRotationSpriteIndexedAnimation_Access_Array_Access is access all HackRotationSpriteIndexedAnimation_Access_Array;
    type HackRotationSpriteIndexedAnimation_Access_Array_Access_Array is array (Natural range <>) of HackRotationSpriteIndexedAnimation_Access_Array_Access;
    type HackRotationSpriteIndexedAnimation_Access_Array_Access_Array_Access is access all HackRotationSpriteIndexedAnimation_Access_Array_Access_Array;
+   type HackRotationSpriteIndexedAnimation_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HackRotationSpriteIndexedAnimation_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HackRotationSpriteIndexedAnimation_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HackRotationSpriteIndexedAnimation_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HackRotationSpriteIndexedAnimation_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HackRotationSpriteIndexedAnimation_Access_Array_Access is (if Value /= null and then Value.all in HackRotationSpriteIndexedAnimation_Access_Array_Object'Class then HackRotationSpriteIndexedAnimation_Access_Array_Object'Class (Value.all).Value else null);
+   type HackRotationSpriteIndexedAnimation_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HackRotationSpriteIndexedAnimation_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HackRotationSpriteIndexedAnimation_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HackRotationSpriteIndexedAnimation_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HackRotationSpriteIndexedAnimation_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HackRotationSpriteIndexedAnimation_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in HackRotationSpriteIndexedAnimation_Access_Array_Access_Array_Object'Class then HackRotationSpriteIndexedAnimation_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package_References;
 
 with org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package_References;
@@ -111,10 +122,14 @@ package org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_
    function "=" (Left, Right : HackRotationSpriteIndexedAnimation_Access_Array) return Boolean renames org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package_References."=";
    subtype HackRotationSpriteIndexedAnimation_Access_Array_Access is org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package_References.HackRotationSpriteIndexedAnimation_Access_Array_Access;
    function "=" (Left, Right : HackRotationSpriteIndexedAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package_References."=";
+   function Java_Box (Value : HackRotationSpriteIndexedAnimation_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package_References.Java_Box;
+   function Java_Unbox_HackRotationSpriteIndexedAnimation_Access_Array (Value : access Java_Object'Class) return HackRotationSpriteIndexedAnimation_Access_Array_Access renames org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package_References.Java_Unbox_HackRotationSpriteIndexedAnimation_Access_Array;
    subtype HackRotationSpriteIndexedAnimation_Access_Array_Access_Array is org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package_References.HackRotationSpriteIndexedAnimation_Access_Array_Access_Array;
    function "=" (Left, Right : HackRotationSpriteIndexedAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package_References."=";
    subtype HackRotationSpriteIndexedAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package_References.HackRotationSpriteIndexedAnimation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HackRotationSpriteIndexedAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package_References."=";
+   function Java_Box (Value : HackRotationSpriteIndexedAnimation_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package_References.Java_Box;
+   function Java_Unbox_HackRotationSpriteIndexedAnimation_Access_Array_Access_Array (Value : access Java_Object'Class) return HackRotationSpriteIndexedAnimation_Access_Array_Access_Array_Access renames org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_Package_References.Java_Unbox_HackRotationSpriteIndexedAnimation_Access_Array_Access_Array;
 
    type HackRotationSpriteIndexedAnimation is new RotationAnimation with record
       sprite : Sprite_Access;

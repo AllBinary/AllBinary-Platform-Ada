@@ -69,7 +69,7 @@ package body org.allbinary.business.init.InitInfo_Package is
 
    function getInstance return InitInfo_Access is
    begin
-        return InitInfo_Access (InitInfo_Package.instance);
+        return InitInfo_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out InitInfo'Class) is
@@ -92,16 +92,16 @@ package body org.allbinary.business.init.InitInfo_Package is
         begin
             initInfoEntity := InitInfoEntity_Package.Create;
             if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-                PreLogUtil_Package.put (To_Unbounded_String ("created entity"), Java_Box (To_Unbounded_String ("InitInfo")), To_Unbounded_String ("set()"));
+                PreLogUtil_Package.putS (To_Unbounded_String ("created entity"), Java_Box (To_Unbounded_String ("InitInfo")), To_Unbounded_String ("set()"));
             end if;
             if not (initInfoEntity.is_Id) then
                 if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-                    PreLogUtil_Package.put (To_Unbounded_String ("adding"), Java_Box (To_Unbounded_String ("InitInfo")), To_Unbounded_String ("set()"));
+                    PreLogUtil_Package.putS (To_Unbounded_String ("adding"), Java_Box (To_Unbounded_String ("InitInfo")), To_Unbounded_String ("set()"));
                 end if;
                 initInfoEntity.add;
             else
                 if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADER) then
-                    PreLogUtil_Package.put (To_Unbounded_String ("update"), Java_Box (To_Unbounded_String ("InitInfo")), To_Unbounded_String ("set()"));
+                    PreLogUtil_Package.putS (To_Unbounded_String ("update"), Java_Box (To_Unbounded_String ("InitInfo")), To_Unbounded_String ("set()"));
                 end if;
                 initInfoEntity.update;
             end if;
@@ -266,7 +266,7 @@ package body org.allbinary.business.init.InitInfo_Package is
    function toHashMap (This : in out InitInfo) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (Java_Box (This.TESTING), Java_Box (InitInfo'Class (This).getTesting));
         hashMap.put (Java_Box (This.MAINPATH), Java_Box (InitInfo'Class (This).getMainPath));
         hashMap.put (Java_Box (This.TESTHTMLPATH), Java_Box (InitInfo'Class (This).getTestHtmlPath));

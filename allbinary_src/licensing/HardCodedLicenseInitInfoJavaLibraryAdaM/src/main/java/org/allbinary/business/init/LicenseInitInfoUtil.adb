@@ -15,7 +15,10 @@
 
 with org.allbinary.business.init.LicenseInitInfo_Package; use org.allbinary.business.init.LicenseInitInfo_Package;
 with org.allbinary.business.init.LicenseInitInfo_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.business.init.LicenseInitInfo_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
 
@@ -41,7 +44,7 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
 
    function getInstance return LicenseInitInfoUtil_Access is
    begin
-        return LicenseInitInfoUtil_Access (LicenseInitInfoUtil_Package.instance);
+        return LicenseInitInfoUtil_Package.instance;
    end getInstance;
 
    procedure setFilePath (This : in out LicenseInitInfoUtil; filePath : Unbounded_String) is

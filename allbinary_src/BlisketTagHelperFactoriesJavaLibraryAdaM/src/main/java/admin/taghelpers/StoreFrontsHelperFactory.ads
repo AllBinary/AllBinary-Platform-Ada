@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.StoreFrontsHelperFactory_Package;
 package admin.taghelpers.StoreFrontsHelperFactory_Package_References is
    type StoreFrontsHelperFactory_Access is access all admin.taghelpers.StoreFrontsHelperFactory_Package.StoreFrontsHelperFactory'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.StoreFrontsHelperFactory_Package_References is
    type StoreFrontsHelperFactory_Access_Array_Access is access all StoreFrontsHelperFactory_Access_Array;
    type StoreFrontsHelperFactory_Access_Array_Access_Array is array (Natural range <>) of StoreFrontsHelperFactory_Access_Array_Access;
    type StoreFrontsHelperFactory_Access_Array_Access_Array_Access is access all StoreFrontsHelperFactory_Access_Array_Access_Array;
+   type StoreFrontsHelperFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreFrontsHelperFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreFrontsHelperFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreFrontsHelperFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreFrontsHelperFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreFrontsHelperFactory_Access_Array_Access is (if Value /= null and then Value.all in StoreFrontsHelperFactory_Access_Array_Object'Class then StoreFrontsHelperFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type StoreFrontsHelperFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreFrontsHelperFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreFrontsHelperFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreFrontsHelperFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreFrontsHelperFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreFrontsHelperFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StoreFrontsHelperFactory_Access_Array_Access_Array_Object'Class then StoreFrontsHelperFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.StoreFrontsHelperFactory_Package_References;
 
 with admin.taghelpers.StoreFrontsHelperFactory_Package_References;
@@ -61,10 +72,14 @@ package admin.taghelpers.StoreFrontsHelperFactory_Package is
    function "=" (Left, Right : StoreFrontsHelperFactory_Access_Array) return Boolean renames admin.taghelpers.StoreFrontsHelperFactory_Package_References."=";
    subtype StoreFrontsHelperFactory_Access_Array_Access is admin.taghelpers.StoreFrontsHelperFactory_Package_References.StoreFrontsHelperFactory_Access_Array_Access;
    function "=" (Left, Right : StoreFrontsHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.StoreFrontsHelperFactory_Package_References."=";
+   function Java_Box (Value : StoreFrontsHelperFactory_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.StoreFrontsHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_StoreFrontsHelperFactory_Access_Array (Value : access Java_Object'Class) return StoreFrontsHelperFactory_Access_Array_Access renames admin.taghelpers.StoreFrontsHelperFactory_Package_References.Java_Unbox_StoreFrontsHelperFactory_Access_Array;
    subtype StoreFrontsHelperFactory_Access_Array_Access_Array is admin.taghelpers.StoreFrontsHelperFactory_Package_References.StoreFrontsHelperFactory_Access_Array_Access_Array;
    function "=" (Left, Right : StoreFrontsHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.StoreFrontsHelperFactory_Package_References."=";
    subtype StoreFrontsHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.StoreFrontsHelperFactory_Package_References.StoreFrontsHelperFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StoreFrontsHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.StoreFrontsHelperFactory_Package_References."=";
+   function Java_Box (Value : StoreFrontsHelperFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.StoreFrontsHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_StoreFrontsHelperFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return StoreFrontsHelperFactory_Access_Array_Access_Array_Access renames admin.taghelpers.StoreFrontsHelperFactory_Package_References.Java_Unbox_StoreFrontsHelperFactory_Access_Array_Access_Array;
 
    type StoreFrontsHelperFactory is new TagHelperFactory with record
       logUtil : LogUtil_Access;

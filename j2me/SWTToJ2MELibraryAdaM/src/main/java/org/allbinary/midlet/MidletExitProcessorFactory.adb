@@ -66,7 +66,7 @@ package body org.allbinary.midlet.MidletExitProcessorFactory_Package is
 
    function getInstance return MidletExitProcessorFactory_Access is
    begin
-        return MidletExitProcessorFactory_Access (MidletExitProcessorFactory_Package.instance);
+        return MidletExitProcessorFactory_Package.instance;
    end getInstance;
 
    function getExitInstance (This : in out MidletExitProcessorFactory; midlet_Param : access MIDlet_Package.MIDlet'Class) return Processor_Access is

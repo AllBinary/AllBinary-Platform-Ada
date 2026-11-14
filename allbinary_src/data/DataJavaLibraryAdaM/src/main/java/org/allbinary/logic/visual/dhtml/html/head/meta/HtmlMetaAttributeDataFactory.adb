@@ -40,7 +40,7 @@ package body org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeDa
 
    function getInstance return HtmlMetaAttributeDataFactory_Access is
    begin
-        return HtmlMetaAttributeDataFactory_Access (HtmlMetaAttributeDataFactory_Package.instance);
+        return HtmlMetaAttributeDataFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out HtmlMetaAttributeDataFactory'Class) is

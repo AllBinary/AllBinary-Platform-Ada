@@ -37,9 +37,17 @@ with org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTransfor
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
@@ -58,6 +66,8 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
    package TransformInfoDomNode_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
    package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -183,7 +193,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
         stringBuffer.append (RootTransformInfoData_Package.NAME);
         rootComponentInterface := TransformInterface_Access (TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, stringBuffer.toString, CompoundContextTransformInfoObjectConfig'Class (This).getTransformInfoInterface));
         viewVector := CompoundContextTransformInfoObjectConfig'Class (This).getTransformDomNodes;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Root View Called with: ") & Java_Image (viewVector.size), CompoundContextTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("get(transformInfoInterface)"));
         end if;
         rootView := rootComponentInterface.view;
@@ -201,7 +211,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
             stringBuffer.append (replacementViewString);
             stringBuffer.append (endXMLHeader);
             templateValue := stringBuffer.toString;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (To_Unbounded_String ("Replacing: "));
                 stringBuffer.append (templateKey);
@@ -212,7 +222,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
             replace := Replace_Package.Create (templateKey, templateValue);
             rootView := replace.all_Id (rootView);
         end loop;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("End: Result of a compound view: ") & rootView, CompoundContextTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("get()"));
         end if;
         return rootView;
@@ -225,7 +235,7 @@ package body views.compound.objectConfig.CompoundContextTransformInfoObjectConfi
    begin
         completeTemplateViewBytes := Java_Get_Bytes (CompoundContextTransformInfoObjectConfig'Class (This).get);
         bais := ByteArrayInputStream_Package.Create (completeTemplateViewBytes);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Template: ") & Java_New_String (completeTemplateViewBytes).toString, CompoundContextTransformInfoObjectConfig_Access'(This'Unchecked_Access), To_Unbounded_String ("createInputStream()"));
         end if;
         return InputStream_Access (bais);

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.log.LOGGING_Package;
 package org.allbinary.log.LOGGING_Package_References is
    type LOGGING_Access is access all org.allbinary.log.LOGGING_Package.LOGGING'Class;
@@ -19,6 +20,16 @@ package org.allbinary.log.LOGGING_Package_References is
    type LOGGING_Access_Array_Access is access all LOGGING_Access_Array;
    type LOGGING_Access_Array_Access_Array is array (Natural range <>) of LOGGING_Access_Array_Access;
    type LOGGING_Access_Array_Access_Array_Access is access all LOGGING_Access_Array_Access_Array;
+   type LOGGING_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LOGGING_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LOGGING_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LOGGING_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LOGGING_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LOGGING_Access_Array_Access is (if Value /= null and then Value.all in LOGGING_Access_Array_Object'Class then LOGGING_Access_Array_Object'Class (Value.all).Value else null);
+   type LOGGING_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LOGGING_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LOGGING_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LOGGING_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LOGGING_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LOGGING_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in LOGGING_Access_Array_Access_Array_Object'Class then LOGGING_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.log.LOGGING_Package_References;
 
 with org.allbinary.log.LOGGING_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.log.LOGGING_Package is
    function "=" (Left, Right : LOGGING_Access_Array) return Boolean renames org.allbinary.log.LOGGING_Package_References."=";
    subtype LOGGING_Access_Array_Access is org.allbinary.log.LOGGING_Package_References.LOGGING_Access_Array_Access;
    function "=" (Left, Right : LOGGING_Access_Array_Access) return Boolean renames org.allbinary.log.LOGGING_Package_References."=";
+   function Java_Box (Value : LOGGING_Access_Array_Access) return Java_Object_Access renames org.allbinary.log.LOGGING_Package_References.Java_Box;
+   function Java_Unbox_LOGGING_Access_Array (Value : access Java_Object'Class) return LOGGING_Access_Array_Access renames org.allbinary.log.LOGGING_Package_References.Java_Unbox_LOGGING_Access_Array;
    subtype LOGGING_Access_Array_Access_Array is org.allbinary.log.LOGGING_Package_References.LOGGING_Access_Array_Access_Array;
    function "=" (Left, Right : LOGGING_Access_Array_Access_Array) return Boolean renames org.allbinary.log.LOGGING_Package_References."=";
    subtype LOGGING_Access_Array_Access_Array_Access is org.allbinary.log.LOGGING_Package_References.LOGGING_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LOGGING_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.log.LOGGING_Package_References."=";
+   function Java_Box (Value : LOGGING_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.log.LOGGING_Package_References.Java_Box;
+   function Java_Unbox_LOGGING_Access_Array_Access_Array (Value : access Java_Object'Class) return LOGGING_Access_Array_Access_Array_Access renames org.allbinary.log.LOGGING_Package_References.Java_Unbox_LOGGING_Access_Array_Access_Array;
 
    type LOGGING is new Java_Object with record
       name : Unbounded_String;

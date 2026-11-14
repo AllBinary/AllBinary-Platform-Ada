@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.apache.xmlrpc.XmlRpcClient_Package; use org.apache.xmlrpc.XmlRpcClient_Package;
 with org.apache.xmlrpc.XmlRpcException_Package; use org.apache.xmlrpc.XmlRpcException_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
@@ -37,11 +38,11 @@ with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
-with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRemoteLicenseRegistrationClient_Package is
 
+   package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package XmlRpcClient_Package renames Standard.org.apache.xmlrpc.XmlRpcClient_Package;
    package XmlRpcException_Package renames Standard.org.apache.xmlrpc.XmlRpcException_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
@@ -130,11 +131,11 @@ package body org.allbinary.logic.system.security.licensing.registration.XmlRpcRe
             serverUrl := Unbounded_Slice (serverUrl, (0) + 1, (index) + (1)) & This.PAGE;
             xmlRpcClient := XmlRpcClient_Package.Create (serverUrl);
             XmlRpcRemoteLicenseRegistrationClient'Class (This).setClient (xmlRpcClient);
-            xmlRpcClient.setBasicAuthentication (null, null);
+            xmlRpcClient.setBasicAuthentication (StringUtil_Package.getInstance.EMPTY_STRING, StringUtil_Package.getInstance.EMPTY_STRING);
             hashtable := ABHashtable_Access (anyType);
             This.logUtil.putF (Java_Image (CLIENT_INFO) & hashtable.toString, XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             param.add (Java_Object_Access (hashtable));
-            result := xmlRpcClient.execute (XmlRpcRemoteLicenseRegistrationClient'Class (This).getRemoteMethod, param, cryptInterface);
+            result := xmlRpcClient.executeWithCrypt (XmlRpcRemoteLicenseRegistrationClient'Class (This).getRemoteMethod, param, cryptInterface);
             This.logUtil.putF (Java_Image (RESULT) & result.toString, XmlRpcRemoteLicenseRegistrationClient_Access'(This'Unchecked_Access), This.commonStrings.GET);
             This.isOnline := True;
             return result;

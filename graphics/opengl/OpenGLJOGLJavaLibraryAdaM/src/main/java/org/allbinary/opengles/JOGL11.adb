@@ -14,22 +14,17 @@
 
 
 with com.jogamp.opengl.GL_Package; use com.jogamp.opengl.GL_Package;
-with com.jogamp.opengl.GL_Package_References;
 with com.jogamp.opengl.GL2_Package; use com.jogamp.opengl.GL2_Package;
 with com.jogamp.opengl.GL2_Package_References;
+with java.nio.Buffer_Package; use java.nio.Buffer_Package;
+with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
+with java.nio.IntBuffer_Package; use java.nio.IntBuffer_Package;
+with javax.microedition.khronos.opengles.GL11_Package; use javax.microedition.khronos.opengles.GL11_Package;
+with javax.microedition.khronos.opengles.GL10_Package;
+with com.jogamp.opengl.glu.GLU_Package;
 
 package body org.allbinary.opengles.JOGL11_Package is
 
-   subtype GL_Access is com.jogamp.opengl.GL_Package_References.GL_Access;
-   function "=" (Left, Right : GL_Access) return Boolean renames com.jogamp.opengl.GL_Package_References."=";
-   subtype GL_Access_Array is com.jogamp.opengl.GL_Package_References.GL_Access_Array;
-   function "=" (Left, Right : GL_Access_Array) return Boolean renames com.jogamp.opengl.GL_Package_References."=";
-   subtype GL_Access_Array_Access is com.jogamp.opengl.GL_Package_References.GL_Access_Array_Access;
-   function "=" (Left, Right : GL_Access_Array_Access) return Boolean renames com.jogamp.opengl.GL_Package_References."=";
-   subtype GL_Access_Array_Access_Array is com.jogamp.opengl.GL_Package_References.GL_Access_Array_Access_Array;
-   function "=" (Left, Right : GL_Access_Array_Access_Array) return Boolean renames com.jogamp.opengl.GL_Package_References."=";
-   subtype GL_Access_Array_Access_Array_Access is com.jogamp.opengl.GL_Package_References.GL_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : GL_Access_Array_Access_Array_Access) return Boolean renames com.jogamp.opengl.GL_Package_References."=";
    subtype GL2_Access is com.jogamp.opengl.GL2_Package_References.GL2_Access;
    function "=" (Left, Right : GL2_Access) return Boolean renames com.jogamp.opengl.GL2_Package_References."=";
    subtype GL2_Access_Array is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array;
@@ -84,13 +79,13 @@ package body org.allbinary.opengles.JOGL11_Package is
    procedure glBufferData (This : in out JOGL11; target : Integer; size : Integer; data_Param : access Buffer_Package.Buffer'Class; usage : Integer) is
       data : constant Buffer_Access := Buffer_Access (data_Param);
    begin
-        This.gl11.glBufferData (target, size, data, usage);
+        This.gl11.glBufferData (target, Long_Long_Integer (size), data, usage);
    end glBufferData;
 
    procedure glBufferSubData (This : in out JOGL11; target : Integer; offset : Integer; size : Integer; data_Param : access Buffer_Package.Buffer'Class) is
       data : constant Buffer_Access := Buffer_Access (data_Param);
    begin
-        This.gl11.glBufferSubData (target, offset, size, data);
+        This.gl11.glBufferSubData (target, Long_Long_Integer (offset), Long_Long_Integer (size), data);
    end glBufferSubData;
 
    procedure glClipPlanef (This : in out JOGL11; plane : Integer; equation : Float_Array_Access; offset : Integer) is
@@ -111,7 +106,7 @@ package body org.allbinary.opengles.JOGL11_Package is
 
    procedure glColorPointer (This : in out JOGL11; size : Integer; type_Id : Integer; stride : Integer; offset : Integer) is
    begin
-        This.gl11.glColorPointer (size, type_Id, stride, offset);
+        This.gl11.glColorPointer (size, type_Id, stride, Long_Long_Integer (offset));
    end glColorPointer;
 
    procedure glDeleteBuffers (This : in out JOGL11; n : Integer; buffers : Integer_Array_Access; offset : Integer) is
@@ -127,7 +122,7 @@ package body org.allbinary.opengles.JOGL11_Package is
 
    procedure glDrawElements (This : in out JOGL11; mode : Integer; count : Integer; type_Id : Integer; offset : Integer) is
    begin
-        This.gl11.glDrawElements (mode, count, type_Id, offset);
+        This.gl11.glDrawElements (mode, count, type_Id, Long_Long_Integer (offset));
    end glDrawElements;
 
    procedure glGenBuffers (This : in out JOGL11; n : Integer; buffers : Integer_Array_Access; offset : Integer) is
@@ -246,7 +241,7 @@ package body org.allbinary.opengles.JOGL11_Package is
 
    procedure glNormalPointer (This : in out JOGL11; type_Id : Integer; stride : Integer; offset : Integer) is
    begin
-        This.gl11.glNormalPointer (type_Id, stride, offset);
+        This.gl11.glNormalPointer (type_Id, stride, Long_Long_Integer (offset));
    end glNormalPointer;
 
    procedure glPointParameterf (This : in out JOGL11; pname : Integer; param : Float) is
@@ -267,7 +262,7 @@ package body org.allbinary.opengles.JOGL11_Package is
 
    procedure glTexCoordPointer (This : in out JOGL11; size : Integer; type_Id : Integer; stride : Integer; offset : Integer) is
    begin
-        This.gl11.glTexCoordPointer (size, type_Id, stride, offset);
+        This.gl11.glTexCoordPointer (size, type_Id, stride, Long_Long_Integer (offset));
    end glTexCoordPointer;
 
    procedure glTexEnvi (This : in out JOGL11; target : Integer; pname : Integer; param : Integer) is
@@ -320,7 +315,7 @@ package body org.allbinary.opengles.JOGL11_Package is
 
    procedure glVertexPointer (This : in out JOGL11; size : Integer; type_Id : Integer; stride : Integer; offset : Integer) is
    begin
-        This.gl11.glVertexPointer (size, type_Id, stride, offset);
+        This.gl11.glVertexPointer (size, type_Id, stride, Long_Long_Integer (offset));
    end glVertexPointer;
 
    procedure glIsBuffer (This : in out JOGL11; buffer : Integer) is

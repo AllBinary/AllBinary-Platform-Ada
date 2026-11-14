@@ -43,7 +43,7 @@ package body org.allbinary.logic.util.cache.CacheTypeFactory_Package is
 
    function getInstance return CacheTypeFactory_Access is
    begin
-        return CacheTypeFactory_Access (CacheTypeFactory_Package.instance);
+        return CacheTypeFactory_Package.instance;
    end getInstance;
 
 begin

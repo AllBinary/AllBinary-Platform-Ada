@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.VectorExplosionAnimationFactory_Package;
 package org.allbinary.animation.VectorExplosionAnimationFactory_Package_References is
    type VectorExplosionAnimationFactory_Access is access all org.allbinary.animation.VectorExplosionAnimationFactory_Package.VectorExplosionAnimationFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.VectorExplosionAnimationFactory_Package_Referenc
    type VectorExplosionAnimationFactory_Access_Array_Access is access all VectorExplosionAnimationFactory_Access_Array;
    type VectorExplosionAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of VectorExplosionAnimationFactory_Access_Array_Access;
    type VectorExplosionAnimationFactory_Access_Array_Access_Array_Access is access all VectorExplosionAnimationFactory_Access_Array_Access_Array;
+   type VectorExplosionAnimationFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : VectorExplosionAnimationFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : VectorExplosionAnimationFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new VectorExplosionAnimationFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_VectorExplosionAnimationFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return VectorExplosionAnimationFactory_Access_Array_Access is (if Value /= null and then Value.all in VectorExplosionAnimationFactory_Access_Array_Object'Class then VectorExplosionAnimationFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type VectorExplosionAnimationFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : VectorExplosionAnimationFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : VectorExplosionAnimationFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new VectorExplosionAnimationFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_VectorExplosionAnimationFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return VectorExplosionAnimationFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in VectorExplosionAnimationFactory_Access_Array_Access_Array_Object'Class then VectorExplosionAnimationFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.VectorExplosionAnimationFactory_Package_References;
 
 with org.allbinary.animation.VectorExplosionAnimationFactory_Package_References;
@@ -94,10 +105,14 @@ package org.allbinary.animation.VectorExplosionAnimationFactory_Package is
    function "=" (Left, Right : VectorExplosionAnimationFactory_Access_Array) return Boolean renames org.allbinary.animation.VectorExplosionAnimationFactory_Package_References."=";
    subtype VectorExplosionAnimationFactory_Access_Array_Access is org.allbinary.animation.VectorExplosionAnimationFactory_Package_References.VectorExplosionAnimationFactory_Access_Array_Access;
    function "=" (Left, Right : VectorExplosionAnimationFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.VectorExplosionAnimationFactory_Package_References."=";
+   function Java_Box (Value : VectorExplosionAnimationFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.VectorExplosionAnimationFactory_Package_References.Java_Box;
+   function Java_Unbox_VectorExplosionAnimationFactory_Access_Array (Value : access Java_Object'Class) return VectorExplosionAnimationFactory_Access_Array_Access renames org.allbinary.animation.VectorExplosionAnimationFactory_Package_References.Java_Unbox_VectorExplosionAnimationFactory_Access_Array;
    subtype VectorExplosionAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.VectorExplosionAnimationFactory_Package_References.VectorExplosionAnimationFactory_Access_Array_Access_Array;
    function "=" (Left, Right : VectorExplosionAnimationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.VectorExplosionAnimationFactory_Package_References."=";
    subtype VectorExplosionAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.VectorExplosionAnimationFactory_Package_References.VectorExplosionAnimationFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : VectorExplosionAnimationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.VectorExplosionAnimationFactory_Package_References."=";
+   function Java_Box (Value : VectorExplosionAnimationFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.VectorExplosionAnimationFactory_Package_References.Java_Box;
+   function Java_Unbox_VectorExplosionAnimationFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return VectorExplosionAnimationFactory_Access_Array_Access_Array_Access renames org.allbinary.animation.VectorExplosionAnimationFactory_Package_References.Java_Unbox_VectorExplosionAnimationFactory_Access_Array_Access_Array;
 
    type VectorExplosionAnimationFactory is new Java_Object and ProceduralAnimationInterfaceFactoryInterface with record
       vectorExplosionGenerator : VectorExplosionGenerator_Access;

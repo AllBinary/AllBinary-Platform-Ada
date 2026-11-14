@@ -81,7 +81,7 @@ package body org.allbinary.game.layer.building.event.BuildingEventHandler_Packag
 
    function getInstance return BuildingEventHandler_Access is
    begin
-        return BuildingEventHandler_Access (BuildingEventHandler_Package.eventHandler);
+        return BuildingEventHandler_Package.eventHandler;
    end getInstance;
 
    --  throws Exception

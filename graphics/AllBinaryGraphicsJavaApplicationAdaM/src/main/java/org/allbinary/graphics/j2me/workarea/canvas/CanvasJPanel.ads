@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
 package org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References is
    type CanvasJPanel_Access is access all org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package.CanvasJPanel'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_Referen
    type CanvasJPanel_Access_Array_Access is access all CanvasJPanel_Access_Array;
    type CanvasJPanel_Access_Array_Access_Array is array (Natural range <>) of CanvasJPanel_Access_Array_Access;
    type CanvasJPanel_Access_Array_Access_Array_Access is access all CanvasJPanel_Access_Array_Access_Array;
+   type CanvasJPanel_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CanvasJPanel_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CanvasJPanel_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CanvasJPanel_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CanvasJPanel_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CanvasJPanel_Access_Array_Access is (if Value /= null and then Value.all in CanvasJPanel_Access_Array_Object'Class then CanvasJPanel_Access_Array_Object'Class (Value.all).Value else null);
+   type CanvasJPanel_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CanvasJPanel_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CanvasJPanel_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CanvasJPanel_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CanvasJPanel_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CanvasJPanel_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CanvasJPanel_Access_Array_Access_Array_Object'Class then CanvasJPanel_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References;
 
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References;
@@ -50,10 +61,13 @@ limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 limited with org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
-with org.allbinary.graphics.j2me.workarea.canvas.JPanel_Package; use org.allbinary.graphics.j2me.workarea.canvas.JPanel_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.MouseListener_Package; use org.allbinary.graphics.j2me.workarea.canvas.MouseListener_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.MouseMotionListener_Package; use org.allbinary.graphics.j2me.workarea.canvas.MouseMotionListener_Package;
-with org.allbinary.graphics.j2me.workarea.canvas.KeyListener_Package; use org.allbinary.graphics.j2me.workarea.canvas.KeyListener_Package;
+--  with java.awt.GridLayout_Package; use java.awt.GridLayout_Package;
+with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
+--  with java.awt.event.KeyListener_Package; use java.awt.event.KeyListener_Package;
+--  with java.awt.event.MouseEvent_Package; use java.awt.event.MouseEvent_Package;
+--  with java.awt.event.MouseListener_Package; use java.awt.event.MouseListener_Package;
+--  with java.awt.event.MouseMotionListener_Package; use java.awt.event.MouseMotionListener_Package;
+--  with javax.swing.JPanel_Package; use javax.swing.JPanel_Package;
 limited with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References;
 limited with org.allbinary.graphics.j2me.workarea.canvas.CanvasTreeLabel_Package;
@@ -81,6 +95,7 @@ package org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    package GuiLog_Package renames Standard.org.allbinary.logic.communication.log.GuiLog_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package KeyEvent_Package renames Standard.java.awt.event.KeyEvent_Package;
    package Reference_Types is
    subtype GameInputStrings_Access is org.allbinary.game.input.GameInputStrings_Package_References.GameInputStrings_Access;
    use type GameInputStrings_Access;
@@ -242,12 +257,16 @@ package org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
    function "=" (Left, Right : CanvasJPanel_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References."=";
    subtype CanvasJPanel_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.CanvasJPanel_Access_Array_Access;
    function "=" (Left, Right : CanvasJPanel_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References."=";
+   function Java_Box (Value : CanvasJPanel_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.Java_Box;
+   function Java_Unbox_CanvasJPanel_Access_Array (Value : access Java_Object'Class) return CanvasJPanel_Access_Array_Access renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.Java_Unbox_CanvasJPanel_Access_Array;
    subtype CanvasJPanel_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.CanvasJPanel_Access_Array_Access_Array;
    function "=" (Left, Right : CanvasJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References."=";
    subtype CanvasJPanel_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.CanvasJPanel_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CanvasJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References."=";
+   function Java_Box (Value : CanvasJPanel_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.Java_Box;
+   function Java_Unbox_CanvasJPanel_Access_Array_Access_Array (Value : access Java_Object'Class) return CanvasJPanel_Access_Array_Access_Array_Access renames org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.Java_Unbox_CanvasJPanel_Access_Array_Access_Array;
 
-   type CanvasJPanel is new JPanel and MouseListener and MouseMotionListener and KeyListener and MyGraphicItemEventListener with record
+   type CanvasJPanel is new Java_Object and MyGraphicItemEventListener with record
       logUtil : LogUtil_Access;
       guiLog : GuiLog_Access;
       gameInputStrings : GameInputStrings_Access;

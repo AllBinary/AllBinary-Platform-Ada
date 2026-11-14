@@ -56,7 +56,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.Authorizat
 
    function getInstance return AuthorizationTypeFactory_Access is
    begin
-        return AuthorizationTypeFactory_Access (AuthorizationTypeFactory_Package.instance);
+        return AuthorizationTypeFactory_Package.instance;
    end getInstance;
 
 begin

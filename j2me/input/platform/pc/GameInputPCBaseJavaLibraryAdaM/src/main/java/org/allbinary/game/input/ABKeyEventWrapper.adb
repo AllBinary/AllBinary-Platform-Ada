@@ -13,10 +13,12 @@
 --  Generated Code Do Not Modify
 
 
+with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
 with jsinterop.annotations.JsType_Package; use jsinterop.annotations.JsType_Package;
 
 package body org.allbinary.game.input.ABKeyEventWrapper_Package is
 
+   package KeyEvent_Package renames Standard.java.awt.event.KeyEvent_Package;
    package JsType_Package renames Standard.jsinterop.annotations.JsType_Package;
    procedure Initialize_Fields (This : in out ABKeyEventWrapper'Class) is
    begin
@@ -227,7 +229,7 @@ package body org.allbinary.game.input.ABKeyEventWrapper_Package is
 
    function getInstance return ABKeyEventWrapper_Access is
    begin
-        return ABKeyEventWrapper_Access (ABKeyEventWrapper_Package.instance);
+        return ABKeyEventWrapper_Package.instance;
    end getInstance;
 
 begin

@@ -62,7 +62,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
 
    function getInstanceOrCreate return ImageModifierUtil_Access is
    begin
-        return ImageModifierUtil_Access (ImageModifierUtil_Package.instance);
+        return ImageModifierUtil_Package.instance;
    end getInstanceOrCreate;
 
    procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is

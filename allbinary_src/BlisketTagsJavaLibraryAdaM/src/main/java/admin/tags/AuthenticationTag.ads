@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.tags.AuthenticationTag_Package;
 package admin.tags.AuthenticationTag_Package_References is
    type AuthenticationTag_Access is access all admin.tags.AuthenticationTag_Package.AuthenticationTag'Class;
@@ -19,6 +20,16 @@ package admin.tags.AuthenticationTag_Package_References is
    type AuthenticationTag_Access_Array_Access is access all AuthenticationTag_Access_Array;
    type AuthenticationTag_Access_Array_Access_Array is array (Natural range <>) of AuthenticationTag_Access_Array_Access;
    type AuthenticationTag_Access_Array_Access_Array_Access is access all AuthenticationTag_Access_Array_Access_Array;
+   type AuthenticationTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AuthenticationTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AuthenticationTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AuthenticationTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AuthenticationTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AuthenticationTag_Access_Array_Access is (if Value /= null and then Value.all in AuthenticationTag_Access_Array_Object'Class then AuthenticationTag_Access_Array_Object'Class (Value.all).Value else null);
+   type AuthenticationTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AuthenticationTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AuthenticationTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AuthenticationTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AuthenticationTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AuthenticationTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AuthenticationTag_Access_Array_Access_Array_Object'Class then AuthenticationTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.tags.AuthenticationTag_Package_References;
 
 with admin.tags.AuthenticationTag_Package_References;
@@ -78,10 +89,14 @@ package admin.tags.AuthenticationTag_Package is
    function "=" (Left, Right : AuthenticationTag_Access_Array) return Boolean renames admin.tags.AuthenticationTag_Package_References."=";
    subtype AuthenticationTag_Access_Array_Access is admin.tags.AuthenticationTag_Package_References.AuthenticationTag_Access_Array_Access;
    function "=" (Left, Right : AuthenticationTag_Access_Array_Access) return Boolean renames admin.tags.AuthenticationTag_Package_References."=";
+   function Java_Box (Value : AuthenticationTag_Access_Array_Access) return Java_Object_Access renames admin.tags.AuthenticationTag_Package_References.Java_Box;
+   function Java_Unbox_AuthenticationTag_Access_Array (Value : access Java_Object'Class) return AuthenticationTag_Access_Array_Access renames admin.tags.AuthenticationTag_Package_References.Java_Unbox_AuthenticationTag_Access_Array;
    subtype AuthenticationTag_Access_Array_Access_Array is admin.tags.AuthenticationTag_Package_References.AuthenticationTag_Access_Array_Access_Array;
    function "=" (Left, Right : AuthenticationTag_Access_Array_Access_Array) return Boolean renames admin.tags.AuthenticationTag_Package_References."=";
    subtype AuthenticationTag_Access_Array_Access_Array_Access is admin.tags.AuthenticationTag_Package_References.AuthenticationTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AuthenticationTag_Access_Array_Access_Array_Access) return Boolean renames admin.tags.AuthenticationTag_Package_References."=";
+   function Java_Box (Value : AuthenticationTag_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.tags.AuthenticationTag_Package_References.Java_Box;
+   function Java_Unbox_AuthenticationTag_Access_Array_Access_Array (Value : access Java_Object'Class) return AuthenticationTag_Access_Array_Access_Array_Access renames admin.tags.AuthenticationTag_Package_References.Java_Unbox_AuthenticationTag_Access_Array_Access_Array;
 
    type AuthenticationTag is new CustomTagSupport with record
       logUtil : LogUtil_Access;

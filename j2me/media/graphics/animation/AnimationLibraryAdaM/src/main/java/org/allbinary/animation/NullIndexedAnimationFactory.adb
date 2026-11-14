@@ -95,7 +95,7 @@ package body org.allbinary.animation.NullIndexedAnimationFactory_Package is
 
    function getFactoryInstance return NullIndexedAnimationFactory_Access is
    begin
-        return NullIndexedAnimationFactory_Access (NullIndexedAnimationFactory_Package.NULL_INDEXED_ANIMATION_FACTORY);
+        return NullIndexedAnimationFactory_Package.NULL_INDEXED_ANIMATION_FACTORY;
    end getFactoryInstance;
 
    --  throws Exception

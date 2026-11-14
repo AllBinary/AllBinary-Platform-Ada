@@ -97,7 +97,7 @@ package body org.allbinary.image.AnimationFactoryImageScaleUtil_Package is
 
    function getInstance return AnimationFactoryImageScaleUtil_Access is
    begin
-        return AnimationFactoryImageScaleUtil_Access (AnimationFactoryImageScaleUtil_Package.instance);
+        return AnimationFactoryImageScaleUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

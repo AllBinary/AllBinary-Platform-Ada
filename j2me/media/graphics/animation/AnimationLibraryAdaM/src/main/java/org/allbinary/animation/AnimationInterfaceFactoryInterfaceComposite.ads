@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package;
 package org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package_References is
    type AnimationInterfaceFactoryInterfaceComposite_Access is access all org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package.AnimationInterfaceFactoryInterfaceComposite'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Pack
    type AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access is access all AnimationInterfaceFactoryInterfaceComposite_Access_Array;
    type AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array is array (Natural range <>) of AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access;
    type AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array_Access is access all AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array;
+   type AnimationInterfaceFactoryInterfaceComposite_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AnimationInterfaceFactoryInterfaceComposite_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AnimationInterfaceFactoryInterfaceComposite_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access is (if Value /= null and then Value.all in AnimationInterfaceFactoryInterfaceComposite_Access_Array_Object'Class then AnimationInterfaceFactoryInterfaceComposite_Access_Array_Object'Class (Value.all).Value else null);
+   type AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array_Object'Class then AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package_References;
 
 with org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package_References;
@@ -70,10 +81,14 @@ package org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Pack
    function "=" (Left, Right : AnimationInterfaceFactoryInterfaceComposite_Access_Array) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package_References."=";
    subtype AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access is org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package_References.AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access;
    function "=" (Left, Right : AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package_References."=";
+   function Java_Box (Value : AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package_References.Java_Box;
+   function Java_Unbox_AnimationInterfaceFactoryInterfaceComposite_Access_Array (Value : access Java_Object'Class) return AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access renames org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package_References.Java_Unbox_AnimationInterfaceFactoryInterfaceComposite_Access_Array;
    subtype AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array is org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package_References.AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array;
    function "=" (Left, Right : AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package_References."=";
    subtype AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array_Access is org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package_References.AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package_References."=";
+   function Java_Box (Value : AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package_References.Java_Box;
+   function Java_Unbox_AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array (Value : access Java_Object'Class) return AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array_Access renames org.allbinary.animation.AnimationInterfaceFactoryInterfaceComposite_Package_References.Java_Unbox_AnimationInterfaceFactoryInterfaceComposite_Access_Array_Access_Array;
 
    type AnimationInterfaceFactoryInterfaceComposite is new Java_Object and AnimationInterfaceFactoryInterface with record
       animationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access;

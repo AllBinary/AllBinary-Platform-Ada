@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.RelativeRelationship_Package;
 package org.allbinary.graphics.RelativeRelationship_Package_References is
    type RelativeRelationship_Access is access all org.allbinary.graphics.RelativeRelationship_Package.RelativeRelationship'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.RelativeRelationship_Package_References is
    type RelativeRelationship_Access_Array_Access is access all RelativeRelationship_Access_Array;
    type RelativeRelationship_Access_Array_Access_Array is array (Natural range <>) of RelativeRelationship_Access_Array_Access;
    type RelativeRelationship_Access_Array_Access_Array_Access is access all RelativeRelationship_Access_Array_Access_Array;
+   type RelativeRelationship_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RelativeRelationship_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RelativeRelationship_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RelativeRelationship_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RelativeRelationship_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RelativeRelationship_Access_Array_Access is (if Value /= null and then Value.all in RelativeRelationship_Access_Array_Object'Class then RelativeRelationship_Access_Array_Object'Class (Value.all).Value else null);
+   type RelativeRelationship_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RelativeRelationship_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RelativeRelationship_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RelativeRelationship_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RelativeRelationship_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RelativeRelationship_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in RelativeRelationship_Access_Array_Access_Array_Object'Class then RelativeRelationship_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.RelativeRelationship_Package_References;
 
 with org.allbinary.graphics.RelativeRelationship_Package_References;
@@ -69,10 +80,14 @@ package org.allbinary.graphics.RelativeRelationship_Package is
    function "=" (Left, Right : RelativeRelationship_Access_Array) return Boolean renames org.allbinary.graphics.RelativeRelationship_Package_References."=";
    subtype RelativeRelationship_Access_Array_Access is org.allbinary.graphics.RelativeRelationship_Package_References.RelativeRelationship_Access_Array_Access;
    function "=" (Left, Right : RelativeRelationship_Access_Array_Access) return Boolean renames org.allbinary.graphics.RelativeRelationship_Package_References."=";
+   function Java_Box (Value : RelativeRelationship_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.RelativeRelationship_Package_References.Java_Box;
+   function Java_Unbox_RelativeRelationship_Access_Array (Value : access Java_Object'Class) return RelativeRelationship_Access_Array_Access renames org.allbinary.graphics.RelativeRelationship_Package_References.Java_Unbox_RelativeRelationship_Access_Array;
    subtype RelativeRelationship_Access_Array_Access_Array is org.allbinary.graphics.RelativeRelationship_Package_References.RelativeRelationship_Access_Array_Access_Array;
    function "=" (Left, Right : RelativeRelationship_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.RelativeRelationship_Package_References."=";
    subtype RelativeRelationship_Access_Array_Access_Array_Access is org.allbinary.graphics.RelativeRelationship_Package_References.RelativeRelationship_Access_Array_Access_Array_Access;
    function "=" (Left, Right : RelativeRelationship_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.RelativeRelationship_Package_References."=";
+   function Java_Box (Value : RelativeRelationship_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.RelativeRelationship_Package_References.Java_Box;
+   function Java_Unbox_RelativeRelationship_Access_Array_Access_Array (Value : access Java_Object'Class) return RelativeRelationship_Access_Array_Access_Array_Access renames org.allbinary.graphics.RelativeRelationship_Package_References.Java_Unbox_RelativeRelationship_Access_Array_Access_Array;
 
    type RelativeRelationship is new Java_Object with record
       typesAllowedList : BasicArrayList_Access;

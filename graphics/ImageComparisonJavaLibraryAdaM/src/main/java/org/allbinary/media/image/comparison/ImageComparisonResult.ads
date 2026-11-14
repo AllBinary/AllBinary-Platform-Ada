@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.image.comparison.ImageComparisonResult_Package;
 package org.allbinary.media.image.comparison.ImageComparisonResult_Package_References is
    type ImageComparisonResult_Access is access all org.allbinary.media.image.comparison.ImageComparisonResult_Package.ImageComparisonResult'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.image.comparison.ImageComparisonResult_Package_Refer
    type ImageComparisonResult_Access_Array_Access is access all ImageComparisonResult_Access_Array;
    type ImageComparisonResult_Access_Array_Access_Array is array (Natural range <>) of ImageComparisonResult_Access_Array_Access;
    type ImageComparisonResult_Access_Array_Access_Array_Access is access all ImageComparisonResult_Access_Array_Access_Array;
+   type ImageComparisonResult_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageComparisonResult_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageComparisonResult_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageComparisonResult_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageComparisonResult_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageComparisonResult_Access_Array_Access is (if Value /= null and then Value.all in ImageComparisonResult_Access_Array_Object'Class then ImageComparisonResult_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageComparisonResult_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageComparisonResult_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageComparisonResult_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageComparisonResult_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageComparisonResult_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageComparisonResult_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageComparisonResult_Access_Array_Access_Array_Object'Class then ImageComparisonResult_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.image.comparison.ImageComparisonResult_Package_References;
 
 with org.allbinary.media.image.comparison.ImageComparisonResult_Package_References;
@@ -97,10 +108,14 @@ package org.allbinary.media.image.comparison.ImageComparisonResult_Package is
    function "=" (Left, Right : ImageComparisonResult_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References."=";
    subtype ImageComparisonResult_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access;
    function "=" (Left, Right : ImageComparisonResult_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References."=";
+   function Java_Box (Value : ImageComparisonResult_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.Java_Box;
+   function Java_Unbox_ImageComparisonResult_Access_Array (Value : access Java_Object'Class) return ImageComparisonResult_Access_Array_Access renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.Java_Unbox_ImageComparisonResult_Access_Array;
    subtype ImageComparisonResult_Access_Array_Access_Array is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access_Array;
    function "=" (Left, Right : ImageComparisonResult_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References."=";
    subtype ImageComparisonResult_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.ImageComparisonResult_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageComparisonResult_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References."=";
+   function Java_Box (Value : ImageComparisonResult_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.Java_Box;
+   function Java_Unbox_ImageComparisonResult_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageComparisonResult_Access_Array_Access_Array_Access renames org.allbinary.media.image.comparison.ImageComparisonResult_Package_References.Java_Unbox_ImageComparisonResult_Access_Array_Access_Array;
 
    type ImageComparisonResult is new Java_Object with record
       logUtil : LogUtil_Access;

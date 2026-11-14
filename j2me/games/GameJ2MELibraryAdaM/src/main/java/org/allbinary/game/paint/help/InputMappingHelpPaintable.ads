@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 package org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References is
    type InputMappingHelpPaintable_Access is access all org.allbinary.game.paint.help.InputMappingHelpPaintable_Package.InputMappingHelpPaintable'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_Referenc
    type InputMappingHelpPaintable_Access_Array_Access is access all InputMappingHelpPaintable_Access_Array;
    type InputMappingHelpPaintable_Access_Array_Access_Array is array (Natural range <>) of InputMappingHelpPaintable_Access_Array_Access;
    type InputMappingHelpPaintable_Access_Array_Access_Array_Access is access all InputMappingHelpPaintable_Access_Array_Access_Array;
+   type InputMappingHelpPaintable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InputMappingHelpPaintable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InputMappingHelpPaintable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InputMappingHelpPaintable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InputMappingHelpPaintable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InputMappingHelpPaintable_Access_Array_Access is (if Value /= null and then Value.all in InputMappingHelpPaintable_Access_Array_Object'Class then InputMappingHelpPaintable_Access_Array_Object'Class (Value.all).Value else null);
+   type InputMappingHelpPaintable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InputMappingHelpPaintable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InputMappingHelpPaintable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InputMappingHelpPaintable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InputMappingHelpPaintable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InputMappingHelpPaintable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in InputMappingHelpPaintable_Access_Array_Access_Array_Object'Class then InputMappingHelpPaintable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References;
 
 with org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References;
@@ -200,10 +211,14 @@ package org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
    function "=" (Left, Right : InputMappingHelpPaintable_Access_Array) return Boolean renames org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References."=";
    subtype InputMappingHelpPaintable_Access_Array_Access is org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References.InputMappingHelpPaintable_Access_Array_Access;
    function "=" (Left, Right : InputMappingHelpPaintable_Access_Array_Access) return Boolean renames org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References."=";
+   function Java_Box (Value : InputMappingHelpPaintable_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References.Java_Box;
+   function Java_Unbox_InputMappingHelpPaintable_Access_Array (Value : access Java_Object'Class) return InputMappingHelpPaintable_Access_Array_Access renames org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References.Java_Unbox_InputMappingHelpPaintable_Access_Array;
    subtype InputMappingHelpPaintable_Access_Array_Access_Array is org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References.InputMappingHelpPaintable_Access_Array_Access_Array;
    function "=" (Left, Right : InputMappingHelpPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References."=";
    subtype InputMappingHelpPaintable_Access_Array_Access_Array_Access is org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References.InputMappingHelpPaintable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InputMappingHelpPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References."=";
+   function Java_Box (Value : InputMappingHelpPaintable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References.Java_Box;
+   function Java_Unbox_InputMappingHelpPaintable_Access_Array_Access_Array (Value : access Java_Object'Class) return InputMappingHelpPaintable_Access_Array_Access_Array_Access renames org.allbinary.game.paint.help.InputMappingHelpPaintable_Package_References.Java_Unbox_InputMappingHelpPaintable_Access_Array_Access_Array;
 
    type InputMappingHelpPaintable is new HelpPaintable with record
       logUtil : LogUtil_Access;
@@ -234,6 +249,7 @@ package org.allbinary.game.paint.help.InputMappingHelpPaintable_Package is
 
 end org.allbinary.game.paint.help.InputMappingHelpPaintable_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.game.paint.help.UpdateMyFontProperties_Package;
 package org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References is
    type UpdateMyFontProperties_Access is access all org.allbinary.game.paint.help.UpdateMyFontProperties_Package.UpdateMyFontProperties'Class;
@@ -241,6 +257,16 @@ package org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References 
    type UpdateMyFontProperties_Access_Array_Access is access all UpdateMyFontProperties_Access_Array;
    type UpdateMyFontProperties_Access_Array_Access_Array is array (Natural range <>) of UpdateMyFontProperties_Access_Array_Access;
    type UpdateMyFontProperties_Access_Array_Access_Array_Access is access all UpdateMyFontProperties_Access_Array_Access_Array;
+   type UpdateMyFontProperties_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UpdateMyFontProperties_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UpdateMyFontProperties_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UpdateMyFontProperties_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UpdateMyFontProperties_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UpdateMyFontProperties_Access_Array_Access is (if Value /= null and then Value.all in UpdateMyFontProperties_Access_Array_Object'Class then UpdateMyFontProperties_Access_Array_Object'Class (Value.all).Value else null);
+   type UpdateMyFontProperties_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UpdateMyFontProperties_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UpdateMyFontProperties_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UpdateMyFontProperties_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UpdateMyFontProperties_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UpdateMyFontProperties_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in UpdateMyFontProperties_Access_Array_Access_Array_Object'Class then UpdateMyFontProperties_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References;
 
 with org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References;
@@ -410,10 +436,14 @@ package org.allbinary.game.paint.help.UpdateMyFontProperties_Package is
    function "=" (Left, Right : UpdateMyFontProperties_Access_Array) return Boolean renames org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References."=";
    subtype UpdateMyFontProperties_Access_Array_Access is org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.UpdateMyFontProperties_Access_Array_Access;
    function "=" (Left, Right : UpdateMyFontProperties_Access_Array_Access) return Boolean renames org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References."=";
+   function Java_Box (Value : UpdateMyFontProperties_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.Java_Box;
+   function Java_Unbox_UpdateMyFontProperties_Access_Array (Value : access Java_Object'Class) return UpdateMyFontProperties_Access_Array_Access renames org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.Java_Unbox_UpdateMyFontProperties_Access_Array;
    subtype UpdateMyFontProperties_Access_Array_Access_Array is org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.UpdateMyFontProperties_Access_Array_Access_Array;
    function "=" (Left, Right : UpdateMyFontProperties_Access_Array_Access_Array) return Boolean renames org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References."=";
    subtype UpdateMyFontProperties_Access_Array_Access_Array_Access is org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.UpdateMyFontProperties_Access_Array_Access_Array_Access;
    function "=" (Left, Right : UpdateMyFontProperties_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References."=";
+   function Java_Box (Value : UpdateMyFontProperties_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.Java_Box;
+   function Java_Unbox_UpdateMyFontProperties_Access_Array_Access_Array (Value : access Java_Object'Class) return UpdateMyFontProperties_Access_Array_Access_Array_Access renames org.allbinary.game.paint.help.UpdateMyFontProperties_Package_References.Java_Unbox_UpdateMyFontProperties_Access_Array_Access_Array;
 
    type UpdateMyFontProperties is new Java_Object with record
       actionStringArray : Unbounded_String_Array_Access;

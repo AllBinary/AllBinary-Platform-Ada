@@ -44,7 +44,7 @@ package body org.allbinary.game.displayable.canvas.NullDisplayable_Package is
 
    function getInstance return NullDisplayable_Access is
    begin
-        return NullDisplayable_Access (NullDisplayable_Package.SINGLETON);
+        return NullDisplayable_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out NullDisplayable'Class) is

@@ -36,7 +36,7 @@ package body org.allbinary.vector.PointsUtil_Package is
 
    function getInstance return PointsUtil_Access is
    begin
-        return PointsUtil_Access (PointsUtil_Package.instance);
+        return PointsUtil_Package.instance;
    end getInstance;
 
    function adjustXY (This : in out PointsUtil; points : Integer_Array_Access_Array_Access_Array_Access; x : Integer; y : Integer) return Integer_Array_Access_Array_Access_Array_Access is

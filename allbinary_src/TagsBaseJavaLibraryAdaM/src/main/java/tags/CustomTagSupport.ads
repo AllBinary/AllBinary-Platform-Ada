@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with tags.CustomTagSupport_Package;
 package tags.CustomTagSupport_Package_References is
    type CustomTagSupport_Access is access all tags.CustomTagSupport_Package.CustomTagSupport'Class;
@@ -19,6 +20,16 @@ package tags.CustomTagSupport_Package_References is
    type CustomTagSupport_Access_Array_Access is access all CustomTagSupport_Access_Array;
    type CustomTagSupport_Access_Array_Access_Array is array (Natural range <>) of CustomTagSupport_Access_Array_Access;
    type CustomTagSupport_Access_Array_Access_Array_Access is access all CustomTagSupport_Access_Array_Access_Array;
+   type CustomTagSupport_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CustomTagSupport_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CustomTagSupport_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CustomTagSupport_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CustomTagSupport_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CustomTagSupport_Access_Array_Access is (if Value /= null and then Value.all in CustomTagSupport_Access_Array_Object'Class then CustomTagSupport_Access_Array_Object'Class (Value.all).Value else null);
+   type CustomTagSupport_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CustomTagSupport_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CustomTagSupport_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CustomTagSupport_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CustomTagSupport_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CustomTagSupport_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CustomTagSupport_Access_Array_Access_Array_Object'Class then CustomTagSupport_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end tags.CustomTagSupport_Package_References;
 
 with tags.CustomTagSupport_Package_References;
@@ -70,10 +81,14 @@ package tags.CustomTagSupport_Package is
    function "=" (Left, Right : CustomTagSupport_Access_Array) return Boolean renames tags.CustomTagSupport_Package_References."=";
    subtype CustomTagSupport_Access_Array_Access is tags.CustomTagSupport_Package_References.CustomTagSupport_Access_Array_Access;
    function "=" (Left, Right : CustomTagSupport_Access_Array_Access) return Boolean renames tags.CustomTagSupport_Package_References."=";
+   function Java_Box (Value : CustomTagSupport_Access_Array_Access) return Java_Object_Access renames tags.CustomTagSupport_Package_References.Java_Box;
+   function Java_Unbox_CustomTagSupport_Access_Array (Value : access Java_Object'Class) return CustomTagSupport_Access_Array_Access renames tags.CustomTagSupport_Package_References.Java_Unbox_CustomTagSupport_Access_Array;
    subtype CustomTagSupport_Access_Array_Access_Array is tags.CustomTagSupport_Package_References.CustomTagSupport_Access_Array_Access_Array;
    function "=" (Left, Right : CustomTagSupport_Access_Array_Access_Array) return Boolean renames tags.CustomTagSupport_Package_References."=";
    subtype CustomTagSupport_Access_Array_Access_Array_Access is tags.CustomTagSupport_Package_References.CustomTagSupport_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CustomTagSupport_Access_Array_Access_Array_Access) return Boolean renames tags.CustomTagSupport_Package_References."=";
+   function Java_Box (Value : CustomTagSupport_Access_Array_Access_Array_Access) return Java_Object_Access renames tags.CustomTagSupport_Package_References.Java_Box;
+   function Java_Unbox_CustomTagSupport_Access_Array_Access_Array (Value : access Java_Object'Class) return CustomTagSupport_Access_Array_Access_Array_Access renames tags.CustomTagSupport_Package_References.Java_Unbox_CustomTagSupport_Access_Array_Access_Array;
 
    type CustomTagSupport is new Java_Object with record
       commonStrings : CommonStrings_Access;

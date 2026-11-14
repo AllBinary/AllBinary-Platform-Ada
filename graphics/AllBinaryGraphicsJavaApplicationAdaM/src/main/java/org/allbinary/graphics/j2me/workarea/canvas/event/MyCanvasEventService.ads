@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package;
 package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References is
    type MyCanvasEventService_Access is access all org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package.MyCanvasEventService'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_P
    type MyCanvasEventService_Access_Array_Access is access all MyCanvasEventService_Access_Array;
    type MyCanvasEventService_Access_Array_Access_Array is array (Natural range <>) of MyCanvasEventService_Access_Array_Access;
    type MyCanvasEventService_Access_Array_Access_Array_Access is access all MyCanvasEventService_Access_Array_Access_Array;
+   type MyCanvasEventService_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MyCanvasEventService_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MyCanvasEventService_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MyCanvasEventService_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MyCanvasEventService_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MyCanvasEventService_Access_Array_Access is (if Value /= null and then Value.all in MyCanvasEventService_Access_Array_Object'Class then MyCanvasEventService_Access_Array_Object'Class (Value.all).Value else null);
+   type MyCanvasEventService_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MyCanvasEventService_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MyCanvasEventService_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MyCanvasEventService_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MyCanvasEventService_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MyCanvasEventService_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MyCanvasEventService_Access_Array_Access_Array_Object'Class then MyCanvasEventService_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References;
 
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References;
@@ -30,6 +41,8 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
+--  with java.util.EventListener_Package; use java.util.EventListener_Package;
+--  with javax.swing.event.EventListenerList_Package; use javax.swing.event.EventListenerList_Package;
 limited with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventListener_Package_References;
 limited with org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
@@ -68,10 +81,14 @@ package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_P
    function "=" (Left, Right : MyCanvasEventService_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References."=";
    subtype MyCanvasEventService_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References.MyCanvasEventService_Access_Array_Access;
    function "=" (Left, Right : MyCanvasEventService_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References."=";
+   function Java_Box (Value : MyCanvasEventService_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References.Java_Box;
+   function Java_Unbox_MyCanvasEventService_Access_Array (Value : access Java_Object'Class) return MyCanvasEventService_Access_Array_Access renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References.Java_Unbox_MyCanvasEventService_Access_Array;
    subtype MyCanvasEventService_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References.MyCanvasEventService_Access_Array_Access_Array;
    function "=" (Left, Right : MyCanvasEventService_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References."=";
    subtype MyCanvasEventService_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References.MyCanvasEventService_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MyCanvasEventService_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References."=";
+   function Java_Box (Value : MyCanvasEventService_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References.Java_Box;
+   function Java_Unbox_MyCanvasEventService_Access_Array_Access_Array (Value : access Java_Object'Class) return MyCanvasEventService_Access_Array_Access_Array_Access renames org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventService_Package_References.Java_Unbox_MyCanvasEventService_Access_Array_Access_Array;
 
    type MyCanvasEventService is new Java_Object with null record;
    listenerList : EventListenerList_Access;

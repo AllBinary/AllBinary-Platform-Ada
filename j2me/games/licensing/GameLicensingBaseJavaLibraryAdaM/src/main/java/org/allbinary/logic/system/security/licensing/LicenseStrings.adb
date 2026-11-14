@@ -37,7 +37,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseStrings_Packag
 
    function getInstance return LicenseStrings_Access is
    begin
-        return LicenseStrings_Access (LicenseStrings_Package.instance);
+        return LicenseStrings_Package.instance;
    end getInstance;
 
 begin

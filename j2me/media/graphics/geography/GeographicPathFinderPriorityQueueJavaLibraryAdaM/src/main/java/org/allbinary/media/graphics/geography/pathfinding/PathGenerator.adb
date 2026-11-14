@@ -26,6 +26,7 @@ with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package; 
 with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package_References;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
 
 package body org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package is
 
@@ -87,7 +88,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Pa
 
    function getInstance return PathGenerator_Access is
    begin
-        return PathGenerator_Access (PathGenerator_Package.SINGLETON);
+        return PathGenerator_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out PathGenerator'Class) is

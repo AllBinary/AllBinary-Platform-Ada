@@ -31,10 +31,14 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_Re
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -49,6 +53,8 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
    package TransformInfo_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfo_Package;
    package TransformInfoHttpInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
    package TransformInfoObjectConfigInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -108,7 +114,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
 
    function getInstance return CustomizerUtil_Access is
    begin
-        return CustomizerUtil_Access (CustomizerUtil_Package.instance);
+        return CustomizerUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out CustomizerUtil'Class) is
@@ -133,7 +139,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
       customizedTransformInfoInterface : TransformInfoInterface_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & customizerTransformInfoInterface.getName, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformInfoInterfaceToCustomize()"));
         end if;
         transformInfoEntityInterface := TransformInfoEntityBuilder_Package.getInstance;
@@ -152,7 +158,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
       customizedTransformInfoInterface : TransformInfoInterface_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & customizerTransformInfoInterface.getName, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformInfoObjectConfigComponentNodesToCustomize()"));
         end if;
         transformInfoEntityInterface := TransformInfoEntityBuilder_Package.getInstance;
@@ -167,7 +173,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
       transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformInfoObjectConfigComponentNodes()"));
         end if;
         transformInfoObjectConfigInterface := TransformInfoObjectConfigInterface_Access (transformInfoInterface.getObjectConfigInterface);
@@ -179,7 +185,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
       transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getTransformInfoObjectConfigComponentNodes()"));
         end if;
         transformInfoObjectConfigInterface := TransformInfoObjectConfigInterface_Access (transformInfoInterface.getObjectConfigInterface);
@@ -202,7 +208,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
       specifiedTransformInfoInterface : TransformInfoInterface_Access;
       index : Integer;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
         end if;
         transformInfoEntityInterface := TransformInfoEntityBuilder_Package.getInstance;
@@ -211,7 +217,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
         document.appendChild (domNodeInterface.toXmlNode (document));
         documentString := XmlDocumentHelper_Package.toString (document);
         stringBuffer := StringMaker_Package.Create;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             stringBuffer.append (To_Unbounded_String ("Total Views For Modification: "));
             stringBuffer.appendint (allViewsToBeModified.size);
             stringBuffer.append (To_Unbounded_String (" New Xml/Data: "));
@@ -223,7 +229,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
         for index in 0 .. (size) - 1 loop
             transformInfo := TransformInfo_Access (allViewsToBeModified.get (index));
             viewNameOfViewToBeModified := transformInfo.getName;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (transformInfoInterface.getName);
                 stringBuffer.append (To_Unbounded_String (" is modifying view: "));
@@ -233,7 +239,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
             httpTransformInfoInterface := TransformInfoHttpInterface_Access (transformInfoInterface);
             specifiedTransformInfoInterface := TransformInfoInterface_Access (transformInfoEntityInterface.get (viewNameOfViewToBeModified, httpTransformInfoInterface.getPropertiesHashMap, httpTransformInfoInterface.getPageContext));
             if (specifiedTransformInfoInterface) = (null) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                     stringBuffer.delete (0, stringBuffer.length);
                     stringBuffer.append (transformInfoInterface.getName);
                     stringBuffer.append (To_Unbounded_String (" is unable to add data to view: "));
@@ -242,10 +248,10 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
                     This.logUtil.putF (stringBuffer.toString, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
                 end if;
             else
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                     This.logUtil.putF (transformInfoInterface.getName & To_Unbounded_String (" is adding data to view: ") & viewNameOfViewToBeModified, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("insert()"));
                 end if;
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                     stringBuffer.delete (0, stringBuffer.length);
                     stringBuffer.append (viewNameOfViewToBeModified);
                     stringBuffer.append (To_Unbounded_String (" is changing data in "));
@@ -264,7 +270,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
       specifiedTransformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (specifiedTransformInfoInterface_Param);
       transformInfoEntityInterface : TransformInfoEntity_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & specifiedTransformInfoInterface.getName, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("write()"));
         end if;
         transformInfoEntityInterface := TransformInfoEntityBuilder_Package.getInstance;
@@ -285,7 +291,7 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
       specifiedTransformInfoInterface : TransformInfoInterface_Access;
       index : Integer;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("View Name: ") & transformInfoInterface.getName, CustomizerUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getViewDataForComponentsInObjectConfig()"));
         end if;
         transformInfoObjectConfigInterface := TransformInfoObjectConfigInterface_Access (transformInfoInterface.getObjectConfigInterface);

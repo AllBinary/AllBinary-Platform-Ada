@@ -1,5 +1,6 @@
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.view.EmulatorViewInterface_Package;
 package org.allbinary.view.EmulatorViewInterface_Package_References is
    type EmulatorViewInterface_Access is access all org.allbinary.view.EmulatorViewInterface_Package.EmulatorViewInterface'Class;
@@ -7,6 +8,16 @@ package org.allbinary.view.EmulatorViewInterface_Package_References is
    type EmulatorViewInterface_Access_Array_Access is access all EmulatorViewInterface_Access_Array;
    type EmulatorViewInterface_Access_Array_Access_Array is array (Natural range <>) of EmulatorViewInterface_Access_Array_Access;
    type EmulatorViewInterface_Access_Array_Access_Array_Access is access all EmulatorViewInterface_Access_Array_Access_Array;
+   type EmulatorViewInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : EmulatorViewInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : EmulatorViewInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new EmulatorViewInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_EmulatorViewInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return EmulatorViewInterface_Access_Array_Access is (if Value /= null and then Value.all in EmulatorViewInterface_Access_Array_Object'Class then EmulatorViewInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type EmulatorViewInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : EmulatorViewInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : EmulatorViewInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new EmulatorViewInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_EmulatorViewInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return EmulatorViewInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in EmulatorViewInterface_Access_Array_Access_Array_Object'Class then EmulatorViewInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.view.EmulatorViewInterface_Package_References;
 
 with org.allbinary.view.EmulatorViewInterface_Package_References;
@@ -59,10 +70,14 @@ package org.allbinary.view.EmulatorViewInterface_Package is
    function "=" (Left, Right : EmulatorViewInterface_Access_Array) return Boolean renames org.allbinary.view.EmulatorViewInterface_Package_References."=";
    subtype EmulatorViewInterface_Access_Array_Access is org.allbinary.view.EmulatorViewInterface_Package_References.EmulatorViewInterface_Access_Array_Access;
    function "=" (Left, Right : EmulatorViewInterface_Access_Array_Access) return Boolean renames org.allbinary.view.EmulatorViewInterface_Package_References."=";
+   function Java_Box (Value : EmulatorViewInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.view.EmulatorViewInterface_Package_References.Java_Box;
+   function Java_Unbox_EmulatorViewInterface_Access_Array (Value : access Java_Object'Class) return EmulatorViewInterface_Access_Array_Access renames org.allbinary.view.EmulatorViewInterface_Package_References.Java_Unbox_EmulatorViewInterface_Access_Array;
    subtype EmulatorViewInterface_Access_Array_Access_Array is org.allbinary.view.EmulatorViewInterface_Package_References.EmulatorViewInterface_Access_Array_Access_Array;
    function "=" (Left, Right : EmulatorViewInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.view.EmulatorViewInterface_Package_References."=";
    subtype EmulatorViewInterface_Access_Array_Access_Array_Access is org.allbinary.view.EmulatorViewInterface_Package_References.EmulatorViewInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : EmulatorViewInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.view.EmulatorViewInterface_Package_References."=";
+   function Java_Box (Value : EmulatorViewInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.view.EmulatorViewInterface_Package_References.Java_Box;
+   function Java_Unbox_EmulatorViewInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return EmulatorViewInterface_Access_Array_Access_Array_Access renames org.allbinary.view.EmulatorViewInterface_Package_References.Java_Unbox_EmulatorViewInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_EmulatorViewInterface (Value : EmulatorViewInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure setMidlet (This : in out EmulatorViewInterface; midlet_Param : access MIDlet_Package.MIDlet'Class) is abstract;
    procedure onEmulatorInitComplete (This : in out EmulatorViewInterface; midletActivity_Param : access Java_Object'Class) is abstract;

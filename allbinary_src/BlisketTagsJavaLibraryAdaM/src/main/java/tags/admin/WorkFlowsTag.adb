@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -32,6 +33,7 @@ with tags.ValidationTransformTag_Package;
 package body tags.admin.WorkFlowsTag_Package is
 
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    procedure Initialize_Fields (This : in out WorkFlowsTag'Class) is
    begin
       null;
@@ -57,16 +59,16 @@ package body tags.admin.WorkFlowsTag_Package is
    begin
         begin
             if (WorkFlowsTag'Class (This).getCommand) /= (null) then
-                if (WorkFlowsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.NEW_Id)) = (0) then
+                if (WorkFlowsTag'Class (This).getCommand.compareTo (GLOBALS2_Package.NEW_Id)) = (0) then
                     WorkFlowsTag'Class (This).setName (To_Unbounded_String ("New WorkFlow View"));
                     WorkFlowsTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.workflow.NewView"));
                 elsif (WorkFlowsTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
                     WorkFlowsTag'Class (This).setName (To_Unbounded_String ("Add Validation WorkFlow View"));
                     WorkFlowsTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.workflow.AddValidationView"));
-                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (GLOBALS2_Package.VIEW)) = (0) then
                     WorkFlowsTag'Class (This).setName (To_Unbounded_String ("Validation WorkFlow View"));
                     WorkFlowsTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.workflow.WorkflowsValidationView"));
-                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.EDIT)) = (0) then
+                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (GLOBALS2_Package.EDIT)) = (0) then
                     WorkFlowsTag'Class (This).setName (To_Unbounded_String ("Validation WorkFlow View"));
                     WorkFlowsTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.workflow.EditValidationView"));
                 elsif (WorkFlowsTag'Class (This).getCommand.compareTo (This.commonStrings.UPDATE)) = (0) then
@@ -75,9 +77,9 @@ package body tags.admin.WorkFlowsTag_Package is
                 elsif (WorkFlowsTag'Class (This).getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
                     WorkFlowsTag'Class (This).setName (To_Unbounded_String ("Delete Validation WorkFlow View"));
                     WorkFlowsTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.workflow.DeleteValidationView"));
-                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) = (0) then
+                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (GLOBALS2_Package.BACKUP)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
-                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) = (0) then
+                elsif (WorkFlowsTag'Class (This).getCommand.compareTo (GLOBALS2_Package.RESTORE)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
                 elsif (WorkFlowsTag'Class (This).getCommand.compareTo (This.commonStrings.DROP)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));

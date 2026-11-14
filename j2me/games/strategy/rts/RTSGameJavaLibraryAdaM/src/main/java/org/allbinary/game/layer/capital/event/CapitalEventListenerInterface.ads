@@ -11,6 +11,7 @@
 -- Created By: Travis Berthelot  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package;
 package org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package_References is
    type CapitalEventListenerInterface_Access is access all org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package.CapitalEventListenerInterface'Class;
@@ -18,6 +19,16 @@ package org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Pac
    type CapitalEventListenerInterface_Access_Array_Access is access all CapitalEventListenerInterface_Access_Array;
    type CapitalEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of CapitalEventListenerInterface_Access_Array_Access;
    type CapitalEventListenerInterface_Access_Array_Access_Array_Access is access all CapitalEventListenerInterface_Access_Array_Access_Array;
+   type CapitalEventListenerInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CapitalEventListenerInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CapitalEventListenerInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CapitalEventListenerInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CapitalEventListenerInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CapitalEventListenerInterface_Access_Array_Access is (if Value /= null and then Value.all in CapitalEventListenerInterface_Access_Array_Object'Class then CapitalEventListenerInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type CapitalEventListenerInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CapitalEventListenerInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CapitalEventListenerInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CapitalEventListenerInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CapitalEventListenerInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CapitalEventListenerInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CapitalEventListenerInterface_Access_Array_Access_Array_Object'Class then CapitalEventListenerInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package_References;
 
 with org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package_References;
@@ -58,10 +69,14 @@ package org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Pac
    function "=" (Left, Right : CapitalEventListenerInterface_Access_Array) return Boolean renames org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package_References."=";
    subtype CapitalEventListenerInterface_Access_Array_Access is org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package_References.CapitalEventListenerInterface_Access_Array_Access;
    function "=" (Left, Right : CapitalEventListenerInterface_Access_Array_Access) return Boolean renames org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package_References."=";
+   function Java_Box (Value : CapitalEventListenerInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package_References.Java_Box;
+   function Java_Unbox_CapitalEventListenerInterface_Access_Array (Value : access Java_Object'Class) return CapitalEventListenerInterface_Access_Array_Access renames org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package_References.Java_Unbox_CapitalEventListenerInterface_Access_Array;
    subtype CapitalEventListenerInterface_Access_Array_Access_Array is org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package_References.CapitalEventListenerInterface_Access_Array_Access_Array;
    function "=" (Left, Right : CapitalEventListenerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package_References."=";
    subtype CapitalEventListenerInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package_References.CapitalEventListenerInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CapitalEventListenerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package_References."=";
+   function Java_Box (Value : CapitalEventListenerInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package_References.Java_Box;
+   function Java_Unbox_CapitalEventListenerInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return CapitalEventListenerInterface_Access_Array_Access_Array_Access renames org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package_References.Java_Unbox_CapitalEventListenerInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_CapitalEventListenerInterface (Value : CapitalEventListenerInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure onCapitalChangeEvent (This : in out CapitalEventListenerInterface; event_Param : access CapitalEvent_Package.CapitalEvent'Class) is abstract;
 

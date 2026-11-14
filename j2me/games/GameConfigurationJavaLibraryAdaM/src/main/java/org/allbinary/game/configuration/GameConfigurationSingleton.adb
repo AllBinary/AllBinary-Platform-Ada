@@ -72,7 +72,7 @@ package body org.allbinary.game.configuration.GameConfigurationSingleton_Package
 
    function getInstance return GameConfigurationSingleton_Access is
    begin
-        return GameConfigurationSingleton_Access (GameConfigurationSingleton_Package.SINGLETON);
+        return GameConfigurationSingleton_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out GameConfigurationSingleton'Class) is

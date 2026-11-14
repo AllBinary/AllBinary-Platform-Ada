@@ -39,7 +39,7 @@ package body org.allbinary.game.layer.SensorActionFactory_Package is
 
    function getInstance return SensorActionFactory_Access is
    begin
-        return SensorActionFactory_Access (SensorActionFactory_Package.instance);
+        return SensorActionFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out SensorActionFactory'Class) is

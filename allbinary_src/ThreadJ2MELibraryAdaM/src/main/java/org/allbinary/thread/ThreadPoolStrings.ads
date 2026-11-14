@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.thread.ThreadPoolStrings_Package;
 package org.allbinary.thread.ThreadPoolStrings_Package_References is
    type ThreadPoolStrings_Access is access all org.allbinary.thread.ThreadPoolStrings_Package.ThreadPoolStrings'Class;
@@ -19,6 +20,16 @@ package org.allbinary.thread.ThreadPoolStrings_Package_References is
    type ThreadPoolStrings_Access_Array_Access is access all ThreadPoolStrings_Access_Array;
    type ThreadPoolStrings_Access_Array_Access_Array is array (Natural range <>) of ThreadPoolStrings_Access_Array_Access;
    type ThreadPoolStrings_Access_Array_Access_Array_Access is access all ThreadPoolStrings_Access_Array_Access_Array;
+   type ThreadPoolStrings_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ThreadPoolStrings_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ThreadPoolStrings_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ThreadPoolStrings_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ThreadPoolStrings_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ThreadPoolStrings_Access_Array_Access is (if Value /= null and then Value.all in ThreadPoolStrings_Access_Array_Object'Class then ThreadPoolStrings_Access_Array_Object'Class (Value.all).Value else null);
+   type ThreadPoolStrings_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ThreadPoolStrings_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ThreadPoolStrings_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ThreadPoolStrings_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ThreadPoolStrings_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ThreadPoolStrings_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ThreadPoolStrings_Access_Array_Access_Array_Object'Class then ThreadPoolStrings_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.thread.ThreadPoolStrings_Package_References;
 
 with org.allbinary.thread.ThreadPoolStrings_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.thread.ThreadPoolStrings_Package is
    function "=" (Left, Right : ThreadPoolStrings_Access_Array) return Boolean renames org.allbinary.thread.ThreadPoolStrings_Package_References."=";
    subtype ThreadPoolStrings_Access_Array_Access is org.allbinary.thread.ThreadPoolStrings_Package_References.ThreadPoolStrings_Access_Array_Access;
    function "=" (Left, Right : ThreadPoolStrings_Access_Array_Access) return Boolean renames org.allbinary.thread.ThreadPoolStrings_Package_References."=";
+   function Java_Box (Value : ThreadPoolStrings_Access_Array_Access) return Java_Object_Access renames org.allbinary.thread.ThreadPoolStrings_Package_References.Java_Box;
+   function Java_Unbox_ThreadPoolStrings_Access_Array (Value : access Java_Object'Class) return ThreadPoolStrings_Access_Array_Access renames org.allbinary.thread.ThreadPoolStrings_Package_References.Java_Unbox_ThreadPoolStrings_Access_Array;
    subtype ThreadPoolStrings_Access_Array_Access_Array is org.allbinary.thread.ThreadPoolStrings_Package_References.ThreadPoolStrings_Access_Array_Access_Array;
    function "=" (Left, Right : ThreadPoolStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.ThreadPoolStrings_Package_References."=";
    subtype ThreadPoolStrings_Access_Array_Access_Array_Access is org.allbinary.thread.ThreadPoolStrings_Package_References.ThreadPoolStrings_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ThreadPoolStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.ThreadPoolStrings_Package_References."=";
+   function Java_Box (Value : ThreadPoolStrings_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.thread.ThreadPoolStrings_Package_References.Java_Box;
+   function Java_Unbox_ThreadPoolStrings_Access_Array_Access_Array (Value : access Java_Object'Class) return ThreadPoolStrings_Access_Array_Access_Array_Access renames org.allbinary.thread.ThreadPoolStrings_Package_References.Java_Unbox_ThreadPoolStrings_Access_Array_Access_Array;
 
    type ThreadPoolStrings is new Java_Object with record
       ADD_TASK : Unbounded_String;

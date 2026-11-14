@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with min3d.core.Renderer_Package;
 package min3d.core.Renderer_Package_References is
    type Renderer_Access is access all min3d.core.Renderer_Package.Renderer'Class;
@@ -19,6 +20,16 @@ package min3d.core.Renderer_Package_References is
    type Renderer_Access_Array_Access is access all Renderer_Access_Array;
    type Renderer_Access_Array_Access_Array is array (Natural range <>) of Renderer_Access_Array_Access;
    type Renderer_Access_Array_Access_Array_Access is access all Renderer_Access_Array_Access_Array;
+   type Renderer_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Renderer_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Renderer_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Renderer_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Renderer_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Renderer_Access_Array_Access is (if Value /= null and then Value.all in Renderer_Access_Array_Object'Class then Renderer_Access_Array_Object'Class (Value.all).Value else null);
+   type Renderer_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Renderer_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Renderer_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Renderer_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Renderer_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Renderer_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in Renderer_Access_Array_Access_Array_Object'Class then Renderer_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end min3d.core.Renderer_Package_References;
 
 with min3d.core.Renderer_Package_References;
@@ -71,10 +82,14 @@ package min3d.core.Renderer_Package is
    function "=" (Left, Right : Renderer_Access_Array) return Boolean renames min3d.core.Renderer_Package_References."=";
    subtype Renderer_Access_Array_Access is min3d.core.Renderer_Package_References.Renderer_Access_Array_Access;
    function "=" (Left, Right : Renderer_Access_Array_Access) return Boolean renames min3d.core.Renderer_Package_References."=";
+   function Java_Box (Value : Renderer_Access_Array_Access) return Java_Object_Access renames min3d.core.Renderer_Package_References.Java_Box;
+   function Java_Unbox_Renderer_Access_Array (Value : access Java_Object'Class) return Renderer_Access_Array_Access renames min3d.core.Renderer_Package_References.Java_Unbox_Renderer_Access_Array;
    subtype Renderer_Access_Array_Access_Array is min3d.core.Renderer_Package_References.Renderer_Access_Array_Access_Array;
    function "=" (Left, Right : Renderer_Access_Array_Access_Array) return Boolean renames min3d.core.Renderer_Package_References."=";
    subtype Renderer_Access_Array_Access_Array_Access is min3d.core.Renderer_Package_References.Renderer_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Renderer_Access_Array_Access_Array_Access) return Boolean renames min3d.core.Renderer_Package_References."=";
+   function Java_Box (Value : Renderer_Access_Array_Access_Array_Access) return Java_Object_Access renames min3d.core.Renderer_Package_References.Java_Box;
+   function Java_Unbox_Renderer_Access_Array_Access_Array (Value : access Java_Object'Class) return Renderer_Access_Array_Access_Array_Access renames min3d.core.Renderer_Package_References.Java_Unbox_Renderer_Access_Array_Access_Array;
    function Java_Object_Access_From_Renderer (Value : Renderer_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure onSurfaceCreated (This : in out Renderer; gl_Param : access GL10_Package.GL10'Class; config_Param : access EGLConfig_Package.EGLConfig'Class) is abstract;
    procedure onSurfaceChanged (This : in out Renderer; gl_Param : access GL10_Package.GL10'Class; width : Integer; height : Integer) is abstract;

@@ -19,7 +19,10 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.debug.DebugInterface_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.business.init.LicenseInitInfo_Package is
 
@@ -85,12 +88,12 @@ package body org.allbinary.business.init.LicenseInitInfo_Package is
 
    procedure setServer (This : in out LicenseInitInfo; value : Unbounded_String; index : Integer) is
    begin
-        This.serverList.addAt (index, value);
+        This.serverList.addAt (index, Java_Box (value));
    end setServer;
 
    procedure addServer (This : in out LicenseInitInfo; value : Unbounded_String) is
    begin
-        This.serverList.add (value);
+        This.serverList.add (Java_Box (value));
    end addServer;
 
    function getServerList (This : in out LicenseInitInfo) return BasicArrayList_Access is
@@ -101,7 +104,7 @@ package body org.allbinary.business.init.LicenseInitInfo_Package is
    procedure setServerList (This : in out LicenseInitInfo; servers_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       servers : constant BasicArrayList_Access := BasicArrayList_Access (servers_Param);
    begin
-        if (DebugFactory_Package.getInstance) = (NoDebug_Package.getInstance) then
+        if (Java_Object_Access (DebugFactory_Package.getInstance)) = (Java_Object_Access (NoDebug_Package.getInstance)) then
             This.serverList := servers;
         end if;
    end setServerList;

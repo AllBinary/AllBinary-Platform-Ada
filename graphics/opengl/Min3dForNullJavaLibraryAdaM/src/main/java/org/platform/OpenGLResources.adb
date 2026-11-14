@@ -25,7 +25,7 @@ package body org.platform.OpenGLResources_Package is
 
    function getInstance return OpenGLResources_Access is
    begin
-        return OpenGLResources_Access (OpenGLResources_Package.instance);
+        return OpenGLResources_Package.instance;
    end getInstance;
 
    procedure init (This : in out OpenGLResources) is

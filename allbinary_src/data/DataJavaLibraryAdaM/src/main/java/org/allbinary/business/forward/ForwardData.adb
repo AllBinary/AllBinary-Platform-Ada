@@ -40,7 +40,7 @@ package body org.allbinary.business.forward.ForwardData_Package is
 
    function getInstance return ForwardData_Access is
    begin
-        return ForwardData_Access (ForwardData_Package.instance);
+        return ForwardData_Package.instance;
    end getInstance;
 
 begin

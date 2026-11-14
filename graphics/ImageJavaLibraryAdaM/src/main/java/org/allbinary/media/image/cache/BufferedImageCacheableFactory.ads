@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package;
 package org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_References is
    type BufferedImageCacheableFactory_Access is access all org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package.BufferedImageCacheableFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_Re
    type BufferedImageCacheableFactory_Access_Array_Access is access all BufferedImageCacheableFactory_Access_Array;
    type BufferedImageCacheableFactory_Access_Array_Access_Array is array (Natural range <>) of BufferedImageCacheableFactory_Access_Array_Access;
    type BufferedImageCacheableFactory_Access_Array_Access_Array_Access is access all BufferedImageCacheableFactory_Access_Array_Access_Array;
+   type BufferedImageCacheableFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BufferedImageCacheableFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BufferedImageCacheableFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BufferedImageCacheableFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BufferedImageCacheableFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BufferedImageCacheableFactory_Access_Array_Access is (if Value /= null and then Value.all in BufferedImageCacheableFactory_Access_Array_Object'Class then BufferedImageCacheableFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type BufferedImageCacheableFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BufferedImageCacheableFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BufferedImageCacheableFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BufferedImageCacheableFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BufferedImageCacheableFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BufferedImageCacheableFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BufferedImageCacheableFactory_Access_Array_Access_Array_Object'Class then BufferedImageCacheableFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_References;
 
 with org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_References;
@@ -59,10 +70,14 @@ package org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package is
    function "=" (Left, Right : BufferedImageCacheableFactory_Access_Array) return Boolean renames org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_References."=";
    subtype BufferedImageCacheableFactory_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_References.BufferedImageCacheableFactory_Access_Array_Access;
    function "=" (Left, Right : BufferedImageCacheableFactory_Access_Array_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_References."=";
+   function Java_Box (Value : BufferedImageCacheableFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_References.Java_Box;
+   function Java_Unbox_BufferedImageCacheableFactory_Access_Array (Value : access Java_Object'Class) return BufferedImageCacheableFactory_Access_Array_Access renames org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_References.Java_Unbox_BufferedImageCacheableFactory_Access_Array;
    subtype BufferedImageCacheableFactory_Access_Array_Access_Array is org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_References.BufferedImageCacheableFactory_Access_Array_Access_Array;
    function "=" (Left, Right : BufferedImageCacheableFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_References."=";
    subtype BufferedImageCacheableFactory_Access_Array_Access_Array_Access is org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_References.BufferedImageCacheableFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BufferedImageCacheableFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_References."=";
+   function Java_Box (Value : BufferedImageCacheableFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_References.Java_Box;
+   function Java_Unbox_BufferedImageCacheableFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return BufferedImageCacheableFactory_Access_Array_Access_Array_Access renames org.allbinary.media.image.cache.BufferedImageCacheableFactory_Package_References.Java_Unbox_BufferedImageCacheableFactory_Access_Array_Access_Array;
 
    type BufferedImageCacheableFactory is new Java_Object and CacheableInterfaceFactoryInterface with null record;
 

@@ -79,6 +79,7 @@ with org.microemu.device.MutableImage_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.microemu.device.ui.PointerEvent_Package;
 with javax.microedition.lcdui.Screen_Package;
+with org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package;
 with javax.microedition.lcdui.StringComponent_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.thread.SynchObject_Package;
@@ -178,7 +179,7 @@ package body org.allbinary.graphics.displayable.screen.CommandForm_Package is
 
    function getNullCommandForm return CommandForm_Access is
    begin
-        if (CommandForm_Package.NULL_COMMAND_FORM) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (CommandForm_Package.NULL_COMMAND_FORM)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             CommandForm_Package.NULL_COMMAND_FORM := Java_Object_Access (CommandForm_Package.Create (NullCommandListener_Package.NULL_COMMAND_LISTENER, StringUtil_Package.getInstance.EMPTY_STRING, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE));
         end if;
         return CommandForm_Access (CommandForm_Package.NULL_COMMAND_FORM);

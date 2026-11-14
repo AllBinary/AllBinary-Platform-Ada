@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package;
 package org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package_References is
    type NameSpaceRequestParams_Access is access all org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package.NameSpaceRequestParams'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Pa
    type NameSpaceRequestParams_Access_Array_Access is access all NameSpaceRequestParams_Access_Array;
    type NameSpaceRequestParams_Access_Array_Access_Array is array (Natural range <>) of NameSpaceRequestParams_Access_Array_Access;
    type NameSpaceRequestParams_Access_Array_Access_Array_Access is access all NameSpaceRequestParams_Access_Array_Access_Array;
+   type NameSpaceRequestParams_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NameSpaceRequestParams_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NameSpaceRequestParams_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NameSpaceRequestParams_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NameSpaceRequestParams_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NameSpaceRequestParams_Access_Array_Access is (if Value /= null and then Value.all in NameSpaceRequestParams_Access_Array_Object'Class then NameSpaceRequestParams_Access_Array_Object'Class (Value.all).Value else null);
+   type NameSpaceRequestParams_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NameSpaceRequestParams_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NameSpaceRequestParams_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NameSpaceRequestParams_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NameSpaceRequestParams_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NameSpaceRequestParams_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NameSpaceRequestParams_Access_Array_Access_Array_Object'Class then NameSpaceRequestParams_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package_References;
 
 with org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package_References;
@@ -113,10 +124,14 @@ package org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Pa
    function "=" (Left, Right : NameSpaceRequestParams_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package_References."=";
    subtype NameSpaceRequestParams_Access_Array_Access is org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package_References.NameSpaceRequestParams_Access_Array_Access;
    function "=" (Left, Right : NameSpaceRequestParams_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package_References."=";
+   function Java_Box (Value : NameSpaceRequestParams_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package_References.Java_Box;
+   function Java_Unbox_NameSpaceRequestParams_Access_Array (Value : access Java_Object'Class) return NameSpaceRequestParams_Access_Array_Access renames org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package_References.Java_Unbox_NameSpaceRequestParams_Access_Array;
    subtype NameSpaceRequestParams_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package_References.NameSpaceRequestParams_Access_Array_Access_Array;
    function "=" (Left, Right : NameSpaceRequestParams_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package_References."=";
    subtype NameSpaceRequestParams_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package_References.NameSpaceRequestParams_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NameSpaceRequestParams_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package_References."=";
+   function Java_Box (Value : NameSpaceRequestParams_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package_References.Java_Box;
+   function Java_Unbox_NameSpaceRequestParams_Access_Array_Access_Array (Value : access Java_Object'Class) return NameSpaceRequestParams_Access_Array_Access_Array_Access renames org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Package_References.Java_Unbox_NameSpaceRequestParams_Access_Array_Access_Array;
 
    type NameSpaceRequestParams is new RequestParams with record
       logUtil : LogUtil_Access;

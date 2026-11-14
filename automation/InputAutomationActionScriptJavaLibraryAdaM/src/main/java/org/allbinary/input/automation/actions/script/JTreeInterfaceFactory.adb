@@ -42,7 +42,7 @@ package body org.allbinary.input.automation.actions.script.JTreeInterfaceFactory
 
    function getInstance return JTreeInterfaceFactory_Access is
    begin
-        return JTreeInterfaceFactory_Access (JTreeInterfaceFactory_Package.instance);
+        return JTreeInterfaceFactory_Package.instance;
    end getInstance;
 
    procedure set (This : in out JTreeInterfaceFactory; jTreeInterface_Param : access JTreeInterface_Package.JTreeInterface'Class) is

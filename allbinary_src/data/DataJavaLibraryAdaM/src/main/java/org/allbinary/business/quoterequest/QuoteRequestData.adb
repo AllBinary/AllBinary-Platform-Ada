@@ -30,7 +30,7 @@ package body org.allbinary.business.quoterequest.QuoteRequestData_Package is
 
    function getInstance return QuoteRequestData_Access is
    begin
-        return QuoteRequestData_Access (QuoteRequestData_Package.instance);
+        return QuoteRequestData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out QuoteRequestData'Class) is

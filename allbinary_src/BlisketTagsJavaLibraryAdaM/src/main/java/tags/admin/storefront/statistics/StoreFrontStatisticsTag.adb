@@ -16,6 +16,7 @@
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -34,6 +35,7 @@ package body tags.admin.storefront.statistics.StoreFrontStatisticsTag_Package is
 
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    procedure Initialize_Fields (This : in out StoreFrontStatisticsTag'Class) is
    begin
       null;
@@ -59,7 +61,7 @@ package body tags.admin.storefront.statistics.StoreFrontStatisticsTag_Package is
    begin
         begin
             if (StoreFrontStatisticsTag'Class (This).getCommand) /= (null) then
-                if (StoreFrontStatisticsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                if (StoreFrontStatisticsTag'Class (This).getCommand.compareTo (GLOBALS2_Package.VIEW)) = (0) then
                     StoreFrontStatisticsTag'Class (This).setName (To_Unbounded_String ("Validation StoreFrontStatistics View"));
                     StoreFrontStatisticsTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.storefront.statistics.ValidationStoreFrontStatisticsView"));
                 else

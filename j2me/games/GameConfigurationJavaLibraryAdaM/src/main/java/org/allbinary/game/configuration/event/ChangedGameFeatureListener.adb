@@ -117,7 +117,7 @@ package body org.allbinary.game.configuration.event.ChangedGameFeatureListener_P
 
    function getInstance return ChangedGameFeatureListener_Access is
    begin
-        return ChangedGameFeatureListener_Access (ChangedGameFeatureListener_Package.gameFeatureListener);
+        return ChangedGameFeatureListener_Package.gameFeatureListener;
    end getInstance;
 
    function isChangedGameConfiguration (This : in out ChangedGameFeatureListener; gameConfiguration_Param : access GameConfiguration_Package.GameConfiguration'Class) return Boolean is

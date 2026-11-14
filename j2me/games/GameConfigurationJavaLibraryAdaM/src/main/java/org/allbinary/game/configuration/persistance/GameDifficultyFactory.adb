@@ -37,7 +37,7 @@ package body org.allbinary.game.configuration.persistance.GameDifficultyFactory_
 
    function getInstance return GameDifficultyFactory_Access is
    begin
-        return GameDifficultyFactory_Access (GameDifficultyFactory_Package.instance);
+        return GameDifficultyFactory_Package.instance;
    end getInstance;
 
    procedure setLevel (This : in out GameDifficultyFactory; level : Integer) is

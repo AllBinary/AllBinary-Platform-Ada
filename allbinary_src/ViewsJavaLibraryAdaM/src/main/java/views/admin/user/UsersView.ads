@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.admin.user.UsersView_Package;
 package views.admin.user.UsersView_Package_References is
    type UsersView_Access is access all views.admin.user.UsersView_Package.UsersView'Class;
@@ -19,6 +20,16 @@ package views.admin.user.UsersView_Package_References is
    type UsersView_Access_Array_Access is access all UsersView_Access_Array;
    type UsersView_Access_Array_Access_Array is array (Natural range <>) of UsersView_Access_Array_Access;
    type UsersView_Access_Array_Access_Array_Access is access all UsersView_Access_Array_Access_Array;
+   type UsersView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UsersView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UsersView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UsersView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UsersView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UsersView_Access_Array_Access is (if Value /= null and then Value.all in UsersView_Access_Array_Object'Class then UsersView_Access_Array_Object'Class (Value.all).Value else null);
+   type UsersView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UsersView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UsersView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UsersView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UsersView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UsersView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in UsersView_Access_Array_Access_Array_Object'Class then UsersView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.admin.user.UsersView_Package_References;
 
 with views.admin.user.UsersView_Package_References;
@@ -113,10 +124,14 @@ package views.admin.user.UsersView_Package is
    function "=" (Left, Right : UsersView_Access_Array) return Boolean renames views.admin.user.UsersView_Package_References."=";
    subtype UsersView_Access_Array_Access is views.admin.user.UsersView_Package_References.UsersView_Access_Array_Access;
    function "=" (Left, Right : UsersView_Access_Array_Access) return Boolean renames views.admin.user.UsersView_Package_References."=";
+   function Java_Box (Value : UsersView_Access_Array_Access) return Java_Object_Access renames views.admin.user.UsersView_Package_References.Java_Box;
+   function Java_Unbox_UsersView_Access_Array (Value : access Java_Object'Class) return UsersView_Access_Array_Access renames views.admin.user.UsersView_Package_References.Java_Unbox_UsersView_Access_Array;
    subtype UsersView_Access_Array_Access_Array is views.admin.user.UsersView_Package_References.UsersView_Access_Array_Access_Array;
    function "=" (Left, Right : UsersView_Access_Array_Access_Array) return Boolean renames views.admin.user.UsersView_Package_References."=";
    subtype UsersView_Access_Array_Access_Array_Access is views.admin.user.UsersView_Package_References.UsersView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : UsersView_Access_Array_Access_Array_Access) return Boolean renames views.admin.user.UsersView_Package_References."=";
+   function Java_Box (Value : UsersView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.admin.user.UsersView_Package_References.Java_Box;
+   function Java_Unbox_UsersView_Access_Array_Access_Array (Value : access Java_Object'Class) return UsersView_Access_Array_Access_Array_Access renames views.admin.user.UsersView_Package_References.Java_Unbox_UsersView_Access_Array_Access_Array;
 
    type UsersView is new HttpContextView and DomNodeInterface with record
       UsersView_Field_logUtil : LogUtil_Access;

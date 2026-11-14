@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.accelerometer.NoAccelerometerSensor_Package;
 package org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References is
    type NoAccelerometerSensor_Access is access all org.allbinary.input.accelerometer.NoAccelerometerSensor_Package.NoAccelerometerSensor'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_Referenc
    type NoAccelerometerSensor_Access_Array_Access is access all NoAccelerometerSensor_Access_Array;
    type NoAccelerometerSensor_Access_Array_Access_Array is array (Natural range <>) of NoAccelerometerSensor_Access_Array_Access;
    type NoAccelerometerSensor_Access_Array_Access_Array_Access is access all NoAccelerometerSensor_Access_Array_Access_Array;
+   type NoAccelerometerSensor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NoAccelerometerSensor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NoAccelerometerSensor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NoAccelerometerSensor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NoAccelerometerSensor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NoAccelerometerSensor_Access_Array_Access is (if Value /= null and then Value.all in NoAccelerometerSensor_Access_Array_Object'Class then NoAccelerometerSensor_Access_Array_Object'Class (Value.all).Value else null);
+   type NoAccelerometerSensor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NoAccelerometerSensor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NoAccelerometerSensor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NoAccelerometerSensor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NoAccelerometerSensor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NoAccelerometerSensor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NoAccelerometerSensor_Access_Array_Access_Array_Object'Class then NoAccelerometerSensor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References;
 
 with org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References;
@@ -59,10 +70,14 @@ package org.allbinary.input.accelerometer.NoAccelerometerSensor_Package is
    function "=" (Left, Right : NoAccelerometerSensor_Access_Array) return Boolean renames org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References."=";
    subtype NoAccelerometerSensor_Access_Array_Access is org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References.NoAccelerometerSensor_Access_Array_Access;
    function "=" (Left, Right : NoAccelerometerSensor_Access_Array_Access) return Boolean renames org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References."=";
+   function Java_Box (Value : NoAccelerometerSensor_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References.Java_Box;
+   function Java_Unbox_NoAccelerometerSensor_Access_Array (Value : access Java_Object'Class) return NoAccelerometerSensor_Access_Array_Access renames org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References.Java_Unbox_NoAccelerometerSensor_Access_Array;
    subtype NoAccelerometerSensor_Access_Array_Access_Array is org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References.NoAccelerometerSensor_Access_Array_Access_Array;
    function "=" (Left, Right : NoAccelerometerSensor_Access_Array_Access_Array) return Boolean renames org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References."=";
    subtype NoAccelerometerSensor_Access_Array_Access_Array_Access is org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References.NoAccelerometerSensor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NoAccelerometerSensor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References."=";
+   function Java_Box (Value : NoAccelerometerSensor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References.Java_Box;
+   function Java_Unbox_NoAccelerometerSensor_Access_Array_Access_Array (Value : access Java_Object'Class) return NoAccelerometerSensor_Access_Array_Access_Array_Access renames org.allbinary.input.accelerometer.NoAccelerometerSensor_Package_References.Java_Unbox_NoAccelerometerSensor_Access_Array_Access_Array;
 
    type NoAccelerometerSensor is new AllBinaryOrientationSensor with null record;
 

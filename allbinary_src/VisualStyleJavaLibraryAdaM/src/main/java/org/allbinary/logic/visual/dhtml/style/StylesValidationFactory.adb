@@ -29,6 +29,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.visual.dhtml.style.StylesData_Package; use org.allbinary.logic.visual.dhtml.style.StylesData_Package;
 with org.allbinary.logic.visual.dhtml.style.StyleData_Package; use org.allbinary.logic.visual.dhtml.style.StyleData_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
@@ -51,6 +53,8 @@ package body org.allbinary.logic.visual.dhtml.style.StylesValidationFactory_Pack
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -90,7 +94,7 @@ package body org.allbinary.logic.visual.dhtml.style.StylesValidationFactory_Pack
 
    function getInstance return StylesValidationFactory_Access is
    begin
-        return StylesValidationFactory_Access (StylesValidationFactory_Package.instance);
+        return StylesValidationFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out StylesValidationFactory'Class) is
@@ -120,28 +124,28 @@ package body org.allbinary.logic.visual.dhtml.style.StylesValidationFactory_Pack
    begin
         commonStrings := CommonStrings_Package.getInstance;
         nodeList := document.getElementsByTagName (StylesData_Package.getInstance.NAME);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Style Present: ") & XmlDocumentHelper_Package.toString (document), StylesValidationFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         end if;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Styles Present: ") & Java_Image (nodeList.getLength), StylesValidationFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         end if;
         for index in 0 .. (nodeList.getLength) - 1 loop
             stylesNode := nodeList.item (index);
             styleNodeList := DomSearchHelper_Package.getAllNodes (StyleData_Package.getInstance.NAME, stylesNode.getChildNodes);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Number Of Style Nodes Present: ") & Java_Image (styleNodeList.size), StylesValidationFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
             end if;
             for styleNodesIndex in 0 .. (styleNodeList.size) - 1 loop
                 styleNode := Node_Access (styleNodeList.get (styleNodesIndex));
                 cssElementStyleNodeList := DomSearchHelper_Package.getAllNodes (CssElementData_Package.getInstance.NAME, styleNode.getChildNodes);
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                     This.logUtil.putF (To_Unbounded_String ("Number Of Element Nodes Present: ") & Java_Image (cssElementStyleNodeList.size), StylesValidationFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
                 end if;
                 return CssElementsValidationFactory_Package.getInstance (cssElementStyleNodeList);
             end loop;
         end loop;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("No Style Present"), StylesValidationFactory_Access'(This'Unchecked_Access), commonStrings.GET_INSTANCE);
         end if;
         return BasicArrayList_Access (BasicArrayListD_Package.Create);

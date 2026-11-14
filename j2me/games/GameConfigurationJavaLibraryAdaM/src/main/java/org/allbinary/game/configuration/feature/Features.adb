@@ -124,7 +124,7 @@ package body org.allbinary.game.configuration.feature.Features_Package is
 
    function getInstance return Features_Access is
    begin
-        if (Features_Package.SINGLETON) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (Features_Package.SINGLETON)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             Features_Package.SINGLETON := Java_Object_Access (Features_Package.Create);
         end if;
         return Features_Access (Features_Package.SINGLETON);

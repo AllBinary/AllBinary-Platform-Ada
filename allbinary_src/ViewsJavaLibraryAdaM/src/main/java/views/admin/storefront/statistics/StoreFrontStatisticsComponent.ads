@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package;
 package views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References is
    type StoreFrontStatisticsComponent_Access is access all views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package.StoreFrontStatisticsComponent'Class;
@@ -19,6 +20,16 @@ package views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_
    type StoreFrontStatisticsComponent_Access_Array_Access is access all StoreFrontStatisticsComponent_Access_Array;
    type StoreFrontStatisticsComponent_Access_Array_Access_Array is array (Natural range <>) of StoreFrontStatisticsComponent_Access_Array_Access;
    type StoreFrontStatisticsComponent_Access_Array_Access_Array_Access is access all StoreFrontStatisticsComponent_Access_Array_Access_Array;
+   type StoreFrontStatisticsComponent_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreFrontStatisticsComponent_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreFrontStatisticsComponent_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreFrontStatisticsComponent_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreFrontStatisticsComponent_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreFrontStatisticsComponent_Access_Array_Access is (if Value /= null and then Value.all in StoreFrontStatisticsComponent_Access_Array_Object'Class then StoreFrontStatisticsComponent_Access_Array_Object'Class (Value.all).Value else null);
+   type StoreFrontStatisticsComponent_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreFrontStatisticsComponent_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreFrontStatisticsComponent_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreFrontStatisticsComponent_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreFrontStatisticsComponent_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreFrontStatisticsComponent_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StoreFrontStatisticsComponent_Access_Array_Access_Array_Object'Class then StoreFrontStatisticsComponent_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References;
 
 with views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References;
@@ -98,10 +109,14 @@ package views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package 
    function "=" (Left, Right : StoreFrontStatisticsComponent_Access_Array) return Boolean renames views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References."=";
    subtype StoreFrontStatisticsComponent_Access_Array_Access is views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References.StoreFrontStatisticsComponent_Access_Array_Access;
    function "=" (Left, Right : StoreFrontStatisticsComponent_Access_Array_Access) return Boolean renames views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References."=";
+   function Java_Box (Value : StoreFrontStatisticsComponent_Access_Array_Access) return Java_Object_Access renames views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References.Java_Box;
+   function Java_Unbox_StoreFrontStatisticsComponent_Access_Array (Value : access Java_Object'Class) return StoreFrontStatisticsComponent_Access_Array_Access renames views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References.Java_Unbox_StoreFrontStatisticsComponent_Access_Array;
    subtype StoreFrontStatisticsComponent_Access_Array_Access_Array is views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References.StoreFrontStatisticsComponent_Access_Array_Access_Array;
    function "=" (Left, Right : StoreFrontStatisticsComponent_Access_Array_Access_Array) return Boolean renames views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References."=";
    subtype StoreFrontStatisticsComponent_Access_Array_Access_Array_Access is views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References.StoreFrontStatisticsComponent_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StoreFrontStatisticsComponent_Access_Array_Access_Array_Access) return Boolean renames views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References."=";
+   function Java_Box (Value : StoreFrontStatisticsComponent_Access_Array_Access_Array_Access) return Java_Object_Access renames views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References.Java_Box;
+   function Java_Unbox_StoreFrontStatisticsComponent_Access_Array_Access_Array (Value : access Java_Object'Class) return StoreFrontStatisticsComponent_Access_Array_Access_Array_Access renames views.admin.storefront.statistics.StoreFrontStatisticsComponent_Package_References.Java_Unbox_StoreFrontStatisticsComponent_Access_Array_Access_Array;
 
    type StoreFrontStatisticsComponent is new HttpStoreComponentView with record
       StoreFrontStatisticsComponent_Field_logUtil : LogUtil_Access;

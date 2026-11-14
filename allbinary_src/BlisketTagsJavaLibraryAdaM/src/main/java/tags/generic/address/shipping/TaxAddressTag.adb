@@ -16,6 +16,7 @@
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -34,6 +35,7 @@ package body tags.generic_Id.address.shipping.TaxAddressTag_Package is
 
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    procedure Initialize_Fields (This : in out TaxAddressTag'Class) is
    begin
       null;
@@ -59,10 +61,10 @@ package body tags.generic_Id.address.shipping.TaxAddressTag_Package is
    begin
         begin
             if (TaxAddressTag'Class (This).getCommand) /= (null) then
-                if (TaxAddressTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                if (TaxAddressTag'Class (This).getCommand.compareTo (GLOBALS2_Package.VIEW)) = (0) then
                     TaxAddressTag'Class (This).setName (To_Unbounded_String ("Basic Shipping Address View"));
                     TaxAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.shipping.TaxValidationView"));
-                elsif (TaxAddressTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.NEW_Id)) = (0) then
+                elsif (TaxAddressTag'Class (This).getCommand.compareTo (GLOBALS2_Package.NEW_Id)) = (0) then
                     TaxAddressTag'Class (This).setName (To_Unbounded_String ("Basic Shipping Address View"));
                     TaxAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.shipping.NewValidationView"));
                 elsif (TaxAddressTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0) then

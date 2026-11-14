@@ -24,6 +24,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -33,6 +34,7 @@ with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigType_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
@@ -46,6 +48,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
    subtype J2SEUtil_Access is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access;
    function "=" (Left, Right : J2SEUtil_Access) return Boolean renames org.allbinary.J2SEUtil_Package_References."=";
    subtype J2SEUtil_Access_Array is org.allbinary.J2SEUtil_Package_References.J2SEUtil_Access_Array;
@@ -81,7 +84,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
    procedure Initialize (This : in out Replace'Class; key : Unbounded_String; value : Unbounded_String) is
    begin
       Initialize_Fields (This);
-        This.hashMap := StdUtil_Package.getInstance.createHashMap;
+        This.hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         This.hashMap.put (new Unbounded_String_Array'(0 => key), new Unbounded_String_Array'(0 => value));
    end Initialize;
 
@@ -95,7 +98,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
    procedure Initialize (This : in out Replace'Class; keys : Unbounded_String_Array_Access; values : Unbounded_String_Array_Access) is
    begin
       Initialize_Fields (This);
-        This.hashMap := StdUtil_Package.getInstance.createHashMap;
+        This.hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         This.hashMap.put (Java_Box (keys), Java_Box (values));
    end Initialize;
 
@@ -196,7 +199,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
             end loop;
         end loop;
         if (totalNumberOfReplaces) > (0) then
-            if LogConfigTypes_Package.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.REPLACE) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.REPLACE) then
                 This.logUtil.putF (To_Unbounded_String ("Total Number Of Replaces: ") & Java_Image (totalNumberOfReplaces), Replace_Access'(This'Unchecked_Access), This.ALL_Field_Id);
             end if;
         end if;
@@ -244,7 +247,7 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
                 end if;
             end loop;
         end loop;
-        if LogConfigTypes_Package.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.REPLACE) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.REPLACE) then
             This.logUtil.putF (To_Unbounded_String ("Total Number Of Replaces: ") & Java_Image (totalNumberOfReplaces), Replace_Access'(This'Unchecked_Access), This.ALL_Field_Id);
         end if;
         return replace_Var;

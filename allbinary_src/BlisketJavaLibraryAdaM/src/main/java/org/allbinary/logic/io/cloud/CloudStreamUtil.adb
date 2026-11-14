@@ -18,6 +18,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.logic.io.file.AbFile_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.io.AbFileInputStream_Package; use org.allbinary.logic.io.AbFileInputStream_Package;
 with org.allbinary.logic.io.AbFileLocalInputStream_Package; use org.allbinary.logic.io.AbFileLocalInputStream_Package;
 with org.allbinary.logic.io.AbFileInputStream_Package;
@@ -25,6 +27,8 @@ with org.allbinary.logic.io.AbFileLocalInputStream_Package;
 
 package body org.allbinary.logic.io.CloudStreamUtil_Package is
 
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -66,7 +70,7 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
 
    function getInstance return CloudStreamUtil_Access is
    begin
-        return CloudStreamUtil_Access (CloudStreamUtil_Package.instance);
+        return CloudStreamUtil_Package.instance;
    end getInstance;
 
    --  throws Exception
@@ -75,10 +79,10 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
       inputStream : InputStream_Access;
       available : Integer;
    begin
-        inputStream := InputStream_Access (AbFileInputStream_Package.Create (file));
+        inputStream := AbFileInputStream_Package.createFromAbFile (file);
         available := inputStream.available;
         if (available) > (0) then
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Cloud File Bytes: ") & Java_Image (available), CloudStreamUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("processRequest()"));
             end if;
         end if;
@@ -94,14 +98,14 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
         inputStream := InputStream_Access (AbFileLocalInputStream_Package.Create (file));
         available := inputStream.available;
         if (available) > (0) then
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Local File Bytes: ") & Java_Image (available), CloudStreamUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("processRequest()"));
             end if;
         else
-            inputStream := InputStream_Access (AbFileInputStream_Package.Create (file));
+            inputStream := AbFileInputStream_Package.createFromAbFile (file);
             available := inputStream.available;
             if (available) > (0) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEWERROR) then
                     This.logUtil.putF (To_Unbounded_String ("Cloud File Bytes: ") & Java_Image (available), CloudStreamUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("processRequest()"));
                 end if;
             end if;
@@ -118,7 +122,7 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
         inputStream := InputStream_Access (AbFileLocalInputStream_Package.Create (file));
         available := inputStream.available;
         if (available) > (0) then
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Local File Bytes: ") & Java_Image (available), CloudStreamUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("processRequest()"));
             end if;
         end if;

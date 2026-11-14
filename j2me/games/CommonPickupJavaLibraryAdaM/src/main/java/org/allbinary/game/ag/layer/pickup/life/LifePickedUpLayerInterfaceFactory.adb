@@ -18,7 +18,6 @@ with org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Packag
 with org.allbinary.game.layer.pickup.IconLayerFactory_Package; use org.allbinary.game.layer.pickup.IconLayerFactory_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Package;
 with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package; use org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package;
-with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package_References;
 with org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package; use org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
 with org.allbinary.game.layer.pickup.PickupProcessorInterface_Package; use org.allbinary.game.layer.pickup.PickupProcessorInterface_Package;
 with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
@@ -27,9 +26,51 @@ with org.allbinary.game.ag.layer.pickup.life.LifeLayerCircularStaticPool_Package
 with org.allbinary.game.ag.layer.pickup.life.LifeLayerCircularStaticPool_Package_References;
 with org.allbinary.game.ag.layer.pickup.life.LifeLayerFactory_Package; use org.allbinary.game.ag.layer.pickup.life.LifeLayerFactory_Package;
 with org.allbinary.game.ag.layer.pickup.life.LifeResources_Package; use org.allbinary.game.ag.layer.pickup.life.LifeResources_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.layer.AllBinaryLayerCircularPool_Package;
+with org.allbinary.layer.AllBinaryLayerFactoryInterface_Package;
+with org.allbinary.logic.util.cache.AllBinaryObjectFactoryInterface_Package;
+with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.AnimationInterfaceFactoryInterface_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.logic.util.cache.BaseCircularPool_Package;
+with org.allbinary.animation.BasicAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.resource.FeaturedResourceFactory_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.game.configuration.feature.GameFeatureControlledInterface_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.game.identification.Group_Package;
+with org.allbinary.game.layer.pickup.IconLayer_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.layer.Layer_Package;
 with org.allbinary.game.ag.layer.pickup.life.LifeLayerCircularStaticPool_Package;
 with org.allbinary.game.ag.layer.pickup.life.LifeLayerFactory_Package;
 with org.allbinary.game.ag.layer.pickup.life.LifeResources_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryBase_Package;
+with org.allbinary.game.layer.pickup.PickedUpLayerType_Package;
+with org.allbinary.animation.ProceduralAnimationInterfaceFactoryInterface_Package;
+with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.media.ScaleProperties_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package;
 
 package body org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceFactory_Package is
 
@@ -37,16 +78,6 @@ package body org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceF
    package CountedPickedUpLayerInterfaceFactory_Package renames Standard.org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Package;
    package IconLayerFactory_Package renames Standard.org.allbinary.game.layer.pickup.IconLayerFactory_Package;
    package PickedUpLayerTypeFactory_Package renames Standard.org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package;
-   subtype PickedUpLayerInterfaceFactoryInterface_Access is org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package_References.PickedUpLayerInterfaceFactoryInterface_Access;
-   function "=" (Left, Right : PickedUpLayerInterfaceFactoryInterface_Access) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package_References."=";
-   subtype PickedUpLayerInterfaceFactoryInterface_Access_Array is org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package_References.PickedUpLayerInterfaceFactoryInterface_Access_Array;
-   function "=" (Left, Right : PickedUpLayerInterfaceFactoryInterface_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package_References."=";
-   subtype PickedUpLayerInterfaceFactoryInterface_Access_Array_Access is org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package_References.PickedUpLayerInterfaceFactoryInterface_Access_Array_Access;
-   function "=" (Left, Right : PickedUpLayerInterfaceFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package_References."=";
-   subtype PickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array is org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package_References.PickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array;
-   function "=" (Left, Right : PickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package_References."=";
-   subtype PickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package_References.PickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : PickedUpLayerInterfaceFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactoryInterface_Package_References."=";
    subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
    function "=" (Left, Right : AllBinaryLayer_Access) return Boolean renames org.allbinary.layer.AllBinaryLayer_Package_References."=";
    subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
@@ -77,7 +108,7 @@ package body org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceF
    --  throws Exception
    procedure init is
    begin
-        LifePickedUpLayerInterfaceFactory_Package.pickedUpLayerInterfaceFactoryInterface := LifePickedUpLayerInterfaceFactory_Package.Create;
+        LifePickedUpLayerInterfaceFactory_Package.pickedUpLayerInterfaceFactoryInterface := PickedUpLayerInterfaceFactoryInterface_Access (LifePickedUpLayerInterfaceFactory_Package.Create);
    end init;
 
    procedure Initialize (This : in out LifePickedUpLayerInterfaceFactory'Class) is
@@ -100,7 +131,7 @@ package body org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceF
 
    function getInstance return PickedUpLayerInterfaceFactoryInterface_Access is
    begin
-        return PickedUpLayerInterfaceFactoryInterface_Access (LifePickedUpLayerInterfaceFactory_Package.pickedUpLayerInterfaceFactoryInterface);
+        return LifePickedUpLayerInterfaceFactory_Package.pickedUpLayerInterfaceFactoryInterface;
    end getInstance;
 
    --  throws Exception

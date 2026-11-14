@@ -8,6 +8,9 @@ with org.allbinary.platform.graphics.PlatformBitmapBase_Package; use org.allbina
 with org.microemu.device.swt.SwtImmutableImage_Package; use org.microemu.device.swt.SwtImmutableImage_Package;
 with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.swt.SwtMutableImage_Package;
 with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.eclipse.swt.graphics.Device_Package;
+with org.eclipse.swt.graphics.Resource_Package;
 
 package body org.allbinary.graphics.OpenGLBitmap_Package is
 

@@ -13,7 +13,6 @@
 --  Generated Code Do Not Modify
 
 
-with org.allbinary.thread.ARunnable_Package; use org.allbinary.thread.ARunnable_Package;
 with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
 with javax.microedition.lcdui.Canvas_Package_References;
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
@@ -23,7 +22,9 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.thread.NullRunnable_Package; use org.allbinary.thread.NullRunnable_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
+with org.allbinary.game.displayable.RepaintRunnable_Package; use org.allbinary.game.displayable.RepaintRunnable_Package;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.thread.ARunnable_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
@@ -76,6 +77,7 @@ with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.microemu.device.ui.PointerEvent_Package;
+with org.allbinary.game.displayable.RepaintRunnable_Package;
 with org.allbinary.graphics.displayable.ScalableListener_Package;
 with javax.microedition.lcdui.Screen_Package;
 with javax.microedition.lcdui.StringComponent_Package;
@@ -91,7 +93,6 @@ with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.game.displayable.AlwaysRepaintBehavior_Package is
 
-   package ARunnable_Package renames Standard.org.allbinary.thread.ARunnable_Package;
    package Features_Package renames Standard.org.allbinary.game.configuration.feature.Features_Package;
    package DisplayInfoSingleton_Package renames Standard.org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
    package OpenGLFeatureFactory_Package renames Standard.org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
@@ -128,7 +129,7 @@ package body org.allbinary.game.displayable.AlwaysRepaintBehavior_Package is
 
    function getInstance return AlwaysRepaintBehavior_Access is
    begin
-        return AlwaysRepaintBehavior_Access (AlwaysRepaintBehavior_Package.instanceC);
+        return AlwaysRepaintBehavior_Package.instanceC;
    end getInstance;
 
    procedure repaint (This : in out AlwaysRepaintBehavior; canvas_Param : access Canvas_Package.Canvas'Class) is
@@ -142,27 +143,7 @@ package body org.allbinary.game.displayable.AlwaysRepaintBehavior_Package is
         if features.isFeature (openGLFeatureFactory.OPENGL) then
             DisplayInfoSingleton_Package.getInstance.process;
         else
-            thread := Thread_Package.Create (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
---                  
---     procedure run (This : in out ) is
---        commonStrings : CommonStrings_Access;
---        logUtil : LogUtil_Access;
---     begin
---                      begin
---                          canvas.repaint;
---                          DisplayInfoSingleton_Package.getInstance.process;
---                      exception
---                          when Java_Occurrence : others =>
---                              declare
---                                  e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
---                              begin
---                          commonStrings := CommonStrings_Package.getInstance;
---                          logUtil := LogUtil_Package.getInstance;
---                          logUtil.put (commonStrings.EXCEPTION_Id, AlwaysRepaintBehavior_Access'(This'Unchecked_Access), commonStrings.RUN, e);
---                              end;
---                      end;
---     end run;
-, This.AlwaysRepaintBehavior_Field_NAME);
+            thread := Thread_Package.Create (RepaintRunnable_Package.Create (canvas), This.AlwaysRepaintBehavior_Field_NAME);
             thread.start;
         end if;
    end repaint;

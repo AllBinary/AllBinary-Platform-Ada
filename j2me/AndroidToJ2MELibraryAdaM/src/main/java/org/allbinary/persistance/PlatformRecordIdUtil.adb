@@ -59,7 +59,7 @@ package body org.allbinary.persistance.PlatformRecordIdUtil_Package is
 
    function getInstance return PlatformRecordIdUtil_Access is
    begin
-        return PlatformRecordIdUtil_Access (PlatformRecordIdUtil_Package.instance);
+        return PlatformRecordIdUtil_Package.instance;
    end getInstance;
 
    function getRecordId (This : in out PlatformRecordIdUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; baseRecordId : Unbounded_String) return Unbounded_String is

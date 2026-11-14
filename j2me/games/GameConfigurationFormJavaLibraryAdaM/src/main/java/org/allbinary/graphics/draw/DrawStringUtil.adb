@@ -64,7 +64,7 @@ package body org.allbinary.graphics.draw.DrawStringUtil_Package is
 
    function getInstance return DrawStringUtil_Access is
    begin
-        return DrawStringUtil_Access (DrawStringUtil_Package.instance);
+        return DrawStringUtil_Package.instance;
    end getInstance;
 
    procedure drawCenterString (This : in out DrawStringUtil; graphics_Param : access Graphics_Package.Graphics'Class; string_Id : Unbounded_String; offset : Integer; length : Integer; x : Integer; y : Integer) is

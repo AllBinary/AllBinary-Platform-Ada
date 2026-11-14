@@ -99,7 +99,7 @@ package body org.allbinary.game.input.InputProcessorFactory_Package is
 
    function getInstance return InputProcessorFactory_Access is
    begin
-        return InputProcessorFactory_Access (InputProcessorFactory_Package.instance);
+        return InputProcessorFactory_Package.instance;
    end getInstance;
 
    function getInputProcessor (This : in out InputProcessorFactory) return InputProcessor_Access is

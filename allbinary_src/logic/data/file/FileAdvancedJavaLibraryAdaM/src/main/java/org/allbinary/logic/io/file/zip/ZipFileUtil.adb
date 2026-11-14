@@ -117,7 +117,7 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
 
    function getInstance return ZipFileUtil_Access is
    begin
-        return ZipFileUtil_Access (ZipFileUtil_Package.instance);
+        return ZipFileUtil_Package.instance;
    end getInstance;
 
    procedure create (This : in out ZipFileUtil; outFilename : Unbounded_String; fileBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
@@ -157,7 +157,7 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
                     stringBuffer.append (file.getPath);
                     This.logUtil.putF (stringBuffer.toString, ZipFileUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("create()"));
                     begin
-                        fileInputStream := AbFileInputStream_Package.Create (file);
+                        fileInputStream := AbFileInputStream_Package.createFromAbFile (file);
                         outputStream.putNextEntry (ZipEntry_Package.Create (file.getPath));
                         streamUtil.get (fileInputStream, outputStream, byteArray);
                         outputStream.closeEntry;
@@ -199,7 +199,7 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
         buffer := new Short_Short_Integer_Array'(0 .. (16384) - 1 => 0);
         inputStream := null;
         begin
-            inputStream := ZipInputStream_Package.Create (AbFileInputStream_Package.Create (zipFile));
+            inputStream := ZipInputStream_Package.Create (AbFileInputStream_Package.createFromAbFile (zipFile));
             zipEntry := null;
             stringBuffer := StringMaker_Package.Create;
             fileUtil := FileUtil_Package.getInstance;

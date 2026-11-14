@@ -44,7 +44,7 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
    procedure Initialize (This : in out BasicTextJDialog'Class; parent_Param : access Frame_Package.Frame'Class; modal : Boolean; text : Unbounded_String) is
       parent : constant Frame_Access := Frame_Access (parent_Param);
    begin
-        JDialog_Package.Initialize (This, parent, modal);
+        null;
         Initialize_Fields (This);
         BasicTextJDialog'Class (This).initComponents;
         BasicTextJDialog'Class (This).setText (text);
@@ -70,7 +70,6 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
 
    procedure Initialize (This : in out BasicTextJDialog'Class; text : Unbounded_String) is
    begin
-      JDialog_Package.Initialize (This);
       Initialize_Fields (This);
         BasicTextJDialog'Class (This).initComponents;
         This.textJLabel.setText (text);
@@ -88,7 +87,7 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
    begin
         This.jButton1 := JButton_Package.Create;
         This.textJLabel := JLabel_Package.Create;
-        BasicTextJDialog'Class (This).setDefaultCloseOperation (javax_Package.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        BasicTextJDialog'Class (This).setDefaultCloseOperation (WindowConstants_Package.DISPOSE_ON_CLOSE);
         This.jButton1.setText (To_Unbounded_String ("OK"));
         This.jButton1.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
@@ -101,8 +100,8 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
         This.textJLabel.setText (To_Unbounded_String ("No Text Set"));
         layout := GroupLayout_Package.Create (BasicTextJDialog'Class (This).getContentPane);
         BasicTextJDialog'Class (This).getContentPane.setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGap (80, 80, 80).addComponent (This.jButton1)).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.textJLabel, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 184, Short_Integer'Last))).addContainerGap));
-        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGap (20, 20, 20).addComponent (This.textJLabel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 20, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addGap (30, 30, 30).addComponent (This.jButton1)));
+        layout.setHorizontalGroup (layout.createParallelGroup (GroupLayout_Package.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGroup (layout.createParallelGroup (GroupLayout_Package.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGap (80, 80, 80).addComponent (This.jButton1)).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.textJLabel, GroupLayout_Package.DEFAULT_SIZE, 184, Short_Integer'Last))).addContainerGap));
+        layout.setVerticalGroup (layout.createParallelGroup (GroupLayout_Package.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGap (20, 20, 20).addComponent (This.textJLabel, GroupLayout_Package.PREFERRED_SIZE, 20, GroupLayout_Package.PREFERRED_SIZE).addGap (30, 30, 30).addComponent (This.jButton1)));
         BasicTextJDialog'Class (This).pack;
    end initComponents;
 
@@ -117,7 +116,7 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
 
    procedure main (args : Unbounded_String_Array_Access) is
    begin
-        java_Package.awt.EventQueue.invokeLater (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
+        EventQueue_Package.invokeLater (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure run (This : in out ) is
 --     begin

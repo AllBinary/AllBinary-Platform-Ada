@@ -72,7 +72,7 @@ package body org.allbinary.graphics.opengles.OpenGLVersionValidator_Package is
 
    function getInstance return OpenGLVersionValidator_Access is
    begin
-        return OpenGLVersionValidator_Access (OpenGLVersionValidator_Package.instance);
+        return OpenGLVersionValidator_Package.instance;
    end getInstance;
 
    function isGL31OrHigher (This : in out OpenGLVersionValidator) return Boolean is

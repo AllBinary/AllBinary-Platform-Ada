@@ -38,7 +38,7 @@ package body org.allbinary.media.image.BufferedImageUtil2_Package is
 
    function getInstance return BufferedImageUtil2_Access is
    begin
-        return BufferedImageUtil2_Access (BufferedImageUtil2_Package.instance);
+        return BufferedImageUtil2_Package.instance;
    end getInstance;
 
    function createSpriteImage (This : in out BufferedImageUtil2; bufferedImageArray : BufferedImage_Access_Array_Access) return BufferedImage_Access is

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.vector.AdjustedCircleAnimation_Package;
 package org.allbinary.animation.vector.AdjustedCircleAnimation_Package_References is
    type AdjustedCircleAnimation_Access is access all org.allbinary.animation.vector.AdjustedCircleAnimation_Package.AdjustedCircleAnimation'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.vector.AdjustedCircleAnimation_Package_Reference
    type AdjustedCircleAnimation_Access_Array_Access is access all AdjustedCircleAnimation_Access_Array;
    type AdjustedCircleAnimation_Access_Array_Access_Array is array (Natural range <>) of AdjustedCircleAnimation_Access_Array_Access;
    type AdjustedCircleAnimation_Access_Array_Access_Array_Access is access all AdjustedCircleAnimation_Access_Array_Access_Array;
+   type AdjustedCircleAnimation_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AdjustedCircleAnimation_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AdjustedCircleAnimation_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AdjustedCircleAnimation_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AdjustedCircleAnimation_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AdjustedCircleAnimation_Access_Array_Access is (if Value /= null and then Value.all in AdjustedCircleAnimation_Access_Array_Object'Class then AdjustedCircleAnimation_Access_Array_Object'Class (Value.all).Value else null);
+   type AdjustedCircleAnimation_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AdjustedCircleAnimation_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AdjustedCircleAnimation_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AdjustedCircleAnimation_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AdjustedCircleAnimation_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AdjustedCircleAnimation_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AdjustedCircleAnimation_Access_Array_Access_Array_Object'Class then AdjustedCircleAnimation_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.vector.AdjustedCircleAnimation_Package_References;
 
 with org.allbinary.animation.vector.AdjustedCircleAnimation_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.animation.vector.AdjustedCircleAnimation_Package is
    function "=" (Left, Right : AdjustedCircleAnimation_Access_Array) return Boolean renames org.allbinary.animation.vector.AdjustedCircleAnimation_Package_References."=";
    subtype AdjustedCircleAnimation_Access_Array_Access is org.allbinary.animation.vector.AdjustedCircleAnimation_Package_References.AdjustedCircleAnimation_Access_Array_Access;
    function "=" (Left, Right : AdjustedCircleAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.vector.AdjustedCircleAnimation_Package_References."=";
+   function Java_Box (Value : AdjustedCircleAnimation_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.vector.AdjustedCircleAnimation_Package_References.Java_Box;
+   function Java_Unbox_AdjustedCircleAnimation_Access_Array (Value : access Java_Object'Class) return AdjustedCircleAnimation_Access_Array_Access renames org.allbinary.animation.vector.AdjustedCircleAnimation_Package_References.Java_Unbox_AdjustedCircleAnimation_Access_Array;
    subtype AdjustedCircleAnimation_Access_Array_Access_Array is org.allbinary.animation.vector.AdjustedCircleAnimation_Package_References.AdjustedCircleAnimation_Access_Array_Access_Array;
    function "=" (Left, Right : AdjustedCircleAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.vector.AdjustedCircleAnimation_Package_References."=";
    subtype AdjustedCircleAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.vector.AdjustedCircleAnimation_Package_References.AdjustedCircleAnimation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AdjustedCircleAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.vector.AdjustedCircleAnimation_Package_References."=";
+   function Java_Box (Value : AdjustedCircleAnimation_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.vector.AdjustedCircleAnimation_Package_References.Java_Box;
+   function Java_Unbox_AdjustedCircleAnimation_Access_Array_Access_Array (Value : access Java_Object'Class) return AdjustedCircleAnimation_Access_Array_Access_Array_Access renames org.allbinary.animation.vector.AdjustedCircleAnimation_Package_References.Java_Unbox_AdjustedCircleAnimation_Access_Array_Access_Array;
 
    type AdjustedCircleAnimation is new CircleAnimation with record
       xAdjustment : Integer;

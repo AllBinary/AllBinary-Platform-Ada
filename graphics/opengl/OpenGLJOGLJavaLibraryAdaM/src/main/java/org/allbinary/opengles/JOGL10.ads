@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.opengles.JOGL10_Package;
 package org.allbinary.opengles.JOGL10_Package_References is
    type JOGL10_Access is access all org.allbinary.opengles.JOGL10_Package.JOGL10'Class;
@@ -19,6 +20,16 @@ package org.allbinary.opengles.JOGL10_Package_References is
    type JOGL10_Access_Array_Access is access all JOGL10_Access_Array;
    type JOGL10_Access_Array_Access_Array is array (Natural range <>) of JOGL10_Access_Array_Access;
    type JOGL10_Access_Array_Access_Array_Access is access all JOGL10_Access_Array_Access_Array;
+   type JOGL10_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : JOGL10_Access_Array_Access;
+   end record;
+   function Java_Box (Value : JOGL10_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new JOGL10_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_JOGL10_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return JOGL10_Access_Array_Access is (if Value /= null and then Value.all in JOGL10_Access_Array_Object'Class then JOGL10_Access_Array_Object'Class (Value.all).Value else null);
+   type JOGL10_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : JOGL10_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : JOGL10_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new JOGL10_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_JOGL10_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return JOGL10_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in JOGL10_Access_Array_Access_Array_Object'Class then JOGL10_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.opengles.JOGL10_Package_References;
 
 with org.allbinary.opengles.JOGL10_Package_References;
@@ -32,11 +43,23 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 limited with com.jogamp.opengl.glu.GLU_Package;
 with com.jogamp.opengl.glu.GLU_Package_References;
-with org.allbinary.opengles.GL10_Package; use org.allbinary.opengles.GL10_Package;
+with com.jogamp.opengl.GL_Package; use com.jogamp.opengl.GL_Package;
+limited with com.jogamp.opengl.GL2_Package;
+with com.jogamp.opengl.GL2_Package_References;
+with java.nio.Buffer_Package; use java.nio.Buffer_Package;
+with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
+with java.nio.IntBuffer_Package; use java.nio.IntBuffer_Package;
+with javax.microedition.khronos.opengles.GL10_Package; use javax.microedition.khronos.opengles.GL10_Package;
 
 package org.allbinary.opengles.JOGL10_Package is
 
    package GLU_Package renames Standard.com.jogamp.opengl.glu.GLU_Package;
+   package GL_Package renames Standard.com.jogamp.opengl.GL_Package;
+   package GL2_Package renames Standard.com.jogamp.opengl.GL2_Package;
+   package Buffer_Package renames Standard.java.nio.Buffer_Package;
+   package FloatBuffer_Package renames Standard.java.nio.FloatBuffer_Package;
+   package IntBuffer_Package renames Standard.java.nio.IntBuffer_Package;
+   package GL10_Package renames Standard.javax.microedition.khronos.opengles.GL10_Package;
    package Reference_Types is
    subtype GLU_Access is com.jogamp.opengl.glu.GLU_Package_References.GLU_Access;
    use type GLU_Access;
@@ -48,6 +71,16 @@ package org.allbinary.opengles.JOGL10_Package is
    use type GLU_Access_Array_Access_Array;
    subtype GLU_Access_Array_Access_Array_Access is com.jogamp.opengl.glu.GLU_Package_References.GLU_Access_Array_Access_Array_Access;
    use type GLU_Access_Array_Access_Array_Access;
+   subtype GL2_Access is com.jogamp.opengl.GL2_Package_References.GL2_Access;
+   use type GL2_Access;
+   subtype GL2_Access_Array is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array;
+   use type GL2_Access_Array;
+   subtype GL2_Access_Array_Access is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array_Access;
+   use type GL2_Access_Array_Access;
+   subtype GL2_Access_Array_Access_Array is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array_Access_Array;
+   use type GL2_Access_Array_Access_Array;
+   subtype GL2_Access_Array_Access_Array_Access is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array_Access_Array_Access;
+   use type GL2_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -58,10 +91,14 @@ package org.allbinary.opengles.JOGL10_Package is
    function "=" (Left, Right : JOGL10_Access_Array) return Boolean renames org.allbinary.opengles.JOGL10_Package_References."=";
    subtype JOGL10_Access_Array_Access is org.allbinary.opengles.JOGL10_Package_References.JOGL10_Access_Array_Access;
    function "=" (Left, Right : JOGL10_Access_Array_Access) return Boolean renames org.allbinary.opengles.JOGL10_Package_References."=";
+   function Java_Box (Value : JOGL10_Access_Array_Access) return Java_Object_Access renames org.allbinary.opengles.JOGL10_Package_References.Java_Box;
+   function Java_Unbox_JOGL10_Access_Array (Value : access Java_Object'Class) return JOGL10_Access_Array_Access renames org.allbinary.opengles.JOGL10_Package_References.Java_Unbox_JOGL10_Access_Array;
    subtype JOGL10_Access_Array_Access_Array is org.allbinary.opengles.JOGL10_Package_References.JOGL10_Access_Array_Access_Array;
    function "=" (Left, Right : JOGL10_Access_Array_Access_Array) return Boolean renames org.allbinary.opengles.JOGL10_Package_References."=";
    subtype JOGL10_Access_Array_Access_Array_Access is org.allbinary.opengles.JOGL10_Package_References.JOGL10_Access_Array_Access_Array_Access;
    function "=" (Left, Right : JOGL10_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.opengles.JOGL10_Package_References."=";
+   function Java_Box (Value : JOGL10_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.opengles.JOGL10_Package_References.Java_Box;
+   function Java_Unbox_JOGL10_Access_Array_Access_Array (Value : access Java_Object'Class) return JOGL10_Access_Array_Access_Array_Access renames org.allbinary.opengles.JOGL10_Package_References.Java_Unbox_JOGL10_Access_Array_Access_Array;
 
    type JOGL10 is new Java_Object and GL10 with record
       RED : Unbounded_String;

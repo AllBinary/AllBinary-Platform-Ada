@@ -76,7 +76,7 @@ package body org.allbinary.logic.system.os.linux.LinuxOperatingSystemFactory_Pac
 
    function getInstance return LinuxOperatingSystemFactory_Access is
    begin
-        return LinuxOperatingSystemFactory_Access (LinuxOperatingSystemFactory_Package.instance);
+        return LinuxOperatingSystemFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out LinuxOperatingSystemFactory'Class) is

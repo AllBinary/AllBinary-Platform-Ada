@@ -91,7 +91,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
       index : Integer;
    begin
       Initialize_Fields (This);
-        This.totalUsersByRoleHashMap := StdUtil_Package.getInstance.createHashMap;
+        This.totalUsersByRoleHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         userEntityInterface := UserEntityInterface_Access (UserEntityFactory_Package.getInstance);
         userVector := userEntityInterface.getCustomers;
         This.totalNumberOfUsers := Long_Long_Integer (userVector.size);
@@ -143,7 +143,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
       totalForRole : Long_Long_Integer;
       index : Integer;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (StoreFrontUsersStatisticsData_Package.getInstance.NUMBEROFUSERS, Java_Box (StoreFrontUsersStatistics'Class (This).getNumberOfUsers.toString));
         setOfUserRoles := This.totalUsersByRoleHashMap.keySet;
         nextUserRole := null;

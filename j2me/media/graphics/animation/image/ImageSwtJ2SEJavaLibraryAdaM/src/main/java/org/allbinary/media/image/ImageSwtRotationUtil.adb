@@ -25,23 +25,66 @@ with org.eclipse.swt.SWT_Package; use org.eclipse.swt.SWT_Package;
 with org.eclipse.swt.graphics.GC_Package; use org.eclipse.swt.graphics.GC_Package;
 with org.eclipse.swt.graphics.GC_Package_References;
 with org.eclipse.swt.graphics.ImageData_Package; use org.eclipse.swt.graphics.ImageData_Package;
+with org.eclipse.swt.graphics.Image_Package; use org.eclipse.swt.graphics.Image_Package;
+with org.eclipse.swt.graphics.Image_Package_References;
 with org.allbinary.media.image.ImageUtil_Package; use org.allbinary.media.image.ImageUtil_Package;
 with org.allbinary.media.image.ImageUtil_Package_References;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with org.eclipse.swt.widgets.Button_Package;
+with org.eclipse.swt.widgets.Canvas_Package;
+with org.eclipse.swt.graphics.Color_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.eclipse.swt.widgets.Composite_Package;
+with org.eclipse.swt.widgets.Control_Package;
+with org.eclipse.swt.widgets.Decorations_Package;
+with org.eclipse.swt.graphics.Device_Package;
+with org.eclipse.swt.widgets.Display_Package;
+with org.eclipse.swt.events.DragDetectEvent_Package;
+with org.eclipse.swt.events.DragDetectListener_Package;
+with org.eclipse.swt.graphics.Drawable_Package;
+with org.eclipse.swt.widgets.Event_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.configuration.feature.Feature_Package;
+with org.eclipse.swt.graphics.Font_Package;
+with org.eclipse.swt.graphics.FontMetrics_Package;
 with org.allbinary.game.configuration.feature.GameFeature_Package;
 with org.allbinary.media.image.ImageUtil_Package;
+with org.eclipse.swt.events.KeyEvent_Package;
+with org.eclipse.swt.events.KeyListener_Package;
+with org.eclipse.swt.widgets.Layout_Package;
+with org.eclipse.swt.widgets.Listener_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.eclipse.swt.widgets.Menu_Package;
+with org.eclipse.swt.events.MouseEvent_Package;
+with org.eclipse.swt.events.MouseListener_Package;
+with org.eclipse.swt.events.MouseMoveListener_Package;
+with org.eclipse.swt.events.MouseWheelListener_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.eclipse.swt.events.PaintEvent_Package;
+with org.eclipse.swt.events.PaintListener_Package;
+with org.eclipse.swt.graphics.PaletteData_Package;
+with org.eclipse.swt.graphics.Point_Package;
+with org.eclipse.swt.graphics.RGB_Package;
+with org.eclipse.swt.graphics.RGBA_Package;
+with org.eclipse.swt.graphics.Rectangle_Package;
+with org.eclipse.swt.graphics.Resource_Package;
+with org.eclipse.swt.internal.SWTEventObject_Package;
+with org.eclipse.swt.widgets.Scrollable_Package;
+with org.eclipse.swt.events.SelectionEvent_Package;
+with org.eclipse.swt.events.SelectionListener_Package;
+with org.eclipse.swt.widgets.Shell_Package;
+with org.eclipse.swt.events.ShellEvent_Package;
+with org.eclipse.swt.events.ShellListener_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.eclipse.swt.graphics.Transform_Package;
+with org.eclipse.swt.events.TypedEvent_Package;
+with org.eclipse.swt.widgets.Widget_Package;
 
 package body org.allbinary.media.image.ImageSwtRotationUtil_Package is
 
@@ -97,6 +140,16 @@ package body org.allbinary.media.image.ImageSwtRotationUtil_Package is
    function "=" (Left, Right : GC_Access_Array_Access_Array) return Boolean renames org.eclipse.swt.graphics.GC_Package_References."=";
    subtype GC_Access_Array_Access_Array_Access is org.eclipse.swt.graphics.GC_Package_References.GC_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GC_Access_Array_Access_Array_Access) return Boolean renames org.eclipse.swt.graphics.GC_Package_References."=";
+   subtype Image_Access is org.eclipse.swt.graphics.Image_Package_References.Image_Access;
+   function "=" (Left, Right : Image_Access) return Boolean renames org.eclipse.swt.graphics.Image_Package_References."=";
+   subtype Image_Access_Array is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array;
+   function "=" (Left, Right : Image_Access_Array) return Boolean renames org.eclipse.swt.graphics.Image_Package_References."=";
+   subtype Image_Access_Array_Access is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access) return Boolean renames org.eclipse.swt.graphics.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array_Access_Array;
+   function "=" (Left, Right : Image_Access_Array_Access_Array) return Boolean renames org.eclipse.swt.graphics.Image_Package_References."=";
+   subtype Image_Access_Array_Access_Array_Access is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : Image_Access_Array_Access_Array_Access) return Boolean renames org.eclipse.swt.graphics.Image_Package_References."=";
    subtype ImageUtil_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access;
    function "=" (Left, Right : ImageUtil_Access) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
    subtype ImageUtil_Access_Array is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array;
@@ -121,7 +174,7 @@ package body org.allbinary.media.image.ImageSwtRotationUtil_Package is
 
    function getInstance return ImageSwtRotationUtil_Access is
    begin
-        return ImageSwtRotationUtil_Access (ImageSwtRotationUtil_Package.instance);
+        return ImageSwtRotationUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageSwtRotationUtil'Class) is
@@ -164,7 +217,7 @@ package body org.allbinary.media.image.ImageSwtRotationUtil_Package is
       newSwtImage : constant Image_Access := Image_Access (newSwtImage_Param);
       gc : constant GC_Access := GC_Access (gc_Param);
    begin
-        return ImageSwtRotationUtil'Class (This).getRotatedImage2 (originalSwtImage, newSwtImage, gc, totalAngle);
+        return ImageSwtRotationUtil'Class (This).getRotatedImage2 (originalSwtImage, newSwtImage, gc, Float (totalAngle));
    end rotateImage;
 
    function getRotatedImageSWT (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image_Package.Image'Class; newSwtImage_Param : access Image_Package.Image'Class; gc_Param : access GC_Package.GC'Class; totalAngle : Integer) return Image_Access is
@@ -172,7 +225,7 @@ package body org.allbinary.media.image.ImageSwtRotationUtil_Package is
       newSwtImage : constant Image_Access := Image_Access (newSwtImage_Param);
       gc : constant GC_Access := GC_Access (gc_Param);
    begin
-        return ImageSwtRotationUtil'Class (This).getRotatedImage2 (bufferedImage, newSwtImage, gc, totalAngle);
+        return ImageSwtRotationUtil'Class (This).getRotatedImage2 (bufferedImage, newSwtImage, gc, Float (totalAngle));
    end getRotatedImageSWT;
 
    function getRotatedImages (This : in out ImageSwtRotationUtil; bufferedImage_Param : access Image_Package.Image'Class; numberOfFrames : Integer; totalAngle : Integer) return Image_Access_Array_Access is

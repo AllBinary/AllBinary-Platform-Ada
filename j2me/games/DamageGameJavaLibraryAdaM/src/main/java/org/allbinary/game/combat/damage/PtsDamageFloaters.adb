@@ -184,8 +184,8 @@ package body org.allbinary.game.combat.damage.PtsDamageFloaters_Package is
       index : Integer;
    begin
         viewPosition := This.layerInterface.getViewPosition;
-        x := viewPosition.getX;
-        y := viewPosition.getY;
+        x := viewPosition.getX2;
+        y := viewPosition.getY2;
         for index in reverse 0 .. (This.lastDamage'Length) - (1) loop
             if (This.lastDamage (index)) /= (0) then
                 delta_Id := (10) * (((index) + (2)));

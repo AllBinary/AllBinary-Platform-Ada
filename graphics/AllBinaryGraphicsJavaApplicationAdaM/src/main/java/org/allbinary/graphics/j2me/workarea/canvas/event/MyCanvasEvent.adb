@@ -27,7 +27,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Pac
    procedure Initialize (This : in out MyCanvasEvent'Class; source_Param : access Java_Object'Class) is
       source : constant Java_Object_Access := Java_Object_Access (source_Param);
    begin
-        EventObject_Package.Initialize (This, source);
+        null;
    end Initialize;
 
    function Create (source_Param : access Java_Object'Class) return MyCanvasEvent_Access is

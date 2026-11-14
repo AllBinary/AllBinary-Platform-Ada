@@ -58,7 +58,7 @@ package body org.allbinary.globals.Globals_Package is
 
    function getInstance return Globals_Access is
    begin
-        return Globals_Access (Globals_Package.instance);
+        return Globals_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out Globals'Class) is

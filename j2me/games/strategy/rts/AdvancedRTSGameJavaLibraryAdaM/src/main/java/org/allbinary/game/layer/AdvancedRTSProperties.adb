@@ -25,6 +25,42 @@ with org.allbinary.media.AllBinaryVibration_Package; use org.allbinary.media.All
 with org.allbinary.media.AllBinaryVibrationME_Package; use org.allbinary.media.AllBinaryVibrationME_Package;
 with org.allbinary.media.AllBinaryVibrationME_Package_References;
 with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.game.configuration.GameConfiguration_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.game.identification.Group_Package;
+with org.allbinary.layer.event.LayerManagerEvent_Package;
+with org.allbinary.layer.event.LayerManagerEventHandler_Package;
+with org.allbinary.layer.event.LayerManagerEventListener_Package;
+with org.allbinary.layer.LayerManagerLoggingBase_Package;
+with org.allbinary.layer.LayerProcessor_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.animation.transition.shake.ShakeEvent_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.SynchObject_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package;
 
 package body org.allbinary.game.layer.AdvancedRTSProperties_Package is
 
@@ -80,7 +116,7 @@ package body org.allbinary.game.layer.AdvancedRTSProperties_Package is
 
    function createProperties return AdvancedRTSProperties_Access is
    begin
-        return AdvancedRTSProperties_Package.Create (ShakeAnimationListenerFactory_Package.getInstance, AllBinaryVibration_Package.getInstance, (GameConfigurationCentral_Package.getInstance.VIBRATION.getValue.intValue) * (100), WaypointBehaviorBase_Package.Create);
+        return AdvancedRTSProperties_Package.Create (ShakeAnimationListenerFactory_Package.getInstance, AllBinaryVibration_Package.getInstance, (Integer (GameConfigurationCentral_Package.getInstance.VIBRATION.getValue)) * (100), WaypointBehaviorBase_Package.Create);
    end createProperties;
 
    procedure Initialize (This : in out AdvancedRTSProperties'Class; shakeListener_Param : access ShakeAnimationListener_Package.ShakeAnimationListener'Class; vibration_Param : access AllBinaryVibrationME_Package.AllBinaryVibrationME'Class; duration : Integer; waypointBehaviorBase_Param : access TickableInterface_Package.TickableInterface'Class) is

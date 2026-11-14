@@ -94,7 +94,7 @@ package body org.allbinary.android.input.motion.event.AnalogControllerConfigurat
 
    function getInstance return AnalogControllerConfigurationEventHandler_Access is
    begin
-        return AnalogControllerConfigurationEventHandler_Access (AnalogControllerConfigurationEventHandler_Package.instance);
+        return AnalogControllerConfigurationEventHandler_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AnalogControllerConfigurationEventHandler'Class) is

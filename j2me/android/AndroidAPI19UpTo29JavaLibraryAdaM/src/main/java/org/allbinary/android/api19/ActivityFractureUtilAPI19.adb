@@ -52,7 +52,7 @@ package body org.allbinary.android.api19.ActivityFractureUtilAPI19_Package is
 
    function getInstance return ActivityFractureUtilAPI19_Access is
    begin
-        return ActivityFractureUtilAPI19_Access (ActivityFractureUtilAPI19_Package.instance19);
+        return ActivityFractureUtilAPI19_Package.instance19;
    end getInstance;
 
    procedure setFullScreen (This : in out ActivityFractureUtilAPI19; activity_Param : access Activity_Package.Activity'Class) is

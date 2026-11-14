@@ -20,6 +20,35 @@ with org.allbinary.game.configuration.feature.MainFeatureFactory_Package; use or
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
 with javax.microedition.lcdui.CommandListener_Package_References;
 with org.allbinary.canvas.RunnableCanvas_Package; use org.allbinary.canvas.RunnableCanvas_Package;
+with org.allbinary.util.ABHashMap_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
+with org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.util.ABVector_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.graphics.displayable.BaseScalable_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.displayable.CanvasStrings_Package;
+with org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.canvas.Processor_Package;
+with org.allbinary.graphics.displayable.ScalableListener_Package;
+with org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.input.TouchJ2ME_Package;
 
 package body org.allbinary.canvas.FullScreenUtil_Package is
 
@@ -65,7 +94,7 @@ package body org.allbinary.canvas.FullScreenUtil_Package is
 
    function getInstance return FullScreenUtil_Access is
    begin
-        return FullScreenUtil_Access (FullScreenUtil_Package.instance);
+        return FullScreenUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

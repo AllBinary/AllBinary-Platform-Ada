@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.system.hardware.components.linux.Unknown_Package;
 package org.allbinary.logic.system.hardware.components.linux.Unknown_Package_References is
    type Unknown_Access is access all org.allbinary.logic.system.hardware.components.linux.Unknown_Package.Unknown'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.system.hardware.components.linux.Unknown_Package_Ref
    type Unknown_Access_Array_Access is access all Unknown_Access_Array;
    type Unknown_Access_Array_Access_Array is array (Natural range <>) of Unknown_Access_Array_Access;
    type Unknown_Access_Array_Access_Array_Access is access all Unknown_Access_Array_Access_Array;
+   type Unknown_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Unknown_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Unknown_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Unknown_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Unknown_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Unknown_Access_Array_Access is (if Value /= null and then Value.all in Unknown_Access_Array_Object'Class then Unknown_Access_Array_Object'Class (Value.all).Value else null);
+   type Unknown_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Unknown_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Unknown_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Unknown_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Unknown_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Unknown_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in Unknown_Access_Array_Access_Array_Object'Class then Unknown_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.system.hardware.components.linux.Unknown_Package_References;
 
 with org.allbinary.logic.system.hardware.components.linux.Unknown_Package_References;
@@ -46,10 +57,14 @@ package org.allbinary.logic.system.hardware.components.linux.Unknown_Package is
    function "=" (Left, Right : Unknown_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Unknown_Package_References."=";
    subtype Unknown_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.Unknown_Package_References.Unknown_Access_Array_Access;
    function "=" (Left, Right : Unknown_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Unknown_Package_References."=";
+   function Java_Box (Value : Unknown_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.system.hardware.components.linux.Unknown_Package_References.Java_Box;
+   function Java_Unbox_Unknown_Access_Array (Value : access Java_Object'Class) return Unknown_Access_Array_Access renames org.allbinary.logic.system.hardware.components.linux.Unknown_Package_References.Java_Unbox_Unknown_Access_Array;
    subtype Unknown_Access_Array_Access_Array is org.allbinary.logic.system.hardware.components.linux.Unknown_Package_References.Unknown_Access_Array_Access_Array;
    function "=" (Left, Right : Unknown_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Unknown_Package_References."=";
    subtype Unknown_Access_Array_Access_Array_Access is org.allbinary.logic.system.hardware.components.linux.Unknown_Package_References.Unknown_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Unknown_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.hardware.components.linux.Unknown_Package_References."=";
+   function Java_Box (Value : Unknown_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.system.hardware.components.linux.Unknown_Package_References.Java_Box;
+   function Java_Unbox_Unknown_Access_Array_Access_Array (Value : access Java_Object'Class) return Unknown_Access_Array_Access_Array_Access renames org.allbinary.logic.system.hardware.components.linux.Unknown_Package_References.Java_Unbox_Unknown_Access_Array_Access_Array;
 
    type Unknown is new Java_Object and HardwareComponentInterface with record
       data : Unbounded_String;

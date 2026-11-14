@@ -41,7 +41,7 @@ package body org.allbinary.graphics.opengles.renderer.RendererStrings_Package is
 
    function getInstance return RendererStrings_Access is
    begin
-        return RendererStrings_Access (RendererStrings_Package.instance);
+        return RendererStrings_Package.instance;
    end getInstance;
 
 begin

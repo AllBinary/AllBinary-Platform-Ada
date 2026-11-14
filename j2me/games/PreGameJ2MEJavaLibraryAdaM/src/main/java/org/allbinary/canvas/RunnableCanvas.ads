@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.canvas.RunnableCanvas_Package;
 package org.allbinary.canvas.RunnableCanvas_Package_References is
    type RunnableCanvas_Access is access all org.allbinary.canvas.RunnableCanvas_Package.RunnableCanvas'Class;
@@ -19,6 +20,16 @@ package org.allbinary.canvas.RunnableCanvas_Package_References is
    type RunnableCanvas_Access_Array_Access is access all RunnableCanvas_Access_Array;
    type RunnableCanvas_Access_Array_Access_Array is array (Natural range <>) of RunnableCanvas_Access_Array_Access;
    type RunnableCanvas_Access_Array_Access_Array_Access is access all RunnableCanvas_Access_Array_Access_Array;
+   type RunnableCanvas_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RunnableCanvas_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RunnableCanvas_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RunnableCanvas_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RunnableCanvas_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RunnableCanvas_Access_Array_Access is (if Value /= null and then Value.all in RunnableCanvas_Access_Array_Object'Class then RunnableCanvas_Access_Array_Object'Class (Value.all).Value else null);
+   type RunnableCanvas_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RunnableCanvas_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RunnableCanvas_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RunnableCanvas_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RunnableCanvas_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RunnableCanvas_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in RunnableCanvas_Access_Array_Access_Array_Object'Class then RunnableCanvas_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.canvas.RunnableCanvas_Package_References;
 
 with org.allbinary.canvas.RunnableCanvas_Package_References;
@@ -32,7 +43,8 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 limited with javax.microedition.lcdui.CommandListener_Package;
 with javax.microedition.lcdui.CommandListener_Package_References;
---  with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+limited with org.allbinary.TsUtil_Package;
+with org.allbinary.TsUtil_Package_References;
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
 limited with org.allbinary.logic.ABSystemWrapper_Package;
 with org.allbinary.logic.ABSystemWrapper_Package_References;
@@ -56,6 +68,7 @@ with org.allbinary.canvas.Processor_Package_References;
 package org.allbinary.canvas.RunnableCanvas_Package is
 
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package MyCanvas_Package renames Standard.org.allbinary.graphics.displayable.MyCanvas_Package;
    package ABSystemWrapper_Package renames Standard.org.allbinary.logic.ABSystemWrapper_Package;
    package NullUtil_Package renames Standard.org.allbinary.logic.NullUtil_Package;
@@ -77,6 +90,16 @@ package org.allbinary.canvas.RunnableCanvas_Package is
    use type CommandListener_Access_Array_Access_Array;
    subtype CommandListener_Access_Array_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array_Access;
    use type CommandListener_Access_Array_Access_Array_Access;
+   subtype TsUtil_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access;
+   use type TsUtil_Access;
+   subtype TsUtil_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array;
+   use type TsUtil_Access_Array;
+   subtype TsUtil_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access;
+   use type TsUtil_Access_Array_Access;
+   subtype TsUtil_Access_Array_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array;
+   use type TsUtil_Access_Array_Access_Array;
+   subtype TsUtil_Access_Array_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array_Access;
+   use type TsUtil_Access_Array_Access_Array_Access;
    subtype ABSystemWrapper_Access is org.allbinary.logic.ABSystemWrapper_Package_References.ABSystemWrapper_Access;
    use type ABSystemWrapper_Access;
    subtype ABSystemWrapper_Access_Array is org.allbinary.logic.ABSystemWrapper_Package_References.ABSystemWrapper_Access_Array;
@@ -167,15 +190,20 @@ package org.allbinary.canvas.RunnableCanvas_Package is
    function "=" (Left, Right : RunnableCanvas_Access_Array) return Boolean renames org.allbinary.canvas.RunnableCanvas_Package_References."=";
    subtype RunnableCanvas_Access_Array_Access is org.allbinary.canvas.RunnableCanvas_Package_References.RunnableCanvas_Access_Array_Access;
    function "=" (Left, Right : RunnableCanvas_Access_Array_Access) return Boolean renames org.allbinary.canvas.RunnableCanvas_Package_References."=";
+   function Java_Box (Value : RunnableCanvas_Access_Array_Access) return Java_Object_Access renames org.allbinary.canvas.RunnableCanvas_Package_References.Java_Box;
+   function Java_Unbox_RunnableCanvas_Access_Array (Value : access Java_Object'Class) return RunnableCanvas_Access_Array_Access renames org.allbinary.canvas.RunnableCanvas_Package_References.Java_Unbox_RunnableCanvas_Access_Array;
    subtype RunnableCanvas_Access_Array_Access_Array is org.allbinary.canvas.RunnableCanvas_Package_References.RunnableCanvas_Access_Array_Access_Array;
    function "=" (Left, Right : RunnableCanvas_Access_Array_Access_Array) return Boolean renames org.allbinary.canvas.RunnableCanvas_Package_References."=";
    subtype RunnableCanvas_Access_Array_Access_Array_Access is org.allbinary.canvas.RunnableCanvas_Package_References.RunnableCanvas_Access_Array_Access_Array_Access;
    function "=" (Left, Right : RunnableCanvas_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.canvas.RunnableCanvas_Package_References."=";
+   function Java_Box (Value : RunnableCanvas_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.canvas.RunnableCanvas_Package_References.Java_Box;
+   function Java_Unbox_RunnableCanvas_Access_Array_Access_Array (Value : access Java_Object'Class) return RunnableCanvas_Access_Array_Access_Array_Access renames org.allbinary.canvas.RunnableCanvas_Package_References.Java_Unbox_RunnableCanvas_Access_Array_Access_Array;
 
    type RunnableCanvas is new MyCanvas and RunnableInterface with record
       nullUtil : NullUtil_Access;
       stdUtil : StdUtil_Access;
       systemWrapper : ABSystemWrapper_Access;
+      tsUtil : TsUtil_Access;
       thread_Case : Thread_Access;
       currentThread : Thread_Access;
       running : Boolean;

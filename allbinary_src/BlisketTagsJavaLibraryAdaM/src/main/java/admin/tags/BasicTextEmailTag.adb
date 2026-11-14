@@ -20,6 +20,8 @@ with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; u
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -39,6 +41,8 @@ package body admin.tags.BasicTextEmailTag_Package is
    package BasicTextEmailHelperFactory_Package renames Standard.admin.taghelpers.BasicTextEmailHelperFactory_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -89,7 +93,7 @@ package body admin.tags.BasicTextEmailTag_Package is
       error : Unbounded_String;
    begin
         begin
-            propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
+            propertiesHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             propertiesHashMap.put (Java_Box (To_Unbounded_String ("Subject")), Java_Box (This.subject));
             propertiesHashMap.put (Java_Box (To_Unbounded_String ("Body")), Java_Box (This.body_Id));
             anyType := BasicTextEmailHelperFactory_Package.Create.getInstance (propertiesHashMap, This.pageContext);
@@ -102,7 +106,7 @@ package body admin.tags.BasicTextEmailTag_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to Send Email.");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicTextEmailTag_Access'(This'Unchecked_Access), To_Unbounded_String ("send()"), e);
             end if;
             return error;

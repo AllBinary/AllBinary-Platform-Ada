@@ -37,7 +37,7 @@ package body org.allbinary.logic.io.AbIOSystem_Package is
 
    function getInstance return AbIOSystem_Access is
    begin
-        return AbIOSystem_Access (AbIOSystem_Package.instance);
+        return AbIOSystem_Package.instance;
    end getInstance;
 
    function getType (This : in out AbIOSystem) return Unbounded_String is

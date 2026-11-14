@@ -46,7 +46,7 @@ package body org.allbinary.graphics.PointFactory_Package is
 
    function getInstance return PointFactory_Access is
    begin
-        return PointFactory_Access (PointFactory_Package.instance);
+        return PointFactory_Package.instance;
    end getInstance;
 
    procedure init (This : in out PointFactory) is

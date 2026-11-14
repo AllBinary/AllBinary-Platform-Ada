@@ -189,7 +189,7 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
             XmlRpcAbeClient'Class (This).setServer (0);
         end if;
         if ((XmlRpcAbeClient'Class (This).getServer) /= (XmlRpcAbeClient'Class (This).getStart)) and then (not (XmlRpcAbeClient'Class (This).isIsDone)) then
-            return Java_Object_Access (XmlRpcAbeClient'Class (This).get (anyType));
+            return XmlRpcAbeClient'Class (This).get (anyType);
         else
             XmlRpcAbeClient'Class (This).setIsDone (True);
         end if;

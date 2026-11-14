@@ -51,7 +51,7 @@ package body org.allbinary.logic.io.StreamUtil_Package is
 
    function getInstance return StreamUtil_Access is
    begin
-        return StreamUtil_Access (StreamUtil_Package.instance);
+        return StreamUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out StreamUtil'Class) is

@@ -77,7 +77,7 @@ package body org.allbinary.graphics.opengles.shader.ShaderInitializer_Package is
 
    function getInstance return ShaderInitializer_Access is
    begin
-        return ShaderInitializer_Access (ShaderInitializer_Package.instance);
+        return ShaderInitializer_Package.instance;
    end getInstance;
 
    function init (This : in out ShaderInitializer; gl_Param : access GL10_Package.GL10'Class; shader : Shader_Access_Array_Access; attributeArray : Unbounded_String_Array_Access) return Integer is

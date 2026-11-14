@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package;
 package org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References is
    type GameMotionGestureListener_Access is access all org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package.GameMotionGestureListener'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Pa
    type GameMotionGestureListener_Access_Array_Access is access all GameMotionGestureListener_Access_Array;
    type GameMotionGestureListener_Access_Array_Access_Array is array (Natural range <>) of GameMotionGestureListener_Access_Array_Access;
    type GameMotionGestureListener_Access_Array_Access_Array_Access is access all GameMotionGestureListener_Access_Array_Access_Array;
+   type GameMotionGestureListener_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameMotionGestureListener_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameMotionGestureListener_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameMotionGestureListener_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameMotionGestureListener_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameMotionGestureListener_Access_Array_Access is (if Value /= null and then Value.all in GameMotionGestureListener_Access_Array_Object'Class then GameMotionGestureListener_Access_Array_Object'Class (Value.all).Value else null);
+   type GameMotionGestureListener_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameMotionGestureListener_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameMotionGestureListener_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameMotionGestureListener_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameMotionGestureListener_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameMotionGestureListener_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GameMotionGestureListener_Access_Array_Access_Array_Object'Class then GameMotionGestureListener_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References;
 
 with org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References;
@@ -121,10 +132,14 @@ package org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Pa
    function "=" (Left, Right : GameMotionGestureListener_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References."=";
    subtype GameMotionGestureListener_Access_Array_Access is org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References.GameMotionGestureListener_Access_Array_Access;
    function "=" (Left, Right : GameMotionGestureListener_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References."=";
+   function Java_Box (Value : GameMotionGestureListener_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References.Java_Box;
+   function Java_Unbox_GameMotionGestureListener_Access_Array (Value : access Java_Object'Class) return GameMotionGestureListener_Access_Array_Access renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References.Java_Unbox_GameMotionGestureListener_Access_Array;
    subtype GameMotionGestureListener_Access_Array_Access_Array is org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References.GameMotionGestureListener_Access_Array_Access_Array;
    function "=" (Left, Right : GameMotionGestureListener_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References."=";
    subtype GameMotionGestureListener_Access_Array_Access_Array_Access is org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References.GameMotionGestureListener_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GameMotionGestureListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References."=";
+   function Java_Box (Value : GameMotionGestureListener_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References.Java_Box;
+   function Java_Unbox_GameMotionGestureListener_Access_Array_Access_Array (Value : access Java_Object'Class) return GameMotionGestureListener_Access_Array_Access_Array_Access renames org.allbinary.input.motion.gesture.observer.GameMotionGestureListener_Package_References.Java_Unbox_GameMotionGestureListener_Access_Array_Access_Array;
 
    type GameMotionGestureListener is new Java_Object and MotionGestureEventListener with record
       logUtil : LogUtil_Access;

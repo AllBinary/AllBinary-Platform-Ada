@@ -90,7 +90,7 @@ package body org.allbinary.media.image.AndroidImageUtil_Package is
 
    function getInstance return AndroidImageUtil_Access is
    begin
-        return AndroidImageUtil_Access (AndroidImageUtil_Package.instance);
+        return AndroidImageUtil_Package.instance;
    end getInstance;
 
    procedure paintBitmap (This : in out AndroidImageUtil; bitmap_Param : access Bitmap_Package.Bitmap'Class; originalBitmap_Param : access Bitmap_Package.Bitmap'Class; paint_Param : access Paint_Package.Paint'Class) is

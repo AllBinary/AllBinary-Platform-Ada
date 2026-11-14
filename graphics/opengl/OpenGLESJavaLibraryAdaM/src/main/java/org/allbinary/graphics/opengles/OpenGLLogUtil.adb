@@ -61,7 +61,7 @@ package body org.allbinary.graphics.opengles.OpenGLLogUtil_Package is
 
    function getInstance return OpenGLLogUtil_Access is
    begin
-        return OpenGLLogUtil_Access (OpenGLLogUtil_Package.instance);
+        return OpenGLLogUtil_Package.instance;
    end getInstance;
 
    procedure logError (This : in out OpenGLLogUtil; gl_Param : access GL10_Package.GL10'Class) is

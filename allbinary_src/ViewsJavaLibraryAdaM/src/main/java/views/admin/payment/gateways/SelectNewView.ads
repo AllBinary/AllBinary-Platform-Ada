@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.admin.payment.gateways.SelectNewView_Package;
 package views.admin.payment.gateways.SelectNewView_Package_References is
    type SelectNewView_Access is access all views.admin.payment.gateways.SelectNewView_Package.SelectNewView'Class;
@@ -19,6 +20,16 @@ package views.admin.payment.gateways.SelectNewView_Package_References is
    type SelectNewView_Access_Array_Access is access all SelectNewView_Access_Array;
    type SelectNewView_Access_Array_Access_Array is array (Natural range <>) of SelectNewView_Access_Array_Access;
    type SelectNewView_Access_Array_Access_Array_Access is access all SelectNewView_Access_Array_Access_Array;
+   type SelectNewView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SelectNewView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SelectNewView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SelectNewView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SelectNewView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SelectNewView_Access_Array_Access is (if Value /= null and then Value.all in SelectNewView_Access_Array_Object'Class then SelectNewView_Access_Array_Object'Class (Value.all).Value else null);
+   type SelectNewView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SelectNewView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SelectNewView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SelectNewView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SelectNewView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SelectNewView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SelectNewView_Access_Array_Access_Array_Object'Class then SelectNewView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.admin.payment.gateways.SelectNewView_Package_References;
 
 with views.admin.payment.gateways.SelectNewView_Package_References;
@@ -72,10 +83,14 @@ package views.admin.payment.gateways.SelectNewView_Package is
    function "=" (Left, Right : SelectNewView_Access_Array) return Boolean renames views.admin.payment.gateways.SelectNewView_Package_References."=";
    subtype SelectNewView_Access_Array_Access is views.admin.payment.gateways.SelectNewView_Package_References.SelectNewView_Access_Array_Access;
    function "=" (Left, Right : SelectNewView_Access_Array_Access) return Boolean renames views.admin.payment.gateways.SelectNewView_Package_References."=";
+   function Java_Box (Value : SelectNewView_Access_Array_Access) return Java_Object_Access renames views.admin.payment.gateways.SelectNewView_Package_References.Java_Box;
+   function Java_Unbox_SelectNewView_Access_Array (Value : access Java_Object'Class) return SelectNewView_Access_Array_Access renames views.admin.payment.gateways.SelectNewView_Package_References.Java_Unbox_SelectNewView_Access_Array;
    subtype SelectNewView_Access_Array_Access_Array is views.admin.payment.gateways.SelectNewView_Package_References.SelectNewView_Access_Array_Access_Array;
    function "=" (Left, Right : SelectNewView_Access_Array_Access_Array) return Boolean renames views.admin.payment.gateways.SelectNewView_Package_References."=";
    subtype SelectNewView_Access_Array_Access_Array_Access is views.admin.payment.gateways.SelectNewView_Package_References.SelectNewView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SelectNewView_Access_Array_Access_Array_Access) return Boolean renames views.admin.payment.gateways.SelectNewView_Package_References."=";
+   function Java_Box (Value : SelectNewView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.admin.payment.gateways.SelectNewView_Package_References.Java_Box;
+   function Java_Unbox_SelectNewView_Access_Array_Access_Array (Value : access Java_Object'Class) return SelectNewView_Access_Array_Access_Array_Access renames views.admin.payment.gateways.SelectNewView_Package_References.Java_Unbox_SelectNewView_Access_Array_Access_Array;
 
    type SelectNewView is new PaymentGatewayViewAbstract with record
       logUtil : LogUtil_Access;

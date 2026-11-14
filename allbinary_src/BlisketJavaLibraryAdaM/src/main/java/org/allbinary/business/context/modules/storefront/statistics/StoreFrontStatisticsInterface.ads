@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package;
 package org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References is
    type StoreFrontStatisticsInterface_Access is access all org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package.StoreFrontStatisticsInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.context.modules.storefront.statistics.StoreFrontS
    type StoreFrontStatisticsInterface_Access_Array_Access is access all StoreFrontStatisticsInterface_Access_Array;
    type StoreFrontStatisticsInterface_Access_Array_Access_Array is array (Natural range <>) of StoreFrontStatisticsInterface_Access_Array_Access;
    type StoreFrontStatisticsInterface_Access_Array_Access_Array_Access is access all StoreFrontStatisticsInterface_Access_Array_Access_Array;
+   type StoreFrontStatisticsInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreFrontStatisticsInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreFrontStatisticsInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreFrontStatisticsInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreFrontStatisticsInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreFrontStatisticsInterface_Access_Array_Access is (if Value /= null and then Value.all in StoreFrontStatisticsInterface_Access_Array_Object'Class then StoreFrontStatisticsInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type StoreFrontStatisticsInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreFrontStatisticsInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreFrontStatisticsInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreFrontStatisticsInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreFrontStatisticsInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreFrontStatisticsInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StoreFrontStatisticsInterface_Access_Array_Access_Array_Object'Class then StoreFrontStatisticsInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References;
 
 with org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References;
@@ -97,10 +108,14 @@ package org.allbinary.business.context.modules.storefront.statistics.StoreFrontS
    function "=" (Left, Right : StoreFrontStatisticsInterface_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References."=";
    subtype StoreFrontStatisticsInterface_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References.StoreFrontStatisticsInterface_Access_Array_Access;
    function "=" (Left, Right : StoreFrontStatisticsInterface_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References."=";
+   function Java_Box (Value : StoreFrontStatisticsInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References.Java_Box;
+   function Java_Unbox_StoreFrontStatisticsInterface_Access_Array (Value : access Java_Object'Class) return StoreFrontStatisticsInterface_Access_Array_Access renames org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References.Java_Unbox_StoreFrontStatisticsInterface_Access_Array;
    subtype StoreFrontStatisticsInterface_Access_Array_Access_Array is org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References.StoreFrontStatisticsInterface_Access_Array_Access_Array;
    function "=" (Left, Right : StoreFrontStatisticsInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References."=";
    subtype StoreFrontStatisticsInterface_Access_Array_Access_Array_Access is org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References.StoreFrontStatisticsInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StoreFrontStatisticsInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References."=";
+   function Java_Box (Value : StoreFrontStatisticsInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References.Java_Box;
+   function Java_Unbox_StoreFrontStatisticsInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return StoreFrontStatisticsInterface_Access_Array_Access_Array_Access renames org.allbinary.business.context.modules.storefront.statistics.StoreFrontStatisticsInterface_Package_References.Java_Unbox_StoreFrontStatisticsInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_StoreFrontStatisticsInterface (Value : StoreFrontStatisticsInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getAdvertisements (This : in out StoreFrontStatisticsInterface) return StoreFrontAdvertisementsStatisticsInterface_Access is abstract;
    function getUsers (This : in out StoreFrontStatisticsInterface) return StoreFrontUsersStatisticsInterface_Access is abstract;

@@ -266,7 +266,7 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
 
    function getNullScrollSelectionForm return ScrollSelectionForm_Access is
    begin
-        if (ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_FORM) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_FORM)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_FORM := Java_Object_Access (ScrollSelectionForm_Package.createForm (StringUtil_Package.getInstance.EMPTY_STRING, new ABCustomItem_Access_Array'(0 .. (0) - 1 => null), ItemPaintableFactory_Package.getInstance, 0, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE));
         end if;
         return ScrollSelectionForm_Access (ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_FORM);
@@ -274,7 +274,7 @@ package body org.allbinary.graphics.form.ScrollSelectionForm_Package is
 
    function getNullScrollSelectionFormHorizontal return ScrollSelectionForm_Access is
    begin
-        if (ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_HORIZONTAL_FORM) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_HORIZONTAL_FORM)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_HORIZONTAL_FORM := Java_Object_Access (ScrollSelectionForm_Package.createForm (StringUtil_Package.getInstance.EMPTY_STRING, new ABCustomItem_Access_Array'(0 .. (0) - 1 => null), ItemPaintableFactory_Package.getInstance, 0, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE));
         end if;
         return ScrollSelectionForm_Access (ScrollSelectionForm_Package.NULL_SCROLL_SELECTION_HORIZONTAL_FORM);

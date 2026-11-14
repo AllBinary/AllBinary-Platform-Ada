@@ -57,31 +57,33 @@ package body org.allbinary.logic.io.AbFileInputStream_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out AbFileInputStream'Class; file_Param : access AbFile_Package.AbFile'Class) is
+   --  throws FileNotFoundException
+   function createFromAbFile (file_Param : access AbFile_Package.AbFile'Class) return AbFileInputStream_Access is
       file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
-        FileInputStream_Package.Initialize (This, AbFileNativeUtil_Package.get (file));
-   end Initialize;
+        return AbFileInputStream_Package.Create (AbFileNativeUtil_Package.get (file).getPath);
+   end createFromAbFile;
 
-   function Create (file_Param : access AbFile_Package.AbFile'Class) return AbFileInputStream_Access is
-      This : constant AbFileInputStream_Access := new AbFileInputStream;
-   begin
-      AbFileInputStream_Package.Initialize (This.all, file_Param);
-      return This;
-   end Create;
-
-   procedure Initialize (This : in out AbFileInputStream'Class; file_Param : access File_Package.File'Class) is
+   --  throws FileNotFoundException
+   function createFromFile (file_Param : access File_Package.File'Class) return AbFileInputStream_Access is
       file : constant File_Access := File_Access (file_Param);
    begin
-        FileInputStream_Package.Initialize (This, file);
-   end Initialize;
+        return AbFileInputStream_Package.Create (file.getPath);
+   end createFromFile;
 
-   function Create (file_Param : access File_Package.File'Class) return AbFileInputStream_Access is
-      This : constant AbFileInputStream_Access := new AbFileInputStream;
+   procedure createFromAbFile (file_Param : access AbFile_Package.AbFile'Class) is
+      Java_Result : constant AbFileInputStream_Access := createFromAbFile (file_Param => file_Param);
+      pragma Unreferenced (Java_Result);
    begin
-      AbFileInputStream_Package.Initialize (This.all, file_Param);
-      return This;
-   end Create;
+      null;
+   end createFromAbFile;
+
+   procedure createFromFile (file_Param : access File_Package.File'Class) is
+      Java_Result : constant AbFileInputStream_Access := createFromFile (file_Param => file_Param);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end createFromFile;
 
 end org.allbinary.logic.io.AbFileInputStream_Package;
 

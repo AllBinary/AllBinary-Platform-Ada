@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.data.tables.log.LogTableEntity_Package;
 package org.allbinary.data.tables.log.LogTableEntity_Package_References is
    type LogTableEntity_Access is access all org.allbinary.data.tables.log.LogTableEntity_Package.LogTableEntity'Class;
@@ -19,6 +20,16 @@ package org.allbinary.data.tables.log.LogTableEntity_Package_References is
    type LogTableEntity_Access_Array_Access is access all LogTableEntity_Access_Array;
    type LogTableEntity_Access_Array_Access_Array is array (Natural range <>) of LogTableEntity_Access_Array_Access;
    type LogTableEntity_Access_Array_Access_Array_Access is access all LogTableEntity_Access_Array_Access_Array;
+   type LogTableEntity_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LogTableEntity_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LogTableEntity_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LogTableEntity_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LogTableEntity_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LogTableEntity_Access_Array_Access is (if Value /= null and then Value.all in LogTableEntity_Access_Array_Object'Class then LogTableEntity_Access_Array_Object'Class (Value.all).Value else null);
+   type LogTableEntity_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LogTableEntity_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LogTableEntity_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LogTableEntity_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LogTableEntity_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LogTableEntity_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in LogTableEntity_Access_Array_Access_Array_Object'Class then LogTableEntity_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.data.tables.log.LogTableEntity_Package_References;
 
 with org.allbinary.data.tables.log.LogTableEntity_Package_References;
@@ -60,10 +71,14 @@ package org.allbinary.data.tables.log.LogTableEntity_Package is
    function "=" (Left, Right : LogTableEntity_Access_Array) return Boolean renames org.allbinary.data.tables.log.LogTableEntity_Package_References."=";
    subtype LogTableEntity_Access_Array_Access is org.allbinary.data.tables.log.LogTableEntity_Package_References.LogTableEntity_Access_Array_Access;
    function "=" (Left, Right : LogTableEntity_Access_Array_Access) return Boolean renames org.allbinary.data.tables.log.LogTableEntity_Package_References."=";
+   function Java_Box (Value : LogTableEntity_Access_Array_Access) return Java_Object_Access renames org.allbinary.data.tables.log.LogTableEntity_Package_References.Java_Box;
+   function Java_Unbox_LogTableEntity_Access_Array (Value : access Java_Object'Class) return LogTableEntity_Access_Array_Access renames org.allbinary.data.tables.log.LogTableEntity_Package_References.Java_Unbox_LogTableEntity_Access_Array;
    subtype LogTableEntity_Access_Array_Access_Array is org.allbinary.data.tables.log.LogTableEntity_Package_References.LogTableEntity_Access_Array_Access_Array;
    function "=" (Left, Right : LogTableEntity_Access_Array_Access_Array) return Boolean renames org.allbinary.data.tables.log.LogTableEntity_Package_References."=";
    subtype LogTableEntity_Access_Array_Access_Array_Access is org.allbinary.data.tables.log.LogTableEntity_Package_References.LogTableEntity_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LogTableEntity_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.data.tables.log.LogTableEntity_Package_References."=";
+   function Java_Box (Value : LogTableEntity_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.data.tables.log.LogTableEntity_Package_References.Java_Box;
+   function Java_Unbox_LogTableEntity_Access_Array_Access_Array (Value : access Java_Object'Class) return LogTableEntity_Access_Array_Access_Array_Access renames org.allbinary.data.tables.log.LogTableEntity_Package_References.Java_Unbox_LogTableEntity_Access_Array_Access_Array;
 
    type LogTableEntity is new AbSqlBean and LogTableEntityInterface with record
       tableName : Unbounded_String;

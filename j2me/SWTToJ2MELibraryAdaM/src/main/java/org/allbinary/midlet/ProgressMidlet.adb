@@ -88,7 +88,7 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
    procedure Initialize_Fields (This : in out ProgressMidlet'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
+      This.ProgressMidlet_Field_logUtil := LogUtil_Package.getInstance;
       
    end Initialize_Fields;
 
@@ -129,7 +129,7 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ProgressMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("exit"), e);
+            This.ProgressMidlet_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, ProgressMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("exit"), e);
             begin
                 processor.process;
             exception
@@ -137,7 +137,7 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
                     declare
                         e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
-                This.logUtil.put (This.commonStrings.EXCEPTION_Id, ProgressMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("exit"), e);
+                This.ProgressMidlet_Field_logUtil.put (This.commonStrings.EXCEPTION_Id, ProgressMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("exit"), e);
                     end;
             end;
                 end;

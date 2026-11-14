@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.pickup.PickupCompositeInterface_Package;
 package org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_References is
    type PickupCompositeInterface_Access is access all org.allbinary.game.layer.pickup.PickupCompositeInterface_Package.PickupCompositeInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_Referen
    type PickupCompositeInterface_Access_Array_Access is access all PickupCompositeInterface_Access_Array;
    type PickupCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of PickupCompositeInterface_Access_Array_Access;
    type PickupCompositeInterface_Access_Array_Access_Array_Access is access all PickupCompositeInterface_Access_Array_Access_Array;
+   type PickupCompositeInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PickupCompositeInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PickupCompositeInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PickupCompositeInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PickupCompositeInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PickupCompositeInterface_Access_Array_Access is (if Value /= null and then Value.all in PickupCompositeInterface_Access_Array_Object'Class then PickupCompositeInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type PickupCompositeInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PickupCompositeInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PickupCompositeInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PickupCompositeInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PickupCompositeInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PickupCompositeInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PickupCompositeInterface_Access_Array_Access_Array_Object'Class then PickupCompositeInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_References;
 
 with org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.game.layer.pickup.PickupCompositeInterface_Package is
    function "=" (Left, Right : PickupCompositeInterface_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_References."=";
    subtype PickupCompositeInterface_Access_Array_Access is org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_References.PickupCompositeInterface_Access_Array_Access;
    function "=" (Left, Right : PickupCompositeInterface_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_References."=";
+   function Java_Box (Value : PickupCompositeInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_References.Java_Box;
+   function Java_Unbox_PickupCompositeInterface_Access_Array (Value : access Java_Object'Class) return PickupCompositeInterface_Access_Array_Access renames org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_References.Java_Unbox_PickupCompositeInterface_Access_Array;
    subtype PickupCompositeInterface_Access_Array_Access_Array is org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_References.PickupCompositeInterface_Access_Array_Access_Array;
    function "=" (Left, Right : PickupCompositeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_References."=";
    subtype PickupCompositeInterface_Access_Array_Access_Array_Access is org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_References.PickupCompositeInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PickupCompositeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_References."=";
+   function Java_Box (Value : PickupCompositeInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_References.Java_Box;
+   function Java_Unbox_PickupCompositeInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return PickupCompositeInterface_Access_Array_Access_Array_Access renames org.allbinary.game.layer.pickup.PickupCompositeInterface_Package_References.Java_Unbox_PickupCompositeInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_PickupCompositeInterface (Value : PickupCompositeInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getPickupBehavior (This : in out PickupCompositeInterface) return PickupBehavior_Access is abstract;
    procedure setPickupBehavior (This : in out PickupCompositeInterface; pickupBehavior_Param : access PickupBehavior_Package.PickupBehavior'Class) is abstract;

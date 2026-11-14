@@ -26,7 +26,7 @@ package body org.allbinary.game.ag.layer.hud.basic.HudResources_Package is
 
    function getInstance return HudResources_Access is
    begin
-        return HudResources_Access (HudResources_Package.instance);
+        return HudResources_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out HudResources'Class) is

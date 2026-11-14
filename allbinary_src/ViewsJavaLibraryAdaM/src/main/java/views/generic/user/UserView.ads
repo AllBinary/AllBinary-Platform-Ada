@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.generic_Id.user.UserView_Package;
 package views.generic_Id.user.UserView_Package_References is
    type UserView_Access is access all views.generic_Id.user.UserView_Package.UserView'Class;
@@ -19,6 +20,16 @@ package views.generic_Id.user.UserView_Package_References is
    type UserView_Access_Array_Access is access all UserView_Access_Array;
    type UserView_Access_Array_Access_Array is array (Natural range <>) of UserView_Access_Array_Access;
    type UserView_Access_Array_Access_Array_Access is access all UserView_Access_Array_Access_Array;
+   type UserView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UserView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UserView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UserView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UserView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UserView_Access_Array_Access is (if Value /= null and then Value.all in UserView_Access_Array_Object'Class then UserView_Access_Array_Object'Class (Value.all).Value else null);
+   type UserView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UserView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UserView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UserView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UserView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UserView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in UserView_Access_Array_Access_Array_Object'Class then UserView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.generic_Id.user.UserView_Package_References;
 
 with views.generic_Id.user.UserView_Package_References;
@@ -85,10 +96,14 @@ package views.generic_Id.user.UserView_Package is
    function "=" (Left, Right : UserView_Access_Array) return Boolean renames views.generic_Id.user.UserView_Package_References."=";
    subtype UserView_Access_Array_Access is views.generic_Id.user.UserView_Package_References.UserView_Access_Array_Access;
    function "=" (Left, Right : UserView_Access_Array_Access) return Boolean renames views.generic_Id.user.UserView_Package_References."=";
+   function Java_Box (Value : UserView_Access_Array_Access) return Java_Object_Access renames views.generic_Id.user.UserView_Package_References.Java_Box;
+   function Java_Unbox_UserView_Access_Array (Value : access Java_Object'Class) return UserView_Access_Array_Access renames views.generic_Id.user.UserView_Package_References.Java_Unbox_UserView_Access_Array;
    subtype UserView_Access_Array_Access_Array is views.generic_Id.user.UserView_Package_References.UserView_Access_Array_Access_Array;
    function "=" (Left, Right : UserView_Access_Array_Access_Array) return Boolean renames views.generic_Id.user.UserView_Package_References."=";
    subtype UserView_Access_Array_Access_Array_Access is views.generic_Id.user.UserView_Package_References.UserView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : UserView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.user.UserView_Package_References."=";
+   function Java_Box (Value : UserView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.generic_Id.user.UserView_Package_References.Java_Box;
+   function Java_Unbox_UserView_Access_Array_Access_Array (Value : access Java_Object'Class) return UserView_Access_Array_Access_Array_Access renames views.generic_Id.user.UserView_Package_References.Java_Unbox_UserView_Access_Array_Access_Array;
 
    type UserView is new HttpStoreComponentView with record
       UserView_Field_logUtil_Hidden : LogUtil_Access;

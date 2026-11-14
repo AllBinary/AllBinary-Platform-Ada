@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.role.AdminRoleFactory_Package;
 package org.allbinary.business.user.role.AdminRoleFactory_Package_References is
    type AdminRoleFactory_Access is access all org.allbinary.business.user.role.AdminRoleFactory_Package.AdminRoleFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.role.AdminRoleFactory_Package_References is
    type AdminRoleFactory_Access_Array_Access is access all AdminRoleFactory_Access_Array;
    type AdminRoleFactory_Access_Array_Access_Array is array (Natural range <>) of AdminRoleFactory_Access_Array_Access;
    type AdminRoleFactory_Access_Array_Access_Array_Access is access all AdminRoleFactory_Access_Array_Access_Array;
+   type AdminRoleFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AdminRoleFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AdminRoleFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AdminRoleFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AdminRoleFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AdminRoleFactory_Access_Array_Access is (if Value /= null and then Value.all in AdminRoleFactory_Access_Array_Object'Class then AdminRoleFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type AdminRoleFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AdminRoleFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AdminRoleFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AdminRoleFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AdminRoleFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AdminRoleFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AdminRoleFactory_Access_Array_Access_Array_Object'Class then AdminRoleFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.role.AdminRoleFactory_Package_References;
 
 with org.allbinary.business.user.role.AdminRoleFactory_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.business.user.role.AdminRoleFactory_Package is
    function "=" (Left, Right : AdminRoleFactory_Access_Array) return Boolean renames org.allbinary.business.user.role.AdminRoleFactory_Package_References."=";
    subtype AdminRoleFactory_Access_Array_Access is org.allbinary.business.user.role.AdminRoleFactory_Package_References.AdminRoleFactory_Access_Array_Access;
    function "=" (Left, Right : AdminRoleFactory_Access_Array_Access) return Boolean renames org.allbinary.business.user.role.AdminRoleFactory_Package_References."=";
+   function Java_Box (Value : AdminRoleFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.role.AdminRoleFactory_Package_References.Java_Box;
+   function Java_Unbox_AdminRoleFactory_Access_Array (Value : access Java_Object'Class) return AdminRoleFactory_Access_Array_Access renames org.allbinary.business.user.role.AdminRoleFactory_Package_References.Java_Unbox_AdminRoleFactory_Access_Array;
    subtype AdminRoleFactory_Access_Array_Access_Array is org.allbinary.business.user.role.AdminRoleFactory_Package_References.AdminRoleFactory_Access_Array_Access_Array;
    function "=" (Left, Right : AdminRoleFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.role.AdminRoleFactory_Package_References."=";
    subtype AdminRoleFactory_Access_Array_Access_Array_Access is org.allbinary.business.user.role.AdminRoleFactory_Package_References.AdminRoleFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AdminRoleFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.role.AdminRoleFactory_Package_References."=";
+   function Java_Box (Value : AdminRoleFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.role.AdminRoleFactory_Package_References.Java_Box;
+   function Java_Unbox_AdminRoleFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return AdminRoleFactory_Access_Array_Access_Array_Access renames org.allbinary.business.user.role.AdminRoleFactory_Package_References.Java_Unbox_AdminRoleFactory_Access_Array_Access_Array;
 
    type AdminRoleFactory is new Java_Object with record
       adminRoles : BasicArrayList_Access;

@@ -67,7 +67,7 @@ package body org.allbinary.thread.SoundThreadPool_Package is
 
    function getInstance return ThreadPool_Access is
    begin
-        return ThreadPool_Access (SoundThreadPool_Package.instance);
+        return SoundThreadPool_Package.instance;
    end getInstance;
 
 begin

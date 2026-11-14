@@ -84,7 +84,7 @@ package body org.allbinary.util.HashtableUtil_Package is
 
    function getInstance return HashtableUtil_Access is
    begin
-        return HashtableUtil_Access (HashtableUtil_Package.instance);
+        return HashtableUtil_Package.instance;
    end getInstance;
 
    procedure putAll (This : in out HashtableUtil; fromHashtable_Param : access ABHashtable_Package.ABHashtable'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is

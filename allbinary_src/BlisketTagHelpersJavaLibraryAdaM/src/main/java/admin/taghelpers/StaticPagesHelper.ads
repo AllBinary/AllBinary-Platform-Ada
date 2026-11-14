@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.StaticPagesHelper_Package;
 package admin.taghelpers.StaticPagesHelper_Package_References is
    type StaticPagesHelper_Access is access all admin.taghelpers.StaticPagesHelper_Package.StaticPagesHelper'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.StaticPagesHelper_Package_References is
    type StaticPagesHelper_Access_Array_Access is access all StaticPagesHelper_Access_Array;
    type StaticPagesHelper_Access_Array_Access_Array is array (Natural range <>) of StaticPagesHelper_Access_Array_Access;
    type StaticPagesHelper_Access_Array_Access_Array_Access is access all StaticPagesHelper_Access_Array_Access_Array;
+   type StaticPagesHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StaticPagesHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StaticPagesHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StaticPagesHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StaticPagesHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StaticPagesHelper_Access_Array_Access is (if Value /= null and then Value.all in StaticPagesHelper_Access_Array_Object'Class then StaticPagesHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type StaticPagesHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StaticPagesHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StaticPagesHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StaticPagesHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StaticPagesHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StaticPagesHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StaticPagesHelper_Access_Array_Access_Array_Object'Class then StaticPagesHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.StaticPagesHelper_Package_References;
 
 with admin.taghelpers.StaticPagesHelper_Package_References;
@@ -74,10 +85,14 @@ package admin.taghelpers.StaticPagesHelper_Package is
    function "=" (Left, Right : StaticPagesHelper_Access_Array) return Boolean renames admin.taghelpers.StaticPagesHelper_Package_References."=";
    subtype StaticPagesHelper_Access_Array_Access is admin.taghelpers.StaticPagesHelper_Package_References.StaticPagesHelper_Access_Array_Access;
    function "=" (Left, Right : StaticPagesHelper_Access_Array_Access) return Boolean renames admin.taghelpers.StaticPagesHelper_Package_References."=";
+   function Java_Box (Value : StaticPagesHelper_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.StaticPagesHelper_Package_References.Java_Box;
+   function Java_Unbox_StaticPagesHelper_Access_Array (Value : access Java_Object'Class) return StaticPagesHelper_Access_Array_Access renames admin.taghelpers.StaticPagesHelper_Package_References.Java_Unbox_StaticPagesHelper_Access_Array;
    subtype StaticPagesHelper_Access_Array_Access_Array is admin.taghelpers.StaticPagesHelper_Package_References.StaticPagesHelper_Access_Array_Access_Array;
    function "=" (Left, Right : StaticPagesHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.StaticPagesHelper_Package_References."=";
    subtype StaticPagesHelper_Access_Array_Access_Array_Access is admin.taghelpers.StaticPagesHelper_Package_References.StaticPagesHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StaticPagesHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.StaticPagesHelper_Package_References."=";
+   function Java_Box (Value : StaticPagesHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.StaticPagesHelper_Package_References.Java_Box;
+   function Java_Unbox_StaticPagesHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return StaticPagesHelper_Access_Array_Access_Array_Access renames admin.taghelpers.StaticPagesHelper_Package_References.Java_Unbox_StaticPagesHelper_Access_Array_Access_Array;
 
    type StaticPagesHelper is new BasicTable with record
       logUtil : LogUtil_Access;

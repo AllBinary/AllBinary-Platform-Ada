@@ -76,7 +76,7 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
    function toHashMap (This : in out EmailServerConfigurationMapping) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (EmailServerConfigurationData_Package.SERVER, Java_Box (This.emailServerConfigurationInterface.getSmtpServer));
         hashMap.put (EmailServerConfigurationData_Package.ACCOUNT, Java_Box (This.emailServerConfigurationInterface.getAccountName));
         hashMap.put (EmailServerConfigurationData_Package.PASSWORD, Java_Box (This.emailServerConfigurationInterface.getPassword));
@@ -94,7 +94,7 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
       vector : BasicArrayList_Access;
    begin
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        vector.add (This.emailServerConfigurationInterface.getSmtpServer);
+        vector.add (Java_Box (This.emailServerConfigurationInterface.getSmtpServer));
         return vector;
    end toVector;
 

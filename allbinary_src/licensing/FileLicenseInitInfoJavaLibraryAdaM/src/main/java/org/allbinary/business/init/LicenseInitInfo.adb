@@ -104,7 +104,7 @@ package body org.allbinary.business.init.LicenseInitInfo_Package is
    procedure setServerList (This : in out LicenseInitInfo; servers_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       servers : constant BasicArrayList_Access := BasicArrayList_Access (servers_Param);
    begin
-        if (DebugFactory_Package.getInstance) = (NoDebug_Package.getInstance) then
+        if (Java_Object_Access (DebugFactory_Package.getInstance)) = (Java_Object_Access (NoDebug_Package.getInstance)) then
             This.serverVector := servers;
         end if;
    end setServerList;

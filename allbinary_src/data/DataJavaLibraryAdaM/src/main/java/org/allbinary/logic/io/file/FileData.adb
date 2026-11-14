@@ -40,7 +40,7 @@ package body org.allbinary.logic.io.file.FileData_Package is
 
    function getInstance return FileData_Access is
    begin
-        return FileData_Access (FileData_Package.instance);
+        return FileData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out FileData'Class) is

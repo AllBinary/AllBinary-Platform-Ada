@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package;
 package org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package_References is
    type BasicWeightShippingModuleView_Access is access all org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package.BasicWeightShippingModuleView'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippin
    type BasicWeightShippingModuleView_Access_Array_Access is access all BasicWeightShippingModuleView_Access_Array;
    type BasicWeightShippingModuleView_Access_Array_Access_Array is array (Natural range <>) of BasicWeightShippingModuleView_Access_Array_Access;
    type BasicWeightShippingModuleView_Access_Array_Access_Array_Access is access all BasicWeightShippingModuleView_Access_Array_Access_Array;
+   type BasicWeightShippingModuleView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicWeightShippingModuleView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicWeightShippingModuleView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicWeightShippingModuleView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicWeightShippingModuleView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicWeightShippingModuleView_Access_Array_Access is (if Value /= null and then Value.all in BasicWeightShippingModuleView_Access_Array_Object'Class then BasicWeightShippingModuleView_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicWeightShippingModuleView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicWeightShippingModuleView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicWeightShippingModuleView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicWeightShippingModuleView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicWeightShippingModuleView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicWeightShippingModuleView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicWeightShippingModuleView_Access_Array_Access_Array_Object'Class then BasicWeightShippingModuleView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package_References;
 
 with org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package_References;
@@ -86,10 +97,14 @@ package org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippin
    function "=" (Left, Right : BasicWeightShippingModuleView_Access_Array) return Boolean renames org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package_References."=";
    subtype BasicWeightShippingModuleView_Access_Array_Access is org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package_References.BasicWeightShippingModuleView_Access_Array_Access;
    function "=" (Left, Right : BasicWeightShippingModuleView_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package_References."=";
+   function Java_Box (Value : BasicWeightShippingModuleView_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package_References.Java_Box;
+   function Java_Unbox_BasicWeightShippingModuleView_Access_Array (Value : access Java_Object'Class) return BasicWeightShippingModuleView_Access_Array_Access renames org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package_References.Java_Unbox_BasicWeightShippingModuleView_Access_Array;
    subtype BasicWeightShippingModuleView_Access_Array_Access_Array is org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package_References.BasicWeightShippingModuleView_Access_Array_Access_Array;
    function "=" (Left, Right : BasicWeightShippingModuleView_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package_References."=";
    subtype BasicWeightShippingModuleView_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package_References.BasicWeightShippingModuleView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicWeightShippingModuleView_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package_References."=";
+   function Java_Box (Value : BasicWeightShippingModuleView_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package_References.Java_Box;
+   function Java_Unbox_BasicWeightShippingModuleView_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicWeightShippingModuleView_Access_Array_Access_Array_Access renames org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippingModuleView_Package_References.Java_Unbox_BasicWeightShippingModuleView_Access_Array_Access_Array;
 
    type BasicWeightShippingModuleView is new BasicWeightShippingModule and DomNodeInterface with record
       logUtil : LogUtil_Access;

@@ -26,7 +26,7 @@ package body org.allbinary.logic.io.file.FilePathData_Package is
 
    function getInstance return FilePathData_Access is
    begin
-        return FilePathData_Access (FilePathData_Package.instance);
+        return FilePathData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out FilePathData'Class) is

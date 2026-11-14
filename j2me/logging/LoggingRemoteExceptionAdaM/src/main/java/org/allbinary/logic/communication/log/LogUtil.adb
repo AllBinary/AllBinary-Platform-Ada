@@ -28,9 +28,14 @@ with org.allbinary.logic.communication.log.Log_Package; use org.allbinary.logic.
 with org.allbinary.logic.communication.log.Log_Package_References;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package; use org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package; use org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.system.security.crypt.jcehelper.NoCrypt_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
@@ -97,7 +102,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
 
    function getInstance return LogUtil_Access is
    begin
-        return LogUtil_Access (LogUtil_Package.instance);
+        return LogUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out LogUtil'Class) is

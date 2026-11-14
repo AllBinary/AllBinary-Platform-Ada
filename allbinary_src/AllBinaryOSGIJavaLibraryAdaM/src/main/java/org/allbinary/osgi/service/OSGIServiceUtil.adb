@@ -94,7 +94,7 @@ package body org.allbinary.osgi.service.OSGIServiceUtil_Package is
 
    function getInstance return OSGIServiceUtil_Access is
    begin
-        return OSGIServiceUtil_Access (OSGIServiceUtil_Package.instance);
+        return OSGIServiceUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out OSGIServiceUtil'Class) is

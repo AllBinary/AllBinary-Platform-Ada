@@ -14,6 +14,7 @@
 
 
 with java.io.BufferedReader_Package; use java.io.BufferedReader_Package;
+with java.io.InputStreamReader_Package; use java.io.InputStreamReader_Package;
 with org.allbinary.business.init.LicenseInitInfo_Package; use org.allbinary.business.init.LicenseInitInfo_Package;
 with org.allbinary.business.init.LicenseInitInfo_Package_References;
 with org.allbinary.business.init.LicenseInitInfoUtil_Package; use org.allbinary.business.init.LicenseInitInfoUtil_Package;
@@ -31,13 +32,22 @@ with org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.io.path.PathUtil_Package;
 with org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Package is
 
+   package InputStreamReader_Package renames Standard.java.io.InputStreamReader_Package;
    package LicenseInitInfoUtil_Package renames Standard.org.allbinary.business.init.LicenseInitInfoUtil_Package;
    package FileFactory_Package renames Standard.org.allbinary.logic.io.file.FileFactory_Package;
    package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
@@ -74,9 +84,9 @@ package body org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Pa
       index : Integer;
    begin
       Initialize_Fields (This);
-        LicenseInitInfoUtil_Package.getInstance.setFilePath (PrintLicenseInitInfo_Package.PATH & Java_Image (PATH_GLOBALS_Package.getInstance.INIT_PATH));
+        LicenseInitInfoUtil_Package.getInstance.setFilePath (PrintLicenseInitInfo_Package.PATH & PATH_GLOBALS_Package.getInstance.INIT_PATH);
         for index in 1 .. (options'Length) - 1 loop
-            This.vector.add (options (index));
+            This.vector.add (Java_Box (options (index)));
         end loop;
    end Initialize;
 
@@ -105,7 +115,6 @@ package body org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Pa
       file : File_Access;
       reader : FileReader_Access;
       lineNumberReader : LineNumberReader_Access;
-      line : Unbounded_String;
    begin
         begin
             if (licenceServerVector) = (null) then
@@ -117,16 +126,11 @@ package body org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Pa
             file := File_Package.Create (PrintLicenseInitInfo_Package.PATH & To_Unbounded_String ("licenseservers.txt"));
             reader := FileReader_Package.Create (file);
             lineNumberReader := LineNumberReader_Package.Create (reader);
-            while True loop
-                line := lineNumberReader.readLine;
-                if (line) /= (Null_Unbounded_String) then
-                    licenseInitInfo.addServer (line);
-                else
-                    exit;
-                end if;
+            while lineNumberReader.ready loop
+                licenseInitInfo.addServer (lineNumberReader.readLine);
             end loop;
             LicenseInitInfoUtil_Package.getInstance.write (licenseInitInfo);
-            LicenseInitInfoUtil_Package.getInstance.read;
+            declare Java_Result renames LicenseInitInfoUtil_Package.getInstance.read; pragma Unreferenced (Java_Result); begin null; end;
         exception
             when Java_Occurrence : others =>
                 declare

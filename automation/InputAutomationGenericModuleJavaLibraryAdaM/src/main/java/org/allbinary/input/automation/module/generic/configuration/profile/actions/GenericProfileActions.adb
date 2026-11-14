@@ -306,7 +306,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
             if (actionNode) /= (null) then
                 genericConfigurationProfileAction := GenericProfileAction_Package.Create (GenericProfileActions'Class (This).getGenericProfileActionsJPanel.getGenericProfileActionJPanel, actionNode);
                 GenericProfileActions'Class (This).getHashMap.put (genericConfigurationProfileAction.getName, genericConfigurationProfileAction);
-                GenericProfileActions'Class (This).getDefaultListModelHelper.add (genericConfigurationProfileAction.getName);
+                GenericProfileActions'Class (This).getDefaultListModelHelper.add (Java_Box (genericConfigurationProfileAction.getName));
             else
                 Java_Throw (Java_New_Exception ("Exception", GenericProfileActionData_Package.NAME & To_Unbounded_String (" Node Null")));
             end if;
@@ -329,7 +329,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    begin
         genericProfileAction := GenericProfileAction_Package.Create (name);
         GenericProfileActions'Class (This).getHashMap.put (genericProfileAction.getName, genericProfileAction);
-        GenericProfileActions'Class (This).getDefaultListModelHelper.add (genericProfileAction.getName);
+        GenericProfileActions'Class (This).getDefaultListModelHelper.add (Java_Box (genericProfileAction.getName));
         GenericProfileActions'Class (This).getDefaultListModelHelper.initDefaultModelList;
         GenericProfileActions'Class (This).save;
    end add;
@@ -338,7 +338,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    procedure remove (This : in out GenericProfileActions; name : Unbounded_String) is
    begin
         GenericProfileActions'Class (This).getHashMap.remove (name);
-        GenericProfileActions'Class (This).getDefaultListModelHelper.remove (name);
+        GenericProfileActions'Class (This).getDefaultListModelHelper.remove (Java_Box (name));
         GenericProfileActions'Class (This).getDefaultListModelHelper.initDefaultModelList;
         GenericProfileActions'Class (This).save;
    end remove;

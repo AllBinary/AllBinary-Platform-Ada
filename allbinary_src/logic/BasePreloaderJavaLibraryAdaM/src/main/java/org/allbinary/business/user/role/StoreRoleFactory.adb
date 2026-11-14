@@ -47,7 +47,7 @@ package body org.allbinary.business.user.role.StoreRoleFactory_Package is
 
    function getInstance return StoreRoleFactory_Access is
    begin
-        return StoreRoleFactory_Access (StoreRoleFactory_Package.instance);
+        return StoreRoleFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out StoreRoleFactory'Class) is

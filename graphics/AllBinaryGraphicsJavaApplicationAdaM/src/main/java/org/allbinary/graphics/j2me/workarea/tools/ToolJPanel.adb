@@ -74,7 +74,6 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
 
    procedure Initialize (This : in out ToolJPanel'Class) is
    begin
-      JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         ToolJPanel'Class (This).initComponents;
    end Initialize;

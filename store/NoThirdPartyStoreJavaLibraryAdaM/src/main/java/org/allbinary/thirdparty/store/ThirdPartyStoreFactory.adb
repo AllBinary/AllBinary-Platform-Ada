@@ -17,7 +17,15 @@ with org.allbinary.thirdparty.store.NoThirdPartyStore_Package; use org.allbinary
 with org.allbinary.thirdparty.store.NoThirdPartyStore_Package_References;
 with org.allbinary.thirdparty.store.ThirdPartyStore_Package; use org.allbinary.thirdparty.store.ThirdPartyStore_Package;
 with org.allbinary.thirdparty.store.ThirdPartyStore_Package_References;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.thirdparty.store.NoThirdPartyStore_Package;
+with org.allbinary.thirdparty.store.ThirdPartyStore_Package;
 
 package body org.allbinary.thirdparty.store.ThirdPartyStoreFactory_Package is
 

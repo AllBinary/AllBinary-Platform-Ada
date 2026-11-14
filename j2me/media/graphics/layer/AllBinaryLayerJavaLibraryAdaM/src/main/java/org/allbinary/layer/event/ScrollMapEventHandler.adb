@@ -81,7 +81,7 @@ package body org.allbinary.layer.event.ScrollMapEventHandler_Package is
 
    function getInstance return ScrollMapEventHandler_Access is
    begin
-        return ScrollMapEventHandler_Access (ScrollMapEventHandler_Package.SINGLETON);
+        return ScrollMapEventHandler_Package.SINGLETON;
    end getInstance;
 
    --  throws Exception

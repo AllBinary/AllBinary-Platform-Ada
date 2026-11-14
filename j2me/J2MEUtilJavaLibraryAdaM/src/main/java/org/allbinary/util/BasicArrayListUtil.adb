@@ -83,7 +83,7 @@ package body org.allbinary.util.BasicArrayListUtil_Package is
 
    function getInstance return BasicArrayListUtil_Access is
    begin
-        return BasicArrayListUtil_Access (BasicArrayListUtil_Package.instance);
+        return BasicArrayListUtil_Package.instance;
    end getInstance;
 
    function getRandom (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Java_Object_Access is
@@ -152,15 +152,15 @@ package body org.allbinary.util.BasicArrayListUtil_Package is
    begin
         commonPhoneStrings := CommonPhoneStrings_Package.getInstance;
         list := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        list.add (commonPhoneStrings.ONE);
-        list.add (commonPhoneStrings.TWO);
-        list.add (commonPhoneStrings.THREE);
-        list.add (commonPhoneStrings.FOUR);
-        list.add (commonPhoneStrings.FIVE);
-        list.add (commonPhoneStrings.SIX);
-        list.add (commonPhoneStrings.SEVEN);
-        list.add (commonPhoneStrings.EIGHT);
-        list.add (commonPhoneStrings.NINE);
+        list.add (Java_Box (commonPhoneStrings.ONE));
+        list.add (Java_Box (commonPhoneStrings.TWO));
+        list.add (Java_Box (commonPhoneStrings.THREE));
+        list.add (Java_Box (commonPhoneStrings.FOUR));
+        list.add (Java_Box (commonPhoneStrings.FIVE));
+        list.add (Java_Box (commonPhoneStrings.SIX));
+        list.add (Java_Box (commonPhoneStrings.SEVEN));
+        list.add (Java_Box (commonPhoneStrings.EIGHT));
+        list.add (Java_Box (commonPhoneStrings.NINE));
         BasicArrayListUtil_Package.getInstance.reverse_Id (list);
         Ada.Text_IO.Put_Line (Java_Image (list.toString));
    end main;

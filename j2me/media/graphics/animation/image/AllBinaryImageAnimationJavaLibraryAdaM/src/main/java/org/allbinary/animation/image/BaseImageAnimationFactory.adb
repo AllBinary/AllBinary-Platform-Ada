@@ -38,6 +38,7 @@ with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.media.image.ImageJ2MEScaleUtil_Package;
 
 package body org.allbinary.animation.image.BaseImageAnimationFactory_Package is
 

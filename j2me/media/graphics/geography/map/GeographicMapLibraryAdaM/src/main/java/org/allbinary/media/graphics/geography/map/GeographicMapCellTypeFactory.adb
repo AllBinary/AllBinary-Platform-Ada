@@ -71,7 +71,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFac
 
    function getInstance return GeographicMapCellTypeFactory_Access is
    begin
-        return GeographicMapCellTypeFactory_Access (GeographicMapCellTypeFactory_Package.instance);
+        return GeographicMapCellTypeFactory_Package.instance;
    end getInstance;
 
    function get (This : in out GeographicMapCellTypeFactory; type_Id : Integer) return GeographicMapCellType_Access is

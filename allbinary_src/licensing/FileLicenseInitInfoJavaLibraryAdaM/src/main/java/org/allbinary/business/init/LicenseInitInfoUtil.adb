@@ -169,7 +169,7 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
 
    function getInstance return LicenseInitInfoUtil_Access is
    begin
-        return LicenseInitInfoUtil_Access (LicenseInitInfoUtil_Package.instance);
+        return LicenseInitInfoUtil_Package.instance;
    end getInstance;
 
    procedure setFilePath (This : in out LicenseInitInfoUtil; filePath : Unbounded_String) is

@@ -101,7 +101,7 @@ package body org.allbinary.dom.DomHelper_Package is
 
    function getInstance return DomHelper_Access is
    begin
-        return DomHelper_Access (DomHelper_Package.instance);
+        return DomHelper_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out DomHelper'Class) is

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.PaymentTransactionResultHelper_Package;
 package admin.taghelpers.PaymentTransactionResultHelper_Package_References is
    type PaymentTransactionResultHelper_Access is access all admin.taghelpers.PaymentTransactionResultHelper_Package.PaymentTransactionResultHelper'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.PaymentTransactionResultHelper_Package_References is
    type PaymentTransactionResultHelper_Access_Array_Access is access all PaymentTransactionResultHelper_Access_Array;
    type PaymentTransactionResultHelper_Access_Array_Access_Array is array (Natural range <>) of PaymentTransactionResultHelper_Access_Array_Access;
    type PaymentTransactionResultHelper_Access_Array_Access_Array_Access is access all PaymentTransactionResultHelper_Access_Array_Access_Array;
+   type PaymentTransactionResultHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PaymentTransactionResultHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PaymentTransactionResultHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PaymentTransactionResultHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PaymentTransactionResultHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PaymentTransactionResultHelper_Access_Array_Access is (if Value /= null and then Value.all in PaymentTransactionResultHelper_Access_Array_Object'Class then PaymentTransactionResultHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type PaymentTransactionResultHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PaymentTransactionResultHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PaymentTransactionResultHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PaymentTransactionResultHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PaymentTransactionResultHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PaymentTransactionResultHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PaymentTransactionResultHelper_Access_Array_Access_Array_Object'Class then PaymentTransactionResultHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.PaymentTransactionResultHelper_Package_References;
 
 with admin.taghelpers.PaymentTransactionResultHelper_Package_References;
@@ -74,10 +85,14 @@ package admin.taghelpers.PaymentTransactionResultHelper_Package is
    function "=" (Left, Right : PaymentTransactionResultHelper_Access_Array) return Boolean renames admin.taghelpers.PaymentTransactionResultHelper_Package_References."=";
    subtype PaymentTransactionResultHelper_Access_Array_Access is admin.taghelpers.PaymentTransactionResultHelper_Package_References.PaymentTransactionResultHelper_Access_Array_Access;
    function "=" (Left, Right : PaymentTransactionResultHelper_Access_Array_Access) return Boolean renames admin.taghelpers.PaymentTransactionResultHelper_Package_References."=";
+   function Java_Box (Value : PaymentTransactionResultHelper_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.PaymentTransactionResultHelper_Package_References.Java_Box;
+   function Java_Unbox_PaymentTransactionResultHelper_Access_Array (Value : access Java_Object'Class) return PaymentTransactionResultHelper_Access_Array_Access renames admin.taghelpers.PaymentTransactionResultHelper_Package_References.Java_Unbox_PaymentTransactionResultHelper_Access_Array;
    subtype PaymentTransactionResultHelper_Access_Array_Access_Array is admin.taghelpers.PaymentTransactionResultHelper_Package_References.PaymentTransactionResultHelper_Access_Array_Access_Array;
    function "=" (Left, Right : PaymentTransactionResultHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.PaymentTransactionResultHelper_Package_References."=";
    subtype PaymentTransactionResultHelper_Access_Array_Access_Array_Access is admin.taghelpers.PaymentTransactionResultHelper_Package_References.PaymentTransactionResultHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PaymentTransactionResultHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.PaymentTransactionResultHelper_Package_References."=";
+   function Java_Box (Value : PaymentTransactionResultHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.PaymentTransactionResultHelper_Package_References.Java_Box;
+   function Java_Unbox_PaymentTransactionResultHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return PaymentTransactionResultHelper_Access_Array_Access_Array_Access renames admin.taghelpers.PaymentTransactionResultHelper_Package_References.Java_Unbox_PaymentTransactionResultHelper_Access_Array_Access_Array;
 
    type PaymentTransactionResultHelper is new BasicTable with record
       logUtil : LogUtil_Access;

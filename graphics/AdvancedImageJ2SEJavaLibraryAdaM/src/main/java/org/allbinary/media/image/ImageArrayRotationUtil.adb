@@ -99,7 +99,7 @@ package body org.allbinary.media.image.ImageArrayRotationUtil_Package is
 
    function getInstance return ImageArrayRotationUtil_Access is
    begin
-        return ImageArrayRotationUtil_Access (ImageArrayRotationUtil_Package.instance);
+        return ImageArrayRotationUtil_Package.instance;
    end getInstance;
 
    --  throws IOException

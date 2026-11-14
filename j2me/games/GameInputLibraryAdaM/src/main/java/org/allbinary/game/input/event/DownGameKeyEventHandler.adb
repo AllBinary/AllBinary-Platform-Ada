@@ -73,7 +73,7 @@ package body org.allbinary.game.input.event.DownGameKeyEventHandler_Package is
 
    function getInstance return DownGameKeyEventHandler_Access is
    begin
-        return DownGameKeyEventHandler_Access (DownGameKeyEventHandler_Package.instance);
+        return DownGameKeyEventHandler_Package.instance;
    end getInstance;
 
    function getInstanceForDevice (This : in out DownGameKeyEventHandler; deviceId : Integer) return DownGameKeyEventHandlerBase_Access is

@@ -27,7 +27,7 @@ package body org.allbinary.logic.communication.log.config.LogConfigData_Package 
 
    function getInstance return LogConfigData_Access is
    begin
-        return LogConfigData_Access (LogConfigData_Package.instance);
+        return LogConfigData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out LogConfigData'Class) is

@@ -60,7 +60,7 @@ package body org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactor
 
    function getInstance return CountedPickedUpLayerInterfaceFactoryPool_Access is
    begin
-        return CountedPickedUpLayerInterfaceFactoryPool_Access (CountedPickedUpLayerInterfaceFactoryPool_Package.SINGLETON);
+        return CountedPickedUpLayerInterfaceFactoryPool_Package.SINGLETON;
    end getInstance;
 
    procedure init is

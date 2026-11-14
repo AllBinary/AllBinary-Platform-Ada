@@ -37,7 +37,7 @@ package body org.allbinary.media.image.ImageJ2SEUtil_Package is
 
    function getInstance return ImageJ2SEUtil_Access is
    begin
-        return ImageJ2SEUtil_Access (ImageJ2SEUtil_Package.instance);
+        return ImageJ2SEUtil_Package.instance;
    end getInstance;
 
 begin

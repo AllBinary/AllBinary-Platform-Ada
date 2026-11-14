@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.AllBinaryTiledLayer_Package;
 package org.allbinary.game.layer.AllBinaryTiledLayer_Package_References is
    type AllBinaryTiledLayer_Access is access all org.allbinary.game.layer.AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.AllBinaryTiledLayer_Package_References is
    type AllBinaryTiledLayer_Access_Array_Access is access all AllBinaryTiledLayer_Access_Array;
    type AllBinaryTiledLayer_Access_Array_Access_Array is array (Natural range <>) of AllBinaryTiledLayer_Access_Array_Access;
    type AllBinaryTiledLayer_Access_Array_Access_Array_Access is access all AllBinaryTiledLayer_Access_Array_Access_Array;
+   type AllBinaryTiledLayer_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AllBinaryTiledLayer_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AllBinaryTiledLayer_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AllBinaryTiledLayer_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AllBinaryTiledLayer_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AllBinaryTiledLayer_Access_Array_Access is (if Value /= null and then Value.all in AllBinaryTiledLayer_Access_Array_Object'Class then AllBinaryTiledLayer_Access_Array_Object'Class (Value.all).Value else null);
+   type AllBinaryTiledLayer_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AllBinaryTiledLayer_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AllBinaryTiledLayer_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AllBinaryTiledLayer_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AllBinaryTiledLayer_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AllBinaryTiledLayer_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AllBinaryTiledLayer_Access_Array_Access_Array_Object'Class then AllBinaryTiledLayer_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.AllBinaryTiledLayer_Package_References;
 
 with org.allbinary.game.layer.AllBinaryTiledLayer_Package_References;
@@ -63,10 +74,14 @@ package org.allbinary.game.layer.AllBinaryTiledLayer_Package is
    function "=" (Left, Right : AllBinaryTiledLayer_Access_Array) return Boolean renames org.allbinary.game.layer.AllBinaryTiledLayer_Package_References."=";
    subtype AllBinaryTiledLayer_Access_Array_Access is org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.AllBinaryTiledLayer_Access_Array_Access;
    function "=" (Left, Right : AllBinaryTiledLayer_Access_Array_Access) return Boolean renames org.allbinary.game.layer.AllBinaryTiledLayer_Package_References."=";
+   function Java_Box (Value : AllBinaryTiledLayer_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.Java_Box;
+   function Java_Unbox_AllBinaryTiledLayer_Access_Array (Value : access Java_Object'Class) return AllBinaryTiledLayer_Access_Array_Access renames org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.Java_Unbox_AllBinaryTiledLayer_Access_Array;
    subtype AllBinaryTiledLayer_Access_Array_Access_Array is org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.AllBinaryTiledLayer_Access_Array_Access_Array;
    function "=" (Left, Right : AllBinaryTiledLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.AllBinaryTiledLayer_Package_References."=";
    subtype AllBinaryTiledLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.AllBinaryTiledLayer_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AllBinaryTiledLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.AllBinaryTiledLayer_Package_References."=";
+   function Java_Box (Value : AllBinaryTiledLayer_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.Java_Box;
+   function Java_Unbox_AllBinaryTiledLayer_Access_Array_Access_Array (Value : access Java_Object'Class) return AllBinaryTiledLayer_Access_Array_Access_Array_Access renames org.allbinary.game.layer.AllBinaryTiledLayer_Package_References.Java_Unbox_AllBinaryTiledLayer_Access_Array_Access_Array;
 
    type AllBinaryTiledLayer is new Layer_Package.Layer and NamedInterface and PaintableInterface with record
       cellWidth : Integer;

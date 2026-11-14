@@ -77,7 +77,7 @@ package body org.allbinary.game.tracking.TrackingEventHandler_Package is
 
    function getInstance return TrackingEventHandler_Access is
    begin
-        return TrackingEventHandler_Access (TrackingEventHandler_Package.instance);
+        return TrackingEventHandler_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TrackingEventHandler'Class) is

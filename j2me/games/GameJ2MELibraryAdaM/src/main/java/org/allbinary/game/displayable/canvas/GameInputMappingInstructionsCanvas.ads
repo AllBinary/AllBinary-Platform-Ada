@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
 package org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References is
    type GameInputMappingInstructionsCanvas_Access is access all org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package.GameInputMappingInstructionsCanvas'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas
    type GameInputMappingInstructionsCanvas_Access_Array_Access is access all GameInputMappingInstructionsCanvas_Access_Array;
    type GameInputMappingInstructionsCanvas_Access_Array_Access_Array is array (Natural range <>) of GameInputMappingInstructionsCanvas_Access_Array_Access;
    type GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access is access all GameInputMappingInstructionsCanvas_Access_Array_Access_Array;
+   type GameInputMappingInstructionsCanvas_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameInputMappingInstructionsCanvas_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameInputMappingInstructionsCanvas_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameInputMappingInstructionsCanvas_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameInputMappingInstructionsCanvas_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameInputMappingInstructionsCanvas_Access_Array_Access is (if Value /= null and then Value.all in GameInputMappingInstructionsCanvas_Access_Array_Object'Class then GameInputMappingInstructionsCanvas_Access_Array_Object'Class (Value.all).Value else null);
+   type GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameInputMappingInstructionsCanvas_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Object'Class then GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References;
 
 with org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References;
@@ -123,14 +134,18 @@ package org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas
    function "=" (Left, Right : GameInputMappingInstructionsCanvas_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References."=";
    subtype GameInputMappingInstructionsCanvas_Access_Array_Access is org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References.GameInputMappingInstructionsCanvas_Access_Array_Access;
    function "=" (Left, Right : GameInputMappingInstructionsCanvas_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References."=";
+   function Java_Box (Value : GameInputMappingInstructionsCanvas_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References.Java_Box;
+   function Java_Unbox_GameInputMappingInstructionsCanvas_Access_Array (Value : access Java_Object'Class) return GameInputMappingInstructionsCanvas_Access_Array_Access renames org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References.Java_Unbox_GameInputMappingInstructionsCanvas_Access_Array;
    subtype GameInputMappingInstructionsCanvas_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References.GameInputMappingInstructionsCanvas_Access_Array_Access_Array;
    function "=" (Left, Right : GameInputMappingInstructionsCanvas_Access_Array_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References."=";
    subtype GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References.GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References."=";
+   function Java_Box (Value : GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References.Java_Box;
+   function Java_Unbox_GameInputMappingInstructionsCanvas_Access_Array_Access_Array (Value : access Java_Object'Class) return GameInputMappingInstructionsCanvas_Access_Array_Access_Array_Access renames org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package_References.Java_Unbox_GameInputMappingInstructionsCanvas_Access_Array_Access_Array;
 
    type GameInputMappingInstructionsCanvas is new GameCommandCanvas with record
       drawStringUtil : DrawStringUtil_Access;
-      TITLE : Unbounded_String;
+      GameInputMappingInstructionsCanvas_Field_TITLE : Unbounded_String;
       instructions : Unbounded_String_Array_Access;
       colorFillPaintable : ColorFillBasePaintable_Access;
       anchor : Integer;

@@ -20,8 +20,10 @@ with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.graphics.paint.ProcessPaintable_Package; use org.allbinary.graphics.paint.ProcessPaintable_Package;
 with org.allbinary.graphics.paint.ProcessPaintable_Package_References;
 with javax.microedition.lcdui.Font_Package;
+with org.allbinary.game.input.GameKey_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.game.input.Input_Package;
 with org.allbinary.graphics.paint.Paintable_Package;
 
 package body org.allbinary.input.motion.button.TouchButtonsPaintableCompositeFactory_Package is

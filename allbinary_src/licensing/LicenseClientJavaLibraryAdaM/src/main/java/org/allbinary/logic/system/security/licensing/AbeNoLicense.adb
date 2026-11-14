@@ -72,7 +72,7 @@ package body org.allbinary.logic.system.security.licensing.AbeNoLicense_Package 
 
    function getInstance return AbeNoLicense_Access is
    begin
-        return AbeNoLicense_Access (AbeNoLicense_Package.abeNoLicense_Var);
+        return AbeNoLicense_Package.abeNoLicense_Var;
    end getInstance;
 
    function hasKey (This : in out AbeNoLicense) return Boolean is

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package;
 package org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package_References is
    type AbeHttpRequestInfo_Access is access all org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package.AbeHttpRequestInfo'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Packag
    type AbeHttpRequestInfo_Access_Array_Access is access all AbeHttpRequestInfo_Access_Array;
    type AbeHttpRequestInfo_Access_Array_Access_Array is array (Natural range <>) of AbeHttpRequestInfo_Access_Array_Access;
    type AbeHttpRequestInfo_Access_Array_Access_Array_Access is access all AbeHttpRequestInfo_Access_Array_Access_Array;
+   type AbeHttpRequestInfo_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AbeHttpRequestInfo_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AbeHttpRequestInfo_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AbeHttpRequestInfo_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AbeHttpRequestInfo_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AbeHttpRequestInfo_Access_Array_Access is (if Value /= null and then Value.all in AbeHttpRequestInfo_Access_Array_Object'Class then AbeHttpRequestInfo_Access_Array_Object'Class (Value.all).Value else null);
+   type AbeHttpRequestInfo_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AbeHttpRequestInfo_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AbeHttpRequestInfo_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AbeHttpRequestInfo_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AbeHttpRequestInfo_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AbeHttpRequestInfo_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AbeHttpRequestInfo_Access_Array_Access_Array_Object'Class then AbeHttpRequestInfo_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package_References;
 
 with org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package_References;
@@ -85,10 +96,14 @@ package org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Packag
    function "=" (Left, Right : AbeHttpRequestInfo_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package_References."=";
    subtype AbeHttpRequestInfo_Access_Array_Access is org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package_References.AbeHttpRequestInfo_Access_Array_Access;
    function "=" (Left, Right : AbeHttpRequestInfo_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package_References."=";
+   function Java_Box (Value : AbeHttpRequestInfo_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package_References.Java_Box;
+   function Java_Unbox_AbeHttpRequestInfo_Access_Array (Value : access Java_Object'Class) return AbeHttpRequestInfo_Access_Array_Access renames org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package_References.Java_Unbox_AbeHttpRequestInfo_Access_Array;
    subtype AbeHttpRequestInfo_Access_Array_Access_Array is org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package_References.AbeHttpRequestInfo_Access_Array_Access_Array;
    function "=" (Left, Right : AbeHttpRequestInfo_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package_References."=";
    subtype AbeHttpRequestInfo_Access_Array_Access_Array_Access is org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package_References.AbeHttpRequestInfo_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AbeHttpRequestInfo_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package_References."=";
+   function Java_Box (Value : AbeHttpRequestInfo_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package_References.Java_Box;
+   function Java_Unbox_AbeHttpRequestInfo_Access_Array_Access_Array (Value : access Java_Object'Class) return AbeHttpRequestInfo_Access_Array_Access_Array_Access renames org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Package_References.Java_Unbox_AbeHttpRequestInfo_Access_Array_Access_Array;
 
    type AbeHttpRequestInfo is new Java_Object with record
       NAME : Unbounded_String;

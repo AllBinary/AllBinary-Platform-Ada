@@ -54,7 +54,7 @@ package body org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package is
 
    function getInstance return OpenGLESGraphicsCompositeFactory_Access is
    begin
-        return OpenGLESGraphicsCompositeFactory_Access (OpenGLESGraphicsCompositeFactory_Package.instance);
+        return OpenGLESGraphicsCompositeFactory_Package.instance;
    end getInstance;
 
    procedure set (This : in out OpenGLESGraphicsCompositeFactory; openGLESGraphicsFactory_Param : access OpenGLESGraphicsFactory_Package.OpenGLESGraphicsFactory'Class) is

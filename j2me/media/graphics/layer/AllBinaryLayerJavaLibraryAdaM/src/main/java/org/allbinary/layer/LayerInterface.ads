@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.layer.LayerInterface_Package;
 package org.allbinary.layer.LayerInterface_Package_References is
    type LayerInterface_Access is access all org.allbinary.layer.LayerInterface_Package.LayerInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.layer.LayerInterface_Package_References is
    type LayerInterface_Access_Array_Access is access all LayerInterface_Access_Array;
    type LayerInterface_Access_Array_Access_Array is array (Natural range <>) of LayerInterface_Access_Array_Access;
    type LayerInterface_Access_Array_Access_Array_Access is access all LayerInterface_Access_Array_Access_Array;
+   type LayerInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LayerInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LayerInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LayerInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LayerInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LayerInterface_Access_Array_Access is (if Value /= null and then Value.all in LayerInterface_Access_Array_Object'Class then LayerInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type LayerInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LayerInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LayerInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LayerInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LayerInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LayerInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in LayerInterface_Access_Array_Access_Array_Object'Class then LayerInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.layer.LayerInterface_Package_References;
 
 with org.allbinary.layer.LayerInterface_Package_References;
@@ -51,10 +62,14 @@ package org.allbinary.layer.LayerInterface_Package is
    function "=" (Left, Right : LayerInterface_Access_Array) return Boolean renames org.allbinary.layer.LayerInterface_Package_References."=";
    subtype LayerInterface_Access_Array_Access is org.allbinary.layer.LayerInterface_Package_References.LayerInterface_Access_Array_Access;
    function "=" (Left, Right : LayerInterface_Access_Array_Access) return Boolean renames org.allbinary.layer.LayerInterface_Package_References."=";
+   function Java_Box (Value : LayerInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.layer.LayerInterface_Package_References.Java_Box;
+   function Java_Unbox_LayerInterface_Access_Array (Value : access Java_Object'Class) return LayerInterface_Access_Array_Access renames org.allbinary.layer.LayerInterface_Package_References.Java_Unbox_LayerInterface_Access_Array;
    subtype LayerInterface_Access_Array_Access_Array is org.allbinary.layer.LayerInterface_Package_References.LayerInterface_Access_Array_Access_Array;
    function "=" (Left, Right : LayerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.layer.LayerInterface_Package_References."=";
    subtype LayerInterface_Access_Array_Access_Array_Access is org.allbinary.layer.LayerInterface_Package_References.LayerInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LayerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.layer.LayerInterface_Package_References."=";
+   function Java_Box (Value : LayerInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.layer.LayerInterface_Package_References.Java_Box;
+   function Java_Unbox_LayerInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return LayerInterface_Access_Array_Access_Array_Access renames org.allbinary.layer.LayerInterface_Package_References.Java_Unbox_LayerInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_LayerInterface (Value : LayerInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getHeight (This : in out LayerInterface) return Integer is abstract;
    function getWidth (This : in out LayerInterface) return Integer is abstract;

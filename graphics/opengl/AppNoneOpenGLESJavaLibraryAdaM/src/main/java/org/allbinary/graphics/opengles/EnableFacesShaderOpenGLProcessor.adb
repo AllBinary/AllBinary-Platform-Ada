@@ -25,7 +25,7 @@ package body org.allbinary.graphics.opengles.EnableFacesShaderOpenGLProcessor_Pa
 
    function getInstance return EnableFacesShaderOpenGLProcessor_Access is
    begin
-        return EnableFacesShaderOpenGLProcessor_Access (EnableFacesShaderOpenGLProcessor_Package.instance);
+        return EnableFacesShaderOpenGLProcessor_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out EnableFacesShaderOpenGLProcessor'Class) is

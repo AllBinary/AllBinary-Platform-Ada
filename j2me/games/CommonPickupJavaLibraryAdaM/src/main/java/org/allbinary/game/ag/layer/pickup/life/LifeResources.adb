@@ -38,7 +38,7 @@ package body org.allbinary.game.ag.layer.pickup.life.LifeResources_Package is
 
    function getInstance return LifeResources_Access is
    begin
-        return LifeResources_Access (LifeResources_Package.SINGLETON);
+        return LifeResources_Package.SINGLETON;
    end getInstance;
 
 begin

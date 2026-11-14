@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
 package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References is
    type WorkAreaJPanel_Access is access all org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package.WorkAreaJPanel'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References i
    type WorkAreaJPanel_Access_Array_Access is access all WorkAreaJPanel_Access_Array;
    type WorkAreaJPanel_Access_Array_Access_Array is array (Natural range <>) of WorkAreaJPanel_Access_Array_Access;
    type WorkAreaJPanel_Access_Array_Access_Array_Access is access all WorkAreaJPanel_Access_Array_Access_Array;
+   type WorkAreaJPanel_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : WorkAreaJPanel_Access_Array_Access;
+   end record;
+   function Java_Box (Value : WorkAreaJPanel_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new WorkAreaJPanel_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_WorkAreaJPanel_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return WorkAreaJPanel_Access_Array_Access is (if Value /= null and then Value.all in WorkAreaJPanel_Access_Array_Object'Class then WorkAreaJPanel_Access_Array_Object'Class (Value.all).Value else null);
+   type WorkAreaJPanel_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : WorkAreaJPanel_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : WorkAreaJPanel_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new WorkAreaJPanel_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_WorkAreaJPanel_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return WorkAreaJPanel_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in WorkAreaJPanel_Access_Array_Access_Array_Object'Class then WorkAreaJPanel_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References;
 
 with org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References;
@@ -45,7 +56,11 @@ limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 limited with org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
-with org.allbinary.graphics.j2me.workarea.JPanel_Package; use org.allbinary.graphics.j2me.workarea.JPanel_Package;
+--  with java.awt.GridBagConstraints_Package; use java.awt.GridBagConstraints_Package;
+--  with java.awt.GridLayout_Package; use java.awt.GridLayout_Package;
+--  with java.awt.event.KeyAdapter_Package; use java.awt.event.KeyAdapter_Package;
+with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
+--  with javax.swing.JPanel_Package; use javax.swing.JPanel_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJPanelInterface_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 limited with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
@@ -64,6 +79,7 @@ package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    package PropertiesJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package KeyEvent_Package renames Standard.java.awt.event.KeyEvent_Package;
    package Runnable_Package renames Standard.java.lang.Runnable_Package;
    package Reference_Types is
    subtype CanvasJPanel_Access is org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package_References.CanvasJPanel_Access;
@@ -156,12 +172,16 @@ package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
    function "=" (Left, Right : WorkAreaJPanel_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References."=";
    subtype WorkAreaJPanel_Access_Array_Access is org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References.WorkAreaJPanel_Access_Array_Access;
    function "=" (Left, Right : WorkAreaJPanel_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References."=";
+   function Java_Box (Value : WorkAreaJPanel_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References.Java_Box;
+   function Java_Unbox_WorkAreaJPanel_Access_Array (Value : access Java_Object'Class) return WorkAreaJPanel_Access_Array_Access renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References.Java_Unbox_WorkAreaJPanel_Access_Array;
    subtype WorkAreaJPanel_Access_Array_Access_Array is org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References.WorkAreaJPanel_Access_Array_Access_Array;
    function "=" (Left, Right : WorkAreaJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References."=";
    subtype WorkAreaJPanel_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References.WorkAreaJPanel_Access_Array_Access_Array_Access;
    function "=" (Left, Right : WorkAreaJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References."=";
+   function Java_Box (Value : WorkAreaJPanel_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References.Java_Box;
+   function Java_Unbox_WorkAreaJPanel_Access_Array_Access_Array (Value : access Java_Object'Class) return WorkAreaJPanel_Access_Array_Access_Array_Access renames org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package_References.Java_Unbox_WorkAreaJPanel_Access_Array_Access_Array;
 
-   type WorkAreaJPanel is new JPanel and WorkAreaJPanelInterface and MyCanvasEventListener and Runnable with record
+   type WorkAreaJPanel is new Java_Object and WorkAreaJPanelInterface and MyCanvasEventListener and Runnable with record
       logUtil : LogUtil_Access;
       canvasJPanelList : LinkedList_Access;
       canvasHolderJPanel : JPanel_Access;

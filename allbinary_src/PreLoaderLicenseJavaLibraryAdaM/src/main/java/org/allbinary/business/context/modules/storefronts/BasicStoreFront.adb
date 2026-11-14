@@ -22,6 +22,7 @@ with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.Com
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayListS_Package;
@@ -35,6 +36,7 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
    package Tokenizer_Package renames Standard.org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
+   package URLGLOBALS_Package renames Standard.org.allbinary.globals.URLGLOBALS_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -137,14 +139,14 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
 
    function getTestHtmlPath (This : in out BasicStoreFront) return Unbounded_String is
    begin
-        return Java_Image (org_Package.allbinary.globals.URLGLOBALS.getTestHtmlPath) & BasicStoreFront'Class (This).getCurrentHostNamePath;
+        return Java_Image (URLGLOBALS_Package.getTestHtmlPath) & BasicStoreFront'Class (This).getCurrentHostNamePath;
    end getTestHtmlPath;
 
    function getCurrentHostName (This : in out BasicStoreFront) return Unbounded_String is
       location : Unbounded_String;
    begin
         location := Null_Unbounded_String;
-        if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
+        if URLGLOBALS_Package.isTestingMode then
             location := BasicStoreFront'Class (This).getTestHostName;
         else
             location := BasicStoreFront'Class (This).getHostName;
@@ -156,7 +158,7 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
       location : Unbounded_String;
    begin
         location := Null_Unbounded_String;
-        if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
+        if URLGLOBALS_Package.isTestingMode then
             location := BasicStoreFront'Class (This).getTestHostNamePath;
         else
             location := BasicStoreFront'Class (This).getHostNamePath;
@@ -168,7 +170,7 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
       location : Unbounded_String;
    begin
         location := Null_Unbounded_String;
-        if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
+        if URLGLOBALS_Package.isTestingMode then
             location := BasicStoreFront'Class (This).getTestHomeHostName;
         else
             location := BasicStoreFront'Class (This).getHomeHostName;
@@ -180,7 +182,7 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
       location : Unbounded_String;
    begin
         location := Null_Unbounded_String;
-        if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
+        if URLGLOBALS_Package.isTestingMode then
             location := BasicStoreFront'Class (This).getTestHomeHostNamePath;
         else
             location := BasicStoreFront'Class (This).getHomeHostNamePath;

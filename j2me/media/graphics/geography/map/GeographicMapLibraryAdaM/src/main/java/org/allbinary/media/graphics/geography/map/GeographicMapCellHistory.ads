@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
 package org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References is
    type GeographicMapCellHistory_Access is access all org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package.GeographicMapCellHistory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Pack
    type GeographicMapCellHistory_Access_Array_Access is access all GeographicMapCellHistory_Access_Array;
    type GeographicMapCellHistory_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellHistory_Access_Array_Access;
    type GeographicMapCellHistory_Access_Array_Access_Array_Access is access all GeographicMapCellHistory_Access_Array_Access_Array;
+   type GeographicMapCellHistory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GeographicMapCellHistory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GeographicMapCellHistory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GeographicMapCellHistory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GeographicMapCellHistory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GeographicMapCellHistory_Access_Array_Access is (if Value /= null and then Value.all in GeographicMapCellHistory_Access_Array_Object'Class then GeographicMapCellHistory_Access_Array_Object'Class (Value.all).Value else null);
+   type GeographicMapCellHistory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GeographicMapCellHistory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GeographicMapCellHistory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GeographicMapCellHistory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GeographicMapCellHistory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GeographicMapCellHistory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GeographicMapCellHistory_Access_Array_Access_Array_Object'Class then GeographicMapCellHistory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References;
 
 with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References;
@@ -187,10 +198,14 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Pack
    function "=" (Left, Right : GeographicMapCellHistory_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References."=";
    subtype GeographicMapCellHistory_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References.GeographicMapCellHistory_Access_Array_Access;
    function "=" (Left, Right : GeographicMapCellHistory_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References."=";
+   function Java_Box (Value : GeographicMapCellHistory_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References.Java_Box;
+   function Java_Unbox_GeographicMapCellHistory_Access_Array (Value : access Java_Object'Class) return GeographicMapCellHistory_Access_Array_Access renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References.Java_Unbox_GeographicMapCellHistory_Access_Array;
    subtype GeographicMapCellHistory_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References.GeographicMapCellHistory_Access_Array_Access_Array;
    function "=" (Left, Right : GeographicMapCellHistory_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References."=";
    subtype GeographicMapCellHistory_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References.GeographicMapCellHistory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GeographicMapCellHistory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References."=";
+   function Java_Box (Value : GeographicMapCellHistory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References.Java_Box;
+   function Java_Unbox_GeographicMapCellHistory_Access_Array_Access_Array (Value : access Java_Object'Class) return GeographicMapCellHistory_Access_Array_Access_Array_Access renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package_References.Java_Unbox_GeographicMapCellHistory_Access_Array_Access_Array;
 
    type GeographicMapCellHistory is new Java_Object and UpdateMyFontInterface with record
       logUtil : LogUtil_Access;

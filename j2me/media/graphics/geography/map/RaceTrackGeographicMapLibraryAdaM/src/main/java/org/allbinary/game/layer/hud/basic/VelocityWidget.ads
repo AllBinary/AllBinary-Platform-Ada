@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.hud.basic.VelocityWidget_Package;
 package org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References is
    type VelocityWidget_Access is access all org.allbinary.game.layer.hud.basic.VelocityWidget_Package.VelocityWidget'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References is
    type VelocityWidget_Access_Array_Access is access all VelocityWidget_Access_Array;
    type VelocityWidget_Access_Array_Access_Array is array (Natural range <>) of VelocityWidget_Access_Array_Access;
    type VelocityWidget_Access_Array_Access_Array_Access is access all VelocityWidget_Access_Array_Access_Array;
+   type VelocityWidget_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : VelocityWidget_Access_Array_Access;
+   end record;
+   function Java_Box (Value : VelocityWidget_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new VelocityWidget_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_VelocityWidget_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return VelocityWidget_Access_Array_Access is (if Value /= null and then Value.all in VelocityWidget_Access_Array_Object'Class then VelocityWidget_Access_Array_Object'Class (Value.all).Value else null);
+   type VelocityWidget_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : VelocityWidget_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : VelocityWidget_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new VelocityWidget_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_VelocityWidget_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return VelocityWidget_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in VelocityWidget_Access_Array_Access_Array_Object'Class then VelocityWidget_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References;
 
 with org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References;
@@ -85,10 +96,14 @@ package org.allbinary.game.layer.hud.basic.VelocityWidget_Package is
    function "=" (Left, Right : VelocityWidget_Access_Array) return Boolean renames org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References."=";
    subtype VelocityWidget_Access_Array_Access is org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References.VelocityWidget_Access_Array_Access;
    function "=" (Left, Right : VelocityWidget_Access_Array_Access) return Boolean renames org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References."=";
+   function Java_Box (Value : VelocityWidget_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References.Java_Box;
+   function Java_Unbox_VelocityWidget_Access_Array (Value : access Java_Object'Class) return VelocityWidget_Access_Array_Access renames org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References.Java_Unbox_VelocityWidget_Access_Array;
    subtype VelocityWidget_Access_Array_Access_Array is org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References.VelocityWidget_Access_Array_Access_Array;
    function "=" (Left, Right : VelocityWidget_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References."=";
    subtype VelocityWidget_Access_Array_Access_Array_Access is org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References.VelocityWidget_Access_Array_Access_Array_Access;
    function "=" (Left, Right : VelocityWidget_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References."=";
+   function Java_Box (Value : VelocityWidget_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References.Java_Box;
+   function Java_Unbox_VelocityWidget_Access_Array_Access_Array (Value : access Java_Object'Class) return VelocityWidget_Access_Array_Access_Array_Access renames org.allbinary.game.layer.hud.basic.VelocityWidget_Package_References.Java_Unbox_VelocityWidget_Access_Array_Access_Array;
 
    type VelocityWidget is new BasicHud with record
       KILOMETERS_PER_HOUR_STR : Character_Array_Access;

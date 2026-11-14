@@ -48,6 +48,7 @@ with javax.microedition.lcdui.ImageStringItem_Package;
 with org.microemu.device.InputMethod_Package;
 with org.microemu.device.InputMethodEvent_Package;
 with org.microemu.device.InputMethodListener_Package;
+with org.allbinary.game.ag.ai.InputProbability_Package;
 with javax.microedition.lcdui.Item_Package;
 with javax.microedition.lcdui.ItemCommandListener_Package;
 with javax.microedition.lcdui.ItemStateListener_Package;
@@ -65,6 +66,7 @@ with javax.microedition.lcdui.TextBox_Package;
 with org.microemu.device.ui.TextBoxUI_Package;
 with javax.microedition.lcdui.TextField_Package;
 with javax.microedition.lcdui.Ticker_Package;
+with org.allbinary.time.TimeDelayHelper_Package;
 with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.game.ag.ai.BasicProbabilityAIDataFactory_Package is

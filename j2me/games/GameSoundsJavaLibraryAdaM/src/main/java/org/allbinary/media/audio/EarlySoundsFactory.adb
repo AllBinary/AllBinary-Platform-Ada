@@ -69,7 +69,7 @@ package body org.allbinary.media.audio.EarlySoundsFactory_Package is
 
    function getInstance return EarlySoundsFactory_Access is
    begin
-        return EarlySoundsFactory_Access (EarlySoundsFactory_Package.instance);
+        return EarlySoundsFactory_Package.instance;
    end getInstance;
 
 begin

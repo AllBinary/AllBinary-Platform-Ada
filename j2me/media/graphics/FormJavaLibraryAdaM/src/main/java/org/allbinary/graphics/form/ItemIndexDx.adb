@@ -97,7 +97,7 @@ package body org.allbinary.graphics.form.ItemIndexDx_Package is
 
    function getInstance return ItemIndexDx_Access is
    begin
-        return ItemIndexDx_Access (ItemIndexDx_Package.instance);
+        return ItemIndexDx_Package.instance;
    end getInstance;
 
    --  throws Exception

@@ -26,6 +26,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValues_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValues_Package;
 with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValues_Package_References;
 with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package;
@@ -50,6 +52,8 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
    package DomSearchHelper_Package renames Standard.org.allbinary.data.tree.dom.DomSearchHelper_Package;
    package ModDomHelper_Package renames Standard.org.allbinary.data.tree.dom.ModDomHelper_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -121,7 +125,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
       Initialize_Fields (This);
         propertyNode := DomSearchHelper_Package.getNode (DomData_Package.VALUE, node.getChildNodes);
         This.propertyName := DomNodeHelper_Package.getTextNodeValue (propertyNode);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STYLE) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.STYLE) then
             This.logUtil.putF (To_Unbounded_String ("Name: ") & CssProperty'Class (This).getName, CssProperty_Access'(This'Unchecked_Access), To_Unbounded_String ("CssProperty()"));
         end if;
         propertyValuesNode := DomSearchHelper_Package.getNode (CssPropertyData_Package.getInstance.VALUES, node.getChildNodes);
@@ -143,7 +147,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
    function toHashMap (This : in out CssProperty) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (CssPropertyData_Package.getInstance.NAME, Java_Box (This.propertyName));
         return hashMap;
    end toHashMap;
@@ -155,7 +159,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
       node : Node_Access;
    begin
         hashMap := CssProperty'Class (This).toHashMap;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("CssView HashMap: ") & hashMap.toString, CssProperty_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"));
         end if;
         node := ModDomHelper_Package.createNameValueNodes (document, CssPropertyData_Package.getInstance.NAME, This.propertyName);

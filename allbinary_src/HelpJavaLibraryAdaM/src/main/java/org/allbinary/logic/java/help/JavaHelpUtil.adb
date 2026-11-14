@@ -91,7 +91,7 @@ package body org.allbinary.logic.java.help.JavaHelpUtil_Package is
 
    function getInstance return JavaHelpUtil_Access is
    begin
-        return JavaHelpUtil_Access (JavaHelpUtil_Package.instance);
+        return JavaHelpUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out JavaHelpUtil'Class) is

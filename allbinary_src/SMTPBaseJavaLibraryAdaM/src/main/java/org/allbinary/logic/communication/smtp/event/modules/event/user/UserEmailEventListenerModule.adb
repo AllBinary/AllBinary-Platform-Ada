@@ -23,6 +23,8 @@ with org.allbinary.logic.communication.smtp.event.EmailEvent_Package; use org.al
 with org.allbinary.logic.communication.smtp.event.EmailEvent_Package_References;
 with org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package; use org.allbinary.logic.communication.smtp.event.UserEmailEventListenerInterface_Package;
 with org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package; use org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.communication.smtp.AbEmail_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
@@ -41,6 +43,8 @@ package body org.allbinary.logic.communication.smtp.event.modules.event.user.Use
    package BasicEmail_Package renames Standard.org.allbinary.logic.communication.smtp.BasicEmail_Package;
    package EmailInterface_Package renames Standard.org.allbinary.logic.communication.smtp.EmailInterface_Package;
    package EmailQueueFactory_Package renames Standard.org.allbinary.logic.communication.smtp.queue.EmailQueueFactory_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype UserInterface_Access is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access;
    function "=" (Left, Right : UserInterface_Access) return Boolean renames org.allbinary.business.user.UserInterface_Package_References."=";
    subtype UserInterface_Access_Array is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access_Array;
@@ -110,7 +114,7 @@ package body org.allbinary.logic.communication.smtp.event.modules.event.user.Use
       to : Unbounded_String;
       email : BasicEmail_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("Add Email To Que For Sending: ") & emailEvent.toString, UserEmailEventListenerModule_Access'(This'Unchecked_Access), To_Unbounded_String ("onEmailSendRequest"));
         end if;
         to := This.userInterface.getMainEmail;

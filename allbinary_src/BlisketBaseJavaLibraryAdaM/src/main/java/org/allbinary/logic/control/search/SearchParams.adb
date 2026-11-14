@@ -74,7 +74,7 @@ package body org.allbinary.logic.control.search.SearchParams_Package is
       columnValue : Unbounded_String;
    begin
       Initialize_Fields (This);
-        This.columnsAndSearchValues := StdUtil_Package.getInstance.createHashMap;
+        This.columnsAndSearchValues := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         SearchParams'Class (This).setLength (request.getParameter (SearchData_Package.LENGTH));
         SearchParams'Class (This).setOrder (request.getParameter (SearchData_Package.ORDER));
         page := request.getParameter (SearchData_Package.PAGE);

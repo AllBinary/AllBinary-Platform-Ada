@@ -64,7 +64,7 @@ package body org.allbinary.graphics.j2me.StatusFactory_Package is
 
    function getInstance return StatusFactory_Access is
    begin
-        return StatusFactory_Access (StatusFactory_Package.instance);
+        return StatusFactory_Package.instance;
    end getInstance;
 
    procedure setStatusNoLog (This : in out StatusFactory; status : Unbounded_String) is

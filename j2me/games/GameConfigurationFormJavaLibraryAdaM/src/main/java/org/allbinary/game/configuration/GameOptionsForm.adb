@@ -108,6 +108,7 @@ with org.microemu.device.ui.PaintEvent_Package;
 with org.allbinary.game.configuration.persistance.PersistanceStrings_Package;
 with org.allbinary.persistance.PlatformRecordIdUtil_Package;
 with org.microemu.device.ui.PointerEvent_Package;
+with org.allbinary.canvas.Processor_Package;
 with javax.microedition.lcdui.Screen_Package;
 with org.allbinary.game.configuration.feature.SensorFeature_Package;
 with javax.microedition.lcdui.StringComponent_Package;

@@ -21,6 +21,7 @@ with org.allbinary.game.input.PCKeyFactory_Package; use org.allbinary.game.input
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.Input_Package_References;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.input.ABKeyEventWrapper_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
@@ -82,6 +83,8 @@ with javax.microedition.midlet.MIDlet_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.microemu.device.MutableImage_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.game.input.PCGameKey_Package;
+with org.allbinary.game.input.PCKeyFactory_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.allbinary.game.configuration.persistance.PersistanceStrings_Package;
 with org.allbinary.persistance.PlatformRecordIdUtil_Package;
@@ -145,7 +148,7 @@ package body org.allbinary.game.input.PCGameInputMapping_Package is
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, PCGameInputMapping_Access'(This'Unchecked_Access), This.commonStrings.INIT);
-        PCKeyFactory_Package.getInstance;
+        declare Java_Result renames PCKeyFactory_Package.getInstance; pragma Unreferenced (Java_Result); begin null; end;
         PersistentInputMapping_Package.PersistentInputMapping (This).init (abeClientInformation);
         if ((PCGameInputMapping'Class (This).getTotalMapped) = (0)) or else (PCGameInputMapping'Class (This).isDefaultNew) then
             PCGameInputMapping'Class (This).getInputMapping.addMapping (PCGameInputMapping'Class (This).getDefault);

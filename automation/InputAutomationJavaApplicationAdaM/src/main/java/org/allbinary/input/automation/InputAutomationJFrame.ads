@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.InputAutomationJFrame_Package;
 package org.allbinary.input.automation.InputAutomationJFrame_Package_References is
    type InputAutomationJFrame_Access is access all org.allbinary.input.automation.InputAutomationJFrame_Package.InputAutomationJFrame'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.InputAutomationJFrame_Package_References 
    type InputAutomationJFrame_Access_Array_Access is access all InputAutomationJFrame_Access_Array;
    type InputAutomationJFrame_Access_Array_Access_Array is array (Natural range <>) of InputAutomationJFrame_Access_Array_Access;
    type InputAutomationJFrame_Access_Array_Access_Array_Access is access all InputAutomationJFrame_Access_Array_Access_Array;
+   type InputAutomationJFrame_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InputAutomationJFrame_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InputAutomationJFrame_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InputAutomationJFrame_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InputAutomationJFrame_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InputAutomationJFrame_Access_Array_Access is (if Value /= null and then Value.all in InputAutomationJFrame_Access_Array_Object'Class then InputAutomationJFrame_Access_Array_Object'Class (Value.all).Value else null);
+   type InputAutomationJFrame_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InputAutomationJFrame_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InputAutomationJFrame_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InputAutomationJFrame_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InputAutomationJFrame_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InputAutomationJFrame_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in InputAutomationJFrame_Access_Array_Access_Array_Object'Class then InputAutomationJFrame_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.InputAutomationJFrame_Package_References;
 
 with org.allbinary.input.automation.InputAutomationJFrame_Package_References;
@@ -57,7 +68,28 @@ limited with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
 limited with org.allbinary.thread.RunnableInterface_Package;
 with org.allbinary.thread.RunnableInterface_Package_References;
-with org.allbinary.input.automation.JFrame_Package; use org.allbinary.input.automation.JFrame_Package;
+--  with java.awt.Dimension_Package; use java.awt.Dimension_Package;
+--  with java.awt.EventQueue_Package; use java.awt.EventQueue_Package;
+--  with java.awt.event.ActionEvent_Package; use java.awt.event.ActionEvent_Package;
+--  with java.awt.event.ActionListener_Package; use java.awt.event.ActionListener_Package;
+--  with java.awt.event.FocusAdapter_Package; use java.awt.event.FocusAdapter_Package;
+--  with java.awt.event.FocusEvent_Package; use java.awt.event.FocusEvent_Package;
+--  with java.awt.event.WindowEvent_Package; use java.awt.event.WindowEvent_Package;
+--  with java.awt.event.WindowFocusListener_Package; use java.awt.event.WindowFocusListener_Package;
+--  with javax.swing.GroupLayout_Package; use javax.swing.GroupLayout_Package;
+--  with javax.swing.JCheckBoxMenuItem_Package; use javax.swing.JCheckBoxMenuItem_Package;
+--  with javax.swing.JFrame_Package; use javax.swing.JFrame_Package;
+--  with javax.swing.JLabel_Package; use javax.swing.JLabel_Package;
+--  with javax.swing.JList_Package; use javax.swing.JList_Package;
+--  with javax.swing.JMenu_Package; use javax.swing.JMenu_Package;
+--  with javax.swing.JMenuBar_Package; use javax.swing.JMenuBar_Package;
+--  with javax.swing.JMenuItem_Package; use javax.swing.JMenuItem_Package;
+--  with javax.swing.JPanel_Package; use javax.swing.JPanel_Package;
+--  with javax.swing.JScrollPane_Package; use javax.swing.JScrollPane_Package;
+--  with javax.swing.JTabbedPane_Package; use javax.swing.JTabbedPane_Package;
+--  with javax.swing.WindowConstants_Package; use javax.swing.WindowConstants_Package;
+--  with javax.swing.event.ListSelectionEvent_Package; use javax.swing.event.ListSelectionEvent_Package;
+--  with javax.swing.event.ListSelectionListener_Package; use javax.swing.event.ListSelectionListener_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 
 package org.allbinary.input.automation.InputAutomationJFrame_Package is
@@ -176,12 +208,16 @@ package org.allbinary.input.automation.InputAutomationJFrame_Package is
    function "=" (Left, Right : InputAutomationJFrame_Access_Array) return Boolean renames org.allbinary.input.automation.InputAutomationJFrame_Package_References."=";
    subtype InputAutomationJFrame_Access_Array_Access is org.allbinary.input.automation.InputAutomationJFrame_Package_References.InputAutomationJFrame_Access_Array_Access;
    function "=" (Left, Right : InputAutomationJFrame_Access_Array_Access) return Boolean renames org.allbinary.input.automation.InputAutomationJFrame_Package_References."=";
+   function Java_Box (Value : InputAutomationJFrame_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.InputAutomationJFrame_Package_References.Java_Box;
+   function Java_Unbox_InputAutomationJFrame_Access_Array (Value : access Java_Object'Class) return InputAutomationJFrame_Access_Array_Access renames org.allbinary.input.automation.InputAutomationJFrame_Package_References.Java_Unbox_InputAutomationJFrame_Access_Array;
    subtype InputAutomationJFrame_Access_Array_Access_Array is org.allbinary.input.automation.InputAutomationJFrame_Package_References.InputAutomationJFrame_Access_Array_Access_Array;
    function "=" (Left, Right : InputAutomationJFrame_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.InputAutomationJFrame_Package_References."=";
    subtype InputAutomationJFrame_Access_Array_Access_Array_Access is org.allbinary.input.automation.InputAutomationJFrame_Package_References.InputAutomationJFrame_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InputAutomationJFrame_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.InputAutomationJFrame_Package_References."=";
+   function Java_Box (Value : InputAutomationJFrame_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.InputAutomationJFrame_Package_References.Java_Box;
+   function Java_Unbox_InputAutomationJFrame_Access_Array_Access_Array (Value : access Java_Object'Class) return InputAutomationJFrame_Access_Array_Access_Array_Access renames org.allbinary.input.automation.InputAutomationJFrame_Package_References.Java_Unbox_InputAutomationJFrame_Access_Array_Access_Array;
 
-   type InputAutomationJFrame is new JFrame and InputAutomationConfigurationModuleChangeListener and InputAutomationRobotChangeListener with record
+   type InputAutomationJFrame is new Java_Object and InputAutomationConfigurationModuleChangeListener and InputAutomationRobotChangeListener with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       inputAutomationModuleConfigurations : InputAutomationModuleConfigurations_Access;

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
 package org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package_References is
    type TransformInfoObjectConfigGeneratorFactory_Access is access all org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package.TransformInfoObjectConfigGeneratorFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.visual.transform.info.objectConfig.generator.Transfo
    type TransformInfoObjectConfigGeneratorFactory_Access_Array_Access is access all TransformInfoObjectConfigGeneratorFactory_Access_Array;
    type TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array is array (Natural range <>) of TransformInfoObjectConfigGeneratorFactory_Access_Array_Access;
    type TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array_Access is access all TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array;
+   type TransformInfoObjectConfigGeneratorFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransformInfoObjectConfigGeneratorFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransformInfoObjectConfigGeneratorFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransformInfoObjectConfigGeneratorFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransformInfoObjectConfigGeneratorFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransformInfoObjectConfigGeneratorFactory_Access_Array_Access is (if Value /= null and then Value.all in TransformInfoObjectConfigGeneratorFactory_Access_Array_Object'Class then TransformInfoObjectConfigGeneratorFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array_Object'Class then TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package_References;
 
 with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package_References;
@@ -83,10 +94,14 @@ package org.allbinary.logic.visual.transform.info.objectConfig.generator.Transfo
    function "=" (Left, Right : TransformInfoObjectConfigGeneratorFactory_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package_References."=";
    subtype TransformInfoObjectConfigGeneratorFactory_Access_Array_Access is org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package_References.TransformInfoObjectConfigGeneratorFactory_Access_Array_Access;
    function "=" (Left, Right : TransformInfoObjectConfigGeneratorFactory_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package_References."=";
+   function Java_Box (Value : TransformInfoObjectConfigGeneratorFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package_References.Java_Box;
+   function Java_Unbox_TransformInfoObjectConfigGeneratorFactory_Access_Array (Value : access Java_Object'Class) return TransformInfoObjectConfigGeneratorFactory_Access_Array_Access renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package_References.Java_Unbox_TransformInfoObjectConfigGeneratorFactory_Access_Array;
    subtype TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package_References.TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array;
    function "=" (Left, Right : TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package_References."=";
    subtype TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package_References.TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package_References."=";
+   function Java_Box (Value : TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package_References.Java_Box;
+   function Java_Unbox_TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array_Access renames org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package_References.Java_Unbox_TransformInfoObjectConfigGeneratorFactory_Access_Array_Access_Array;
 
    type TransformInfoObjectConfigGeneratorFactory is new Java_Object and TransformInfoObjectConfigGeneratorFactoryInterface with record
       logUtil : LogUtil_Access;

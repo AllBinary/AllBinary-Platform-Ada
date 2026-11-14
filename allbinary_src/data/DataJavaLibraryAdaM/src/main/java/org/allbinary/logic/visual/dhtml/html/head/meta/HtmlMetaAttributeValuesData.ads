@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package;
 package org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References is
    type HtmlMetaAttributeValuesData_Access is access all org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package.HtmlMetaAttributeValuesData'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesD
    type HtmlMetaAttributeValuesData_Access_Array_Access is access all HtmlMetaAttributeValuesData_Access_Array;
    type HtmlMetaAttributeValuesData_Access_Array_Access_Array is array (Natural range <>) of HtmlMetaAttributeValuesData_Access_Array_Access;
    type HtmlMetaAttributeValuesData_Access_Array_Access_Array_Access is access all HtmlMetaAttributeValuesData_Access_Array_Access_Array;
+   type HtmlMetaAttributeValuesData_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HtmlMetaAttributeValuesData_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HtmlMetaAttributeValuesData_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HtmlMetaAttributeValuesData_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HtmlMetaAttributeValuesData_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HtmlMetaAttributeValuesData_Access_Array_Access is (if Value /= null and then Value.all in HtmlMetaAttributeValuesData_Access_Array_Object'Class then HtmlMetaAttributeValuesData_Access_Array_Object'Class (Value.all).Value else null);
+   type HtmlMetaAttributeValuesData_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HtmlMetaAttributeValuesData_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HtmlMetaAttributeValuesData_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HtmlMetaAttributeValuesData_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HtmlMetaAttributeValuesData_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HtmlMetaAttributeValuesData_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in HtmlMetaAttributeValuesData_Access_Array_Access_Array_Object'Class then HtmlMetaAttributeValuesData_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References;
 
 with org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesD
    function "=" (Left, Right : HtmlMetaAttributeValuesData_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References."=";
    subtype HtmlMetaAttributeValuesData_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References.HtmlMetaAttributeValuesData_Access_Array_Access;
    function "=" (Left, Right : HtmlMetaAttributeValuesData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References."=";
+   function Java_Box (Value : HtmlMetaAttributeValuesData_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References.Java_Box;
+   function Java_Unbox_HtmlMetaAttributeValuesData_Access_Array (Value : access Java_Object'Class) return HtmlMetaAttributeValuesData_Access_Array_Access renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References.Java_Unbox_HtmlMetaAttributeValuesData_Access_Array;
    subtype HtmlMetaAttributeValuesData_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References.HtmlMetaAttributeValuesData_Access_Array_Access_Array;
    function "=" (Left, Right : HtmlMetaAttributeValuesData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References."=";
    subtype HtmlMetaAttributeValuesData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References.HtmlMetaAttributeValuesData_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HtmlMetaAttributeValuesData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References."=";
+   function Java_Box (Value : HtmlMetaAttributeValuesData_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References.Java_Box;
+   function Java_Unbox_HtmlMetaAttributeValuesData_Access_Array_Access_Array (Value : access Java_Object'Class) return HtmlMetaAttributeValuesData_Access_Array_Access_Array_Access renames org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributeValuesData_Package_References.Java_Unbox_HtmlMetaAttributeValuesData_Access_Array_Access_Array;
 
    type HtmlMetaAttributeValuesData is new Java_Object with record
       ABSTRACT_Id : Unbounded_String;

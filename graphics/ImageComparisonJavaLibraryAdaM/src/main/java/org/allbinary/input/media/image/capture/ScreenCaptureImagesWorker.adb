@@ -88,8 +88,8 @@ package body org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_P
    procedure Initialize_Fields (This : in out ScreenCaptureImagesWorker'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
-      This.commonStrings := CommonStrings_Package.getInstance;
+      This.ScreenCaptureImagesWorker_Field_logUtil := LogUtil_Package.getInstance;
+      This.ScreenCaptureImagesWorker_Field_commonStrings := CommonStrings_Package.getInstance;
       This.running := False;
       
    end Initialize_Fields;
@@ -134,7 +134,7 @@ package body org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_P
       capturedImageEvent : CapturedImageWorkerResultsEvent_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.ScreenCaptureImagesWorker_Field_logUtil.putF (This.ScreenCaptureImagesWorker_Field_commonStrings.START, ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.ScreenCaptureImagesWorker_Field_commonStrings.RUN);
             ScreenCaptureImagesWorker'Class (This).setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             while ScreenCaptureImagesWorker'Class (This).isRunning loop
@@ -145,16 +145,16 @@ package body org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_P
                 CapturedBufferedImagesCacheSingleton_Package.getInstance.add (BufferedImageFrameCacheable_Package.Create (bufferedImage, frame));
                 capturedImageEvent := CapturedImageWorkerResultsEvent_Package.Create (ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), frame, bufferedImage);
                 ScreenCaptureImagesWorker'Class (This).fireEvent (capturedImageEvent);
-                This.logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+                This.ScreenCaptureImagesWorker_Field_logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.ScreenCaptureImagesWorker_Field_commonStrings.RUN);
                 ScreenCaptureImagesWorker'Class (This).setRunning (False);
             end loop;
-            This.logUtil.putF (This.commonStrings.END_Id, ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.ScreenCaptureImagesWorker_Field_logUtil.putF (This.ScreenCaptureImagesWorker_Field_commonStrings.END_Id, ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.ScreenCaptureImagesWorker_Field_commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
+            This.ScreenCaptureImagesWorker_Field_logUtil.put (This.ScreenCaptureImagesWorker_Field_commonStrings.EXCEPTION_Id, ScreenCaptureImagesWorker_Access'(This'Unchecked_Access), This.ScreenCaptureImagesWorker_Field_commonStrings.RUN, e);
                 end;
         end;
    end run;

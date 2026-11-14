@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package;
 package org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References is
    type ImageActionScriptOutput_Access is access all org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package.ImageActionScriptOutput'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    type ImageActionScriptOutput_Access_Array_Access is access all ImageActionScriptOutput_Access_Array;
    type ImageActionScriptOutput_Access_Array_Access_Array is array (Natural range <>) of ImageActionScriptOutput_Access_Array_Access;
    type ImageActionScriptOutput_Access_Array_Access_Array_Access is access all ImageActionScriptOutput_Access_Array_Access_Array;
+   type ImageActionScriptOutput_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageActionScriptOutput_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageActionScriptOutput_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageActionScriptOutput_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageActionScriptOutput_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageActionScriptOutput_Access_Array_Access is (if Value /= null and then Value.all in ImageActionScriptOutput_Access_Array_Object'Class then ImageActionScriptOutput_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageActionScriptOutput_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageActionScriptOutput_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageActionScriptOutput_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageActionScriptOutput_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageActionScriptOutput_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageActionScriptOutput_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageActionScriptOutput_Access_Array_Access_Array_Object'Class then ImageActionScriptOutput_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References;
 
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References;
@@ -111,10 +122,14 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    function "=" (Left, Right : ImageActionScriptOutput_Access_Array) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References."=";
    subtype ImageActionScriptOutput_Access_Array_Access is org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References.ImageActionScriptOutput_Access_Array_Access;
    function "=" (Left, Right : ImageActionScriptOutput_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References."=";
+   function Java_Box (Value : ImageActionScriptOutput_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References.Java_Box;
+   function Java_Unbox_ImageActionScriptOutput_Access_Array (Value : access Java_Object'Class) return ImageActionScriptOutput_Access_Array_Access renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References.Java_Unbox_ImageActionScriptOutput_Access_Array;
    subtype ImageActionScriptOutput_Access_Array_Access_Array is org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References.ImageActionScriptOutput_Access_Array_Access_Array;
    function "=" (Left, Right : ImageActionScriptOutput_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References."=";
    subtype ImageActionScriptOutput_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References.ImageActionScriptOutput_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageActionScriptOutput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References."=";
+   function Java_Box (Value : ImageActionScriptOutput_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References.Java_Box;
+   function Java_Unbox_ImageActionScriptOutput_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageActionScriptOutput_Access_Array_Access_Array_Access renames org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutput_Package_References.Java_Unbox_ImageActionScriptOutput_Access_Array_Access_Array;
 
    type ImageActionScriptOutput is new BasicProfileActionScriptOutput and ImageActionScriptOutputInterface with record
       ImageActionScriptOutput_Field_logUtil : LogUtil_Access;

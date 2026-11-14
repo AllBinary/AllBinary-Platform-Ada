@@ -36,7 +36,7 @@ package body org.allbinary.android.view.AllBinaryRenderer_Package is
 
    function getInstance return AllBinaryRenderer_Access is
    begin
-        return AllBinaryRenderer_Access (AllBinaryRenderer_Package.instance);
+        return AllBinaryRenderer_Package.instance;
    end getInstance;
 
    procedure setRunnable (This : in out AllBinaryRenderer; runnable_Param : access Runnable_Package.Runnable'Class) is

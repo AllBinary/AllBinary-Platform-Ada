@@ -19,6 +19,7 @@ with org.allbinary.game.input.mapping.PersistentInputMapping_Package; use org.al
 with org.allbinary.game.input.PCKeyFactory_Package; use org.allbinary.game.input.PCKeyFactory_Package;
 with org.allbinary.game.input.GameKeyFactory_Package; use org.allbinary.game.input.GameKeyFactory_Package;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.input.ABKeyEventWrapper_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
@@ -80,6 +81,8 @@ with javax.microedition.midlet.MIDlet_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.microemu.device.MutableImage_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.game.input.PCGameKey_Package;
+with org.allbinary.game.input.PCKeyFactory_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.allbinary.game.configuration.persistance.PersistanceStrings_Package;
 with org.allbinary.persistance.PlatformRecordIdUtil_Package;

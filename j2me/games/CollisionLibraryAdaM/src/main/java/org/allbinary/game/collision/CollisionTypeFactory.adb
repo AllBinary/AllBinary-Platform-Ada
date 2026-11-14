@@ -53,7 +53,7 @@ package body org.allbinary.game.collision.CollisionTypeFactory_Package is
 
    function getInstance return CollisionTypeFactory_Access is
    begin
-        return CollisionTypeFactory_Access (CollisionTypeFactory_Package.SINGLETON);
+        return CollisionTypeFactory_Package.SINGLETON;
    end getInstance;
 
 begin

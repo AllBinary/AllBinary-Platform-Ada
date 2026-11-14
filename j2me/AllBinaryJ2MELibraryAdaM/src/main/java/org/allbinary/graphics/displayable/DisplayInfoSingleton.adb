@@ -268,7 +268,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
 
    function getInstance return DisplayInfoSingleton_Access is
    begin
-        return DisplayInfoSingleton_Access (DisplayInfoSingleton_Package.SINGLETON);
+        return DisplayInfoSingleton_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out DisplayInfoSingleton'Class) is

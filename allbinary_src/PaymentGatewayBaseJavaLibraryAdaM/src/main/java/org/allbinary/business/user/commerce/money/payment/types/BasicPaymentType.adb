@@ -31,7 +31,10 @@ with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactoryInterface_Package_References;
 with org.allbinary.business.user.commerce.money.payment.gateway.modules.gateway.PaymentGatewayDomNodeFactoryInterface_Package_References;
 
@@ -118,7 +121,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
       UNDERSCORE : Unbounded_String;
       replace : Replace_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         UNDERSCORE := To_Unbounded_String ("_");
         hashMap.put (Java_Box (CommonSeps_Package.getInstance.SPACE), Java_Box (UNDERSCORE));
         hashMap.put (Java_Box (AbPathData_Package.getInstance.EXTENSION_SEP), Java_Box (UNDERSCORE));
@@ -166,15 +169,15 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
       vector : BasicArrayList_Access;
    begin
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        vector.add (This.name);
-        vector.add (This.value);
+        vector.add (Java_Box (This.name));
+        vector.add (Java_Box (This.value));
         return vector;
    end toVector;
 
    function toHashMap (This : in out BasicPaymentType) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (This.name));
         hashMap.put (Java_Box (PaymentGatewayData_Package.VALUE.toString), Java_Box (This.value));
         return hashMap;

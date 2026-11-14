@@ -43,10 +43,7 @@ with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.C
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
-with org.allbinary.graphics.j2me.Dimension_Package; use org.allbinary.graphics.j2me.Dimension_Package;
-with org.allbinary.graphics.j2me.GridLayout_Package; use org.allbinary.graphics.j2me.GridLayout_Package;
-with org.allbinary.graphics.j2me.JPanel_Package; use org.allbinary.graphics.j2me.JPanel_Package;
-with org.allbinary.graphics.j2me.JPanel_Package_References;
+with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with java.lang.Runnable_Package; use java.lang.Runnable_Package;
 with org.allbinary.math.Angle_Package;
@@ -167,16 +164,6 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
    function "=" (Left, Right : CommonStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
    subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CommonStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStrings_Package_References."=";
-   subtype JPanel_Access is org.allbinary.graphics.j2me.JPanel_Package_References.JPanel_Access;
-   function "=" (Left, Right : JPanel_Access) return Boolean renames org.allbinary.graphics.j2me.JPanel_Package_References."=";
-   subtype JPanel_Access_Array is org.allbinary.graphics.j2me.JPanel_Package_References.JPanel_Access_Array;
-   function "=" (Left, Right : JPanel_Access_Array) return Boolean renames org.allbinary.graphics.j2me.JPanel_Package_References."=";
-   subtype JPanel_Access_Array_Access is org.allbinary.graphics.j2me.JPanel_Package_References.JPanel_Access_Array_Access;
-   function "=" (Left, Right : JPanel_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.JPanel_Package_References."=";
-   subtype JPanel_Access_Array_Access_Array is org.allbinary.graphics.j2me.JPanel_Package_References.JPanel_Access_Array_Access_Array;
-   function "=" (Left, Right : JPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.j2me.JPanel_Package_References."=";
-   subtype JPanel_Access_Array_Access_Array_Access is org.allbinary.graphics.j2me.JPanel_Package_References.JPanel_Access_Array_Access_Array_Access;
-   function "=" (Left, Right : JPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.j2me.JPanel_Package_References."=";
    procedure Initialize_Fields (This : in out MyFrame'Class) is
    begin
       null;
@@ -240,7 +227,6 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 
    procedure Initialize (This : in out MyFrame'Class) is
    begin
-      JFrame_Package.Initialize (This);
       Initialize_Fields (This);
         MyFrame'Class (This).initComponents;
         MyFrame'Class (This).setSize (Dimension_Package.Create (550, 400));
@@ -385,7 +371,7 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 --     end mousePressed;
 );
         This.jToolBar1.add (This.stopJjButton);
-        MyFrame'Class (This).getContentPane.add (This.jToolBar1, java_Package.awt.BorderLayout.NORTH);
+        MyFrame'Class (This).getContentPane.add (This.jToolBar1, BorderLayout_Package.NORTH);
         This.jPanel1.setLayout (GridLayout_Package.Create (1, 0));
         This.mainJPanel.setLayout (GridLayout_Package.Create (1, 0));
         This.jTabbedPane.setMinimumSize (Dimension_Package.Create (550, 400));
@@ -399,11 +385,11 @@ package body org.allbinary.graphics.j2me.MyFrame_Package is
 );
         This.mainJPanel.add (This.jTabbedPane);
         This.jPanel1.add (This.mainJPanel);
-        MyFrame'Class (This).getContentPane.add (This.jPanel1, java_Package.awt.BorderLayout.CENTER);
+        MyFrame'Class (This).getContentPane.add (This.jPanel1, BorderLayout_Package.CENTER);
         This.statusJPanel.setLayout (GridLayout_Package.Create (1, 0));
         MyFrame_Package.statusJLabel.setText (To_Unbounded_String ("Status Bar"));
         This.statusJPanel.add (MyFrame_Package.statusJLabel);
-        MyFrame'Class (This).getContentPane.add (This.statusJPanel, java_Package.awt.BorderLayout.SOUTH);
+        MyFrame'Class (This).getContentPane.add (This.statusJPanel, BorderLayout_Package.SOUTH);
         This.fileJMenu.setText (To_Unbounded_String ("File"));
         This.fileJMenu.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              

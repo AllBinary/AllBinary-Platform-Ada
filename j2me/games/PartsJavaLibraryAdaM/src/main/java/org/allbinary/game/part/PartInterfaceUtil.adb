@@ -15,6 +15,15 @@
 
 with org.allbinary.game.part.PartInterface_Package; use org.allbinary.game.part.PartInterface_Package;
 with org.allbinary.game.part.PartInterface_Package_References;
+with org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.AnimationInterfaceCompositeInterface_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorSetUtil_Package;
+with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.paint.PaintableInterface_Package;
 with org.allbinary.game.part.PartInterface_Package;
 
 package body org.allbinary.game.part.PartInterfaceUtil_Package is

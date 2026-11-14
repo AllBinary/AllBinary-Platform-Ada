@@ -68,7 +68,7 @@ package body org.allbinary.logic.system.os.android.AndroidOperatingSystemFactory
 
    function getInstance return AndroidOperatingSystemFactory_Access is
    begin
-        return AndroidOperatingSystemFactory_Access (AndroidOperatingSystemFactory_Package.instance);
+        return AndroidOperatingSystemFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AndroidOperatingSystemFactory'Class) is

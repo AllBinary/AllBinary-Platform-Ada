@@ -40,7 +40,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoData_Package
 
    function getInstance return TransformInfoData_Access is
    begin
-        return TransformInfoData_Access (TransformInfoData_Package.instance);
+        return TransformInfoData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TransformInfoData'Class) is

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package;
 package org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package_References is
    type AndroidTitleProgressBar_Access is access all org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBa
    type AndroidTitleProgressBar_Access_Array_Access is access all AndroidTitleProgressBar_Access_Array;
    type AndroidTitleProgressBar_Access_Array_Access_Array is array (Natural range <>) of AndroidTitleProgressBar_Access_Array_Access;
    type AndroidTitleProgressBar_Access_Array_Access_Array_Access is access all AndroidTitleProgressBar_Access_Array_Access_Array;
+   type AndroidTitleProgressBar_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AndroidTitleProgressBar_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AndroidTitleProgressBar_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AndroidTitleProgressBar_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AndroidTitleProgressBar_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AndroidTitleProgressBar_Access_Array_Access is (if Value /= null and then Value.all in AndroidTitleProgressBar_Access_Array_Object'Class then AndroidTitleProgressBar_Access_Array_Object'Class (Value.all).Value else null);
+   type AndroidTitleProgressBar_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AndroidTitleProgressBar_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AndroidTitleProgressBar_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AndroidTitleProgressBar_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AndroidTitleProgressBar_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AndroidTitleProgressBar_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AndroidTitleProgressBar_Access_Array_Access_Array_Object'Class then AndroidTitleProgressBar_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package_References;
 
 with org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package_References;
@@ -134,10 +145,14 @@ package org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBa
    function "=" (Left, Right : AndroidTitleProgressBar_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package_References."=";
    subtype AndroidTitleProgressBar_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package_References.AndroidTitleProgressBar_Access_Array_Access;
    function "=" (Left, Right : AndroidTitleProgressBar_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package_References."=";
+   function Java_Box (Value : AndroidTitleProgressBar_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package_References.Java_Box;
+   function Java_Unbox_AndroidTitleProgressBar_Access_Array (Value : access Java_Object'Class) return AndroidTitleProgressBar_Access_Array_Access renames org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package_References.Java_Unbox_AndroidTitleProgressBar_Access_Array;
    subtype AndroidTitleProgressBar_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package_References.AndroidTitleProgressBar_Access_Array_Access_Array;
    function "=" (Left, Right : AndroidTitleProgressBar_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package_References."=";
    subtype AndroidTitleProgressBar_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package_References.AndroidTitleProgressBar_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AndroidTitleProgressBar_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package_References."=";
+   function Java_Box (Value : AndroidTitleProgressBar_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package_References.Java_Box;
+   function Java_Unbox_AndroidTitleProgressBar_Access_Array_Access_Array (Value : access Java_Object'Class) return AndroidTitleProgressBar_Access_Array_Access_Array_Access renames org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package_References.Java_Unbox_AndroidTitleProgressBar_Access_Array_Access_Array;
 
    type AndroidTitleProgressBar is new ProgressCanvas with record
       showTitleProgressBarRunnable_Var : ShowTitleProgressBarRunnable_Access;
@@ -162,6 +177,7 @@ package org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBa
 
 end org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgressBar_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package;
 package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References is
    type TitleProgressBarSetProgressRunnable_Access is access all org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package.TitleProgressBarSetProgressRunnable'Class;
@@ -169,6 +185,16 @@ package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetPro
    type TitleProgressBarSetProgressRunnable_Access_Array_Access is access all TitleProgressBarSetProgressRunnable_Access_Array;
    type TitleProgressBarSetProgressRunnable_Access_Array_Access_Array is array (Natural range <>) of TitleProgressBarSetProgressRunnable_Access_Array_Access;
    type TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access is access all TitleProgressBarSetProgressRunnable_Access_Array_Access_Array;
+   type TitleProgressBarSetProgressRunnable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TitleProgressBarSetProgressRunnable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TitleProgressBarSetProgressRunnable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TitleProgressBarSetProgressRunnable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TitleProgressBarSetProgressRunnable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TitleProgressBarSetProgressRunnable_Access_Array_Access is (if Value /= null and then Value.all in TitleProgressBarSetProgressRunnable_Access_Array_Object'Class then TitleProgressBarSetProgressRunnable_Access_Array_Object'Class (Value.all).Value else null);
+   type TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TitleProgressBarSetProgressRunnable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Object'Class then TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References;
 
 with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References;
@@ -284,10 +310,14 @@ package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetPro
    function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
    subtype TitleProgressBarSetProgressRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access;
    function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   function Java_Box (Value : TitleProgressBarSetProgressRunnable_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.Java_Box;
+   function Java_Unbox_TitleProgressBarSetProgressRunnable_Access_Array (Value : access Java_Object'Class) return TitleProgressBarSetProgressRunnable_Access_Array_Access renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.Java_Unbox_TitleProgressBarSetProgressRunnable_Access_Array;
    subtype TitleProgressBarSetProgressRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access_Array;
    function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
    subtype TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References."=";
+   function Java_Box (Value : TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.Java_Box;
+   function Java_Unbox_TitleProgressBarSetProgressRunnable_Access_Array_Access_Array (Value : access Java_Object'Class) return TitleProgressBarSetProgressRunnable_Access_Array_Access_Array_Access renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package_References.Java_Unbox_TitleProgressBarSetProgressRunnable_Access_Array_Access_Array;
 
    type TitleProgressBarSetProgressRunnable is new Java_Object and Runnable with record
       androidTitleProgressBar_Var : AndroidTitleProgressBar_Access;
@@ -299,6 +329,7 @@ package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetPro
 
 end org.allbinary.graphics.canvas.transition.progress.TitleProgressBarSetProgressRunnable_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package;
 package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References is
    type TitleProgressBarPortionSetProgressRunnable_Access is access all org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package.TitleProgressBarPortionSetProgressRunnable'Class;
@@ -306,6 +337,16 @@ package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortio
    type TitleProgressBarPortionSetProgressRunnable_Access_Array_Access is access all TitleProgressBarPortionSetProgressRunnable_Access_Array;
    type TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array is array (Natural range <>) of TitleProgressBarPortionSetProgressRunnable_Access_Array_Access;
    type TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access is access all TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array;
+   type TitleProgressBarPortionSetProgressRunnable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TitleProgressBarPortionSetProgressRunnable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TitleProgressBarPortionSetProgressRunnable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TitleProgressBarPortionSetProgressRunnable_Access_Array_Access is (if Value /= null and then Value.all in TitleProgressBarPortionSetProgressRunnable_Access_Array_Object'Class then TitleProgressBarPortionSetProgressRunnable_Access_Array_Object'Class (Value.all).Value else null);
+   type TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Object'Class then TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References;
 
 with org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References;
@@ -421,10 +462,14 @@ package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortio
    function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
    subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access;
    function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   function Java_Box (Value : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.Java_Box;
+   function Java_Unbox_TitleProgressBarPortionSetProgressRunnable_Access_Array (Value : access Java_Object'Class) return TitleProgressBarPortionSetProgressRunnable_Access_Array_Access renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.Java_Unbox_TitleProgressBarPortionSetProgressRunnable_Access_Array;
    subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array;
    function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
    subtype TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References."=";
+   function Java_Box (Value : TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.Java_Box;
+   function Java_Unbox_TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array (Value : access Java_Object'Class) return TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array_Access renames org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package_References.Java_Unbox_TitleProgressBarPortionSetProgressRunnable_Access_Array_Access_Array;
 
    type TitleProgressBarPortionSetProgressRunnable is new Java_Object and Runnable with record
       androidTitleProgressBar_Var : AndroidTitleProgressBar_Access;
@@ -436,6 +481,7 @@ package org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortio
 
 end org.allbinary.graphics.canvas.transition.progress.TitleProgressBarPortionSetProgressRunnable_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;
 package org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References is
    type ShowTitleProgressBarRunnable_Access is access all org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package.ShowTitleProgressBarRunnable'Class;
@@ -443,6 +489,16 @@ package org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRu
    type ShowTitleProgressBarRunnable_Access_Array_Access is access all ShowTitleProgressBarRunnable_Access_Array;
    type ShowTitleProgressBarRunnable_Access_Array_Access_Array is array (Natural range <>) of ShowTitleProgressBarRunnable_Access_Array_Access;
    type ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access is access all ShowTitleProgressBarRunnable_Access_Array_Access_Array;
+   type ShowTitleProgressBarRunnable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ShowTitleProgressBarRunnable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ShowTitleProgressBarRunnable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ShowTitleProgressBarRunnable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ShowTitleProgressBarRunnable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ShowTitleProgressBarRunnable_Access_Array_Access is (if Value /= null and then Value.all in ShowTitleProgressBarRunnable_Access_Array_Object'Class then ShowTitleProgressBarRunnable_Access_Array_Object'Class (Value.all).Value else null);
+   type ShowTitleProgressBarRunnable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ShowTitleProgressBarRunnable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ShowTitleProgressBarRunnable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ShowTitleProgressBarRunnable_Access_Array_Access_Array_Object'Class then ShowTitleProgressBarRunnable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References;
 
 with org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References;
@@ -558,10 +614,14 @@ package org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRu
    function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
    subtype ShowTitleProgressBarRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access;
    function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   function Java_Box (Value : ShowTitleProgressBarRunnable_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.Java_Box;
+   function Java_Unbox_ShowTitleProgressBarRunnable_Access_Array (Value : access Java_Object'Class) return ShowTitleProgressBarRunnable_Access_Array_Access renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.Java_Unbox_ShowTitleProgressBarRunnable_Access_Array;
    subtype ShowTitleProgressBarRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access_Array;
    function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
    subtype ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References."=";
+   function Java_Box (Value : ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.Java_Box;
+   function Java_Unbox_ShowTitleProgressBarRunnable_Access_Array_Access_Array (Value : access Java_Object'Class) return ShowTitleProgressBarRunnable_Access_Array_Access_Array_Access renames org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package_References.Java_Unbox_ShowTitleProgressBarRunnable_Access_Array_Access_Array;
 
    type ShowTitleProgressBarRunnable is new Java_Object and Runnable with record
       androidTitleProgressBar_Var : AndroidTitleProgressBar_Access;
@@ -573,6 +633,7 @@ package org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRu
 
 end org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package;
 package org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References is
    type DismissTitleProgressBarRunnable_Access is access all org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package.DismissTitleProgressBarRunnable'Class;
@@ -580,6 +641,16 @@ package org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBa
    type DismissTitleProgressBarRunnable_Access_Array_Access is access all DismissTitleProgressBarRunnable_Access_Array;
    type DismissTitleProgressBarRunnable_Access_Array_Access_Array is array (Natural range <>) of DismissTitleProgressBarRunnable_Access_Array_Access;
    type DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access is access all DismissTitleProgressBarRunnable_Access_Array_Access_Array;
+   type DismissTitleProgressBarRunnable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DismissTitleProgressBarRunnable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DismissTitleProgressBarRunnable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DismissTitleProgressBarRunnable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DismissTitleProgressBarRunnable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DismissTitleProgressBarRunnable_Access_Array_Access is (if Value /= null and then Value.all in DismissTitleProgressBarRunnable_Access_Array_Object'Class then DismissTitleProgressBarRunnable_Access_Array_Object'Class (Value.all).Value else null);
+   type DismissTitleProgressBarRunnable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DismissTitleProgressBarRunnable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DismissTitleProgressBarRunnable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in DismissTitleProgressBarRunnable_Access_Array_Access_Array_Object'Class then DismissTitleProgressBarRunnable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References;
 
 with org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References;
@@ -695,10 +766,14 @@ package org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBa
    function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
    subtype DismissTitleProgressBarRunnable_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access;
    function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   function Java_Box (Value : DismissTitleProgressBarRunnable_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.Java_Box;
+   function Java_Unbox_DismissTitleProgressBarRunnable_Access_Array (Value : access Java_Object'Class) return DismissTitleProgressBarRunnable_Access_Array_Access renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.Java_Unbox_DismissTitleProgressBarRunnable_Access_Array;
    subtype DismissTitleProgressBarRunnable_Access_Array_Access_Array is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access_Array;
    function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
    subtype DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access is org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References."=";
+   function Java_Box (Value : DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.Java_Box;
+   function Java_Unbox_DismissTitleProgressBarRunnable_Access_Array_Access_Array (Value : access Java_Object'Class) return DismissTitleProgressBarRunnable_Access_Array_Access_Array_Access renames org.allbinary.graphics.canvas.transition.progress.DismissTitleProgressBarRunnable_Package_References.Java_Unbox_DismissTitleProgressBarRunnable_Access_Array_Access_Array;
 
    type DismissTitleProgressBarRunnable is new Java_Object and Runnable with record
       androidTitleProgressBar_Var : AndroidTitleProgressBar_Access;

@@ -124,7 +124,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
 
    function getHashtable return ABHashtable_Access is
    begin
-        return ABHashtable_Access (GeographicMapCellPositionFactory_Package.hashtable);
+        return GeographicMapCellPositionFactory_Package.hashtable;
    end getHashtable;
 
    procedure getInstance (This : in out GeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) is

@@ -48,7 +48,7 @@ package body org.allbinary.image.opengles.OpenGLESImageDraw_Package is
 
    function getInstance return OpenGLESImageDraw_Access is
    begin
-        return OpenGLESImageDraw_Access (OpenGLESImageDraw_Package.instance);
+        return OpenGLESImageDraw_Package.instance;
    end getInstance;
 
    procedure drawRegion (This : in out OpenGLESImageDraw; gl_Param : access GL10_Package.GL10'Class; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer) is

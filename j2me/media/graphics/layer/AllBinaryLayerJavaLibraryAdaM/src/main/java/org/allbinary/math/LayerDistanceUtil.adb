@@ -96,7 +96,7 @@ package body org.allbinary.math.LayerDistanceUtil_Package is
 
    function getInstance return LayerDistanceUtil_Access is
    begin
-        return LayerDistanceUtil_Access (LayerDistanceUtil_Package.instance);
+        return LayerDistanceUtil_Package.instance;
    end getInstance;
 
    function getDistance (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; layerInterface2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Integer is

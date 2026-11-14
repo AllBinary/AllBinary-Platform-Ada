@@ -37,7 +37,7 @@ package body org.allbinary.logic.java.character_Id.CharArrayFactory_Package is
 
    function getInstance return CharArrayFactory_Access is
    begin
-        return CharArrayFactory_Access (CharArrayFactory_Package.instance);
+        return CharArrayFactory_Package.instance;
    end getInstance;
 
    function getZeroCharArray (This : in out CharArrayFactory) return Character_Array_Access is

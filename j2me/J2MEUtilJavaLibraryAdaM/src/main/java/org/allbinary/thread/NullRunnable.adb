@@ -30,7 +30,7 @@ package body org.allbinary.thread.NullRunnable_Package is
 
    function getInstance return NullRunnable_Access is
    begin
-        return NullRunnable_Access (NullRunnable_Package.instance);
+        return NullRunnable_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out NullRunnable'Class) is

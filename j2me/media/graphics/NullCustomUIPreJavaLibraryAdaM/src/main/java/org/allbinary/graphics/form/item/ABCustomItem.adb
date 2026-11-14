@@ -16,7 +16,6 @@ with org.microemu.device.ui.AlertUI_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with javax.microedition.lcdui.Canvas_Package;
 with org.microemu.device.ui.CanvasUI_Package;
-with javax.microedition.lcdui.Choice_Package;
 with javax.microedition.lcdui.ChoiceGroup_Package;
 with javax.microedition.lcdui.ChoiceItem_Package;
 with javax.microedition.lcdui.Command_Package;
@@ -25,7 +24,6 @@ with org.microemu.device.ui.CommandUI_Package;
 with org.microemu.device.Device_Package;
 with org.microemu.device.DeviceDisplay_Package;
 with javax.microedition.lcdui.Display_Package;
-with org.microemu.DisplayAccess_Package;
 with javax.microedition.lcdui.DisplayAccessor_Package;
 with javax.microedition.lcdui.Displayable_Package;
 with org.microemu.device.ui.DisplayableUI_Package;
@@ -47,7 +45,6 @@ with javax.microedition.lcdui.ItemStateListener_Package;
 with javax.microedition.lcdui.List_Package;
 with org.microemu.device.ui.ListUI_Package;
 with javax.microedition.midlet.MIDlet_Package;
-with org.microemu.MIDletAccess_Package;
 with org.microemu.device.MutableImage_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.microemu.device.ui.PointerEvent_Package;
@@ -102,7 +99,7 @@ package body org.allbinary.graphics.form.item.ABCustomItem_Package is
 
    function getNullInstance return ABCustomItem_Access is
    begin
-        if (ABCustomItem_Package.NULL_CUSTOM_ITEM) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (ABCustomItem_Package.NULL_CUSTOM_ITEM)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             ABCustomItem_Package.NULL_CUSTOM_ITEM := Java_Object_Access (ABCustomItem_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE));
         end if;
         return ABCustomItem_Access (ABCustomItem_Package.NULL_CUSTOM_ITEM);

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package;
 package views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References is
    type ThemeCustomizerView_Access is access all views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package.ThemeCustomizerView'Class;
@@ -19,6 +20,16 @@ package views.business.context.modules.storefront.customizer.includes.style.them
    type ThemeCustomizerView_Access_Array_Access is access all ThemeCustomizerView_Access_Array;
    type ThemeCustomizerView_Access_Array_Access_Array is array (Natural range <>) of ThemeCustomizerView_Access_Array_Access;
    type ThemeCustomizerView_Access_Array_Access_Array_Access is access all ThemeCustomizerView_Access_Array_Access_Array;
+   type ThemeCustomizerView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ThemeCustomizerView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ThemeCustomizerView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ThemeCustomizerView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ThemeCustomizerView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ThemeCustomizerView_Access_Array_Access is (if Value /= null and then Value.all in ThemeCustomizerView_Access_Array_Object'Class then ThemeCustomizerView_Access_Array_Object'Class (Value.all).Value else null);
+   type ThemeCustomizerView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ThemeCustomizerView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ThemeCustomizerView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ThemeCustomizerView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ThemeCustomizerView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ThemeCustomizerView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ThemeCustomizerView_Access_Array_Access_Array_Object'Class then ThemeCustomizerView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References;
 
 with views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References;
@@ -85,10 +96,14 @@ package views.business.context.modules.storefront.customizer.includes.style.them
    function "=" (Left, Right : ThemeCustomizerView_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References."=";
    subtype ThemeCustomizerView_Access_Array_Access is views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References.ThemeCustomizerView_Access_Array_Access;
    function "=" (Left, Right : ThemeCustomizerView_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References."=";
+   function Java_Box (Value : ThemeCustomizerView_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References.Java_Box;
+   function Java_Unbox_ThemeCustomizerView_Access_Array (Value : access Java_Object'Class) return ThemeCustomizerView_Access_Array_Access renames views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References.Java_Unbox_ThemeCustomizerView_Access_Array;
    subtype ThemeCustomizerView_Access_Array_Access_Array is views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References.ThemeCustomizerView_Access_Array_Access_Array;
    function "=" (Left, Right : ThemeCustomizerView_Access_Array_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References."=";
    subtype ThemeCustomizerView_Access_Array_Access_Array_Access is views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References.ThemeCustomizerView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ThemeCustomizerView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References."=";
+   function Java_Box (Value : ThemeCustomizerView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References.Java_Box;
+   function Java_Unbox_ThemeCustomizerView_Access_Array_Access_Array (Value : access Java_Object'Class) return ThemeCustomizerView_Access_Array_Access_Array_Access renames views.business.context.modules.storefront.customizer.includes.style.theme.ThemeCustomizerView_Package_References.Java_Unbox_ThemeCustomizerView_Access_Array_Access_Array;
 
    type ThemeCustomizerView is new HttpStoreComponentView with record
       ThemeCustomizerView_Field_logUtil : LogUtil_Access;

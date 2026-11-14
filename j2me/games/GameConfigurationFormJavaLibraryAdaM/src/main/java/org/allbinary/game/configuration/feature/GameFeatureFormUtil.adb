@@ -34,6 +34,7 @@ with org.allbinary.util.HashtableUtil_Package; use org.allbinary.util.HashtableU
 with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
 with org.allbinary.game.configuration.feature.Feature_Package; use org.allbinary.game.configuration.feature.Feature_Package;
 with org.allbinary.game.configuration.feature.GameFeatureUtil_Package; use org.allbinary.game.configuration.feature.GameFeatureUtil_Package;
+with org.allbinary.util.ABStack_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
@@ -89,6 +90,7 @@ with org.microemu.device.MutableImage_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.microemu.device.ui.PointerEvent_Package;
+with org.allbinary.canvas.Processor_Package;
 with javax.microedition.lcdui.Screen_Package;
 with javax.microedition.lcdui.StringComponent_Package;
 with org.allbinary.thread.SynchObject_Package;
@@ -181,7 +183,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
 
    function getInstance return GameFeatureFormUtil_Access is
    begin
-        return GameFeatureFormUtil_Access (GameFeatureFormUtil_Package.instance);
+        return GameFeatureFormUtil_Package.instance;
    end getInstance;
 
    function getChoiceGroup (This : in out GameFeatureFormUtil; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; name : Unbounded_String; option : Integer) return ChoiceGroup_Access is

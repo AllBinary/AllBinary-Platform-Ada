@@ -131,7 +131,7 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
 
    function getInstance return BlisketBackupFactory_Access is
    begin
-        return BlisketBackupFactory_Access (BlisketBackupFactory_Package.instance);
+        return BlisketBackupFactory_Package.instance;
    end getInstance;
 
    --  throws Exception

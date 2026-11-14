@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.compound.CompoundComponentView_Package;
 package views.compound.CompoundComponentView_Package_References is
    type CompoundComponentView_Access is access all views.compound.CompoundComponentView_Package.CompoundComponentView'Class;
@@ -19,6 +20,16 @@ package views.compound.CompoundComponentView_Package_References is
    type CompoundComponentView_Access_Array_Access is access all CompoundComponentView_Access_Array;
    type CompoundComponentView_Access_Array_Access_Array is array (Natural range <>) of CompoundComponentView_Access_Array_Access;
    type CompoundComponentView_Access_Array_Access_Array_Access is access all CompoundComponentView_Access_Array_Access_Array;
+   type CompoundComponentView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CompoundComponentView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CompoundComponentView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CompoundComponentView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CompoundComponentView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CompoundComponentView_Access_Array_Access is (if Value /= null and then Value.all in CompoundComponentView_Access_Array_Object'Class then CompoundComponentView_Access_Array_Object'Class (Value.all).Value else null);
+   type CompoundComponentView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CompoundComponentView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CompoundComponentView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CompoundComponentView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CompoundComponentView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CompoundComponentView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CompoundComponentView_Access_Array_Access_Array_Object'Class then CompoundComponentView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.compound.CompoundComponentView_Package_References;
 
 with views.compound.CompoundComponentView_Package_References;
@@ -72,10 +83,14 @@ package views.compound.CompoundComponentView_Package is
    function "=" (Left, Right : CompoundComponentView_Access_Array) return Boolean renames views.compound.CompoundComponentView_Package_References."=";
    subtype CompoundComponentView_Access_Array_Access is views.compound.CompoundComponentView_Package_References.CompoundComponentView_Access_Array_Access;
    function "=" (Left, Right : CompoundComponentView_Access_Array_Access) return Boolean renames views.compound.CompoundComponentView_Package_References."=";
+   function Java_Box (Value : CompoundComponentView_Access_Array_Access) return Java_Object_Access renames views.compound.CompoundComponentView_Package_References.Java_Box;
+   function Java_Unbox_CompoundComponentView_Access_Array (Value : access Java_Object'Class) return CompoundComponentView_Access_Array_Access renames views.compound.CompoundComponentView_Package_References.Java_Unbox_CompoundComponentView_Access_Array;
    subtype CompoundComponentView_Access_Array_Access_Array is views.compound.CompoundComponentView_Package_References.CompoundComponentView_Access_Array_Access_Array;
    function "=" (Left, Right : CompoundComponentView_Access_Array_Access_Array) return Boolean renames views.compound.CompoundComponentView_Package_References."=";
    subtype CompoundComponentView_Access_Array_Access_Array_Access is views.compound.CompoundComponentView_Package_References.CompoundComponentView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CompoundComponentView_Access_Array_Access_Array_Access) return Boolean renames views.compound.CompoundComponentView_Package_References."=";
+   function Java_Box (Value : CompoundComponentView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.compound.CompoundComponentView_Package_References.Java_Box;
+   function Java_Unbox_CompoundComponentView_Access_Array_Access_Array (Value : access Java_Object'Class) return CompoundComponentView_Access_Array_Access_Array_Access renames views.compound.CompoundComponentView_Package_References.Java_Unbox_CompoundComponentView_Access_Array_Access_Array;
 
    type CompoundComponentView is new HttpStoreComponentView with record
       CompoundComponentView_Field_logUtil : LogUtil_Access;

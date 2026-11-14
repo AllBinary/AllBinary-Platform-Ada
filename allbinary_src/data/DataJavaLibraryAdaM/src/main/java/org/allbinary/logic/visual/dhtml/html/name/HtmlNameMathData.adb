@@ -29,7 +29,7 @@ package body org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package
 
    function getInstance return HtmlNameMathData_Access is
    begin
-        return HtmlNameMathData_Access (HtmlNameMathData_Package.instance);
+        return HtmlNameMathData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out HtmlNameMathData'Class) is

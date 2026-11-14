@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.admin.inventory.download.AddFileValidationView_Package;
 package views.admin.inventory.download.AddFileValidationView_Package_References is
    type AddFileValidationView_Access is access all views.admin.inventory.download.AddFileValidationView_Package.AddFileValidationView'Class;
@@ -19,6 +20,16 @@ package views.admin.inventory.download.AddFileValidationView_Package_References 
    type AddFileValidationView_Access_Array_Access is access all AddFileValidationView_Access_Array;
    type AddFileValidationView_Access_Array_Access_Array is array (Natural range <>) of AddFileValidationView_Access_Array_Access;
    type AddFileValidationView_Access_Array_Access_Array_Access is access all AddFileValidationView_Access_Array_Access_Array;
+   type AddFileValidationView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AddFileValidationView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AddFileValidationView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AddFileValidationView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AddFileValidationView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AddFileValidationView_Access_Array_Access is (if Value /= null and then Value.all in AddFileValidationView_Access_Array_Object'Class then AddFileValidationView_Access_Array_Object'Class (Value.all).Value else null);
+   type AddFileValidationView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AddFileValidationView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AddFileValidationView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AddFileValidationView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AddFileValidationView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AddFileValidationView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AddFileValidationView_Access_Array_Access_Array_Object'Class then AddFileValidationView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.admin.inventory.download.AddFileValidationView_Package_References;
 
 with views.admin.inventory.download.AddFileValidationView_Package_References;
@@ -125,10 +136,14 @@ package views.admin.inventory.download.AddFileValidationView_Package is
    function "=" (Left, Right : AddFileValidationView_Access_Array) return Boolean renames views.admin.inventory.download.AddFileValidationView_Package_References."=";
    subtype AddFileValidationView_Access_Array_Access is views.admin.inventory.download.AddFileValidationView_Package_References.AddFileValidationView_Access_Array_Access;
    function "=" (Left, Right : AddFileValidationView_Access_Array_Access) return Boolean renames views.admin.inventory.download.AddFileValidationView_Package_References."=";
+   function Java_Box (Value : AddFileValidationView_Access_Array_Access) return Java_Object_Access renames views.admin.inventory.download.AddFileValidationView_Package_References.Java_Box;
+   function Java_Unbox_AddFileValidationView_Access_Array (Value : access Java_Object'Class) return AddFileValidationView_Access_Array_Access renames views.admin.inventory.download.AddFileValidationView_Package_References.Java_Unbox_AddFileValidationView_Access_Array;
    subtype AddFileValidationView_Access_Array_Access_Array is views.admin.inventory.download.AddFileValidationView_Package_References.AddFileValidationView_Access_Array_Access_Array;
    function "=" (Left, Right : AddFileValidationView_Access_Array_Access_Array) return Boolean renames views.admin.inventory.download.AddFileValidationView_Package_References."=";
    subtype AddFileValidationView_Access_Array_Access_Array_Access is views.admin.inventory.download.AddFileValidationView_Package_References.AddFileValidationView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AddFileValidationView_Access_Array_Access_Array_Access) return Boolean renames views.admin.inventory.download.AddFileValidationView_Package_References."=";
+   function Java_Box (Value : AddFileValidationView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.admin.inventory.download.AddFileValidationView_Package_References.Java_Box;
+   function Java_Unbox_AddFileValidationView_Access_Array_Access_Array (Value : access Java_Object'Class) return AddFileValidationView_Access_Array_Access_Array_Access renames views.admin.inventory.download.AddFileValidationView_Package_References.Java_Unbox_AddFileValidationView_Access_Array_Access_Array;
 
    type AddFileValidationView is new DownloadableInventoryItemView and ValidationComponentInterface with record
       AddFileValidationView_Field_logUtil_Hidden : LogUtil_Access;

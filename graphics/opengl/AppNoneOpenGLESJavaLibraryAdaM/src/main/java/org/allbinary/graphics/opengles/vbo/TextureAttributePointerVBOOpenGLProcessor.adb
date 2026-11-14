@@ -37,7 +37,7 @@ package body org.allbinary.graphics.opengles.vbo.TextureAttributePointerVBOOpenG
 
    function getInstance return TextureAttributePointerVBOOpenGLProcessor_Access is
    begin
-        return TextureAttributePointerVBOOpenGLProcessor_Access (TextureAttributePointerVBOOpenGLProcessor_Package.instance);
+        return TextureAttributePointerVBOOpenGLProcessor_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TextureAttributePointerVBOOpenGLProcessor'Class) is

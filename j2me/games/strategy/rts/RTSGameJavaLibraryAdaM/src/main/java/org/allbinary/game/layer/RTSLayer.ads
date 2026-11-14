@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.RTSLayer_Package;
 package org.allbinary.game.layer.RTSLayer_Package_References is
    type RTSLayer_Access is access all org.allbinary.game.layer.RTSLayer_Package.RTSLayer'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.RTSLayer_Package_References is
    type RTSLayer_Access_Array_Access is access all RTSLayer_Access_Array;
    type RTSLayer_Access_Array_Access_Array is array (Natural range <>) of RTSLayer_Access_Array_Access;
    type RTSLayer_Access_Array_Access_Array_Access is access all RTSLayer_Access_Array_Access_Array;
+   type RTSLayer_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RTSLayer_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RTSLayer_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RTSLayer_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RTSLayer_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RTSLayer_Access_Array_Access is (if Value /= null and then Value.all in RTSLayer_Access_Array_Object'Class then RTSLayer_Access_Array_Object'Class (Value.all).Value else null);
+   type RTSLayer_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RTSLayer_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RTSLayer_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RTSLayer_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RTSLayer_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RTSLayer_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in RTSLayer_Access_Array_Access_Array_Object'Class then RTSLayer_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.RTSLayer_Package_References;
 
 with org.allbinary.game.layer.RTSLayer_Package_References;
@@ -68,8 +79,7 @@ limited with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.Rectangle_Package_References;
 limited with org.allbinary.graphics.form.ScrollSelectionForm_Package;
 with org.allbinary.graphics.form.ScrollSelectionForm_Package_References;
-limited with org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.layer.AllBinaryLayer_Package_References;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 limited with org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 limited with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
@@ -312,16 +322,6 @@ package org.allbinary.game.layer.RTSLayer_Package is
    use type ScrollSelectionForm_Access_Array_Access_Array;
    subtype ScrollSelectionForm_Access_Array_Access_Array_Access is org.allbinary.graphics.form.ScrollSelectionForm_Package_References.ScrollSelectionForm_Access_Array_Access_Array_Access;
    use type ScrollSelectionForm_Access_Array_Access_Array_Access;
-   subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
-   use type AllBinaryLayer_Access;
-   subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
-   use type AllBinaryLayer_Access_Array;
-   subtype AllBinaryLayer_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access;
-   use type AllBinaryLayer_Access_Array_Access;
-   subtype AllBinaryLayer_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array;
-   use type AllBinaryLayer_Access_Array_Access_Array;
-   subtype AllBinaryLayer_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array_Access;
-   use type AllBinaryLayer_Access_Array_Access_Array_Access;
    subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
    use type AllBinaryLayerManager_Access;
    subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
@@ -502,10 +502,14 @@ package org.allbinary.game.layer.RTSLayer_Package is
    function "=" (Left, Right : RTSLayer_Access_Array) return Boolean renames org.allbinary.game.layer.RTSLayer_Package_References."=";
    subtype RTSLayer_Access_Array_Access is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array_Access;
    function "=" (Left, Right : RTSLayer_Access_Array_Access) return Boolean renames org.allbinary.game.layer.RTSLayer_Package_References."=";
+   function Java_Box (Value : RTSLayer_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.RTSLayer_Package_References.Java_Box;
+   function Java_Unbox_RTSLayer_Access_Array (Value : access Java_Object'Class) return RTSLayer_Access_Array_Access renames org.allbinary.game.layer.RTSLayer_Package_References.Java_Unbox_RTSLayer_Access_Array;
    subtype RTSLayer_Access_Array_Access_Array is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array_Access_Array;
    function "=" (Left, Right : RTSLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.RTSLayer_Package_References."=";
    subtype RTSLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.RTSLayer_Package_References.RTSLayer_Access_Array_Access_Array_Access;
    function "=" (Left, Right : RTSLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.RTSLayer_Package_References."=";
+   function Java_Box (Value : RTSLayer_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.RTSLayer_Package_References.Java_Box;
+   function Java_Unbox_RTSLayer_Access_Array_Access_Array (Value : access Java_Object'Class) return RTSLayer_Access_Array_Access_Array_Access renames org.allbinary.game.layer.RTSLayer_Package_References.Java_Unbox_RTSLayer_Access_Array_Access_Array;
 
    type RTSLayer is new MultiPlayerGameLayer and TickableInterface and GameInputInterface and GameKeyEventSourceInterface and RTSInterface and PathFindingLayerInterface with record
       debug : Boolean;

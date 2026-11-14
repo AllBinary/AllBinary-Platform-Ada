@@ -25,10 +25,18 @@ with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.s
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -40,6 +48,8 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
    package WorkFlowData_Package renames Standard.org.allbinary.logic.control.workflow.WorkFlowData_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package ServiceClientInformationInterfaceFactory_Package renames Standard.org.allbinary.logic.system.security.licensing.ServiceClientInformationInterfaceFactory_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -105,7 +115,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
             stringUtil := StringUtil_Package.getInstance;
             WorkFlowEntityFactory_Package.getInstance.create2.delete (This.workFlowInterface.getName, stringUtil.EMPTY_STRING);
             success := To_Unbounded_String ("Successfully Removed the workflow with ") & Java_Image (WorkFlowData_Package.getInstance.NAME) & To_Unbounded_String ("= ") & This.workFlowInterface.getName & To_Unbounded_String (" from ");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, WorkFlowRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"));
             end if;
             return success;
@@ -116,7 +126,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
                 begin
             begin
                 error := To_Unbounded_String ("Failed to remove workflow with ") & Java_Image (WorkFlowData_Package.getInstance.NAME) & To_Unbounded_String ("= ") & This.workFlowInterface.getName & To_Unbounded_String (" from ");
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                     This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e);
                 end if;
                 Java_Throw (Java_New_Exception ("Exception", e));
@@ -126,7 +136,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
                         e2 : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                     begin
                 error := To_Unbounded_String ("Failed to get data from workflowinterface to set error string");
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                     This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("delete()"), e2);
                 end if;
                 return error;
@@ -142,7 +152,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
    begin
         begin
             success := To_Unbounded_String ("New User Successfully added to the Users Table");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, WorkFlowRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("add()"));
             end if;
             return success;
@@ -152,7 +162,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to add User");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("add()"), e);
             end if;
             return error;
@@ -166,7 +176,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
    begin
         begin
             success := To_Unbounded_String ("Updated WorkFlow Successfully");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGS) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGS) then
                 This.logUtil.putF (success, WorkFlowRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"));
             end if;
             return success;
@@ -176,7 +186,7 @@ package body admin.taghelpers.WorkFlowRequestHelper_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to update WorkFlow");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, WorkFlowRequestHelper_Access'(This'Unchecked_Access), To_Unbounded_String ("update()"), e);
             end if;
             return error;

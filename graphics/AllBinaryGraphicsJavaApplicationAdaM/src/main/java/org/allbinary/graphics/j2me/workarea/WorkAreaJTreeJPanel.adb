@@ -112,7 +112,6 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
 
    procedure Initialize (This : in out WorkAreaJTreeJPanel'Class; workAreaName : Unbounded_String) is
    begin
-      JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         WorkAreaJTreeJPanel'Class (This).initComponents;
         This.rootTreeNode := DefaultMutableTreeNode_Package.Create (workAreaName);
@@ -156,7 +155,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
         basicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
         if (treePathArray) /= (null) then
             for index in 0 .. (treePathArray'Length) - 1 loop
-                basicArrayList.add (WorkAreaJTreeJPanel'Class (This).getNode (treePathArray (index)));
+                basicArrayList.add (Java_Object_Access (WorkAreaJTreeJPanel'Class (This).getNode (treePathArray (index))));
             end loop;
         end if;
         return basicArrayList;
@@ -220,7 +219,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
       node : DefaultMutableTreeNode_Access;
       parent : DefaultMutableTreeNode_Access;
    begin
-        node := WorkAreaJTreeJPanel'Class (This).getNode (treePath);
+        node := DefaultMutableTreeNode_Access (WorkAreaJTreeJPanel'Class (This).getNode (treePath));
         if (node) /= (null) then
             if (node.getUserObject.all in CanvasTreeLabel_Package.CanvasTreeLabel'Class) then
                 WorkAreaJTreeJPanel'Class (This).removeCanvas (node);
@@ -248,7 +247,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
       treePath : constant TreePath_Access := TreePath_Access (treePath_Param);
       node : DefaultMutableTreeNode_Access;
    begin
-        node := WorkAreaJTreeJPanel'Class (This).getNode (treePath);
+        node := DefaultMutableTreeNode_Access (WorkAreaJTreeJPanel'Class (This).getNode (treePath));
         if (node) /= (null) then
             if (node.getUserObject.all in CanvasTreeLabel_Package.CanvasTreeLabel'Class) then
                 MyCanvasEventService_Package.fire (MyCanvasEvent_Package.Create (Java_Object_Access (MyCanvasEventSource_Package.Create (MyCanvasEventService_Package.DUPLICATE, node))));
@@ -263,7 +262,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package is
       treePath : constant TreePath_Access := TreePath_Access (treePath_Param);
       node : DefaultMutableTreeNode_Access;
    begin
-        node := WorkAreaJTreeJPanel'Class (This).getNode (treePath);
+        node := DefaultMutableTreeNode_Access (WorkAreaJTreeJPanel'Class (This).getNode (treePath));
         if (node) /= (null) then
             if (node.getUserObject.all in CanvasTreeLabel_Package.CanvasTreeLabel'Class) then
                 MyCanvasEventService_Package.fire (MyCanvasEvent_Package.Create (Java_Object_Access (MyCanvasEventSource_Package.Create (MyCanvasEventService_Package.ROTATE, angle, node))));

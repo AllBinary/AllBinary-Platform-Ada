@@ -16,11 +16,13 @@
 with java.io.InputStream_Package; use java.io.InputStream_Package;
 with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
 with javax.microedition.lcdui.Image_Package_References;
+with org.allbinary.MIDPUtil_Package; use org.allbinary.MIDPUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with javax.microedition.lcdui.Graphics_Package;
 
 package body org.allbinary.image.ImageFactory_Package is
 
+   package MIDPUtil_Package renames Standard.org.allbinary.MIDPUtil_Package;
    subtype Image_Access is javax.microedition.lcdui.Image_Package_References.Image_Access;
    function "=" (Left, Right : Image_Access) return Boolean renames javax.microedition.lcdui.Image_Package_References."=";
    subtype Image_Access_Array is javax.microedition.lcdui.Image_Package_References.Image_Access_Array;
@@ -51,7 +53,7 @@ package body org.allbinary.image.ImageFactory_Package is
 
    function getInstance return ImageFactory_Access is
    begin
-        return ImageFactory_Access (ImageFactory_Package.instance);
+        return ImageFactory_Package.instance;
    end getInstance;
 
    --  throws Exception
@@ -63,7 +65,7 @@ package body org.allbinary.image.ImageFactory_Package is
    --  throws Exception
    function createImage (This : in out ImageFactory; caller : Unbounded_String; width : Integer; height : Integer) return Image_Access is
    begin
-        return Image_Package.createImage (width, height);
+        return MIDPUtil_Package.getInstance.createImageWH (width, height);
    end createImage;
 
    --  throws Exception
@@ -72,7 +74,7 @@ package body org.allbinary.image.ImageFactory_Package is
       inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
       image : Image_Access;
    begin
-        image := Image_Package.createImage (inputStream);
+        image := MIDPUtil_Package.getInstance.createImageFromInputStream (inputStream);
         return image;
    end createImageFromInputStream;
 
@@ -80,7 +82,7 @@ package body org.allbinary.image.ImageFactory_Package is
    function createImageFromInputStream (This : in out ImageFactory; inputStream_Param : access InputStream_Package.InputStream'Class) return Image_Access is
       inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
    begin
-        return Image_Package.createImage (inputStream);
+        return MIDPUtil_Package.getInstance.createImageFromInputStream (inputStream);
    end createImageFromInputStream;
 
    procedure createImageUrl (This : in out ImageFactory; url : Unbounded_String) is

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
 package org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package_References is
    type BasicPaymentTypeUtil_Access is access all org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package.BasicPaymentTypeUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTyp
    type BasicPaymentTypeUtil_Access_Array_Access is access all BasicPaymentTypeUtil_Access_Array;
    type BasicPaymentTypeUtil_Access_Array_Access_Array is array (Natural range <>) of BasicPaymentTypeUtil_Access_Array_Access;
    type BasicPaymentTypeUtil_Access_Array_Access_Array_Access is access all BasicPaymentTypeUtil_Access_Array_Access_Array;
+   type BasicPaymentTypeUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicPaymentTypeUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicPaymentTypeUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicPaymentTypeUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicPaymentTypeUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicPaymentTypeUtil_Access_Array_Access is (if Value /= null and then Value.all in BasicPaymentTypeUtil_Access_Array_Object'Class then BasicPaymentTypeUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicPaymentTypeUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicPaymentTypeUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicPaymentTypeUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicPaymentTypeUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicPaymentTypeUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicPaymentTypeUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicPaymentTypeUtil_Access_Array_Access_Array_Object'Class then BasicPaymentTypeUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package_References;
 
 with org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package_References;
@@ -69,10 +80,14 @@ package org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTyp
    function "=" (Left, Right : BasicPaymentTypeUtil_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package_References."=";
    subtype BasicPaymentTypeUtil_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package_References.BasicPaymentTypeUtil_Access_Array_Access;
    function "=" (Left, Right : BasicPaymentTypeUtil_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package_References."=";
+   function Java_Box (Value : BasicPaymentTypeUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package_References.Java_Box;
+   function Java_Unbox_BasicPaymentTypeUtil_Access_Array (Value : access Java_Object'Class) return BasicPaymentTypeUtil_Access_Array_Access renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package_References.Java_Unbox_BasicPaymentTypeUtil_Access_Array;
    subtype BasicPaymentTypeUtil_Access_Array_Access_Array is org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package_References.BasicPaymentTypeUtil_Access_Array_Access_Array;
    function "=" (Left, Right : BasicPaymentTypeUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package_References."=";
    subtype BasicPaymentTypeUtil_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package_References.BasicPaymentTypeUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicPaymentTypeUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package_References."=";
+   function Java_Box (Value : BasicPaymentTypeUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package_References.Java_Box;
+   function Java_Unbox_BasicPaymentTypeUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicPaymentTypeUtil_Access_Array_Access_Array_Access renames org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package_References.Java_Unbox_BasicPaymentTypeUtil_Access_Array_Access_Array;
 
    type BasicPaymentTypeUtil is new Java_Object with record
       paymentTypeVector : BasicArrayList_Access;

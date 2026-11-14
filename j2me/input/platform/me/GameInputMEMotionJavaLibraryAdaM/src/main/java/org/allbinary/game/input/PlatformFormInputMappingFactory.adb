@@ -129,7 +129,7 @@ package body org.allbinary.game.input.PlatformFormInputMappingFactory_Package is
 
    function getInstance return PlatformFormInputMappingFactory_Access is
    begin
-        if (PlatformFormInputMappingFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (PlatformFormInputMappingFactory_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             PlatformFormInputMappingFactory_Package.instance := Java_Object_Access (PlatformFormInputMappingFactory_Package.Create);
         end if;
         return PlatformFormInputMappingFactory_Access (PlatformFormInputMappingFactory_Package.instance);

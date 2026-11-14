@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package;
 package org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_References is
    type GestureOnlyMotionRecognizer_Access is access all org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package.GestureOnlyMotionRecognizer'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_Reference
    type GestureOnlyMotionRecognizer_Access_Array_Access is access all GestureOnlyMotionRecognizer_Access_Array;
    type GestureOnlyMotionRecognizer_Access_Array_Access_Array is array (Natural range <>) of GestureOnlyMotionRecognizer_Access_Array_Access;
    type GestureOnlyMotionRecognizer_Access_Array_Access_Array_Access is access all GestureOnlyMotionRecognizer_Access_Array_Access_Array;
+   type GestureOnlyMotionRecognizer_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GestureOnlyMotionRecognizer_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GestureOnlyMotionRecognizer_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GestureOnlyMotionRecognizer_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GestureOnlyMotionRecognizer_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GestureOnlyMotionRecognizer_Access_Array_Access is (if Value /= null and then Value.all in GestureOnlyMotionRecognizer_Access_Array_Object'Class then GestureOnlyMotionRecognizer_Access_Array_Object'Class (Value.all).Value else null);
+   type GestureOnlyMotionRecognizer_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GestureOnlyMotionRecognizer_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GestureOnlyMotionRecognizer_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GestureOnlyMotionRecognizer_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GestureOnlyMotionRecognizer_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GestureOnlyMotionRecognizer_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GestureOnlyMotionRecognizer_Access_Array_Access_Array_Object'Class then GestureOnlyMotionRecognizer_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_References;
 
 with org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package is
    function "=" (Left, Right : GestureOnlyMotionRecognizer_Access_Array) return Boolean renames org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_References."=";
    subtype GestureOnlyMotionRecognizer_Access_Array_Access is org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_References.GestureOnlyMotionRecognizer_Access_Array_Access;
    function "=" (Left, Right : GestureOnlyMotionRecognizer_Access_Array_Access) return Boolean renames org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_References."=";
+   function Java_Box (Value : GestureOnlyMotionRecognizer_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_References.Java_Box;
+   function Java_Unbox_GestureOnlyMotionRecognizer_Access_Array (Value : access Java_Object'Class) return GestureOnlyMotionRecognizer_Access_Array_Access renames org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_References.Java_Unbox_GestureOnlyMotionRecognizer_Access_Array;
    subtype GestureOnlyMotionRecognizer_Access_Array_Access_Array is org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_References.GestureOnlyMotionRecognizer_Access_Array_Access_Array;
    function "=" (Left, Right : GestureOnlyMotionRecognizer_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_References."=";
    subtype GestureOnlyMotionRecognizer_Access_Array_Access_Array_Access is org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_References.GestureOnlyMotionRecognizer_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GestureOnlyMotionRecognizer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_References."=";
+   function Java_Box (Value : GestureOnlyMotionRecognizer_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_References.Java_Box;
+   function Java_Unbox_GestureOnlyMotionRecognizer_Access_Array_Access_Array (Value : access Java_Object'Class) return GestureOnlyMotionRecognizer_Access_Array_Access_Array_Access renames org.allbinary.input.motion.GestureOnlyMotionRecognizer_Package_References.Java_Unbox_GestureOnlyMotionRecognizer_Access_Array_Access_Array;
 
    type GestureOnlyMotionRecognizer is new MotionRecognizer with record
       motionGestureRecognizer : MotionGestureRecognizer_Access;

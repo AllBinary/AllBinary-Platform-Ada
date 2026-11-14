@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package;
 package org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References is
    type SimpleWeaponLayer_Access is access all org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package.SimpleWeaponLayer'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References is
    type SimpleWeaponLayer_Access_Array_Access is access all SimpleWeaponLayer_Access_Array;
    type SimpleWeaponLayer_Access_Array_Access_Array is array (Natural range <>) of SimpleWeaponLayer_Access_Array_Access;
    type SimpleWeaponLayer_Access_Array_Access_Array_Access is access all SimpleWeaponLayer_Access_Array_Access_Array;
+   type SimpleWeaponLayer_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SimpleWeaponLayer_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SimpleWeaponLayer_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SimpleWeaponLayer_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SimpleWeaponLayer_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SimpleWeaponLayer_Access_Array_Access is (if Value /= null and then Value.all in SimpleWeaponLayer_Access_Array_Object'Class then SimpleWeaponLayer_Access_Array_Object'Class (Value.all).Value else null);
+   type SimpleWeaponLayer_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SimpleWeaponLayer_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SimpleWeaponLayer_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SimpleWeaponLayer_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SimpleWeaponLayer_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SimpleWeaponLayer_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SimpleWeaponLayer_Access_Array_Access_Array_Object'Class then SimpleWeaponLayer_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References;
 
 with org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References;
@@ -110,10 +121,14 @@ package org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package is
    function "=" (Left, Right : SimpleWeaponLayer_Access_Array) return Boolean renames org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References."=";
    subtype SimpleWeaponLayer_Access_Array_Access is org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References.SimpleWeaponLayer_Access_Array_Access;
    function "=" (Left, Right : SimpleWeaponLayer_Access_Array_Access) return Boolean renames org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References."=";
+   function Java_Box (Value : SimpleWeaponLayer_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References.Java_Box;
+   function Java_Unbox_SimpleWeaponLayer_Access_Array (Value : access Java_Object'Class) return SimpleWeaponLayer_Access_Array_Access renames org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References.Java_Unbox_SimpleWeaponLayer_Access_Array;
    subtype SimpleWeaponLayer_Access_Array_Access_Array is org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References.SimpleWeaponLayer_Access_Array_Access_Array;
    function "=" (Left, Right : SimpleWeaponLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References."=";
    subtype SimpleWeaponLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References.SimpleWeaponLayer_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SimpleWeaponLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References."=";
+   function Java_Box (Value : SimpleWeaponLayer_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References.Java_Box;
+   function Java_Unbox_SimpleWeaponLayer_Access_Array_Access_Array (Value : access Java_Object'Class) return SimpleWeaponLayer_Access_Array_Access_Array_Access renames org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package_References.Java_Unbox_SimpleWeaponLayer_Access_Array_Access_Array;
 
    type SimpleWeaponLayer is new WeaponLayer with null record;
 

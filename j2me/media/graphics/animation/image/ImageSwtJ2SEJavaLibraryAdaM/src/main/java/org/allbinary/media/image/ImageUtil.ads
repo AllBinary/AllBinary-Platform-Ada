@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.image.ImageUtil_Package;
 package org.allbinary.media.image.ImageUtil_Package_References is
    type ImageUtil_Access is access all org.allbinary.media.image.ImageUtil_Package.ImageUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.image.ImageUtil_Package_References is
    type ImageUtil_Access_Array_Access is access all ImageUtil_Access_Array;
    type ImageUtil_Access_Array_Access_Array is array (Natural range <>) of ImageUtil_Access_Array_Access;
    type ImageUtil_Access_Array_Access_Array_Access is access all ImageUtil_Access_Array_Access_Array;
+   type ImageUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageUtil_Access_Array_Access is (if Value /= null and then Value.all in ImageUtil_Access_Array_Object'Class then ImageUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageUtil_Access_Array_Access_Array_Object'Class then ImageUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.image.ImageUtil_Package_References;
 
 with org.allbinary.media.image.ImageUtil_Package_References;
@@ -40,6 +51,8 @@ limited with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonSeps_Package_References;
 limited with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+limited with org.eclipse.swt.graphics.Image_Package;
+with org.eclipse.swt.graphics.Image_Package_References;
 
 package org.allbinary.media.image.ImageUtil_Package is
 
@@ -48,6 +61,7 @@ package org.allbinary.media.image.ImageUtil_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package Image_Package renames Standard.org.eclipse.swt.graphics.Image_Package;
    package Reference_Types is
    subtype Canvas_Access is org.eclipse.swt.widgets.Canvas_Package_References.Canvas_Access;
    use type Canvas_Access;
@@ -99,6 +113,16 @@ package org.allbinary.media.image.ImageUtil_Package is
    use type CommonStrings_Access_Array_Access_Array;
    subtype CommonStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStrings_Package_References.CommonStrings_Access_Array_Access_Array_Access;
    use type CommonStrings_Access_Array_Access_Array_Access;
+   subtype Image_Access is org.eclipse.swt.graphics.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
    end Reference_Types;
    use Reference_Types;
 
@@ -109,10 +133,14 @@ package org.allbinary.media.image.ImageUtil_Package is
    function "=" (Left, Right : ImageUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
    subtype ImageUtil_Access_Array_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access;
    function "=" (Left, Right : ImageUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   function Java_Box (Value : ImageUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.ImageUtil_Package_References.Java_Box;
+   function Java_Unbox_ImageUtil_Access_Array (Value : access Java_Object'Class) return ImageUtil_Access_Array_Access renames org.allbinary.media.image.ImageUtil_Package_References.Java_Unbox_ImageUtil_Access_Array;
    subtype ImageUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access_Array;
    function "=" (Left, Right : ImageUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
    subtype ImageUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageUtil_Package_References."=";
+   function Java_Box (Value : ImageUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.ImageUtil_Package_References.Java_Box;
+   function Java_Unbox_ImageUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageUtil_Access_Array_Access_Array_Access renames org.allbinary.media.image.ImageUtil_Package_References.Java_Unbox_ImageUtil_Access_Array_Access_Array;
 
    type ImageUtil is new Java_Object with record
       logUtil : LogUtil_Access;

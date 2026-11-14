@@ -29,6 +29,8 @@ with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package_References;
 with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;
@@ -69,6 +71,8 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
    package UserEmailEventsConfigurationInterface_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationInterface_Package;
    package UserEmailEventsConfigurationView_Package renames Standard.org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfigurationView_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -135,7 +139,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
       userEmailEventsConfigurationView : UserEmailEventsConfigurationView_Access;
    begin
       Initialize_Fields (This);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
             This.logUtil.putF (This.commonStrings.CONSTRUCTOR, UserEmailConfigurationView_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
         This.userEmailConfigurationInterface := UserEmailConfigurationInterface_Access (UserEmailConfiguration_Package.Create);
@@ -184,7 +188,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
         emailConfigurationMapping := UserEmailConfigurationMapping_Package.Create (This.userEmailConfigurationInterface);
         hashMap := emailConfigurationMapping.toHashMap;
         node := ModDomHelper_Package.createNameValueNodes (document, UserEmailConfigurationData_Package.NAME, hashMap);
-        userEmailConfigurationInterface := UserEmailConfigurationInterface_Access (UserEmailConfigurationView'Class (This).getEmailConfigurationInterface);
+        userEmailConfigurationInterface := UserEmailConfigurationView'Class (This).getEmailConfigurationInterface;
         userEmailEventsConfigurationInterface := UserEmailEventsConfigurationInterface_Access (userEmailConfigurationInterface.getUserEmailEventsConfigurationInterface);
         userEmailEventsConfigurationView := UserEmailEventsConfigurationView_Package.Create (userEmailEventsConfigurationInterface);
         node.appendChild (userEmailEventsConfigurationView.toXmlNode (document));

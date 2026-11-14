@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.CategoryRequestHelperFactory_Package;
 package admin.taghelpers.CategoryRequestHelperFactory_Package_References is
    type CategoryRequestHelperFactory_Access is access all admin.taghelpers.CategoryRequestHelperFactory_Package.CategoryRequestHelperFactory'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.CategoryRequestHelperFactory_Package_References is
    type CategoryRequestHelperFactory_Access_Array_Access is access all CategoryRequestHelperFactory_Access_Array;
    type CategoryRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of CategoryRequestHelperFactory_Access_Array_Access;
    type CategoryRequestHelperFactory_Access_Array_Access_Array_Access is access all CategoryRequestHelperFactory_Access_Array_Access_Array;
+   type CategoryRequestHelperFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CategoryRequestHelperFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CategoryRequestHelperFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CategoryRequestHelperFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CategoryRequestHelperFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CategoryRequestHelperFactory_Access_Array_Access is (if Value /= null and then Value.all in CategoryRequestHelperFactory_Access_Array_Object'Class then CategoryRequestHelperFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type CategoryRequestHelperFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CategoryRequestHelperFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CategoryRequestHelperFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CategoryRequestHelperFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CategoryRequestHelperFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CategoryRequestHelperFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CategoryRequestHelperFactory_Access_Array_Access_Array_Object'Class then CategoryRequestHelperFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.CategoryRequestHelperFactory_Package_References;
 
 with admin.taghelpers.CategoryRequestHelperFactory_Package_References;
@@ -61,10 +72,14 @@ package admin.taghelpers.CategoryRequestHelperFactory_Package is
    function "=" (Left, Right : CategoryRequestHelperFactory_Access_Array) return Boolean renames admin.taghelpers.CategoryRequestHelperFactory_Package_References."=";
    subtype CategoryRequestHelperFactory_Access_Array_Access is admin.taghelpers.CategoryRequestHelperFactory_Package_References.CategoryRequestHelperFactory_Access_Array_Access;
    function "=" (Left, Right : CategoryRequestHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.CategoryRequestHelperFactory_Package_References."=";
+   function Java_Box (Value : CategoryRequestHelperFactory_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.CategoryRequestHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_CategoryRequestHelperFactory_Access_Array (Value : access Java_Object'Class) return CategoryRequestHelperFactory_Access_Array_Access renames admin.taghelpers.CategoryRequestHelperFactory_Package_References.Java_Unbox_CategoryRequestHelperFactory_Access_Array;
    subtype CategoryRequestHelperFactory_Access_Array_Access_Array is admin.taghelpers.CategoryRequestHelperFactory_Package_References.CategoryRequestHelperFactory_Access_Array_Access_Array;
    function "=" (Left, Right : CategoryRequestHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.CategoryRequestHelperFactory_Package_References."=";
    subtype CategoryRequestHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.CategoryRequestHelperFactory_Package_References.CategoryRequestHelperFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CategoryRequestHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.CategoryRequestHelperFactory_Package_References."=";
+   function Java_Box (Value : CategoryRequestHelperFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.CategoryRequestHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_CategoryRequestHelperFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return CategoryRequestHelperFactory_Access_Array_Access_Array_Access renames admin.taghelpers.CategoryRequestHelperFactory_Package_References.Java_Unbox_CategoryRequestHelperFactory_Access_Array_Access_Array;
 
    type CategoryRequestHelperFactory is new TagHelperFactory with record
       logUtil : LogUtil_Access;

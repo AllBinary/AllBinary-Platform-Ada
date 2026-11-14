@@ -137,7 +137,7 @@ package body org.allbinary.game.paint.ColorFillPaintableFactory_Package is
 
    function getInstance return ColorFillPaintableFactory_Access is
    begin
-        return ColorFillPaintableFactory_Access (ColorFillPaintableFactory_Package.instance);
+        return ColorFillPaintableFactory_Package.instance;
    end getInstance;
 
    function getInstance (This : in out ColorFillPaintableFactory; basicColor_Param : access BasicColor_Package.BasicColor'Class; forThreedCanvas : Boolean) return ColorFillBasePaintable_Access is

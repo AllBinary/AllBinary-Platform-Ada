@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.input.GameInputProcessor_Package;
 package org.allbinary.game.input.GameInputProcessor_Package_References is
    type GameInputProcessor_Access is access all org.allbinary.game.input.GameInputProcessor_Package.GameInputProcessor'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.input.GameInputProcessor_Package_References is
    type GameInputProcessor_Access_Array_Access is access all GameInputProcessor_Access_Array;
    type GameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of GameInputProcessor_Access_Array_Access;
    type GameInputProcessor_Access_Array_Access_Array_Access is access all GameInputProcessor_Access_Array_Access_Array;
+   type GameInputProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameInputProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameInputProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameInputProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameInputProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameInputProcessor_Access_Array_Access is (if Value /= null and then Value.all in GameInputProcessor_Access_Array_Object'Class then GameInputProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type GameInputProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameInputProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameInputProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameInputProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameInputProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameInputProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GameInputProcessor_Access_Array_Access_Array_Object'Class then GameInputProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.input.GameInputProcessor_Package_References;
 
 with org.allbinary.game.input.GameInputProcessor_Package_References;
@@ -70,10 +81,14 @@ package org.allbinary.game.input.GameInputProcessor_Package is
    function "=" (Left, Right : GameInputProcessor_Access_Array) return Boolean renames org.allbinary.game.input.GameInputProcessor_Package_References."=";
    subtype GameInputProcessor_Access_Array_Access is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array_Access;
    function "=" (Left, Right : GameInputProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameInputProcessor_Package_References."=";
+   function Java_Box (Value : GameInputProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.GameInputProcessor_Package_References.Java_Box;
+   function Java_Unbox_GameInputProcessor_Access_Array (Value : access Java_Object'Class) return GameInputProcessor_Access_Array_Access renames org.allbinary.game.input.GameInputProcessor_Package_References.Java_Unbox_GameInputProcessor_Access_Array;
    subtype GameInputProcessor_Access_Array_Access_Array is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : GameInputProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.GameInputProcessor_Package_References."=";
    subtype GameInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.input.GameInputProcessor_Package_References.GameInputProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GameInputProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.GameInputProcessor_Package_References."=";
+   function Java_Box (Value : GameInputProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.GameInputProcessor_Package_References.Java_Box;
+   function Java_Unbox_GameInputProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return GameInputProcessor_Access_Array_Access_Array_Access renames org.allbinary.game.input.GameInputProcessor_Package_References.Java_Unbox_GameInputProcessor_Access_Array_Access_Array;
 
    type GameInputProcessor is new Java_Object with null record;
    instance : GameInputProcessor_Access;

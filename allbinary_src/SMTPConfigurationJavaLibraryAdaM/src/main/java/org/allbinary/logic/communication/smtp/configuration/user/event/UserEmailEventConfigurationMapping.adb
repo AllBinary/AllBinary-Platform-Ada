@@ -76,7 +76,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    function toHashMap (This : in out UserEmailEventConfigurationMapping) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (UserEmailEventConfigurationData_Package.NAME, Java_Box (This.userEmailEventConfigurationInterface.getName));
         hashMap.put (UserEmailEventConfigurationData_Package.LISTENER_CLASSPATH, Java_Box (This.userEmailEventConfigurationInterface.getEventListenerClassPath));
         return hashMap;
@@ -93,8 +93,8 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       vector : BasicArrayList_Access;
    begin
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        vector.add (This.userEmailEventConfigurationInterface.getName);
-        vector.add (This.userEmailEventConfigurationInterface.getEventListenerClassPath);
+        vector.add (Java_Box (This.userEmailEventConfigurationInterface.getName));
+        vector.add (Java_Box (This.userEmailEventConfigurationInterface.getEventListenerClassPath));
         return vector;
    end toVector;
 

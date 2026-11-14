@@ -21,6 +21,8 @@ with org.allbinary.logic.StdUtil_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -41,6 +43,8 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype StdUtil_Access is org.allbinary.logic.StdUtil_Package_References.StdUtil_Access;
    function "=" (Left, Right : StdUtil_Access) return Boolean renames org.allbinary.logic.StdUtil_Package_References."=";
    subtype StdUtil_Access_Array is org.allbinary.logic.StdUtil_Package_References.StdUtil_Access_Array;
@@ -82,7 +86,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
 
    function getInstance return SqlConnectionPool_Access is
    begin
-        return SqlConnectionPool_Access (SqlConnectionPool_Package.instance);
+        return SqlConnectionPool_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out SqlConnectionPool'Class) is
@@ -107,8 +111,8 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
       i : Integer;
    begin
         if (This.connectionHashMap) = (null) then
-            This.connectionHashMap := This.stdUtil.createHashMap;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
+            This.connectionHashMap := HashMap_Access (This.stdUtil.createHashMap);
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGPOOL) then
                 This.logUtil.putF (This.FIRST_NEW_CONNECTION_CREATED & url, SqlConnectionPool_Access'(This'Unchecked_Access), This.METHOD_GET);
             end if;
             return DriverManager_Package.getConnection (url);
@@ -116,7 +120,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
             connectionVector := BasicArrayList_Access (This.connectionHashMap.get (Java_Box (url)));
             if (connectionVector) = (null) then
                 connectionVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGPOOL) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (This.FIRST);
                     stringBuffer.append (This.NEW_CONNECTION_FOR);
@@ -126,7 +130,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
                 end if;
                 return DriverManager_Package.getConnection (url);
             elsif (connectionVector.size) = (0) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGPOOL) then
                     This.logUtil.putF (StringMaker_Package.Create.append (This.NEW_CONNECTION_FOR).append (url).append (This.CREATED).toString, SqlConnectionPool_Access'(This'Unchecked_Access), This.METHOD_GET);
                 end if;
                 return DriverManager_Package.getConnection (url);
@@ -138,7 +142,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
                     if not (sqlConnection.isClosed) then
                         connectionVector.remove (Java_Object_Access (sqlConnection));
                         This.connectionHashMap.put (Java_Box (url), connectionVector);
-                        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
+                        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGPOOL) then
                             stringBuffer.delete (0, stringBuffer.length);
                             stringBuffer.append (This.NUMBER_OF_SQL_CONNECTIONS_FOR);
                             stringBuffer.append (url);
@@ -152,7 +156,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
                 end loop;
             end if;
         end if;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGPOOL) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (This.NEW_CONNECTION_FOR);
             stringBuffer.append (url);
@@ -171,7 +175,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
         if not (sqlConnection.isClosed) then
             connectionVector := null;
             if (This.connectionHashMap) = (null) then
-                This.connectionHashMap := This.stdUtil.createHashMap;
+                This.connectionHashMap := HashMap_Access (This.stdUtil.createHashMap);
                 connectionVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
                 connectionVector.add (Java_Object_Access (sqlConnection));
             else
@@ -182,7 +186,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
                 connectionVector.add (Java_Object_Access (sqlConnection));
                 This.connectionHashMap.put (Java_Box (url), connectionVector);
             end if;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGPOOL) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (This.NUMBER_OF_SQL_CONNECTIONS_FOR);
                 stringBuffer.append (url);
@@ -192,7 +196,7 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
                 This.logUtil.putF (stringBuffer.toString, SqlConnectionPool_Access'(This'Unchecked_Access), This.METHOD_ADD);
             end if;
         end if;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGPOOL) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGPOOL) then
             This.logUtil.putF (This.CONNECTION_ALLREADY_CLOSED, SqlConnectionPool_Access'(This'Unchecked_Access), This.METHOD_ADD);
         end if;
    end add;

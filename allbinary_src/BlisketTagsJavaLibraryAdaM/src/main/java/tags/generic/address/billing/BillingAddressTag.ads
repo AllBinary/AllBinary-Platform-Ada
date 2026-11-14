@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with tags.generic_Id.address.billing.BillingAddressTag_Package;
 package tags.generic_Id.address.billing.BillingAddressTag_Package_References is
    type BillingAddressTag_Access is access all tags.generic_Id.address.billing.BillingAddressTag_Package.BillingAddressTag'Class;
@@ -19,6 +20,16 @@ package tags.generic_Id.address.billing.BillingAddressTag_Package_References is
    type BillingAddressTag_Access_Array_Access is access all BillingAddressTag_Access_Array;
    type BillingAddressTag_Access_Array_Access_Array is array (Natural range <>) of BillingAddressTag_Access_Array_Access;
    type BillingAddressTag_Access_Array_Access_Array_Access is access all BillingAddressTag_Access_Array_Access_Array;
+   type BillingAddressTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BillingAddressTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BillingAddressTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BillingAddressTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BillingAddressTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BillingAddressTag_Access_Array_Access is (if Value /= null and then Value.all in BillingAddressTag_Access_Array_Object'Class then BillingAddressTag_Access_Array_Object'Class (Value.all).Value else null);
+   type BillingAddressTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BillingAddressTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BillingAddressTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BillingAddressTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BillingAddressTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BillingAddressTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BillingAddressTag_Access_Array_Access_Array_Object'Class then BillingAddressTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end tags.generic_Id.address.billing.BillingAddressTag_Package_References;
 
 with tags.generic_Id.address.billing.BillingAddressTag_Package_References;
@@ -47,10 +58,14 @@ package tags.generic_Id.address.billing.BillingAddressTag_Package is
    function "=" (Left, Right : BillingAddressTag_Access_Array) return Boolean renames tags.generic_Id.address.billing.BillingAddressTag_Package_References."=";
    subtype BillingAddressTag_Access_Array_Access is tags.generic_Id.address.billing.BillingAddressTag_Package_References.BillingAddressTag_Access_Array_Access;
    function "=" (Left, Right : BillingAddressTag_Access_Array_Access) return Boolean renames tags.generic_Id.address.billing.BillingAddressTag_Package_References."=";
+   function Java_Box (Value : BillingAddressTag_Access_Array_Access) return Java_Object_Access renames tags.generic_Id.address.billing.BillingAddressTag_Package_References.Java_Box;
+   function Java_Unbox_BillingAddressTag_Access_Array (Value : access Java_Object'Class) return BillingAddressTag_Access_Array_Access renames tags.generic_Id.address.billing.BillingAddressTag_Package_References.Java_Unbox_BillingAddressTag_Access_Array;
    subtype BillingAddressTag_Access_Array_Access_Array is tags.generic_Id.address.billing.BillingAddressTag_Package_References.BillingAddressTag_Access_Array_Access_Array;
    function "=" (Left, Right : BillingAddressTag_Access_Array_Access_Array) return Boolean renames tags.generic_Id.address.billing.BillingAddressTag_Package_References."=";
    subtype BillingAddressTag_Access_Array_Access_Array_Access is tags.generic_Id.address.billing.BillingAddressTag_Package_References.BillingAddressTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BillingAddressTag_Access_Array_Access_Array_Access) return Boolean renames tags.generic_Id.address.billing.BillingAddressTag_Package_References."=";
+   function Java_Box (Value : BillingAddressTag_Access_Array_Access_Array_Access) return Java_Object_Access renames tags.generic_Id.address.billing.BillingAddressTag_Package_References.Java_Box;
+   function Java_Unbox_BillingAddressTag_Access_Array_Access_Array (Value : access Java_Object'Class) return BillingAddressTag_Access_Array_Access_Array_Access renames tags.generic_Id.address.billing.BillingAddressTag_Package_References.Java_Unbox_BillingAddressTag_Access_Array_Access_Array;
 
    type BillingAddressTag is new StoreValidationTransformTag with null record;
 

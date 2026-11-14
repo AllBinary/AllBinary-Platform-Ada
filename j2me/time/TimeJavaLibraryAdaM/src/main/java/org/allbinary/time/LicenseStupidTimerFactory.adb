@@ -63,7 +63,7 @@ package body org.allbinary.time.LicenseStupidTimerFactory_Package is
 
    function getInstance return StupidTimer_Access is
    begin
-        return StupidTimer_Access (LicenseStupidTimerFactory_Package.instance);
+        return LicenseStupidTimerFactory_Package.instance;
    end getInstance;
 
 begin

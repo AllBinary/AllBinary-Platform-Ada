@@ -116,7 +116,7 @@ package body org.allbinary.ai.ArtificialIntelligence_Package is
 
    function getInstance return ArtificialIntelligence_Access is
    begin
-        return ArtificialIntelligence_Access (ArtificialIntelligence_Package.instance);
+        return ArtificialIntelligence_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ArtificialIntelligence'Class) is

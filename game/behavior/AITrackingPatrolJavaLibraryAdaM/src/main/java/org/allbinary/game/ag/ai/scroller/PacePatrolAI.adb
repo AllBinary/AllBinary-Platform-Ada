@@ -38,18 +38,24 @@ with org.allbinary.util.ABHashtable_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.ABSystemWrapper_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.ai.ArtificialIntelligence_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
+with org.allbinary.game.ai.BasicAI_Package;
 with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.microemu.device.ui.CanvasUI_Package;
 with javax.microedition.lcdui.ChoiceGroup_Package;
 with javax.microedition.lcdui.ChoiceItem_Package;
 with javax.microedition.lcdui.Command_Package;
 with javax.microedition.lcdui.CommandListener_Package;
 with org.microemu.device.ui.CommandUI_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 with org.microemu.device.Device_Package;
 with org.microemu.device.DeviceDisplay_Package;
 with javax.microedition.lcdui.Display_Package;
@@ -58,36 +64,61 @@ with javax.microedition.lcdui.Displayable_Package;
 with org.microemu.device.ui.DisplayableUI_Package;
 with javax.microedition.lcdui.Event_Package;
 with org.microemu.device.ui.EventDispatcher_Package;
+with org.allbinary.logic.util.event.EventListenerInterface_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.microemu.device.FontManager_Package;
 with javax.microedition.lcdui.Form_Package;
 with org.microemu.device.ui.FormUI_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEventFactory_Package;
+with org.allbinary.game.input.GameKeyEventSourceInterface_Package;
 with javax.microedition.lcdui.Gauge_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.game.identification.Group_Package;
 with javax.microedition.lcdui.Image_Package;
 with javax.microedition.lcdui.ImageStringItem_Package;
+with org.allbinary.game.input.Input_Package;
 with org.microemu.device.InputMethod_Package;
 with org.microemu.device.InputMethodEvent_Package;
 with org.microemu.device.InputMethodListener_Package;
 with javax.microedition.lcdui.Item_Package;
 with javax.microedition.lcdui.ItemCommandListener_Package;
 with javax.microedition.lcdui.ItemStateListener_Package;
+with org.allbinary.layer.Layer_Package;
+with org.allbinary.layer.LayerManager_Package;
+with org.allbinary.layer.event.LayerManagerEvent_Package;
+with org.allbinary.layer.event.LayerManagerEventHandler_Package;
+with org.allbinary.layer.event.LayerManagerEventListener_Package;
+with org.allbinary.layer.LayerManagerLoggingBase_Package;
+with org.allbinary.layer.LayerProcessor_Package;
 with javax.microedition.lcdui.List_Package;
 with org.microemu.device.ui.ListUI_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
 with javax.microedition.midlet.MIDlet_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.microemu.device.MutableImage_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.microemu.device.ui.PointerEvent_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with javax.microedition.lcdui.Screen_Package;
 with javax.microedition.lcdui.StringComponent_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.thread.SynchObject_Package;
 with javax.microedition.lcdui.TextBox_Package;
 with org.microemu.device.ui.TextBoxUI_Package;
 with javax.microedition.lcdui.TextField_Package;
 with javax.microedition.lcdui.Ticker_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.TsUtil_Package;
 with org.microemu.device.ui.UIFactory_Package;
+with org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package;
 
 package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
 
@@ -271,9 +302,9 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
             if (absYDistance) <= (100) then
                 if (absXDistance) < ((PacePatrolAI'Class (This).getFiringDistance) / (2)) then
                     directionCompositeInterface := DirectionCompositeInterface_Access (PacePatrolAI'Class (This).getOwnerLayerInterface);
-                    if ((xDistance) < (0)) and then ((directionCompositeInterface.getDirection) = (directionFactory.RIGHT)) then
+                    if ((xDistance) < (0)) and then ((Java_Object_Access (directionCompositeInterface.getDirection)) = (Java_Object_Access (directionFactory.RIGHT))) then
                         direction := Direction_Access (directionFactory.RIGHT);
-                    elsif ((xDistance) > (0)) and then ((directionCompositeInterface.getDirection) = (directionFactory.LEFT)) then
+                    elsif ((xDistance) > (0)) and then ((Java_Object_Access (directionCompositeInterface.getDirection)) = (Java_Object_Access (directionFactory.LEFT))) then
                         direction := Direction_Access (directionFactory.LEFT);
                     end if;
                 end if;

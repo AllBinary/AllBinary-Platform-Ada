@@ -31,6 +31,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValueData_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValueData_Package;
 with org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package; use org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyData_Package;
 with org.allbinary.util.ABHashMap_Package;
@@ -54,6 +56,8 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -130,10 +134,10 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
       indexInt : Integer;
    begin
       Initialize_Fields (This);
-        indexPropertyValueHashMap := StdUtil_Package.getInstance.createHashMap;
+        indexPropertyValueHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         This.propertyValueVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         cssPropertyNodeVector := DomSearchHelper_Package.getAllNodes (CssPropertyValueData_Package.getInstance.NAME, node.getChildNodes);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STYLE) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.STYLE) then
             This.logUtil.putF (To_Unbounded_String ("Number Of Properties: ") & Java_Image (cssPropertyNodeVector.size), CssPropertyValues_Access'(This'Unchecked_Access), To_Unbounded_String ("CssProperties()"));
         end if;
         size := cssPropertyNodeVector.size;
@@ -141,7 +145,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
             cssPropertyValueNode := Node_Access (cssPropertyNodeVector.get (index));
             valueNode := DomSearchHelper_Package.getNode (DomData_Package.VALUE, cssPropertyValueNode.getChildNodes);
             propertyValue := DomNodeHelper_Package.getTextNodeValue (valueNode);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STYLE) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.STYLE) then
                 This.logUtil.putF (To_Unbounded_String ("Property Value: ") & propertyValue, CssPropertyValues_Access'(This'Unchecked_Access), To_Unbounded_String ("CssProperties()"));
             end if;
             indexNode := DomSearchHelper_Package.getNode (DomData_Package.INDEX, cssPropertyValueNode.getChildNodes);
@@ -152,7 +156,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
         for index in 0 .. (size2) - 1 loop
             indexInt := index;
             propertyValue := Java_Unbox (indexPropertyValueHashMap.get (Java_Box (To_Unbounded_String (Java_Image (indexInt)))));
-            This.propertyValueVector.add (propertyValue);
+            This.propertyValueVector.add (Java_Box (propertyValue));
         end loop;
    end Initialize;
 
@@ -174,7 +178,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
    begin
         commonSeps := CommonSeps_Package.getInstance;
         cssPropertyValueData := CssPropertyValueData_Package.getInstance;
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         stringBuffer := StringMaker_Package.Create;
         size := This.propertyValueVector.size;
         index := 0;
@@ -197,7 +201,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
       document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             hashMap := CssPropertyValues'Class (This).toHashMap;
             This.logUtil.putF (To_Unbounded_String ("CssPropertyValues HashMap: ") & hashMap.toString, CssPropertyValues_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"));
         end if;

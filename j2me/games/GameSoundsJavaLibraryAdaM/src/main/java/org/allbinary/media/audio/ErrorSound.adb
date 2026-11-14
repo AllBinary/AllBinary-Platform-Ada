@@ -40,7 +40,7 @@ package body org.allbinary.media.audio.ErrorSound_Package is
 
    function getInstance return Sound_Access is
    begin
-        return Sound_Access (ErrorSound_Package.soundInterface);
+        return ErrorSound_Package.soundInterface;
    end getInstance;
 
 begin

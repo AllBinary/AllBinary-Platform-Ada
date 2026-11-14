@@ -115,7 +115,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
 
    function getInstance return AbSqlTableUtil_Access is
    begin
-        return AbSqlTableUtil_Access (AbSqlTableUtil_Package.instance);
+        return AbSqlTableUtil_Package.instance;
    end getInstance;
 
    function backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class) return Unbounded_String is

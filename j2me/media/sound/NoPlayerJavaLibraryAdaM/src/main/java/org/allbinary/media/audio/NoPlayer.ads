@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.audio.NoPlayer_Package;
 package org.allbinary.media.audio.NoPlayer_Package_References is
    type NoPlayer_Access is access all org.allbinary.media.audio.NoPlayer_Package.NoPlayer'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.audio.NoPlayer_Package_References is
    type NoPlayer_Access_Array_Access is access all NoPlayer_Access_Array;
    type NoPlayer_Access_Array_Access_Array is array (Natural range <>) of NoPlayer_Access_Array_Access;
    type NoPlayer_Access_Array_Access_Array_Access is access all NoPlayer_Access_Array_Access_Array;
+   type NoPlayer_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NoPlayer_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NoPlayer_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NoPlayer_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NoPlayer_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NoPlayer_Access_Array_Access is (if Value /= null and then Value.all in NoPlayer_Access_Array_Object'Class then NoPlayer_Access_Array_Object'Class (Value.all).Value else null);
+   type NoPlayer_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NoPlayer_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NoPlayer_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NoPlayer_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NoPlayer_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NoPlayer_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NoPlayer_Access_Array_Access_Array_Object'Class then NoPlayer_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.audio.NoPlayer_Package_References;
 
 with org.allbinary.media.audio.NoPlayer_Package_References;
@@ -58,10 +69,14 @@ package org.allbinary.media.audio.NoPlayer_Package is
    function "=" (Left, Right : NoPlayer_Access_Array) return Boolean renames org.allbinary.media.audio.NoPlayer_Package_References."=";
    subtype NoPlayer_Access_Array_Access is org.allbinary.media.audio.NoPlayer_Package_References.NoPlayer_Access_Array_Access;
    function "=" (Left, Right : NoPlayer_Access_Array_Access) return Boolean renames org.allbinary.media.audio.NoPlayer_Package_References."=";
+   function Java_Box (Value : NoPlayer_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.audio.NoPlayer_Package_References.Java_Box;
+   function Java_Unbox_NoPlayer_Access_Array (Value : access Java_Object'Class) return NoPlayer_Access_Array_Access renames org.allbinary.media.audio.NoPlayer_Package_References.Java_Unbox_NoPlayer_Access_Array;
    subtype NoPlayer_Access_Array_Access_Array is org.allbinary.media.audio.NoPlayer_Package_References.NoPlayer_Access_Array_Access_Array;
    function "=" (Left, Right : NoPlayer_Access_Array_Access_Array) return Boolean renames org.allbinary.media.audio.NoPlayer_Package_References."=";
    subtype NoPlayer_Access_Array_Access_Array_Access is org.allbinary.media.audio.NoPlayer_Package_References.NoPlayer_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NoPlayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.audio.NoPlayer_Package_References."=";
+   function Java_Box (Value : NoPlayer_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.audio.NoPlayer_Package_References.Java_Box;
+   function Java_Unbox_NoPlayer_Access_Array_Access_Array (Value : access Java_Object'Class) return NoPlayer_Access_Array_Access_Array_Access renames org.allbinary.media.audio.NoPlayer_Package_References.Java_Unbox_NoPlayer_Access_Array_Access_Array;
 
    type NoPlayer is new BasicPlayer with null record;
    NO_PLAYER : NoPlayer_Access;

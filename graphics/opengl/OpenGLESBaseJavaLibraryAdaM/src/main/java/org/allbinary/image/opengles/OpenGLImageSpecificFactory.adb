@@ -66,7 +66,7 @@ package body org.allbinary.image.opengles.OpenGLImageSpecificFactory_Package is
 
    function getInstance return OpenGLImageSpecificFactory_Access is
    begin
-        return OpenGLImageSpecificFactory_Access (OpenGLImageSpecificFactory_Package.instance);
+        return OpenGLImageSpecificFactory_Package.instance;
    end getInstance;
 
    procedure setImageFactory (This : in out OpenGLImageSpecificFactory; imageFactory_Param : access OpenGLImageFactory_Package.OpenGLImageFactory'Class) is

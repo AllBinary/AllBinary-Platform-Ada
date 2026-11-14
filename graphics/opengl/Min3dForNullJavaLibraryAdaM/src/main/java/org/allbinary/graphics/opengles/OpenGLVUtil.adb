@@ -38,7 +38,7 @@ package body org.allbinary.graphics.opengles.OpenGLVUtil_Package is
 
    function getInstance return OpenGLVUtil_Access is
    begin
-        return OpenGLVUtil_Access (OpenGLVUtil_Package.instance);
+        return OpenGLVUtil_Package.instance;
    end getInstance;
 
 begin

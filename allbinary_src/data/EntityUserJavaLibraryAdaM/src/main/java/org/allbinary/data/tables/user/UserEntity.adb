@@ -39,6 +39,8 @@ with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.
 with org.allbinary.logic.control.crypt.SuperCrypt_Package; use org.allbinary.logic.control.crypt.SuperCrypt_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -66,6 +68,8 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    package SuperCrypt_Package renames Standard.org.allbinary.logic.control.crypt.SuperCrypt_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -150,7 +154,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    begin
         begin
             AbSqlBean_Package.AbSqlBean (This).insert (values);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, UserEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
         exception
@@ -158,7 +162,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, UserEntity_Access'(This'Unchecked_Access), INSERT, e);
             end if;
                 end;
@@ -181,7 +185,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
       userHashMap : HashMap_Access;
       i : Integer;
    begin
-        keysAndValues := StdUtil_Package.getInstance.createHashMap;
+        keysAndValues := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         usersVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         keysAndValues.put (Java_Box (UserRoleData_Package.NAME.toString), Java_Box (UserRoleFactory_Package.getInstance.STOREMANAGER.toString));
         keysAndValues.put (UserData_Package.PERMISSIONS, Java_Box (storeFrontInterface.getName));
@@ -212,7 +216,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
       userHashMap : HashMap_Access;
       index : Integer;
    begin
-        keysAndValues := StdUtil_Package.getInstance.createHashMap;
+        keysAndValues := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         usersVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         keysAndValues.put (Java_Box (UserRoleData_Package.NAME.toString), Java_Box (userRole.toString));
         usersHashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (keysAndValues);
@@ -236,7 +240,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
       userHashMap : HashMap_Access;
       index : Integer;
    begin
-        keysAndValues := StdUtil_Package.getInstance.createHashMap;
+        keysAndValues := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         usersVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
         keysAndValues.put (StoreFrontData_Package.getInstance.NAME, Java_Box (storeFrontInterface.getName));
         usersHashMapVector := AbSqlBean_Package.AbSqlBean (This).getRows (keysAndValues);
@@ -255,7 +259,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
       row : HashMap_Access;
       userHashMap : HashMap_Access;
    begin
-        row := StdUtil_Package.getInstance.createHashMap;
+        row := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         row.put (UserData_Package.USERNAME, Java_Box (userName));
         userHashMap := AbSqlBean_Package.AbSqlBean (This).getRow (row);
         if (userHashMap) /= (null) then
@@ -269,7 +273,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    begin
         begin
             AbSqlBean_Package.AbSqlBean (This).deleteWhere (key, value);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("deleteWhere"));
             end if;
         exception
@@ -277,7 +281,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("deleteWhere"), e);
             end if;
                 end;
@@ -297,13 +301,13 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
             if ((encryption) /= (Null_Unbounded_String)) and then ((Java_Compare_To (encryption, This.stringUtil.EMPTY_STRING)) /= (0)) then
                 isUserNameAndPasswordCorrect := Java_Compare_To (result, SuperCrypt_Package.Create (Integer (Integer'Value (To_String (encryption)))).encrypt (password));
             else
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                     This.logUtil.putF (To_Unbounded_String ("Command Success but login failed for user: ") & userName & To_Unbounded_String (" because user did not exist"), UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("login"));
                 end if;
                 return GLOBALS2_Package.LOGINFAILED;
             end if;
             if (isUserNameAndPasswordCorrect) = (0) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (This.COMMAND_SUCCESS_FOR_USER);
                     stringBuffer.append (userName);
@@ -315,7 +319,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                 end if;
                 return GLOBALS2_Package.LOGINSUCCESS;
             else
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                     stringBuffer := StringMaker_Package.Create;
                     stringBuffer.append (This.COMMAND_SUCCESS_BUT_LOGIN_FAILED);
                     stringBuffer.append (userName);
@@ -333,7 +337,7 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, UserEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("login"), e);
             end if;
             return To_Unbounded_String ("Error");

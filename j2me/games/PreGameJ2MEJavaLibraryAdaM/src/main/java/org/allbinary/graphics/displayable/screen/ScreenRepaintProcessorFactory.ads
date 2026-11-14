@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package;
 package org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package_References is
    type ScreenRepaintProcessorFactory_Access is access all org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package.ScreenRepaintProcessorFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_
    type ScreenRepaintProcessorFactory_Access_Array_Access is access all ScreenRepaintProcessorFactory_Access_Array;
    type ScreenRepaintProcessorFactory_Access_Array_Access_Array is array (Natural range <>) of ScreenRepaintProcessorFactory_Access_Array_Access;
    type ScreenRepaintProcessorFactory_Access_Array_Access_Array_Access is access all ScreenRepaintProcessorFactory_Access_Array_Access_Array;
+   type ScreenRepaintProcessorFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ScreenRepaintProcessorFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ScreenRepaintProcessorFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ScreenRepaintProcessorFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ScreenRepaintProcessorFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ScreenRepaintProcessorFactory_Access_Array_Access is (if Value /= null and then Value.all in ScreenRepaintProcessorFactory_Access_Array_Object'Class then ScreenRepaintProcessorFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type ScreenRepaintProcessorFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ScreenRepaintProcessorFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ScreenRepaintProcessorFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ScreenRepaintProcessorFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ScreenRepaintProcessorFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ScreenRepaintProcessorFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ScreenRepaintProcessorFactory_Access_Array_Access_Array_Object'Class then ScreenRepaintProcessorFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package_References;
 
 with org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package_References;
@@ -70,10 +81,14 @@ package org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_
    function "=" (Left, Right : ScreenRepaintProcessorFactory_Access_Array) return Boolean renames org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package_References."=";
    subtype ScreenRepaintProcessorFactory_Access_Array_Access is org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package_References.ScreenRepaintProcessorFactory_Access_Array_Access;
    function "=" (Left, Right : ScreenRepaintProcessorFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package_References."=";
+   function Java_Box (Value : ScreenRepaintProcessorFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package_References.Java_Box;
+   function Java_Unbox_ScreenRepaintProcessorFactory_Access_Array (Value : access Java_Object'Class) return ScreenRepaintProcessorFactory_Access_Array_Access renames org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package_References.Java_Unbox_ScreenRepaintProcessorFactory_Access_Array;
    subtype ScreenRepaintProcessorFactory_Access_Array_Access_Array is org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package_References.ScreenRepaintProcessorFactory_Access_Array_Access_Array;
    function "=" (Left, Right : ScreenRepaintProcessorFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package_References."=";
    subtype ScreenRepaintProcessorFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package_References.ScreenRepaintProcessorFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ScreenRepaintProcessorFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package_References."=";
+   function Java_Box (Value : ScreenRepaintProcessorFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package_References.Java_Box;
+   function Java_Unbox_ScreenRepaintProcessorFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return ScreenRepaintProcessorFactory_Access_Array_Access_Array_Access renames org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package_References.Java_Unbox_ScreenRepaintProcessorFactory_Access_Array_Access_Array;
 
    type ScreenRepaintProcessorFactory is new Java_Object with null record;
    instance : ScreenRepaintProcessorFactory_Access;

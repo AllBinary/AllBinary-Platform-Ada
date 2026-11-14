@@ -107,7 +107,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolFactory_Package is
 
    function getInstance return ToolFactory_Access is
    begin
-        return ToolFactory_Access (ToolFactory_Package.instance);
+        return ToolFactory_Package.instance;
    end getInstance;
 
    procedure setSelectedTool (This : in out ToolFactory; tool : Unbounded_String) is

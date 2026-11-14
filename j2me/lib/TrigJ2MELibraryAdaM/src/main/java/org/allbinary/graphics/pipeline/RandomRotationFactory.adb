@@ -91,7 +91,7 @@ package body org.allbinary.graphics.pipeline.RandomRotationFactory_Package is
 
    function getInstance return RandomRotationFactory_Access is
    begin
-        return RandomRotationFactory_Access (RandomRotationFactory_Package.instance);
+        return RandomRotationFactory_Package.instance;
    end getInstance;
 
    --  throws Exception

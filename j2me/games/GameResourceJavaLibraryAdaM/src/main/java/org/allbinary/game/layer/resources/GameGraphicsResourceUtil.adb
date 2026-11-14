@@ -78,7 +78,7 @@ package body org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package
 
    function getInstance return GameGraphicsResourceUtil_Access is
    begin
-        if (GameGraphicsResourceUtil_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (GameGraphicsResourceUtil_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             GameGraphicsResourceUtil_Package.instance := Java_Object_Access (GameGraphicsResourceUtil_Package.Create);
         end if;
         return GameGraphicsResourceUtil_Access (GameGraphicsResourceUtil_Package.instance);

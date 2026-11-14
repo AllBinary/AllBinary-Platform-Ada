@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package;
 package org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References is
    type NumberOnOwnGroupSequenceAI_Access is access all org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package.NumberOnOwnGroupSequenceAI'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References i
    type NumberOnOwnGroupSequenceAI_Access_Array_Access is access all NumberOnOwnGroupSequenceAI_Access_Array;
    type NumberOnOwnGroupSequenceAI_Access_Array_Access_Array is array (Natural range <>) of NumberOnOwnGroupSequenceAI_Access_Array_Access;
    type NumberOnOwnGroupSequenceAI_Access_Array_Access_Array_Access is access all NumberOnOwnGroupSequenceAI_Access_Array_Access_Array;
+   type NumberOnOwnGroupSequenceAI_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NumberOnOwnGroupSequenceAI_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NumberOnOwnGroupSequenceAI_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NumberOnOwnGroupSequenceAI_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NumberOnOwnGroupSequenceAI_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NumberOnOwnGroupSequenceAI_Access_Array_Access is (if Value /= null and then Value.all in NumberOnOwnGroupSequenceAI_Access_Array_Object'Class then NumberOnOwnGroupSequenceAI_Access_Array_Object'Class (Value.all).Value else null);
+   type NumberOnOwnGroupSequenceAI_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NumberOnOwnGroupSequenceAI_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NumberOnOwnGroupSequenceAI_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NumberOnOwnGroupSequenceAI_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NumberOnOwnGroupSequenceAI_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NumberOnOwnGroupSequenceAI_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NumberOnOwnGroupSequenceAI_Access_Array_Access_Array_Object'Class then NumberOnOwnGroupSequenceAI_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References;
 
 with org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References;
@@ -30,8 +41,7 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-limited with org.allbinary.ai.ArtificialIntelligenceInterface_Package;
-with org.allbinary.ai.ArtificialIntelligenceInterface_Package_References;
+with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary.ai.ArtificialIntelligenceInterface_Package;
 with org.allbinary.game.ag.ai.sequence.SequenceAI_Package; use org.allbinary.game.ag.ai.sequence.SequenceAI_Package;
 limited with org.allbinary.game.input.GameInput_Package;
 with org.allbinary.game.input.GameInput_Package_References;
@@ -48,16 +58,6 @@ package org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package is
    package AllBinaryLayer_Package renames Standard.org.allbinary.layer.AllBinaryLayer_Package;
    package AllBinaryLayerManager_Package renames Standard.org.allbinary.layer.AllBinaryLayerManager_Package;
    package Reference_Types is
-   subtype ArtificialIntelligenceInterface_Access is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access;
-   use type ArtificialIntelligenceInterface_Access;
-   subtype ArtificialIntelligenceInterface_Access_Array is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array;
-   use type ArtificialIntelligenceInterface_Access_Array;
-   subtype ArtificialIntelligenceInterface_Access_Array_Access is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array_Access;
-   use type ArtificialIntelligenceInterface_Access_Array_Access;
-   subtype ArtificialIntelligenceInterface_Access_Array_Access_Array is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array_Access_Array;
-   use type ArtificialIntelligenceInterface_Access_Array_Access_Array;
-   subtype ArtificialIntelligenceInterface_Access_Array_Access_Array_Access is org.allbinary.ai.ArtificialIntelligenceInterface_Package_References.ArtificialIntelligenceInterface_Access_Array_Access_Array_Access;
-   use type ArtificialIntelligenceInterface_Access_Array_Access_Array_Access;
    subtype GameInput_Access is org.allbinary.game.input.GameInput_Package_References.GameInput_Access;
    use type GameInput_Access;
    subtype GameInput_Access_Array is org.allbinary.game.input.GameInput_Package_References.GameInput_Access_Array;
@@ -98,10 +98,14 @@ package org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package is
    function "=" (Left, Right : NumberOnOwnGroupSequenceAI_Access_Array) return Boolean renames org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References."=";
    subtype NumberOnOwnGroupSequenceAI_Access_Array_Access is org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References.NumberOnOwnGroupSequenceAI_Access_Array_Access;
    function "=" (Left, Right : NumberOnOwnGroupSequenceAI_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References."=";
+   function Java_Box (Value : NumberOnOwnGroupSequenceAI_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References.Java_Box;
+   function Java_Unbox_NumberOnOwnGroupSequenceAI_Access_Array (Value : access Java_Object'Class) return NumberOnOwnGroupSequenceAI_Access_Array_Access renames org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References.Java_Unbox_NumberOnOwnGroupSequenceAI_Access_Array;
    subtype NumberOnOwnGroupSequenceAI_Access_Array_Access_Array is org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References.NumberOnOwnGroupSequenceAI_Access_Array_Access_Array;
    function "=" (Left, Right : NumberOnOwnGroupSequenceAI_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References."=";
    subtype NumberOnOwnGroupSequenceAI_Access_Array_Access_Array_Access is org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References.NumberOnOwnGroupSequenceAI_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NumberOnOwnGroupSequenceAI_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References."=";
+   function Java_Box (Value : NumberOnOwnGroupSequenceAI_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References.Java_Box;
+   function Java_Unbox_NumberOnOwnGroupSequenceAI_Access_Array_Access_Array (Value : access Java_Object'Class) return NumberOnOwnGroupSequenceAI_Access_Array_Access_Array_Access renames org.allbinary.game.ag.ai.NumberOnOwnGroupSequenceAI_Package_References.Java_Unbox_NumberOnOwnGroupSequenceAI_Access_Array_Access_Array;
 
    type NumberOnOwnGroupSequenceAI is new SequenceAI with record
       numberOnSameTeam : Integer_Array_Access;

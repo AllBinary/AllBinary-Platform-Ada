@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.math.FrameUtil_Package;
 package org.allbinary.math.FrameUtil_Package_References is
    type FrameUtil_Access is access all org.allbinary.math.FrameUtil_Package.FrameUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.math.FrameUtil_Package_References is
    type FrameUtil_Access_Array_Access is access all FrameUtil_Access_Array;
    type FrameUtil_Access_Array_Access_Array is array (Natural range <>) of FrameUtil_Access_Array_Access;
    type FrameUtil_Access_Array_Access_Array_Access is access all FrameUtil_Access_Array_Access_Array;
+   type FrameUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FrameUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FrameUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FrameUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FrameUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FrameUtil_Access_Array_Access is (if Value /= null and then Value.all in FrameUtil_Access_Array_Object'Class then FrameUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type FrameUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FrameUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FrameUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FrameUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FrameUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FrameUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in FrameUtil_Access_Array_Access_Array_Object'Class then FrameUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.math.FrameUtil_Package_References;
 
 with org.allbinary.math.FrameUtil_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.math.FrameUtil_Package is
    function "=" (Left, Right : FrameUtil_Access_Array) return Boolean renames org.allbinary.math.FrameUtil_Package_References."=";
    subtype FrameUtil_Access_Array_Access is org.allbinary.math.FrameUtil_Package_References.FrameUtil_Access_Array_Access;
    function "=" (Left, Right : FrameUtil_Access_Array_Access) return Boolean renames org.allbinary.math.FrameUtil_Package_References."=";
+   function Java_Box (Value : FrameUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.math.FrameUtil_Package_References.Java_Box;
+   function Java_Unbox_FrameUtil_Access_Array (Value : access Java_Object'Class) return FrameUtil_Access_Array_Access renames org.allbinary.math.FrameUtil_Package_References.Java_Unbox_FrameUtil_Access_Array;
    subtype FrameUtil_Access_Array_Access_Array is org.allbinary.math.FrameUtil_Package_References.FrameUtil_Access_Array_Access_Array;
    function "=" (Left, Right : FrameUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.math.FrameUtil_Package_References."=";
    subtype FrameUtil_Access_Array_Access_Array_Access is org.allbinary.math.FrameUtil_Package_References.FrameUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : FrameUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.math.FrameUtil_Package_References."=";
+   function Java_Box (Value : FrameUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.math.FrameUtil_Package_References.Java_Box;
+   function Java_Unbox_FrameUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return FrameUtil_Access_Array_Access_Array_Access renames org.allbinary.math.FrameUtil_Package_References.Java_Unbox_FrameUtil_Access_Array_Access_Array;
 
    type FrameUtil is new Java_Object with null record;
    instance : FrameUtil_Access;

@@ -358,7 +358,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
    function toHashMap (This : in out OrderHistory) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (UserData_Package.USERNAME, Java_Box (This.userName));
         hashMap.put (OrderHistoryData_Package.ORDERDATE, Java_Box (This.orderDate));
         hashMap.put (OrderHistoryData_Package.SHIPPEDDATE, Java_Box (This.shipDate));

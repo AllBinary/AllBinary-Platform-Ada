@@ -39,26 +39,125 @@ with org.microemu.device.swt.PostLoadSwtImmutableImageProcessor_Package; use org
 with org.microemu.device.swt.PostLoadSwtMutableImageProcessor_Package; use org.microemu.device.swt.PostLoadSwtMutableImageProcessor_Package;
 with org.microemu.device.swt.SwtImmutableImage_Package; use org.microemu.device.swt.SwtImmutableImage_Package;
 with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.swt.SwtMutableImage_Package;
+with org.eclipse.swt.graphics.Image_Package;
+with org.eclipse.swt.graphics.Image_Package_References; use type org.eclipse.swt.graphics.Image_Package_References.Image_Access;
 with org.allbinary.util.ABHashtable_Package;
+with javax.microedition.lcdui.Alert_Package;
+with javax.microedition.lcdui.AlertType_Package;
+with org.microemu.device.ui.AlertUI_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
+with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.eclipse.swt.widgets.Button_Package;
+with javax.microedition.lcdui.Canvas_Package;
+with org.eclipse.swt.widgets.Canvas_Package;
+with org.microemu.device.ui.CanvasUI_Package;
+with javax.microedition.lcdui.ChoiceGroup_Package;
+with javax.microedition.lcdui.ChoiceItem_Package;
+with org.eclipse.swt.graphics.Color_Package;
+with javax.microedition.lcdui.Command_Package;
+with javax.microedition.lcdui.CommandListener_Package;
+with org.microemu.device.ui.CommandUI_Package;
 with org.allbinary.string_Id.CommonLabels_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.eclipse.swt.widgets.Composite_Package;
+with org.eclipse.swt.widgets.Control_Package;
+with org.eclipse.swt.widgets.Decorations_Package;
+with org.microemu.device.Device_Package;
+with org.eclipse.swt.graphics.Device_Package;
+with org.microemu.device.DeviceDisplay_Package;
+with javax.microedition.lcdui.Display_Package;
+with org.eclipse.swt.widgets.Display_Package;
+with javax.microedition.lcdui.DisplayAccessor_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
+with javax.microedition.lcdui.Displayable_Package;
+with org.microemu.device.ui.DisplayableUI_Package;
+with org.eclipse.swt.events.DragDetectEvent_Package;
+with org.eclipse.swt.events.DragDetectListener_Package;
+with org.eclipse.swt.graphics.Drawable_Package;
+with javax.microedition.lcdui.Event_Package;
+with org.eclipse.swt.widgets.Event_Package;
+with org.microemu.device.ui.EventDispatcher_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.configuration.feature.Feature_Package;
+with org.eclipse.swt.graphics.Font_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.microemu.device.FontManager_Package;
+with org.eclipse.swt.graphics.FontMetrics_Package;
+with javax.microedition.lcdui.Form_Package;
+with org.microemu.device.ui.FormUI_Package;
+with org.eclipse.swt.graphics.GC_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.khronos.opengles.GL10_Package;
 with org.allbinary.game.configuration.feature.GameFeature_Package;
+with javax.microedition.lcdui.Gauge_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with javax.microedition.lcdui.ImageStringItem_Package;
+with org.microemu.device.InputMethod_Package;
+with org.microemu.device.InputMethodEvent_Package;
+with org.microemu.device.InputMethodListener_Package;
+with javax.microedition.lcdui.Item_Package;
+with javax.microedition.lcdui.ItemCommandListener_Package;
+with javax.microedition.lcdui.ItemStateListener_Package;
+with org.eclipse.swt.events.KeyEvent_Package;
+with org.eclipse.swt.events.KeyListener_Package;
+with org.eclipse.swt.widgets.Layout_Package;
+with javax.microedition.lcdui.List_Package;
+with org.microemu.device.ui.ListUI_Package;
+with org.eclipse.swt.widgets.Listener_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with javax.microedition.midlet.MIDlet_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.eclipse.swt.widgets.Menu_Package;
+with org.eclipse.swt.events.MouseEvent_Package;
+with org.eclipse.swt.events.MouseListener_Package;
+with org.eclipse.swt.events.MouseMoveListener_Package;
+with org.eclipse.swt.events.MouseWheelListener_Package;
+with org.microemu.device.MutableImage_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
+with org.allbinary.image.opengles.OpenGLESImageTranslate_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package;
+with org.eclipse.swt.events.PaintEvent_Package;
+with org.microemu.device.ui.PaintEvent_Package;
+with org.eclipse.swt.events.PaintListener_Package;
+with org.eclipse.swt.graphics.PaletteData_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+with org.eclipse.swt.graphics.Point_Package;
+with org.microemu.device.ui.PointerEvent_Package;
+with javax.microedition.lcdui.PostLoadImageProcessor_Package;
+with org.eclipse.swt.graphics.RGB_Package;
+with org.eclipse.swt.graphics.RGBA_Package;
+with org.eclipse.swt.graphics.Rectangle_Package;
+with org.eclipse.swt.graphics.Resource_Package;
+with org.eclipse.swt.internal.SWTEventObject_Package;
 with org.allbinary.graphics.displayable.ScalableListener_Package;
+with javax.microedition.lcdui.Screen_Package;
+with org.eclipse.swt.widgets.Scrollable_Package;
+with org.eclipse.swt.events.SelectionEvent_Package;
+with org.eclipse.swt.events.SelectionListener_Package;
+with org.eclipse.swt.widgets.Shell_Package;
+with org.eclipse.swt.events.ShellEvent_Package;
+with org.eclipse.swt.events.ShellListener_Package;
+with javax.microedition.lcdui.StringComponent_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.thread.SynchObject_Package;
+with javax.microedition.lcdui.TextBox_Package;
+with org.microemu.device.ui.TextBoxUI_Package;
+with javax.microedition.lcdui.TextField_Package;
+with javax.microedition.lcdui.Ticker_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.eclipse.swt.graphics.Transform_Package;
+with org.eclipse.swt.events.TypedEvent_Package;
+with org.microemu.device.ui.UIFactory_Package;
+with org.eclipse.swt.widgets.Widget_Package;
 
 package body org.allbinary.media.image.ImageCopyUtil_Package is
 
@@ -171,7 +270,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
 
    function getInstance return ImageCopyUtil_Access is
    begin
-        return ImageCopyUtil_Access (ImageCopyUtil_Package.instance);
+        return ImageCopyUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageCopyUtil'Class) is
@@ -331,24 +430,24 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
                 image := originalImage;
                 openGLESImage := OpenGLESImage_Access (This.openGLUtil.addImage (image));
                 openGLESImageProperties := OpenGLESImageProperties_Access (openGLESImage.openGLESImageProperties);
-                openGLESImageProperties.scaleX2 := Float ((((Float (width))) / (openGLESImage.getWidth)));
+                openGLESImageProperties.scaleX2 := (((Float (width))) / (Float (openGLESImage.getWidth)));
                 openGLESImageProperties.scaleX := openGLESImageProperties.scaleX2;
-                openGLESImageProperties.scaleY2 := Float ((((Float (height))) / (openGLESImage.getHeight)));
+                openGLESImageProperties.scaleY2 := (((Float (height))) / (Float (openGLESImage.getHeight)));
                 openGLESImageProperties.scaleY := openGLESImageProperties.scaleY2;
                 if Java_Starts_With (image.getName, This.INFORMATION) then
-                    openGLESImage.openGLESImageTranslate := OpenGLESDeviceImageTranslate_Package.Create;
+                    openGLESImage.openGLESImageTranslate := org.allbinary.image.opengles.OpenGLESImageTranslate_Package.OpenGLESImageTranslate_Access (OpenGLESDeviceImageTranslate_Package.Create);
                     openGLESDeviceImageTranslate := OpenGLESDeviceImageTranslate_Access (openGLESImage.openGLESImageTranslate);
                     openGLESDeviceImageTranslate.translateX := ((Float (displayInfoSingleton.getLastWidth)) / (1.4)) / (openGLESImageProperties.scaleX);
-                    openGLESDeviceImageTranslate.translateY := ((displayInfoSingleton.getLastHeight) / (4)) / (openGLESImageProperties.scaleY);
+                    openGLESDeviceImageTranslate.translateY := (Float ((displayInfoSingleton.getLastHeight) / (4))) / (openGLESImageProperties.scaleY);
                     openGLESImageProperties.scaleX := (openGLESImageProperties.scaleX) * (0.25);
                     openGLESImageProperties.scaleY := (openGLESImageProperties.scaleY) * (0.25);
                 else
                     openGLESImageProperties.scaleX := (openGLESImageProperties.scaleX) * (0.75);
                     openGLESImageProperties.scaleY := (openGLESImageProperties.scaleY) * (0.75);
                     if Java_Starts_With (image.getName, This.LEADERBOARD) then
-                        openGLESImage.openGLESImageTranslate := OpenGLESDeviceImageTranslate_Package.Create;
+                        openGLESImage.openGLESImageTranslate := org.allbinary.image.opengles.OpenGLESImageTranslate_Package.OpenGLESImageTranslate_Access (OpenGLESDeviceImageTranslate_Package.Create);
                         openGLESDeviceImageTranslate := OpenGLESDeviceImageTranslate_Access (openGLESImage.openGLESImageTranslate);
-                        openGLESDeviceImageTranslate.translateX := ((-(displayInfoSingleton.getLastWidth)) / (40)) / (openGLESImageProperties.scaleX);
+                        openGLESDeviceImageTranslate.translateX := (Float ((-(displayInfoSingleton.getLastWidth)) / (40))) / (openGLESImageProperties.scaleX);
                     end if;
                     if Java_Starts_With (image.getName, This.LEADERBOARD) then
                         null;
@@ -407,8 +506,8 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
             This.logUtil.putF (This.NO_COPY, ImageCopyUtil_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
             return originalImage;
         end if;
-        newWidth := Integer (((originalImage.getWidth) * (canvasScale)));
-        newHeight := Integer (((originalImage.getHeight) * (canvasScale)));
+        newWidth := Integer (((Float (originalImage.getWidth)) * (canvasScale)));
+        newHeight := Integer (((Float (originalImage.getHeight)) * (canvasScale)));
         if resize then
             if (newWidth) < (newHeight) then
                 newWidth := newHeight;
@@ -419,7 +518,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
         end if;
         image := ImageCopyUtil'Class (This).createImageWH (originalImage, newWidth, newHeight, True);
         if image.isMutable then
-            originalImageData := Image_Access (originalImage.getImage).getImageData;
+            originalImageData := org.eclipse.swt.graphics.Image_Package_References.Image_Access (originalImage.getImage).getImageData;
             mutableImage2 := SwtMutableImage_Access (image);
             halfWidthDelta := (((newWidth) - (originalImage.getWidth))) / (2);
             halfHeightDelta := (((newHeight) - (originalImage.getHeight))) / (2);
@@ -435,11 +534,11 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
                     newPixelArray ((index) + (((index2) * (width)))) := originalPixelArray ((((index) - (halfWidthDelta))) + (((((index2) - (halfHeightDelta))) * (width))));
                 end loop;
             end loop;
-            Image_Access (mutableImage2.getImage).getImageData.setPixels (0, 0, image.getWidth, newPixelArray, 0);
+            org.eclipse.swt.graphics.Image_Package_References.Image_Access (mutableImage2.getImage).getImageData.setPixels (0, 0, image.getWidth, newPixelArray, 0);
             return image;
         else
             originalImmutableImage := SwtImmutableImage_Access (image);
-            originalImageData := Image_Access (originalImage.getImage).getImageData;
+            originalImageData := org.eclipse.swt.graphics.Image_Package_References.Image_Access (originalImage.getImage).getImageData;
             halfWidthDelta := (((newWidth) - (originalImage.getWidth))) / (2);
             halfHeightDelta := (((newHeight) - (originalImage.getHeight))) / (2);
             originalPixelArray := new Integer_Array'(0 .. ((originalImage.getWidth) * (originalImage.getHeight)) - 1 => 0);
@@ -454,7 +553,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
                     newPixelArray ((index) + (((index2) * (width)))) := originalPixelArray ((((index) - (halfWidthDelta))) + (((((index2) - (halfHeightDelta))) * (width))));
                 end loop;
             end loop;
-            Image_Access (originalImmutableImage.getImage).getImageData.setPixels (0, 0, image.getWidth, newPixelArray, 0);
+            org.eclipse.swt.graphics.Image_Package_References.Image_Access (originalImmutableImage.getImage).getImageData.setPixels (0, 0, image.getWidth, newPixelArray, 0);
             return image;
         end if;
    end createImageScale;

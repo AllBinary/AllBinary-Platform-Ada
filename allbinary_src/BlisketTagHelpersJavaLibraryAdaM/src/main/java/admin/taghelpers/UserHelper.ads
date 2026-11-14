@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.UserHelper_Package;
 package admin.taghelpers.UserHelper_Package_References is
    type UserHelper_Access is access all admin.taghelpers.UserHelper_Package.UserHelper'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.UserHelper_Package_References is
    type UserHelper_Access_Array_Access is access all UserHelper_Access_Array;
    type UserHelper_Access_Array_Access_Array is array (Natural range <>) of UserHelper_Access_Array_Access;
    type UserHelper_Access_Array_Access_Array_Access is access all UserHelper_Access_Array_Access_Array;
+   type UserHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UserHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UserHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UserHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UserHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UserHelper_Access_Array_Access is (if Value /= null and then Value.all in UserHelper_Access_Array_Object'Class then UserHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type UserHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UserHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UserHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UserHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UserHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UserHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in UserHelper_Access_Array_Access_Array_Object'Class then UserHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.UserHelper_Package_References;
 
 with admin.taghelpers.UserHelper_Package_References;
@@ -75,10 +86,14 @@ package admin.taghelpers.UserHelper_Package is
    function "=" (Left, Right : UserHelper_Access_Array) return Boolean renames admin.taghelpers.UserHelper_Package_References."=";
    subtype UserHelper_Access_Array_Access is admin.taghelpers.UserHelper_Package_References.UserHelper_Access_Array_Access;
    function "=" (Left, Right : UserHelper_Access_Array_Access) return Boolean renames admin.taghelpers.UserHelper_Package_References."=";
+   function Java_Box (Value : UserHelper_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.UserHelper_Package_References.Java_Box;
+   function Java_Unbox_UserHelper_Access_Array (Value : access Java_Object'Class) return UserHelper_Access_Array_Access renames admin.taghelpers.UserHelper_Package_References.Java_Unbox_UserHelper_Access_Array;
    subtype UserHelper_Access_Array_Access_Array is admin.taghelpers.UserHelper_Package_References.UserHelper_Access_Array_Access_Array;
    function "=" (Left, Right : UserHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.UserHelper_Package_References."=";
    subtype UserHelper_Access_Array_Access_Array_Access is admin.taghelpers.UserHelper_Package_References.UserHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : UserHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.UserHelper_Package_References."=";
+   function Java_Box (Value : UserHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.UserHelper_Package_References.Java_Box;
+   function Java_Unbox_UserHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return UserHelper_Access_Array_Access_Array_Access renames admin.taghelpers.UserHelper_Package_References.Java_Unbox_UserHelper_Access_Array_Access_Array;
 
    type UserHelper is new Table with record
       logUtil : LogUtil_Access;

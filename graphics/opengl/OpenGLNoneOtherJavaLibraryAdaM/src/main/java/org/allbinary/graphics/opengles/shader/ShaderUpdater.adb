@@ -86,7 +86,7 @@ package body org.allbinary.graphics.opengles.shader.ShaderUpdater_Package is
 
    function getInstance return ShaderUpdater_Access is
    begin
-        return ShaderUpdater_Access (ShaderUpdater_Package.instance);
+        return ShaderUpdater_Package.instance;
    end getInstance;
 
    procedure onSurfaceCreated (This : in out ShaderUpdater; gl_Param : access GL10_Package.GL10'Class; eglConfig_Param : access EGLConfig_Package.EGLConfig'Class) is

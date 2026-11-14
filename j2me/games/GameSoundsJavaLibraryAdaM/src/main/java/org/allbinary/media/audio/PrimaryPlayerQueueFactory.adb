@@ -56,7 +56,7 @@ package body org.allbinary.media.audio.PrimaryPlayerQueueFactory_Package is
 
    function getInstance return PlayerQueue_Access is
    begin
-        return PlayerQueue_Access (PrimaryPlayerQueueFactory_Package.SINGLETON);
+        return PrimaryPlayerQueueFactory_Package.SINGLETON;
    end getInstance;
 
 begin

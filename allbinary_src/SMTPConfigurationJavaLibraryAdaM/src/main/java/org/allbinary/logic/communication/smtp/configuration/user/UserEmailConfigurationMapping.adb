@@ -100,7 +100,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
    function toHashMap (This : in out UserEmailConfigurationMapping) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         return hashMap;
    end toHashMap;
 

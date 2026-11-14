@@ -45,7 +45,7 @@ package body org.allbinary.input.motion.button.TouchButtonFactory_Package is
 
    function getInstance return TouchButtonFactory_Access is
    begin
-        return TouchButtonFactory_Access (TouchButtonFactory_Package.SINGLETON);
+        return TouchButtonFactory_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out TouchButtonFactory'Class) is

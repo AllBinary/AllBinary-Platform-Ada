@@ -49,7 +49,7 @@ package body org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package
 
    function getInstance return ModifierOpenGLESImageProcessor_Access is
    begin
-        return ModifierOpenGLESImageProcessor_Access (ModifierOpenGLESImageProcessor_Package.instanceC);
+        return ModifierOpenGLESImageProcessor_Package.instanceC;
    end getInstance;
 
    procedure colorMask (This : in out ModifierOpenGLESImageProcessor; gl_Param : access GL10_Package.GL10'Class; red : Float; green : Float; blue : Float; alpha : Float) is

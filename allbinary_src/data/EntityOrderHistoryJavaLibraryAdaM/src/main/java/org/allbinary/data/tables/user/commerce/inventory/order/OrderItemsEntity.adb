@@ -45,6 +45,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -79,6 +81,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
    package InventoryEntityFactory_Package renames Standard.org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntityFactory_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -182,10 +186,10 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                 vector.add (OrderItemIdGenerator_Package.Create.getNext);
                 vector.add (order.getId);
                 vector.add (TableDataFactory_Package.getInstance.INTEGER_MAX_VALUE_STRING);
-                vector.add (userName);
+                vector.add (Java_Box (userName));
                 vector.add (order.getStoreName);
                 vector.add (itemInterface.getId);
-                vector.add (basket.getNumberOf (item).toString);
+                vector.add (Java_Box (basket.getNumberOf (item).toString));
                 vector.add (itemInterface.getNewOrUsed);
                 vector.add (itemInterface.getSummary);
                 vector.add (itemInterface.getDistributor);
@@ -201,30 +205,30 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                 vector.add (itemInterface.getMediumImage);
                 vector.add (itemInterface.getLargeImage);
                 vector.add (itemInterface.getWeight);
-                vector.add (itemInterface.getPrice.toString);
+                vector.add (Java_Box (itemInterface.getPrice.toString));
                 vector.add (itemInterface.getComment);
                 vector.add (itemInterface.getCustoms);
                 vector.add (itemInterface.getDownloads);
-                vector.add (EMPTY_STRING);
-                vector.add (EMPTY_STRING);
-                vector.add (EMPTY_STRING);
-                vector.add (EMPTY_STRING);
-                vector.add (EMPTY_STRING);
-                vector.add (EMPTY_STRING);
-                vector.add (EMPTY_STRING);
-                vector.add (EMPTY_STRING);
-                vector.add (EMPTY_STRING);
-                vector.add (EMPTY_STRING);
-                vector.add (EMPTY_STRING);
-                vector.add (EMPTY_STRING);
-                vector.add (EMPTY_STRING);
-                vector.add (ZERO_STRING);
-                vector.add (ZERO_STRING);
-                vector.add (ZERO_STRING);
-                vector.add (ZERO_STRING);
+                vector.add (Java_Box (EMPTY_STRING));
+                vector.add (Java_Box (EMPTY_STRING));
+                vector.add (Java_Box (EMPTY_STRING));
+                vector.add (Java_Box (EMPTY_STRING));
+                vector.add (Java_Box (EMPTY_STRING));
+                vector.add (Java_Box (EMPTY_STRING));
+                vector.add (Java_Box (EMPTY_STRING));
+                vector.add (Java_Box (EMPTY_STRING));
+                vector.add (Java_Box (EMPTY_STRING));
+                vector.add (Java_Box (EMPTY_STRING));
+                vector.add (Java_Box (EMPTY_STRING));
+                vector.add (Java_Box (EMPTY_STRING));
+                vector.add (Java_Box (EMPTY_STRING));
+                vector.add (Java_Box (ZERO_STRING));
+                vector.add (Java_Box (ZERO_STRING));
+                vector.add (Java_Box (ZERO_STRING));
+                vector.add (Java_Box (ZERO_STRING));
                 OrderItemsEntity'Class (This).insert (vector);
             end loop;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("Command Success Added: ") & Java_Image (items.size), OrderItemsEntity_Access'(This'Unchecked_Access), INSERT);
             end if;
         exception
@@ -232,7 +236,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (To_Unbounded_String ("Command Failed: ") & vector.toString, OrderItemsEntity_Access'(This'Unchecked_Access), INSERT, e);
             end if;
                 end;
@@ -244,8 +248,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
       updateHashMap : HashMap_Access;
    begin
         begin
-            whereHashMap := StdUtil_Package.getInstance.createHashMap;
-            updateHashMap := StdUtil_Package.getInstance.createHashMap;
+            whereHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
+            updateHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             whereHashMap.put (OrderData_Package.ID, Java_Box (orderId));
             whereHashMap.put (ShippingMethodData_Package.GROUP, Java_Box (groupId));
             updateHashMap.put (OrderHistoryData_Package.STATUS, Java_Box (status));
@@ -255,7 +259,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, OrderItemsEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("setStatus"), e);
             end if;
                 end;
@@ -283,7 +287,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, OrderItemsEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("isEverythingShipped"), e);
             end if;
             return False;
@@ -305,7 +309,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
    begin
         begin
             basketReview := BasketReview_Package.Create;
-            keyValues := StdUtil_Package.getInstance.createHashMap;
+            keyValues := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             keyValues.put (OrderData_Package.ID, Java_Box (orderId));
             items := AbSqlBean_Package.AbSqlBean (This).getRows (keyValues);
             entryData := EntryData_Package.getInstance;
@@ -335,7 +339,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, OrderItemsEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getBasketReview"), e);
             end if;
             return null;

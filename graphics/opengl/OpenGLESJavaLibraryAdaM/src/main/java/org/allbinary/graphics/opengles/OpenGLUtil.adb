@@ -97,11 +97,16 @@ with org.allbinary.graphics.displayable.MyCanvas_Package;
 with org.allbinary.graphics.font.MyFontProcessor_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.graphics.opengles.OpenGLCapabilities_Package;
+with org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
+with org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+with org.allbinary.image.opengles.OpenGLESImageTranslate_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package;
 with org.allbinary.graphics.opengles.OpenGLLogUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
-with org.allbinary.graphics.paint.Paintable_Package;
 with org.allbinary.graphics.paint.PaintableInterface_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 with javax.microedition.media.Player_Package;
 with javax.microedition.media.PlayerListener_Package;
 with org.microemu.device.ui.PointerEvent_Package;
@@ -286,7 +291,7 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
 
    function getInstance return OpenGLUtil_Access is
    begin
-        return OpenGLUtil_Access (OpenGLUtil_Package.instance);
+        return OpenGLUtil_Package.instance;
    end getInstance;
 
    procedure onSurfaceCreated (This : in out OpenGLUtil; gl_Param : access GL10_Package.GL10'Class) is

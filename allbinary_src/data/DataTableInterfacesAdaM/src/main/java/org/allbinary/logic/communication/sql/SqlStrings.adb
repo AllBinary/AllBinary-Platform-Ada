@@ -61,7 +61,7 @@ package body org.allbinary.logic.communication.sql.SqlStrings_Package is
 
    function getInstance return SqlStrings_Access is
    begin
-        return SqlStrings_Access (SqlStrings_Package.instance);
+        return SqlStrings_Package.instance;
    end getInstance;
 
 begin

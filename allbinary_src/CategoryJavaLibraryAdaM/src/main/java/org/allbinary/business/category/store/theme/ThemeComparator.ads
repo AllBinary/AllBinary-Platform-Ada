@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.category.store.theme.ThemeComparator_Package;
 package org.allbinary.business.category.store.theme.ThemeComparator_Package_References is
    type ThemeComparator_Access is access all org.allbinary.business.category.store.theme.ThemeComparator_Package.ThemeComparator'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.category.store.theme.ThemeComparator_Package_Refe
    type ThemeComparator_Access_Array_Access is access all ThemeComparator_Access_Array;
    type ThemeComparator_Access_Array_Access_Array is array (Natural range <>) of ThemeComparator_Access_Array_Access;
    type ThemeComparator_Access_Array_Access_Array_Access is access all ThemeComparator_Access_Array_Access_Array;
+   type ThemeComparator_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ThemeComparator_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ThemeComparator_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ThemeComparator_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ThemeComparator_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ThemeComparator_Access_Array_Access is (if Value /= null and then Value.all in ThemeComparator_Access_Array_Object'Class then ThemeComparator_Access_Array_Object'Class (Value.all).Value else null);
+   type ThemeComparator_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ThemeComparator_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ThemeComparator_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ThemeComparator_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ThemeComparator_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ThemeComparator_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ThemeComparator_Access_Array_Access_Array_Object'Class then ThemeComparator_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.category.store.theme.ThemeComparator_Package_References;
 
 with org.allbinary.business.category.store.theme.ThemeComparator_Package_References;
@@ -46,10 +57,14 @@ package org.allbinary.business.category.store.theme.ThemeComparator_Package is
    function "=" (Left, Right : ThemeComparator_Access_Array) return Boolean renames org.allbinary.business.category.store.theme.ThemeComparator_Package_References."=";
    subtype ThemeComparator_Access_Array_Access is org.allbinary.business.category.store.theme.ThemeComparator_Package_References.ThemeComparator_Access_Array_Access;
    function "=" (Left, Right : ThemeComparator_Access_Array_Access) return Boolean renames org.allbinary.business.category.store.theme.ThemeComparator_Package_References."=";
+   function Java_Box (Value : ThemeComparator_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.category.store.theme.ThemeComparator_Package_References.Java_Box;
+   function Java_Unbox_ThemeComparator_Access_Array (Value : access Java_Object'Class) return ThemeComparator_Access_Array_Access renames org.allbinary.business.category.store.theme.ThemeComparator_Package_References.Java_Unbox_ThemeComparator_Access_Array;
    subtype ThemeComparator_Access_Array_Access_Array is org.allbinary.business.category.store.theme.ThemeComparator_Package_References.ThemeComparator_Access_Array_Access_Array;
    function "=" (Left, Right : ThemeComparator_Access_Array_Access_Array) return Boolean renames org.allbinary.business.category.store.theme.ThemeComparator_Package_References."=";
    subtype ThemeComparator_Access_Array_Access_Array_Access is org.allbinary.business.category.store.theme.ThemeComparator_Package_References.ThemeComparator_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ThemeComparator_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.category.store.theme.ThemeComparator_Package_References."=";
+   function Java_Box (Value : ThemeComparator_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.category.store.theme.ThemeComparator_Package_References.Java_Box;
+   function Java_Unbox_ThemeComparator_Access_Array_Access_Array (Value : access Java_Object'Class) return ThemeComparator_Access_Array_Access_Array_Access renames org.allbinary.business.category.store.theme.ThemeComparator_Package_References.Java_Unbox_ThemeComparator_Access_Array_Access_Array;
 
    type ThemeComparator is new Java_Object and Comparator with null record;
 

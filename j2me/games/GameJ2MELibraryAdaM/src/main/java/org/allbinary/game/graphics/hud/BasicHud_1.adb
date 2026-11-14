@@ -53,6 +53,7 @@ with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.game.graphics.hud.BasicHudFactory_Package;
 with javax.microedition.lcdui.Canvas_Package;
 with org.microemu.device.ui.CanvasUI_Package;
 with javax.microedition.lcdui.ChoiceGroup_Package;

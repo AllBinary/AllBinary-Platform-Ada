@@ -65,7 +65,7 @@ package body org.allbinary.game.midlet.GameMidletStateFactory_Package is
 
    function getInstance return GameMidletStateFactory_Access is
    begin
-        return GameMidletStateFactory_Access (GameMidletStateFactory_Package.INSTANCE);
+        return GameMidletStateFactory_Package.INSTANCE;
    end getInstance;
 
    function getCurrentGameState (This : in out GameMidletStateFactory) return GameState_Access is

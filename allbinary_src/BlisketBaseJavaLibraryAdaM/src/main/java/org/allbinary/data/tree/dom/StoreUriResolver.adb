@@ -26,6 +26,8 @@ with org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_P
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package; use org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.data.tree.dom.URIResolverStrings_Package; use org.allbinary.data.tree.dom.URIResolverStrings_Package;
 with org.allbinary.data.tree.dom.URIResolverStrings_Package_References;
 with org.allbinary.data.tree.dom.BasicUriResolver_Package; use org.allbinary.data.tree.dom.BasicUriResolver_Package;
@@ -51,6 +53,8 @@ package body org.allbinary.data.tree.dom.StoreUriResolver_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package TransformInfoHttpStoreInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
    package TransformInfoTemplateData_Package renames Standard.org.allbinary.logic.visual.transform.info.template.TransformInfoTemplateData_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -128,7 +132,7 @@ package body org.allbinary.data.tree.dom.StoreUriResolver_Package is
             transformInfoHttpStoreInterface := TransformInfoHttpStoreInterface_Access (This.parentTransformInfoInterface);
             stringBuffer.append (URLGLOBALS_Package.getMainPath).append (FREEBLISKET_PATH_GLOBALS_Package.getInstance.XSLPATH).append (transformInfoHttpStoreInterface.getStoreName).append (AbPathData_Package.getInstance.SEPARATOR).append (href);
             fileAbPath := AbPath_Access (AbFilePath_Package.Create (stringBuffer.toString));
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XMLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.XMLLOGGING) then
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (This.uriResolverStrings.ATTEMPT);
                 stringBuffer.append (href);

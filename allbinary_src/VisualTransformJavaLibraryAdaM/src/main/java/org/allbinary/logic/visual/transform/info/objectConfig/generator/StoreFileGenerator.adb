@@ -40,6 +40,8 @@ with org.allbinary.logic.visual.transform.info.TransformInfosData_Package; use o
 with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -69,6 +71,8 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
    package TransformInfoHttpStoreInterface_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoHttpStoreInterface_Package;
    package TransformInfosData_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfosData_Package;
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -157,7 +161,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
         if stringValidationUtil.isEmpty (fileName) then
             transformInfoHttpStoreInterface := TransformInfoHttpStoreInterface_Access (transformInfoInterface);
             fileName := Unbounded_Slice (transformInfoInterface.getName, ((transformInfoHttpStoreInterface.getStoreName.length) + (1)) + 1, Ada.Strings.Unbounded.Length (transformInfoInterface.getName));
-            outputMappingHashMap := StdUtil_Package.getInstance.createHashMap;
+            outputMappingHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             outputMappingHashMap.put (TransformInfosData_Package.getInstance.PREVIEW, Java_Box (To_Unbounded_String ("Preview")));
             outputMappingHashMap.put (TransformInfosData_Package.getInstance.SMALL_PREVIEW, Java_Box (To_Unbounded_String ("SmallPreview")));
             outputMappingHashMap.put (Java_Box (CommonSeps_Package.getInstance.SPACE), Java_Box (StringUtil_Package.getInstance.EMPTY_STRING));
@@ -182,7 +186,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
         abPath := AbPath_Package.Create (abPath.toString, stringBuffer.toString);
         This.fileAbPath := abPath;
         This.file := AbFile_Package.createAbFileFromAbPath (This.fileAbPath);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("File: ") & This.fileAbPath.toString, StoreFileGenerator_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
@@ -198,7 +202,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
    function process (This : in out StoreFileGenerator; input : Unbounded_String) return Unbounded_String is
       inputStream : InputStream_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Processing"), StoreFileGenerator_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         end if;
         if not (This.file.exists) then
@@ -210,7 +214,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Could Not Create: ") & This.fileAbPath.toString));
         end if;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Processed"), StoreFileGenerator_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         end if;
         return StringUtil_Package.getInstance.EMPTY_STRING;

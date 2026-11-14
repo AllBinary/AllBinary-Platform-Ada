@@ -57,7 +57,7 @@ package body org.allbinary.game.layer.LayerPlacementTypeFactory_Package is
 
    function getInstance return LayerPlacementTypeFactory_Access is
    begin
-        return LayerPlacementTypeFactory_Access (LayerPlacementTypeFactory_Package.instance);
+        return LayerPlacementTypeFactory_Package.instance;
    end getInstance;
 
 begin

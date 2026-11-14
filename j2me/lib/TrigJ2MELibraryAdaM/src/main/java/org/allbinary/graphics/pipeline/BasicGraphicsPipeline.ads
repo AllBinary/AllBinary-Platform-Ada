@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package;
 package org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References is
    type BasicGraphicsPipeline_Access is access all org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package.BasicGraphicsPipeline'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References
    type BasicGraphicsPipeline_Access_Array_Access is access all BasicGraphicsPipeline_Access_Array;
    type BasicGraphicsPipeline_Access_Array_Access_Array is array (Natural range <>) of BasicGraphicsPipeline_Access_Array_Access;
    type BasicGraphicsPipeline_Access_Array_Access_Array_Access is access all BasicGraphicsPipeline_Access_Array_Access_Array;
+   type BasicGraphicsPipeline_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicGraphicsPipeline_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicGraphicsPipeline_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicGraphicsPipeline_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicGraphicsPipeline_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicGraphicsPipeline_Access_Array_Access is (if Value /= null and then Value.all in BasicGraphicsPipeline_Access_Array_Object'Class then BasicGraphicsPipeline_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicGraphicsPipeline_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicGraphicsPipeline_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicGraphicsPipeline_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicGraphicsPipeline_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicGraphicsPipeline_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicGraphicsPipeline_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicGraphicsPipeline_Access_Array_Access_Array_Object'Class then BasicGraphicsPipeline_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References;
 
 with org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References;
@@ -83,10 +94,14 @@ package org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
    function "=" (Left, Right : BasicGraphicsPipeline_Access_Array) return Boolean renames org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References."=";
    subtype BasicGraphicsPipeline_Access_Array_Access is org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References.BasicGraphicsPipeline_Access_Array_Access;
    function "=" (Left, Right : BasicGraphicsPipeline_Access_Array_Access) return Boolean renames org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References."=";
+   function Java_Box (Value : BasicGraphicsPipeline_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References.Java_Box;
+   function Java_Unbox_BasicGraphicsPipeline_Access_Array (Value : access Java_Object'Class) return BasicGraphicsPipeline_Access_Array_Access renames org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References.Java_Unbox_BasicGraphicsPipeline_Access_Array;
    subtype BasicGraphicsPipeline_Access_Array_Access_Array is org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References.BasicGraphicsPipeline_Access_Array_Access_Array;
    function "=" (Left, Right : BasicGraphicsPipeline_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References."=";
    subtype BasicGraphicsPipeline_Access_Array_Access_Array_Access is org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References.BasicGraphicsPipeline_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicGraphicsPipeline_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References."=";
+   function Java_Box (Value : BasicGraphicsPipeline_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References.Java_Box;
+   function Java_Unbox_BasicGraphicsPipeline_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicGraphicsPipeline_Access_Array_Access_Array_Access renames org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package_References.Java_Unbox_BasicGraphicsPipeline_Access_Array_Access_Array;
 
    type BasicGraphicsPipeline is new Java_Object with record
       pointBasicArrayList : BasicArrayList_Access;

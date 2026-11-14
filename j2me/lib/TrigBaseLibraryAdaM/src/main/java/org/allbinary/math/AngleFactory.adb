@@ -108,7 +108,7 @@ package body org.allbinary.math.AngleFactory_Package is
 
    function getInstance return AngleFactory_Access is
    begin
-        return AngleFactory_Access (AngleFactory_Package.instance);
+        return AngleFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AngleFactory'Class) is

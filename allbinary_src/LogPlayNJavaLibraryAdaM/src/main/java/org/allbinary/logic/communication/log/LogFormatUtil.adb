@@ -110,7 +110,7 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
 
    function getInstance return LogFormatUtil_Access is
    begin
-        return LogFormatUtil_Access (LogFormatUtil_Package.instance);
+        return LogFormatUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out LogFormatUtil'Class) is
@@ -166,7 +166,7 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
       stringBuffer : StringMaker_Access;
       exceptionAsString : Unbounded_String;
    begin
-        if (exception_Id) /= (This.nullUtil.NULL_OBJECT) then
+        if (Java_Object_Access (exception_Id)) /= (Java_Object_Access (This.nullUtil.NULL_OBJECT)) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (This.LOG_ERROR);
             exceptionAsString := exception_Id.toString;
@@ -176,7 +176,7 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
                 stringBuffer.append (This.EMPTY);
             end if;
             stringBuffer.append (This.STACK_TRACE);
-            if (exception_Id) /= (This.nullUtil.NULL_OBJECT) then
+            if (Java_Object_Access (exception_Id)) /= (Java_Object_Access (This.nullUtil.NULL_OBJECT)) then
                 stringBuffer.append (This.exceptionUtil.getStackTrace (Java_Throwable (exception_Id)));
             else
                 stringBuffer.append (This.stringUtil.NULL_STRING);

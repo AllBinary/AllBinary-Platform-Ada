@@ -370,7 +370,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
                     This.logUtil.putF (To_Unbounded_String ("PCI File Found"), LinuxHardware_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
                 end if;
                 nextLine := lineNumberReader.readLine;
-                while ((lineNumberReader) /= (null)) and then ((nextLine) /= (Null_Unbounded_String)) loop
+                while (nextLine) /= (Null_Unbounded_String) loop
                     if LinuxHardware'Class (This).isNextHardware (nextLine) then
                         exit;
                     end if;
@@ -385,7 +385,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
                     componentData.append (CommonSeps_Package.getInstance.NEW_LINE);
                     nextLine := lineNumberReader.readLine;
                     componentType := PCComponentFactory_Package.getInstance.getComponentType (nextLine);
-                    while (lineNumberReader) /= (null) loop
+                    while True loop
                         componentData.append (nextLine);
                         componentData.append (CommonSeps_Package.getInstance.NEW_LINE);
                         nextLine := lineNumberReader.readLine;

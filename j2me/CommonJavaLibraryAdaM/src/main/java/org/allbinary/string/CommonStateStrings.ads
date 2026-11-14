@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.string_Id.CommonStateStrings_Package;
 package org.allbinary.string_Id.CommonStateStrings_Package_References is
    type CommonStateStrings_Access is access all org.allbinary.string_Id.CommonStateStrings_Package.CommonStateStrings'Class;
@@ -19,6 +20,16 @@ package org.allbinary.string_Id.CommonStateStrings_Package_References is
    type CommonStateStrings_Access_Array_Access is access all CommonStateStrings_Access_Array;
    type CommonStateStrings_Access_Array_Access_Array is array (Natural range <>) of CommonStateStrings_Access_Array_Access;
    type CommonStateStrings_Access_Array_Access_Array_Access is access all CommonStateStrings_Access_Array_Access_Array;
+   type CommonStateStrings_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CommonStateStrings_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CommonStateStrings_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CommonStateStrings_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CommonStateStrings_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CommonStateStrings_Access_Array_Access is (if Value /= null and then Value.all in CommonStateStrings_Access_Array_Object'Class then CommonStateStrings_Access_Array_Object'Class (Value.all).Value else null);
+   type CommonStateStrings_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CommonStateStrings_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CommonStateStrings_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CommonStateStrings_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CommonStateStrings_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CommonStateStrings_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CommonStateStrings_Access_Array_Access_Array_Object'Class then CommonStateStrings_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.string_Id.CommonStateStrings_Package_References;
 
 with org.allbinary.string_Id.CommonStateStrings_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.string_Id.CommonStateStrings_Package is
    function "=" (Left, Right : CommonStateStrings_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStateStrings_Package_References."=";
    subtype CommonStateStrings_Access_Array_Access is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array_Access;
    function "=" (Left, Right : CommonStateStrings_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStateStrings_Package_References."=";
+   function Java_Box (Value : CommonStateStrings_Access_Array_Access) return Java_Object_Access renames org.allbinary.string_Id.CommonStateStrings_Package_References.Java_Box;
+   function Java_Unbox_CommonStateStrings_Access_Array (Value : access Java_Object'Class) return CommonStateStrings_Access_Array_Access renames org.allbinary.string_Id.CommonStateStrings_Package_References.Java_Unbox_CommonStateStrings_Access_Array;
    subtype CommonStateStrings_Access_Array_Access_Array is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array_Access_Array;
    function "=" (Left, Right : CommonStateStrings_Access_Array_Access_Array) return Boolean renames org.allbinary.string_Id.CommonStateStrings_Package_References."=";
    subtype CommonStateStrings_Access_Array_Access_Array_Access is org.allbinary.string_Id.CommonStateStrings_Package_References.CommonStateStrings_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CommonStateStrings_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.string_Id.CommonStateStrings_Package_References."=";
+   function Java_Box (Value : CommonStateStrings_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.string_Id.CommonStateStrings_Package_References.Java_Box;
+   function Java_Unbox_CommonStateStrings_Access_Array_Access_Array (Value : access Java_Object'Class) return CommonStateStrings_Access_Array_Access_Array_Access renames org.allbinary.string_Id.CommonStateStrings_Package_References.Java_Unbox_CommonStateStrings_Access_Array_Access_Array;
 
    type CommonStateStrings is new Java_Object with record
       CONTEXT : Unbounded_String;

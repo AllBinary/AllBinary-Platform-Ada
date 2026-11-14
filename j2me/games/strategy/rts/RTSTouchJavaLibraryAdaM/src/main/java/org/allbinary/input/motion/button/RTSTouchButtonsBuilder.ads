@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package;
 package org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_References is
    type RTSTouchButtonsBuilder_Access is access all org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package.RTSTouchButtonsBuilder'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_Referen
    type RTSTouchButtonsBuilder_Access_Array_Access is access all RTSTouchButtonsBuilder_Access_Array;
    type RTSTouchButtonsBuilder_Access_Array_Access_Array is array (Natural range <>) of RTSTouchButtonsBuilder_Access_Array_Access;
    type RTSTouchButtonsBuilder_Access_Array_Access_Array_Access is access all RTSTouchButtonsBuilder_Access_Array_Access_Array;
+   type RTSTouchButtonsBuilder_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RTSTouchButtonsBuilder_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RTSTouchButtonsBuilder_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RTSTouchButtonsBuilder_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RTSTouchButtonsBuilder_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RTSTouchButtonsBuilder_Access_Array_Access is (if Value /= null and then Value.all in RTSTouchButtonsBuilder_Access_Array_Object'Class then RTSTouchButtonsBuilder_Access_Array_Object'Class (Value.all).Value else null);
+   type RTSTouchButtonsBuilder_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RTSTouchButtonsBuilder_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RTSTouchButtonsBuilder_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RTSTouchButtonsBuilder_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RTSTouchButtonsBuilder_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RTSTouchButtonsBuilder_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in RTSTouchButtonsBuilder_Access_Array_Access_Array_Object'Class then RTSTouchButtonsBuilder_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_References;
 
 with org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package is
    function "=" (Left, Right : RTSTouchButtonsBuilder_Access_Array) return Boolean renames org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_References."=";
    subtype RTSTouchButtonsBuilder_Access_Array_Access is org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_References.RTSTouchButtonsBuilder_Access_Array_Access;
    function "=" (Left, Right : RTSTouchButtonsBuilder_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_References."=";
+   function Java_Box (Value : RTSTouchButtonsBuilder_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_References.Java_Box;
+   function Java_Unbox_RTSTouchButtonsBuilder_Access_Array (Value : access Java_Object'Class) return RTSTouchButtonsBuilder_Access_Array_Access renames org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_References.Java_Unbox_RTSTouchButtonsBuilder_Access_Array;
    subtype RTSTouchButtonsBuilder_Access_Array_Access_Array is org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_References.RTSTouchButtonsBuilder_Access_Array_Access_Array;
    function "=" (Left, Right : RTSTouchButtonsBuilder_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_References."=";
    subtype RTSTouchButtonsBuilder_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_References.RTSTouchButtonsBuilder_Access_Array_Access_Array_Access;
    function "=" (Left, Right : RTSTouchButtonsBuilder_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_References."=";
+   function Java_Box (Value : RTSTouchButtonsBuilder_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_References.Java_Box;
+   function Java_Unbox_RTSTouchButtonsBuilder_Access_Array_Access_Array (Value : access Java_Object'Class) return RTSTouchButtonsBuilder_Access_Array_Access_Array_Access renames org.allbinary.input.motion.button.RTSTouchButtonsBuilder_Package_References.Java_Unbox_RTSTouchButtonsBuilder_Access_Array_Access_Array;
 
    type RTSTouchButtonsBuilder is new BaseTouchInput with record
       logUtil : LogUtil_Access;

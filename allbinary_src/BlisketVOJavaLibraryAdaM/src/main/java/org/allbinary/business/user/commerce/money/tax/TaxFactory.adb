@@ -40,6 +40,8 @@ with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -67,6 +69,8 @@ package body org.allbinary.business.user.commerce.money.tax.TaxFactory_Package i
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype StoreFrontInterface_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access;
    function "=" (Left, Right : StoreFrontInterface_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References."=";
    subtype StoreFrontInterface_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array;
@@ -128,7 +132,7 @@ package body org.allbinary.business.user.commerce.money.tax.TaxFactory_Package i
 
    function getInstance return TaxFactory_Access is
    begin
-        return TaxFactory_Access (TaxFactory_Package.instance);
+        return TaxFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TaxFactory'Class) is
@@ -183,12 +187,12 @@ package body org.allbinary.business.user.commerce.money.tax.TaxFactory_Package i
                     className := DomNodeHelper_Package.getTextNodeValue (classNameNode);
                     return TaxModuleInterface_Access (AbeFactory_Package.getInstance.getInstance (abeClientInformation, className));
                 else
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAX) then
+                    if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.TAX) then
                         This.logUtil.putF (To_Unbounded_String ("Class Node Null"), TaxFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                     end if;
                 end if;
             else
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAX) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.TAX) then
                     This.logUtil.putF (To_Unbounded_String ("Tax Name Node Node Children"), TaxFactory_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
                 end if;
             end if;

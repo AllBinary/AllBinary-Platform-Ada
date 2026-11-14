@@ -92,7 +92,7 @@ package body org.allbinary.game.input.motion.action.NoCompleteMotionGestureInput
 
    function getInstance return NoCompleteMotionGestureInputEventListener_Access is
    begin
-        return NoCompleteMotionGestureInputEventListener_Access (NoCompleteMotionGestureInputEventListener_Package.instance);
+        return NoCompleteMotionGestureInputEventListener_Package.instance;
    end getInstance;
 
 begin

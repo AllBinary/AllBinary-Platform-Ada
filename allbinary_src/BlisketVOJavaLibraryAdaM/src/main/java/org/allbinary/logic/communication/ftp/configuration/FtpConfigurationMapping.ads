@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package;
 package org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package_References is
    type FtpConfigurationMapping_Access is access all org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package.FtpConfigurationMapping'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapp
    type FtpConfigurationMapping_Access_Array_Access is access all FtpConfigurationMapping_Access_Array;
    type FtpConfigurationMapping_Access_Array_Access_Array is array (Natural range <>) of FtpConfigurationMapping_Access_Array_Access;
    type FtpConfigurationMapping_Access_Array_Access_Array_Access is access all FtpConfigurationMapping_Access_Array_Access_Array;
+   type FtpConfigurationMapping_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FtpConfigurationMapping_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FtpConfigurationMapping_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FtpConfigurationMapping_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FtpConfigurationMapping_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FtpConfigurationMapping_Access_Array_Access is (if Value /= null and then Value.all in FtpConfigurationMapping_Access_Array_Object'Class then FtpConfigurationMapping_Access_Array_Object'Class (Value.all).Value else null);
+   type FtpConfigurationMapping_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FtpConfigurationMapping_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FtpConfigurationMapping_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FtpConfigurationMapping_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FtpConfigurationMapping_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FtpConfigurationMapping_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in FtpConfigurationMapping_Access_Array_Access_Array_Object'Class then FtpConfigurationMapping_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package_References;
 
 with org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package_References;
@@ -73,10 +84,14 @@ package org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapp
    function "=" (Left, Right : FtpConfigurationMapping_Access_Array) return Boolean renames org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package_References."=";
    subtype FtpConfigurationMapping_Access_Array_Access is org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package_References.FtpConfigurationMapping_Access_Array_Access;
    function "=" (Left, Right : FtpConfigurationMapping_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package_References."=";
+   function Java_Box (Value : FtpConfigurationMapping_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package_References.Java_Box;
+   function Java_Unbox_FtpConfigurationMapping_Access_Array (Value : access Java_Object'Class) return FtpConfigurationMapping_Access_Array_Access renames org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package_References.Java_Unbox_FtpConfigurationMapping_Access_Array;
    subtype FtpConfigurationMapping_Access_Array_Access_Array is org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package_References.FtpConfigurationMapping_Access_Array_Access_Array;
    function "=" (Left, Right : FtpConfigurationMapping_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package_References."=";
    subtype FtpConfigurationMapping_Access_Array_Access_Array_Access is org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package_References.FtpConfigurationMapping_Access_Array_Access_Array_Access;
    function "=" (Left, Right : FtpConfigurationMapping_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package_References."=";
+   function Java_Box (Value : FtpConfigurationMapping_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package_References.Java_Box;
+   function Java_Unbox_FtpConfigurationMapping_Access_Array_Access_Array (Value : access Java_Object'Class) return FtpConfigurationMapping_Access_Array_Access_Array_Access renames org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapping_Package_References.Java_Unbox_FtpConfigurationMapping_Access_Array_Access_Array;
 
    type FtpConfigurationMapping is new Java_Object and TableMappingInterface with record
       ftpConfigurationInterface : FtpConfigurationInterface_Access;

@@ -8,10 +8,22 @@ with javax.microedition.lcdui.Image_Package_References;
 with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package; use org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 with org.platform.opengl.OpenGLGLUUtils_Package; use org.platform.opengl.OpenGLGLUUtils_Package;
 with org.platform.opengl.OpenGLGLUUtils_Package_References;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with javax.microedition.lcdui.Font_Package;
+with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.graphics.OpenGLBitmap_Package;
+with org.allbinary.image.opengles.OpenGLESImage_Package;
+with org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
+with org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+with org.allbinary.image.opengles.OpenGLESImageTranslate_Package;
 with org.platform.opengl.OpenGLGLUUtils_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
 
 package body org.platform.opengl.OpenGLTextureFactory_Package is
 
@@ -54,7 +66,7 @@ package body org.platform.opengl.OpenGLTextureFactory_Package is
 
    function getInstance return OpenGLTextureFactory_Access is
    begin
-        return OpenGLTextureFactory_Access (OpenGLTextureFactory_Package.instance);
+        return OpenGLTextureFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out OpenGLTextureFactory'Class) is

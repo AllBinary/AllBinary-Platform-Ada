@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
 package org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References is
    type AnimationFactoryInitializationVisitor_Access is access all org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package.AnimationFactoryInitializationVisitor'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Pack
    type AnimationFactoryInitializationVisitor_Access_Array_Access is access all AnimationFactoryInitializationVisitor_Access_Array;
    type AnimationFactoryInitializationVisitor_Access_Array_Access_Array is array (Natural range <>) of AnimationFactoryInitializationVisitor_Access_Array_Access;
    type AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access is access all AnimationFactoryInitializationVisitor_Access_Array_Access_Array;
+   type AnimationFactoryInitializationVisitor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AnimationFactoryInitializationVisitor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AnimationFactoryInitializationVisitor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AnimationFactoryInitializationVisitor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AnimationFactoryInitializationVisitor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AnimationFactoryInitializationVisitor_Access_Array_Access is (if Value /= null and then Value.all in AnimationFactoryInitializationVisitor_Access_Array_Object'Class then AnimationFactoryInitializationVisitor_Access_Array_Object'Class (Value.all).Value else null);
+   type AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AnimationFactoryInitializationVisitor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Object'Class then AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References;
 
 with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Pack
    function "=" (Left, Right : AnimationFactoryInitializationVisitor_Access_Array) return Boolean renames org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References."=";
    subtype AnimationFactoryInitializationVisitor_Access_Array_Access is org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References.AnimationFactoryInitializationVisitor_Access_Array_Access;
    function "=" (Left, Right : AnimationFactoryInitializationVisitor_Access_Array_Access) return Boolean renames org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References."=";
+   function Java_Box (Value : AnimationFactoryInitializationVisitor_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References.Java_Box;
+   function Java_Unbox_AnimationFactoryInitializationVisitor_Access_Array (Value : access Java_Object'Class) return AnimationFactoryInitializationVisitor_Access_Array_Access renames org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References.Java_Unbox_AnimationFactoryInitializationVisitor_Access_Array;
    subtype AnimationFactoryInitializationVisitor_Access_Array_Access_Array is org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References.AnimationFactoryInitializationVisitor_Access_Array_Access_Array;
    function "=" (Left, Right : AnimationFactoryInitializationVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References."=";
    subtype AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access is org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References.AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References."=";
+   function Java_Box (Value : AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References.Java_Box;
+   function Java_Unbox_AnimationFactoryInitializationVisitor_Access_Array_Access_Array (Value : access Java_Object'Class) return AnimationFactoryInitializationVisitor_Access_Array_Access_Array_Access renames org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package_References.Java_Unbox_AnimationFactoryInitializationVisitor_Access_Array_Access_Array;
 
    type AnimationFactoryInitializationVisitor is new Java_Object with record
       width : Integer;

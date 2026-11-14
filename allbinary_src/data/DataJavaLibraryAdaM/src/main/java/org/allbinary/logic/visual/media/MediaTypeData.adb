@@ -26,7 +26,7 @@ package body org.allbinary.logic.visual.media.MediaTypeData_Package is
 
    function getInstance return MediaTypeData_Access is
    begin
-        return MediaTypeData_Access (MediaTypeData_Package.instance);
+        return MediaTypeData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out MediaTypeData'Class) is

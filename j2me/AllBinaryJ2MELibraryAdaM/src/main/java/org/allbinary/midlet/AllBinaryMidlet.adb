@@ -177,7 +177,7 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
 
    function getNullInstance return AllBinaryMidlet_Access is
    begin
-        if (AllBinaryMidlet_Package.NULL_ALLBINARY_MIDLET) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (AllBinaryMidlet_Package.NULL_ALLBINARY_MIDLET)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             AllBinaryMidlet_Package.NULL_ALLBINARY_MIDLET := Java_Object_Access (AllBinaryMidlet_Package.Create);
         end if;
         return AllBinaryMidlet_Access (AllBinaryMidlet_Package.NULL_ALLBINARY_MIDLET);
@@ -205,11 +205,7 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
         title := StringUtil_Package.getInstance.EMPTY_STRING;
         if (Java_Object_Access (newDisplay)) /= (Java_Object_Access (NullCanvas_Package.NULL_CANVAS)) then
             title := newDisplay.getTitle;
-            if (title) /= (Null_Unbounded_String) then
-                This.logUtil.putF (StringMaker_Package.Create.append (This.SETTING_U).append (title).append (This.U_DISPLAY_U).append (StringUtil_Package.getInstance.toString (newDisplay)).toString, AllBinaryMidlet_Access'(This'Unchecked_Access), This.SET_DISPLAY);
-            else
-                This.logUtil.putF (StringMaker_Package.Create.append (This.SETTING_NO_TITLE).append (StringUtil_Package.getInstance.toString (newDisplay)).toString, AllBinaryMidlet_Access'(This'Unchecked_Access), This.SET_DISPLAY);
-            end if;
+            This.logUtil.putF (StringMaker_Package.Create.append (This.SETTING_U).append (title).append (This.U_DISPLAY_U).append (StringUtil_Package.getInstance.toString (newDisplay)).toString, AllBinaryMidlet_Access'(This'Unchecked_Access), This.SET_DISPLAY);
         end if;
         display := AllBinaryMidlet'Class (This).getDisplay;
         display.setCurrent (newDisplay);

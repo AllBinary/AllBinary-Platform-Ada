@@ -165,7 +165,7 @@ package body org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensi
    begin
         commonFileStrings := CommonDataFileStrings_Package.getInstance;
         list := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        list.add (commonFileStrings.JAVA);
+        list.add (Java_Box (commonFileStrings.JAVA));
         filePath := To_Unbounded_String ("G:\mnt\bc\mydev\games\ZeptoRacer\platform\j2se\ZeptoRacerStaticPathsJ2SEM\" & ASCII.HT & "arget\dependency\org\allbinary\logic\system\security\licensing\ZeptoRacerPCClientInformation.java");
         result := DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package.Create (list).visit (AbFile_Package.createAbFileFromRawPath (filePath));
         Ada.Text_IO.Put_Line (Java_Image (filePath & To_Unbounded_String (" is Tracked: ") & Java_Image (result)));

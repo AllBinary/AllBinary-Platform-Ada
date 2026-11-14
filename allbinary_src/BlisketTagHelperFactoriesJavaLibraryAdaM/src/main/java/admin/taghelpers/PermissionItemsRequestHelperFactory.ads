@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.PermissionItemsRequestHelperFactory_Package;
 package admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References is
    type PermissionItemsRequestHelperFactory_Access is access all admin.taghelpers.PermissionItemsRequestHelperFactory_Package.PermissionItemsRequestHelperFactory'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References 
    type PermissionItemsRequestHelperFactory_Access_Array_Access is access all PermissionItemsRequestHelperFactory_Access_Array;
    type PermissionItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of PermissionItemsRequestHelperFactory_Access_Array_Access;
    type PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all PermissionItemsRequestHelperFactory_Access_Array_Access_Array;
+   type PermissionItemsRequestHelperFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PermissionItemsRequestHelperFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PermissionItemsRequestHelperFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PermissionItemsRequestHelperFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PermissionItemsRequestHelperFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PermissionItemsRequestHelperFactory_Access_Array_Access is (if Value /= null and then Value.all in PermissionItemsRequestHelperFactory_Access_Array_Object'Class then PermissionItemsRequestHelperFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PermissionItemsRequestHelperFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Object'Class then PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References;
 
 with admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References;
@@ -61,10 +72,14 @@ package admin.taghelpers.PermissionItemsRequestHelperFactory_Package is
    function "=" (Left, Right : PermissionItemsRequestHelperFactory_Access_Array) return Boolean renames admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References."=";
    subtype PermissionItemsRequestHelperFactory_Access_Array_Access is admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References.PermissionItemsRequestHelperFactory_Access_Array_Access;
    function "=" (Left, Right : PermissionItemsRequestHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References."=";
+   function Java_Box (Value : PermissionItemsRequestHelperFactory_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_PermissionItemsRequestHelperFactory_Access_Array (Value : access Java_Object'Class) return PermissionItemsRequestHelperFactory_Access_Array_Access renames admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References.Java_Unbox_PermissionItemsRequestHelperFactory_Access_Array;
    subtype PermissionItemsRequestHelperFactory_Access_Array_Access_Array is admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References.PermissionItemsRequestHelperFactory_Access_Array_Access_Array;
    function "=" (Left, Right : PermissionItemsRequestHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References."=";
    subtype PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References.PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References."=";
+   function Java_Box (Value : PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_PermissionItemsRequestHelperFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return PermissionItemsRequestHelperFactory_Access_Array_Access_Array_Access renames admin.taghelpers.PermissionItemsRequestHelperFactory_Package_References.Java_Unbox_PermissionItemsRequestHelperFactory_Access_Array_Access_Array;
 
    type PermissionItemsRequestHelperFactory is new TagHelperFactory with record
       logUtil : LogUtil_Access;

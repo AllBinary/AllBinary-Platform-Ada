@@ -164,8 +164,8 @@ package body org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
    begin
         begin
             viewPosition := This.layerInterface.getViewPosition;
-            x := viewPosition.getX;
-            y := viewPosition.getY;
+            x := viewPosition.getX2;
+            y := viewPosition.getY2;
             for index in 0 .. (This.animationInterfaceArray'Length) - 1 loop
                 animationInterface := This.animationInterfaceArray (index);
                 if (animationInterface.getFrame) < ((animationInterface.getAnimationSize) - (1)) then

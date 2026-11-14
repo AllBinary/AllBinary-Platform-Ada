@@ -82,7 +82,7 @@ package body org.allbinary.game.configuration.event.GameInitializedEventHandler_
 
    function getInstance return GameInitializedEventHandler_Access is
    begin
-        return GameInitializedEventHandler_Access (GameInitializedEventHandler_Package.gameKeyEventHandler);
+        return GameInitializedEventHandler_Package.gameKeyEventHandler;
    end getInstance;
 
    --  throws Exception

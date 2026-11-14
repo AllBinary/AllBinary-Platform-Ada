@@ -45,7 +45,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
 
    function getInstance return RaceTrackGeographicMapCellTypes_Access is
    begin
-        return RaceTrackGeographicMapCellTypes_Access (RaceTrackGeographicMapCellTypes_Package.instance);
+        return RaceTrackGeographicMapCellTypes_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out RaceTrackGeographicMapCellTypes'Class) is

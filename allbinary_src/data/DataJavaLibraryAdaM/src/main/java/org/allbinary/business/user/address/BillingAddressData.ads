@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.address.BillingAddressData_Package;
 package org.allbinary.business.user.address.BillingAddressData_Package_References is
    type BillingAddressData_Access is access all org.allbinary.business.user.address.BillingAddressData_Package.BillingAddressData'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.address.BillingAddressData_Package_Reference
    type BillingAddressData_Access_Array_Access is access all BillingAddressData_Access_Array;
    type BillingAddressData_Access_Array_Access_Array is array (Natural range <>) of BillingAddressData_Access_Array_Access;
    type BillingAddressData_Access_Array_Access_Array_Access is access all BillingAddressData_Access_Array_Access_Array;
+   type BillingAddressData_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BillingAddressData_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BillingAddressData_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BillingAddressData_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BillingAddressData_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BillingAddressData_Access_Array_Access is (if Value /= null and then Value.all in BillingAddressData_Access_Array_Object'Class then BillingAddressData_Access_Array_Object'Class (Value.all).Value else null);
+   type BillingAddressData_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BillingAddressData_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BillingAddressData_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BillingAddressData_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BillingAddressData_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BillingAddressData_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BillingAddressData_Access_Array_Access_Array_Object'Class then BillingAddressData_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.address.BillingAddressData_Package_References;
 
 with org.allbinary.business.user.address.BillingAddressData_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.business.user.address.BillingAddressData_Package is
    function "=" (Left, Right : BillingAddressData_Access_Array) return Boolean renames org.allbinary.business.user.address.BillingAddressData_Package_References."=";
    subtype BillingAddressData_Access_Array_Access is org.allbinary.business.user.address.BillingAddressData_Package_References.BillingAddressData_Access_Array_Access;
    function "=" (Left, Right : BillingAddressData_Access_Array_Access) return Boolean renames org.allbinary.business.user.address.BillingAddressData_Package_References."=";
+   function Java_Box (Value : BillingAddressData_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.address.BillingAddressData_Package_References.Java_Box;
+   function Java_Unbox_BillingAddressData_Access_Array (Value : access Java_Object'Class) return BillingAddressData_Access_Array_Access renames org.allbinary.business.user.address.BillingAddressData_Package_References.Java_Unbox_BillingAddressData_Access_Array;
    subtype BillingAddressData_Access_Array_Access_Array is org.allbinary.business.user.address.BillingAddressData_Package_References.BillingAddressData_Access_Array_Access_Array;
    function "=" (Left, Right : BillingAddressData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.address.BillingAddressData_Package_References."=";
    subtype BillingAddressData_Access_Array_Access_Array_Access is org.allbinary.business.user.address.BillingAddressData_Package_References.BillingAddressData_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BillingAddressData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.address.BillingAddressData_Package_References."=";
+   function Java_Box (Value : BillingAddressData_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.address.BillingAddressData_Package_References.Java_Box;
+   function Java_Unbox_BillingAddressData_Access_Array_Access_Array (Value : access Java_Object'Class) return BillingAddressData_Access_Array_Access_Array_Access renames org.allbinary.business.user.address.BillingAddressData_Package_References.Java_Unbox_BillingAddressData_Access_Array_Access_Array;
 
    type BillingAddressData is new Java_Object with null record;
    MAX : constant Integer := 255;

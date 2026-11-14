@@ -26,6 +26,7 @@ with org.microemu.device.ui.AlertUI_Package;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
+with org.allbinary.input.motion.gesture.observer.BaseMotionGestureEventListener_Package;
 with org.allbinary.graphics.displayable.BaseScalable_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with javax.microedition.lcdui.Canvas_Package;
@@ -54,12 +55,14 @@ with javax.microedition.lcdui.Font_Package;
 with org.microemu.device.FontManager_Package;
 with javax.microedition.lcdui.Form_Package;
 with org.microemu.device.ui.FormUI_Package;
+with org.allbinary.graphics.GPoint_Package;
 with org.allbinary.game.input.GameInput_Package;
 with org.allbinary.game.input.GameInputStrings_Package;
 with javax.microedition.lcdui.Gauge_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
 with javax.microedition.lcdui.ImageStringItem_Package;
+with org.allbinary.game.input.Input_Package;
 with org.microemu.device.InputMethod_Package;
 with org.microemu.device.InputMethodEvent_Package;
 with org.microemu.device.InputMethodListener_Package;
@@ -73,6 +76,7 @@ with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with javax.microedition.midlet.MIDlet_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 with org.microemu.device.MutableImage_Package;
 with org.allbinary.graphics.displayable.MyCanvas_Package;
 with org.allbinary.game.rand.MyRandomFactory_Package;
@@ -129,7 +133,7 @@ package body org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package 
 
    function getInstance return NoMenuInputProcessor_Access is
    begin
-        return NoMenuInputProcessor_Access (NoMenuInputProcessor_Package.SINGLETON);
+        return NoMenuInputProcessor_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out NoMenuInputProcessor'Class) is

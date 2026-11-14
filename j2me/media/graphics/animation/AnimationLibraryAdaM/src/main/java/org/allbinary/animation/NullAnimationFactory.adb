@@ -81,7 +81,7 @@ package body org.allbinary.animation.NullAnimationFactory_Package is
 
    function getFactoryInstance return NullAnimationFactory_Access is
    begin
-        return NullAnimationFactory_Access (NullAnimationFactory_Package.NULL_ANIMATION_FACTORY);
+        return NullAnimationFactory_Package.NULL_ANIMATION_FACTORY;
    end getFactoryInstance;
 
    function getInstance (This : in out NullAnimationFactory; instanceId : Integer) return Animation_Access is

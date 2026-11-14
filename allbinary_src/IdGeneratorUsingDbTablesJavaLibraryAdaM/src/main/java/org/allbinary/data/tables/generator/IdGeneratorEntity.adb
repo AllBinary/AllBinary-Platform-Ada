@@ -95,7 +95,7 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
       hashMap : HashMap_Access;
       value : Unbounded_String;
    begin
-        keysAndValues := StdUtil_Package.getInstance.createHashMap;
+        keysAndValues := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         keysAndValues.put (Java_Box (This.NAME), Java_Box (name));
         hashMap := AbSqlBean_Package.AbSqlBean (This).getRow (keysAndValues);
         if (Java_Unbox (hashMap.get (Java_Box (This.NAME))).compareTo (name)) /= (0) then
@@ -139,7 +139,7 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
    procedure update (This : in out IdGeneratorEntity; name : Unbounded_String; value : Long_Long_Integer) is
       map : HashMap_Access;
    begin
-        map := StdUtil_Package.getInstance.createHashMap;
+        map := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         map.put (Java_Box (This.NAME), Java_Box (name));
         map.put (Java_Box (This.VALUE), Java_Box (To_Unbounded_String (Java_Image (value))));
         IdGeneratorEntity'Class (This).update (map);

@@ -59,7 +59,7 @@ package body org.allbinary.game.configuration.feature.InputFeatureFactory_Packag
 
    function getInstance return InputFeatureFactory_Access is
    begin
-        return InputFeatureFactory_Access (InputFeatureFactory_Package.instance);
+        return InputFeatureFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out InputFeatureFactory'Class) is

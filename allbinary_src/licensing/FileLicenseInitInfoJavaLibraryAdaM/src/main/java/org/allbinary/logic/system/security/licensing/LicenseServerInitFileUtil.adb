@@ -134,7 +134,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseServerInitFile
             inputStream := resourceUtil.getResourceAsStream (filePath);
             This.logUtil.putF (To_Unbounded_String ("Writing Default License File"), LicenseServerInitFileUtil_Access'(This'Unchecked_Access), This.commonStrings.INIT);
             fileStreamFactory := FileStreamFactory_Package.getInstance;
-            fileOutputStream := fileStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, filePath);
+            fileOutputStream := OutputStream_Access (fileStreamFactory.getFileOutputStreamInstance (StringUtil_Package.getInstance.EMPTY_STRING, filePath));
             b := 0;
             index := 0;
             while True loop

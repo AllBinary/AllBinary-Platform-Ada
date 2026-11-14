@@ -188,7 +188,7 @@ package body org.allbinary.game.input.TestingInputSingleton_Package is
 
    function getInstance return TestingInputSingleton_Access is
    begin
-        return TestingInputSingleton_Access (TestingInputSingleton_Package.instance);
+        return TestingInputSingleton_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TestingInputSingleton'Class) is

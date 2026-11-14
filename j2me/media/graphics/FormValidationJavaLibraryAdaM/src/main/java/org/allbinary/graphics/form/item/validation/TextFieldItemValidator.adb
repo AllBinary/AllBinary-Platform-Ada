@@ -173,9 +173,9 @@ package body org.allbinary.graphics.form.item.validation.TextFieldItemValidator_
             label := This.textFieldItem.getLabel;
             name := Unbounded_Slice (label, (0) + 1, (Ada.Strings.Unbounded.Length (label)) - (2));
             if (textLength) < (This.min) then
-                list.add (StringMaker_Package.Create.append (name).append (To_Unbounded_String (" is to short")).toString);
+                list.add (Java_Box (StringMaker_Package.Create.append (name).append (To_Unbounded_String (" is to short")).toString));
             elsif (textLength) > (This.max) then
-                list.add (StringMaker_Package.Create.append (name).append (To_Unbounded_String (" is to long")).toString);
+                list.add (Java_Box (StringMaker_Package.Create.append (name).append (To_Unbounded_String (" is to long")).toString));
             end if;
         end if;
         return list;

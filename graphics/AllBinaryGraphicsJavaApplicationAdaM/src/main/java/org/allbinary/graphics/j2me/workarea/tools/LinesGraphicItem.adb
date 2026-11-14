@@ -41,6 +41,7 @@ with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.w3c.dom.NodeList_Package_References;
+with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Color_Package; use org.allbinary.graphics.j2me.workarea.tools.Color_Package;
 with org.allbinary.graphics.j2me.workarea.tools.Color_Package_References;
 with org.allbinary.graphics.j2me.workarea.tools.Points_Package; use org.allbinary.graphics.j2me.workarea.tools.Points_Package;
@@ -339,12 +340,12 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
 
    procedure setAngle (This : in out LinesGraphicItem; angle : Long_Float) is
    begin
-        LinesGraphicItem'Class (This).setRotate (Ada.Numerics.Long_Elementary_Functions.ToRadians (angle));
+        LinesGraphicItem'Class (This).setRotate ((Long_Float (angle) * Ada.Numerics.Pi / 180.0));
    end setAngle;
 
    procedure addAngle (This : in out LinesGraphicItem; angle : Long_Float) is
    begin
-        LinesGraphicItem'Class (This).setRotate ((This.theta) + (Ada.Numerics.Long_Elementary_Functions.ToRadians (angle)));
+        LinesGraphicItem'Class (This).setRotate ((This.theta) + ((Long_Float (angle) * Ada.Numerics.Pi / 180.0)));
    end addAngle;
 
    function getTreeNode (This : in out LinesGraphicItem) return MutableTreeNode_Access is
@@ -406,7 +407,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
             index := (This.pointTreeNodeVector.size) - (1);
             if (index) > (0) then
                 This.treeNode.remove (DefaultMutableTreeNode_Access (This.pointTreeNodeVector.get (index)));
-                This.pointTreeNodeVector.remove (Java_Box (index));
+                This.pointTreeNodeVector.removeAt (Java_Box (index));
             end if;
         end if;
         return point;
@@ -457,7 +458,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
 
    function getAngle (This : in out LinesGraphicItem) return Long_Float is
    begin
-        return Ada.Numerics.Long_Elementary_Functions.ToDegrees (This.theta);
+        return (Long_Float (This.theta) * 180.0 / Ada.Numerics.Pi);
    end getAngle;
 
    procedure setFulcrumPoint (This : in out LinesGraphicItem; point_Param : access GPoint_Package.GPoint'Class) is

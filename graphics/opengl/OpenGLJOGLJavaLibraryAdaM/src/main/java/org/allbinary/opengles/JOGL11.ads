@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.opengles.JOGL11_Package;
 package org.allbinary.opengles.JOGL11_Package_References is
    type JOGL11_Access is access all org.allbinary.opengles.JOGL11_Package.JOGL11'Class;
@@ -19,6 +20,16 @@ package org.allbinary.opengles.JOGL11_Package_References is
    type JOGL11_Access_Array_Access is access all JOGL11_Access_Array;
    type JOGL11_Access_Array_Access_Array is array (Natural range <>) of JOGL11_Access_Array_Access;
    type JOGL11_Access_Array_Access_Array_Access is access all JOGL11_Access_Array_Access_Array;
+   type JOGL11_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : JOGL11_Access_Array_Access;
+   end record;
+   function Java_Box (Value : JOGL11_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new JOGL11_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_JOGL11_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return JOGL11_Access_Array_Access is (if Value /= null and then Value.all in JOGL11_Access_Array_Object'Class then JOGL11_Access_Array_Object'Class (Value.all).Value else null);
+   type JOGL11_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : JOGL11_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : JOGL11_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new JOGL11_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_JOGL11_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return JOGL11_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in JOGL11_Access_Array_Access_Array_Object'Class then JOGL11_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.opengles.JOGL11_Package_References;
 
 with org.allbinary.opengles.JOGL11_Package_References;
@@ -30,28 +41,24 @@ with Ada.Numerics.Long_Elementary_Functions;
 with Ada.Tags;
 with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
-limited with com.jogamp.opengl.GL_Package;
-with com.jogamp.opengl.GL_Package_References;
+with com.jogamp.opengl.GL_Package; use com.jogamp.opengl.GL_Package;
 limited with com.jogamp.opengl.GL2_Package;
 with com.jogamp.opengl.GL2_Package_References;
+with java.nio.Buffer_Package; use java.nio.Buffer_Package;
+with java.nio.FloatBuffer_Package; use java.nio.FloatBuffer_Package;
+with java.nio.IntBuffer_Package; use java.nio.IntBuffer_Package;
+with javax.microedition.khronos.opengles.GL11_Package; use javax.microedition.khronos.opengles.GL11_Package;
 with org.allbinary.opengles.JOGL10_Package; use org.allbinary.opengles.JOGL10_Package;
-with org.allbinary.opengles.GL11_Package; use org.allbinary.opengles.GL11_Package;
 
 package org.allbinary.opengles.JOGL11_Package is
 
    package GL_Package renames Standard.com.jogamp.opengl.GL_Package;
    package GL2_Package renames Standard.com.jogamp.opengl.GL2_Package;
+   package Buffer_Package renames Standard.java.nio.Buffer_Package;
+   package FloatBuffer_Package renames Standard.java.nio.FloatBuffer_Package;
+   package IntBuffer_Package renames Standard.java.nio.IntBuffer_Package;
+   package GL11_Package renames Standard.javax.microedition.khronos.opengles.GL11_Package;
    package Reference_Types is
-   subtype GL_Access is com.jogamp.opengl.GL_Package_References.GL_Access;
-   use type GL_Access;
-   subtype GL_Access_Array is com.jogamp.opengl.GL_Package_References.GL_Access_Array;
-   use type GL_Access_Array;
-   subtype GL_Access_Array_Access is com.jogamp.opengl.GL_Package_References.GL_Access_Array_Access;
-   use type GL_Access_Array_Access;
-   subtype GL_Access_Array_Access_Array is com.jogamp.opengl.GL_Package_References.GL_Access_Array_Access_Array;
-   use type GL_Access_Array_Access_Array;
-   subtype GL_Access_Array_Access_Array_Access is com.jogamp.opengl.GL_Package_References.GL_Access_Array_Access_Array_Access;
-   use type GL_Access_Array_Access_Array_Access;
    subtype GL2_Access is com.jogamp.opengl.GL2_Package_References.GL2_Access;
    use type GL2_Access;
    subtype GL2_Access_Array is com.jogamp.opengl.GL2_Package_References.GL2_Access_Array;
@@ -72,10 +79,14 @@ package org.allbinary.opengles.JOGL11_Package is
    function "=" (Left, Right : JOGL11_Access_Array) return Boolean renames org.allbinary.opengles.JOGL11_Package_References."=";
    subtype JOGL11_Access_Array_Access is org.allbinary.opengles.JOGL11_Package_References.JOGL11_Access_Array_Access;
    function "=" (Left, Right : JOGL11_Access_Array_Access) return Boolean renames org.allbinary.opengles.JOGL11_Package_References."=";
+   function Java_Box (Value : JOGL11_Access_Array_Access) return Java_Object_Access renames org.allbinary.opengles.JOGL11_Package_References.Java_Box;
+   function Java_Unbox_JOGL11_Access_Array (Value : access Java_Object'Class) return JOGL11_Access_Array_Access renames org.allbinary.opengles.JOGL11_Package_References.Java_Unbox_JOGL11_Access_Array;
    subtype JOGL11_Access_Array_Access_Array is org.allbinary.opengles.JOGL11_Package_References.JOGL11_Access_Array_Access_Array;
    function "=" (Left, Right : JOGL11_Access_Array_Access_Array) return Boolean renames org.allbinary.opengles.JOGL11_Package_References."=";
    subtype JOGL11_Access_Array_Access_Array_Access is org.allbinary.opengles.JOGL11_Package_References.JOGL11_Access_Array_Access_Array_Access;
    function "=" (Left, Right : JOGL11_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.opengles.JOGL11_Package_References."=";
+   function Java_Box (Value : JOGL11_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.opengles.JOGL11_Package_References.Java_Box;
+   function Java_Unbox_JOGL11_Access_Array_Access_Array (Value : access Java_Object'Class) return JOGL11_Access_Array_Access_Array_Access renames org.allbinary.opengles.JOGL11_Package_References.Java_Unbox_JOGL11_Access_Array_Access_Array;
 
    type JOGL11 is new JOGL10 and GL11 with record
       gl11 : GL2_Access;

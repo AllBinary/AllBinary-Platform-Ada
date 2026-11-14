@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package;
 package org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References is
    type AdvertisementThumbnail_Access is access all org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package.AdvertisementThumbnail'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Pa
    type AdvertisementThumbnail_Access_Array_Access is access all AdvertisementThumbnail_Access_Array;
    type AdvertisementThumbnail_Access_Array_Access_Array is array (Natural range <>) of AdvertisementThumbnail_Access_Array_Access;
    type AdvertisementThumbnail_Access_Array_Access_Array_Access is access all AdvertisementThumbnail_Access_Array_Access_Array;
+   type AdvertisementThumbnail_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AdvertisementThumbnail_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AdvertisementThumbnail_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AdvertisementThumbnail_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AdvertisementThumbnail_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AdvertisementThumbnail_Access_Array_Access is (if Value /= null and then Value.all in AdvertisementThumbnail_Access_Array_Object'Class then AdvertisementThumbnail_Access_Array_Object'Class (Value.all).Value else null);
+   type AdvertisementThumbnail_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AdvertisementThumbnail_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AdvertisementThumbnail_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AdvertisementThumbnail_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AdvertisementThumbnail_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AdvertisementThumbnail_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AdvertisementThumbnail_Access_Array_Access_Array_Object'Class then AdvertisementThumbnail_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References;
 
 with org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References;
@@ -58,10 +69,14 @@ package org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Pa
    function "=" (Left, Right : AdvertisementThumbnail_Access_Array) return Boolean renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References."=";
    subtype AdvertisementThumbnail_Access_Array_Access is org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References.AdvertisementThumbnail_Access_Array_Access;
    function "=" (Left, Right : AdvertisementThumbnail_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References."=";
+   function Java_Box (Value : AdvertisementThumbnail_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References.Java_Box;
+   function Java_Unbox_AdvertisementThumbnail_Access_Array (Value : access Java_Object'Class) return AdvertisementThumbnail_Access_Array_Access renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References.Java_Unbox_AdvertisementThumbnail_Access_Array;
    subtype AdvertisementThumbnail_Access_Array_Access_Array is org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References.AdvertisementThumbnail_Access_Array_Access_Array;
    function "=" (Left, Right : AdvertisementThumbnail_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References."=";
    subtype AdvertisementThumbnail_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References.AdvertisementThumbnail_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AdvertisementThumbnail_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References."=";
+   function Java_Box (Value : AdvertisementThumbnail_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References.Java_Box;
+   function Java_Unbox_AdvertisementThumbnail_Access_Array_Access_Array (Value : access Java_Object'Class) return AdvertisementThumbnail_Access_Array_Access_Array_Access renames org.allbinary.business.advertisement.thumbnail.AdvertisementThumbnail_Package_References.Java_Unbox_AdvertisementThumbnail_Access_Array_Access_Array;
 
    type AdvertisementThumbnail is new Java_Object and AdvertisementThumbnailInterface with record
       imageFileName : Unbounded_String;

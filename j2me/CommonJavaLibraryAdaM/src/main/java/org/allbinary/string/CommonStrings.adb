@@ -94,7 +94,7 @@ package body org.allbinary.string_Id.CommonStrings_Package is
 
    function getInstance return CommonStrings_Access is
    begin
-        return CommonStrings_Access (CommonStrings_Package.instance);
+        return CommonStrings_Package.instance;
    end getInstance;
 
 begin

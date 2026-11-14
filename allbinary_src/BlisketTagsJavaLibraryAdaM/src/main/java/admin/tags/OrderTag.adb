@@ -23,6 +23,9 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -44,6 +47,9 @@ package body admin.tags.OrderTag_Package is
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -141,9 +147,9 @@ package body admin.tags.OrderTag_Package is
    begin
         begin
             if (This.command) /= (Null_Unbounded_String) then
-                This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
+                This.propertiesHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
                 This.propertiesHashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
-                if (Java_Compare_To (This.command, org_Package.allbinary.globals.GLOBALS2.PROCESS)) = (0) then
+                if (Java_Compare_To (This.command, GLOBALS2_Package.PROCESS)) = (0) then
                     declare Java_Result renames OrderTag'Class (This).process; pragma Unreferenced (Java_Result); begin null; end;
                 elsif (Java_Compare_To (This.command, PaymentGatewayData_Package.NAME.toString)) = (0) then
                     if (OrderTag'Class (This).setPaymentGateway) = (True) then

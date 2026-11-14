@@ -59,7 +59,7 @@ package body org.allbinary.game.layer.TiledLayerUtil_Package is
 
    function getInstance return TiledLayerUtil_Access is
    begin
-        return TiledLayerUtil_Access (TiledLayerUtil_Package.instance);
+        return TiledLayerUtil_Package.instance;
    end getInstance;
 
    function keepOnBorderdMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; x : Integer; width : Integer; mapBorderBufferWidth : Integer) return Integer is

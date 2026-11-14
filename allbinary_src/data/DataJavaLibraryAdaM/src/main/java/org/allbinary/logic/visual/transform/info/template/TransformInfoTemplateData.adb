@@ -26,7 +26,7 @@ package body org.allbinary.logic.visual.transform.info.template.TransformInfoTem
 
    function getInstance return TransformInfoTemplateData_Access is
    begin
-        return TransformInfoTemplateData_Access (TransformInfoTemplateData_Package.instance);
+        return TransformInfoTemplateData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TransformInfoTemplateData'Class) is

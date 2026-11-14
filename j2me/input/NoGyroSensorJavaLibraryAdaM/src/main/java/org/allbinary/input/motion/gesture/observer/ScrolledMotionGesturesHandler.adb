@@ -71,7 +71,7 @@ package body org.allbinary.input.motion.gesture.observer.ScrolledMotionGesturesH
 
    function getInstance return ScrolledMotionGesturesHandler_Access is
    begin
-        return ScrolledMotionGesturesHandler_Access (ScrolledMotionGesturesHandler_Package.SINGLETON);
+        return ScrolledMotionGesturesHandler_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out ScrolledMotionGesturesHandler'Class) is

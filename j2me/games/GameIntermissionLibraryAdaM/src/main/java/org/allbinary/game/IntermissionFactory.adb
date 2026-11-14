@@ -54,7 +54,7 @@ package body org.allbinary.game.IntermissionFactory_Package is
 
    function getInstance return IntermissionFactory_Access is
    begin
-        return IntermissionFactory_Access (IntermissionFactory_Package.instance);
+        return IntermissionFactory_Package.instance;
    end getInstance;
 
 begin

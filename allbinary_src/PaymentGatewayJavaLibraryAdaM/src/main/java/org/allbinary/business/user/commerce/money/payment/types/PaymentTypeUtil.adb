@@ -37,6 +37,8 @@ with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.business.user.commerce.money.payment.types.PaymentType_Package; use org.allbinary.business.user.commerce.money.payment.types.PaymentType_Package;
 with org.allbinary.business.user.commerce.money.payment.types.PaymentType_Package_References;
 with org.allbinary.util.ABHashMap_Package;
@@ -74,6 +76,8 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -134,7 +138,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
 
    function getInstance return PaymentTypeUtil_Access is
    begin
-        return PaymentTypeUtil_Access (PaymentTypeUtil_Package.instance);
+        return PaymentTypeUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out PaymentTypeUtil'Class) is
@@ -201,7 +205,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
       defaultPaymentGatewayNodeValue : Unbounded_String;
       index : Integer;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PAYMENT) then
             This.logUtil.putF (To_Unbounded_String ("initDefault Payment: ") & This.defaultName, PaymentTypeUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("initDefault"));
         end if;
         if StringValidationUtil_Package.getInstance.isEmpty (This.defaultName) then
@@ -219,7 +223,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
                 node := nodeList.item (index);
                 defaultPaymentGatewayNode := DomSearchHelper_Package.getNode (EntryData_Package.getInstance.DEFAULT, node.getChildNodes);
                 defaultPaymentGatewayNodeValue := DomNodeHelper_Package.getTextNodeValue (defaultPaymentGatewayNode);
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PAYMENT) then
                     This.logUtil.putF (To_Unbounded_String ("DefaultPaymentGatewayNodeValue: ") & defaultPaymentGatewayNodeValue, PaymentTypeUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("initDefault"));
                 end if;
                 if not (StringValidationUtil_Package.getInstance.isEmpty (defaultPaymentGatewayNodeValue)) then
@@ -232,7 +236,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
    --  throws Exception
    function getDefault (This : in out PaymentTypeUtil; storeName : Unbounded_String) return PaymentType_Access is
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PAYMENT) then
             This.logUtil.putF (This.commonStrings.START, PaymentTypeUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("getDefault"));
         end if;
         PaymentTypeUtil'Class (This).initDefault (storeName);

@@ -24,6 +24,7 @@ with org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRetrie
 with org.allbinary.globals.PATH_GLOBALS_Package; use org.allbinary.globals.PATH_GLOBALS_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.system.security.licensing.BasicArrayListD_Package; use org.allbinary.logic.system.security.licensing.BasicArrayListD_Package;
 with org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package; use org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterfaceFactory_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterfaceFactory_Package;
@@ -53,6 +54,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
    package LicenseInitInfoUtil_Package renames Standard.org.allbinary.business.init.LicenseInitInfoUtil_Package;
    package XmlRpcAbeLicenseRetrievalClient_Package renames Standard.org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRetrievalClient_Package;
    package PATH_GLOBALS_Package renames Standard.org.allbinary.globals.PATH_GLOBALS_Package;
+   package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -86,24 +88,18 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
       file : File_Access;
       reader : FileReader_Access;
       lineNumberReader : LineNumberReader_Access;
-      line : Unbounded_String;
    begin
       Initialize_Fields (This);
-        LicenseInitInfoUtil_Package.getInstance.setFilePath (PrintLicenseInitInfo_Package.PATH & Java_Image (PATH_GLOBALS_Package.getInstance.INIT_PATH));
+        LicenseInitInfoUtil_Package.getInstance.setFilePath (PrintLicenseInitInfo_Package.PATH & PATH_GLOBALS_Package.getInstance.INIT_PATH);
         for index in 1 .. (options'Length) - 1 loop
-            This.vector.add (options (index));
+            This.vector.add (Java_Box (options (index)));
         end loop;
         if (options'Length) < (2) then
             file := File_Package.Create (PrintLicenseInitInfo_Package.PATH & To_Unbounded_String ("testlicenseservers.txt"));
             reader := FileReader_Package.Create (file);
             lineNumberReader := LineNumberReader_Package.Create (reader);
-            while True loop
-                line := lineNumberReader.readLine;
-                if (line) /= (Null_Unbounded_String) then
-                    This.vector.add (Java_Box (line));
-                else
-                    exit;
-                end if;
+            while lineNumberReader.ready loop
+                This.vector.add (lineNumberReader.readLine);
             end loop;
         end if;
    end Initialize;
@@ -189,7 +185,7 @@ package body org.allbinary.logic.system.security.licensing.LicenseClientAndServe
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             logUtil := LogUtil_Package.getInstance;
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, Java_Box (To_Unbounded_String ("main()")), To_Unbounded_String ("main()"), e);
+            logUtil.put (CommonStrings_Package.getInstance.EXCEPTION_Id, Java_Box (To_Unbounded_String ("main()")), To_Unbounded_String ("main()"), e);
                 end;
         end;
    end main;

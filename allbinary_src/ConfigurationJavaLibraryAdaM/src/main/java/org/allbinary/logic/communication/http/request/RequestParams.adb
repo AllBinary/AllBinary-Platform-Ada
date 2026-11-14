@@ -202,7 +202,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
       values : Unbounded_String_Array_Access;
       i : Integer;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         keys := This.map.keySet;
         keyArray := keys.toArray;
         size := keyArray'Length;

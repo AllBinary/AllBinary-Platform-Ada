@@ -25,9 +25,17 @@ with org.allbinary.logic.io.path.AbPath_Package;
 with org.allbinary.logic.io.path.AbPathData_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.io.file.FilePathData_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.io.path.PathUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_Package is
 
@@ -54,7 +62,7 @@ package body org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_
    procedure Initialize (This : in out PrintLicenseInitInfo'Class; options : Unbounded_String_Array_Access) is
    begin
       Initialize_Fields (This);
-        LicenseInitInfoUtil_Package.getInstance.setFilePath (PrintLicenseInitInfo_Package.PATH & Java_Image (PATH_GLOBALS_Package.getInstance.INIT_PATH));
+        LicenseInitInfoUtil_Package.getInstance.setFilePath (PrintLicenseInitInfo_Package.PATH & PATH_GLOBALS_Package.getInstance.INIT_PATH);
    end Initialize;
 
    function Create (options : Unbounded_String_Array_Access) return PrintLicenseInitInfo_Access is
@@ -72,7 +80,7 @@ package body org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_
         if FileFactory_Package.getInstance.isFile (licenseInitInfoUtil.getFilePath) then
             return licenseInitInfoUtil.read;
         else
-            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("No Licence File at: ") & Java_Image (licenseInitInfoUtil.getFilePath)));
+            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("No Licence File at: ") & licenseInitInfoUtil.getFilePath));
             return LicenseInitInfo_Package.Create;
         end if;
    end getLicenseInitInfo;
@@ -85,7 +93,7 @@ package body org.allbinary.logic.system.security.licensing.PrintLicenseInitInfo_
    begin
         begin
             licenseInitInfo := PrintLicenseInitInfo'Class (This).getLicenseInitInfo;
-            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("License ID: ") & Java_Image (licenseInitInfo.getLicenseId)));
+            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("License ID: ") & licenseInitInfo.getLicenseId));
             list := licenseInitInfo.getServerList;
             size := list.size;
             for index in 0 .. (size) - 1 loop

@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.image.gui.CanvasImageJPanel_Package;
 package org.allbinary.image.gui.CanvasImageJPanel_Package_References is
    type CanvasImageJPanel_Access is access all org.allbinary.image.gui.CanvasImageJPanel_Package.CanvasImageJPanel'Class;
@@ -19,6 +20,16 @@ package org.allbinary.image.gui.CanvasImageJPanel_Package_References is
    type CanvasImageJPanel_Access_Array_Access is access all CanvasImageJPanel_Access_Array;
    type CanvasImageJPanel_Access_Array_Access_Array is array (Natural range <>) of CanvasImageJPanel_Access_Array_Access;
    type CanvasImageJPanel_Access_Array_Access_Array_Access is access all CanvasImageJPanel_Access_Array_Access_Array;
+   type CanvasImageJPanel_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CanvasImageJPanel_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CanvasImageJPanel_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CanvasImageJPanel_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CanvasImageJPanel_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CanvasImageJPanel_Access_Array_Access is (if Value /= null and then Value.all in CanvasImageJPanel_Access_Array_Object'Class then CanvasImageJPanel_Access_Array_Object'Class (Value.all).Value else null);
+   type CanvasImageJPanel_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CanvasImageJPanel_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CanvasImageJPanel_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CanvasImageJPanel_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CanvasImageJPanel_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CanvasImageJPanel_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CanvasImageJPanel_Access_Array_Access_Array_Object'Class then CanvasImageJPanel_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.image.gui.CanvasImageJPanel_Package_References;
 
 with org.allbinary.image.gui.CanvasImageJPanel_Package_References;
@@ -45,7 +56,15 @@ limited with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonSeps_Package_References;
 limited with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
-with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
+--  with java.awt.event.ActionEvent_Package; use java.awt.event.ActionEvent_Package;
+--  with java.awt.event.ActionListener_Package; use java.awt.event.ActionListener_Package;
+--  with javax.swing.GroupLayout_Package; use javax.swing.GroupLayout_Package;
+--  with javax.swing.JButton_Package; use javax.swing.JButton_Package;
+--  with javax.swing.JCheckBox_Package; use javax.swing.JCheckBox_Package;
+--  with javax.swing.JLabel_Package; use javax.swing.JLabel_Package;
+--  with javax.swing.JPanel_Package; use javax.swing.JPanel_Package;
+--  with javax.swing.JTextField_Package; use javax.swing.JTextField_Package;
+--  with javax.swing.LayoutStyle_Package; use javax.swing.LayoutStyle_Package;
 
 package org.allbinary.image.gui.CanvasImageJPanel_Package is
 
@@ -116,12 +135,16 @@ package org.allbinary.image.gui.CanvasImageJPanel_Package is
    function "=" (Left, Right : CanvasImageJPanel_Access_Array) return Boolean renames org.allbinary.image.gui.CanvasImageJPanel_Package_References."=";
    subtype CanvasImageJPanel_Access_Array_Access is org.allbinary.image.gui.CanvasImageJPanel_Package_References.CanvasImageJPanel_Access_Array_Access;
    function "=" (Left, Right : CanvasImageJPanel_Access_Array_Access) return Boolean renames org.allbinary.image.gui.CanvasImageJPanel_Package_References."=";
+   function Java_Box (Value : CanvasImageJPanel_Access_Array_Access) return Java_Object_Access renames org.allbinary.image.gui.CanvasImageJPanel_Package_References.Java_Box;
+   function Java_Unbox_CanvasImageJPanel_Access_Array (Value : access Java_Object'Class) return CanvasImageJPanel_Access_Array_Access renames org.allbinary.image.gui.CanvasImageJPanel_Package_References.Java_Unbox_CanvasImageJPanel_Access_Array;
    subtype CanvasImageJPanel_Access_Array_Access_Array is org.allbinary.image.gui.CanvasImageJPanel_Package_References.CanvasImageJPanel_Access_Array_Access_Array;
    function "=" (Left, Right : CanvasImageJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.image.gui.CanvasImageJPanel_Package_References."=";
    subtype CanvasImageJPanel_Access_Array_Access_Array_Access is org.allbinary.image.gui.CanvasImageJPanel_Package_References.CanvasImageJPanel_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CanvasImageJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.gui.CanvasImageJPanel_Package_References."=";
+   function Java_Box (Value : CanvasImageJPanel_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.image.gui.CanvasImageJPanel_Package_References.Java_Box;
+   function Java_Unbox_CanvasImageJPanel_Access_Array_Access_Array (Value : access Java_Object'Class) return CanvasImageJPanel_Access_Array_Access_Array_Access renames org.allbinary.image.gui.CanvasImageJPanel_Package_References.Java_Unbox_CanvasImageJPanel_Access_Array_Access_Array;
 
-   type CanvasImageJPanel is new JPanel and ImageProcessedVisitor with record
+   type CanvasImageJPanel is new Java_Object and ImageProcessedVisitor with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       commonSeps : CommonSeps_Access;

@@ -15,6 +15,14 @@
 
 with org.allbinary.game.layer.resources.BasicGameResources_Package; use org.allbinary.game.layer.resources.BasicGameResources_Package;
 with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package is
 
@@ -30,7 +38,7 @@ package body org.allbinary.game.ag.layer.weapon.mine.MineWeaponResources_Package
 
    function getInstance return MineWeaponResources_Access is
    begin
-        if (MineWeaponResources_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (MineWeaponResources_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             MineWeaponResources_Package.instance := Java_Object_Access (MineWeaponResources_Package.Create);
         end if;
         return MineWeaponResources_Access (MineWeaponResources_Package.instance);

@@ -62,6 +62,7 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Pac
 with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;
 with javax.microedition.lcdui.Image_Package;
 with org.allbinary.animation.IndexedAnimation_Package;
+with org.allbinary.layer.Layer_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;

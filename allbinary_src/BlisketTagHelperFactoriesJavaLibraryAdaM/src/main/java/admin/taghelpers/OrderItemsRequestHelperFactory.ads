@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.OrderItemsRequestHelperFactory_Package;
 package admin.taghelpers.OrderItemsRequestHelperFactory_Package_References is
    type OrderItemsRequestHelperFactory_Access is access all admin.taghelpers.OrderItemsRequestHelperFactory_Package.OrderItemsRequestHelperFactory'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.OrderItemsRequestHelperFactory_Package_References is
    type OrderItemsRequestHelperFactory_Access_Array_Access is access all OrderItemsRequestHelperFactory_Access_Array;
    type OrderItemsRequestHelperFactory_Access_Array_Access_Array is array (Natural range <>) of OrderItemsRequestHelperFactory_Access_Array_Access;
    type OrderItemsRequestHelperFactory_Access_Array_Access_Array_Access is access all OrderItemsRequestHelperFactory_Access_Array_Access_Array;
+   type OrderItemsRequestHelperFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OrderItemsRequestHelperFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OrderItemsRequestHelperFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OrderItemsRequestHelperFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OrderItemsRequestHelperFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OrderItemsRequestHelperFactory_Access_Array_Access is (if Value /= null and then Value.all in OrderItemsRequestHelperFactory_Access_Array_Object'Class then OrderItemsRequestHelperFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type OrderItemsRequestHelperFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OrderItemsRequestHelperFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OrderItemsRequestHelperFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OrderItemsRequestHelperFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OrderItemsRequestHelperFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OrderItemsRequestHelperFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in OrderItemsRequestHelperFactory_Access_Array_Access_Array_Object'Class then OrderItemsRequestHelperFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.OrderItemsRequestHelperFactory_Package_References;
 
 with admin.taghelpers.OrderItemsRequestHelperFactory_Package_References;
@@ -61,10 +72,14 @@ package admin.taghelpers.OrderItemsRequestHelperFactory_Package is
    function "=" (Left, Right : OrderItemsRequestHelperFactory_Access_Array) return Boolean renames admin.taghelpers.OrderItemsRequestHelperFactory_Package_References."=";
    subtype OrderItemsRequestHelperFactory_Access_Array_Access is admin.taghelpers.OrderItemsRequestHelperFactory_Package_References.OrderItemsRequestHelperFactory_Access_Array_Access;
    function "=" (Left, Right : OrderItemsRequestHelperFactory_Access_Array_Access) return Boolean renames admin.taghelpers.OrderItemsRequestHelperFactory_Package_References."=";
+   function Java_Box (Value : OrderItemsRequestHelperFactory_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.OrderItemsRequestHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_OrderItemsRequestHelperFactory_Access_Array (Value : access Java_Object'Class) return OrderItemsRequestHelperFactory_Access_Array_Access renames admin.taghelpers.OrderItemsRequestHelperFactory_Package_References.Java_Unbox_OrderItemsRequestHelperFactory_Access_Array;
    subtype OrderItemsRequestHelperFactory_Access_Array_Access_Array is admin.taghelpers.OrderItemsRequestHelperFactory_Package_References.OrderItemsRequestHelperFactory_Access_Array_Access_Array;
    function "=" (Left, Right : OrderItemsRequestHelperFactory_Access_Array_Access_Array) return Boolean renames admin.taghelpers.OrderItemsRequestHelperFactory_Package_References."=";
    subtype OrderItemsRequestHelperFactory_Access_Array_Access_Array_Access is admin.taghelpers.OrderItemsRequestHelperFactory_Package_References.OrderItemsRequestHelperFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : OrderItemsRequestHelperFactory_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.OrderItemsRequestHelperFactory_Package_References."=";
+   function Java_Box (Value : OrderItemsRequestHelperFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.OrderItemsRequestHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_OrderItemsRequestHelperFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return OrderItemsRequestHelperFactory_Access_Array_Access_Array_Access renames admin.taghelpers.OrderItemsRequestHelperFactory_Package_References.Java_Unbox_OrderItemsRequestHelperFactory_Access_Array_Access_Array;
 
    type OrderItemsRequestHelperFactory is new TagHelperFactory with record
       logUtil : LogUtil_Access;

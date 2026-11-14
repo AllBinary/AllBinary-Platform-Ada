@@ -70,7 +70,7 @@ package body org.allbinary.game.BasicHighScoresGameInfoFactory_Package is
 
    function getInstance return BasicHighScoresGameInfoFactory_Access is
    begin
-        return BasicHighScoresGameInfoFactory_Access (BasicHighScoresGameInfoFactory_Package.SINGLETON);
+        return BasicHighScoresGameInfoFactory_Package.SINGLETON;
    end getInstance;
 
 begin

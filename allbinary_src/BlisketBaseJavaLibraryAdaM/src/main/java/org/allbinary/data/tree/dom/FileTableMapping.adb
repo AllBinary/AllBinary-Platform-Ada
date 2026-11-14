@@ -91,11 +91,11 @@ package body org.allbinary.data.tree.dom.FileTableMapping_Package is
       filePropertyVector : BasicArrayList_Access;
    begin
         filePropertyVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        filePropertyVector.add (This.file.getAbsolutePath);
-        filePropertyVector.add (This.file.getCanonicalPath);
-        filePropertyVector.add (This.file.getName);
-        filePropertyVector.add (This.file.getParent);
-        filePropertyVector.add (This.file.getPath);
+        filePropertyVector.add (Java_Box (This.file.getAbsolutePath));
+        filePropertyVector.add (Java_Box (This.file.getCanonicalPath));
+        filePropertyVector.add (Java_Box (This.file.getName));
+        filePropertyVector.add (Java_Box (This.file.getParent));
+        filePropertyVector.add (Java_Box (This.file.getPath));
         return filePropertyVector;
    end toVector;
 
@@ -107,7 +107,7 @@ package body org.allbinary.data.tree.dom.FileTableMapping_Package is
       rootFileName : Unbounded_String;
       fileData : FileData_Access;
    begin
-        filePropertyHashMap := StdUtil_Package.getInstance.createHashMap;
+        filePropertyHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         pathData := AbPathData_Package.getInstance;
         pathUtil := PathUtil_Package.getInstance;
         rootFileName := pathData.getNameFromPath (pathUtil.getWithoutExtension (This.file.getPath));

@@ -19,8 +19,37 @@ with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics
 with org.allbinary.graphics.color.BasicColor_Package_References;
 with org.allbinary.media.image.ImageModifierUtil_Package; use org.allbinary.media.image.ImageModifierUtil_Package;
 with org.allbinary.media.image.ImageModifierUtil_Package_References;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.eclipse.swt.graphics.Device_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.configuration.feature.Features_Package;
 with javax.microedition.lcdui.Font_Package;
+with org.allbinary.game.configuration.feature.GameFeature_Package;
+with org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.media.image.ImageCopyUtil_Package;
+with org.eclipse.swt.graphics.ImageData_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package;
+with org.allbinary.graphics.opengles.OpenGLFeature_Package;
+with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.allbinary.graphics.opengles.OpenGLUtil_Package;
+with org.eclipse.swt.graphics.PaletteData_Package;
+with org.eclipse.swt.graphics.RGB_Package;
+with org.eclipse.swt.graphics.Rectangle_Package;
+with org.eclipse.swt.graphics.Resource_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
 
 package body org.allbinary.animation.image.SetColorProcessor_Package is
 
@@ -75,7 +104,7 @@ package body org.allbinary.animation.image.SetColorProcessor_Package is
 
    function getInstance return SetColorProcessor_Access is
    begin
-        return SetColorProcessor_Access (SetColorProcessor_Package.instanceC);
+        return SetColorProcessor_Package.instanceC;
    end getInstance;
 
    procedure updateColor (This : in out SetColorProcessor; imageModifierUtil_Param : access ImageModifierUtil_Package.ImageModifierUtil'Class; originalImage_Param : access Image_Package.Image'Class; imageToShow_Param : access Image_Package.Image'Class; index : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is

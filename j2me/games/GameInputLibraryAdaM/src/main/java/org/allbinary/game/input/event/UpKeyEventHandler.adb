@@ -73,7 +73,7 @@ package body org.allbinary.game.input.event.UpKeyEventHandler_Package is
 
    function getInstance return UpKeyEventHandler_Access is
    begin
-        return UpKeyEventHandler_Access (UpKeyEventHandler_Package.instance);
+        return UpKeyEventHandler_Package.instance;
    end getInstance;
 
    function getInstanceForDevice (This : in out UpKeyEventHandler; deviceId : Integer) return UpKeyEventHandlerBase_Access is

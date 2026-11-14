@@ -50,21 +50,21 @@ package body org.allbinary.animation.PathParser_Package is
             c := Element (d, (i) + 1);
             if (((((Integer (Character'Pos (c))) = (Integer (Character'Pos (' ')))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos (','))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos (ASCII.HT))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos (ASCII.LF))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos (ASCII.CR)))) then
                 if (sb.length) > (0) then
-                    tokens.add (sb.toString);
+                    tokens.add (Java_Box (sb.toString));
                     sb.setLength (0);
                 end if;
             elsif ((((((((((Integer (Character'Pos (c))) = (Integer (Character'Pos ('M')))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('m'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('L'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('l'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('V'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('v'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('C'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('c'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('Z'))))) or else ((Integer (Character'Pos (c))) = (Integer (Character'Pos ('z')))) then
                 if (sb.length) > (0) then
-                    tokens.add (sb.toString);
+                    tokens.add (Java_Box (sb.toString));
                     sb.setLength (0);
                 end if;
-                tokens.add (To_Unbounded_String (Java_Image (c)));
+                tokens.add (Java_Box (To_Unbounded_String (Java_Image (c))));
             else
                 sb.append (c);
             end if;
         end loop;
         if (sb.length) > (0) then
-            tokens.add (sb.toString);
+            tokens.add (Java_Box (sb.toString));
         end if;
         res := new Unbounded_String_Array'(0 .. (tokens.size) - 1 => Null_Unbounded_String);
         tokens.toArrayType (res);

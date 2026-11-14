@@ -55,7 +55,7 @@ package body org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package is
 
    function getInstance return OpenGLESImageExclusionUtil_Access is
    begin
-        return OpenGLESImageExclusionUtil_Access (OpenGLESImageExclusionUtil_Package.instance);
+        return OpenGLESImageExclusionUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out OpenGLESImageExclusionUtil'Class) is

@@ -67,7 +67,7 @@ package body org.allbinary.graphics.displayable.event.DisplayChangeEventHandler_
 
    function getInstance return DisplayChangeEventHandler_Access is
    begin
-        return DisplayChangeEventHandler_Access (DisplayChangeEventHandler_Package.SINGLETON);
+        return DisplayChangeEventHandler_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out DisplayChangeEventHandler'Class) is

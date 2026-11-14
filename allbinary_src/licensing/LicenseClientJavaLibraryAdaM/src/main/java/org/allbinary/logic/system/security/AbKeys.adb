@@ -70,7 +70,7 @@ package body org.allbinary.logic.system.security.AbKeys_Package is
 
    function getInstance return AbKeys_Access is
    begin
-        return AbKeys_Access (AbKeys_Package.instance);
+        return AbKeys_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AbKeys'Class) is

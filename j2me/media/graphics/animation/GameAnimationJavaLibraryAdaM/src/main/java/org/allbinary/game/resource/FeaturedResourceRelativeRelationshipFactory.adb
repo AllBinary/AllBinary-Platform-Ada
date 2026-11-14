@@ -111,7 +111,7 @@ package body org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFac
 
    function getInstance return FeaturedResourceRelativeRelationshipFactory_Access is
    begin
-        return FeaturedResourceRelativeRelationshipFactory_Access (FeaturedResourceRelativeRelationshipFactory_Package.INSTANCE);
+        return FeaturedResourceRelativeRelationshipFactory_Package.INSTANCE;
    end getInstance;
 
    --  throws Exception

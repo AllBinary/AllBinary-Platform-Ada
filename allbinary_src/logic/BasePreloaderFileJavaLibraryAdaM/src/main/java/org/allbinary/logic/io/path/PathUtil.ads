@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.io.path.PathUtil_Package;
 package org.allbinary.logic.io.path.PathUtil_Package_References is
    type PathUtil_Access is access all org.allbinary.logic.io.path.PathUtil_Package.PathUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.io.path.PathUtil_Package_References is
    type PathUtil_Access_Array_Access is access all PathUtil_Access_Array;
    type PathUtil_Access_Array_Access_Array is array (Natural range <>) of PathUtil_Access_Array_Access;
    type PathUtil_Access_Array_Access_Array_Access is access all PathUtil_Access_Array_Access_Array;
+   type PathUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PathUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PathUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PathUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PathUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PathUtil_Access_Array_Access is (if Value /= null and then Value.all in PathUtil_Access_Array_Object'Class then PathUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type PathUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PathUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PathUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PathUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PathUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PathUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PathUtil_Access_Array_Access_Array_Object'Class then PathUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.io.path.PathUtil_Package_References;
 
 with org.allbinary.logic.io.path.PathUtil_Package_References;
@@ -93,10 +104,14 @@ package org.allbinary.logic.io.path.PathUtil_Package is
    function "=" (Left, Right : PathUtil_Access_Array) return Boolean renames org.allbinary.logic.io.path.PathUtil_Package_References."=";
    subtype PathUtil_Access_Array_Access is org.allbinary.logic.io.path.PathUtil_Package_References.PathUtil_Access_Array_Access;
    function "=" (Left, Right : PathUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.io.path.PathUtil_Package_References."=";
+   function Java_Box (Value : PathUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.io.path.PathUtil_Package_References.Java_Box;
+   function Java_Unbox_PathUtil_Access_Array (Value : access Java_Object'Class) return PathUtil_Access_Array_Access renames org.allbinary.logic.io.path.PathUtil_Package_References.Java_Unbox_PathUtil_Access_Array;
    subtype PathUtil_Access_Array_Access_Array is org.allbinary.logic.io.path.PathUtil_Package_References.PathUtil_Access_Array_Access_Array;
    function "=" (Left, Right : PathUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.path.PathUtil_Package_References."=";
    subtype PathUtil_Access_Array_Access_Array_Access is org.allbinary.logic.io.path.PathUtil_Package_References.PathUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PathUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.path.PathUtil_Package_References."=";
+   function Java_Box (Value : PathUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.io.path.PathUtil_Package_References.Java_Box;
+   function Java_Unbox_PathUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return PathUtil_Access_Array_Access_Array_Access renames org.allbinary.logic.io.path.PathUtil_Package_References.Java_Unbox_PathUtil_Access_Array_Access_Array;
 
    type PathUtil is new Java_Object with record
       abPathData : AbPathData_Access;

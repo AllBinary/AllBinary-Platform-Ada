@@ -49,7 +49,7 @@ package body org.allbinary.emulator.swt.SWTRunnableProcessor_Package is
 
    function getInstance return SWTRunnableProcessor_Access is
    begin
-        return SWTRunnableProcessor_Access (SWTRunnableProcessor_Package.instanceR);
+        return SWTRunnableProcessor_Package.instanceR;
    end getInstance;
 
    procedure process (This : in out SWTRunnableProcessor; display_Param : access Display_Package.Display'Class) is

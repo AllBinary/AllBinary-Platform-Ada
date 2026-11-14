@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.thirdparty.store.ThirdPartyStore_Package;
 package org.allbinary.thirdparty.store.ThirdPartyStore_Package_References is
    type ThirdPartyStore_Access is access all org.allbinary.thirdparty.store.ThirdPartyStore_Package.ThirdPartyStore'Class;
@@ -19,6 +20,16 @@ package org.allbinary.thirdparty.store.ThirdPartyStore_Package_References is
    type ThirdPartyStore_Access_Array_Access is access all ThirdPartyStore_Access_Array;
    type ThirdPartyStore_Access_Array_Access_Array is array (Natural range <>) of ThirdPartyStore_Access_Array_Access;
    type ThirdPartyStore_Access_Array_Access_Array_Access is access all ThirdPartyStore_Access_Array_Access_Array;
+   type ThirdPartyStore_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ThirdPartyStore_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ThirdPartyStore_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ThirdPartyStore_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ThirdPartyStore_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ThirdPartyStore_Access_Array_Access is (if Value /= null and then Value.all in ThirdPartyStore_Access_Array_Object'Class then ThirdPartyStore_Access_Array_Object'Class (Value.all).Value else null);
+   type ThirdPartyStore_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ThirdPartyStore_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ThirdPartyStore_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ThirdPartyStore_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ThirdPartyStore_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ThirdPartyStore_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ThirdPartyStore_Access_Array_Access_Array_Object'Class then ThirdPartyStore_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.thirdparty.store.ThirdPartyStore_Package_References;
 
 with org.allbinary.thirdparty.store.ThirdPartyStore_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.thirdparty.store.ThirdPartyStore_Package is
    function "=" (Left, Right : ThirdPartyStore_Access_Array) return Boolean renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References."=";
    subtype ThirdPartyStore_Access_Array_Access is org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.ThirdPartyStore_Access_Array_Access;
    function "=" (Left, Right : ThirdPartyStore_Access_Array_Access) return Boolean renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References."=";
+   function Java_Box (Value : ThirdPartyStore_Access_Array_Access) return Java_Object_Access renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.Java_Box;
+   function Java_Unbox_ThirdPartyStore_Access_Array (Value : access Java_Object'Class) return ThirdPartyStore_Access_Array_Access renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.Java_Unbox_ThirdPartyStore_Access_Array;
    subtype ThirdPartyStore_Access_Array_Access_Array is org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.ThirdPartyStore_Access_Array_Access_Array;
    function "=" (Left, Right : ThirdPartyStore_Access_Array_Access_Array) return Boolean renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References."=";
    subtype ThirdPartyStore_Access_Array_Access_Array_Access is org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.ThirdPartyStore_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ThirdPartyStore_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References."=";
+   function Java_Box (Value : ThirdPartyStore_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.Java_Box;
+   function Java_Unbox_ThirdPartyStore_Access_Array_Access_Array (Value : access Java_Object'Class) return ThirdPartyStore_Access_Array_Access_Array_Access renames org.allbinary.thirdparty.store.ThirdPartyStore_Package_References.Java_Unbox_ThirdPartyStore_Access_Array_Access_Array;
 
    type ThirdPartyStore is new Java_Object with record
       authorized : Boolean;

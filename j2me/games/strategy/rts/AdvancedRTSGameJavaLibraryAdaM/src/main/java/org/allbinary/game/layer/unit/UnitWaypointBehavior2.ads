@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 package org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References is
    type UnitWaypointBehavior2_Access is access all org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package.UnitWaypointBehavior2'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References i
    type UnitWaypointBehavior2_Access_Array_Access is access all UnitWaypointBehavior2_Access_Array;
    type UnitWaypointBehavior2_Access_Array_Access_Array is array (Natural range <>) of UnitWaypointBehavior2_Access_Array_Access;
    type UnitWaypointBehavior2_Access_Array_Access_Array_Access is access all UnitWaypointBehavior2_Access_Array_Access_Array;
+   type UnitWaypointBehavior2_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UnitWaypointBehavior2_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UnitWaypointBehavior2_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UnitWaypointBehavior2_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UnitWaypointBehavior2_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UnitWaypointBehavior2_Access_Array_Access is (if Value /= null and then Value.all in UnitWaypointBehavior2_Access_Array_Object'Class then UnitWaypointBehavior2_Access_Array_Object'Class (Value.all).Value else null);
+   type UnitWaypointBehavior2_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UnitWaypointBehavior2_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UnitWaypointBehavior2_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UnitWaypointBehavior2_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UnitWaypointBehavior2_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UnitWaypointBehavior2_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in UnitWaypointBehavior2_Access_Array_Access_Array_Object'Class then UnitWaypointBehavior2_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References;
 
 with org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References;
@@ -252,10 +263,14 @@ package org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
    function "=" (Left, Right : UnitWaypointBehavior2_Access_Array) return Boolean renames org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References."=";
    subtype UnitWaypointBehavior2_Access_Array_Access is org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References.UnitWaypointBehavior2_Access_Array_Access;
    function "=" (Left, Right : UnitWaypointBehavior2_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References."=";
+   function Java_Box (Value : UnitWaypointBehavior2_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References.Java_Box;
+   function Java_Unbox_UnitWaypointBehavior2_Access_Array (Value : access Java_Object'Class) return UnitWaypointBehavior2_Access_Array_Access renames org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References.Java_Unbox_UnitWaypointBehavior2_Access_Array;
    subtype UnitWaypointBehavior2_Access_Array_Access_Array is org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References.UnitWaypointBehavior2_Access_Array_Access_Array;
    function "=" (Left, Right : UnitWaypointBehavior2_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References."=";
    subtype UnitWaypointBehavior2_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References.UnitWaypointBehavior2_Access_Array_Access_Array_Access;
    function "=" (Left, Right : UnitWaypointBehavior2_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References."=";
+   function Java_Box (Value : UnitWaypointBehavior2_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References.Java_Box;
+   function Java_Unbox_UnitWaypointBehavior2_Access_Array_Access_Array (Value : access Java_Object'Class) return UnitWaypointBehavior2_Access_Array_Access_Array_Access renames org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References.Java_Unbox_UnitWaypointBehavior2_Access_Array_Access_Array;
 
    type UnitWaypointBehavior2 is new UnitWaypointBehavior with record
       logUtil : LogUtil_Access;
@@ -315,6 +330,7 @@ package org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package is
 
 end org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package;
 package org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References is
    type BuildingSteeringVisitor_Access is access all org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package.BuildingSteeringVisitor'Class;
@@ -322,6 +338,16 @@ package org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References
    type BuildingSteeringVisitor_Access_Array_Access is access all BuildingSteeringVisitor_Access_Array;
    type BuildingSteeringVisitor_Access_Array_Access_Array is array (Natural range <>) of BuildingSteeringVisitor_Access_Array_Access;
    type BuildingSteeringVisitor_Access_Array_Access_Array_Access is access all BuildingSteeringVisitor_Access_Array_Access_Array;
+   type BuildingSteeringVisitor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BuildingSteeringVisitor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BuildingSteeringVisitor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BuildingSteeringVisitor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BuildingSteeringVisitor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BuildingSteeringVisitor_Access_Array_Access is (if Value /= null and then Value.all in BuildingSteeringVisitor_Access_Array_Object'Class then BuildingSteeringVisitor_Access_Array_Object'Class (Value.all).Value else null);
+   type BuildingSteeringVisitor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BuildingSteeringVisitor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BuildingSteeringVisitor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BuildingSteeringVisitor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BuildingSteeringVisitor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BuildingSteeringVisitor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BuildingSteeringVisitor_Access_Array_Access_Array_Object'Class then BuildingSteeringVisitor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References;
 
 with org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References;
@@ -544,10 +570,14 @@ package org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package is
    function "=" (Left, Right : BuildingSteeringVisitor_Access_Array) return Boolean renames org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References."=";
    subtype BuildingSteeringVisitor_Access_Array_Access is org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References.BuildingSteeringVisitor_Access_Array_Access;
    function "=" (Left, Right : BuildingSteeringVisitor_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References."=";
+   function Java_Box (Value : BuildingSteeringVisitor_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References.Java_Box;
+   function Java_Unbox_BuildingSteeringVisitor_Access_Array (Value : access Java_Object'Class) return BuildingSteeringVisitor_Access_Array_Access renames org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References.Java_Unbox_BuildingSteeringVisitor_Access_Array;
    subtype BuildingSteeringVisitor_Access_Array_Access_Array is org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References.BuildingSteeringVisitor_Access_Array_Access_Array;
    function "=" (Left, Right : BuildingSteeringVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References."=";
    subtype BuildingSteeringVisitor_Access_Array_Access_Array_Access is org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References.BuildingSteeringVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BuildingSteeringVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References."=";
+   function Java_Box (Value : BuildingSteeringVisitor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References.Java_Box;
+   function Java_Unbox_BuildingSteeringVisitor_Access_Array_Access_Array (Value : access Java_Object'Class) return BuildingSteeringVisitor_Access_Array_Access_Array_Access renames org.allbinary.game.layer.unit.BuildingSteeringVisitor_Package_References.Java_Unbox_BuildingSteeringVisitor_Access_Array_Access_Array;
 
    type BuildingSteeringVisitor is new SteeringVisitor with record
       Java_Outer : org.allbinary.game.layer.unit.UnitWaypointBehavior2_Package_References.UnitWaypointBehavior2_Access;

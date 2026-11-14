@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package;
 package org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_References is
    type BasicArrayListResetablePool_Access is access all org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package.BasicArrayListResetablePool'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_Refer
    type BasicArrayListResetablePool_Access_Array_Access is access all BasicArrayListResetablePool_Access_Array;
    type BasicArrayListResetablePool_Access_Array_Access_Array is array (Natural range <>) of BasicArrayListResetablePool_Access_Array_Access;
    type BasicArrayListResetablePool_Access_Array_Access_Array_Access is access all BasicArrayListResetablePool_Access_Array_Access_Array;
+   type BasicArrayListResetablePool_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicArrayListResetablePool_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicArrayListResetablePool_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicArrayListResetablePool_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicArrayListResetablePool_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicArrayListResetablePool_Access_Array_Access is (if Value /= null and then Value.all in BasicArrayListResetablePool_Access_Array_Object'Class then BasicArrayListResetablePool_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicArrayListResetablePool_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicArrayListResetablePool_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicArrayListResetablePool_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicArrayListResetablePool_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicArrayListResetablePool_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicArrayListResetablePool_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicArrayListResetablePool_Access_Array_Access_Array_Object'Class then BasicArrayListResetablePool_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_References;
 
 with org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_References;
@@ -69,10 +80,14 @@ package org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package is
    function "=" (Left, Right : BasicArrayListResetablePool_Access_Array) return Boolean renames org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_References."=";
    subtype BasicArrayListResetablePool_Access_Array_Access is org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_References.BasicArrayListResetablePool_Access_Array_Access;
    function "=" (Left, Right : BasicArrayListResetablePool_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_References."=";
+   function Java_Box (Value : BasicArrayListResetablePool_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_References.Java_Box;
+   function Java_Unbox_BasicArrayListResetablePool_Access_Array (Value : access Java_Object'Class) return BasicArrayListResetablePool_Access_Array_Access renames org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_References.Java_Unbox_BasicArrayListResetablePool_Access_Array;
    subtype BasicArrayListResetablePool_Access_Array_Access_Array is org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_References.BasicArrayListResetablePool_Access_Array_Access_Array;
    function "=" (Left, Right : BasicArrayListResetablePool_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_References."=";
    subtype BasicArrayListResetablePool_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_References.BasicArrayListResetablePool_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicArrayListResetablePool_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_References."=";
+   function Java_Box (Value : BasicArrayListResetablePool_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_References.Java_Box;
+   function Java_Unbox_BasicArrayListResetablePool_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicArrayListResetablePool_Access_Array_Access_Array_Access renames org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package_References.Java_Unbox_BasicArrayListResetablePool_Access_Array_Access_Array;
 
    type BasicArrayListResetablePool is new AbstractArrayListPool with null record;
 

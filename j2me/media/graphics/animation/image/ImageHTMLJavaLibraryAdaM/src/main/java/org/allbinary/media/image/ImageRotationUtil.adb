@@ -48,7 +48,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
 
    function getInstance return ImageRotationUtil_Access is
    begin
-        return ImageRotationUtil_Access (ImageRotationUtil_Package.instance);
+        return ImageRotationUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageRotationUtil'Class) is
@@ -89,7 +89,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
             canvasImage := CanvasImage_Access (htmlImage.getImage);
             canvasSurface := htmlImage.getCanvasSurface (canvasImage);
             canvasSurface.translate ((originalPlayNImage.width) / (2), (originalPlayNImage.height) / (2));
-            canvasSurface.rotate (Float (Ada.Numerics.Long_Elementary_Functions.ToRadians (rotationInDegrees)));
+            canvasSurface.rotate (Float ((Long_Float (rotationInDegrees) * Ada.Numerics.Pi / 180.0)));
             canvasSurface.drawImage (originalPlayNImage, (-(originalPlayNImage.width)) / (2), (-(originalPlayNImage.height)) / (2));
             return image;
         else

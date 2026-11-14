@@ -224,7 +224,7 @@ package body org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package 
 
    function getInstance return HighScoreNamePersistanceSingleton_Access is
    begin
-        return HighScoreNamePersistanceSingleton_Access (HighScoreNamePersistanceSingleton_Package.SINGLETON);
+        return HighScoreNamePersistanceSingleton_Package.SINGLETON;
    end getInstance;
 
    procedure clear (This : in out HighScoreNamePersistanceSingleton) is

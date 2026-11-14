@@ -96,7 +96,7 @@ package body org.allbinary.game.layer.LevelLayersFinder_Package is
 
    function getInstance return LevelLayersFinder_Access is
    begin
-        return LevelLayersFinder_Access (LevelLayersFinder_Package.instance);
+        return LevelLayersFinder_Package.instance;
    end getInstance;
 
    function get (This : in out LevelLayersFinder; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) return BasicArrayList_Access is

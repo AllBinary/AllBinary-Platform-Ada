@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.address.StreetAddress_Package;
 package org.allbinary.business.user.address.StreetAddress_Package_References is
    type StreetAddress_Access is access all org.allbinary.business.user.address.StreetAddress_Package.StreetAddress'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.address.StreetAddress_Package_References is
    type StreetAddress_Access_Array_Access is access all StreetAddress_Access_Array;
    type StreetAddress_Access_Array_Access_Array is array (Natural range <>) of StreetAddress_Access_Array_Access;
    type StreetAddress_Access_Array_Access_Array_Access is access all StreetAddress_Access_Array_Access_Array;
+   type StreetAddress_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StreetAddress_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StreetAddress_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StreetAddress_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StreetAddress_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StreetAddress_Access_Array_Access is (if Value /= null and then Value.all in StreetAddress_Access_Array_Object'Class then StreetAddress_Access_Array_Object'Class (Value.all).Value else null);
+   type StreetAddress_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StreetAddress_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StreetAddress_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StreetAddress_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StreetAddress_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StreetAddress_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StreetAddress_Access_Array_Access_Array_Object'Class then StreetAddress_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.address.StreetAddress_Package_References;
 
 with org.allbinary.business.user.address.StreetAddress_Package_References;
@@ -86,10 +97,14 @@ package org.allbinary.business.user.address.StreetAddress_Package is
    function "=" (Left, Right : StreetAddress_Access_Array) return Boolean renames org.allbinary.business.user.address.StreetAddress_Package_References."=";
    subtype StreetAddress_Access_Array_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access;
    function "=" (Left, Right : StreetAddress_Access_Array_Access) return Boolean renames org.allbinary.business.user.address.StreetAddress_Package_References."=";
+   function Java_Box (Value : StreetAddress_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.address.StreetAddress_Package_References.Java_Box;
+   function Java_Unbox_StreetAddress_Access_Array (Value : access Java_Object'Class) return StreetAddress_Access_Array_Access renames org.allbinary.business.user.address.StreetAddress_Package_References.Java_Unbox_StreetAddress_Access_Array;
    subtype StreetAddress_Access_Array_Access_Array is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access_Array;
    function "=" (Left, Right : StreetAddress_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.address.StreetAddress_Package_References."=";
    subtype StreetAddress_Access_Array_Access_Array_Access is org.allbinary.business.user.address.StreetAddress_Package_References.StreetAddress_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StreetAddress_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.address.StreetAddress_Package_References."=";
+   function Java_Box (Value : StreetAddress_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.address.StreetAddress_Package_References.Java_Box;
+   function Java_Unbox_StreetAddress_Access_Array_Access_Array (Value : access Java_Object'Class) return StreetAddress_Access_Array_Access_Array_Access renames org.allbinary.business.user.address.StreetAddress_Package_References.Java_Unbox_StreetAddress_Access_Array_Access_Array;
 
    type StreetAddress is new Java_Object with record
       logUtil : LogUtil_Access;

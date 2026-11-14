@@ -26,7 +26,7 @@ package body org.allbinary.game.input.resource.TouchButtonDowngradeResource_Pack
 
    function getInstance return TouchButtonResource_Access is
    begin
-        return TouchButtonResource_Access (TouchButtonDowngradeResource_Package.instance);
+        return TouchButtonDowngradeResource_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TouchButtonDowngradeResource'Class) is

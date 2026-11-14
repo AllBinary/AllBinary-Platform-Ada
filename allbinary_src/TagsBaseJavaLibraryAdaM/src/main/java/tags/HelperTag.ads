@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with tags.HelperTag_Package;
 package tags.HelperTag_Package_References is
    type HelperTag_Access is access all tags.HelperTag_Package.HelperTag'Class;
@@ -19,6 +20,16 @@ package tags.HelperTag_Package_References is
    type HelperTag_Access_Array_Access is access all HelperTag_Access_Array;
    type HelperTag_Access_Array_Access_Array is array (Natural range <>) of HelperTag_Access_Array_Access;
    type HelperTag_Access_Array_Access_Array_Access is access all HelperTag_Access_Array_Access_Array;
+   type HelperTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HelperTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HelperTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HelperTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HelperTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HelperTag_Access_Array_Access is (if Value /= null and then Value.all in HelperTag_Access_Array_Object'Class then HelperTag_Access_Array_Object'Class (Value.all).Value else null);
+   type HelperTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HelperTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HelperTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HelperTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HelperTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HelperTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in HelperTag_Access_Array_Access_Array_Object'Class then HelperTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end tags.HelperTag_Package_References;
 
 with tags.HelperTag_Package_References;
@@ -71,10 +82,14 @@ package tags.HelperTag_Package is
    function "=" (Left, Right : HelperTag_Access_Array) return Boolean renames tags.HelperTag_Package_References."=";
    subtype HelperTag_Access_Array_Access is tags.HelperTag_Package_References.HelperTag_Access_Array_Access;
    function "=" (Left, Right : HelperTag_Access_Array_Access) return Boolean renames tags.HelperTag_Package_References."=";
+   function Java_Box (Value : HelperTag_Access_Array_Access) return Java_Object_Access renames tags.HelperTag_Package_References.Java_Box;
+   function Java_Unbox_HelperTag_Access_Array (Value : access Java_Object'Class) return HelperTag_Access_Array_Access renames tags.HelperTag_Package_References.Java_Unbox_HelperTag_Access_Array;
    subtype HelperTag_Access_Array_Access_Array is tags.HelperTag_Package_References.HelperTag_Access_Array_Access_Array;
    function "=" (Left, Right : HelperTag_Access_Array_Access_Array) return Boolean renames tags.HelperTag_Package_References."=";
    subtype HelperTag_Access_Array_Access_Array_Access is tags.HelperTag_Package_References.HelperTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HelperTag_Access_Array_Access_Array_Access) return Boolean renames tags.HelperTag_Package_References."=";
+   function Java_Box (Value : HelperTag_Access_Array_Access_Array_Access) return Java_Object_Access renames tags.HelperTag_Package_References.Java_Box;
+   function Java_Unbox_HelperTag_Access_Array_Access_Array (Value : access Java_Object'Class) return HelperTag_Access_Array_Access_Array_Access renames tags.HelperTag_Package_References.Java_Unbox_HelperTag_Access_Array_Access_Array;
 
    type HelperTag is new PropertiesTag with record
       HelperTag_Field_logUtil : LogUtil_Access;

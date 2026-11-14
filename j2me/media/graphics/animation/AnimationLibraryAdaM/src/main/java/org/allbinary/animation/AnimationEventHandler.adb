@@ -55,7 +55,7 @@ package body org.allbinary.animation.AnimationEventHandler_Package is
 
    function getInstance return AnimationEventHandler_Access is
    begin
-        return AnimationEventHandler_Access (AnimationEventHandler_Package.eventHandler);
+        return AnimationEventHandler_Package.eventHandler;
    end getInstance;
 
 begin

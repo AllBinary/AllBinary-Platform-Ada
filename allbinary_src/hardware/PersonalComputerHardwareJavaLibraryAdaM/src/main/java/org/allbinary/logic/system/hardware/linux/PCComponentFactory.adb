@@ -103,7 +103,7 @@ package body org.allbinary.logic.system.hardware.linux.PCComponentFactory_Packag
 
    function getInstance return PCComponentFactory_Access is
    begin
-        return PCComponentFactory_Access (PCComponentFactory_Package.instance);
+        return PCComponentFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out PCComponentFactory'Class) is

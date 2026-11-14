@@ -147,7 +147,7 @@ package body org.allbinary.game.configuration.GameConfigurationTextInput_Package
 
    function getHashtable return ABHashtable_Access is
    begin
-        return ABHashtable_Access (GameConfigurationTextInput_Package.hashtable);
+        return GameConfigurationTextInput_Package.hashtable;
    end getHashtable;
 
 begin

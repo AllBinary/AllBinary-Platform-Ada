@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package;
 package org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References is
    type TestInputForMotionRectanglesResultsWorker_Access is access all org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package.TestInputForMotionRectanglesResultsWorker'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.image.comparison.motion.TestInputForMotionRectangles
    type TestInputForMotionRectanglesResultsWorker_Access_Array_Access is access all TestInputForMotionRectanglesResultsWorker_Access_Array;
    type TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array is array (Natural range <>) of TestInputForMotionRectanglesResultsWorker_Access_Array_Access;
    type TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array_Access is access all TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array;
+   type TestInputForMotionRectanglesResultsWorker_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TestInputForMotionRectanglesResultsWorker_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TestInputForMotionRectanglesResultsWorker_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TestInputForMotionRectanglesResultsWorker_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TestInputForMotionRectanglesResultsWorker_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TestInputForMotionRectanglesResultsWorker_Access_Array_Access is (if Value /= null and then Value.all in TestInputForMotionRectanglesResultsWorker_Access_Array_Object'Class then TestInputForMotionRectanglesResultsWorker_Access_Array_Object'Class (Value.all).Value else null);
+   type TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array_Object'Class then TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References;
 
 with org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References;
@@ -32,7 +43,6 @@ with Ada.Text_IO;
 with AllBinary_Java; use AllBinary_Java;
 --  with java.awt.Rectangle_Package; use java.awt.Rectangle_Package;
 --  with java.awt.event.InputEvent_Package; use java.awt.event.InputEvent_Package;
---  with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
 limited with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;
@@ -112,10 +122,14 @@ package org.allbinary.media.image.comparison.motion.TestInputForMotionRectangles
    function "=" (Left, Right : TestInputForMotionRectanglesResultsWorker_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References."=";
    subtype TestInputForMotionRectanglesResultsWorker_Access_Array_Access is org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References.TestInputForMotionRectanglesResultsWorker_Access_Array_Access;
    function "=" (Left, Right : TestInputForMotionRectanglesResultsWorker_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References."=";
+   function Java_Box (Value : TestInputForMotionRectanglesResultsWorker_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References.Java_Box;
+   function Java_Unbox_TestInputForMotionRectanglesResultsWorker_Access_Array (Value : access Java_Object'Class) return TestInputForMotionRectanglesResultsWorker_Access_Array_Access renames org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References.Java_Unbox_TestInputForMotionRectanglesResultsWorker_Access_Array;
    subtype TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array is org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References.TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array;
    function "=" (Left, Right : TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References."=";
    subtype TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array_Access is org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References.TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References."=";
+   function Java_Box (Value : TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References.Java_Box;
+   function Java_Unbox_TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array (Value : access Java_Object'Class) return TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array_Access renames org.allbinary.media.image.comparison.motion.TestInputForMotionRectanglesResultsWorker_Package_References.Java_Unbox_TestInputForMotionRectanglesResultsWorker_Access_Array_Access_Array;
 
    type TestInputForMotionRectanglesResultsWorker is new Java_Object and MotionRectanglesResultsListener with record
       logUtil : LogUtil_Access;

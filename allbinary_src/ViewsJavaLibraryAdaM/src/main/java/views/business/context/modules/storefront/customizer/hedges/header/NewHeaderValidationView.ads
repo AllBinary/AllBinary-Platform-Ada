@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package;
 package views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package_References is
    type NewHeaderValidationView_Access is access all views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package.NewHeaderValidationView'Class;
@@ -19,6 +20,16 @@ package views.business.context.modules.storefront.customizer.hedges.header.NewHe
    type NewHeaderValidationView_Access_Array_Access is access all NewHeaderValidationView_Access_Array;
    type NewHeaderValidationView_Access_Array_Access_Array is array (Natural range <>) of NewHeaderValidationView_Access_Array_Access;
    type NewHeaderValidationView_Access_Array_Access_Array_Access is access all NewHeaderValidationView_Access_Array_Access_Array;
+   type NewHeaderValidationView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NewHeaderValidationView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NewHeaderValidationView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NewHeaderValidationView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NewHeaderValidationView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NewHeaderValidationView_Access_Array_Access is (if Value /= null and then Value.all in NewHeaderValidationView_Access_Array_Object'Class then NewHeaderValidationView_Access_Array_Object'Class (Value.all).Value else null);
+   type NewHeaderValidationView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NewHeaderValidationView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NewHeaderValidationView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NewHeaderValidationView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NewHeaderValidationView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NewHeaderValidationView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NewHeaderValidationView_Access_Array_Access_Array_Object'Class then NewHeaderValidationView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package_References;
 
 with views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package_References;
@@ -99,10 +110,14 @@ package views.business.context.modules.storefront.customizer.hedges.header.NewHe
    function "=" (Left, Right : NewHeaderValidationView_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package_References."=";
    subtype NewHeaderValidationView_Access_Array_Access is views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package_References.NewHeaderValidationView_Access_Array_Access;
    function "=" (Left, Right : NewHeaderValidationView_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package_References."=";
+   function Java_Box (Value : NewHeaderValidationView_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package_References.Java_Box;
+   function Java_Unbox_NewHeaderValidationView_Access_Array (Value : access Java_Object'Class) return NewHeaderValidationView_Access_Array_Access renames views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package_References.Java_Unbox_NewHeaderValidationView_Access_Array;
    subtype NewHeaderValidationView_Access_Array_Access_Array is views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package_References.NewHeaderValidationView_Access_Array_Access_Array;
    function "=" (Left, Right : NewHeaderValidationView_Access_Array_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package_References."=";
    subtype NewHeaderValidationView_Access_Array_Access_Array_Access is views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package_References.NewHeaderValidationView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NewHeaderValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package_References."=";
+   function Java_Box (Value : NewHeaderValidationView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package_References.Java_Box;
+   function Java_Unbox_NewHeaderValidationView_Access_Array_Access_Array (Value : access Java_Object'Class) return NewHeaderValidationView_Access_Array_Access_Array_Access renames views.business.context.modules.storefront.customizer.hedges.header.NewHeaderValidationView_Package_References.Java_Unbox_NewHeaderValidationView_Access_Array_Access_Array;
 
    type NewHeaderValidationView is new TopBarView and ValidationComponentInterface with record
       NewHeaderValidationView_Field_logUtil : LogUtil_Access;

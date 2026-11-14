@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package;
 package org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References is
    type BasicPlatormGeographicMapCellType_Access is access all org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package.BasicPlatormGeographicMapCellType'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeograph
    type BasicPlatormGeographicMapCellType_Access_Array_Access is access all BasicPlatormGeographicMapCellType_Access_Array;
    type BasicPlatormGeographicMapCellType_Access_Array_Access_Array is array (Natural range <>) of BasicPlatormGeographicMapCellType_Access_Array_Access;
    type BasicPlatormGeographicMapCellType_Access_Array_Access_Array_Access is access all BasicPlatormGeographicMapCellType_Access_Array_Access_Array;
+   type BasicPlatormGeographicMapCellType_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicPlatormGeographicMapCellType_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicPlatormGeographicMapCellType_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicPlatormGeographicMapCellType_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicPlatormGeographicMapCellType_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicPlatormGeographicMapCellType_Access_Array_Access is (if Value /= null and then Value.all in BasicPlatormGeographicMapCellType_Access_Array_Object'Class then BasicPlatormGeographicMapCellType_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicPlatormGeographicMapCellType_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicPlatormGeographicMapCellType_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicPlatormGeographicMapCellType_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicPlatormGeographicMapCellType_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicPlatormGeographicMapCellType_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicPlatormGeographicMapCellType_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicPlatormGeographicMapCellType_Access_Array_Access_Array_Object'Class then BasicPlatormGeographicMapCellType_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References;
 
 with org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References;
@@ -70,10 +81,14 @@ package org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeograph
    function "=" (Left, Right : BasicPlatormGeographicMapCellType_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References."=";
    subtype BasicPlatormGeographicMapCellType_Access_Array_Access is org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References.BasicPlatormGeographicMapCellType_Access_Array_Access;
    function "=" (Left, Right : BasicPlatormGeographicMapCellType_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References."=";
+   function Java_Box (Value : BasicPlatormGeographicMapCellType_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References.Java_Box;
+   function Java_Unbox_BasicPlatormGeographicMapCellType_Access_Array (Value : access Java_Object'Class) return BasicPlatormGeographicMapCellType_Access_Array_Access renames org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References.Java_Unbox_BasicPlatormGeographicMapCellType_Access_Array;
    subtype BasicPlatormGeographicMapCellType_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References.BasicPlatormGeographicMapCellType_Access_Array_Access_Array;
    function "=" (Left, Right : BasicPlatormGeographicMapCellType_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References."=";
    subtype BasicPlatormGeographicMapCellType_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References.BasicPlatormGeographicMapCellType_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicPlatormGeographicMapCellType_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References."=";
+   function Java_Box (Value : BasicPlatormGeographicMapCellType_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References.Java_Box;
+   function Java_Unbox_BasicPlatormGeographicMapCellType_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicPlatormGeographicMapCellType_Access_Array_Access_Array_Access renames org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellType_Package_References.Java_Unbox_BasicPlatormGeographicMapCellType_Access_Array_Access_Array;
 
    type BasicPlatormGeographicMapCellType is new Java_Object with record
       types : Integer_Array_Access;

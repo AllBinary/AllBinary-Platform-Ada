@@ -141,7 +141,7 @@ package body org.allbinary.game.input.form.VisibleCellPositionsSingleton_Package
 
    function getInstance return VisibleCellPositionsSingleton_Access is
    begin
-        return VisibleCellPositionsSingleton_Access (VisibleCellPositionsSingleton_Package.instance);
+        return VisibleCellPositionsSingleton_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out VisibleCellPositionsSingleton'Class) is

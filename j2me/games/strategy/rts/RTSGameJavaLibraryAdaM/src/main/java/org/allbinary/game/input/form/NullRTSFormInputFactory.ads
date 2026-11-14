@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.input.form.NullRTSFormInputFactory_Package;
 package org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References is
    type NullRTSFormInputFactory_Access is access all org.allbinary.game.input.form.NullRTSFormInputFactory_Package.NullRTSFormInputFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References
    type NullRTSFormInputFactory_Access_Array_Access is access all NullRTSFormInputFactory_Access_Array;
    type NullRTSFormInputFactory_Access_Array_Access_Array is array (Natural range <>) of NullRTSFormInputFactory_Access_Array_Access;
    type NullRTSFormInputFactory_Access_Array_Access_Array_Access is access all NullRTSFormInputFactory_Access_Array_Access_Array;
+   type NullRTSFormInputFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NullRTSFormInputFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NullRTSFormInputFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NullRTSFormInputFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NullRTSFormInputFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NullRTSFormInputFactory_Access_Array_Access is (if Value /= null and then Value.all in NullRTSFormInputFactory_Access_Array_Object'Class then NullRTSFormInputFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type NullRTSFormInputFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NullRTSFormInputFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NullRTSFormInputFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NullRTSFormInputFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NullRTSFormInputFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NullRTSFormInputFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NullRTSFormInputFactory_Access_Array_Access_Array_Object'Class then NullRTSFormInputFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References;
 
 with org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References;
@@ -56,10 +67,14 @@ package org.allbinary.game.input.form.NullRTSFormInputFactory_Package is
    function "=" (Left, Right : NullRTSFormInputFactory_Access_Array) return Boolean renames org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References."=";
    subtype NullRTSFormInputFactory_Access_Array_Access is org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References.NullRTSFormInputFactory_Access_Array_Access;
    function "=" (Left, Right : NullRTSFormInputFactory_Access_Array_Access) return Boolean renames org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References."=";
+   function Java_Box (Value : NullRTSFormInputFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References.Java_Box;
+   function Java_Unbox_NullRTSFormInputFactory_Access_Array (Value : access Java_Object'Class) return NullRTSFormInputFactory_Access_Array_Access renames org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References.Java_Unbox_NullRTSFormInputFactory_Access_Array;
    subtype NullRTSFormInputFactory_Access_Array_Access_Array is org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References.NullRTSFormInputFactory_Access_Array_Access_Array;
    function "=" (Left, Right : NullRTSFormInputFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References."=";
    subtype NullRTSFormInputFactory_Access_Array_Access_Array_Access is org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References.NullRTSFormInputFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NullRTSFormInputFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References."=";
+   function Java_Box (Value : NullRTSFormInputFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References.Java_Box;
+   function Java_Unbox_NullRTSFormInputFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return NullRTSFormInputFactory_Access_Array_Access_Array_Access renames org.allbinary.game.input.form.NullRTSFormInputFactory_Package_References.Java_Unbox_NullRTSFormInputFactory_Access_Array_Access_Array;
 
    type NullRTSFormInputFactory is new Java_Object with null record;
    SINGLETON : RTSFormInput_Access;

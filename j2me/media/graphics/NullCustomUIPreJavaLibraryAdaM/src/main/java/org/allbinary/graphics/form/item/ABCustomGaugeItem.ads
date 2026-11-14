@@ -1,5 +1,6 @@
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.form.item.ABCustomGaugeItem_Package;
 package org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References is
    type ABCustomGaugeItem_Access is access all org.allbinary.graphics.form.item.ABCustomGaugeItem_Package.ABCustomGaugeItem'Class;
@@ -7,6 +8,16 @@ package org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References is
    type ABCustomGaugeItem_Access_Array_Access is access all ABCustomGaugeItem_Access_Array;
    type ABCustomGaugeItem_Access_Array_Access_Array is array (Natural range <>) of ABCustomGaugeItem_Access_Array_Access;
    type ABCustomGaugeItem_Access_Array_Access_Array_Access is access all ABCustomGaugeItem_Access_Array_Access_Array;
+   type ABCustomGaugeItem_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ABCustomGaugeItem_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ABCustomGaugeItem_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ABCustomGaugeItem_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ABCustomGaugeItem_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ABCustomGaugeItem_Access_Array_Access is (if Value /= null and then Value.all in ABCustomGaugeItem_Access_Array_Object'Class then ABCustomGaugeItem_Access_Array_Object'Class (Value.all).Value else null);
+   type ABCustomGaugeItem_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ABCustomGaugeItem_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ABCustomGaugeItem_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ABCustomGaugeItem_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ABCustomGaugeItem_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ABCustomGaugeItem_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ABCustomGaugeItem_Access_Array_Access_Array_Object'Class then ABCustomGaugeItem_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References;
 
 with org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References;
@@ -46,10 +57,14 @@ package org.allbinary.graphics.form.item.ABCustomGaugeItem_Package is
    function "=" (Left, Right : ABCustomGaugeItem_Access_Array) return Boolean renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References."=";
    subtype ABCustomGaugeItem_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.ABCustomGaugeItem_Access_Array_Access;
    function "=" (Left, Right : ABCustomGaugeItem_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References."=";
+   function Java_Box (Value : ABCustomGaugeItem_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.Java_Box;
+   function Java_Unbox_ABCustomGaugeItem_Access_Array (Value : access Java_Object'Class) return ABCustomGaugeItem_Access_Array_Access renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.Java_Unbox_ABCustomGaugeItem_Access_Array;
    subtype ABCustomGaugeItem_Access_Array_Access_Array is org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.ABCustomGaugeItem_Access_Array_Access_Array;
    function "=" (Left, Right : ABCustomGaugeItem_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References."=";
    subtype ABCustomGaugeItem_Access_Array_Access_Array_Access is org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.ABCustomGaugeItem_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ABCustomGaugeItem_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References."=";
+   function Java_Box (Value : ABCustomGaugeItem_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.Java_Box;
+   function Java_Unbox_ABCustomGaugeItem_Access_Array_Access_Array (Value : access Java_Object'Class) return ABCustomGaugeItem_Access_Array_Access_Array_Access renames org.allbinary.graphics.form.item.ABCustomGaugeItem_Package_References.Java_Unbox_ABCustomGaugeItem_Access_Array_Access_Array;
 
    type ABCustomGaugeItem is new ABCustomItem with null record;
    NULL_GAUGE_ITEM : ABCustomGaugeItem_Access;

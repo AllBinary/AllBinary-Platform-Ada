@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.generic_Id.user.EditValidationUserView_Package;
 package views.generic_Id.user.EditValidationUserView_Package_References is
    type EditValidationUserView_Access is access all views.generic_Id.user.EditValidationUserView_Package.EditValidationUserView'Class;
@@ -19,6 +20,16 @@ package views.generic_Id.user.EditValidationUserView_Package_References is
    type EditValidationUserView_Access_Array_Access is access all EditValidationUserView_Access_Array;
    type EditValidationUserView_Access_Array_Access_Array is array (Natural range <>) of EditValidationUserView_Access_Array_Access;
    type EditValidationUserView_Access_Array_Access_Array_Access is access all EditValidationUserView_Access_Array_Access_Array;
+   type EditValidationUserView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : EditValidationUserView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : EditValidationUserView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new EditValidationUserView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_EditValidationUserView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return EditValidationUserView_Access_Array_Access is (if Value /= null and then Value.all in EditValidationUserView_Access_Array_Object'Class then EditValidationUserView_Access_Array_Object'Class (Value.all).Value else null);
+   type EditValidationUserView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : EditValidationUserView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : EditValidationUserView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new EditValidationUserView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_EditValidationUserView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return EditValidationUserView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in EditValidationUserView_Access_Array_Access_Array_Object'Class then EditValidationUserView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.generic_Id.user.EditValidationUserView_Package_References;
 
 with views.generic_Id.user.EditValidationUserView_Package_References;
@@ -99,10 +110,14 @@ package views.generic_Id.user.EditValidationUserView_Package is
    function "=" (Left, Right : EditValidationUserView_Access_Array) return Boolean renames views.generic_Id.user.EditValidationUserView_Package_References."=";
    subtype EditValidationUserView_Access_Array_Access is views.generic_Id.user.EditValidationUserView_Package_References.EditValidationUserView_Access_Array_Access;
    function "=" (Left, Right : EditValidationUserView_Access_Array_Access) return Boolean renames views.generic_Id.user.EditValidationUserView_Package_References."=";
+   function Java_Box (Value : EditValidationUserView_Access_Array_Access) return Java_Object_Access renames views.generic_Id.user.EditValidationUserView_Package_References.Java_Box;
+   function Java_Unbox_EditValidationUserView_Access_Array (Value : access Java_Object'Class) return EditValidationUserView_Access_Array_Access renames views.generic_Id.user.EditValidationUserView_Package_References.Java_Unbox_EditValidationUserView_Access_Array;
    subtype EditValidationUserView_Access_Array_Access_Array is views.generic_Id.user.EditValidationUserView_Package_References.EditValidationUserView_Access_Array_Access_Array;
    function "=" (Left, Right : EditValidationUserView_Access_Array_Access_Array) return Boolean renames views.generic_Id.user.EditValidationUserView_Package_References."=";
    subtype EditValidationUserView_Access_Array_Access_Array_Access is views.generic_Id.user.EditValidationUserView_Package_References.EditValidationUserView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : EditValidationUserView_Access_Array_Access_Array_Access) return Boolean renames views.generic_Id.user.EditValidationUserView_Package_References."=";
+   function Java_Box (Value : EditValidationUserView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.generic_Id.user.EditValidationUserView_Package_References.Java_Box;
+   function Java_Unbox_EditValidationUserView_Access_Array_Access_Array (Value : access Java_Object'Class) return EditValidationUserView_Access_Array_Access_Array_Access renames views.generic_Id.user.EditValidationUserView_Package_References.Java_Unbox_EditValidationUserView_Access_Array_Access_Array;
 
    type EditValidationUserView is new UserView and ValidationComponentInterface with record
       EditValidationUserView_Field_logUtil_Hidden : LogUtil_Access;

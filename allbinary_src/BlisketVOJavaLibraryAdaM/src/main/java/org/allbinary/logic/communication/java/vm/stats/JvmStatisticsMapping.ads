@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package;
 package org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package_References is
    type JvmStatisticsMapping_Access is access all org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package.JvmStatisticsMapping'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Pac
    type JvmStatisticsMapping_Access_Array_Access is access all JvmStatisticsMapping_Access_Array;
    type JvmStatisticsMapping_Access_Array_Access_Array is array (Natural range <>) of JvmStatisticsMapping_Access_Array_Access;
    type JvmStatisticsMapping_Access_Array_Access_Array_Access is access all JvmStatisticsMapping_Access_Array_Access_Array;
+   type JvmStatisticsMapping_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : JvmStatisticsMapping_Access_Array_Access;
+   end record;
+   function Java_Box (Value : JvmStatisticsMapping_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new JvmStatisticsMapping_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_JvmStatisticsMapping_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return JvmStatisticsMapping_Access_Array_Access is (if Value /= null and then Value.all in JvmStatisticsMapping_Access_Array_Object'Class then JvmStatisticsMapping_Access_Array_Object'Class (Value.all).Value else null);
+   type JvmStatisticsMapping_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : JvmStatisticsMapping_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : JvmStatisticsMapping_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new JvmStatisticsMapping_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_JvmStatisticsMapping_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return JvmStatisticsMapping_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in JvmStatisticsMapping_Access_Array_Access_Array_Object'Class then JvmStatisticsMapping_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package_References;
 
 with org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package_References;
@@ -62,10 +73,14 @@ package org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Pac
    function "=" (Left, Right : JvmStatisticsMapping_Access_Array) return Boolean renames org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package_References."=";
    subtype JvmStatisticsMapping_Access_Array_Access is org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package_References.JvmStatisticsMapping_Access_Array_Access;
    function "=" (Left, Right : JvmStatisticsMapping_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package_References."=";
+   function Java_Box (Value : JvmStatisticsMapping_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package_References.Java_Box;
+   function Java_Unbox_JvmStatisticsMapping_Access_Array (Value : access Java_Object'Class) return JvmStatisticsMapping_Access_Array_Access renames org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package_References.Java_Unbox_JvmStatisticsMapping_Access_Array;
    subtype JvmStatisticsMapping_Access_Array_Access_Array is org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package_References.JvmStatisticsMapping_Access_Array_Access_Array;
    function "=" (Left, Right : JvmStatisticsMapping_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package_References."=";
    subtype JvmStatisticsMapping_Access_Array_Access_Array_Access is org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package_References.JvmStatisticsMapping_Access_Array_Access_Array_Access;
    function "=" (Left, Right : JvmStatisticsMapping_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package_References."=";
+   function Java_Box (Value : JvmStatisticsMapping_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package_References.Java_Box;
+   function Java_Unbox_JvmStatisticsMapping_Access_Array_Access_Array (Value : access Java_Object'Class) return JvmStatisticsMapping_Access_Array_Access_Array_Access renames org.allbinary.logic.communication.java.vm.stats.JvmStatisticsMapping_Package_References.Java_Unbox_JvmStatisticsMapping_Access_Array_Access_Array;
 
    type JvmStatisticsMapping is new JvmStatistics and TableMappingInterface with null record;
 

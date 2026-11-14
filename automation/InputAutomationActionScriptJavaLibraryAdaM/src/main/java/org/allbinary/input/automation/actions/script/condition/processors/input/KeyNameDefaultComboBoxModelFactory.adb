@@ -13,12 +13,14 @@
 --  Generated Code Do Not Modify
 
 
+with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
 with org.allbinary.input.KeySingletonFactory_Package; use org.allbinary.input.KeySingletonFactory_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package; use org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package;
 with org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References;
 
 package body org.allbinary.input.automation.actions.script.condition.processors.input.KeyNameDefaultComboBoxModelFactory_Package is
 
+   package KeyEvent_Package renames Standard.java.awt.event.KeyEvent_Package;
    package KeySingletonFactory_Package renames Standard.org.allbinary.input.KeySingletonFactory_Package;
    subtype DefaultComboBoxModel_Access is org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References.DefaultComboBoxModel_Access;
    function "=" (Left, Right : DefaultComboBoxModel_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.DefaultComboBoxModel_Package_References."=";

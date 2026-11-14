@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.commerce.inventory.item.BasicItem_Package;
 package org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_References is
    type BasicItem_Access is access all org.allbinary.business.user.commerce.inventory.item.BasicItem_Package.BasicItem'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_Re
    type BasicItem_Access_Array_Access is access all BasicItem_Access_Array;
    type BasicItem_Access_Array_Access_Array is array (Natural range <>) of BasicItem_Access_Array_Access;
    type BasicItem_Access_Array_Access_Array_Access is access all BasicItem_Access_Array_Access_Array;
+   type BasicItem_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicItem_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicItem_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicItem_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicItem_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicItem_Access_Array_Access is (if Value /= null and then Value.all in BasicItem_Access_Array_Object'Class then BasicItem_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicItem_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicItem_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicItem_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicItem_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicItem_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicItem_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicItem_Access_Array_Access_Array_Object'Class then BasicItem_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_References;
 
 with org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_References;
@@ -111,10 +122,14 @@ package org.allbinary.business.user.commerce.inventory.item.BasicItem_Package is
    function "=" (Left, Right : BasicItem_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_References."=";
    subtype BasicItem_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_References.BasicItem_Access_Array_Access;
    function "=" (Left, Right : BasicItem_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_References."=";
+   function Java_Box (Value : BasicItem_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_References.Java_Box;
+   function Java_Unbox_BasicItem_Access_Array (Value : access Java_Object'Class) return BasicItem_Access_Array_Access renames org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_References.Java_Unbox_BasicItem_Access_Array;
    subtype BasicItem_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_References.BasicItem_Access_Array_Access_Array;
    function "=" (Left, Right : BasicItem_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_References."=";
    subtype BasicItem_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_References.BasicItem_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicItem_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_References."=";
+   function Java_Box (Value : BasicItem_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_References.Java_Box;
+   function Java_Unbox_BasicItem_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicItem_Access_Array_Access_Array_Access renames org.allbinary.business.user.commerce.inventory.item.BasicItem_Package_References.Java_Unbox_BasicItem_Access_Array_Access_Array;
 
    type BasicItem is new Java_Object and ItemInterface with record
       logUtil : LogUtil_Access;

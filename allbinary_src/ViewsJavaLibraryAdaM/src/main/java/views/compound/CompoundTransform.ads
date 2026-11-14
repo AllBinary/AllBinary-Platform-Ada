@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.compound.CompoundTransform_Package;
 package views.compound.CompoundTransform_Package_References is
    type CompoundTransform_Access is access all views.compound.CompoundTransform_Package.CompoundTransform'Class;
@@ -19,6 +20,16 @@ package views.compound.CompoundTransform_Package_References is
    type CompoundTransform_Access_Array_Access is access all CompoundTransform_Access_Array;
    type CompoundTransform_Access_Array_Access_Array is array (Natural range <>) of CompoundTransform_Access_Array_Access;
    type CompoundTransform_Access_Array_Access_Array_Access is access all CompoundTransform_Access_Array_Access_Array;
+   type CompoundTransform_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CompoundTransform_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CompoundTransform_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CompoundTransform_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CompoundTransform_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CompoundTransform_Access_Array_Access is (if Value /= null and then Value.all in CompoundTransform_Access_Array_Object'Class then CompoundTransform_Access_Array_Object'Class (Value.all).Value else null);
+   type CompoundTransform_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CompoundTransform_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CompoundTransform_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CompoundTransform_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CompoundTransform_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CompoundTransform_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CompoundTransform_Access_Array_Access_Array_Object'Class then CompoundTransform_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.compound.CompoundTransform_Package_References;
 
 with views.compound.CompoundTransform_Package_References;
@@ -86,10 +97,14 @@ package views.compound.CompoundTransform_Package is
    function "=" (Left, Right : CompoundTransform_Access_Array) return Boolean renames views.compound.CompoundTransform_Package_References."=";
    subtype CompoundTransform_Access_Array_Access is views.compound.CompoundTransform_Package_References.CompoundTransform_Access_Array_Access;
    function "=" (Left, Right : CompoundTransform_Access_Array_Access) return Boolean renames views.compound.CompoundTransform_Package_References."=";
+   function Java_Box (Value : CompoundTransform_Access_Array_Access) return Java_Object_Access renames views.compound.CompoundTransform_Package_References.Java_Box;
+   function Java_Unbox_CompoundTransform_Access_Array (Value : access Java_Object'Class) return CompoundTransform_Access_Array_Access renames views.compound.CompoundTransform_Package_References.Java_Unbox_CompoundTransform_Access_Array;
    subtype CompoundTransform_Access_Array_Access_Array is views.compound.CompoundTransform_Package_References.CompoundTransform_Access_Array_Access_Array;
    function "=" (Left, Right : CompoundTransform_Access_Array_Access_Array) return Boolean renames views.compound.CompoundTransform_Package_References."=";
    subtype CompoundTransform_Access_Array_Access_Array_Access is views.compound.CompoundTransform_Package_References.CompoundTransform_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CompoundTransform_Access_Array_Access_Array_Access) return Boolean renames views.compound.CompoundTransform_Package_References."=";
+   function Java_Box (Value : CompoundTransform_Access_Array_Access_Array_Access) return Java_Object_Access renames views.compound.CompoundTransform_Package_References.Java_Box;
+   function Java_Unbox_CompoundTransform_Access_Array_Access_Array (Value : access Java_Object'Class) return CompoundTransform_Access_Array_Access_Array_Access renames views.compound.CompoundTransform_Package_References.Java_Unbox_CompoundTransform_Access_Array_Access_Array;
 
    type CompoundTransform is new AbTransformer with record
       logUtil : LogUtil_Access;

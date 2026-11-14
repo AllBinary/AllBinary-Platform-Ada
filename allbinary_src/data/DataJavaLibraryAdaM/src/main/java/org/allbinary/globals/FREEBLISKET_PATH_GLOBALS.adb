@@ -42,7 +42,7 @@ package body org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package is
 
    function getInstance return FREEBLISKET_PATH_GLOBALS_Access is
    begin
-        return FREEBLISKET_PATH_GLOBALS_Access (FREEBLISKET_PATH_GLOBALS_Package.instance);
+        return FREEBLISKET_PATH_GLOBALS_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out FREEBLISKET_PATH_GLOBALS'Class) is

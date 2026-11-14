@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.paint.OverScanColorFillPaintable_Package;
 package org.allbinary.game.paint.OverScanColorFillPaintable_Package_References is
    type OverScanColorFillPaintable_Access is access all org.allbinary.game.paint.OverScanColorFillPaintable_Package.OverScanColorFillPaintable'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.paint.OverScanColorFillPaintable_Package_References i
    type OverScanColorFillPaintable_Access_Array_Access is access all OverScanColorFillPaintable_Access_Array;
    type OverScanColorFillPaintable_Access_Array_Access_Array is array (Natural range <>) of OverScanColorFillPaintable_Access_Array_Access;
    type OverScanColorFillPaintable_Access_Array_Access_Array_Access is access all OverScanColorFillPaintable_Access_Array_Access_Array;
+   type OverScanColorFillPaintable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OverScanColorFillPaintable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OverScanColorFillPaintable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OverScanColorFillPaintable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OverScanColorFillPaintable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OverScanColorFillPaintable_Access_Array_Access is (if Value /= null and then Value.all in OverScanColorFillPaintable_Access_Array_Object'Class then OverScanColorFillPaintable_Access_Array_Object'Class (Value.all).Value else null);
+   type OverScanColorFillPaintable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OverScanColorFillPaintable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OverScanColorFillPaintable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OverScanColorFillPaintable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OverScanColorFillPaintable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OverScanColorFillPaintable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in OverScanColorFillPaintable_Access_Array_Access_Array_Object'Class then OverScanColorFillPaintable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.paint.OverScanColorFillPaintable_Package_References;
 
 with org.allbinary.game.paint.OverScanColorFillPaintable_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.game.paint.OverScanColorFillPaintable_Package is
    function "=" (Left, Right : OverScanColorFillPaintable_Access_Array) return Boolean renames org.allbinary.game.paint.OverScanColorFillPaintable_Package_References."=";
    subtype OverScanColorFillPaintable_Access_Array_Access is org.allbinary.game.paint.OverScanColorFillPaintable_Package_References.OverScanColorFillPaintable_Access_Array_Access;
    function "=" (Left, Right : OverScanColorFillPaintable_Access_Array_Access) return Boolean renames org.allbinary.game.paint.OverScanColorFillPaintable_Package_References."=";
+   function Java_Box (Value : OverScanColorFillPaintable_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.paint.OverScanColorFillPaintable_Package_References.Java_Box;
+   function Java_Unbox_OverScanColorFillPaintable_Access_Array (Value : access Java_Object'Class) return OverScanColorFillPaintable_Access_Array_Access renames org.allbinary.game.paint.OverScanColorFillPaintable_Package_References.Java_Unbox_OverScanColorFillPaintable_Access_Array;
    subtype OverScanColorFillPaintable_Access_Array_Access_Array is org.allbinary.game.paint.OverScanColorFillPaintable_Package_References.OverScanColorFillPaintable_Access_Array_Access_Array;
    function "=" (Left, Right : OverScanColorFillPaintable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.paint.OverScanColorFillPaintable_Package_References."=";
    subtype OverScanColorFillPaintable_Access_Array_Access_Array_Access is org.allbinary.game.paint.OverScanColorFillPaintable_Package_References.OverScanColorFillPaintable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : OverScanColorFillPaintable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.paint.OverScanColorFillPaintable_Package_References."=";
+   function Java_Box (Value : OverScanColorFillPaintable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.paint.OverScanColorFillPaintable_Package_References.Java_Box;
+   function Java_Unbox_OverScanColorFillPaintable_Access_Array_Access_Array (Value : access Java_Object'Class) return OverScanColorFillPaintable_Access_Array_Access_Array_Access renames org.allbinary.game.paint.OverScanColorFillPaintable_Package_References.Java_Unbox_OverScanColorFillPaintable_Access_Array_Access_Array;
 
    type OverScanColorFillPaintable is new ColorFillPaintable with null record;
 

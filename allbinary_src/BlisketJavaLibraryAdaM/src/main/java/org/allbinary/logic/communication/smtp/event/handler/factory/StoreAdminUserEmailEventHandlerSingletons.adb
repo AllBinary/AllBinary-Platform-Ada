@@ -31,6 +31,8 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -47,6 +49,8 @@ package body org.allbinary.logic.communication.smtp.event.handler.factory.StoreA
    package UserEntityFactory_Package renames Standard.org.allbinary.data.tables.user.UserEntityFactory_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package EmailEventHandlerUtil_Package renames Standard.org.allbinary.logic.communication.smtp.event.handler.EmailEventHandlerUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype StoreFrontInterface_Access is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access;
    function "=" (Left, Right : StoreFrontInterface_Access) return Boolean renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References."=";
    subtype StoreFrontInterface_Access_Array is org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package_References.StoreFrontInterface_Access_Array;
@@ -112,19 +116,19 @@ package body org.allbinary.logic.communication.smtp.event.handler.factory.StoreA
       null;
       This.logUtil := LogUtil_Package.getInstance;
       This.commonStrings := CommonStrings_Package.getInstance;
-      This.userEmailEventHandlerHashMap := StdUtil_Package.getInstance.createHashMap;
+      This.userEmailEventHandlerHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
    end Initialize_Fields;
 
 
    function getInstance return StoreAdminUserEmailEventHandlerSingletons_Access is
    begin
-        return StoreAdminUserEmailEventHandlerSingletons_Access (StoreAdminUserEmailEventHandlerSingletons_Package.instance);
+        return StoreAdminUserEmailEventHandlerSingletons_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out StoreAdminUserEmailEventHandlerSingletons'Class) is
    begin
       Initialize_Fields (This);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
             This.logUtil.putF (This.commonStrings.START, StoreAdminUserEmailEventHandlerSingletons_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
@@ -145,12 +149,12 @@ package body org.allbinary.logic.communication.smtp.event.handler.factory.StoreA
       userVector : BasicArrayList_Access;
       newUserEmailEventHandler : UserEmailEventHandler_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
             This.logUtil.putF (This.commonStrings.START, StoreAdminUserEmailEventHandlerSingletons_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
         end if;
         userEmailEventHandler := UserEmailEventHandler_Access (This.userEmailEventHandlerHashMap.get (userEmailEventNameData));
         if (userEmailEventHandler) = (null) then
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("Creating New Named UserEmailEventHandler"), StoreAdminUserEmailEventHandlerSingletons_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
             end if;
             userVector := UserEntityFactory_Package.getInstance.getStoreManagers (storeFrontInterface);
@@ -158,7 +162,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.factory.StoreA
             This.userEmailEventHandlerHashMap.put (userEmailEventNameData, newUserEmailEventHandler);
             return newUserEmailEventHandler;
         else
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("Returning existing UserEmailEventHandler"), StoreAdminUserEmailEventHandlerSingletons_Access'(This'Unchecked_Access), This.commonStrings.GET_INSTANCE);
             end if;
             return userEmailEventHandler;

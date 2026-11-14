@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package;
 package org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References is
    type OpenGLESGraphicsCompositeFactory_Access is access all org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package.OpenGLESGraphicsCompositeFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References
    type OpenGLESGraphicsCompositeFactory_Access_Array_Access is access all OpenGLESGraphicsCompositeFactory_Access_Array;
    type OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLESGraphicsCompositeFactory_Access_Array_Access;
    type OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access is access all OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array;
+   type OpenGLESGraphicsCompositeFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OpenGLESGraphicsCompositeFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OpenGLESGraphicsCompositeFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OpenGLESGraphicsCompositeFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OpenGLESGraphicsCompositeFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OpenGLESGraphicsCompositeFactory_Access_Array_Access is (if Value /= null and then Value.all in OpenGLESGraphicsCompositeFactory_Access_Array_Object'Class then OpenGLESGraphicsCompositeFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Object'Class then OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References;
 
 with org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References;
@@ -56,10 +67,14 @@ package org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package is
    function "=" (Left, Right : OpenGLESGraphicsCompositeFactory_Access_Array) return Boolean renames org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References."=";
    subtype OpenGLESGraphicsCompositeFactory_Access_Array_Access is org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References.OpenGLESGraphicsCompositeFactory_Access_Array_Access;
    function "=" (Left, Right : OpenGLESGraphicsCompositeFactory_Access_Array_Access) return Boolean renames org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References."=";
+   function Java_Box (Value : OpenGLESGraphicsCompositeFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References.Java_Box;
+   function Java_Unbox_OpenGLESGraphicsCompositeFactory_Access_Array (Value : access Java_Object'Class) return OpenGLESGraphicsCompositeFactory_Access_Array_Access renames org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References.Java_Unbox_OpenGLESGraphicsCompositeFactory_Access_Array;
    subtype OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array is org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References.OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array;
    function "=" (Left, Right : OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References."=";
    subtype OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access is org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References.OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References."=";
+   function Java_Box (Value : OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References.Java_Box;
+   function Java_Unbox_OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array_Access renames org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package_References.Java_Unbox_OpenGLESGraphicsCompositeFactory_Access_Array_Access_Array;
 
    type OpenGLESGraphicsCompositeFactory is new Java_Object with record
       openGLESGraphicsFactory : OpenGLESGraphicsFactory_Access;

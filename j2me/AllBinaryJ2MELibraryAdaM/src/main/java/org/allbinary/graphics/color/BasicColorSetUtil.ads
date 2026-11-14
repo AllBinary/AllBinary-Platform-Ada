@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 package org.allbinary.graphics.color.BasicColorSetUtil_Package_References is
    type BasicColorSetUtil_Access is access all org.allbinary.graphics.color.BasicColorSetUtil_Package.BasicColorSetUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.graphics.color.BasicColorSetUtil_Package_References is
    type BasicColorSetUtil_Access_Array_Access is access all BasicColorSetUtil_Access_Array;
    type BasicColorSetUtil_Access_Array_Access_Array is array (Natural range <>) of BasicColorSetUtil_Access_Array_Access;
    type BasicColorSetUtil_Access_Array_Access_Array_Access is access all BasicColorSetUtil_Access_Array_Access_Array;
+   type BasicColorSetUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicColorSetUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicColorSetUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicColorSetUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicColorSetUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicColorSetUtil_Access_Array_Access is (if Value /= null and then Value.all in BasicColorSetUtil_Access_Array_Object'Class then BasicColorSetUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicColorSetUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicColorSetUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicColorSetUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicColorSetUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicColorSetUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicColorSetUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicColorSetUtil_Access_Array_Access_Array_Object'Class then BasicColorSetUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.color.BasicColorSetUtil_Package_References;
 
 with org.allbinary.graphics.color.BasicColorSetUtil_Package_References;
@@ -69,10 +80,14 @@ package org.allbinary.graphics.color.BasicColorSetUtil_Package is
    function "=" (Left, Right : BasicColorSetUtil_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColorSetUtil_Package_References."=";
    subtype BasicColorSetUtil_Access_Array_Access is org.allbinary.graphics.color.BasicColorSetUtil_Package_References.BasicColorSetUtil_Access_Array_Access;
    function "=" (Left, Right : BasicColorSetUtil_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColorSetUtil_Package_References."=";
+   function Java_Box (Value : BasicColorSetUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.color.BasicColorSetUtil_Package_References.Java_Box;
+   function Java_Unbox_BasicColorSetUtil_Access_Array (Value : access Java_Object'Class) return BasicColorSetUtil_Access_Array_Access renames org.allbinary.graphics.color.BasicColorSetUtil_Package_References.Java_Unbox_BasicColorSetUtil_Access_Array;
    subtype BasicColorSetUtil_Access_Array_Access_Array is org.allbinary.graphics.color.BasicColorSetUtil_Package_References.BasicColorSetUtil_Access_Array_Access_Array;
    function "=" (Left, Right : BasicColorSetUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.color.BasicColorSetUtil_Package_References."=";
    subtype BasicColorSetUtil_Access_Array_Access_Array_Access is org.allbinary.graphics.color.BasicColorSetUtil_Package_References.BasicColorSetUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicColorSetUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.color.BasicColorSetUtil_Package_References."=";
+   function Java_Box (Value : BasicColorSetUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.color.BasicColorSetUtil_Package_References.Java_Box;
+   function Java_Unbox_BasicColorSetUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicColorSetUtil_Access_Array_Access_Array_Access renames org.allbinary.graphics.color.BasicColorSetUtil_Package_References.Java_Unbox_BasicColorSetUtil_Access_Array_Access_Array;
 
    type BasicColorSetUtil is new Java_Object with null record;
    instance : BasicColorSetUtil_Access;

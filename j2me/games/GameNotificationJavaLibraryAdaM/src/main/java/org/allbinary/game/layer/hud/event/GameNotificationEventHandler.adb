@@ -101,7 +101,7 @@ package body org.allbinary.game.layer.hud.event.GameNotificationEventHandler_Pac
 
    function getInstance return GameNotificationEventHandler_Access is
    begin
-        return GameNotificationEventHandler_Access (GameNotificationEventHandler_Package.instance);
+        return GameNotificationEventHandler_Package.instance;
    end getInstance;
 
    --  throws Exception

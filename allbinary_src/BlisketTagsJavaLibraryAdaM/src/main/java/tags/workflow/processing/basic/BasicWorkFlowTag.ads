@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with tags.workflow.processing.basic.BasicWorkFlowTag_Package;
 package tags.workflow.processing.basic.BasicWorkFlowTag_Package_References is
    type BasicWorkFlowTag_Access is access all tags.workflow.processing.basic.BasicWorkFlowTag_Package.BasicWorkFlowTag'Class;
@@ -19,6 +20,16 @@ package tags.workflow.processing.basic.BasicWorkFlowTag_Package_References is
    type BasicWorkFlowTag_Access_Array_Access is access all BasicWorkFlowTag_Access_Array;
    type BasicWorkFlowTag_Access_Array_Access_Array is array (Natural range <>) of BasicWorkFlowTag_Access_Array_Access;
    type BasicWorkFlowTag_Access_Array_Access_Array_Access is access all BasicWorkFlowTag_Access_Array_Access_Array;
+   type BasicWorkFlowTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicWorkFlowTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicWorkFlowTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicWorkFlowTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicWorkFlowTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicWorkFlowTag_Access_Array_Access is (if Value /= null and then Value.all in BasicWorkFlowTag_Access_Array_Object'Class then BasicWorkFlowTag_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicWorkFlowTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicWorkFlowTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicWorkFlowTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicWorkFlowTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicWorkFlowTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicWorkFlowTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicWorkFlowTag_Access_Array_Access_Array_Object'Class then BasicWorkFlowTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end tags.workflow.processing.basic.BasicWorkFlowTag_Package_References;
 
 with tags.workflow.processing.basic.BasicWorkFlowTag_Package_References;
@@ -60,10 +71,14 @@ package tags.workflow.processing.basic.BasicWorkFlowTag_Package is
    function "=" (Left, Right : BasicWorkFlowTag_Access_Array) return Boolean renames tags.workflow.processing.basic.BasicWorkFlowTag_Package_References."=";
    subtype BasicWorkFlowTag_Access_Array_Access is tags.workflow.processing.basic.BasicWorkFlowTag_Package_References.BasicWorkFlowTag_Access_Array_Access;
    function "=" (Left, Right : BasicWorkFlowTag_Access_Array_Access) return Boolean renames tags.workflow.processing.basic.BasicWorkFlowTag_Package_References."=";
+   function Java_Box (Value : BasicWorkFlowTag_Access_Array_Access) return Java_Object_Access renames tags.workflow.processing.basic.BasicWorkFlowTag_Package_References.Java_Box;
+   function Java_Unbox_BasicWorkFlowTag_Access_Array (Value : access Java_Object'Class) return BasicWorkFlowTag_Access_Array_Access renames tags.workflow.processing.basic.BasicWorkFlowTag_Package_References.Java_Unbox_BasicWorkFlowTag_Access_Array;
    subtype BasicWorkFlowTag_Access_Array_Access_Array is tags.workflow.processing.basic.BasicWorkFlowTag_Package_References.BasicWorkFlowTag_Access_Array_Access_Array;
    function "=" (Left, Right : BasicWorkFlowTag_Access_Array_Access_Array) return Boolean renames tags.workflow.processing.basic.BasicWorkFlowTag_Package_References."=";
    subtype BasicWorkFlowTag_Access_Array_Access_Array_Access is tags.workflow.processing.basic.BasicWorkFlowTag_Package_References.BasicWorkFlowTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicWorkFlowTag_Access_Array_Access_Array_Access) return Boolean renames tags.workflow.processing.basic.BasicWorkFlowTag_Package_References."=";
+   function Java_Box (Value : BasicWorkFlowTag_Access_Array_Access_Array_Access) return Java_Object_Access renames tags.workflow.processing.basic.BasicWorkFlowTag_Package_References.Java_Box;
+   function Java_Unbox_BasicWorkFlowTag_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicWorkFlowTag_Access_Array_Access_Array_Access renames tags.workflow.processing.basic.BasicWorkFlowTag_Package_References.Java_Unbox_BasicWorkFlowTag_Access_Array_Access_Array;
 
    type BasicWorkFlowTag is new StoreWorkFlowTag with record
       BasicWorkFlowTag_Field_logUtil : LogUtil_Access;

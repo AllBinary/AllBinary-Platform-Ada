@@ -102,7 +102,7 @@ package body org.allbinary.graphics.displayable.ScreenRelationalUtil_Package is
 
    function getInstance return ScreenRelationalUtil_Access is
    begin
-        return ScreenRelationalUtil_Access (ScreenRelationalUtil_Package.instance);
+        return ScreenRelationalUtil_Package.instance;
    end getInstance;
 
    function getScaleImage (This : in out ScreenRelationalUtil; image_Param : access Image_Package.Image'Class) return Float is

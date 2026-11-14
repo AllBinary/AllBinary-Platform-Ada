@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.WorkFlowRequestHelper_Package;
 package admin.taghelpers.WorkFlowRequestHelper_Package_References is
    type WorkFlowRequestHelper_Access is access all admin.taghelpers.WorkFlowRequestHelper_Package.WorkFlowRequestHelper'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.WorkFlowRequestHelper_Package_References is
    type WorkFlowRequestHelper_Access_Array_Access is access all WorkFlowRequestHelper_Access_Array;
    type WorkFlowRequestHelper_Access_Array_Access_Array is array (Natural range <>) of WorkFlowRequestHelper_Access_Array_Access;
    type WorkFlowRequestHelper_Access_Array_Access_Array_Access is access all WorkFlowRequestHelper_Access_Array_Access_Array;
+   type WorkFlowRequestHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : WorkFlowRequestHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : WorkFlowRequestHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new WorkFlowRequestHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_WorkFlowRequestHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return WorkFlowRequestHelper_Access_Array_Access is (if Value /= null and then Value.all in WorkFlowRequestHelper_Access_Array_Object'Class then WorkFlowRequestHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type WorkFlowRequestHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : WorkFlowRequestHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : WorkFlowRequestHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new WorkFlowRequestHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_WorkFlowRequestHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return WorkFlowRequestHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in WorkFlowRequestHelper_Access_Array_Access_Array_Object'Class then WorkFlowRequestHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.WorkFlowRequestHelper_Package_References;
 
 with admin.taghelpers.WorkFlowRequestHelper_Package_References;
@@ -87,10 +98,14 @@ package admin.taghelpers.WorkFlowRequestHelper_Package is
    function "=" (Left, Right : WorkFlowRequestHelper_Access_Array) return Boolean renames admin.taghelpers.WorkFlowRequestHelper_Package_References."=";
    subtype WorkFlowRequestHelper_Access_Array_Access is admin.taghelpers.WorkFlowRequestHelper_Package_References.WorkFlowRequestHelper_Access_Array_Access;
    function "=" (Left, Right : WorkFlowRequestHelper_Access_Array_Access) return Boolean renames admin.taghelpers.WorkFlowRequestHelper_Package_References."=";
+   function Java_Box (Value : WorkFlowRequestHelper_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.WorkFlowRequestHelper_Package_References.Java_Box;
+   function Java_Unbox_WorkFlowRequestHelper_Access_Array (Value : access Java_Object'Class) return WorkFlowRequestHelper_Access_Array_Access renames admin.taghelpers.WorkFlowRequestHelper_Package_References.Java_Unbox_WorkFlowRequestHelper_Access_Array;
    subtype WorkFlowRequestHelper_Access_Array_Access_Array is admin.taghelpers.WorkFlowRequestHelper_Package_References.WorkFlowRequestHelper_Access_Array_Access_Array;
    function "=" (Left, Right : WorkFlowRequestHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.WorkFlowRequestHelper_Package_References."=";
    subtype WorkFlowRequestHelper_Access_Array_Access_Array_Access is admin.taghelpers.WorkFlowRequestHelper_Package_References.WorkFlowRequestHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : WorkFlowRequestHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.WorkFlowRequestHelper_Package_References."=";
+   function Java_Box (Value : WorkFlowRequestHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.WorkFlowRequestHelper_Package_References.Java_Box;
+   function Java_Unbox_WorkFlowRequestHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return WorkFlowRequestHelper_Access_Array_Access_Array_Access renames admin.taghelpers.WorkFlowRequestHelper_Package_References.Java_Unbox_WorkFlowRequestHelper_Access_Array_Access_Array;
 
    type WorkFlowRequestHelper is new ModifyTable with record
       logUtil : LogUtil_Access;

@@ -56,7 +56,7 @@ package body org.allbinary.game.resource.ResourceLoadingLevelFactory_Package is
 
    function getInstance return ResourceLoadingLevelFactory_Access is
    begin
-        return ResourceLoadingLevelFactory_Access (ResourceLoadingLevelFactory_Package.instance);
+        return ResourceLoadingLevelFactory_Package.instance;
    end getInstance;
 
    function getLevelString (This : in out ResourceLoadingLevelFactory; level : Integer) return Unbounded_String is

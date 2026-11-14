@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.category.CategoriesView_Package;
 package org.allbinary.business.category.CategoriesView_Package_References is
    type CategoriesView_Access is access all org.allbinary.business.category.CategoriesView_Package.CategoriesView'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.category.CategoriesView_Package_References is
    type CategoriesView_Access_Array_Access is access all CategoriesView_Access_Array;
    type CategoriesView_Access_Array_Access_Array is array (Natural range <>) of CategoriesView_Access_Array_Access;
    type CategoriesView_Access_Array_Access_Array_Access is access all CategoriesView_Access_Array_Access_Array;
+   type CategoriesView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CategoriesView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CategoriesView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CategoriesView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CategoriesView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CategoriesView_Access_Array_Access is (if Value /= null and then Value.all in CategoriesView_Access_Array_Object'Class then CategoriesView_Access_Array_Object'Class (Value.all).Value else null);
+   type CategoriesView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CategoriesView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CategoriesView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CategoriesView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CategoriesView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CategoriesView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CategoriesView_Access_Array_Access_Array_Object'Class then CategoriesView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.category.CategoriesView_Package_References;
 
 with org.allbinary.business.category.CategoriesView_Package_References;
@@ -84,10 +95,14 @@ package org.allbinary.business.category.CategoriesView_Package is
    function "=" (Left, Right : CategoriesView_Access_Array) return Boolean renames org.allbinary.business.category.CategoriesView_Package_References."=";
    subtype CategoriesView_Access_Array_Access is org.allbinary.business.category.CategoriesView_Package_References.CategoriesView_Access_Array_Access;
    function "=" (Left, Right : CategoriesView_Access_Array_Access) return Boolean renames org.allbinary.business.category.CategoriesView_Package_References."=";
+   function Java_Box (Value : CategoriesView_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.category.CategoriesView_Package_References.Java_Box;
+   function Java_Unbox_CategoriesView_Access_Array (Value : access Java_Object'Class) return CategoriesView_Access_Array_Access renames org.allbinary.business.category.CategoriesView_Package_References.Java_Unbox_CategoriesView_Access_Array;
    subtype CategoriesView_Access_Array_Access_Array is org.allbinary.business.category.CategoriesView_Package_References.CategoriesView_Access_Array_Access_Array;
    function "=" (Left, Right : CategoriesView_Access_Array_Access_Array) return Boolean renames org.allbinary.business.category.CategoriesView_Package_References."=";
    subtype CategoriesView_Access_Array_Access_Array_Access is org.allbinary.business.category.CategoriesView_Package_References.CategoriesView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CategoriesView_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.category.CategoriesView_Package_References."=";
+   function Java_Box (Value : CategoriesView_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.category.CategoriesView_Package_References.Java_Box;
+   function Java_Unbox_CategoriesView_Access_Array_Access_Array (Value : access Java_Object'Class) return CategoriesView_Access_Array_Access_Array_Access renames org.allbinary.business.category.CategoriesView_Package_References.Java_Unbox_CategoriesView_Access_Array_Access_Array;
 
    type CategoriesView is new Java_Object and DomNodeInterface with record
       categoryInterface : CategoryInterface_Access;

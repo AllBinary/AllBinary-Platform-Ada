@@ -104,7 +104,7 @@ package body org.allbinary.business.init.WeblisketFinder_Package is
 
    function getInstance return WeblisketFinder_Access is
    begin
-        return WeblisketFinder_Access (WeblisketFinder_Package.instance);
+        return WeblisketFinder_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out WeblisketFinder'Class) is
@@ -156,7 +156,7 @@ package body org.allbinary.business.init.WeblisketFinder_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRELOADERERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.PRELOADERERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, WeblisketFinder_Access'(This'Unchecked_Access), To_Unbounded_String ("getInstallationPath"), e);
             end if;
             return Null_Unbounded_String;

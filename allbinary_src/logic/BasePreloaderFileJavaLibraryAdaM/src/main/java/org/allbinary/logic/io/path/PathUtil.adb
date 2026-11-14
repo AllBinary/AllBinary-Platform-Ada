@@ -82,7 +82,7 @@ package body org.allbinary.logic.io.path.PathUtil_Package is
 
    function getInstance return PathUtil_Access is
    begin
-        return PathUtil_Access (PathUtil_Package.instance);
+        return PathUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out PathUtil'Class) is

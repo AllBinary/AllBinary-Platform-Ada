@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.AuthenticationHelperUtil_Package;
 package admin.taghelpers.AuthenticationHelperUtil_Package_References is
    type AuthenticationHelperUtil_Access is access all admin.taghelpers.AuthenticationHelperUtil_Package.AuthenticationHelperUtil'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.AuthenticationHelperUtil_Package_References is
    type AuthenticationHelperUtil_Access_Array_Access is access all AuthenticationHelperUtil_Access_Array;
    type AuthenticationHelperUtil_Access_Array_Access_Array is array (Natural range <>) of AuthenticationHelperUtil_Access_Array_Access;
    type AuthenticationHelperUtil_Access_Array_Access_Array_Access is access all AuthenticationHelperUtil_Access_Array_Access_Array;
+   type AuthenticationHelperUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AuthenticationHelperUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AuthenticationHelperUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AuthenticationHelperUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AuthenticationHelperUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AuthenticationHelperUtil_Access_Array_Access is (if Value /= null and then Value.all in AuthenticationHelperUtil_Access_Array_Object'Class then AuthenticationHelperUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type AuthenticationHelperUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AuthenticationHelperUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AuthenticationHelperUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AuthenticationHelperUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AuthenticationHelperUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AuthenticationHelperUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AuthenticationHelperUtil_Access_Array_Access_Array_Object'Class then AuthenticationHelperUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.AuthenticationHelperUtil_Package_References;
 
 with admin.taghelpers.AuthenticationHelperUtil_Package_References;
@@ -69,10 +80,14 @@ package admin.taghelpers.AuthenticationHelperUtil_Package is
    function "=" (Left, Right : AuthenticationHelperUtil_Access_Array) return Boolean renames admin.taghelpers.AuthenticationHelperUtil_Package_References."=";
    subtype AuthenticationHelperUtil_Access_Array_Access is admin.taghelpers.AuthenticationHelperUtil_Package_References.AuthenticationHelperUtil_Access_Array_Access;
    function "=" (Left, Right : AuthenticationHelperUtil_Access_Array_Access) return Boolean renames admin.taghelpers.AuthenticationHelperUtil_Package_References."=";
+   function Java_Box (Value : AuthenticationHelperUtil_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.AuthenticationHelperUtil_Package_References.Java_Box;
+   function Java_Unbox_AuthenticationHelperUtil_Access_Array (Value : access Java_Object'Class) return AuthenticationHelperUtil_Access_Array_Access renames admin.taghelpers.AuthenticationHelperUtil_Package_References.Java_Unbox_AuthenticationHelperUtil_Access_Array;
    subtype AuthenticationHelperUtil_Access_Array_Access_Array is admin.taghelpers.AuthenticationHelperUtil_Package_References.AuthenticationHelperUtil_Access_Array_Access_Array;
    function "=" (Left, Right : AuthenticationHelperUtil_Access_Array_Access_Array) return Boolean renames admin.taghelpers.AuthenticationHelperUtil_Package_References."=";
    subtype AuthenticationHelperUtil_Access_Array_Access_Array_Access is admin.taghelpers.AuthenticationHelperUtil_Package_References.AuthenticationHelperUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AuthenticationHelperUtil_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.AuthenticationHelperUtil_Package_References."=";
+   function Java_Box (Value : AuthenticationHelperUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.AuthenticationHelperUtil_Package_References.Java_Box;
+   function Java_Unbox_AuthenticationHelperUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return AuthenticationHelperUtil_Access_Array_Access_Array_Access renames admin.taghelpers.AuthenticationHelperUtil_Package_References.Java_Unbox_AuthenticationHelperUtil_Access_Array_Access_Array;
 
    type AuthenticationHelperUtil is new Java_Object with record
       logUtil : LogUtil_Access;

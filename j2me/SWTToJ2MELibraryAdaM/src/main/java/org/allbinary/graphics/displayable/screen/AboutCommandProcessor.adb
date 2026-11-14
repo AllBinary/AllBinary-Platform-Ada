@@ -72,7 +72,7 @@ package body org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Pac
 
    function getInstance return AboutCommandProcessor_Access is
    begin
-        return AboutCommandProcessor_Access (AboutCommandProcessor_Package.instance);
+        return AboutCommandProcessor_Package.instance;
    end getInstance;
 
    procedure process (This : in out AboutCommandProcessor; midletCommandListener_Param : access CommandListener_Package.CommandListener'Class; command_Param : access Command_Package.Command'Class; canvas_Param : access Canvas_Package.Canvas'Class) is

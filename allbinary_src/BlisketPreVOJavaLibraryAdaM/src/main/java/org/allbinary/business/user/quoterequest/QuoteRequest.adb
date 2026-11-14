@@ -30,6 +30,8 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -53,6 +55,8 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
    package AbSqlData_Package renames Standard.org.allbinary.logic.communication.sql.AbSqlData_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -111,7 +115,7 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
         QuoteRequest'Class (This).setBudget (Java_Unbox (request.getParameter (quoteRequestData.BUDGET)));
         QuoteRequest'Class (This).setTimeFrame (Java_Unbox (request.getParameter (quoteRequestData.TIMEFRAME)));
         QuoteRequest'Class (This).setComments (Java_Unbox (request.getParameter (quoteRequestData.COMMENTS)));
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.TAGHELPER) then
             This.logUtil.putF (To_Unbounded_String ("Created with: ") & Java_Image (QuoteRequest'Class (This).toHashMap), QuoteRequest_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
@@ -136,7 +140,7 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
         QuoteRequest'Class (This).setBudget (Java_Unbox (hashMap.get (quoteRequestData.BUDGET)));
         QuoteRequest'Class (This).setTimeFrame (Java_Unbox (hashMap.get (quoteRequestData.TIMEFRAME)));
         QuoteRequest'Class (This).setComments (Java_Unbox (hashMap.get (quoteRequestData.COMMENTS)));
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPER) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.TAGHELPER) then
             This.logUtil.putF (To_Unbounded_String ("Created with: ") & Java_Image (QuoteRequest'Class (This).toHashMap), QuoteRequest_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
@@ -177,7 +181,7 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to validate form"), QuoteRequest_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
@@ -214,7 +218,7 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), QuoteRequest_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
@@ -228,17 +232,17 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
       time : Unbounded_String;
    begin
         values := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        values.add (This.id);
-        values.add (This.userName);
-        values.add (This.projectInfo);
-        values.add (This.userComments);
-        values.add (This.budget);
-        values.add (This.timeFrame);
-        values.add (This.comments);
+        values.add (Java_Box (This.id));
+        values.add (Java_Box (This.userName));
+        values.add (Java_Box (This.projectInfo));
+        values.add (Java_Box (This.userComments));
+        values.add (Java_Box (This.budget));
+        values.add (Java_Box (This.timeFrame));
+        values.add (Java_Box (This.comments));
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
-        values.add (time);
-        values.add (time);
+        values.add (Java_Box (time));
+        values.add (Java_Box (time));
         return values;
    end toVector;
 
@@ -249,7 +253,7 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
       time : Unbounded_String;
    begin
         quoteRequestData := QuoteRequestData_Package.getInstance;
-        values := StdUtil_Package.getInstance.createHashMap;
+        values := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         values.put (UserData_Package.USERNAME, Java_Box (This.userName));
         values.put (quoteRequestData.PROJECT_INFO, Java_Box (This.projectInfo));
         values.put (quoteRequestData.CUSTOMER_COMMENTS, Java_Box (This.userComments));

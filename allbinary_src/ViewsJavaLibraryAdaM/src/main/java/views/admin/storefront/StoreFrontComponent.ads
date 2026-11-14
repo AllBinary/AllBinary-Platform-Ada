@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.admin.storefront.StoreFrontComponent_Package;
 package views.admin.storefront.StoreFrontComponent_Package_References is
    type StoreFrontComponent_Access is access all views.admin.storefront.StoreFrontComponent_Package.StoreFrontComponent'Class;
@@ -19,6 +20,16 @@ package views.admin.storefront.StoreFrontComponent_Package_References is
    type StoreFrontComponent_Access_Array_Access is access all StoreFrontComponent_Access_Array;
    type StoreFrontComponent_Access_Array_Access_Array is array (Natural range <>) of StoreFrontComponent_Access_Array_Access;
    type StoreFrontComponent_Access_Array_Access_Array_Access is access all StoreFrontComponent_Access_Array_Access_Array;
+   type StoreFrontComponent_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreFrontComponent_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreFrontComponent_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreFrontComponent_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreFrontComponent_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreFrontComponent_Access_Array_Access is (if Value /= null and then Value.all in StoreFrontComponent_Access_Array_Object'Class then StoreFrontComponent_Access_Array_Object'Class (Value.all).Value else null);
+   type StoreFrontComponent_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreFrontComponent_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreFrontComponent_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreFrontComponent_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreFrontComponent_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreFrontComponent_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StoreFrontComponent_Access_Array_Access_Array_Object'Class then StoreFrontComponent_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.admin.storefront.StoreFrontComponent_Package_References;
 
 with views.admin.storefront.StoreFrontComponent_Package_References;
@@ -86,10 +97,14 @@ package views.admin.storefront.StoreFrontComponent_Package is
    function "=" (Left, Right : StoreFrontComponent_Access_Array) return Boolean renames views.admin.storefront.StoreFrontComponent_Package_References."=";
    subtype StoreFrontComponent_Access_Array_Access is views.admin.storefront.StoreFrontComponent_Package_References.StoreFrontComponent_Access_Array_Access;
    function "=" (Left, Right : StoreFrontComponent_Access_Array_Access) return Boolean renames views.admin.storefront.StoreFrontComponent_Package_References."=";
+   function Java_Box (Value : StoreFrontComponent_Access_Array_Access) return Java_Object_Access renames views.admin.storefront.StoreFrontComponent_Package_References.Java_Box;
+   function Java_Unbox_StoreFrontComponent_Access_Array (Value : access Java_Object'Class) return StoreFrontComponent_Access_Array_Access renames views.admin.storefront.StoreFrontComponent_Package_References.Java_Unbox_StoreFrontComponent_Access_Array;
    subtype StoreFrontComponent_Access_Array_Access_Array is views.admin.storefront.StoreFrontComponent_Package_References.StoreFrontComponent_Access_Array_Access_Array;
    function "=" (Left, Right : StoreFrontComponent_Access_Array_Access_Array) return Boolean renames views.admin.storefront.StoreFrontComponent_Package_References."=";
    subtype StoreFrontComponent_Access_Array_Access_Array_Access is views.admin.storefront.StoreFrontComponent_Package_References.StoreFrontComponent_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StoreFrontComponent_Access_Array_Access_Array_Access) return Boolean renames views.admin.storefront.StoreFrontComponent_Package_References."=";
+   function Java_Box (Value : StoreFrontComponent_Access_Array_Access_Array_Access) return Java_Object_Access renames views.admin.storefront.StoreFrontComponent_Package_References.Java_Box;
+   function Java_Unbox_StoreFrontComponent_Access_Array_Access_Array (Value : access Java_Object'Class) return StoreFrontComponent_Access_Array_Access_Array_Access renames views.admin.storefront.StoreFrontComponent_Package_References.Java_Unbox_StoreFrontComponent_Access_Array_Access_Array;
 
    type StoreFrontComponent is new HttpStoreComponentView with record
       StoreFrontComponent_Field_logUtil : LogUtil_Access;

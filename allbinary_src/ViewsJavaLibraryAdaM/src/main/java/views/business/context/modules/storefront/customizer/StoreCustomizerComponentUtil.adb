@@ -25,12 +25,20 @@ with org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Packa
 with org.allbinary.logic.visual.transform.info.TransformInfo_Package; use org.allbinary.logic.visual.transform.info.TransformInfo_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with views.business.context.modules.storefront.customizer.CustomizerUtil_Package; use views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with views.business.context.modules.storefront.customizer.CustomizerUtil_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -40,6 +48,8 @@ package body views.business.context.modules.storefront.customizer.StoreCustomize
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package TransformGeneratorUtil_Package renames Standard.org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package;
    package TransformInfo_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfo_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -89,7 +99,7 @@ package body views.business.context.modules.storefront.customizer.StoreCustomize
 
    function getInstance return StoreCustomizerComponentUtil_Access is
    begin
-        return StoreCustomizerComponentUtil_Access (StoreCustomizerComponentUtil_Package.instance);
+        return StoreCustomizerComponentUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out StoreCustomizerComponentUtil'Class) is
@@ -116,7 +126,7 @@ package body views.business.context.modules.storefront.customizer.StoreCustomize
       allViewsToBeModified : BasicArrayList_Access;
       index : Integer;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Generating Modified Views For: ") & transformInfoInterface.getName, StoreCustomizerComponentUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateModifiedViews()"));
         end if;
         customizerUtil := CustomizerUtil_Package.getInstance;
@@ -125,7 +135,7 @@ package body views.business.context.modules.storefront.customizer.StoreCustomize
         for index in 0 .. (size) - 1 loop
             nextTransformInfoInterface := TransformInfo_Access (allCustomizedViews.get (index));
             allViewsToBeModified := customizerUtil.getTransformInfoObjectConfigComponentNodesToCustomize (transformInfoInterface, nextTransformInfoInterface);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("View or component that was modified by a Customizer: ") & nextTransformInfoInterface.getName, StoreCustomizerComponentUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateModifiedViews()"));
             end if;
             StoreCustomizerComponentUtil'Class (This).generate (abeClientInformation, transformInfoInterface, allViewsToBeModified);
@@ -149,7 +159,7 @@ package body views.business.context.modules.storefront.customizer.StoreCustomize
         for index in 0 .. (size) - 1 loop
             nextTransformInfoInterface := TransformInfo_Access (allViewsToBeModifiedVector.get (index));
             specifiedTransformInfoInterface := TransformInfoInterface_Access (customizerUtil.getTransformInfoInterfaceToCustomize (transformInfoInterface, nextTransformInfoInterface));
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("Retrieved: ") & specifiedTransformInfoInterface.getName, StoreCustomizerComponentUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateModifiedViews()"));
             end if;
             TransformGeneratorUtil_Package.getInstance.generate (abeClientInformation, nextTransformInfoInterface, specifiedTransformInfoInterface);

@@ -49,7 +49,7 @@ package body org.allbinary.graphics.font.FontDebugBase_Package is
 
    function getInstance return FontDebugBase_Access is
    begin
-        return FontDebugBase_Access (FontDebugBase_Package.instanceBase);
+        return FontDebugBase_Package.instanceBase;
    end getInstance;
 
    procedure debugMetrics (This : in out FontDebugBase; currentFont_Param : access Font_Package.Font'Class; convertedTextSize : Float; displayMetrics_Param : access Java_Object'Class; stringBuffer_Param : access StringMaker_Package.StringMaker'Class) is

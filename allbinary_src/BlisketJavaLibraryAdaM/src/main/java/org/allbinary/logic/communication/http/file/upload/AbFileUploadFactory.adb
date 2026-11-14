@@ -21,6 +21,8 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.apache.commons.fileupload.FileItemIterator_Package; use org.apache.commons.fileupload.FileItemIterator_Package;
 with org.apache.commons.fileupload.FileItemStream_Package; use org.apache.commons.fileupload.FileItemStream_Package;
 with org.apache.commons.fileupload.FileItemUtil_Package; use org.apache.commons.fileupload.FileItemUtil_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package; use org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package;
 with org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package; use org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
 with org.allbinary.logic.communication.http.file.upload.AbFileItem_Package; use org.allbinary.logic.communication.http.file.upload.AbFileItem_Package;
@@ -36,6 +38,8 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
    package FileItemIterator_Package renames Standard.org.apache.commons.fileupload.FileItemIterator_Package;
    package FileItemStream_Package renames Standard.org.apache.commons.fileupload.FileItemStream_Package;
    package FileItemUtil_Package renames Standard.org.apache.commons.fileupload.FileItemUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -55,7 +59,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
 
    function getInstance return AbFileUploadFactory_Access is
    begin
-        return AbFileUploadFactory_Access (AbFileUploadFactory_Package.instance);
+        return AbFileUploadFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AbFileUploadFactory'Class) is
@@ -97,7 +101,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.HTTPERROR) then
                 commonStrings := CommonStrings_Package.getInstance;
                 This.logUtil.put (commonStrings.EXCEPTION_Id, AbFileUploadFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("get()"), e);
             end if;
@@ -121,7 +125,7 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             commonStrings := CommonStrings_Package.getInstance;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.HTTPERROR) then
                 This.logUtil.put (commonStrings.EXCEPTION_Id, AbFileUploadFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("get()"), e);
             end if;
             Java_Throw (e);

@@ -16,6 +16,7 @@
 with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -34,6 +35,7 @@ package body tags.admin.UsersTag_Package is
 
    package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    procedure Initialize_Fields (This : in out UsersTag'Class) is
    begin
       null;
@@ -68,7 +70,7 @@ package body tags.admin.UsersTag_Package is
             UsersTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.user.UsersValidationView"));
             if (UsersTag'Class (This).getCommand) /= (null) then
                 UsersTag'Class (This).getPropertiesHashMap.put (UserRoleData_Package.NAME, This.role);
-                if (UsersTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                if (UsersTag'Class (This).getCommand.compareTo (GLOBALS2_Package.VIEW)) = (0) then
                     null;
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (UsersTag'Class (This).getCommand)));

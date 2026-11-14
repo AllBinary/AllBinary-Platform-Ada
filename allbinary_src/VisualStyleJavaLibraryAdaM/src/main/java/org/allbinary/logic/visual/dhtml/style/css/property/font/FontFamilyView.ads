@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package;
 package org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package_References is
    type FontFamilyView_Access is access all org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package.FontFamilyView'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_
    type FontFamilyView_Access_Array_Access is access all FontFamilyView_Access_Array;
    type FontFamilyView_Access_Array_Access_Array is array (Natural range <>) of FontFamilyView_Access_Array_Access;
    type FontFamilyView_Access_Array_Access_Array_Access is access all FontFamilyView_Access_Array_Access_Array;
+   type FontFamilyView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FontFamilyView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FontFamilyView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FontFamilyView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FontFamilyView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FontFamilyView_Access_Array_Access is (if Value /= null and then Value.all in FontFamilyView_Access_Array_Object'Class then FontFamilyView_Access_Array_Object'Class (Value.all).Value else null);
+   type FontFamilyView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : FontFamilyView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : FontFamilyView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new FontFamilyView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_FontFamilyView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return FontFamilyView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in FontFamilyView_Access_Array_Access_Array_Object'Class then FontFamilyView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package_References;
 
 with org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package_References;
@@ -59,10 +70,14 @@ package org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_
    function "=" (Left, Right : FontFamilyView_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package_References."=";
    subtype FontFamilyView_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package_References.FontFamilyView_Access_Array_Access;
    function "=" (Left, Right : FontFamilyView_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package_References."=";
+   function Java_Box (Value : FontFamilyView_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package_References.Java_Box;
+   function Java_Unbox_FontFamilyView_Access_Array (Value : access Java_Object'Class) return FontFamilyView_Access_Array_Access renames org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package_References.Java_Unbox_FontFamilyView_Access_Array;
    subtype FontFamilyView_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package_References.FontFamilyView_Access_Array_Access_Array;
    function "=" (Left, Right : FontFamilyView_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package_References."=";
    subtype FontFamilyView_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package_References.FontFamilyView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : FontFamilyView_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package_References."=";
+   function Java_Box (Value : FontFamilyView_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package_References.Java_Box;
+   function Java_Unbox_FontFamilyView_Access_Array_Access_Array (Value : access Java_Object'Class) return FontFamilyView_Access_Array_Access_Array_Access renames org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamilyView_Package_References.Java_Unbox_FontFamilyView_Access_Array_Access_Array;
 
    type FontFamilyView is new CssPropertyView with null record;
 

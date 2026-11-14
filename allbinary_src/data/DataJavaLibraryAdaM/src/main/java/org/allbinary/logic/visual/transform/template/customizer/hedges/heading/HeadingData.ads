@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package;
 package org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References is
    type HeadingData_Access is access all org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package.HeadingData'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.visual.transform.template.customizer.hedges.heading.
    type HeadingData_Access_Array_Access is access all HeadingData_Access_Array;
    type HeadingData_Access_Array_Access_Array is array (Natural range <>) of HeadingData_Access_Array_Access;
    type HeadingData_Access_Array_Access_Array_Access is access all HeadingData_Access_Array_Access_Array;
+   type HeadingData_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HeadingData_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HeadingData_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HeadingData_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HeadingData_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HeadingData_Access_Array_Access is (if Value /= null and then Value.all in HeadingData_Access_Array_Object'Class then HeadingData_Access_Array_Object'Class (Value.all).Value else null);
+   type HeadingData_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HeadingData_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HeadingData_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HeadingData_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HeadingData_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HeadingData_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in HeadingData_Access_Array_Access_Array_Object'Class then HeadingData_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References;
 
 with org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.logic.visual.transform.template.customizer.hedges.heading.
    function "=" (Left, Right : HeadingData_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References."=";
    subtype HeadingData_Access_Array_Access is org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References.HeadingData_Access_Array_Access;
    function "=" (Left, Right : HeadingData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References."=";
+   function Java_Box (Value : HeadingData_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References.Java_Box;
+   function Java_Unbox_HeadingData_Access_Array (Value : access Java_Object'Class) return HeadingData_Access_Array_Access renames org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References.Java_Unbox_HeadingData_Access_Array;
    subtype HeadingData_Access_Array_Access_Array is org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References.HeadingData_Access_Array_Access_Array;
    function "=" (Left, Right : HeadingData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References."=";
    subtype HeadingData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References.HeadingData_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HeadingData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References."=";
+   function Java_Box (Value : HeadingData_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References.Java_Box;
+   function Java_Unbox_HeadingData_Access_Array_Access_Array (Value : access Java_Object'Class) return HeadingData_Access_Array_Access_Array_Access renames org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingData_Package_References.Java_Unbox_HeadingData_Access_Array_Access_Array;
 
    type HeadingData is new Java_Object with null record;
    NAME : Unbounded_String;

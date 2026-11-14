@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package;
 package org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References is
    type InputAutomationConfigurationModuleChangeEvent_Access is access all org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package.InputAutomationConfigurationModuleChangeEvent'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.configuration.InputAutomationConfiguratio
    type InputAutomationConfigurationModuleChangeEvent_Access_Array_Access is access all InputAutomationConfigurationModuleChangeEvent_Access_Array;
    type InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array is array (Natural range <>) of InputAutomationConfigurationModuleChangeEvent_Access_Array_Access;
    type InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access is access all InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array;
+   type InputAutomationConfigurationModuleChangeEvent_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InputAutomationConfigurationModuleChangeEvent_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InputAutomationConfigurationModuleChangeEvent_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InputAutomationConfigurationModuleChangeEvent_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InputAutomationConfigurationModuleChangeEvent_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InputAutomationConfigurationModuleChangeEvent_Access_Array_Access is (if Value /= null and then Value.all in InputAutomationConfigurationModuleChangeEvent_Access_Array_Object'Class then InputAutomationConfigurationModuleChangeEvent_Access_Array_Object'Class (Value.all).Value else null);
+   type InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Object'Class then InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References;
 
 with org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.input.automation.configuration.InputAutomationConfiguratio
    function "=" (Left, Right : InputAutomationConfigurationModuleChangeEvent_Access_Array) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References."=";
    subtype InputAutomationConfigurationModuleChangeEvent_Access_Array_Access is org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.InputAutomationConfigurationModuleChangeEvent_Access_Array_Access;
    function "=" (Left, Right : InputAutomationConfigurationModuleChangeEvent_Access_Array_Access) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References."=";
+   function Java_Box (Value : InputAutomationConfigurationModuleChangeEvent_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.Java_Box;
+   function Java_Unbox_InputAutomationConfigurationModuleChangeEvent_Access_Array (Value : access Java_Object'Class) return InputAutomationConfigurationModuleChangeEvent_Access_Array_Access renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.Java_Unbox_InputAutomationConfigurationModuleChangeEvent_Access_Array;
    subtype InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array is org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array;
    function "=" (Left, Right : InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References."=";
    subtype InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access is org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References."=";
+   function Java_Box (Value : InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.Java_Box;
+   function Java_Unbox_InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array (Value : access Java_Object'Class) return InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array_Access renames org.allbinary.input.automation.configuration.InputAutomationConfigurationModuleChangeEvent_Package_References.Java_Unbox_InputAutomationConfigurationModuleChangeEvent_Access_Array_Access_Array;
 
    type InputAutomationConfigurationModuleChangeEvent is new Java_Object with record
       inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access;

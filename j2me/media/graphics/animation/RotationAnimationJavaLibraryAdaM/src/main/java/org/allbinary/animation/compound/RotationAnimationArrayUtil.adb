@@ -76,7 +76,7 @@ package body org.allbinary.animation.compound.RotationAnimationArrayUtil_Package
 
    function getInstance return RotationAnimationArrayUtil_Access is
    begin
-        return RotationAnimationArrayUtil_Access (RotationAnimationArrayUtil_Package.instance);
+        return RotationAnimationArrayUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out RotationAnimationArrayUtil'Class) is

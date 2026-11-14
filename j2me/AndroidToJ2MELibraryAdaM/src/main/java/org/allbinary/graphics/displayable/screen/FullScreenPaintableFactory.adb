@@ -52,7 +52,7 @@ package body org.allbinary.graphics.displayable.screen.FullScreenPaintableFactor
 
    function getInstance return FullScreenPaintableFactory_Access is
    begin
-        return FullScreenPaintableFactory_Access (FullScreenPaintableFactory_Package.instance);
+        return FullScreenPaintableFactory_Package.instance;
    end getInstance;
 
 begin

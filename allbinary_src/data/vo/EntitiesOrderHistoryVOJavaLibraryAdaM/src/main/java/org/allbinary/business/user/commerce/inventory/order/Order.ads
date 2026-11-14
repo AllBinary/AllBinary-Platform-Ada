@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.commerce.inventory.order.Order_Package;
 package org.allbinary.business.user.commerce.inventory.order.Order_Package_References is
    type Order_Access is access all org.allbinary.business.user.commerce.inventory.order.Order_Package.Order'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.commerce.inventory.order.Order_Package_Refer
    type Order_Access_Array_Access is access all Order_Access_Array;
    type Order_Access_Array_Access_Array is array (Natural range <>) of Order_Access_Array_Access;
    type Order_Access_Array_Access_Array_Access is access all Order_Access_Array_Access_Array;
+   type Order_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Order_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Order_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Order_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Order_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Order_Access_Array_Access is (if Value /= null and then Value.all in Order_Access_Array_Object'Class then Order_Access_Array_Object'Class (Value.all).Value else null);
+   type Order_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Order_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Order_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Order_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Order_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Order_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in Order_Access_Array_Access_Array_Object'Class then Order_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.commerce.inventory.order.Order_Package_References;
 
 with org.allbinary.business.user.commerce.inventory.order.Order_Package_References;
@@ -100,10 +111,14 @@ package org.allbinary.business.user.commerce.inventory.order.Order_Package is
    function "=" (Left, Right : Order_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References."=";
    subtype Order_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array_Access;
    function "=" (Left, Right : Order_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References."=";
+   function Java_Box (Value : Order_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Java_Box;
+   function Java_Unbox_Order_Access_Array (Value : access Java_Object'Class) return Order_Access_Array_Access renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Java_Unbox_Order_Access_Array;
    subtype Order_Access_Array_Access_Array is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array_Access_Array;
    function "=" (Left, Right : Order_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References."=";
    subtype Order_Access_Array_Access_Array_Access is org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Order_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Order_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References."=";
+   function Java_Box (Value : Order_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Java_Box;
+   function Java_Unbox_Order_Access_Array_Access_Array (Value : access Java_Object'Class) return Order_Access_Array_Access_Array_Access renames org.allbinary.business.user.commerce.inventory.order.Order_Package_References.Java_Unbox_Order_Access_Array_Access_Array;
 
    type Order is new Java_Object and OrderInterface with record
       basket : BasketInterface_Access;

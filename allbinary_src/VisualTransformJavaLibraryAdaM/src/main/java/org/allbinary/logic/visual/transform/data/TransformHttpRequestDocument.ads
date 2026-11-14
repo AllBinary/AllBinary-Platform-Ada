@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package;
 package org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package_References is
    type TransformHttpRequestDocument_Access is access all org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package.TransformHttpRequestDocument'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_P
    type TransformHttpRequestDocument_Access_Array_Access is access all TransformHttpRequestDocument_Access_Array;
    type TransformHttpRequestDocument_Access_Array_Access_Array is array (Natural range <>) of TransformHttpRequestDocument_Access_Array_Access;
    type TransformHttpRequestDocument_Access_Array_Access_Array_Access is access all TransformHttpRequestDocument_Access_Array_Access_Array;
+   type TransformHttpRequestDocument_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransformHttpRequestDocument_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransformHttpRequestDocument_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransformHttpRequestDocument_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransformHttpRequestDocument_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransformHttpRequestDocument_Access_Array_Access is (if Value /= null and then Value.all in TransformHttpRequestDocument_Access_Array_Object'Class then TransformHttpRequestDocument_Access_Array_Object'Class (Value.all).Value else null);
+   type TransformHttpRequestDocument_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransformHttpRequestDocument_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransformHttpRequestDocument_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransformHttpRequestDocument_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransformHttpRequestDocument_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransformHttpRequestDocument_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TransformHttpRequestDocument_Access_Array_Access_Array_Object'Class then TransformHttpRequestDocument_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package_References;
 
 with org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package_References;
@@ -125,10 +136,14 @@ package org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_P
    function "=" (Left, Right : TransformHttpRequestDocument_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package_References."=";
    subtype TransformHttpRequestDocument_Access_Array_Access is org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package_References.TransformHttpRequestDocument_Access_Array_Access;
    function "=" (Left, Right : TransformHttpRequestDocument_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package_References."=";
+   function Java_Box (Value : TransformHttpRequestDocument_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package_References.Java_Box;
+   function Java_Unbox_TransformHttpRequestDocument_Access_Array (Value : access Java_Object'Class) return TransformHttpRequestDocument_Access_Array_Access renames org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package_References.Java_Unbox_TransformHttpRequestDocument_Access_Array;
    subtype TransformHttpRequestDocument_Access_Array_Access_Array is org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package_References.TransformHttpRequestDocument_Access_Array_Access_Array;
    function "=" (Left, Right : TransformHttpRequestDocument_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package_References."=";
    subtype TransformHttpRequestDocument_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package_References.TransformHttpRequestDocument_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TransformHttpRequestDocument_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package_References."=";
+   function Java_Box (Value : TransformHttpRequestDocument_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package_References.Java_Box;
+   function Java_Unbox_TransformHttpRequestDocument_Access_Array_Access_Array (Value : access Java_Object'Class) return TransformHttpRequestDocument_Access_Array_Access_Array_Access renames org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_Package_References.Java_Unbox_TransformHttpRequestDocument_Access_Array_Access_Array;
 
    type TransformHttpRequestDocument is new Java_Object and TransformDocumentInterface with record
       logUtil : LogUtil_Access;

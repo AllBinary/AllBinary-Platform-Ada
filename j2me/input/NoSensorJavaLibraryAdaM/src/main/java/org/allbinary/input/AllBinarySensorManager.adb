@@ -23,13 +23,22 @@ with org.allbinary.string_Id.CommonStrings_Package_References;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
+with org.allbinary.input.AllBinarySensor_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.input.Input_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+with org.allbinary.logic.math.Orientation_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -83,7 +92,7 @@ package body org.allbinary.input.AllBinarySensorManager_Package is
 
    function getInstance return AllBinarySensorManager_Access is
    begin
-        if (AllBinarySensorManager_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (AllBinarySensorManager_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             AllBinarySensorManager_Package.instance := Java_Object_Access (AllBinarySensorManager_Package.Create);
         end if;
         return AllBinarySensorManager_Access (AllBinarySensorManager_Package.instance);

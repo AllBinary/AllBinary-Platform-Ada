@@ -25,7 +25,7 @@ package body org.allbinary.business.page.PageData_Package is
 
    function getInstance return PageData_Access is
    begin
-        return PageData_Access (PageData_Package.instance);
+        return PageData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out PageData'Class) is

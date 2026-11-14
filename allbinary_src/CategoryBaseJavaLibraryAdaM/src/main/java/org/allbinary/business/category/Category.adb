@@ -38,6 +38,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -60,6 +62,8 @@ package body org.allbinary.business.category.Category_Package is
    package RootCategoryPropertiesInterface_Package renames Standard.org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -168,7 +172,7 @@ package body org.allbinary.business.category.Category_Package is
       categoryPropertiesFactoryInterface : constant CategoryPropertiesFactoryInterface_Access := CategoryPropertiesFactoryInterface_Access (categoryPropertiesFactoryInterface_Param);
    begin
       Initialize_Fields (This);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY_Var) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY_Var) then
             This.logUtil.putF (This.commonStrings.CONSTRUCTOR, Category_Access'(This'Unchecked_Access), To_Unbounded_String ("Category(CategoryPropertiesFactoryInterface)"));
         end if;
         This.categoryPropertiesInterface := CategoryPropertiesInterface_Access (categoryPropertiesFactoryInterface.getInstance);
@@ -270,7 +274,7 @@ package body org.allbinary.business.category.Category_Package is
       childCategoryHierarchyInterface : CategoryHierarchyInterface_Access;
    begin
         Category'Class (This).removeDuplicateChild (categoryInterface);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY_Var) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY_Var) then
             This.logUtil.putF (To_Unbounded_String ("adding"), Category_Access'(This'Unchecked_Access), To_Unbounded_String ("addChild"));
         end if;
         childCategoryHierarchyInterface := CategoryHierarchyInterface_Access (categoryInterface.getHierarchy);
@@ -323,8 +327,8 @@ package body org.allbinary.business.category.Category_Package is
         for index in 0 .. (removalSize) - 1 loop
             anyType := removalVector.get (index);
             objectIndex := This.childCategoryVector.indexOf (anyType);
-            This.typeVector.remove (Java_Box (objectIndex));
-            This.childCategoryVector.remove (Java_Box (objectIndex));
+            This.typeVector.removeAt (Java_Box (objectIndex));
+            This.childCategoryVector.removeAt (Java_Box (objectIndex));
         end loop;
    end removal;
 
@@ -468,7 +472,7 @@ package body org.allbinary.business.category.Category_Package is
    procedure log (This : in out Category) is
       stringBuffer : StringMaker_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY_Var) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY_Var) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("Category Name: "));
             stringBuffer.append (This.categoryPropertiesInterface.getValue);

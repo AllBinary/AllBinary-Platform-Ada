@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.control.search.SearchParams_Package;
 package org.allbinary.logic.control.search.SearchParams_Package_References is
    type SearchParams_Access is access all org.allbinary.logic.control.search.SearchParams_Package.SearchParams'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.control.search.SearchParams_Package_References is
    type SearchParams_Access_Array_Access is access all SearchParams_Access_Array;
    type SearchParams_Access_Array_Access_Array is array (Natural range <>) of SearchParams_Access_Array_Access;
    type SearchParams_Access_Array_Access_Array_Access is access all SearchParams_Access_Array_Access_Array;
+   type SearchParams_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SearchParams_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SearchParams_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SearchParams_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SearchParams_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SearchParams_Access_Array_Access is (if Value /= null and then Value.all in SearchParams_Access_Array_Object'Class then SearchParams_Access_Array_Object'Class (Value.all).Value else null);
+   type SearchParams_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SearchParams_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SearchParams_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SearchParams_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SearchParams_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SearchParams_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SearchParams_Access_Array_Access_Array_Object'Class then SearchParams_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.control.search.SearchParams_Package_References;
 
 with org.allbinary.logic.control.search.SearchParams_Package_References;
@@ -73,10 +84,14 @@ package org.allbinary.logic.control.search.SearchParams_Package is
    function "=" (Left, Right : SearchParams_Access_Array) return Boolean renames org.allbinary.logic.control.search.SearchParams_Package_References."=";
    subtype SearchParams_Access_Array_Access is org.allbinary.logic.control.search.SearchParams_Package_References.SearchParams_Access_Array_Access;
    function "=" (Left, Right : SearchParams_Access_Array_Access) return Boolean renames org.allbinary.logic.control.search.SearchParams_Package_References."=";
+   function Java_Box (Value : SearchParams_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.control.search.SearchParams_Package_References.Java_Box;
+   function Java_Unbox_SearchParams_Access_Array (Value : access Java_Object'Class) return SearchParams_Access_Array_Access renames org.allbinary.logic.control.search.SearchParams_Package_References.Java_Unbox_SearchParams_Access_Array;
    subtype SearchParams_Access_Array_Access_Array is org.allbinary.logic.control.search.SearchParams_Package_References.SearchParams_Access_Array_Access_Array;
    function "=" (Left, Right : SearchParams_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.control.search.SearchParams_Package_References."=";
    subtype SearchParams_Access_Array_Access_Array_Access is org.allbinary.logic.control.search.SearchParams_Package_References.SearchParams_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SearchParams_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.control.search.SearchParams_Package_References."=";
+   function Java_Box (Value : SearchParams_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.control.search.SearchParams_Package_References.Java_Box;
+   function Java_Unbox_SearchParams_Access_Array_Access_Array (Value : access Java_Object'Class) return SearchParams_Access_Array_Access_Array_Access renames org.allbinary.logic.control.search.SearchParams_Package_References.Java_Unbox_SearchParams_Access_Array_Access_Array;
 
    type SearchParams is new Java_Object with record
       columnsAndSearchValues : HashMap_Access;

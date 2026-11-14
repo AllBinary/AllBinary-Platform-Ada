@@ -81,7 +81,7 @@ package body org.allbinary.android.AndroidServicesUtil_Package is
 
    function getInstance return AndroidServicesUtil_Access is
    begin
-        return AndroidServicesUtil_Access (AndroidServicesUtil_Package.instance);
+        return AndroidServicesUtil_Package.instance;
    end getInstance;
 
    function isServiceRunning (This : in out AndroidServicesUtil; name : Unbounded_String) return Boolean is

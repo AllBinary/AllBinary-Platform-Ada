@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package;
 package org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package_References is
    type StoreThemeCategoryPathView_Access is access all org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package.StoreThemeCategoryPathView'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_P
    type StoreThemeCategoryPathView_Access_Array_Access is access all StoreThemeCategoryPathView_Access_Array;
    type StoreThemeCategoryPathView_Access_Array_Access_Array is array (Natural range <>) of StoreThemeCategoryPathView_Access_Array_Access;
    type StoreThemeCategoryPathView_Access_Array_Access_Array_Access is access all StoreThemeCategoryPathView_Access_Array_Access_Array;
+   type StoreThemeCategoryPathView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreThemeCategoryPathView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreThemeCategoryPathView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreThemeCategoryPathView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreThemeCategoryPathView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreThemeCategoryPathView_Access_Array_Access is (if Value /= null and then Value.all in StoreThemeCategoryPathView_Access_Array_Object'Class then StoreThemeCategoryPathView_Access_Array_Object'Class (Value.all).Value else null);
+   type StoreThemeCategoryPathView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreThemeCategoryPathView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreThemeCategoryPathView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreThemeCategoryPathView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreThemeCategoryPathView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreThemeCategoryPathView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StoreThemeCategoryPathView_Access_Array_Access_Array_Object'Class then StoreThemeCategoryPathView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package_References;
 
 with org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package_References;
@@ -86,10 +97,14 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_P
    function "=" (Left, Right : StoreThemeCategoryPathView_Access_Array) return Boolean renames org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package_References."=";
    subtype StoreThemeCategoryPathView_Access_Array_Access is org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package_References.StoreThemeCategoryPathView_Access_Array_Access;
    function "=" (Left, Right : StoreThemeCategoryPathView_Access_Array_Access) return Boolean renames org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package_References."=";
+   function Java_Box (Value : StoreThemeCategoryPathView_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package_References.Java_Box;
+   function Java_Unbox_StoreThemeCategoryPathView_Access_Array (Value : access Java_Object'Class) return StoreThemeCategoryPathView_Access_Array_Access renames org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package_References.Java_Unbox_StoreThemeCategoryPathView_Access_Array;
    subtype StoreThemeCategoryPathView_Access_Array_Access_Array is org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package_References.StoreThemeCategoryPathView_Access_Array_Access_Array;
    function "=" (Left, Right : StoreThemeCategoryPathView_Access_Array_Access_Array) return Boolean renames org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package_References."=";
    subtype StoreThemeCategoryPathView_Access_Array_Access_Array_Access is org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package_References.StoreThemeCategoryPathView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StoreThemeCategoryPathView_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package_References."=";
+   function Java_Box (Value : StoreThemeCategoryPathView_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package_References.Java_Box;
+   function Java_Unbox_StoreThemeCategoryPathView_Access_Array_Access_Array (Value : access Java_Object'Class) return StoreThemeCategoryPathView_Access_Array_Access_Array_Access renames org.allbinary.business.category.store.theme.StoreThemeCategoryPathView_Package_References.Java_Unbox_StoreThemeCategoryPathView_Access_Array_Access_Array;
 
    type StoreThemeCategoryPathView is new CategoryView and DomNodeInterface with null record;
 

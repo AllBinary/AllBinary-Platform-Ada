@@ -54,7 +54,7 @@
 
         <dependency>
             <groupId>org.allbinary</groupId>
-            <artifactId>AndroidResourceLibraryAda</artifactId>
+            <artifactId>ResourceJ2MEJavaLibraryAda</artifactId>
 <!--
             <artifactId>ResourceJ2MEJavaLibraryAda</artifactId>
             <artifactId>PCResourceLibraryAda</artifactId>

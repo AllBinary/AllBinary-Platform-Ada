@@ -44,7 +44,7 @@ package body org.allbinary.thread.MusicThreadPool_Package is
 
    function getInstance return ThreadPool_Access is
    begin
-        return ThreadPool_Access (MusicThreadPool_Package.THREAD_POOL);
+        return MusicThreadPool_Package.THREAD_POOL;
    end getInstance;
 
    procedure Initialize (This : in out MusicThreadPool'Class; poolName : Unbounded_String; numThreads : Integer; priority : Integer) is

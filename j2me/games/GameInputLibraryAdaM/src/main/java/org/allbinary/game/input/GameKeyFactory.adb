@@ -137,7 +137,7 @@ package body org.allbinary.game.input.GameKeyFactory_Package is
 
    function getInstance return GameKeyFactory_Access is
    begin
-        if (GameKeyFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (GameKeyFactory_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             GameKeyFactory_Package.instance := Java_Object_Access (GameKeyFactory_Package.Create);
         end if;
         return GameKeyFactory_Access (GameKeyFactory_Package.instance);

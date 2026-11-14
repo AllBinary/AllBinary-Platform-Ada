@@ -44,7 +44,7 @@ package body org.allbinary.thread.ThreadObjectUtil_Package is
 
    function getInstance return ThreadObjectUtil_Access is
    begin
-        return ThreadObjectUtil_Access (ThreadObjectUtil_Package.instance);
+        return ThreadObjectUtil_Package.instance;
    end getInstance;
 
    procedure notifyObject (This : in out ThreadObjectUtil; anyType_Param : access Java_Object'Class) is

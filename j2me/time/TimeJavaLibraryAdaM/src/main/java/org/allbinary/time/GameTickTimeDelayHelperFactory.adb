@@ -37,7 +37,7 @@ package body org.allbinary.time.GameTickTimeDelayHelperFactory_Package is
 
    function getInstance return GameTickTimeDelayHelper_Access is
    begin
-        return GameTickTimeDelayHelper_Access (GameTickTimeDelayHelperFactory_Package.instance);
+        return GameTickTimeDelayHelperFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out GameTickTimeDelayHelperFactory'Class) is

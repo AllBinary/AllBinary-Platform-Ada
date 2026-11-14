@@ -55,7 +55,7 @@ package body org.allbinary.logic.util.visitor.Visitor_Package is
 
    function getInstance return Visitor_Access is
    begin
-        return Visitor_Access (Visitor_Package.instance);
+        return Visitor_Package.instance;
    end getInstance;
 
    procedure visit (This : in out Visitor; anyType_Param : access Java_Object'Class) is

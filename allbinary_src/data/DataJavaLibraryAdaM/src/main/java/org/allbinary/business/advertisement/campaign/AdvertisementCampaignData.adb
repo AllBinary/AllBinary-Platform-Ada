@@ -27,7 +27,7 @@ package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign
 
    function getInstance return AdvertisementCampaignData_Access is
    begin
-        return AdvertisementCampaignData_Access (AdvertisementCampaignData_Package.instance);
+        return AdvertisementCampaignData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AdvertisementCampaignData'Class) is

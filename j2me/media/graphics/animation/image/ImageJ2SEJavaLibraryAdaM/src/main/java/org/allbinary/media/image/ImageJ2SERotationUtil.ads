@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.image.ImageJ2SERotationUtil_Package;
 package org.allbinary.media.image.ImageJ2SERotationUtil_Package_References is
    type ImageJ2SERotationUtil_Access is access all org.allbinary.media.image.ImageJ2SERotationUtil_Package.ImageJ2SERotationUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.image.ImageJ2SERotationUtil_Package_References is
    type ImageJ2SERotationUtil_Access_Array_Access is access all ImageJ2SERotationUtil_Access_Array;
    type ImageJ2SERotationUtil_Access_Array_Access_Array is array (Natural range <>) of ImageJ2SERotationUtil_Access_Array_Access;
    type ImageJ2SERotationUtil_Access_Array_Access_Array_Access is access all ImageJ2SERotationUtil_Access_Array_Access_Array;
+   type ImageJ2SERotationUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageJ2SERotationUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageJ2SERotationUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageJ2SERotationUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageJ2SERotationUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageJ2SERotationUtil_Access_Array_Access is (if Value /= null and then Value.all in ImageJ2SERotationUtil_Access_Array_Object'Class then ImageJ2SERotationUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageJ2SERotationUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageJ2SERotationUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageJ2SERotationUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageJ2SERotationUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageJ2SERotationUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageJ2SERotationUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageJ2SERotationUtil_Access_Array_Access_Array_Object'Class then ImageJ2SERotationUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.image.ImageJ2SERotationUtil_Package_References;
 
 with org.allbinary.media.image.ImageJ2SERotationUtil_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.media.image.ImageJ2SERotationUtil_Package is
    function "=" (Left, Right : ImageJ2SERotationUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References."=";
    subtype ImageJ2SERotationUtil_Access_Array_Access is org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.ImageJ2SERotationUtil_Access_Array_Access;
    function "=" (Left, Right : ImageJ2SERotationUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References."=";
+   function Java_Box (Value : ImageJ2SERotationUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.Java_Box;
+   function Java_Unbox_ImageJ2SERotationUtil_Access_Array (Value : access Java_Object'Class) return ImageJ2SERotationUtil_Access_Array_Access renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.Java_Unbox_ImageJ2SERotationUtil_Access_Array;
    subtype ImageJ2SERotationUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.ImageJ2SERotationUtil_Access_Array_Access_Array;
    function "=" (Left, Right : ImageJ2SERotationUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References."=";
    subtype ImageJ2SERotationUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.ImageJ2SERotationUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageJ2SERotationUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References."=";
+   function Java_Box (Value : ImageJ2SERotationUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.Java_Box;
+   function Java_Unbox_ImageJ2SERotationUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageJ2SERotationUtil_Access_Array_Access_Array_Access renames org.allbinary.media.image.ImageJ2SERotationUtil_Package_References.Java_Unbox_ImageJ2SERotationUtil_Access_Array_Access_Array;
 
    type ImageJ2SERotationUtil is new Java_Object with record
       imageUtil : ImageUtil_Access;

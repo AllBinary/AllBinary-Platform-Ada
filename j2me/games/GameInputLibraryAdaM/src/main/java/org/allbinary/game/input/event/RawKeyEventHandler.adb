@@ -81,7 +81,7 @@ package body org.allbinary.game.input.event.RawKeyEventHandler_Package is
 
    function getInstance return RawKeyEventHandler_Access is
    begin
-        return RawKeyEventHandler_Access (RawKeyEventHandler_Package.instance);
+        return RawKeyEventHandler_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out RawKeyEventHandler'Class) is

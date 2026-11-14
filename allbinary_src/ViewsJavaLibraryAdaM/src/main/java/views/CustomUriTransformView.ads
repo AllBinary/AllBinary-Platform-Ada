@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.CustomUriTransformView_Package;
 package views.CustomUriTransformView_Package_References is
    type CustomUriTransformView_Access is access all views.CustomUriTransformView_Package.CustomUriTransformView'Class;
@@ -19,6 +20,16 @@ package views.CustomUriTransformView_Package_References is
    type CustomUriTransformView_Access_Array_Access is access all CustomUriTransformView_Access_Array;
    type CustomUriTransformView_Access_Array_Access_Array is array (Natural range <>) of CustomUriTransformView_Access_Array_Access;
    type CustomUriTransformView_Access_Array_Access_Array_Access is access all CustomUriTransformView_Access_Array_Access_Array;
+   type CustomUriTransformView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CustomUriTransformView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CustomUriTransformView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CustomUriTransformView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CustomUriTransformView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CustomUriTransformView_Access_Array_Access is (if Value /= null and then Value.all in CustomUriTransformView_Access_Array_Object'Class then CustomUriTransformView_Access_Array_Object'Class (Value.all).Value else null);
+   type CustomUriTransformView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CustomUriTransformView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CustomUriTransformView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CustomUriTransformView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CustomUriTransformView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CustomUriTransformView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CustomUriTransformView_Access_Array_Access_Array_Object'Class then CustomUriTransformView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.CustomUriTransformView_Package_References;
 
 with views.CustomUriTransformView_Package_References;
@@ -124,10 +135,14 @@ package views.CustomUriTransformView_Package is
    function "=" (Left, Right : CustomUriTransformView_Access_Array) return Boolean renames views.CustomUriTransformView_Package_References."=";
    subtype CustomUriTransformView_Access_Array_Access is views.CustomUriTransformView_Package_References.CustomUriTransformView_Access_Array_Access;
    function "=" (Left, Right : CustomUriTransformView_Access_Array_Access) return Boolean renames views.CustomUriTransformView_Package_References."=";
+   function Java_Box (Value : CustomUriTransformView_Access_Array_Access) return Java_Object_Access renames views.CustomUriTransformView_Package_References.Java_Box;
+   function Java_Unbox_CustomUriTransformView_Access_Array (Value : access Java_Object'Class) return CustomUriTransformView_Access_Array_Access renames views.CustomUriTransformView_Package_References.Java_Unbox_CustomUriTransformView_Access_Array;
    subtype CustomUriTransformView_Access_Array_Access_Array is views.CustomUriTransformView_Package_References.CustomUriTransformView_Access_Array_Access_Array;
    function "=" (Left, Right : CustomUriTransformView_Access_Array_Access_Array) return Boolean renames views.CustomUriTransformView_Package_References."=";
    subtype CustomUriTransformView_Access_Array_Access_Array_Access is views.CustomUriTransformView_Package_References.CustomUriTransformView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CustomUriTransformView_Access_Array_Access_Array_Access) return Boolean renames views.CustomUriTransformView_Package_References."=";
+   function Java_Box (Value : CustomUriTransformView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.CustomUriTransformView_Package_References.Java_Box;
+   function Java_Unbox_CustomUriTransformView_Access_Array_Access_Array (Value : access Java_Object'Class) return CustomUriTransformView_Access_Array_Access_Array_Access renames views.CustomUriTransformView_Package_References.Java_Unbox_CustomUriTransformView_Access_Array_Access_Array;
 
    type CustomUriTransformView is new Java_Object and TransformInterface with record
       logUtil : LogUtil_Access;

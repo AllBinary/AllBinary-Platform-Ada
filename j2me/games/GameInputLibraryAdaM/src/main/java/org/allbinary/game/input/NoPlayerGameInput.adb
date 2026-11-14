@@ -60,7 +60,7 @@ package body org.allbinary.game.input.NoPlayerGameInput_Package is
 
    function getInstance return NoPlayerGameInput_Access is
    begin
-        return NoPlayerGameInput_Access (NoPlayerGameInput_Package.SINGLETON);
+        return NoPlayerGameInput_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out NoPlayerGameInput'Class) is

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.android.api19.ActivityFractureUtilAPI19_Package;
 package org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References is
    type ActivityFractureUtilAPI19_Access is access all org.allbinary.android.api19.ActivityFractureUtilAPI19_Package.ActivityFractureUtilAPI19'Class;
@@ -19,6 +20,16 @@ package org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References
    type ActivityFractureUtilAPI19_Access_Array_Access is access all ActivityFractureUtilAPI19_Access_Array;
    type ActivityFractureUtilAPI19_Access_Array_Access_Array is array (Natural range <>) of ActivityFractureUtilAPI19_Access_Array_Access;
    type ActivityFractureUtilAPI19_Access_Array_Access_Array_Access is access all ActivityFractureUtilAPI19_Access_Array_Access_Array;
+   type ActivityFractureUtilAPI19_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ActivityFractureUtilAPI19_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ActivityFractureUtilAPI19_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ActivityFractureUtilAPI19_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ActivityFractureUtilAPI19_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ActivityFractureUtilAPI19_Access_Array_Access is (if Value /= null and then Value.all in ActivityFractureUtilAPI19_Access_Array_Object'Class then ActivityFractureUtilAPI19_Access_Array_Object'Class (Value.all).Value else null);
+   type ActivityFractureUtilAPI19_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ActivityFractureUtilAPI19_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ActivityFractureUtilAPI19_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ActivityFractureUtilAPI19_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ActivityFractureUtilAPI19_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ActivityFractureUtilAPI19_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ActivityFractureUtilAPI19_Access_Array_Access_Array_Object'Class then ActivityFractureUtilAPI19_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References;
 
 with org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References;
@@ -59,10 +70,14 @@ package org.allbinary.android.api19.ActivityFractureUtilAPI19_Package is
    function "=" (Left, Right : ActivityFractureUtilAPI19_Access_Array) return Boolean renames org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References."=";
    subtype ActivityFractureUtilAPI19_Access_Array_Access is org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References.ActivityFractureUtilAPI19_Access_Array_Access;
    function "=" (Left, Right : ActivityFractureUtilAPI19_Access_Array_Access) return Boolean renames org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References."=";
+   function Java_Box (Value : ActivityFractureUtilAPI19_Access_Array_Access) return Java_Object_Access renames org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References.Java_Box;
+   function Java_Unbox_ActivityFractureUtilAPI19_Access_Array (Value : access Java_Object'Class) return ActivityFractureUtilAPI19_Access_Array_Access renames org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References.Java_Unbox_ActivityFractureUtilAPI19_Access_Array;
    subtype ActivityFractureUtilAPI19_Access_Array_Access_Array is org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References.ActivityFractureUtilAPI19_Access_Array_Access_Array;
    function "=" (Left, Right : ActivityFractureUtilAPI19_Access_Array_Access_Array) return Boolean renames org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References."=";
    subtype ActivityFractureUtilAPI19_Access_Array_Access_Array_Access is org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References.ActivityFractureUtilAPI19_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ActivityFractureUtilAPI19_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References."=";
+   function Java_Box (Value : ActivityFractureUtilAPI19_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References.Java_Box;
+   function Java_Unbox_ActivityFractureUtilAPI19_Access_Array_Access_Array (Value : access Java_Object'Class) return ActivityFractureUtilAPI19_Access_Array_Access_Array_Access renames org.allbinary.android.api19.ActivityFractureUtilAPI19_Package_References.Java_Unbox_ActivityFractureUtilAPI19_Access_Array_Access_Array;
 
    type ActivityFractureUtilAPI19 is new ActivityFractureUtilAPI5 with null record;
    instance19 : ActivityFractureUtilAPI19_Access;

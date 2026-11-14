@@ -101,7 +101,7 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
 
    function toHashMap return HashMap_Access is
    begin
-        return HashMap_Access (MediaData_Package.hashMap);
+        return MediaData_Package.hashMap;
    end toHashMap;
 
    procedure isConvertableTo (This : in out MediaData; mediaData_Var_Param : access MediaData_Package.MediaData'Class) is
@@ -120,7 +120,7 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
 
 begin
    null;
-   hashMap := StdUtil_Package.getInstance.createHashMap;
+   hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
 
 end org.allbinary.logic.visual.media.MediaData_Package;
 

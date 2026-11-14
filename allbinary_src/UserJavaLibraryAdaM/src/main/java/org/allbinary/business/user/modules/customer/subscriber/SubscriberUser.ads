@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package;
 package org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package_References is
    type SubscriberUser_Access is access all org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package.SubscriberUser'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_P
    type SubscriberUser_Access_Array_Access is access all SubscriberUser_Access_Array;
    type SubscriberUser_Access_Array_Access_Array is array (Natural range <>) of SubscriberUser_Access_Array_Access;
    type SubscriberUser_Access_Array_Access_Array_Access is access all SubscriberUser_Access_Array_Access_Array;
+   type SubscriberUser_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SubscriberUser_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SubscriberUser_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SubscriberUser_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SubscriberUser_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SubscriberUser_Access_Array_Access is (if Value /= null and then Value.all in SubscriberUser_Access_Array_Object'Class then SubscriberUser_Access_Array_Object'Class (Value.all).Value else null);
+   type SubscriberUser_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SubscriberUser_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SubscriberUser_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SubscriberUser_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SubscriberUser_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SubscriberUser_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SubscriberUser_Access_Array_Access_Array_Object'Class then SubscriberUser_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package_References;
 
 with org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package_References;
@@ -74,10 +85,14 @@ package org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_P
    function "=" (Left, Right : SubscriberUser_Access_Array) return Boolean renames org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package_References."=";
    subtype SubscriberUser_Access_Array_Access is org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package_References.SubscriberUser_Access_Array_Access;
    function "=" (Left, Right : SubscriberUser_Access_Array_Access) return Boolean renames org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package_References."=";
+   function Java_Box (Value : SubscriberUser_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package_References.Java_Box;
+   function Java_Unbox_SubscriberUser_Access_Array (Value : access Java_Object'Class) return SubscriberUser_Access_Array_Access renames org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package_References.Java_Unbox_SubscriberUser_Access_Array;
    subtype SubscriberUser_Access_Array_Access_Array is org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package_References.SubscriberUser_Access_Array_Access_Array;
    function "=" (Left, Right : SubscriberUser_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package_References."=";
    subtype SubscriberUser_Access_Array_Access_Array_Access is org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package_References.SubscriberUser_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SubscriberUser_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package_References."=";
+   function Java_Box (Value : SubscriberUser_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package_References.Java_Box;
+   function Java_Unbox_SubscriberUser_Access_Array_Access_Array (Value : access Java_Object'Class) return SubscriberUser_Access_Array_Access_Array_Access renames org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_Package_References.Java_Unbox_SubscriberUser_Access_Array_Access_Array;
 
    type SubscriberUser is new User_Package.User with record
       subscription : Subscription_Access;

@@ -74,7 +74,7 @@ package body org.allbinary.logic.io.file.directory.SubDirectory_Package is
 
    function getInstance return SubDirectory_Access is
    begin
-        return SubDirectory_Access (SubDirectory_Package.instance);
+        return SubDirectory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out SubDirectory'Class) is

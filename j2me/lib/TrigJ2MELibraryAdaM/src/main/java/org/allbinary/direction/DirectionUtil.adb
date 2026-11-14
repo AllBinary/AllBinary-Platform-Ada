@@ -66,7 +66,7 @@ package body org.allbinary.direction.DirectionUtil_Package is
 
    function getInstance return DirectionUtil_Access is
    begin
-        return DirectionUtil_Access (DirectionUtil_Package.instance);
+        return DirectionUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out DirectionUtil'Class) is

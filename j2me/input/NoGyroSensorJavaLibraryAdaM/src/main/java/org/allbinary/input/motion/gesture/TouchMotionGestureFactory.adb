@@ -65,7 +65,7 @@ package body org.allbinary.input.motion.gesture.TouchMotionGestureFactory_Packag
 
    function getInstance return TouchMotionGestureFactory_Access is
    begin
-        if (TouchMotionGestureFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (TouchMotionGestureFactory_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             TouchMotionGestureFactory_Package.instance := Java_Object_Access (TouchMotionGestureFactory_Package.Create);
         end if;
         return TouchMotionGestureFactory_Access (TouchMotionGestureFactory_Package.instance);

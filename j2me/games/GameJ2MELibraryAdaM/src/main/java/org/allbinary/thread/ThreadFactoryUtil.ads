@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.thread.ThreadFactoryUtil_Package;
 package org.allbinary.thread.ThreadFactoryUtil_Package_References is
    type ThreadFactoryUtil_Access is access all org.allbinary.thread.ThreadFactoryUtil_Package.ThreadFactoryUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.thread.ThreadFactoryUtil_Package_References is
    type ThreadFactoryUtil_Access_Array_Access is access all ThreadFactoryUtil_Access_Array;
    type ThreadFactoryUtil_Access_Array_Access_Array is array (Natural range <>) of ThreadFactoryUtil_Access_Array_Access;
    type ThreadFactoryUtil_Access_Array_Access_Array_Access is access all ThreadFactoryUtil_Access_Array_Access_Array;
+   type ThreadFactoryUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ThreadFactoryUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ThreadFactoryUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ThreadFactoryUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ThreadFactoryUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ThreadFactoryUtil_Access_Array_Access is (if Value /= null and then Value.all in ThreadFactoryUtil_Access_Array_Object'Class then ThreadFactoryUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type ThreadFactoryUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ThreadFactoryUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ThreadFactoryUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ThreadFactoryUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ThreadFactoryUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ThreadFactoryUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ThreadFactoryUtil_Access_Array_Access_Array_Object'Class then ThreadFactoryUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.thread.ThreadFactoryUtil_Package_References;
 
 with org.allbinary.thread.ThreadFactoryUtil_Package_References;
@@ -86,10 +97,14 @@ package org.allbinary.thread.ThreadFactoryUtil_Package is
    function "=" (Left, Right : ThreadFactoryUtil_Access_Array) return Boolean renames org.allbinary.thread.ThreadFactoryUtil_Package_References."=";
    subtype ThreadFactoryUtil_Access_Array_Access is org.allbinary.thread.ThreadFactoryUtil_Package_References.ThreadFactoryUtil_Access_Array_Access;
    function "=" (Left, Right : ThreadFactoryUtil_Access_Array_Access) return Boolean renames org.allbinary.thread.ThreadFactoryUtil_Package_References."=";
+   function Java_Box (Value : ThreadFactoryUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.thread.ThreadFactoryUtil_Package_References.Java_Box;
+   function Java_Unbox_ThreadFactoryUtil_Access_Array (Value : access Java_Object'Class) return ThreadFactoryUtil_Access_Array_Access renames org.allbinary.thread.ThreadFactoryUtil_Package_References.Java_Unbox_ThreadFactoryUtil_Access_Array;
    subtype ThreadFactoryUtil_Access_Array_Access_Array is org.allbinary.thread.ThreadFactoryUtil_Package_References.ThreadFactoryUtil_Access_Array_Access_Array;
    function "=" (Left, Right : ThreadFactoryUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.ThreadFactoryUtil_Package_References."=";
    subtype ThreadFactoryUtil_Access_Array_Access_Array_Access is org.allbinary.thread.ThreadFactoryUtil_Package_References.ThreadFactoryUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ThreadFactoryUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.ThreadFactoryUtil_Package_References."=";
+   function Java_Box (Value : ThreadFactoryUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.thread.ThreadFactoryUtil_Package_References.Java_Box;
+   function Java_Unbox_ThreadFactoryUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return ThreadFactoryUtil_Access_Array_Access_Array_Access renames org.allbinary.thread.ThreadFactoryUtil_Package_References.Java_Unbox_ThreadFactoryUtil_Access_Array_Access_Array;
 
    type ThreadFactoryUtil is new Java_Object with record
       logUtil : LogUtil_Access;

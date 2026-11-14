@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.control.validate.Validation_Package;
 package org.allbinary.logic.control.validate.Validation_Package_References is
    type Validation_Access is access all org.allbinary.logic.control.validate.Validation_Package.Validation'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.control.validate.Validation_Package_References is
    type Validation_Access_Array_Access is access all Validation_Access_Array;
    type Validation_Access_Array_Access_Array is array (Natural range <>) of Validation_Access_Array_Access;
    type Validation_Access_Array_Access_Array_Access is access all Validation_Access_Array_Access_Array;
+   type Validation_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Validation_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Validation_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Validation_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Validation_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Validation_Access_Array_Access is (if Value /= null and then Value.all in Validation_Access_Array_Object'Class then Validation_Access_Array_Object'Class (Value.all).Value else null);
+   type Validation_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Validation_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Validation_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Validation_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Validation_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Validation_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in Validation_Access_Array_Access_Array_Object'Class then Validation_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.control.validate.Validation_Package_References;
 
 with org.allbinary.logic.control.validate.Validation_Package_References;
@@ -84,10 +95,14 @@ package org.allbinary.logic.control.validate.Validation_Package is
    function "=" (Left, Right : Validation_Access_Array) return Boolean renames org.allbinary.logic.control.validate.Validation_Package_References."=";
    subtype Validation_Access_Array_Access is org.allbinary.logic.control.validate.Validation_Package_References.Validation_Access_Array_Access;
    function "=" (Left, Right : Validation_Access_Array_Access) return Boolean renames org.allbinary.logic.control.validate.Validation_Package_References."=";
+   function Java_Box (Value : Validation_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.control.validate.Validation_Package_References.Java_Box;
+   function Java_Unbox_Validation_Access_Array (Value : access Java_Object'Class) return Validation_Access_Array_Access renames org.allbinary.logic.control.validate.Validation_Package_References.Java_Unbox_Validation_Access_Array;
    subtype Validation_Access_Array_Access_Array is org.allbinary.logic.control.validate.Validation_Package_References.Validation_Access_Array_Access_Array;
    function "=" (Left, Right : Validation_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.control.validate.Validation_Package_References."=";
    subtype Validation_Access_Array_Access_Array_Access is org.allbinary.logic.control.validate.Validation_Package_References.Validation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Validation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.control.validate.Validation_Package_References."=";
+   function Java_Box (Value : Validation_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.control.validate.Validation_Package_References.Java_Box;
+   function Java_Unbox_Validation_Access_Array_Access_Array (Value : access Java_Object'Class) return Validation_Access_Array_Access_Array_Access renames org.allbinary.logic.control.validate.Validation_Package_References.Java_Unbox_Validation_Access_Array_Access_Array;
 
    type Validation is new Java_Object and ValidationInterface with record
       commonStrings : CommonStrings_Access;

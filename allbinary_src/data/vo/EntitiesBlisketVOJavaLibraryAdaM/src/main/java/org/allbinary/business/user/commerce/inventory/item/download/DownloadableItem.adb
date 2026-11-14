@@ -158,21 +158,21 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
         calendar := Calendar_Package.getInstance;
         time := To_Unbounded_String (Java_Image (calendar.getTimeInMillis));
         values := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        values.add (DownloadableItem'Class (This).getId);
-        values.add (This.basicItemId);
-        values.add (This.enabled);
-        values.add (DownloadableItem'Class (This).getSpecialName);
-        values.add (DownloadableItem'Class (This).getVersion);
-        values.add (DownloadableItem'Class (This).getChanges);
-        values.add (DownloadableItem'Class (This).getSystem);
-        values.add (DownloadableItem'Class (This).getPlatform);
-        values.add (DownloadableItem'Class (This).getLicenseFile);
-        values.add (DownloadableItem'Class (This).getFile);
-        values.add (DownloadableItem'Class (This).getSize.toString);
-        values.add (DownloadableItem'Class (This).getValidTime.toString);
-        values.add (DownloadableItem'Class (This).getRetries);
-        values.add (time);
-        values.add (time);
+        values.add (Java_Box (DownloadableItem'Class (This).getId));
+        values.add (Java_Box (This.basicItemId));
+        values.add (Java_Box (This.enabled));
+        values.add (Java_Box (DownloadableItem'Class (This).getSpecialName));
+        values.add (Java_Box (DownloadableItem'Class (This).getVersion));
+        values.add (Java_Box (DownloadableItem'Class (This).getChanges));
+        values.add (Java_Box (DownloadableItem'Class (This).getSystem));
+        values.add (Java_Box (DownloadableItem'Class (This).getPlatform));
+        values.add (Java_Box (DownloadableItem'Class (This).getLicenseFile));
+        values.add (Java_Box (DownloadableItem'Class (This).getFile));
+        values.add (Java_Box (DownloadableItem'Class (This).getSize.toString));
+        values.add (Java_Box (DownloadableItem'Class (This).getValidTime.toString));
+        values.add (Java_Box (DownloadableItem'Class (This).getRetries));
+        values.add (Java_Box (time));
+        values.add (Java_Box (time));
         return values;
    end toVector;
 
@@ -181,7 +181,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
       calendar : Calendar_Access;
       time : Unbounded_String;
    begin
-        values := StdUtil_Package.getInstance.createHashMap;
+        values := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         values.put (DownloadItemData_Package.ID, Java_Box (DownloadableItem'Class (This).getId));
         values.put (BasicItemData_Package.getInstance.ID, Java_Box (This.basicItemId));
         values.put (EntryData_Package.getInstance.ENABLE, Java_Box (This.enabled));

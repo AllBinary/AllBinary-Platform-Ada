@@ -46,7 +46,7 @@ package body org.allbinary.input.AllBinarySensorManager_Package is
 
    function getInstance return AllBinarySensorManager_Access is
    begin
-        if (AllBinarySensorManager_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (AllBinarySensorManager_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             AllBinarySensorManager_Package.instance := Java_Object_Access (AllBinarySensorManager_Package.Create);
         end if;
         return AllBinarySensorManager_Access (AllBinarySensorManager_Package.instance);

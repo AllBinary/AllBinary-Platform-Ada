@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package;
 package org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package_References is
    type UserEmailConfiguration_Access is access all org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package.UserEmailConfiguration'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfi
    type UserEmailConfiguration_Access_Array_Access is access all UserEmailConfiguration_Access_Array;
    type UserEmailConfiguration_Access_Array_Access_Array is array (Natural range <>) of UserEmailConfiguration_Access_Array_Access;
    type UserEmailConfiguration_Access_Array_Access_Array_Access is access all UserEmailConfiguration_Access_Array_Access_Array;
+   type UserEmailConfiguration_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UserEmailConfiguration_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UserEmailConfiguration_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UserEmailConfiguration_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UserEmailConfiguration_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UserEmailConfiguration_Access_Array_Access is (if Value /= null and then Value.all in UserEmailConfiguration_Access_Array_Object'Class then UserEmailConfiguration_Access_Array_Object'Class (Value.all).Value else null);
+   type UserEmailConfiguration_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : UserEmailConfiguration_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : UserEmailConfiguration_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new UserEmailConfiguration_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_UserEmailConfiguration_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return UserEmailConfiguration_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in UserEmailConfiguration_Access_Array_Access_Array_Object'Class then UserEmailConfiguration_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package_References;
 
 with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package_References;
@@ -86,10 +97,14 @@ package org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfi
    function "=" (Left, Right : UserEmailConfiguration_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package_References."=";
    subtype UserEmailConfiguration_Access_Array_Access is org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package_References.UserEmailConfiguration_Access_Array_Access;
    function "=" (Left, Right : UserEmailConfiguration_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package_References."=";
+   function Java_Box (Value : UserEmailConfiguration_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package_References.Java_Box;
+   function Java_Unbox_UserEmailConfiguration_Access_Array (Value : access Java_Object'Class) return UserEmailConfiguration_Access_Array_Access renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package_References.Java_Unbox_UserEmailConfiguration_Access_Array;
    subtype UserEmailConfiguration_Access_Array_Access_Array is org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package_References.UserEmailConfiguration_Access_Array_Access_Array;
    function "=" (Left, Right : UserEmailConfiguration_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package_References."=";
    subtype UserEmailConfiguration_Access_Array_Access_Array_Access is org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package_References.UserEmailConfiguration_Access_Array_Access_Array_Access;
    function "=" (Left, Right : UserEmailConfiguration_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package_References."=";
+   function Java_Box (Value : UserEmailConfiguration_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package_References.Java_Box;
+   function Java_Unbox_UserEmailConfiguration_Access_Array_Access_Array (Value : access Java_Object'Class) return UserEmailConfiguration_Access_Array_Access_Array_Access renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfiguration_Package_References.Java_Unbox_UserEmailConfiguration_Access_Array_Access_Array;
 
    type UserEmailConfiguration is new Java_Object and UserEmailConfigurationInterface with record
       logUtil : LogUtil_Access;

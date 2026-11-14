@@ -55,7 +55,7 @@ package body org.allbinary.business.user.commerce.money.payment.types.Transactio
 
    function getInstance return TransactionTypeFactory_Access is
    begin
-        return TransactionTypeFactory_Access (TransactionTypeFactory_Package.instance);
+        return TransactionTypeFactory_Package.instance;
    end getInstance;
 
 begin

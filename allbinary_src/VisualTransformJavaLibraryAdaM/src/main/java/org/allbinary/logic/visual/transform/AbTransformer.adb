@@ -23,6 +23,8 @@ with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformI
 with org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package; use org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -37,6 +39,8 @@ package body org.allbinary.logic.visual.transform.AbTransformer_Package is
    package XslHelper_Package renames Standard.org.allbinary.data.tree.dom.XslHelper_Package;
    package TransformInfoObjectConfigGenerator_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGenerator_Package;
    package TransformInfoObjectConfigGeneratorFactory_Package renames Standard.org.allbinary.logic.visual.transform.info.objectConfig.generator.TransformInfoObjectConfigGeneratorFactory_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -130,14 +134,14 @@ package body org.allbinary.logic.visual.transform.AbTransformer_Package is
       transformInfoObjectConfigGeneratorInterface : TransformInfoObjectConfigGenerator_Access;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XMLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.XMLLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("xml: " & ASCII.LF & "") & xmlDocumentStr, AbTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("translate(String xmlDocumentStr)"));
             end if;
             if (AbTransformer'Class (This).getURIResolver) = (null) then
                 Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No URIResolver")));
             end if;
             result := XslHelper_Package.getInstance.translate (AbTransformer'Class (This).getURIResolver, StreamSource_Package.Create (AbTransformer'Class (This).getInputStream), StreamSource_Package.Create (StringBufferInputStream_Package.Create (xmlDocumentStr)));
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.XSLLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("translated xml: ") & result, AbTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("translate(String xmlDocumentStr)"));
             end if;
             transformInfoObjectConfigGeneratorInterface := TransformInfoObjectConfigGeneratorFactory_Package.getInstance.getInstance (AbTransformer'Class (This).getTransformInfoInterface);
@@ -147,7 +151,7 @@ package body org.allbinary.logic.visual.transform.AbTransformer_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEWERROR) then
                 This.logUtil.put (This.transformInfoInterface.log, AbTransformer_Access'(This'Unchecked_Access), To_Unbounded_String ("translate(document)"), e);
             end if;
             Java_Throw (e);

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package;
 package org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package_References is
    type AnalogControllerConfigurationEventHandler_Access is access all org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package.AnalogControllerConfigurationEventHandler'Class;
@@ -19,6 +20,16 @@ package org.allbinary.android.input.motion.event.AnalogControllerConfigurationEv
    type AnalogControllerConfigurationEventHandler_Access_Array_Access is access all AnalogControllerConfigurationEventHandler_Access_Array;
    type AnalogControllerConfigurationEventHandler_Access_Array_Access_Array is array (Natural range <>) of AnalogControllerConfigurationEventHandler_Access_Array_Access;
    type AnalogControllerConfigurationEventHandler_Access_Array_Access_Array_Access is access all AnalogControllerConfigurationEventHandler_Access_Array_Access_Array;
+   type AnalogControllerConfigurationEventHandler_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AnalogControllerConfigurationEventHandler_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AnalogControllerConfigurationEventHandler_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AnalogControllerConfigurationEventHandler_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AnalogControllerConfigurationEventHandler_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AnalogControllerConfigurationEventHandler_Access_Array_Access is (if Value /= null and then Value.all in AnalogControllerConfigurationEventHandler_Access_Array_Object'Class then AnalogControllerConfigurationEventHandler_Access_Array_Object'Class (Value.all).Value else null);
+   type AnalogControllerConfigurationEventHandler_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AnalogControllerConfigurationEventHandler_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AnalogControllerConfigurationEventHandler_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AnalogControllerConfigurationEventHandler_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AnalogControllerConfigurationEventHandler_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AnalogControllerConfigurationEventHandler_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AnalogControllerConfigurationEventHandler_Access_Array_Access_Array_Object'Class then AnalogControllerConfigurationEventHandler_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package_References;
 
 with org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package_References;
@@ -97,10 +108,14 @@ package org.allbinary.android.input.motion.event.AnalogControllerConfigurationEv
    function "=" (Left, Right : AnalogControllerConfigurationEventHandler_Access_Array) return Boolean renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package_References."=";
    subtype AnalogControllerConfigurationEventHandler_Access_Array_Access is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package_References.AnalogControllerConfigurationEventHandler_Access_Array_Access;
    function "=" (Left, Right : AnalogControllerConfigurationEventHandler_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package_References."=";
+   function Java_Box (Value : AnalogControllerConfigurationEventHandler_Access_Array_Access) return Java_Object_Access renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package_References.Java_Box;
+   function Java_Unbox_AnalogControllerConfigurationEventHandler_Access_Array (Value : access Java_Object'Class) return AnalogControllerConfigurationEventHandler_Access_Array_Access renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package_References.Java_Unbox_AnalogControllerConfigurationEventHandler_Access_Array;
    subtype AnalogControllerConfigurationEventHandler_Access_Array_Access_Array is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package_References.AnalogControllerConfigurationEventHandler_Access_Array_Access_Array;
    function "=" (Left, Right : AnalogControllerConfigurationEventHandler_Access_Array_Access_Array) return Boolean renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package_References."=";
    subtype AnalogControllerConfigurationEventHandler_Access_Array_Access_Array_Access is org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package_References.AnalogControllerConfigurationEventHandler_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AnalogControllerConfigurationEventHandler_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package_References."=";
+   function Java_Box (Value : AnalogControllerConfigurationEventHandler_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package_References.Java_Box;
+   function Java_Unbox_AnalogControllerConfigurationEventHandler_Access_Array_Access_Array (Value : access Java_Object'Class) return AnalogControllerConfigurationEventHandler_Access_Array_Access_Array_Access renames org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventHandler_Package_References.Java_Unbox_AnalogControllerConfigurationEventHandler_Access_Array_Access_Array;
 
    type AnalogControllerConfigurationEventHandler is new BasicEventHandler with record
       list : BasicArrayList_Access;

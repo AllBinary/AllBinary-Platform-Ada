@@ -19,6 +19,9 @@ with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.lo
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -37,6 +40,9 @@ package body admin.tags.PaymentProcessTag_Package is
    package PaymentProcessHelperFactory_Package renames Standard.admin.taghelpers.PaymentProcessHelperFactory_Package;
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -86,7 +92,7 @@ package body admin.tags.PaymentProcessTag_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.LICENSINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.LICENSINGERROR) then
                 This.PaymentProcessTag_Field_logUtil.put (To_Unbounded_String ("LicensingException"), PaymentProcessTag_Access'(This'Unchecked_Access), This.commonStrings.PROCESS, e);
             end if;
             Java_Throw (e);
@@ -98,9 +104,9 @@ package body admin.tags.PaymentProcessTag_Package is
    function doStartTag (This : in out PaymentProcessTag) return Integer is
    begin
         begin
-            if (((PaymentProcessTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR)) = (0)) or else ((PaymentProcessTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDERANDEVALBODY)) = (0))) or else ((PaymentProcessTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
+            if (((PaymentProcessTag'Class (This).getCommand.compareTo (GLOBALS2_Package.AUTHORIZEORDEREVALBODYONERROR)) = (0)) or else ((PaymentProcessTag'Class (This).getCommand.compareTo (GLOBALS2_Package.AUTHORIZEORDERANDEVALBODY)) = (0))) or else ((PaymentProcessTag'Class (This).getCommand.compareTo (GLOBALS2_Package.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
                 This.pageContext.getOut.print (PaymentProcessTag'Class (This).process & To_Unbounded_String ("<br />"));
-                if (PaymentProcessTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEORDEREVALBODYONERROR)) = (0) then
+                if (PaymentProcessTag'Class (This).getCommand.compareTo (GLOBALS2_Package.AUTHORIZEORDEREVALBODYONERROR)) = (0) then
                     return This.SKIP_BODY;
                 else
                     return This.EVAL_BODY_INCLUDE;

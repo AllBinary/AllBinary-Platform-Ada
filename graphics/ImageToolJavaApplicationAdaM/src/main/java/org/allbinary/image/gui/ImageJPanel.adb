@@ -89,7 +89,6 @@ package body org.allbinary.image.gui.ImageJPanel_Package is
    procedure Initialize (This : in out ImageJPanel'Class; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is
       bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
-      JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         ImageJPanel'Class (This).initComponents;
         This.bufferedImage := bufferedImage;
@@ -118,8 +117,8 @@ package body org.allbinary.image.gui.ImageJPanel_Package is
    begin
         layout := GroupLayout_Package.Create (ImageJPanel_Access'(This'Unchecked_Access));
         ImageJPanel'Class (This).setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 400, Short_Integer'Last));
-        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGap (0, 300, Short_Integer'Last));
+        layout.setHorizontalGroup (layout.createParallelGroup (GroupLayout_Package.Alignment.LEADING).addGap (0, 400, Short_Integer'Last));
+        layout.setVerticalGroup (layout.createParallelGroup (GroupLayout_Package.Alignment.LEADING).addGap (0, 300, Short_Integer'Last));
    end initComponents;
 
 end org.allbinary.image.gui.ImageJPanel_Package;

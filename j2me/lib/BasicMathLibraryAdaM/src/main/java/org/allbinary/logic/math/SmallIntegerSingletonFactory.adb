@@ -46,7 +46,7 @@ package body org.allbinary.logic.math.SmallIntegerSingletonFactory_Package is
 
    function getInstance return SmallIntegerSingletonFactory_Access is
    begin
-        return SmallIntegerSingletonFactory_Access (SmallIntegerSingletonFactory_Package.instance);
+        return SmallIntegerSingletonFactory_Package.instance;
    end getInstance;
 
    function getMin (This : in out SmallIntegerSingletonFactory) return Integer is

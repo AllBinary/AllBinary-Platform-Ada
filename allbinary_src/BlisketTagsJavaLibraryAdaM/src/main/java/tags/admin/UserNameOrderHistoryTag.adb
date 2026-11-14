@@ -15,6 +15,7 @@
 
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -32,6 +33,7 @@ with tags.ValidationTransformTag_Package;
 package body tags.admin.UserNameOrderHistoryTag_Package is
 
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    procedure Initialize_Fields (This : in out UserNameOrderHistoryTag'Class) is
    begin
       null;
@@ -64,7 +66,7 @@ package body tags.admin.UserNameOrderHistoryTag_Package is
             UserNameOrderHistoryTag'Class (This).setName (To_Unbounded_String ("Range Order History View"));
             UserNameOrderHistoryTag'Class (This).setObjectFile (To_Unbounded_String ("views.admin.orderhistory.UserNameOrderHistoryView"));
             if (UserNameOrderHistoryTag'Class (This).getCommand) /= (null) then
-                if (UserNameOrderHistoryTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                if (UserNameOrderHistoryTag'Class (This).getCommand.compareTo (GLOBALS2_Package.VIEW)) = (0) then
                     null;
                 else
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (UserNameOrderHistoryTag'Class (This).getCommand)));

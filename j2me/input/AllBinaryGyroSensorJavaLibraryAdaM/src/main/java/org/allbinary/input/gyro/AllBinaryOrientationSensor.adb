@@ -20,12 +20,18 @@ with org.allbinary.input.AllBinarySensor_Package; use org.allbinary.input.AllBin
 with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.Orientation_Package;
 with org.allbinary.logic.math.Orientation_Package_References;
 with org.allbinary.logic.math.PrimitiveFloatUtil_Package; use org.allbinary.logic.math.PrimitiveFloatUtil_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEventListener_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.game.input.Input_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
@@ -89,6 +95,10 @@ package body org.allbinary.input.gyro.AllBinaryOrientationSensor_Package is
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
         return null;
    end getOrientation;
+
+begin
+   null;
+   NULL_ALLBINARY_ORIENTATION_SENSOR := AllBinaryOrientationSensor_Package.Create;
 
 end org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;
 

@@ -77,7 +77,6 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
 
    procedure Initialize (This : in out GenericProfileActionScriptJPanel'Class) is
    begin
-      JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, GenericProfileActionScriptJPanel_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         GenericProfileActionScriptJPanel'Class (This).initComponents;

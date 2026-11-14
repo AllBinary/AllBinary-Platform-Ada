@@ -73,7 +73,7 @@ package body org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package 
       xmlFile : constant AbFile_Access := AbFile_Access (xmlFile_Param);
    begin
         begin
-            return DomDocumentHelper_Package.create (AbFileInputStream_Package.Create (xmlFile));
+            return DomDocumentHelper_Package.create (AbFileInputStream_Package.createFromAbFile (xmlFile));
         exception
             when Java_Occurrence : others =>
                 declare

@@ -67,7 +67,7 @@ package body org.allbinary.business.user.role.BasicUserRoles_Package is
 
    function getInstance return BasicUserRoles_Access is
    begin
-        return BasicUserRoles_Access (BasicUserRoles_Package.instance);
+        return BasicUserRoles_Package.instance;
    end getInstance;
 
    --  throws Exception

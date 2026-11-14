@@ -81,7 +81,7 @@ package body org.allbinary.game.configuration.event.GameFeatureEventHandler_Pack
 
    function getInstance return GameFeatureEventHandler_Access is
    begin
-        return GameFeatureEventHandler_Access (GameFeatureEventHandler_Package.gameKeyEventHandler);
+        return GameFeatureEventHandler_Package.gameKeyEventHandler;
    end getInstance;
 
    --  throws Exception

@@ -38,7 +38,7 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
 
    function getInstance return OpenGLUtil_Access is
    begin
-        return OpenGLUtil_Access (OpenGLUtil_Package.instance);
+        return OpenGLUtil_Package.instance;
    end getInstance;
 
    function addImage (This : in out OpenGLUtil; image_Param : access Image_Package.Image'Class) return Image_Access is

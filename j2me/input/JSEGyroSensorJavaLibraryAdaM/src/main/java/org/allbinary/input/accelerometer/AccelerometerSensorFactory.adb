@@ -19,17 +19,26 @@ with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package; use org.allbin
 with org.allbinary.input.gyro.AllBinaryOrientationSensor_Package_References;
 with org.allbinary.input.accelerometer.NoAccelerometerSensor_Package; use org.allbinary.input.accelerometer.NoAccelerometerSensor_Package;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.input.AllBinarySensor_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;
+with org.allbinary.game.input.CompleteMotionGestureInputEventListenerInterface_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.configuration.feature.Feature_Package;
+with org.allbinary.game.input.Input_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.input.motion.gesture.MotionGestureInput_Package;
+with org.allbinary.input.accelerometer.NoAccelerometerSensor_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.math.Orientation_Package;
 with org.allbinary.game.configuration.feature.SensorFeature_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
@@ -79,7 +88,7 @@ package body org.allbinary.input.accelerometer.AccelerometerSensorFactory_Packag
         elsif features.isFeature (sensorFeatureFactory.SIMULATED_ORIENTATION_SENSORS) then
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Simulation Sensors")));
         elsif features.isFeature (sensorFeatureFactory.NO_ORIENTATION) then
-            AccelerometerSensorFactory_Package.allBinaryAccelerometerSensor := NoAccelerometerSensor_Package.Create;
+            AccelerometerSensorFactory_Package.allBinaryAccelerometerSensor := AllBinaryOrientationSensor_Access (NoAccelerometerSensor_Package.Create);
         else
             Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not Such SensorFeature")));
         end if;
@@ -87,7 +96,7 @@ package body org.allbinary.input.accelerometer.AccelerometerSensorFactory_Packag
 
    function getInstance return AllBinaryOrientationSensor_Access is
    begin
-        return AllBinaryOrientationSensor_Access (AccelerometerSensorFactory_Package.allBinaryAccelerometerSensor);
+        return AccelerometerSensorFactory_Package.allBinaryAccelerometerSensor;
    end getInstance;
 
 begin

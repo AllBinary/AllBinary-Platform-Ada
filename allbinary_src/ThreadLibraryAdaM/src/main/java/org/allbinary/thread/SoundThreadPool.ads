@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.thread.SoundThreadPool_Package;
 package org.allbinary.thread.SoundThreadPool_Package_References is
    type SoundThreadPool_Access is access all org.allbinary.thread.SoundThreadPool_Package.SoundThreadPool'Class;
@@ -19,6 +20,16 @@ package org.allbinary.thread.SoundThreadPool_Package_References is
    type SoundThreadPool_Access_Array_Access is access all SoundThreadPool_Access_Array;
    type SoundThreadPool_Access_Array_Access_Array is array (Natural range <>) of SoundThreadPool_Access_Array_Access;
    type SoundThreadPool_Access_Array_Access_Array_Access is access all SoundThreadPool_Access_Array_Access_Array;
+   type SoundThreadPool_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SoundThreadPool_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SoundThreadPool_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SoundThreadPool_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SoundThreadPool_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SoundThreadPool_Access_Array_Access is (if Value /= null and then Value.all in SoundThreadPool_Access_Array_Object'Class then SoundThreadPool_Access_Array_Object'Class (Value.all).Value else null);
+   type SoundThreadPool_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SoundThreadPool_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SoundThreadPool_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SoundThreadPool_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SoundThreadPool_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SoundThreadPool_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SoundThreadPool_Access_Array_Access_Array_Object'Class then SoundThreadPool_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.thread.SoundThreadPool_Package_References;
 
 with org.allbinary.thread.SoundThreadPool_Package_References;
@@ -56,10 +67,14 @@ package org.allbinary.thread.SoundThreadPool_Package is
    function "=" (Left, Right : SoundThreadPool_Access_Array) return Boolean renames org.allbinary.thread.SoundThreadPool_Package_References."=";
    subtype SoundThreadPool_Access_Array_Access is org.allbinary.thread.SoundThreadPool_Package_References.SoundThreadPool_Access_Array_Access;
    function "=" (Left, Right : SoundThreadPool_Access_Array_Access) return Boolean renames org.allbinary.thread.SoundThreadPool_Package_References."=";
+   function Java_Box (Value : SoundThreadPool_Access_Array_Access) return Java_Object_Access renames org.allbinary.thread.SoundThreadPool_Package_References.Java_Box;
+   function Java_Unbox_SoundThreadPool_Access_Array (Value : access Java_Object'Class) return SoundThreadPool_Access_Array_Access renames org.allbinary.thread.SoundThreadPool_Package_References.Java_Unbox_SoundThreadPool_Access_Array;
    subtype SoundThreadPool_Access_Array_Access_Array is org.allbinary.thread.SoundThreadPool_Package_References.SoundThreadPool_Access_Array_Access_Array;
    function "=" (Left, Right : SoundThreadPool_Access_Array_Access_Array) return Boolean renames org.allbinary.thread.SoundThreadPool_Package_References."=";
    subtype SoundThreadPool_Access_Array_Access_Array_Access is org.allbinary.thread.SoundThreadPool_Package_References.SoundThreadPool_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SoundThreadPool_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.thread.SoundThreadPool_Package_References."=";
+   function Java_Box (Value : SoundThreadPool_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.thread.SoundThreadPool_Package_References.Java_Box;
+   function Java_Unbox_SoundThreadPool_Access_Array_Access_Array (Value : access Java_Object'Class) return SoundThreadPool_Access_Array_Access_Array_Access renames org.allbinary.thread.SoundThreadPool_Package_References.Java_Unbox_SoundThreadPool_Access_Array_Access_Array;
 
    type SoundThreadPool is new Java_Object with null record;
    instance : ThreadPool_Access;

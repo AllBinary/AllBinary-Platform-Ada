@@ -59,7 +59,7 @@ package body org.allbinary.media.image.MirrorImageUtil_Package is
 
    function getInstance return MirrorImageUtil_Access is
    begin
-        return MirrorImageUtil_Access (MirrorImageUtil_Package.instance);
+        return MirrorImageUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out MirrorImageUtil'Class) is

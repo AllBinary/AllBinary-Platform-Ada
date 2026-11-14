@@ -14,6 +14,7 @@
 
 
 with org.allbinary.init.Init_Package; use org.allbinary.init.Init_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
 
 package body org.allbinary.android.input.motion.button.TouchButtonAndroidResources_Package is
 
@@ -36,10 +37,10 @@ package body org.allbinary.android.input.motion.button.TouchButtonAndroidResourc
    end Create;
 
 
-   procedure init (This : in out TouchButtonAndroidResources) is
+   procedure init_Method (This : in out TouchButtonAndroidResources) is
    begin
         null;
-   end init;
+   end init_Method;
 
 end org.allbinary.android.input.motion.button.TouchButtonAndroidResources_Package;
 

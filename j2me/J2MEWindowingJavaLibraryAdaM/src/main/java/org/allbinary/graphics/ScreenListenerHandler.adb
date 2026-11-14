@@ -52,7 +52,7 @@ package body org.allbinary.graphics.ScreenListenerHandler_Package is
 
    function getInstance return ScreenListenerHandler_Access is
    begin
-        return ScreenListenerHandler_Access (ScreenListenerHandler_Package.instance);
+        return ScreenListenerHandler_Package.instance;
    end getInstance;
 
    procedure setListener (This : in out ScreenListenerHandler; screenListenerInterface_Param : access ScreenListenerInterface_Package.ScreenListenerInterface'Class) is

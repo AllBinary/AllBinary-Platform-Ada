@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package;
 package org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References is
    type DirectoryFileVisitor_Access is access all org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package.DirectoryFileVisitor'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_Refer
    type DirectoryFileVisitor_Access_Array_Access is access all DirectoryFileVisitor_Access_Array;
    type DirectoryFileVisitor_Access_Array_Access_Array is array (Natural range <>) of DirectoryFileVisitor_Access_Array_Access;
    type DirectoryFileVisitor_Access_Array_Access_Array_Access is access all DirectoryFileVisitor_Access_Array_Access_Array;
+   type DirectoryFileVisitor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DirectoryFileVisitor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DirectoryFileVisitor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DirectoryFileVisitor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DirectoryFileVisitor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DirectoryFileVisitor_Access_Array_Access is (if Value /= null and then Value.all in DirectoryFileVisitor_Access_Array_Object'Class then DirectoryFileVisitor_Access_Array_Object'Class (Value.all).Value else null);
+   type DirectoryFileVisitor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DirectoryFileVisitor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DirectoryFileVisitor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DirectoryFileVisitor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DirectoryFileVisitor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DirectoryFileVisitor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in DirectoryFileVisitor_Access_Array_Access_Array_Object'Class then DirectoryFileVisitor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References;
 
 with org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References;
@@ -50,10 +61,14 @@ package org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package is
    function "=" (Left, Right : DirectoryFileVisitor_Access_Array) return Boolean renames org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References."=";
    subtype DirectoryFileVisitor_Access_Array_Access is org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References.DirectoryFileVisitor_Access_Array_Access;
    function "=" (Left, Right : DirectoryFileVisitor_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References."=";
+   function Java_Box (Value : DirectoryFileVisitor_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References.Java_Box;
+   function Java_Unbox_DirectoryFileVisitor_Access_Array (Value : access Java_Object'Class) return DirectoryFileVisitor_Access_Array_Access renames org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References.Java_Unbox_DirectoryFileVisitor_Access_Array;
    subtype DirectoryFileVisitor_Access_Array_Access_Array is org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References.DirectoryFileVisitor_Access_Array_Access_Array;
    function "=" (Left, Right : DirectoryFileVisitor_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References."=";
    subtype DirectoryFileVisitor_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References.DirectoryFileVisitor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : DirectoryFileVisitor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References."=";
+   function Java_Box (Value : DirectoryFileVisitor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References.Java_Box;
+   function Java_Unbox_DirectoryFileVisitor_Access_Array_Access_Array (Value : access Java_Object'Class) return DirectoryFileVisitor_Access_Array_Access_Array_Access renames org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package_References.Java_Unbox_DirectoryFileVisitor_Access_Array_Access_Array;
 
    type DirectoryFileVisitor is new Java_Object and VisitorInterface and FileFilter with null record;
 

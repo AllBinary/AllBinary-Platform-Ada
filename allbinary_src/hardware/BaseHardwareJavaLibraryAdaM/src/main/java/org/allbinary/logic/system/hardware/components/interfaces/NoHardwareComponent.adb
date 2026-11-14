@@ -38,7 +38,7 @@ package body org.allbinary.logic.system.hardware.components.interfaces.NoHardwar
 
    function getInstance return NoHardwareComponent_Access is
    begin
-        return NoHardwareComponent_Access (NoHardwareComponent_Package.instance);
+        return NoHardwareComponent_Package.instance;
    end getInstance;
 
    function compareTo (This : in out NoHardwareComponent; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class) return Boolean is

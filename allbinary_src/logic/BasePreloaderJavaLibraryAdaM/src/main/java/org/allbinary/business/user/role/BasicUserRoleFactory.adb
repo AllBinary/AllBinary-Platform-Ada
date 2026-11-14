@@ -70,7 +70,7 @@ package body org.allbinary.business.user.role.BasicUserRoleFactory_Package is
 
    function getInstance return BasicUserRoleFactory_Access is
    begin
-        return BasicUserRoleFactory_Access (BasicUserRoleFactory_Package.instance);
+        return BasicUserRoleFactory_Package.instance;
    end getInstance;
 
 begin

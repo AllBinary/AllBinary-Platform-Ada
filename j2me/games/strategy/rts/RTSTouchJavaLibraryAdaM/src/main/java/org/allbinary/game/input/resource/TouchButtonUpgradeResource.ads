@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package;
 package org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_References is
    type TouchButtonUpgradeResource_Access is access all org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package.TouchButtonUpgradeResource'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_Ref
    type TouchButtonUpgradeResource_Access_Array_Access is access all TouchButtonUpgradeResource_Access_Array;
    type TouchButtonUpgradeResource_Access_Array_Access_Array is array (Natural range <>) of TouchButtonUpgradeResource_Access_Array_Access;
    type TouchButtonUpgradeResource_Access_Array_Access_Array_Access is access all TouchButtonUpgradeResource_Access_Array_Access_Array;
+   type TouchButtonUpgradeResource_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TouchButtonUpgradeResource_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TouchButtonUpgradeResource_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TouchButtonUpgradeResource_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TouchButtonUpgradeResource_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TouchButtonUpgradeResource_Access_Array_Access is (if Value /= null and then Value.all in TouchButtonUpgradeResource_Access_Array_Object'Class then TouchButtonUpgradeResource_Access_Array_Object'Class (Value.all).Value else null);
+   type TouchButtonUpgradeResource_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TouchButtonUpgradeResource_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TouchButtonUpgradeResource_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TouchButtonUpgradeResource_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TouchButtonUpgradeResource_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TouchButtonUpgradeResource_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TouchButtonUpgradeResource_Access_Array_Access_Array_Object'Class then TouchButtonUpgradeResource_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_References;
 
 with org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_References;
@@ -46,10 +57,14 @@ package org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package is
    function "=" (Left, Right : TouchButtonUpgradeResource_Access_Array) return Boolean renames org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_References."=";
    subtype TouchButtonUpgradeResource_Access_Array_Access is org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_References.TouchButtonUpgradeResource_Access_Array_Access;
    function "=" (Left, Right : TouchButtonUpgradeResource_Access_Array_Access) return Boolean renames org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_References."=";
+   function Java_Box (Value : TouchButtonUpgradeResource_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_References.Java_Box;
+   function Java_Unbox_TouchButtonUpgradeResource_Access_Array (Value : access Java_Object'Class) return TouchButtonUpgradeResource_Access_Array_Access renames org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_References.Java_Unbox_TouchButtonUpgradeResource_Access_Array;
    subtype TouchButtonUpgradeResource_Access_Array_Access_Array is org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_References.TouchButtonUpgradeResource_Access_Array_Access_Array;
    function "=" (Left, Right : TouchButtonUpgradeResource_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_References."=";
    subtype TouchButtonUpgradeResource_Access_Array_Access_Array_Access is org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_References.TouchButtonUpgradeResource_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TouchButtonUpgradeResource_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_References."=";
+   function Java_Box (Value : TouchButtonUpgradeResource_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_References.Java_Box;
+   function Java_Unbox_TouchButtonUpgradeResource_Access_Array_Access_Array (Value : access Java_Object'Class) return TouchButtonUpgradeResource_Access_Array_Access_Array_Access renames org.allbinary.game.input.resource.TouchButtonUpgradeResource_Package_References.Java_Unbox_TouchButtonUpgradeResource_Access_Array_Access_Array;
 
    type TouchButtonUpgradeResource is new TouchButtonResource with null record;
    instance : TouchButtonResource_Access;

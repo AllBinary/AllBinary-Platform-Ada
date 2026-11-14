@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package;
 package org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_References is
    type LifeInterfaceCompositeInterface_Access is access all org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package.LifeInterfaceCompositeInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_Refer
    type LifeInterfaceCompositeInterface_Access_Array_Access is access all LifeInterfaceCompositeInterface_Access_Array;
    type LifeInterfaceCompositeInterface_Access_Array_Access_Array is array (Natural range <>) of LifeInterfaceCompositeInterface_Access_Array_Access;
    type LifeInterfaceCompositeInterface_Access_Array_Access_Array_Access is access all LifeInterfaceCompositeInterface_Access_Array_Access_Array;
+   type LifeInterfaceCompositeInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LifeInterfaceCompositeInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LifeInterfaceCompositeInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LifeInterfaceCompositeInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LifeInterfaceCompositeInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LifeInterfaceCompositeInterface_Access_Array_Access is (if Value /= null and then Value.all in LifeInterfaceCompositeInterface_Access_Array_Object'Class then LifeInterfaceCompositeInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type LifeInterfaceCompositeInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LifeInterfaceCompositeInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LifeInterfaceCompositeInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LifeInterfaceCompositeInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LifeInterfaceCompositeInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LifeInterfaceCompositeInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in LifeInterfaceCompositeInterface_Access_Array_Access_Array_Object'Class then LifeInterfaceCompositeInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_References;
 
 with org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package is
    function "=" (Left, Right : LifeInterfaceCompositeInterface_Access_Array) return Boolean renames org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_References."=";
    subtype LifeInterfaceCompositeInterface_Access_Array_Access is org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_References.LifeInterfaceCompositeInterface_Access_Array_Access;
    function "=" (Left, Right : LifeInterfaceCompositeInterface_Access_Array_Access) return Boolean renames org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_References."=";
+   function Java_Box (Value : LifeInterfaceCompositeInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_References.Java_Box;
+   function Java_Unbox_LifeInterfaceCompositeInterface_Access_Array (Value : access Java_Object'Class) return LifeInterfaceCompositeInterface_Access_Array_Access renames org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_References.Java_Unbox_LifeInterfaceCompositeInterface_Access_Array;
    subtype LifeInterfaceCompositeInterface_Access_Array_Access_Array is org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_References.LifeInterfaceCompositeInterface_Access_Array_Access_Array;
    function "=" (Left, Right : LifeInterfaceCompositeInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_References."=";
    subtype LifeInterfaceCompositeInterface_Access_Array_Access_Array_Access is org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_References.LifeInterfaceCompositeInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LifeInterfaceCompositeInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_References."=";
+   function Java_Box (Value : LifeInterfaceCompositeInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_References.Java_Box;
+   function Java_Unbox_LifeInterfaceCompositeInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return LifeInterfaceCompositeInterface_Access_Array_Access_Array_Access renames org.allbinary.game.ag.life.LifeInterfaceCompositeInterface_Package_References.Java_Unbox_LifeInterfaceCompositeInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_LifeInterfaceCompositeInterface (Value : LifeInterfaceCompositeInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function getLifeInterface (This : in out LifeInterfaceCompositeInterface) return Life_Access is abstract;
 

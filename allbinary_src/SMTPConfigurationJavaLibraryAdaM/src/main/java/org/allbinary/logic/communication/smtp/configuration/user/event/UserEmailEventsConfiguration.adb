@@ -27,6 +27,8 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventConfigurationInterface_Package_References;
 with org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventListenerFactory_Package; use org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventListenerFactory_Package;
@@ -60,6 +62,8 @@ with org.allbinary.logic.communication.http.request.session.WeblisketSessionInte
 package body org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package is
 
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype UserInterface_Access is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access;
    function "=" (Left, Right : UserInterface_Access) return Boolean renames org.allbinary.business.user.UserInterface_Package_References."=";
    subtype UserInterface_Access_Array is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access_Array;
@@ -168,8 +172,8 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
 
    procedure init (This : in out UserEmailEventsConfiguration) is
    begin
-        This.emailEventHashMap := StdUtil_Package.getInstance.createHashMap;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+        This.emailEventHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
             This.logUtil.putF (This.commonStrings.CONSTRUCTOR, UserEmailEventsConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String (" Constructor"));
         end if;
    end init;
@@ -182,10 +186,10 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    procedure addUserEmailEventConfiguration (This : in out UserEmailEventsConfiguration; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface_Package.UserEmailEventConfigurationInterface'Class) is
       userEmailEventConfigurationInterface : constant UserEmailEventConfigurationInterface_Access := UserEmailEventConfigurationInterface_Access (userEmailEventConfigurationInterface_Param);
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("Adding: ") & userEmailEventConfigurationInterface.log, UserEmailEventsConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("addUserEmailEventConfiguration"));
         end if;
-        This.emailEventHashMap.put (Java_Box (userEmailEventConfigurationInterface.getName), userEmailEventConfigurationInterface);
+        This.emailEventHashMap.put (Java_Box (userEmailEventConfigurationInterface.getName), UserEmailEventConfigurationInterface_Package.Java_Object_Access_From_UserEmailEventConfigurationInterface (userEmailEventConfigurationInterface));
    end addUserEmailEventConfiguration;
 
    --  throws Exception

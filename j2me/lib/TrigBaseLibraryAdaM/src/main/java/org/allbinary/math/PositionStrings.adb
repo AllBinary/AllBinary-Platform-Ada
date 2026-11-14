@@ -50,7 +50,7 @@ package body org.allbinary.math.PositionStrings_Package is
 
    function getInstance return PositionStrings_Access is
    begin
-        return PositionStrings_Access (PositionStrings_Package.instance);
+        return PositionStrings_Package.instance;
    end getInstance;
 
 begin

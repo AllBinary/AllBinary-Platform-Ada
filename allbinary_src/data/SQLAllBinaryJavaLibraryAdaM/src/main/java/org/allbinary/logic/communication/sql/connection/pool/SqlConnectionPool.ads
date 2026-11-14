@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package;
 package org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References is
    type SqlConnectionPool_Access is access all org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package.SqlConnectionPool'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_
    type SqlConnectionPool_Access_Array_Access is access all SqlConnectionPool_Access_Array;
    type SqlConnectionPool_Access_Array_Access_Array is array (Natural range <>) of SqlConnectionPool_Access_Array_Access;
    type SqlConnectionPool_Access_Array_Access_Array_Access is access all SqlConnectionPool_Access_Array_Access_Array;
+   type SqlConnectionPool_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SqlConnectionPool_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SqlConnectionPool_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SqlConnectionPool_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SqlConnectionPool_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SqlConnectionPool_Access_Array_Access is (if Value /= null and then Value.all in SqlConnectionPool_Access_Array_Object'Class then SqlConnectionPool_Access_Array_Object'Class (Value.all).Value else null);
+   type SqlConnectionPool_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SqlConnectionPool_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SqlConnectionPool_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SqlConnectionPool_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SqlConnectionPool_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SqlConnectionPool_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SqlConnectionPool_Access_Array_Access_Array_Object'Class then SqlConnectionPool_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References;
 
 with org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References;
@@ -75,10 +86,14 @@ package org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_
    function "=" (Left, Right : SqlConnectionPool_Access_Array) return Boolean renames org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References."=";
    subtype SqlConnectionPool_Access_Array_Access is org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References.SqlConnectionPool_Access_Array_Access;
    function "=" (Left, Right : SqlConnectionPool_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References."=";
+   function Java_Box (Value : SqlConnectionPool_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References.Java_Box;
+   function Java_Unbox_SqlConnectionPool_Access_Array (Value : access Java_Object'Class) return SqlConnectionPool_Access_Array_Access renames org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References.Java_Unbox_SqlConnectionPool_Access_Array;
    subtype SqlConnectionPool_Access_Array_Access_Array is org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References.SqlConnectionPool_Access_Array_Access_Array;
    function "=" (Left, Right : SqlConnectionPool_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References."=";
    subtype SqlConnectionPool_Access_Array_Access_Array_Access is org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References.SqlConnectionPool_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SqlConnectionPool_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References."=";
+   function Java_Box (Value : SqlConnectionPool_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References.Java_Box;
+   function Java_Unbox_SqlConnectionPool_Access_Array_Access_Array (Value : access Java_Object'Class) return SqlConnectionPool_Access_Array_Access_Array_Access renames org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package_References.Java_Unbox_SqlConnectionPool_Access_Array_Access_Array;
 
    type SqlConnectionPool is new Java_Object with record
       logUtil : LogUtil_Access;

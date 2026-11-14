@@ -1,5 +1,6 @@
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.advertisement.GameAdStateFactory_Package;
 package org.allbinary.business.advertisement.GameAdStateFactory_Package_References is
    type GameAdStateFactory_Access is access all org.allbinary.business.advertisement.GameAdStateFactory_Package.GameAdStateFactory'Class;
@@ -7,6 +8,16 @@ package org.allbinary.business.advertisement.GameAdStateFactory_Package_Referenc
    type GameAdStateFactory_Access_Array_Access is access all GameAdStateFactory_Access_Array;
    type GameAdStateFactory_Access_Array_Access_Array is array (Natural range <>) of GameAdStateFactory_Access_Array_Access;
    type GameAdStateFactory_Access_Array_Access_Array_Access is access all GameAdStateFactory_Access_Array_Access_Array;
+   type GameAdStateFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameAdStateFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameAdStateFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameAdStateFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameAdStateFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameAdStateFactory_Access_Array_Access is (if Value /= null and then Value.all in GameAdStateFactory_Access_Array_Object'Class then GameAdStateFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type GameAdStateFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameAdStateFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameAdStateFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameAdStateFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameAdStateFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameAdStateFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GameAdStateFactory_Access_Array_Access_Array_Object'Class then GameAdStateFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.advertisement.GameAdStateFactory_Package_References;
 
 with org.allbinary.business.advertisement.GameAdStateFactory_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.business.advertisement.GameAdStateFactory_Package is
    function "=" (Left, Right : GameAdStateFactory_Access_Array) return Boolean renames org.allbinary.business.advertisement.GameAdStateFactory_Package_References."=";
    subtype GameAdStateFactory_Access_Array_Access is org.allbinary.business.advertisement.GameAdStateFactory_Package_References.GameAdStateFactory_Access_Array_Access;
    function "=" (Left, Right : GameAdStateFactory_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.GameAdStateFactory_Package_References."=";
+   function Java_Box (Value : GameAdStateFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.advertisement.GameAdStateFactory_Package_References.Java_Box;
+   function Java_Unbox_GameAdStateFactory_Access_Array (Value : access Java_Object'Class) return GameAdStateFactory_Access_Array_Access renames org.allbinary.business.advertisement.GameAdStateFactory_Package_References.Java_Unbox_GameAdStateFactory_Access_Array;
    subtype GameAdStateFactory_Access_Array_Access_Array is org.allbinary.business.advertisement.GameAdStateFactory_Package_References.GameAdStateFactory_Access_Array_Access_Array;
    function "=" (Left, Right : GameAdStateFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.GameAdStateFactory_Package_References."=";
    subtype GameAdStateFactory_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.GameAdStateFactory_Package_References.GameAdStateFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GameAdStateFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.GameAdStateFactory_Package_References."=";
+   function Java_Box (Value : GameAdStateFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.advertisement.GameAdStateFactory_Package_References.Java_Box;
+   function Java_Unbox_GameAdStateFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return GameAdStateFactory_Access_Array_Access_Array_Access renames org.allbinary.business.advertisement.GameAdStateFactory_Package_References.Java_Unbox_GameAdStateFactory_Access_Array_Access_Array;
 
    type GameAdStateFactory is new Java_Object and GameAdStateFactoryInterface with record
       gameAdStateArray : GameAdState_Access_Array_Access;

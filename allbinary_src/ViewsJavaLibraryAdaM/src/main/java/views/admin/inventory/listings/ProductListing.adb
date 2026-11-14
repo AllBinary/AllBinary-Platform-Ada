@@ -59,14 +59,21 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with views.generic_Id.inventory.InventoryColumnUtil_Package; use views.generic_Id.inventory.InventoryColumnUtil_Package;
 with views.generic_Id.inventory.InventorySearchUtil_Package; use views.generic_Id.inventory.InventorySearchUtil_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
@@ -95,6 +102,8 @@ package body views.admin.inventory.listings.ProductListing_Package is
    package CommonSeps_Package renames Standard.org.allbinary.string_Id.CommonSeps_Package;
    package InventoryColumnUtil_Package renames Standard.views.generic_Id.inventory.InventoryColumnUtil_Package;
    package InventorySearchUtil_Package renames Standard.views.generic_Id.inventory.InventorySearchUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -268,7 +277,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
       newFile : AbFile_Access;
       idOutData : AbDataOutputStream_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STATICPAGEGENERATIONLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.STATICPAGEGENERATIONLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("Creating File: ") & file, ProductListing_Access'(This'Unchecked_Access), To_Unbounded_String ("generateAll()"));
         end if;
         newFile := AbFile_Package.createAbFile (file);
@@ -281,7 +290,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
             idOutData.writeBytes (data);
             idOutData.flush;
             StreamUtil_Package.getInstance.close (idOutData);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STATICPAGEGENERATIONLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.STATICPAGEGENERATIONLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("Wrote Total Bytes: ") & Java_Image (newFile.length), ProductListing_Access'(This'Unchecked_Access), To_Unbounded_String ("generateAll()"));
             end if;
         else
@@ -321,7 +330,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
             if (productListingPages (index)) = (Null_Unbounded_String) then
                 exit;
             end if;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STATICPAGEGENERATIONLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.STATICPAGEGENERATIONLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("Saving Listing: ") & Java_Image (index), ProductListing_Access'(This'Unchecked_Access), To_Unbounded_String ("generateAll()"));
             end if;
             indexStr := StringUtil_Package.getInstance.EMPTY_STRING;
@@ -361,9 +370,9 @@ package body views.admin.inventory.listings.ProductListing_Package is
             insertVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
             keywordData := Java_Unbox (keywordArray (index));
             fileName := Java_Unbox (keywordFilenameHashMap.get (Java_Box (keywordData)));
-            insertVector.add (storeFront.getName);
-            insertVector.add (keywordData);
-            insertVector.add (fileName);
+            insertVector.add (Java_Box (storeFront.getName));
+            insertVector.add (Java_Box (keywordData));
+            insertVector.add (Java_Box (fileName));
             This.staticPages.insert (insertVector);
         end loop;
    end addStaticPageInfoToDatabase;
@@ -390,13 +399,13 @@ package body views.admin.inventory.listings.ProductListing_Package is
             stringBuffer.append (AbPathData_Package.getInstance.SEPARATOR);
             stringBuffer.append (storeFront.getStaticPath);
             staticPath := AbPath_Package.Create (stringBuffer.toString, StringUtil_Package.getInstance.EMPTY_STRING);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.STATICPAGEGENERATIONLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.STATICPAGEGENERATIONLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("Store Static Pages Path: ") & Java_Image (staticPath), ProductListing_Access'(This'Unchecked_Access), To_Unbounded_String ("generateAll()"));
             end if;
             keywordHashSet := ProductListing'Class (This).getHashSet (storeFront);
             keywordArray := keywordHashSet.toArray;
             size := keywordArray'Length;
-            keywordFilenameHashMap := StdUtil_Package.getInstance.createHashMap;
+            keywordFilenameHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             if (size) = (0) then
                 stringBuffer.delete (0, stringBuffer.length);
                 stringBuffer.append (To_Unbounded_String ("Products For "));

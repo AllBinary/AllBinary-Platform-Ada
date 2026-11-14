@@ -50,7 +50,7 @@ package body org.allbinary.animation.image.ScaleBaseProcessor_Package is
 
    function getInstance return ScaleBaseProcessor_Access is
    begin
-        return ScaleBaseProcessor_Access (ScaleBaseProcessor_Package.instance);
+        return ScaleBaseProcessor_Package.instance;
    end getInstance;
 
    procedure update (This : in out ScaleBaseProcessor; originalImage_Param : access Image_Package.Image'Class; originalImageArray : Image_Access_Array_Access; imageToShowArray : Image_Access_Array_Access; index : Integer; scaleX : Float; scaleY : Float; maxScaleX : Float; maxScaleY : Float) is

@@ -72,7 +72,7 @@ package body org.allbinary.math.NoDecimalTrigTable_Package is
 
    function getInstance return NoDecimalTrigTable_Access is
    begin
-        return NoDecimalTrigTable_Access (NoDecimalTrigTable_Package.instance);
+        return NoDecimalTrigTable_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out NoDecimalTrigTable'Class) is

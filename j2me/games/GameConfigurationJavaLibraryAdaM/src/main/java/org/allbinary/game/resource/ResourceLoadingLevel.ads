@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.resource.ResourceLoadingLevel_Package;
 package org.allbinary.game.resource.ResourceLoadingLevel_Package_References is
    type ResourceLoadingLevel_Access is access all org.allbinary.game.resource.ResourceLoadingLevel_Package.ResourceLoadingLevel'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.resource.ResourceLoadingLevel_Package_References is
    type ResourceLoadingLevel_Access_Array_Access is access all ResourceLoadingLevel_Access_Array;
    type ResourceLoadingLevel_Access_Array_Access_Array is array (Natural range <>) of ResourceLoadingLevel_Access_Array_Access;
    type ResourceLoadingLevel_Access_Array_Access_Array_Access is access all ResourceLoadingLevel_Access_Array_Access_Array;
+   type ResourceLoadingLevel_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ResourceLoadingLevel_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ResourceLoadingLevel_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ResourceLoadingLevel_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ResourceLoadingLevel_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ResourceLoadingLevel_Access_Array_Access is (if Value /= null and then Value.all in ResourceLoadingLevel_Access_Array_Object'Class then ResourceLoadingLevel_Access_Array_Object'Class (Value.all).Value else null);
+   type ResourceLoadingLevel_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ResourceLoadingLevel_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ResourceLoadingLevel_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ResourceLoadingLevel_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ResourceLoadingLevel_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ResourceLoadingLevel_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ResourceLoadingLevel_Access_Array_Access_Array_Object'Class then ResourceLoadingLevel_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.resource.ResourceLoadingLevel_Package_References;
 
 with org.allbinary.game.resource.ResourceLoadingLevel_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.game.resource.ResourceLoadingLevel_Package is
    function "=" (Left, Right : ResourceLoadingLevel_Access_Array) return Boolean renames org.allbinary.game.resource.ResourceLoadingLevel_Package_References."=";
    subtype ResourceLoadingLevel_Access_Array_Access is org.allbinary.game.resource.ResourceLoadingLevel_Package_References.ResourceLoadingLevel_Access_Array_Access;
    function "=" (Left, Right : ResourceLoadingLevel_Access_Array_Access) return Boolean renames org.allbinary.game.resource.ResourceLoadingLevel_Package_References."=";
+   function Java_Box (Value : ResourceLoadingLevel_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.resource.ResourceLoadingLevel_Package_References.Java_Box;
+   function Java_Unbox_ResourceLoadingLevel_Access_Array (Value : access Java_Object'Class) return ResourceLoadingLevel_Access_Array_Access renames org.allbinary.game.resource.ResourceLoadingLevel_Package_References.Java_Unbox_ResourceLoadingLevel_Access_Array;
    subtype ResourceLoadingLevel_Access_Array_Access_Array is org.allbinary.game.resource.ResourceLoadingLevel_Package_References.ResourceLoadingLevel_Access_Array_Access_Array;
    function "=" (Left, Right : ResourceLoadingLevel_Access_Array_Access_Array) return Boolean renames org.allbinary.game.resource.ResourceLoadingLevel_Package_References."=";
    subtype ResourceLoadingLevel_Access_Array_Access_Array_Access is org.allbinary.game.resource.ResourceLoadingLevel_Package_References.ResourceLoadingLevel_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ResourceLoadingLevel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.resource.ResourceLoadingLevel_Package_References."=";
+   function Java_Box (Value : ResourceLoadingLevel_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.resource.ResourceLoadingLevel_Package_References.Java_Box;
+   function Java_Unbox_ResourceLoadingLevel_Access_Array_Access_Array (Value : access Java_Object'Class) return ResourceLoadingLevel_Access_Array_Access_Array_Access renames org.allbinary.game.resource.ResourceLoadingLevel_Package_References.Java_Unbox_ResourceLoadingLevel_Access_Array_Access_Array;
 
    type ResourceLoadingLevel is new Java_Object with record
       name : Unbounded_String;

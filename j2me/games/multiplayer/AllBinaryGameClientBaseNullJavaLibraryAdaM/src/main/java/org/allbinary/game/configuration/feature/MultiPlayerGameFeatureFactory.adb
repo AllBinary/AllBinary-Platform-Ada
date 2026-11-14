@@ -63,7 +63,7 @@ package body org.allbinary.game.configuration.feature.MultiPlayerGameFeatureFact
 
    function getInstance return MultiPlayerGameFeatureFactory_Access is
    begin
-        return MultiPlayerGameFeatureFactory_Access (MultiPlayerGameFeatureFactory_Package.instance);
+        return MultiPlayerGameFeatureFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out MultiPlayerGameFeatureFactory'Class) is

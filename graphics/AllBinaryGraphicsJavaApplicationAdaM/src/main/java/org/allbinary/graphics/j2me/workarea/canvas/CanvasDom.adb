@@ -29,6 +29,7 @@ with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Packag
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package; use org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.IntegerDimension_Package_References;
 with org.allbinary.graphics.j2me.workarea.canvas.Grid_Package; use org.allbinary.graphics.j2me.workarea.canvas.Grid_Package;
@@ -79,6 +80,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
    package LinesGraphicItem_Package renames Standard.org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
    subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
    function "=" (Left, Right : GPoint_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
    subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
@@ -185,7 +187,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
         This.dimension := IntegerDimension_Package.Create (0, 0);
         name := canvasNode.getNodeName;
         if (Java_Compare_To (name, CanvasDom_Package.FRAME)) = (0) then
-            This.graphicItemHashMap := StdUtil_Package.getInstance.createHashMap;
+            This.graphicItemHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             angleNode := DomHelper_Package.getInstance.searchNodeList (ROTATE, canvasNode.getChildNodes);
             angleTextNode := angleNode.getFirstChild;
             angle := Long_Float (angleTextNode.getNodeValue);

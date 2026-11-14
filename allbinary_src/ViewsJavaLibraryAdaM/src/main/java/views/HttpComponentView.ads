@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.HttpComponentView_Package;
 package views.HttpComponentView_Package_References is
    type HttpComponentView_Access is access all views.HttpComponentView_Package.HttpComponentView'Class;
@@ -19,6 +20,16 @@ package views.HttpComponentView_Package_References is
    type HttpComponentView_Access_Array_Access is access all HttpComponentView_Access_Array;
    type HttpComponentView_Access_Array_Access_Array is array (Natural range <>) of HttpComponentView_Access_Array_Access;
    type HttpComponentView_Access_Array_Access_Array_Access is access all HttpComponentView_Access_Array_Access_Array;
+   type HttpComponentView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HttpComponentView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HttpComponentView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HttpComponentView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HttpComponentView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HttpComponentView_Access_Array_Access is (if Value /= null and then Value.all in HttpComponentView_Access_Array_Object'Class then HttpComponentView_Access_Array_Object'Class (Value.all).Value else null);
+   type HttpComponentView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HttpComponentView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HttpComponentView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HttpComponentView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HttpComponentView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HttpComponentView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in HttpComponentView_Access_Array_Access_Array_Object'Class then HttpComponentView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.HttpComponentView_Package_References;
 
 with views.HttpComponentView_Package_References;
@@ -139,10 +150,14 @@ package views.HttpComponentView_Package is
    function "=" (Left, Right : HttpComponentView_Access_Array) return Boolean renames views.HttpComponentView_Package_References."=";
    subtype HttpComponentView_Access_Array_Access is views.HttpComponentView_Package_References.HttpComponentView_Access_Array_Access;
    function "=" (Left, Right : HttpComponentView_Access_Array_Access) return Boolean renames views.HttpComponentView_Package_References."=";
+   function Java_Box (Value : HttpComponentView_Access_Array_Access) return Java_Object_Access renames views.HttpComponentView_Package_References.Java_Box;
+   function Java_Unbox_HttpComponentView_Access_Array (Value : access Java_Object'Class) return HttpComponentView_Access_Array_Access renames views.HttpComponentView_Package_References.Java_Unbox_HttpComponentView_Access_Array;
    subtype HttpComponentView_Access_Array_Access_Array is views.HttpComponentView_Package_References.HttpComponentView_Access_Array_Access_Array;
    function "=" (Left, Right : HttpComponentView_Access_Array_Access_Array) return Boolean renames views.HttpComponentView_Package_References."=";
    subtype HttpComponentView_Access_Array_Access_Array_Access is views.HttpComponentView_Package_References.HttpComponentView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HttpComponentView_Access_Array_Access_Array_Access) return Boolean renames views.HttpComponentView_Package_References."=";
+   function Java_Box (Value : HttpComponentView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.HttpComponentView_Package_References.Java_Box;
+   function Java_Unbox_HttpComponentView_Access_Array_Access_Array (Value : access Java_Object'Class) return HttpComponentView_Access_Array_Access_Array_Access renames views.HttpComponentView_Package_References.Java_Unbox_HttpComponentView_Access_Array_Access_Array;
 
    type HttpComponentView is new TransformInfoHttpComposite and TransformInterface with record
       logUtil : LogUtil_Access;

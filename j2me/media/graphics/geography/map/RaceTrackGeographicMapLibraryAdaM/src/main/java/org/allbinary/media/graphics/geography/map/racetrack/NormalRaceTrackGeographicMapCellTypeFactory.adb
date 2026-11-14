@@ -27,7 +27,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.NormalRaceTrac
 
    function getInstance return NormalRaceTrackGeographicMapCellTypeFactory_Access is
    begin
-        return NormalRaceTrackGeographicMapCellTypeFactory_Access (NormalRaceTrackGeographicMapCellTypeFactory_Package.instanceC);
+        return NormalRaceTrackGeographicMapCellTypeFactory_Package.instanceC;
    end getInstance;
 
    procedure Initialize (This : in out NormalRaceTrackGeographicMapCellTypeFactory'Class) is

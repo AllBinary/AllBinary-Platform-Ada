@@ -110,7 +110,7 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryF
       Initialize_Fields (This);
         This.helpSetListenerInterface := helpSetListenerInterface;
         This.defaultListModelHelper := DefaultListModelHelper_Package.Create;
-        This.hashMap := StdUtil_Package.getInstance.createHashMap;
+        This.hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         collection := inputAutomationModuleConfigurations.getHashMap.values;
         iterator := collection.iterator;
         inputAutomationModuleConfiguration := null;
@@ -135,7 +135,7 @@ package body org.allbinary.input.automation.module.InputAutomationModuleFactoryF
       helpSet : HelpSet_Access;
       helpSetEvent : HelpSetEvent_Access;
    begin
-        inputAutomationModuleInterface := InputAutomationModuleFactoryInterface_Access (inputAutomationModuleConfiguration.getInputAutomationModuleInterface);
+        inputAutomationModuleInterface := inputAutomationModuleConfiguration.getInputAutomationModuleInterface;
         This.hashMap.put (Java_Box (inputAutomationModuleConfiguration.getName), inputAutomationModuleInterface);
         This.defaultListModelHelper.add (inputAutomationModuleConfiguration.getName);
         helpSet := inputAutomationModuleInterface.getHelpSet;

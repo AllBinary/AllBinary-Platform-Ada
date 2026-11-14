@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.advertisement.AdvertisementData_Package;
 package org.allbinary.business.advertisement.AdvertisementData_Package_References is
    type AdvertisementData_Access is access all org.allbinary.business.advertisement.AdvertisementData_Package.AdvertisementData'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.advertisement.AdvertisementData_Package_Reference
    type AdvertisementData_Access_Array_Access is access all AdvertisementData_Access_Array;
    type AdvertisementData_Access_Array_Access_Array is array (Natural range <>) of AdvertisementData_Access_Array_Access;
    type AdvertisementData_Access_Array_Access_Array_Access is access all AdvertisementData_Access_Array_Access_Array;
+   type AdvertisementData_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AdvertisementData_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AdvertisementData_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AdvertisementData_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AdvertisementData_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AdvertisementData_Access_Array_Access is (if Value /= null and then Value.all in AdvertisementData_Access_Array_Object'Class then AdvertisementData_Access_Array_Object'Class (Value.all).Value else null);
+   type AdvertisementData_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AdvertisementData_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AdvertisementData_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AdvertisementData_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AdvertisementData_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AdvertisementData_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AdvertisementData_Access_Array_Access_Array_Object'Class then AdvertisementData_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.advertisement.AdvertisementData_Package_References;
 
 with org.allbinary.business.advertisement.AdvertisementData_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.business.advertisement.AdvertisementData_Package is
    function "=" (Left, Right : AdvertisementData_Access_Array) return Boolean renames org.allbinary.business.advertisement.AdvertisementData_Package_References."=";
    subtype AdvertisementData_Access_Array_Access is org.allbinary.business.advertisement.AdvertisementData_Package_References.AdvertisementData_Access_Array_Access;
    function "=" (Left, Right : AdvertisementData_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.AdvertisementData_Package_References."=";
+   function Java_Box (Value : AdvertisementData_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.advertisement.AdvertisementData_Package_References.Java_Box;
+   function Java_Unbox_AdvertisementData_Access_Array (Value : access Java_Object'Class) return AdvertisementData_Access_Array_Access renames org.allbinary.business.advertisement.AdvertisementData_Package_References.Java_Unbox_AdvertisementData_Access_Array;
    subtype AdvertisementData_Access_Array_Access_Array is org.allbinary.business.advertisement.AdvertisementData_Package_References.AdvertisementData_Access_Array_Access_Array;
    function "=" (Left, Right : AdvertisementData_Access_Array_Access_Array) return Boolean renames org.allbinary.business.advertisement.AdvertisementData_Package_References."=";
    subtype AdvertisementData_Access_Array_Access_Array_Access is org.allbinary.business.advertisement.AdvertisementData_Package_References.AdvertisementData_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AdvertisementData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.advertisement.AdvertisementData_Package_References."=";
+   function Java_Box (Value : AdvertisementData_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.advertisement.AdvertisementData_Package_References.Java_Box;
+   function Java_Unbox_AdvertisementData_Access_Array_Access_Array (Value : access Java_Object'Class) return AdvertisementData_Access_Array_Access_Array_Access renames org.allbinary.business.advertisement.AdvertisementData_Package_References.Java_Unbox_AdvertisementData_Access_Array_Access_Array;
 
    type AdvertisementData is new Java_Object with record
       NAME : Unbounded_String;

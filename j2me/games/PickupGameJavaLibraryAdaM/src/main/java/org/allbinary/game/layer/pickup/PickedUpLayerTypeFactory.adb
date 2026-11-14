@@ -61,7 +61,7 @@ package body org.allbinary.game.layer.pickup.PickedUpLayerTypeFactory_Package is
 
    function getInstance return PickedUpLayerTypeFactory_Access is
    begin
-        return PickedUpLayerTypeFactory_Access (PickedUpLayerTypeFactory_Package.instance);
+        return PickedUpLayerTypeFactory_Package.instance;
    end getInstance;
 
 begin

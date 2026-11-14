@@ -153,7 +153,7 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
 
    function getInstance return GameKeyCompleteMotionGestureInputEventFactory_Access is
    begin
-        return GameKeyCompleteMotionGestureInputEventFactory_Access (GameKeyCompleteMotionGestureInputEventFactory_Package.SINGLETON);
+        return GameKeyCompleteMotionGestureInputEventFactory_Package.SINGLETON;
    end getInstance;
 
    procedure add (This : in out GameKeyCompleteMotionGestureInputEventFactory; gameKeyCompleteMotionGestureInputEvent_Param : access GameKeyCompleteMotionGestureInputEvent_Package.GameKeyCompleteMotionGestureInputEvent'Class) is

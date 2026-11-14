@@ -56,14 +56,19 @@ with org.allbinary.util.BasicArrayList_Package_References;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
 with org.apache.commons.lang3.StringEscapeUtils_Package; use org.apache.commons.lang3.StringEscapeUtils_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
 with org.allbinary.util.ABVector_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 
@@ -93,6 +98,8 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package StringEscapeUtils_Package renames Standard.org.apache.commons.lang3.StringEscapeUtils_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -245,7 +252,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
    begin
       Initialize_Fields (This);
         StoreFront'Class (This).getFormData (RequestParams_Package.Create (request).toHashMap);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("TWB- needs update for adding and updating context configuration - currently defaults to admin context config"), StoreFront_Access'(This'Unchecked_Access), To_Unbounded_String ("StoreFront"));
         end if;
         StoreFront'Class (This).setContextConfigurationInterface (ContextConfigurationInterfaceFactory_Package.getInstance.getInstance (To_Unbounded_String ("Admin")));
@@ -585,7 +592,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), StoreFront_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
@@ -595,14 +602,14 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
 
    function getTestHtmlPath (This : in out StoreFront) return Unbounded_String is
    begin
-        return Java_Image (org_Package.allbinary.globals.URLGLOBALS.getTestHtmlPath) & StoreFront'Class (This).getCurrentHostNamePath;
+        return Java_Image (URLGLOBALS_Package.getTestHtmlPath) & StoreFront'Class (This).getCurrentHostNamePath;
    end getTestHtmlPath;
 
    function getCurrentHostName (This : in out StoreFront) return Unbounded_String is
       location : Unbounded_String;
    begin
         location := This.EMPTY_STRING;
-        if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
+        if URLGLOBALS_Package.isTestingMode then
             location := StoreFront'Class (This).getTestHostName;
         else
             location := StoreFront'Class (This).getHostName;
@@ -614,7 +621,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       location : Unbounded_String;
    begin
         location := This.EMPTY_STRING;
-        if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
+        if URLGLOBALS_Package.isTestingMode then
             location := StoreFront'Class (This).getTestHostNamePath;
         else
             location := StoreFront'Class (This).getHostNamePath;
@@ -626,7 +633,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       location : Unbounded_String;
    begin
         location := This.EMPTY_STRING;
-        if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
+        if URLGLOBALS_Package.isTestingMode then
             location := StoreFront'Class (This).getTestHomeHostName;
         else
             location := StoreFront'Class (This).getHomeHostName;
@@ -638,7 +645,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       location : Unbounded_String;
    begin
         location := This.EMPTY_STRING;
-        if org_Package.allbinary.globals.URLGLOBALS.isTestingMode then
+        if URLGLOBALS_Package.isTestingMode then
             location := StoreFront'Class (This).getTestHomeHostNamePath;
         else
             location := StoreFront'Class (This).getHomeHostNamePath;
@@ -1020,7 +1027,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, StoreFront_Access'(This'Unchecked_Access), To_Unbounded_String ("install()"), e);
             end if;
             Java_Throw (e);
@@ -1084,36 +1091,36 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       time : Unbounded_String;
    begin
         dataVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        dataVector.add (This.name);
-        dataVector.add (This.homeHostName);
-        dataVector.add (This.homeHostNamePath.toString);
-        dataVector.add (This.hostName);
-        dataVector.add (This.hostNamePath.toString);
-        dataVector.add (This.testHomeHostName);
-        dataVector.add (This.testHomeHostNamePath.toString);
-        dataVector.add (This.testHostName);
-        dataVector.add (This.testHostNamePath.toString);
-        dataVector.add (This.imagePath.toString);
-        dataVector.add (This.staticPath.toString);
-        dataVector.add (This.categoryPath.toString);
-        dataVector.add (This.inventoryControl);
+        dataVector.add (Java_Box (This.name));
+        dataVector.add (Java_Box (This.homeHostName));
+        dataVector.add (Java_Box (This.homeHostNamePath.toString));
+        dataVector.add (Java_Box (This.hostName));
+        dataVector.add (Java_Box (This.hostNamePath.toString));
+        dataVector.add (Java_Box (This.testHomeHostName));
+        dataVector.add (Java_Box (This.testHomeHostNamePath.toString));
+        dataVector.add (Java_Box (This.testHostName));
+        dataVector.add (Java_Box (This.testHostNamePath.toString));
+        dataVector.add (Java_Box (This.imagePath.toString));
+        dataVector.add (Java_Box (This.staticPath.toString));
+        dataVector.add (Java_Box (This.categoryPath.toString));
+        dataVector.add (Java_Box (This.inventoryControl));
         contextConfigurationDomDocumentMapping := ContextConfigurationDomDocumentMapping_Package.Create (StoreFront'Class (This).getContextConfigurationInterface);
         dataVector.add (contextConfigurationDomDocumentMapping.toDomDocumentString);
-        dataVector.add (This.subStores);
-        dataVector.add (This.tagLocation);
-        dataVector.add (This.packageLocation);
-        dataVector.add (This.ftp);
-        dataVector.add (This.ftpPath.toString);
-        dataVector.add (This.ftpUserName);
-        dataVector.add (This.ftpPassword);
-        dataVector.add (This.testFtp);
-        dataVector.add (This.testFtpPath.toString);
-        dataVector.add (This.testFtpUserName);
-        dataVector.add (This.testFtpPassword);
+        dataVector.add (Java_Box (This.subStores));
+        dataVector.add (Java_Box (This.tagLocation));
+        dataVector.add (Java_Box (This.packageLocation));
+        dataVector.add (Java_Box (This.ftp));
+        dataVector.add (Java_Box (This.ftpPath.toString));
+        dataVector.add (Java_Box (This.ftpUserName));
+        dataVector.add (Java_Box (This.ftpPassword));
+        dataVector.add (Java_Box (This.testFtp));
+        dataVector.add (Java_Box (This.testFtpPath.toString));
+        dataVector.add (Java_Box (This.testFtpUserName));
+        dataVector.add (Java_Box (This.testFtpPassword));
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
-        dataVector.add (time);
-        dataVector.add (time);
+        dataVector.add (Java_Box (time));
+        dataVector.add (Java_Box (time));
         return dataVector;
    end toVector;
 
@@ -1126,7 +1133,7 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       time : Unbounded_String;
    begin
         storeFrontData := StoreFrontData_Package.getInstance;
-        dataHashMap := StdUtil_Package.getInstance.createHashMap;
+        dataHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         dataHashMap.put (storeFrontData.NAME, Java_Box (This.name));
         dataHashMap.put (storeFrontData.HOMEHOSTNAME, Java_Box (This.homeHostName));
         dataHashMap.put (storeFrontData.HOMEHOSTNAMEPATH, Java_Box (This.homeHostNamePath.toString));

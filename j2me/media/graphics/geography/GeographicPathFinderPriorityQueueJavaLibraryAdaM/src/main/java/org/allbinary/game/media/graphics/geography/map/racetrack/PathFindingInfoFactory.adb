@@ -38,6 +38,7 @@ with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.allbinary.media.graphics.geography.pathfinding.MultipassState_Package;
 with org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
@@ -101,7 +102,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
 
    function getInstance return PathFindingInfoFactory_Access is
    begin
-        return PathFindingInfoFactory_Access (PathFindingInfoFactory_Package.instance);
+        return PathFindingInfoFactory_Package.instance;
    end getInstance;
 
    procedure initMax (max : Integer) is

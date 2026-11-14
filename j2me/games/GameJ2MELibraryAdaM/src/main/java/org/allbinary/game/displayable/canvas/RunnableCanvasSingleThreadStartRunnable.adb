@@ -96,6 +96,7 @@ with javax.microedition.lcdui.Ticker_Package;
 with org.allbinary.time.TimeDelayHelper_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.input.TouchJ2ME_Package;
+with org.allbinary.TsUtil_Package;
 with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.game.displayable.canvas.RunnableCanvasSingleThreadStartRunnable_Package is

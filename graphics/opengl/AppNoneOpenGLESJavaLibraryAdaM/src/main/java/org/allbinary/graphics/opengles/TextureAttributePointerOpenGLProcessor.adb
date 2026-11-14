@@ -37,7 +37,7 @@ package body org.allbinary.graphics.opengles.TextureAttributePointerOpenGLProces
 
    function getInstance return TextureAttributePointerOpenGLProcessor_Access is
    begin
-        return TextureAttributePointerOpenGLProcessor_Access (TextureAttributePointerOpenGLProcessor_Package.instance);
+        return TextureAttributePointerOpenGLProcessor_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TextureAttributePointerOpenGLProcessor'Class) is

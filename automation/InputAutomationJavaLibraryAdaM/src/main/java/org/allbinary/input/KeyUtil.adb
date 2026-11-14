@@ -13,9 +13,11 @@
 --  Generated Code Do Not Modify
 
 
+with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
 
 package body org.allbinary.input.KeyUtil_Package is
 
+   package KeyEvent_Package renames Standard.java.awt.event.KeyEvent_Package;
    procedure Initialize_Fields (This : in out KeyUtil'Class) is
    begin
       null;

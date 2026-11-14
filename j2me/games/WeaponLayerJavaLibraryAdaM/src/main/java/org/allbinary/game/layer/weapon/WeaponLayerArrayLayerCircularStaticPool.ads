@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package;
 package org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package_References is
    type WeaponLayerArrayLayerCircularStaticPool_Access is access all org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package.WeaponLayerArrayLayerCircularStaticPool'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_
    type WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access is access all WeaponLayerArrayLayerCircularStaticPool_Access_Array;
    type WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array is array (Natural range <>) of WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access;
    type WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array_Access is access all WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array;
+   type WeaponLayerArrayLayerCircularStaticPool_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access;
+   end record;
+   function Java_Box (Value : WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new WeaponLayerArrayLayerCircularStaticPool_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_WeaponLayerArrayLayerCircularStaticPool_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access is (if Value /= null and then Value.all in WeaponLayerArrayLayerCircularStaticPool_Access_Array_Object'Class then WeaponLayerArrayLayerCircularStaticPool_Access_Array_Object'Class (Value.all).Value else null);
+   type WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array_Object'Class then WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package_References;
 
 with org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package_References;
@@ -69,15 +80,21 @@ package org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_
    function "=" (Left, Right : WeaponLayerArrayLayerCircularStaticPool_Access_Array) return Boolean renames org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package_References."=";
    subtype WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access is org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package_References.WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access;
    function "=" (Left, Right : WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access) return Boolean renames org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package_References."=";
+   function Java_Box (Value : WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package_References.Java_Box;
+   function Java_Unbox_WeaponLayerArrayLayerCircularStaticPool_Access_Array (Value : access Java_Object'Class) return WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access renames org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package_References.Java_Unbox_WeaponLayerArrayLayerCircularStaticPool_Access_Array;
    subtype WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array is org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package_References.WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array;
    function "=" (Left, Right : WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package_References."=";
    subtype WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array_Access is org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package_References.WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array_Access;
    function "=" (Left, Right : WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package_References."=";
+   function Java_Box (Value : WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package_References.Java_Box;
+   function Java_Unbox_WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array (Value : access Java_Object'Class) return WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array_Access renames org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_Package_References.Java_Unbox_WeaponLayerArrayLayerCircularStaticPool_Access_Array_Access_Array;
 
    type WeaponLayerArrayLayerCircularStaticPool is new Java_Object with record
       MAX : Integer;
       circularIndexUtil : CircularIndexUtil_Access;
-      ALL_WEAPONLAYER_ARRAY : Java_Object_Access_Array_Access_Array_Access_Array_Access;
+      WEAPONLAYER_ARRAY : WeaponLayer_Access_Array_Access_Array_Access;
+      TWO_WEAPONLAYER_ARRAY : WeaponLayer_Access_Array_Access_Array_Access;
+      THREE_WEAPONLAYER_ARRAY : WeaponLayer_Access_Array_Access_Array_Access;
    end record;
    instance : WeaponLayerArrayLayerCircularStaticPool_Access;
 
@@ -85,6 +102,8 @@ package org.allbinary.game.layer.weapon.WeaponLayerArrayLayerCircularStaticPool_
    function Create return WeaponLayerArrayLayerCircularStaticPool_Access;
    function getInstance return WeaponLayerArrayLayerCircularStaticPool_Access;
    procedure init (This : in out WeaponLayerArrayLayerCircularStaticPool);
+   function getWeaponLayerArrays (This : in out WeaponLayerArrayLayerCircularStaticPool; size : Integer) return WeaponLayer_Access_Array_Access_Array_Access;
+   procedure getWeaponLayerArrays (This : in out WeaponLayerArrayLayerCircularStaticPool; size : Integer);
    function getInstanceArray (This : in out WeaponLayerArrayLayerCircularStaticPool; size : Integer) return WeaponLayer_Access_Array_Access;
    procedure getInstanceArray (This : in out WeaponLayerArrayLayerCircularStaticPool; size : Integer);
 

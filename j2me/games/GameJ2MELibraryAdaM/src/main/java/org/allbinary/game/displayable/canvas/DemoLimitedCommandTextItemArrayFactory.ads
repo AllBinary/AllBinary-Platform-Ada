@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package;
 package org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package_References is
    type DemoLimitedCommandTextItemArrayFactory_Access is access all org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package.DemoLimitedCommandTextItemArrayFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFac
    type DemoLimitedCommandTextItemArrayFactory_Access_Array_Access is access all DemoLimitedCommandTextItemArrayFactory_Access_Array;
    type DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array is array (Natural range <>) of DemoLimitedCommandTextItemArrayFactory_Access_Array_Access;
    type DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array_Access is access all DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array;
+   type DemoLimitedCommandTextItemArrayFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DemoLimitedCommandTextItemArrayFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DemoLimitedCommandTextItemArrayFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DemoLimitedCommandTextItemArrayFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DemoLimitedCommandTextItemArrayFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DemoLimitedCommandTextItemArrayFactory_Access_Array_Access is (if Value /= null and then Value.all in DemoLimitedCommandTextItemArrayFactory_Access_Array_Object'Class then DemoLimitedCommandTextItemArrayFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array_Object'Class then DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package_References;
 
 with org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFac
    function "=" (Left, Right : DemoLimitedCommandTextItemArrayFactory_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package_References."=";
    subtype DemoLimitedCommandTextItemArrayFactory_Access_Array_Access is org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package_References.DemoLimitedCommandTextItemArrayFactory_Access_Array_Access;
    function "=" (Left, Right : DemoLimitedCommandTextItemArrayFactory_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package_References."=";
+   function Java_Box (Value : DemoLimitedCommandTextItemArrayFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package_References.Java_Box;
+   function Java_Unbox_DemoLimitedCommandTextItemArrayFactory_Access_Array (Value : access Java_Object'Class) return DemoLimitedCommandTextItemArrayFactory_Access_Array_Access renames org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package_References.Java_Unbox_DemoLimitedCommandTextItemArrayFactory_Access_Array;
    subtype DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array is org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package_References.DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array;
    function "=" (Left, Right : DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package_References."=";
    subtype DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array_Access is org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package_References.DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package_References."=";
+   function Java_Box (Value : DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package_References.Java_Box;
+   function Java_Unbox_DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array_Access renames org.allbinary.game.displayable.canvas.DemoLimitedCommandTextItemArrayFactory_Package_References.Java_Unbox_DemoLimitedCommandTextItemArrayFactory_Access_Array_Access_Array;
 
    type DemoLimitedCommandTextItemArrayFactory is new Java_Object with record
       commandTextItemArrayFactory : CommandTextItemArrayFactory_Access;

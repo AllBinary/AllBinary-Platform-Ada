@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package;
 package org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References is
    type SelectRTSLayerVisitorFactoryInterface_Access is access all org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package.SelectRTSLayerVisitorFactoryInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_R
    type SelectRTSLayerVisitorFactoryInterface_Access_Array_Access is access all SelectRTSLayerVisitorFactoryInterface_Access_Array;
    type SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array is array (Natural range <>) of SelectRTSLayerVisitorFactoryInterface_Access_Array_Access;
    type SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Access is access all SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array;
+   type SelectRTSLayerVisitorFactoryInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SelectRTSLayerVisitorFactoryInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SelectRTSLayerVisitorFactoryInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SelectRTSLayerVisitorFactoryInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SelectRTSLayerVisitorFactoryInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SelectRTSLayerVisitorFactoryInterface_Access_Array_Access is (if Value /= null and then Value.all in SelectRTSLayerVisitorFactoryInterface_Access_Array_Object'Class then SelectRTSLayerVisitorFactoryInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Object'Class then SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References;
 
 with org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References;
@@ -70,10 +81,14 @@ package org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package i
    function "=" (Left, Right : SelectRTSLayerVisitorFactoryInterface_Access_Array) return Boolean renames org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References."=";
    subtype SelectRTSLayerVisitorFactoryInterface_Access_Array_Access is org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References.SelectRTSLayerVisitorFactoryInterface_Access_Array_Access;
    function "=" (Left, Right : SelectRTSLayerVisitorFactoryInterface_Access_Array_Access) return Boolean renames org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References."=";
+   function Java_Box (Value : SelectRTSLayerVisitorFactoryInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References.Java_Box;
+   function Java_Unbox_SelectRTSLayerVisitorFactoryInterface_Access_Array (Value : access Java_Object'Class) return SelectRTSLayerVisitorFactoryInterface_Access_Array_Access renames org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References.Java_Unbox_SelectRTSLayerVisitorFactoryInterface_Access_Array;
    subtype SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array is org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References.SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array;
    function "=" (Left, Right : SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References."=";
    subtype SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Access is org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References.SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References."=";
+   function Java_Box (Value : SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References.Java_Box;
+   function Java_Unbox_SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array_Access renames org.allbinary.game.input.SelectRTSLayerVisitorFactoryInterface_Package_References.Java_Unbox_SelectRTSLayerVisitorFactoryInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_SelectRTSLayerVisitorFactoryInterface (Value : SelectRTSLayerVisitorFactoryInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function create (This : in out SelectRTSLayerVisitorFactoryInterface; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class) return Visitor_Access is abstract;
    procedure create (This : in out SelectRTSLayerVisitorFactoryInterface; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class) is abstract;

@@ -34,6 +34,7 @@ with javax.microedition.lcdui.Font_Package;
 with javax.microedition.khronos.opengles.GL_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.animation.image.ImageAnimation_Package;
+with org.allbinary.media.image.ImageJ2MEScaleUtil_Package;
 with org.allbinary.animation.image.ImageSegmentAnimation_Package;
 with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.logic.communication.log.Log_Package;

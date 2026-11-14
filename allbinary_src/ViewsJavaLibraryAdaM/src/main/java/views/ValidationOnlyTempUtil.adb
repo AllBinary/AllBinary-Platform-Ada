@@ -19,6 +19,8 @@ with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; 
 with org.allbinary.logic.control.validate.ValidationComponentInterface_Package_References;
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -31,6 +33,8 @@ package body views.ValidationOnlyTempUtil_Package is
 
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -60,7 +64,7 @@ package body views.ValidationOnlyTempUtil_Package is
 
    function getInstance return ValidationOnlyTempUtil_Access is
    begin
-        return ValidationOnlyTempUtil_Access (ValidationOnlyTempUtil_Package.instance);
+        return ValidationOnlyTempUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ValidationOnlyTempUtil'Class) is
@@ -83,7 +87,7 @@ package body views.ValidationOnlyTempUtil_Package is
    begin
         commonStrings := CommonStrings_Package.getInstance;
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("View Name: ") & validationComponentInterface.getTransformInfoInterface.getName, ValidationOnlyTempUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"));
             end if;
             return StringUtil_Package.getInstance.EMPTY_STRING;
@@ -92,7 +96,7 @@ package body views.ValidationOnlyTempUtil_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEWERROR) then
                 This.logUtil.put (commonStrings.EXCEPTION_Id, ValidationOnlyTempUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("view()"), e);
             end if;
             Java_Throw (e);

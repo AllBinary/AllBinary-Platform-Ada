@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with tags.admin.inventory.DownloadItemTag_Package;
 package tags.admin.inventory.DownloadItemTag_Package_References is
    type DownloadItemTag_Access is access all tags.admin.inventory.DownloadItemTag_Package.DownloadItemTag'Class;
@@ -19,6 +20,16 @@ package tags.admin.inventory.DownloadItemTag_Package_References is
    type DownloadItemTag_Access_Array_Access is access all DownloadItemTag_Access_Array;
    type DownloadItemTag_Access_Array_Access_Array is array (Natural range <>) of DownloadItemTag_Access_Array_Access;
    type DownloadItemTag_Access_Array_Access_Array_Access is access all DownloadItemTag_Access_Array_Access_Array;
+   type DownloadItemTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DownloadItemTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DownloadItemTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DownloadItemTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DownloadItemTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DownloadItemTag_Access_Array_Access is (if Value /= null and then Value.all in DownloadItemTag_Access_Array_Object'Class then DownloadItemTag_Access_Array_Object'Class (Value.all).Value else null);
+   type DownloadItemTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DownloadItemTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DownloadItemTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DownloadItemTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DownloadItemTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DownloadItemTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in DownloadItemTag_Access_Array_Access_Array_Object'Class then DownloadItemTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end tags.admin.inventory.DownloadItemTag_Package_References;
 
 with tags.admin.inventory.DownloadItemTag_Package_References;
@@ -47,10 +58,14 @@ package tags.admin.inventory.DownloadItemTag_Package is
    function "=" (Left, Right : DownloadItemTag_Access_Array) return Boolean renames tags.admin.inventory.DownloadItemTag_Package_References."=";
    subtype DownloadItemTag_Access_Array_Access is tags.admin.inventory.DownloadItemTag_Package_References.DownloadItemTag_Access_Array_Access;
    function "=" (Left, Right : DownloadItemTag_Access_Array_Access) return Boolean renames tags.admin.inventory.DownloadItemTag_Package_References."=";
+   function Java_Box (Value : DownloadItemTag_Access_Array_Access) return Java_Object_Access renames tags.admin.inventory.DownloadItemTag_Package_References.Java_Box;
+   function Java_Unbox_DownloadItemTag_Access_Array (Value : access Java_Object'Class) return DownloadItemTag_Access_Array_Access renames tags.admin.inventory.DownloadItemTag_Package_References.Java_Unbox_DownloadItemTag_Access_Array;
    subtype DownloadItemTag_Access_Array_Access_Array is tags.admin.inventory.DownloadItemTag_Package_References.DownloadItemTag_Access_Array_Access_Array;
    function "=" (Left, Right : DownloadItemTag_Access_Array_Access_Array) return Boolean renames tags.admin.inventory.DownloadItemTag_Package_References."=";
    subtype DownloadItemTag_Access_Array_Access_Array_Access is tags.admin.inventory.DownloadItemTag_Package_References.DownloadItemTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : DownloadItemTag_Access_Array_Access_Array_Access) return Boolean renames tags.admin.inventory.DownloadItemTag_Package_References."=";
+   function Java_Box (Value : DownloadItemTag_Access_Array_Access_Array_Access) return Java_Object_Access renames tags.admin.inventory.DownloadItemTag_Package_References.Java_Box;
+   function Java_Unbox_DownloadItemTag_Access_Array_Access_Array (Value : access Java_Object'Class) return DownloadItemTag_Access_Array_Access_Array_Access renames tags.admin.inventory.DownloadItemTag_Package_References.Java_Unbox_DownloadItemTag_Access_Array_Access_Array;
 
    type DownloadItemTag is new StoreValidationTransformTag with null record;
 

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package;
 package org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package_References is
    type GameFeatureItemStateListener_Access is access all org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package.GameFeatureItemStateListener'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Pa
    type GameFeatureItemStateListener_Access_Array_Access is access all GameFeatureItemStateListener_Access_Array;
    type GameFeatureItemStateListener_Access_Array_Access_Array is array (Natural range <>) of GameFeatureItemStateListener_Access_Array_Access;
    type GameFeatureItemStateListener_Access_Array_Access_Array_Access is access all GameFeatureItemStateListener_Access_Array_Access_Array;
+   type GameFeatureItemStateListener_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameFeatureItemStateListener_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameFeatureItemStateListener_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameFeatureItemStateListener_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameFeatureItemStateListener_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameFeatureItemStateListener_Access_Array_Access is (if Value /= null and then Value.all in GameFeatureItemStateListener_Access_Array_Object'Class then GameFeatureItemStateListener_Access_Array_Object'Class (Value.all).Value else null);
+   type GameFeatureItemStateListener_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameFeatureItemStateListener_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameFeatureItemStateListener_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameFeatureItemStateListener_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameFeatureItemStateListener_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameFeatureItemStateListener_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GameFeatureItemStateListener_Access_Array_Access_Array_Object'Class then GameFeatureItemStateListener_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package_References;
 
 with org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package_References;
@@ -110,10 +121,14 @@ package org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Pa
    function "=" (Left, Right : GameFeatureItemStateListener_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package_References."=";
    subtype GameFeatureItemStateListener_Access_Array_Access is org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package_References.GameFeatureItemStateListener_Access_Array_Access;
    function "=" (Left, Right : GameFeatureItemStateListener_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package_References."=";
+   function Java_Box (Value : GameFeatureItemStateListener_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package_References.Java_Box;
+   function Java_Unbox_GameFeatureItemStateListener_Access_Array (Value : access Java_Object'Class) return GameFeatureItemStateListener_Access_Array_Access renames org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package_References.Java_Unbox_GameFeatureItemStateListener_Access_Array;
    subtype GameFeatureItemStateListener_Access_Array_Access_Array is org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package_References.GameFeatureItemStateListener_Access_Array_Access_Array;
    function "=" (Left, Right : GameFeatureItemStateListener_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package_References."=";
    subtype GameFeatureItemStateListener_Access_Array_Access_Array_Access is org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package_References.GameFeatureItemStateListener_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GameFeatureItemStateListener_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package_References."=";
+   function Java_Box (Value : GameFeatureItemStateListener_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package_References.Java_Box;
+   function Java_Unbox_GameFeatureItemStateListener_Access_Array_Access_Array (Value : access Java_Object'Class) return GameFeatureItemStateListener_Access_Array_Access_Array_Access renames org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package_References.Java_Unbox_GameFeatureItemStateListener_Access_Array_Access_Array;
 
    type GameFeatureItemStateListener is new Java_Object and ItemStateListener with record
       logUtil : LogUtil_Access;

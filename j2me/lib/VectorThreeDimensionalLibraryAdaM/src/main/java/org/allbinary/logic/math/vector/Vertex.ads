@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.math.vector.Vertex_Package;
 package org.allbinary.logic.math.vector.Vertex_Package_References is
    type Vertex_Access is access all org.allbinary.logic.math.vector.Vertex_Package.Vertex'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.math.vector.Vertex_Package_References is
    type Vertex_Access_Array_Access is access all Vertex_Access_Array;
    type Vertex_Access_Array_Access_Array is array (Natural range <>) of Vertex_Access_Array_Access;
    type Vertex_Access_Array_Access_Array_Access is access all Vertex_Access_Array_Access_Array;
+   type Vertex_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Vertex_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Vertex_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Vertex_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Vertex_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Vertex_Access_Array_Access is (if Value /= null and then Value.all in Vertex_Access_Array_Object'Class then Vertex_Access_Array_Object'Class (Value.all).Value else null);
+   type Vertex_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Vertex_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Vertex_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Vertex_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Vertex_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Vertex_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in Vertex_Access_Array_Access_Array_Object'Class then Vertex_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.math.vector.Vertex_Package_References;
 
 with org.allbinary.logic.math.vector.Vertex_Package_References;
@@ -57,10 +68,14 @@ package org.allbinary.logic.math.vector.Vertex_Package is
    function "=" (Left, Right : Vertex_Access_Array) return Boolean renames org.allbinary.logic.math.vector.Vertex_Package_References."=";
    subtype Vertex_Access_Array_Access is org.allbinary.logic.math.vector.Vertex_Package_References.Vertex_Access_Array_Access;
    function "=" (Left, Right : Vertex_Access_Array_Access) return Boolean renames org.allbinary.logic.math.vector.Vertex_Package_References."=";
+   function Java_Box (Value : Vertex_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.math.vector.Vertex_Package_References.Java_Box;
+   function Java_Unbox_Vertex_Access_Array (Value : access Java_Object'Class) return Vertex_Access_Array_Access renames org.allbinary.logic.math.vector.Vertex_Package_References.Java_Unbox_Vertex_Access_Array;
    subtype Vertex_Access_Array_Access_Array is org.allbinary.logic.math.vector.Vertex_Package_References.Vertex_Access_Array_Access_Array;
    function "=" (Left, Right : Vertex_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.math.vector.Vertex_Package_References."=";
    subtype Vertex_Access_Array_Access_Array_Access is org.allbinary.logic.math.vector.Vertex_Package_References.Vertex_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Vertex_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.math.vector.Vertex_Package_References."=";
+   function Java_Box (Value : Vertex_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.math.vector.Vertex_Package_References.Java_Box;
+   function Java_Unbox_Vertex_Access_Array_Access_Array (Value : access Java_Object'Class) return Vertex_Access_Array_Access_Array_Access renames org.allbinary.logic.math.vector.Vertex_Package_References.Java_Unbox_Vertex_Access_Array_Access_Array;
 
    type Vertex is new Java_Object with record
       x : BasicDecimal_Access;

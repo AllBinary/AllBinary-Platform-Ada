@@ -40,7 +40,7 @@ package body org.allbinary.logic.VectorUtil_Package is
 
    function getInstance return VectorUtil_Access is
    begin
-        return VectorUtil_Access (VectorUtil_Package.instance);
+        return VectorUtil_Package.instance;
    end getInstance;
 
    function getSize (This : in out VectorUtil; anyType_Param : access Java_Object'Class) return Integer is

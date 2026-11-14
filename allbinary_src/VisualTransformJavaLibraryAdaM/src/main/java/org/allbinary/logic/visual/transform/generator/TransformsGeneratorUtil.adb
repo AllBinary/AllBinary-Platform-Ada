@@ -25,11 +25,19 @@ with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; u
 with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package_References;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package;
 with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigInterface_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package; use org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package;
+with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ArrayUtil_Package;
+with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -40,6 +48,8 @@ package body org.allbinary.logic.visual.transform.generator.TransformsGeneratorU
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package TransformInfoDomNode_Package renames Standard.org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -89,7 +99,7 @@ package body org.allbinary.logic.visual.transform.generator.TransformsGeneratorU
 
    function getInstance return TransformsGeneratorUtil_Access is
    begin
-        return TransformsGeneratorUtil_Access (TransformsGeneratorUtil_Package.instance);
+        return TransformsGeneratorUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TransformsGeneratorUtil'Class) is
@@ -112,12 +122,12 @@ package body org.allbinary.logic.visual.transform.generator.TransformsGeneratorU
       transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access;
       result : Unbounded_String;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Started Group: ") & group, TransformsGeneratorUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateComponentsFromObjectConfig(2)"));
         end if;
         transformInfoObjectConfigInterface := TransformInfoObjectConfigInterface_Access (transformInfoInterface.getObjectConfigInterface);
         result := TransformsGeneratorUtil'Class (This).generateComponentsFromObjectConfig (abeClientInformation, transformInfoObjectConfigInterface, transformInfoInterface, group);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("End Group: ") & group, TransformsGeneratorUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateComponentsFromObjectConfig(2)"));
         end if;
         return result;
@@ -134,11 +144,11 @@ package body org.allbinary.logic.visual.transform.generator.TransformsGeneratorU
       transformInfoObjectConfigComponent : TransformInfoDomNode_Access;
       index : Integer;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Started Group: ") & group, TransformsGeneratorUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateComponentsFromObjectConfig()"));
         end if;
         transformInfoObjectConfigComponentVector := transformInfoObjectConfigInterface.getTransformsGroup (group);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("Processing "));
             stringBuffer.appendint (transformInfoObjectConfigComponentVector.size);
@@ -154,7 +164,7 @@ package body org.allbinary.logic.visual.transform.generator.TransformsGeneratorU
             transformInfoObjectConfigComponent := TransformInfoDomNode_Access (transformInfoObjectConfigComponentVector.get (index));
             TransformGeneratorUtil_Package.getInstance.generate (abeClientInformation, transformInfoObjectConfigComponent, transformInfoInterface);
         end loop;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (To_Unbounded_String ("Done Group: ") & group, TransformsGeneratorUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("generateComponentsFromObjectConfig()"));
         end if;
         stringBuffer := StringMaker_Package.Create;

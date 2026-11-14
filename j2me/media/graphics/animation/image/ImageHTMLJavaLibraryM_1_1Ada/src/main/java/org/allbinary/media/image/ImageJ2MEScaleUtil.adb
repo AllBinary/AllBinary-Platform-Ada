@@ -67,7 +67,7 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
 
    function getInstance return ImageJ2MEScaleUtil_Access is
    begin
-        return ImageJ2MEScaleUtil_Access (ImageJ2MEScaleUtil_Package.instance);
+        return ImageJ2MEScaleUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageJ2MEScaleUtil'Class) is
@@ -115,7 +115,7 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
             originalHTMLImage := PlaynImmutableImage_Access (image);
             originalPlayNImage := Image_Access (originalHTMLImage.getImage);
         end if;
-        scaledImage := Image_Package.createImage (width, height);
+        scaledImage := Image_Package.createImageWH (width, height);
         htmlImage := PlaynMutableImage_Access (scaledImage);
         canvasImage := CanvasImage_Access (htmlImage.getImage);
         canvasSurface := htmlImage.getCanvasSurface (canvasImage);

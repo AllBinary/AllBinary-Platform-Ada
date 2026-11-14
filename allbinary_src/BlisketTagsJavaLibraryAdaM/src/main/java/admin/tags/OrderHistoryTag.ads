@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.tags.OrderHistoryTag_Package;
 package admin.tags.OrderHistoryTag_Package_References is
    type OrderHistoryTag_Access is access all admin.tags.OrderHistoryTag_Package.OrderHistoryTag'Class;
@@ -19,6 +20,16 @@ package admin.tags.OrderHistoryTag_Package_References is
    type OrderHistoryTag_Access_Array_Access is access all OrderHistoryTag_Access_Array;
    type OrderHistoryTag_Access_Array_Access_Array is array (Natural range <>) of OrderHistoryTag_Access_Array_Access;
    type OrderHistoryTag_Access_Array_Access_Array_Access is access all OrderHistoryTag_Access_Array_Access_Array;
+   type OrderHistoryTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OrderHistoryTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OrderHistoryTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OrderHistoryTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OrderHistoryTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OrderHistoryTag_Access_Array_Access is (if Value /= null and then Value.all in OrderHistoryTag_Access_Array_Object'Class then OrderHistoryTag_Access_Array_Object'Class (Value.all).Value else null);
+   type OrderHistoryTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OrderHistoryTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OrderHistoryTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OrderHistoryTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OrderHistoryTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OrderHistoryTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in OrderHistoryTag_Access_Array_Access_Array_Object'Class then OrderHistoryTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.tags.OrderHistoryTag_Package_References;
 
 with admin.tags.OrderHistoryTag_Package_References;
@@ -61,10 +72,14 @@ package admin.tags.OrderHistoryTag_Package is
    function "=" (Left, Right : OrderHistoryTag_Access_Array) return Boolean renames admin.tags.OrderHistoryTag_Package_References."=";
    subtype OrderHistoryTag_Access_Array_Access is admin.tags.OrderHistoryTag_Package_References.OrderHistoryTag_Access_Array_Access;
    function "=" (Left, Right : OrderHistoryTag_Access_Array_Access) return Boolean renames admin.tags.OrderHistoryTag_Package_References."=";
+   function Java_Box (Value : OrderHistoryTag_Access_Array_Access) return Java_Object_Access renames admin.tags.OrderHistoryTag_Package_References.Java_Box;
+   function Java_Unbox_OrderHistoryTag_Access_Array (Value : access Java_Object'Class) return OrderHistoryTag_Access_Array_Access renames admin.tags.OrderHistoryTag_Package_References.Java_Unbox_OrderHistoryTag_Access_Array;
    subtype OrderHistoryTag_Access_Array_Access_Array is admin.tags.OrderHistoryTag_Package_References.OrderHistoryTag_Access_Array_Access_Array;
    function "=" (Left, Right : OrderHistoryTag_Access_Array_Access_Array) return Boolean renames admin.tags.OrderHistoryTag_Package_References."=";
    subtype OrderHistoryTag_Access_Array_Access_Array_Access is admin.tags.OrderHistoryTag_Package_References.OrderHistoryTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : OrderHistoryTag_Access_Array_Access_Array_Access) return Boolean renames admin.tags.OrderHistoryTag_Package_References."=";
+   function Java_Box (Value : OrderHistoryTag_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.tags.OrderHistoryTag_Package_References.Java_Box;
+   function Java_Unbox_OrderHistoryTag_Access_Array_Access_Array (Value : access Java_Object'Class) return OrderHistoryTag_Access_Array_Access_Array_Access renames admin.tags.OrderHistoryTag_Package_References.Java_Unbox_OrderHistoryTag_Access_Array_Access_Array;
 
    type OrderHistoryTag is new TableTag with record
       logUtil : LogUtil_Access;

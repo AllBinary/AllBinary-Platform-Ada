@@ -61,7 +61,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUt
 
    function getInstance return GeographicMapDirectionUtil_Access is
    begin
-        return GeographicMapDirectionUtil_Access (GeographicMapDirectionUtil_Package.instance);
+        return GeographicMapDirectionUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out GeographicMapDirectionUtil'Class) is

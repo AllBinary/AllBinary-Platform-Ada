@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.image.ImageSwtRotationUtil_Package;
 package org.allbinary.media.image.ImageSwtRotationUtil_Package_References is
    type ImageSwtRotationUtil_Access is access all org.allbinary.media.image.ImageSwtRotationUtil_Package.ImageSwtRotationUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.image.ImageSwtRotationUtil_Package_References is
    type ImageSwtRotationUtil_Access_Array_Access is access all ImageSwtRotationUtil_Access_Array;
    type ImageSwtRotationUtil_Access_Array_Access_Array is array (Natural range <>) of ImageSwtRotationUtil_Access_Array_Access;
    type ImageSwtRotationUtil_Access_Array_Access_Array_Access is access all ImageSwtRotationUtil_Access_Array_Access_Array;
+   type ImageSwtRotationUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageSwtRotationUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageSwtRotationUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageSwtRotationUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageSwtRotationUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageSwtRotationUtil_Access_Array_Access is (if Value /= null and then Value.all in ImageSwtRotationUtil_Access_Array_Object'Class then ImageSwtRotationUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageSwtRotationUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageSwtRotationUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageSwtRotationUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageSwtRotationUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageSwtRotationUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageSwtRotationUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageSwtRotationUtil_Access_Array_Access_Array_Object'Class then ImageSwtRotationUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.image.ImageSwtRotationUtil_Package_References;
 
 with org.allbinary.media.image.ImageSwtRotationUtil_Package_References;
@@ -40,6 +51,8 @@ limited with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
 limited with org.eclipse.swt.graphics.GC_Package;
 with org.eclipse.swt.graphics.GC_Package_References;
+limited with org.eclipse.swt.graphics.Image_Package;
+with org.eclipse.swt.graphics.Image_Package_References;
 limited with org.allbinary.media.image.ImageUtil_Package;
 with org.allbinary.media.image.ImageUtil_Package_References;
 
@@ -50,6 +63,7 @@ package org.allbinary.media.image.ImageSwtRotationUtil_Package is
    package LogUtil_Package renames Standard.org.allbinary.logic.communication.log.LogUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package GC_Package renames Standard.org.eclipse.swt.graphics.GC_Package;
+   package Image_Package renames Standard.org.eclipse.swt.graphics.Image_Package;
    package Reference_Types is
    subtype Features_Access is org.allbinary.game.configuration.feature.Features_Package_References.Features_Access;
    use type Features_Access;
@@ -101,6 +115,16 @@ package org.allbinary.media.image.ImageSwtRotationUtil_Package is
    use type GC_Access_Array_Access_Array;
    subtype GC_Access_Array_Access_Array_Access is org.eclipse.swt.graphics.GC_Package_References.GC_Access_Array_Access_Array_Access;
    use type GC_Access_Array_Access_Array_Access;
+   subtype Image_Access is org.eclipse.swt.graphics.Image_Package_References.Image_Access;
+   use type Image_Access;
+   subtype Image_Access_Array is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array;
+   use type Image_Access_Array;
+   subtype Image_Access_Array_Access is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array_Access;
+   use type Image_Access_Array_Access;
+   subtype Image_Access_Array_Access_Array is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array_Access_Array;
+   use type Image_Access_Array_Access_Array;
+   subtype Image_Access_Array_Access_Array_Access is org.eclipse.swt.graphics.Image_Package_References.Image_Access_Array_Access_Array_Access;
+   use type Image_Access_Array_Access_Array_Access;
    subtype ImageUtil_Access is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access;
    use type ImageUtil_Access;
    subtype ImageUtil_Access_Array is org.allbinary.media.image.ImageUtil_Package_References.ImageUtil_Access_Array;
@@ -121,10 +145,14 @@ package org.allbinary.media.image.ImageSwtRotationUtil_Package is
    function "=" (Left, Right : ImageSwtRotationUtil_Access_Array) return Boolean renames org.allbinary.media.image.ImageSwtRotationUtil_Package_References."=";
    subtype ImageSwtRotationUtil_Access_Array_Access is org.allbinary.media.image.ImageSwtRotationUtil_Package_References.ImageSwtRotationUtil_Access_Array_Access;
    function "=" (Left, Right : ImageSwtRotationUtil_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageSwtRotationUtil_Package_References."=";
+   function Java_Box (Value : ImageSwtRotationUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.ImageSwtRotationUtil_Package_References.Java_Box;
+   function Java_Unbox_ImageSwtRotationUtil_Access_Array (Value : access Java_Object'Class) return ImageSwtRotationUtil_Access_Array_Access renames org.allbinary.media.image.ImageSwtRotationUtil_Package_References.Java_Unbox_ImageSwtRotationUtil_Access_Array;
    subtype ImageSwtRotationUtil_Access_Array_Access_Array is org.allbinary.media.image.ImageSwtRotationUtil_Package_References.ImageSwtRotationUtil_Access_Array_Access_Array;
    function "=" (Left, Right : ImageSwtRotationUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.ImageSwtRotationUtil_Package_References."=";
    subtype ImageSwtRotationUtil_Access_Array_Access_Array_Access is org.allbinary.media.image.ImageSwtRotationUtil_Package_References.ImageSwtRotationUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageSwtRotationUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.ImageSwtRotationUtil_Package_References."=";
+   function Java_Box (Value : ImageSwtRotationUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.ImageSwtRotationUtil_Package_References.Java_Box;
+   function Java_Unbox_ImageSwtRotationUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageSwtRotationUtil_Access_Array_Access_Array_Access renames org.allbinary.media.image.ImageSwtRotationUtil_Package_References.Java_Unbox_ImageSwtRotationUtil_Access_Array_Access_Array;
 
    type ImageSwtRotationUtil is new Java_Object with record
       logUtil : LogUtil_Access;

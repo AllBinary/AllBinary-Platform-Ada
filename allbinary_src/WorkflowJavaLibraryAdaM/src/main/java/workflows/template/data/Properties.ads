@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with workflows.template.data.Properties_Package;
 package workflows.template.data.Properties_Package_References is
    type Properties_Access is access all workflows.template.data.Properties_Package.Properties'Class;
@@ -19,6 +20,16 @@ package workflows.template.data.Properties_Package_References is
    type Properties_Access_Array_Access is access all Properties_Access_Array;
    type Properties_Access_Array_Access_Array is array (Natural range <>) of Properties_Access_Array_Access;
    type Properties_Access_Array_Access_Array_Access is access all Properties_Access_Array_Access_Array;
+   type Properties_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Properties_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Properties_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Properties_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Properties_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Properties_Access_Array_Access is (if Value /= null and then Value.all in Properties_Access_Array_Object'Class then Properties_Access_Array_Object'Class (Value.all).Value else null);
+   type Properties_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Properties_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Properties_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Properties_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Properties_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Properties_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in Properties_Access_Array_Access_Array_Object'Class then Properties_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end workflows.template.data.Properties_Package_References;
 
 with workflows.template.data.Properties_Package_References;
@@ -73,10 +84,14 @@ package workflows.template.data.Properties_Package is
    function "=" (Left, Right : Properties_Access_Array) return Boolean renames workflows.template.data.Properties_Package_References."=";
    subtype Properties_Access_Array_Access is workflows.template.data.Properties_Package_References.Properties_Access_Array_Access;
    function "=" (Left, Right : Properties_Access_Array_Access) return Boolean renames workflows.template.data.Properties_Package_References."=";
+   function Java_Box (Value : Properties_Access_Array_Access) return Java_Object_Access renames workflows.template.data.Properties_Package_References.Java_Box;
+   function Java_Unbox_Properties_Access_Array (Value : access Java_Object'Class) return Properties_Access_Array_Access renames workflows.template.data.Properties_Package_References.Java_Unbox_Properties_Access_Array;
    subtype Properties_Access_Array_Access_Array is workflows.template.data.Properties_Package_References.Properties_Access_Array_Access_Array;
    function "=" (Left, Right : Properties_Access_Array_Access_Array) return Boolean renames workflows.template.data.Properties_Package_References."=";
    subtype Properties_Access_Array_Access_Array_Access is workflows.template.data.Properties_Package_References.Properties_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Properties_Access_Array_Access_Array_Access) return Boolean renames workflows.template.data.Properties_Package_References."=";
+   function Java_Box (Value : Properties_Access_Array_Access_Array_Access) return Java_Object_Access renames workflows.template.data.Properties_Package_References.Java_Box;
+   function Java_Unbox_Properties_Access_Array_Access_Array (Value : access Java_Object'Class) return Properties_Access_Array_Access_Array_Access renames workflows.template.data.Properties_Package_References.Java_Unbox_Properties_Access_Array_Access_Array;
 
    type Properties is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package;
 package org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package_References is
    type MouseActionScriptInputInterface_Access is access all org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package.MouseActionScriptInputInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    type MouseActionScriptInputInterface_Access_Array_Access is access all MouseActionScriptInputInterface_Access_Array;
    type MouseActionScriptInputInterface_Access_Array_Access_Array is array (Natural range <>) of MouseActionScriptInputInterface_Access_Array_Access;
    type MouseActionScriptInputInterface_Access_Array_Access_Array_Access is access all MouseActionScriptInputInterface_Access_Array_Access_Array;
+   type MouseActionScriptInputInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MouseActionScriptInputInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MouseActionScriptInputInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MouseActionScriptInputInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MouseActionScriptInputInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MouseActionScriptInputInterface_Access_Array_Access is (if Value /= null and then Value.all in MouseActionScriptInputInterface_Access_Array_Object'Class then MouseActionScriptInputInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type MouseActionScriptInputInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MouseActionScriptInputInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MouseActionScriptInputInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MouseActionScriptInputInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MouseActionScriptInputInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MouseActionScriptInputInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MouseActionScriptInputInterface_Access_Array_Access_Array_Object'Class then MouseActionScriptInputInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package_References;
 
 with org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package_References;
@@ -58,10 +69,14 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    function "=" (Left, Right : MouseActionScriptInputInterface_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package_References."=";
    subtype MouseActionScriptInputInterface_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package_References.MouseActionScriptInputInterface_Access_Array_Access;
    function "=" (Left, Right : MouseActionScriptInputInterface_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package_References."=";
+   function Java_Box (Value : MouseActionScriptInputInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package_References.Java_Box;
+   function Java_Unbox_MouseActionScriptInputInterface_Access_Array (Value : access Java_Object'Class) return MouseActionScriptInputInterface_Access_Array_Access renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package_References.Java_Unbox_MouseActionScriptInputInterface_Access_Array;
    subtype MouseActionScriptInputInterface_Access_Array_Access_Array is org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package_References.MouseActionScriptInputInterface_Access_Array_Access_Array;
    function "=" (Left, Right : MouseActionScriptInputInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package_References."=";
    subtype MouseActionScriptInputInterface_Access_Array_Access_Array_Access is org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package_References.MouseActionScriptInputInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MouseActionScriptInputInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package_References."=";
+   function Java_Box (Value : MouseActionScriptInputInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package_References.Java_Box;
+   function Java_Unbox_MouseActionScriptInputInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return MouseActionScriptInputInterface_Access_Array_Access_Array_Access renames org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputInterface_Package_References.Java_Unbox_MouseActionScriptInputInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_MouseActionScriptInputInterface (Value : MouseActionScriptInputInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure setPoint (This : in out MouseActionScriptInputInterface; point_Param : access Point_Package.Point'Class) is abstract;
    function getPoint (This : in out MouseActionScriptInputInterface) return Point_Access is abstract;

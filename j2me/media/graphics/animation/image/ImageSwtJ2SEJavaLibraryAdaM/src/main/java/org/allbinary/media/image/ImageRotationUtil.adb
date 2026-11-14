@@ -25,26 +25,83 @@ with org.microemu.device.swt.SwtImmutableImage_Package; use org.microemu.device.
 with org.microemu.device.swt.SwtMutableImage_Package; use org.microemu.device.swt.SwtMutableImage_Package;
 with org.allbinary.media.image.ImageSwtRotationUtil_Package; use org.allbinary.media.image.ImageSwtRotationUtil_Package;
 with org.allbinary.media.image.ImageSwtRotationUtil_Package_References;
+with org.eclipse.swt.graphics.Image_Package;
+with org.eclipse.swt.graphics.Image_Package_References; use type org.eclipse.swt.graphics.Image_Package_References.Image_Access;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.color.BasicColor_Package;
+with org.eclipse.swt.widgets.Button_Package;
+with org.eclipse.swt.widgets.Canvas_Package;
+with org.eclipse.swt.graphics.Color_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
+with org.eclipse.swt.widgets.Composite_Package;
+with org.eclipse.swt.widgets.Control_Package;
+with org.eclipse.swt.widgets.Decorations_Package;
+with org.eclipse.swt.graphics.Device_Package;
+with org.eclipse.swt.widgets.Display_Package;
+with org.eclipse.swt.events.DragDetectEvent_Package;
+with org.eclipse.swt.events.DragDetectListener_Package;
+with org.eclipse.swt.graphics.Drawable_Package;
+with org.eclipse.swt.widgets.Event_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.configuration.feature.Feature_Package;
+with org.eclipse.swt.graphics.Font_Package;
+with javax.microedition.lcdui.Font_Package;
+with org.eclipse.swt.graphics.FontMetrics_Package;
+with javax.microedition.khronos.opengles.GL_Package;
+with javax.microedition.khronos.opengles.GL10_Package;
 with org.allbinary.game.configuration.feature.GameFeature_Package;
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+with javax.microedition.lcdui.Graphics_Package;
+with org.eclipse.swt.graphics.ImageData_Package;
 with org.allbinary.media.image.ImageSwtRotationUtil_Package;
 with org.allbinary.media.image.ImageUtil_Package;
+with org.eclipse.swt.events.KeyEvent_Package;
+with org.eclipse.swt.events.KeyListener_Package;
+with org.eclipse.swt.widgets.Layout_Package;
+with org.eclipse.swt.widgets.Listener_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
+with org.eclipse.swt.widgets.Menu_Package;
+with org.eclipse.swt.events.MouseEvent_Package;
+with org.eclipse.swt.events.MouseListener_Package;
+with org.eclipse.swt.events.MouseMoveListener_Package;
+with org.eclipse.swt.events.MouseWheelListener_Package;
+with org.microemu.device.MutableImage_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
+with org.allbinary.image.opengles.OpenGLESImageProperties_Package;
+with org.allbinary.image.opengles.OpenGLESImageTranslate_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package;
+with org.eclipse.swt.events.PaintEvent_Package;
+with org.eclipse.swt.events.PaintListener_Package;
+with org.eclipse.swt.graphics.PaletteData_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBase_Package;
+with org.allbinary.platform.graphics.PlatformBitmapBaseFactory_Package;
+with org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
+with org.eclipse.swt.graphics.Point_Package;
+with javax.microedition.lcdui.PostLoadImageProcessor_Package;
+with org.eclipse.swt.graphics.RGB_Package;
+with org.eclipse.swt.graphics.RGBA_Package;
+with org.eclipse.swt.graphics.Rectangle_Package;
+with org.eclipse.swt.graphics.Resource_Package;
+with org.eclipse.swt.internal.SWTEventObject_Package;
+with org.eclipse.swt.widgets.Scrollable_Package;
+with org.eclipse.swt.events.SelectionEvent_Package;
+with org.eclipse.swt.events.SelectionListener_Package;
+with org.eclipse.swt.widgets.Shell_Package;
+with org.eclipse.swt.events.ShellEvent_Package;
+with org.eclipse.swt.events.ShellListener_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.eclipse.swt.graphics.Transform_Package;
+with org.eclipse.swt.events.TypedEvent_Package;
+with org.eclipse.swt.widgets.Widget_Package;
 
 package body org.allbinary.media.image.ImageRotationUtil_Package is
 
@@ -93,7 +150,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
 
    function getInstance return ImageRotationUtil_Access is
    begin
-        return ImageRotationUtil_Access (ImageRotationUtil_Package.instance);
+        return ImageRotationUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageRotationUtil'Class) is
@@ -114,9 +171,9 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
       image : constant Image_Access := Image_Access (image_Param);
       originalImage2 : Image_Access;
       openGLESImage : OpenGLESImage_Access;
-      originalSwtImage : Image_Access;
+      originalSwtImage : org.eclipse.swt.graphics.Image_Package_References.Image_Access;
       gc : GC_Access;
-      copySwtImage : Image_Access;
+      copySwtImage : org.eclipse.swt.graphics.Image_Package_References.Image_Access;
       swtImage : SwtMutableImage_Access;
    begin
         originalImage2 := originalImage;
@@ -129,12 +186,12 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
                 PreLogUtil_Package.put (To_Unbounded_String ("OpenGL but image is: ") & Java_Image (image) & To_Unbounded_String (" type: ") & Java_Image (image.getType), ImageRotationUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("rotateImage"));
             end if;
         end if;
-        originalSwtImage := (Image_Access (originalImage2.getImage));
+        originalSwtImage := (org.eclipse.swt.graphics.Image_Package_References.Image_Access (originalImage2.getImage));
         gc := null;
         copySwtImage := null;
         if image.isMutable then
             swtImage := SwtMutableImage_Access (image);
-            copySwtImage := Image_Access (swtImage.getImage);
+            copySwtImage := org.eclipse.swt.graphics.Image_Package_References.Image_Access (swtImage.getImage);
             gc := swtImage.getGc;
             This.imageSwtRotationUtil.rotateImage (originalSwtImage, copySwtImage, gc, totalAngle);
         else

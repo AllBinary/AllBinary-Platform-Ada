@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package;
 package org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References is
    type PathFinderGraphVisitorFactoryBase_Access is access all org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package.PathFinderGraphVisitorFactoryBase'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisito
    type PathFinderGraphVisitorFactoryBase_Access_Array_Access is access all PathFinderGraphVisitorFactoryBase_Access_Array;
    type PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array is array (Natural range <>) of PathFinderGraphVisitorFactoryBase_Access_Array_Access;
    type PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Access is access all PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array;
+   type PathFinderGraphVisitorFactoryBase_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PathFinderGraphVisitorFactoryBase_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PathFinderGraphVisitorFactoryBase_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PathFinderGraphVisitorFactoryBase_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PathFinderGraphVisitorFactoryBase_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PathFinderGraphVisitorFactoryBase_Access_Array_Access is (if Value /= null and then Value.all in PathFinderGraphVisitorFactoryBase_Access_Array_Object'Class then PathFinderGraphVisitorFactoryBase_Access_Array_Object'Class (Value.all).Value else null);
+   type PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Object'Class then PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References;
 
 with org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References;
@@ -69,10 +80,14 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisito
    function "=" (Left, Right : PathFinderGraphVisitorFactoryBase_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References."=";
    subtype PathFinderGraphVisitorFactoryBase_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References.PathFinderGraphVisitorFactoryBase_Access_Array_Access;
    function "=" (Left, Right : PathFinderGraphVisitorFactoryBase_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References."=";
+   function Java_Box (Value : PathFinderGraphVisitorFactoryBase_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References.Java_Box;
+   function Java_Unbox_PathFinderGraphVisitorFactoryBase_Access_Array (Value : access Java_Object'Class) return PathFinderGraphVisitorFactoryBase_Access_Array_Access renames org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References.Java_Unbox_PathFinderGraphVisitorFactoryBase_Access_Array;
    subtype PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References.PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array;
    function "=" (Left, Right : PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References."=";
    subtype PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References.PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References."=";
+   function Java_Box (Value : PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References.Java_Box;
+   function Java_Unbox_PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array (Value : access Java_Object'Class) return PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array_Access renames org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package_References.Java_Unbox_PathFinderGraphVisitorFactoryBase_Access_Array_Access_Array;
 
    type PathFinderGraphVisitorFactoryBase is new Java_Object with null record;
 

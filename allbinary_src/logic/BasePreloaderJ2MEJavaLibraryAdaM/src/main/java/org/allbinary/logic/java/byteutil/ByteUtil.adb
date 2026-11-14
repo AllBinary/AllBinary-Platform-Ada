@@ -24,7 +24,7 @@ package body org.allbinary.logic.java.byteutil.ByteUtil_Package is
 
    function getInstance return ByteUtil_Access is
    begin
-        return ByteUtil_Access (ByteUtil_Package.instance);
+        return ByteUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ByteUtil'Class) is

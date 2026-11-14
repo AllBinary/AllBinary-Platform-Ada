@@ -49,7 +49,7 @@ package body org.allbinary.graphics.ScreenCaptureNoneFactory_Package is
 
    function getInstance return ScreenCapture_Access is
    begin
-        return ScreenCapture_Access (ScreenCaptureNoneFactory_Package.instance);
+        return ScreenCaptureNoneFactory_Package.instance;
    end getInstance;
 
 begin

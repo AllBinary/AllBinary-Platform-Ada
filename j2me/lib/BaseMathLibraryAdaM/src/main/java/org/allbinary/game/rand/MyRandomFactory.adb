@@ -49,7 +49,7 @@ package body org.allbinary.game.rand.MyRandomFactory_Package is
 
    function getInstance return MyRandomFactory_Access is
    begin
-        return MyRandomFactory_Access (MyRandomFactory_Package.instance);
+        return MyRandomFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out MyRandomFactory'Class) is

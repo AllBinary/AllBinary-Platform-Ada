@@ -51,7 +51,7 @@ package body org.allbinary.graphics.ScreenCaptureFactory_Package is
 
    function getInstance return ScreenCapture_Access is
    begin
-        return ScreenCapture_Access (ScreenCaptureFactory_Package.instance);
+        return ScreenCaptureFactory_Package.instance;
    end getInstance;
 
 begin

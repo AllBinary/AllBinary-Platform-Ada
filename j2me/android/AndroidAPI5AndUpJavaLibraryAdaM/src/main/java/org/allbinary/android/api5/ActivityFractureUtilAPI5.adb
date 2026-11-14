@@ -20,6 +20,16 @@ with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.
 with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
 with org.allbinary.android.api1.ActivityFractureUtilAPI1_Package; use org.allbinary.android.api1.ActivityFractureUtilAPI1_Package;
 with org.allbinary.input.motion.button.TouchScreenFactory_Package; use org.allbinary.input.motion.button.TouchScreenFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
+with org.allbinary.logic.communication.log.Log_Package;
+with org.allbinary.logic.communication.log.LogFormatUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.input.motion.button.TouchScreenType_Package;
 
 package body org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
 
@@ -61,7 +71,7 @@ package body org.allbinary.android.api5.ActivityFractureUtilAPI5_Package is
 
    function getInstance return ActivityFractureUtilAPI5_Access is
    begin
-        return ActivityFractureUtilAPI5_Access (ActivityFractureUtilAPI5_Package.instance5);
+        return ActivityFractureUtilAPI5_Package.instance5;
    end getInstance;
 
    procedure process (This : in out ActivityFractureUtilAPI5; activity_Param : access Activity_Package.Activity'Class) is

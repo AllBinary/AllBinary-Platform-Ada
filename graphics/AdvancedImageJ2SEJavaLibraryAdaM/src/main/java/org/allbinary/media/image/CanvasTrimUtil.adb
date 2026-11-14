@@ -96,7 +96,7 @@ package body org.allbinary.media.image.CanvasTrimUtil_Package is
 
    function getInstance return CanvasTrimUtil_Access is
    begin
-        return CanvasTrimUtil_Access (CanvasTrimUtil_Package.instance);
+        return CanvasTrimUtil_Package.instance;
    end getInstance;
 
    --  throws IOException

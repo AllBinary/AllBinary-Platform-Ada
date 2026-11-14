@@ -98,7 +98,7 @@ package body org.allbinary.logic.io.file.FileLockUtil_Package is
 
    function getInstance return FileLockUtil_Access is
    begin
-        return FileLockUtil_Access (FileLockUtil_Package.instance);
+        return FileLockUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out FileLockUtil'Class) is

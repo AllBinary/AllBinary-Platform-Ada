@@ -40,7 +40,7 @@ package body org.allbinary.animation.VectorAnimationUtil_Package is
 
    function getInstance return VectorAnimationUtil_Access is
    begin
-        return VectorAnimationUtil_Access (VectorAnimationUtil_Package.instance);
+        return VectorAnimationUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out VectorAnimationUtil'Class) is

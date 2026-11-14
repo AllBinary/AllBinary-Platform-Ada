@@ -38,6 +38,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.sql.AbSqlBean_Package; use org.allbinary.logic.communication.sql.AbSqlBean_Package;
 with org.allbinary.logic.control.crypt.SuperCrypt_Package; use org.allbinary.logic.control.crypt.SuperCrypt_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -68,6 +70,8 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package SuperCrypt_Package renames Standard.org.allbinary.logic.control.crypt.SuperCrypt_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -121,7 +125,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
         PaymentGatewayEntity'Class (This).setTableName (This.tableName);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
             This.logUtil.putF (This.commonStrings.CONSTRUCTOR, PaymentGatewayEntity_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         end if;
    end Initialize;
@@ -140,7 +144,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
       time : Unbounded_String;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.START, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
             end if;
             vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
@@ -148,10 +152,10 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
             vector.addAllList (PaymentGatewayEncryptedMapping_Package.Create (paymentGatewayInterface).toVector);
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
-            vector.add (time);
-            vector.add (time);
+            vector.add (Java_Box (time));
+            vector.add (Java_Box (time));
             AbSqlBean_Package.AbSqlBean (This).insert (vector);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.END_Id, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"));
             end if;
         exception
@@ -159,7 +163,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("add"), e);
             end if;
                 end;
@@ -177,7 +181,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
             calendar := Calendar_Package.getInstance;
             time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
             paymentGatewayInterface.setLastModified (time);
-            whereKeyValuePairs := StdUtil_Package.getInstance.createHashMap;
+            whereKeyValuePairs := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             whereKeyValuePairs.put (Java_Box (StoreFrontData_Package.getInstance.NAME.toString), paymentGatewayInterface.getStoreName);
             whereKeyValuePairs.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (paymentGatewayInterface.getName));
             if (whereKeyValuePairs.get (EntryData_Package.getInstance.TIMECREATED)) /= (null) then
@@ -185,7 +189,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
             end if;
             updateHashMap := PaymentGatewayEncryptedMapping_Package.Create (paymentGatewayInterface).toHashMap;
             AbSqlBean_Package.AbSqlBean (This).updateWhere (whereKeyValuePairs, updateHashMap);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("update"));
             end if;
         exception
@@ -193,7 +197,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("update"), e);
             end if;
                 end;
@@ -219,8 +223,8 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
       paymentGatewayInterface : PaymentGatewayInterface_Access;
    begin
         begin
-            paymentGatewayHashMap := StdUtil_Package.getInstance.createHashMap;
-            whereKeyAndValue := StdUtil_Package.getInstance.createHashMap;
+            paymentGatewayHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
+            whereKeyAndValue := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             whereKeyAndValue.put (Java_Box (StoreFrontData_Package.getInstance.NAME.toString), Java_Box (storeName));
             whereKeyAndValue.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (paymentType.getName));
             paymentGatewayHashMap := AbSqlBean_Package.AbSqlBean (This).getRow (whereKeyAndValue);
@@ -249,7 +253,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL8.toString), superCrypt.decrypt (special8));
                 paymentGatewayHashMap.put (Java_Box (PaymentGatewayData_Package.SPECIAL9.toString), superCrypt.decrypt (special9));
                 paymentGatewayInterface := PaymentGatewayInterface_Access (PaymentGatewayInterfaceFactory_Package.Create.getInstance (paymentGatewayHashMap));
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                     This.logUtil.putF (This.commonStrings.SUCCESS, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getPaymentGatewayInterface()"));
                 end if;
                 return paymentGatewayInterface;
@@ -261,7 +265,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (To_Unbounded_String ("Command Failed for paymentType: ") & paymentType.getName, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("getPaymentGatewayInterface"), e);
             end if;
             return null;
@@ -288,7 +292,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                     paymentType := BasicPaymentTypeUtil_Package.getInstance.get (paymentTypeString);
                     paymentGatewayVector.add (Java_Object_Access (paymentType));
                 end loop;
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                     This.logUtil.putF (This.commonStrings.SUCCESS, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("findPaymentTypeVectorByStore()"));
                 end if;
                 return paymentGatewayVector;
@@ -300,7 +304,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("findPaymentTypeVectorByStore"), e);
             end if;
             return null;
@@ -313,11 +317,11 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
       whereHashMap : HashMap_Access;
    begin
         begin
-            whereHashMap := StdUtil_Package.getInstance.createHashMap;
+            whereHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
             whereHashMap.put (Java_Box (StoreFrontData_Package.getInstance.NAME.toString), Java_Box (storeName));
             whereHashMap.put (Java_Box (PaymentGatewayData_Package.NAME.toString), Java_Box (paymentType.getName));
             AbSqlBean_Package.AbSqlBean (This).deleteWhere (whereHashMap);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (This.commonStrings.SUCCESS, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"));
             end if;
         exception
@@ -325,7 +329,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.put (This.commonStrings.FAILURE, PaymentGatewayEntity_Access'(This'Unchecked_Access), To_Unbounded_String ("remove"), e);
             end if;
                 end;

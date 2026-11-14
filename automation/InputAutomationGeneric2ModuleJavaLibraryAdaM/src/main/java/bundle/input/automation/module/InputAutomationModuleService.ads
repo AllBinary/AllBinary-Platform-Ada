@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with bundle.input.automation.module.InputAutomationModuleService_Package;
 package bundle.input.automation.module.InputAutomationModuleService_Package_References is
    type InputAutomationModuleService_Access is access all bundle.input.automation.module.InputAutomationModuleService_Package.InputAutomationModuleService'Class;
@@ -19,6 +20,16 @@ package bundle.input.automation.module.InputAutomationModuleService_Package_Refe
    type InputAutomationModuleService_Access_Array_Access is access all InputAutomationModuleService_Access_Array;
    type InputAutomationModuleService_Access_Array_Access_Array is array (Natural range <>) of InputAutomationModuleService_Access_Array_Access;
    type InputAutomationModuleService_Access_Array_Access_Array_Access is access all InputAutomationModuleService_Access_Array_Access_Array;
+   type InputAutomationModuleService_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InputAutomationModuleService_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InputAutomationModuleService_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InputAutomationModuleService_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InputAutomationModuleService_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InputAutomationModuleService_Access_Array_Access is (if Value /= null and then Value.all in InputAutomationModuleService_Access_Array_Object'Class then InputAutomationModuleService_Access_Array_Object'Class (Value.all).Value else null);
+   type InputAutomationModuleService_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InputAutomationModuleService_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InputAutomationModuleService_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InputAutomationModuleService_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InputAutomationModuleService_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InputAutomationModuleService_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in InputAutomationModuleService_Access_Array_Access_Array_Object'Class then InputAutomationModuleService_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end bundle.input.automation.module.InputAutomationModuleService_Package_References;
 
 with bundle.input.automation.module.InputAutomationModuleService_Package_References;
@@ -58,10 +69,14 @@ package bundle.input.automation.module.InputAutomationModuleService_Package is
    function "=" (Left, Right : InputAutomationModuleService_Access_Array) return Boolean renames bundle.input.automation.module.InputAutomationModuleService_Package_References."=";
    subtype InputAutomationModuleService_Access_Array_Access is bundle.input.automation.module.InputAutomationModuleService_Package_References.InputAutomationModuleService_Access_Array_Access;
    function "=" (Left, Right : InputAutomationModuleService_Access_Array_Access) return Boolean renames bundle.input.automation.module.InputAutomationModuleService_Package_References."=";
+   function Java_Box (Value : InputAutomationModuleService_Access_Array_Access) return Java_Object_Access renames bundle.input.automation.module.InputAutomationModuleService_Package_References.Java_Box;
+   function Java_Unbox_InputAutomationModuleService_Access_Array (Value : access Java_Object'Class) return InputAutomationModuleService_Access_Array_Access renames bundle.input.automation.module.InputAutomationModuleService_Package_References.Java_Unbox_InputAutomationModuleService_Access_Array;
    subtype InputAutomationModuleService_Access_Array_Access_Array is bundle.input.automation.module.InputAutomationModuleService_Package_References.InputAutomationModuleService_Access_Array_Access_Array;
    function "=" (Left, Right : InputAutomationModuleService_Access_Array_Access_Array) return Boolean renames bundle.input.automation.module.InputAutomationModuleService_Package_References."=";
    subtype InputAutomationModuleService_Access_Array_Access_Array_Access is bundle.input.automation.module.InputAutomationModuleService_Package_References.InputAutomationModuleService_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InputAutomationModuleService_Access_Array_Access_Array_Access) return Boolean renames bundle.input.automation.module.InputAutomationModuleService_Package_References."=";
+   function Java_Box (Value : InputAutomationModuleService_Access_Array_Access_Array_Access) return Java_Object_Access renames bundle.input.automation.module.InputAutomationModuleService_Package_References.Java_Box;
+   function Java_Unbox_InputAutomationModuleService_Access_Array_Access_Array (Value : access Java_Object'Class) return InputAutomationModuleService_Access_Array_Access_Array_Access renames bundle.input.automation.module.InputAutomationModuleService_Package_References.Java_Unbox_InputAutomationModuleService_Access_Array_Access_Array;
 
    type InputAutomationModuleService is new Java_Object and InputAutomationModuleServiceInterface with record
       inputAutomationModuleInterfaceArray : InputAutomationModuleFactoryInterface_Access_Array_Access;

@@ -110,7 +110,7 @@ package body org.allbinary.logic.io.BufferedWriterUtil_Package is
 
    function getInstance return BufferedWriterUtil_Access is
    begin
-        return BufferedWriterUtil_Access (BufferedWriterUtil_Package.instance);
+        return BufferedWriterUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

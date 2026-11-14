@@ -113,7 +113,7 @@ package body org.allbinary.layer.LayerManagerNoDebug_Package is
 
    function getInstance return LayerManagerNoDebug_Access is
    begin
-        return LayerManagerNoDebug_Access (LayerManagerNoDebug_Package.instance);
+        return LayerManagerNoDebug_Package.instance;
    end getInstance;
 
 begin

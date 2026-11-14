@@ -85,7 +85,7 @@ package body org.allbinary.animation.VectorMirrorGenerator_Package is
 
    function getInstance return VectorMirrorGenerator_Access is
    begin
-        return VectorMirrorGenerator_Access (VectorMirrorGenerator_Package.instance);
+        return VectorMirrorGenerator_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out VectorMirrorGenerator'Class) is
@@ -130,7 +130,7 @@ package body org.allbinary.animation.VectorMirrorGenerator_Package is
                 pointsBasicArrayList.add (Java_Object_Access (pointBasicArrayList));
             end loop;
             for index in 0 .. (points'Length) - 1 loop
-                pointsBasicArrayList.add (VectorMirrorGenerator'Class (This).getInstance (BasicArrayList_Access (pointsBasicArrayList.objectArray (index)), width));
+                pointsBasicArrayList.add (Java_Object_Access (VectorMirrorGenerator'Class (This).getInstance (BasicArrayList_Access (pointsBasicArrayList.objectArray (index)), width)));
             end loop;
             newPoints := This.vectorAnimationUtil.toAnimationArrayFromListOfPointList (pointsBasicArrayList);
             return newPoints;

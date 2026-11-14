@@ -22,6 +22,7 @@ with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.allbinary.globals.UrlGlobalsData_Package; use org.allbinary.globals.UrlGlobalsData_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -77,8 +78,8 @@ package body org.allbinary.globals.UrlGlobalsView_Package is
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
-        hashMap.put (UrlGlobalsData_Package.WEBAPPPATH, org_Package.allbinary.globals.URLGLOBALS.getWebappPath);
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
+        hashMap.put (UrlGlobalsData_Package.WEBAPPPATH, URLGLOBALS.getWebappPath);
         node := ModDomHelper_Package.createNameValueNodes (document, UrlGlobalsData_Package.NAME, hashMap);
         return node;
    end toXmlNode;

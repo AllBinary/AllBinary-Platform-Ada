@@ -22,6 +22,7 @@ with org.allbinary.util.ABHashtable_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.util.BasicArrayList_Package;
@@ -49,6 +50,9 @@ with org.microemu.device.FontManager_Package;
 with javax.microedition.lcdui.Form_Package;
 with org.microemu.device.ui.FormUI_Package;
 with org.allbinary.game.input.GameKey_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.input.event.GameKeyEventFactory_Package;
+with org.allbinary.game.input.GameKeyEventSourceInterface_Package;
 with org.allbinary.game.input.GameKeyFactory_Package;
 with javax.microedition.lcdui.Gauge_Package;
 with javax.microedition.lcdui.Graphics_Package;
@@ -83,6 +87,7 @@ with org.microemu.device.ui.TextBoxUI_Package;
 with javax.microedition.lcdui.TextField_Package;
 with javax.microedition.lcdui.Ticker_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.input.motion.button.TouchButtonInput_Package;
 with org.microemu.device.ui.UIFactory_Package;
 
 package body org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Package is
@@ -108,7 +113,7 @@ package body org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Pac
 
    function getInstance return CancelTouchButtonInputFactory_Access is
    begin
-        if (CancelTouchButtonInputFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (CancelTouchButtonInputFactory_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             CancelTouchButtonInputFactory_Package.instance := Java_Object_Access (CancelTouchButtonInputFactory_Package.Create);
         end if;
         return CancelTouchButtonInputFactory_Access (CancelTouchButtonInputFactory_Package.instance);

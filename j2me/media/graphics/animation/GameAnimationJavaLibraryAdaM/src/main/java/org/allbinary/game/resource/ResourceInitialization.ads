@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.resource.ResourceInitialization_Package;
 package org.allbinary.game.resource.ResourceInitialization_Package_References is
    type ResourceInitialization_Access is access all org.allbinary.game.resource.ResourceInitialization_Package.ResourceInitialization'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.resource.ResourceInitialization_Package_References is
    type ResourceInitialization_Access_Array_Access is access all ResourceInitialization_Access_Array;
    type ResourceInitialization_Access_Array_Access_Array is array (Natural range <>) of ResourceInitialization_Access_Array_Access;
    type ResourceInitialization_Access_Array_Access_Array_Access is access all ResourceInitialization_Access_Array_Access_Array;
+   type ResourceInitialization_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ResourceInitialization_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ResourceInitialization_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ResourceInitialization_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ResourceInitialization_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ResourceInitialization_Access_Array_Access is (if Value /= null and then Value.all in ResourceInitialization_Access_Array_Object'Class then ResourceInitialization_Access_Array_Object'Class (Value.all).Value else null);
+   type ResourceInitialization_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ResourceInitialization_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ResourceInitialization_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ResourceInitialization_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ResourceInitialization_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ResourceInitialization_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ResourceInitialization_Access_Array_Access_Array_Object'Class then ResourceInitialization_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.resource.ResourceInitialization_Package_References;
 
 with org.allbinary.game.resource.ResourceInitialization_Package_References;
@@ -46,10 +57,14 @@ package org.allbinary.game.resource.ResourceInitialization_Package is
    function "=" (Left, Right : ResourceInitialization_Access_Array) return Boolean renames org.allbinary.game.resource.ResourceInitialization_Package_References."=";
    subtype ResourceInitialization_Access_Array_Access is org.allbinary.game.resource.ResourceInitialization_Package_References.ResourceInitialization_Access_Array_Access;
    function "=" (Left, Right : ResourceInitialization_Access_Array_Access) return Boolean renames org.allbinary.game.resource.ResourceInitialization_Package_References."=";
+   function Java_Box (Value : ResourceInitialization_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.resource.ResourceInitialization_Package_References.Java_Box;
+   function Java_Unbox_ResourceInitialization_Access_Array (Value : access Java_Object'Class) return ResourceInitialization_Access_Array_Access renames org.allbinary.game.resource.ResourceInitialization_Package_References.Java_Unbox_ResourceInitialization_Access_Array;
    subtype ResourceInitialization_Access_Array_Access_Array is org.allbinary.game.resource.ResourceInitialization_Package_References.ResourceInitialization_Access_Array_Access_Array;
    function "=" (Left, Right : ResourceInitialization_Access_Array_Access_Array) return Boolean renames org.allbinary.game.resource.ResourceInitialization_Package_References."=";
    subtype ResourceInitialization_Access_Array_Access_Array_Access is org.allbinary.game.resource.ResourceInitialization_Package_References.ResourceInitialization_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ResourceInitialization_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.resource.ResourceInitialization_Package_References."=";
+   function Java_Box (Value : ResourceInitialization_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.resource.ResourceInitialization_Package_References.Java_Box;
+   function Java_Unbox_ResourceInitialization_Access_Array_Access_Array (Value : access Java_Object'Class) return ResourceInitialization_Access_Array_Access_Array_Access renames org.allbinary.game.resource.ResourceInitialization_Package_References.Java_Unbox_ResourceInitialization_Access_Array_Access_Array;
 
    type ResourceInitialization is new Init_Package.Init with null record;
 

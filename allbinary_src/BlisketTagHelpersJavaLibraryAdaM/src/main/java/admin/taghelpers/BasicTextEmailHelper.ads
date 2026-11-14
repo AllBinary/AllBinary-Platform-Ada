@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.BasicTextEmailHelper_Package;
 package admin.taghelpers.BasicTextEmailHelper_Package_References is
    type BasicTextEmailHelper_Access is access all admin.taghelpers.BasicTextEmailHelper_Package.BasicTextEmailHelper'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.BasicTextEmailHelper_Package_References is
    type BasicTextEmailHelper_Access_Array_Access is access all BasicTextEmailHelper_Access_Array;
    type BasicTextEmailHelper_Access_Array_Access_Array is array (Natural range <>) of BasicTextEmailHelper_Access_Array_Access;
    type BasicTextEmailHelper_Access_Array_Access_Array_Access is access all BasicTextEmailHelper_Access_Array_Access_Array;
+   type BasicTextEmailHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicTextEmailHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicTextEmailHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicTextEmailHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicTextEmailHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicTextEmailHelper_Access_Array_Access is (if Value /= null and then Value.all in BasicTextEmailHelper_Access_Array_Object'Class then BasicTextEmailHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicTextEmailHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicTextEmailHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicTextEmailHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicTextEmailHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicTextEmailHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicTextEmailHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicTextEmailHelper_Access_Array_Access_Array_Object'Class then BasicTextEmailHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.BasicTextEmailHelper_Package_References;
 
 with admin.taghelpers.BasicTextEmailHelper_Package_References;
@@ -61,10 +72,14 @@ package admin.taghelpers.BasicTextEmailHelper_Package is
    function "=" (Left, Right : BasicTextEmailHelper_Access_Array) return Boolean renames admin.taghelpers.BasicTextEmailHelper_Package_References."=";
    subtype BasicTextEmailHelper_Access_Array_Access is admin.taghelpers.BasicTextEmailHelper_Package_References.BasicTextEmailHelper_Access_Array_Access;
    function "=" (Left, Right : BasicTextEmailHelper_Access_Array_Access) return Boolean renames admin.taghelpers.BasicTextEmailHelper_Package_References."=";
+   function Java_Box (Value : BasicTextEmailHelper_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.BasicTextEmailHelper_Package_References.Java_Box;
+   function Java_Unbox_BasicTextEmailHelper_Access_Array (Value : access Java_Object'Class) return BasicTextEmailHelper_Access_Array_Access renames admin.taghelpers.BasicTextEmailHelper_Package_References.Java_Unbox_BasicTextEmailHelper_Access_Array;
    subtype BasicTextEmailHelper_Access_Array_Access_Array is admin.taghelpers.BasicTextEmailHelper_Package_References.BasicTextEmailHelper_Access_Array_Access_Array;
    function "=" (Left, Right : BasicTextEmailHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.BasicTextEmailHelper_Package_References."=";
    subtype BasicTextEmailHelper_Access_Array_Access_Array_Access is admin.taghelpers.BasicTextEmailHelper_Package_References.BasicTextEmailHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicTextEmailHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.BasicTextEmailHelper_Package_References."=";
+   function Java_Box (Value : BasicTextEmailHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.BasicTextEmailHelper_Package_References.Java_Box;
+   function Java_Unbox_BasicTextEmailHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicTextEmailHelper_Access_Array_Access_Array_Access renames admin.taghelpers.BasicTextEmailHelper_Package_References.Java_Unbox_BasicTextEmailHelper_Access_Array_Access_Array;
 
    type BasicTextEmailHelper is new TagHelper with record
       abeClientInformation : AbeClientInformationInterface_Access;

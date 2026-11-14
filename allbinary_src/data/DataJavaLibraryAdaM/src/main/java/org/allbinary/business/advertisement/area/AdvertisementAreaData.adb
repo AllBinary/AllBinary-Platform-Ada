@@ -27,7 +27,7 @@ package body org.allbinary.business.advertisement.area.AdvertisementAreaData_Pac
 
    function getInstance return AdvertisementAreaData_Access is
    begin
-        return AdvertisementAreaData_Access (AdvertisementAreaData_Package.instance);
+        return AdvertisementAreaData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AdvertisementAreaData'Class) is

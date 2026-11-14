@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.audio.AudioContentTypeData_Package;
 package org.allbinary.audio.AudioContentTypeData_Package_References is
    type AudioContentTypeData_Access is access all org.allbinary.audio.AudioContentTypeData_Package.AudioContentTypeData'Class;
@@ -19,6 +20,16 @@ package org.allbinary.audio.AudioContentTypeData_Package_References is
    type AudioContentTypeData_Access_Array_Access is access all AudioContentTypeData_Access_Array;
    type AudioContentTypeData_Access_Array_Access_Array is array (Natural range <>) of AudioContentTypeData_Access_Array_Access;
    type AudioContentTypeData_Access_Array_Access_Array_Access is access all AudioContentTypeData_Access_Array_Access_Array;
+   type AudioContentTypeData_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AudioContentTypeData_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AudioContentTypeData_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AudioContentTypeData_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AudioContentTypeData_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AudioContentTypeData_Access_Array_Access is (if Value /= null and then Value.all in AudioContentTypeData_Access_Array_Object'Class then AudioContentTypeData_Access_Array_Object'Class (Value.all).Value else null);
+   type AudioContentTypeData_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AudioContentTypeData_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AudioContentTypeData_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AudioContentTypeData_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AudioContentTypeData_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AudioContentTypeData_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AudioContentTypeData_Access_Array_Access_Array_Object'Class then AudioContentTypeData_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.audio.AudioContentTypeData_Package_References;
 
 with org.allbinary.audio.AudioContentTypeData_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.audio.AudioContentTypeData_Package is
    function "=" (Left, Right : AudioContentTypeData_Access_Array) return Boolean renames org.allbinary.audio.AudioContentTypeData_Package_References."=";
    subtype AudioContentTypeData_Access_Array_Access is org.allbinary.audio.AudioContentTypeData_Package_References.AudioContentTypeData_Access_Array_Access;
    function "=" (Left, Right : AudioContentTypeData_Access_Array_Access) return Boolean renames org.allbinary.audio.AudioContentTypeData_Package_References."=";
+   function Java_Box (Value : AudioContentTypeData_Access_Array_Access) return Java_Object_Access renames org.allbinary.audio.AudioContentTypeData_Package_References.Java_Box;
+   function Java_Unbox_AudioContentTypeData_Access_Array (Value : access Java_Object'Class) return AudioContentTypeData_Access_Array_Access renames org.allbinary.audio.AudioContentTypeData_Package_References.Java_Unbox_AudioContentTypeData_Access_Array;
    subtype AudioContentTypeData_Access_Array_Access_Array is org.allbinary.audio.AudioContentTypeData_Package_References.AudioContentTypeData_Access_Array_Access_Array;
    function "=" (Left, Right : AudioContentTypeData_Access_Array_Access_Array) return Boolean renames org.allbinary.audio.AudioContentTypeData_Package_References."=";
    subtype AudioContentTypeData_Access_Array_Access_Array_Access is org.allbinary.audio.AudioContentTypeData_Package_References.AudioContentTypeData_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AudioContentTypeData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.audio.AudioContentTypeData_Package_References."=";
+   function Java_Box (Value : AudioContentTypeData_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.audio.AudioContentTypeData_Package_References.Java_Box;
+   function Java_Unbox_AudioContentTypeData_Access_Array_Access_Array (Value : access Java_Object'Class) return AudioContentTypeData_Access_Array_Access_Array_Access renames org.allbinary.audio.AudioContentTypeData_Package_References.Java_Unbox_AudioContentTypeData_Access_Array_Access_Array;
 
    type AudioContentTypeData is new Java_Object with record
       name : Unbounded_String;

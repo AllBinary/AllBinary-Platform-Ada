@@ -63,7 +63,7 @@ package body org.allbinary.graphics.color.ColorTemperatureUtil_Package is
 
    function getInstance return ColorTemperatureUtil_Access is
    begin
-        return ColorTemperatureUtil_Access (ColorTemperatureUtil_Package.instance);
+        return ColorTemperatureUtil_Package.instance;
    end getInstance;
 
    function getBasicColor (This : in out ColorTemperatureUtil; thirdTemp : Integer) return BasicColor_Access is

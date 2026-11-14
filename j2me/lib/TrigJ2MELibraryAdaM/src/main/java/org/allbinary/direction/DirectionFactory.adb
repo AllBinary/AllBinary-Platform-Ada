@@ -57,7 +57,7 @@ package body org.allbinary.direction.DirectionFactory_Package is
 
    function getInstance return DirectionFactory_Access is
    begin
-        return DirectionFactory_Access (DirectionFactory_Package.instance);
+        return DirectionFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out DirectionFactory'Class) is

@@ -45,7 +45,7 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeF
 
    function getInstance return LogConfigTypeFactory_Access is
    begin
-        return LogConfigTypeFactory_Access (LogConfigTypeFactory_Package.instance);
+        return LogConfigTypeFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out LogConfigTypeFactory'Class) is

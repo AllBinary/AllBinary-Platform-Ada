@@ -54,7 +54,7 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
 
    function getInstance return ImageJ2MEScaleUtil_Access is
    begin
-        return ImageJ2MEScaleUtil_Access (ImageJ2MEScaleUtil_Package.instance);
+        return ImageJ2MEScaleUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageJ2MEScaleUtil'Class) is

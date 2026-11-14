@@ -94,7 +94,7 @@ package body org.allbinary.logic.system.hardware.SystemHardwareFactory_Package i
 
    function getInstance return SystemHardwareFactory_Access is
    begin
-        return SystemHardwareFactory_Access (SystemHardwareFactory_Package.instance);
+        return SystemHardwareFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out SystemHardwareFactory'Class) is

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
 package org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References is
    type TouchButtonRecognizer_Access is access all org.allbinary.input.motion.button.TouchButtonRecognizer_Package.TouchButtonRecognizer'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.motion.button.TouchButtonRecognizer_Package_Referenc
    type TouchButtonRecognizer_Access_Array_Access is access all TouchButtonRecognizer_Access_Array;
    type TouchButtonRecognizer_Access_Array_Access_Array is array (Natural range <>) of TouchButtonRecognizer_Access_Array_Access;
    type TouchButtonRecognizer_Access_Array_Access_Array_Access is access all TouchButtonRecognizer_Access_Array_Access_Array;
+   type TouchButtonRecognizer_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TouchButtonRecognizer_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TouchButtonRecognizer_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TouchButtonRecognizer_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TouchButtonRecognizer_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TouchButtonRecognizer_Access_Array_Access is (if Value /= null and then Value.all in TouchButtonRecognizer_Access_Array_Object'Class then TouchButtonRecognizer_Access_Array_Object'Class (Value.all).Value else null);
+   type TouchButtonRecognizer_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TouchButtonRecognizer_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TouchButtonRecognizer_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TouchButtonRecognizer_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TouchButtonRecognizer_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TouchButtonRecognizer_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TouchButtonRecognizer_Access_Array_Access_Array_Object'Class then TouchButtonRecognizer_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References;
 
 with org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References;
@@ -121,10 +132,14 @@ package org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
    function "=" (Left, Right : TouchButtonRecognizer_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References."=";
    subtype TouchButtonRecognizer_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.TouchButtonRecognizer_Access_Array_Access;
    function "=" (Left, Right : TouchButtonRecognizer_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References."=";
+   function Java_Box (Value : TouchButtonRecognizer_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.Java_Box;
+   function Java_Unbox_TouchButtonRecognizer_Access_Array (Value : access Java_Object'Class) return TouchButtonRecognizer_Access_Array_Access renames org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.Java_Unbox_TouchButtonRecognizer_Access_Array;
    subtype TouchButtonRecognizer_Access_Array_Access_Array is org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.TouchButtonRecognizer_Access_Array_Access_Array;
    function "=" (Left, Right : TouchButtonRecognizer_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References."=";
    subtype TouchButtonRecognizer_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.TouchButtonRecognizer_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TouchButtonRecognizer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References."=";
+   function Java_Box (Value : TouchButtonRecognizer_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.Java_Box;
+   function Java_Unbox_TouchButtonRecognizer_Access_Array_Access_Array (Value : access Java_Object'Class) return TouchButtonRecognizer_Access_Array_Access_Array_Access renames org.allbinary.input.motion.button.TouchButtonRecognizer_Package_References.Java_Unbox_TouchButtonRecognizer_Access_Array_Access_Array;
 
    type TouchButtonRecognizer is new Java_Object with record
       logUtil : LogUtil_Access;
@@ -146,6 +161,7 @@ package org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
 
 end org.allbinary.input.motion.button.TouchButtonRecognizer_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.input.motion.button.ReleaseHelper_Package;
 package org.allbinary.input.motion.button.ReleaseHelper_Package_References is
    type ReleaseHelper_Access is access all org.allbinary.input.motion.button.ReleaseHelper_Package.ReleaseHelper'Class;
@@ -153,6 +169,16 @@ package org.allbinary.input.motion.button.ReleaseHelper_Package_References is
    type ReleaseHelper_Access_Array_Access is access all ReleaseHelper_Access_Array;
    type ReleaseHelper_Access_Array_Access_Array is array (Natural range <>) of ReleaseHelper_Access_Array_Access;
    type ReleaseHelper_Access_Array_Access_Array_Access is access all ReleaseHelper_Access_Array_Access_Array;
+   type ReleaseHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ReleaseHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ReleaseHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ReleaseHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ReleaseHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ReleaseHelper_Access_Array_Access is (if Value /= null and then Value.all in ReleaseHelper_Access_Array_Object'Class then ReleaseHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type ReleaseHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ReleaseHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ReleaseHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ReleaseHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ReleaseHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ReleaseHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ReleaseHelper_Access_Array_Access_Array_Object'Class then ReleaseHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.motion.button.ReleaseHelper_Package_References;
 
 with org.allbinary.input.motion.button.ReleaseHelper_Package_References;
@@ -266,10 +292,14 @@ package org.allbinary.input.motion.button.ReleaseHelper_Package is
    function "=" (Left, Right : ReleaseHelper_Access_Array) return Boolean renames org.allbinary.input.motion.button.ReleaseHelper_Package_References."=";
    subtype ReleaseHelper_Access_Array_Access is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array_Access;
    function "=" (Left, Right : ReleaseHelper_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.ReleaseHelper_Package_References."=";
+   function Java_Box (Value : ReleaseHelper_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.ReleaseHelper_Package_References.Java_Box;
+   function Java_Unbox_ReleaseHelper_Access_Array (Value : access Java_Object'Class) return ReleaseHelper_Access_Array_Access renames org.allbinary.input.motion.button.ReleaseHelper_Package_References.Java_Unbox_ReleaseHelper_Access_Array;
    subtype ReleaseHelper_Access_Array_Access_Array is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array_Access_Array;
    function "=" (Left, Right : ReleaseHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.ReleaseHelper_Package_References."=";
    subtype ReleaseHelper_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.ReleaseHelper_Package_References.ReleaseHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ReleaseHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.ReleaseHelper_Package_References."=";
+   function Java_Box (Value : ReleaseHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.ReleaseHelper_Package_References.Java_Box;
+   function Java_Unbox_ReleaseHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return ReleaseHelper_Access_Array_Access_Array_Access renames org.allbinary.input.motion.button.ReleaseHelper_Package_References.Java_Unbox_ReleaseHelper_Access_Array_Access_Array;
 
    type ReleaseHelper is new Java_Object with record
       touchButtonRecognizer_Var : TouchButtonRecognizer_Access;
@@ -281,6 +311,7 @@ package org.allbinary.input.motion.button.ReleaseHelper_Package is
 
 end org.allbinary.input.motion.button.ReleaseHelper_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.input.motion.button.MultitouchReleaseHelper_Package;
 package org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_References is
    type MultitouchReleaseHelper_Access is access all org.allbinary.input.motion.button.MultitouchReleaseHelper_Package.MultitouchReleaseHelper'Class;
@@ -288,6 +319,16 @@ package org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_Refere
    type MultitouchReleaseHelper_Access_Array_Access is access all MultitouchReleaseHelper_Access_Array;
    type MultitouchReleaseHelper_Access_Array_Access_Array is array (Natural range <>) of MultitouchReleaseHelper_Access_Array_Access;
    type MultitouchReleaseHelper_Access_Array_Access_Array_Access is access all MultitouchReleaseHelper_Access_Array_Access_Array;
+   type MultitouchReleaseHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MultitouchReleaseHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MultitouchReleaseHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MultitouchReleaseHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MultitouchReleaseHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MultitouchReleaseHelper_Access_Array_Access is (if Value /= null and then Value.all in MultitouchReleaseHelper_Access_Array_Object'Class then MultitouchReleaseHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type MultitouchReleaseHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MultitouchReleaseHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MultitouchReleaseHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MultitouchReleaseHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MultitouchReleaseHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MultitouchReleaseHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MultitouchReleaseHelper_Access_Array_Access_Array_Object'Class then MultitouchReleaseHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_References;
 
 with org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_References;
@@ -402,10 +443,14 @@ package org.allbinary.input.motion.button.MultitouchReleaseHelper_Package is
    function "=" (Left, Right : MultitouchReleaseHelper_Access_Array) return Boolean renames org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_References."=";
    subtype MultitouchReleaseHelper_Access_Array_Access is org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_References.MultitouchReleaseHelper_Access_Array_Access;
    function "=" (Left, Right : MultitouchReleaseHelper_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_References."=";
+   function Java_Box (Value : MultitouchReleaseHelper_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_References.Java_Box;
+   function Java_Unbox_MultitouchReleaseHelper_Access_Array (Value : access Java_Object'Class) return MultitouchReleaseHelper_Access_Array_Access renames org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_References.Java_Unbox_MultitouchReleaseHelper_Access_Array;
    subtype MultitouchReleaseHelper_Access_Array_Access_Array is org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_References.MultitouchReleaseHelper_Access_Array_Access_Array;
    function "=" (Left, Right : MultitouchReleaseHelper_Access_Array_Access_Array) return Boolean renames org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_References."=";
    subtype MultitouchReleaseHelper_Access_Array_Access_Array_Access is org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_References.MultitouchReleaseHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MultitouchReleaseHelper_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_References."=";
+   function Java_Box (Value : MultitouchReleaseHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_References.Java_Box;
+   function Java_Unbox_MultitouchReleaseHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return MultitouchReleaseHelper_Access_Array_Access_Array_Access renames org.allbinary.input.motion.button.MultitouchReleaseHelper_Package_References.Java_Unbox_MultitouchReleaseHelper_Access_Array_Access_Array;
 
    type MultitouchReleaseHelper is new ReleaseHelper with null record;
 

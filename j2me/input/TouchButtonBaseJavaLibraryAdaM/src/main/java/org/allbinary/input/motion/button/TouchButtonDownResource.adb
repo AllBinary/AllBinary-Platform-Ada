@@ -24,7 +24,7 @@ package body org.allbinary.input.motion.button.TouchButtonDownResource_Package i
 
    function getInstance return TouchButtonResource_Access is
    begin
-        return TouchButtonResource_Access (TouchButtonDownResource_Package.instance);
+        return TouchButtonDownResource_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TouchButtonDownResource'Class) is

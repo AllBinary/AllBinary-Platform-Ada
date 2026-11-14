@@ -36,7 +36,7 @@ package body org.platform.opengl.OpenGLGLU_Package is
 
    function getInstance return OpenGLGLU_Access is
    begin
-        return OpenGLGLU_Access (OpenGLGLU_Package.instance);
+        return OpenGLGLU_Package.instance;
    end getInstance;
 
    procedure gluLookAt (This : in out OpenGLGLU; gl_Param : access GL10_Package.GL10'Class; eyeX : Float; eyeY : Float; eyeZ : Float; centerX : Float; centerY : Float; centerZ : Float; upX : Float; upY : Float; upZ : Float) is

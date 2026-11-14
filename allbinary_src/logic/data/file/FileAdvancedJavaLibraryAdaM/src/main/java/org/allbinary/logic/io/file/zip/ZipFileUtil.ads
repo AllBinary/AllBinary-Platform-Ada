@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.io.file.zip.ZipFileUtil_Package;
 package org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References is
    type ZipFileUtil_Access is access all org.allbinary.logic.io.file.zip.ZipFileUtil_Package.ZipFileUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References is
    type ZipFileUtil_Access_Array_Access is access all ZipFileUtil_Access_Array;
    type ZipFileUtil_Access_Array_Access_Array is array (Natural range <>) of ZipFileUtil_Access_Array_Access;
    type ZipFileUtil_Access_Array_Access_Array_Access is access all ZipFileUtil_Access_Array_Access_Array;
+   type ZipFileUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ZipFileUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ZipFileUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ZipFileUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ZipFileUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ZipFileUtil_Access_Array_Access is (if Value /= null and then Value.all in ZipFileUtil_Access_Array_Object'Class then ZipFileUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type ZipFileUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ZipFileUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ZipFileUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ZipFileUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ZipFileUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ZipFileUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ZipFileUtil_Access_Array_Access_Array_Object'Class then ZipFileUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References;
 
 with org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References;
@@ -99,10 +110,14 @@ package org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
    function "=" (Left, Right : ZipFileUtil_Access_Array) return Boolean renames org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References."=";
    subtype ZipFileUtil_Access_Array_Access is org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References.ZipFileUtil_Access_Array_Access;
    function "=" (Left, Right : ZipFileUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References."=";
+   function Java_Box (Value : ZipFileUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References.Java_Box;
+   function Java_Unbox_ZipFileUtil_Access_Array (Value : access Java_Object'Class) return ZipFileUtil_Access_Array_Access renames org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References.Java_Unbox_ZipFileUtil_Access_Array;
    subtype ZipFileUtil_Access_Array_Access_Array is org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References.ZipFileUtil_Access_Array_Access_Array;
    function "=" (Left, Right : ZipFileUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References."=";
    subtype ZipFileUtil_Access_Array_Access_Array_Access is org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References.ZipFileUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ZipFileUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References."=";
+   function Java_Box (Value : ZipFileUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References.Java_Box;
+   function Java_Unbox_ZipFileUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return ZipFileUtil_Access_Array_Access_Array_Access renames org.allbinary.logic.io.file.zip.ZipFileUtil_Package_References.Java_Unbox_ZipFileUtil_Access_Array_Access_Array;
 
    type ZipFileUtil is new Java_Object with record
       logUtil : LogUtil_Access;

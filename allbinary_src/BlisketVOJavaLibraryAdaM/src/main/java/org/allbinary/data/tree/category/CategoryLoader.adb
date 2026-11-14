@@ -32,6 +32,8 @@ with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
 with org.w3c.dom.NodeList_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.data.tree.category.CategoryModifierTreeInterface_Package;
 with org.allbinary.data.tree.category.CategoryPrivateTree_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
@@ -55,6 +57,8 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package AbPath_Package renames Standard.org.allbinary.logic.io.path.AbPath_Package;
    package Node_Package renames Standard.org.w3c.dom.Node_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype CategoryFactoryInterface_Access is org.allbinary.business.category.CategoryFactoryInterface_Package_References.CategoryFactoryInterface_Access;
    function "=" (Left, Right : CategoryFactoryInterface_Access) return Boolean renames org.allbinary.business.category.CategoryFactoryInterface_Package_References."=";
    subtype CategoryFactoryInterface_Access_Array is org.allbinary.business.category.CategoryFactoryInterface_Package_References.CategoryFactoryInterface_Access_Array;
@@ -117,7 +121,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
    begin
         CategoryModifierTree_Package.Initialize (This, categoryFactoryInterface);
         Initialize_Fields (This);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
             This.CategoryLoader_Field_logUtil.putF (This.commonStrings.START, CategoryLoader_Access'(This'Unchecked_Access), To_Unbounded_String ("CategoryLoader(CategoryFactoryInterface categoryFactoryInterface)"));
         end if;
    end Initialize;
@@ -160,7 +164,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 begin
                     categoryInterface.log;
                 exception
@@ -186,13 +190,13 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         begin
             document := CategoryLoader'Class (This).getDoc (categoryInterface);
             categoryNode := DomSearchHelper_Package.getNode (CategoryData_Package.getInstance.NAME, document.getChildNodes);
-            return CategoryInterface_Access (CategoryLoader'Class (This).addProperties (categoryInterface, categoryNode.getChildNodes));
+            return CategoryLoader'Class (This).addProperties (categoryInterface, categoryNode.getChildNodes);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.CategoryLoader_Field_logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
@@ -208,13 +212,13 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         begin
             categoryNode := DomSearchHelper_Package.getNode (CategoryData_Package.getInstance.NAME, document.getChildNodes);
             loadedCategoryInterface := CategoryInterface_Access (This.categoryFactoryInterface.getRootInstanceFromNode (categoryNode));
-            return CategoryInterface_Access (CategoryLoader'Class (This).addProperties (loadedCategoryInterface, categoryNode.getChildNodes));
+            return CategoryLoader'Class (This).addProperties (loadedCategoryInterface, categoryNode.getChildNodes);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.CategoryLoader_Field_logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
@@ -228,13 +232,13 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
    begin
         begin
             document := CategoryLoader'Class (This).getDoc (categoryInterface);
-            return CategoryInterface_Access (CategoryLoader'Class (This).getAll (document));
+            return CategoryLoader'Class (This).getAll (document);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.CategoryLoader_Field_logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
@@ -250,13 +254,13 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         begin
             categoryNode := DomSearchHelper_Package.getNode (CategoryData_Package.getInstance.NAME, document.getChildNodes);
             loadedCategoryInterface := CategoryInterface_Access (This.categoryFactoryInterface.getRootInstanceFromNode (categoryNode));
-            return CategoryInterface_Access (CategoryLoader'Class (This).addProperties (loadedCategoryInterface, categoryNode.getChildNodes));
+            return CategoryLoader'Class (This).addProperties (loadedCategoryInterface, categoryNode.getChildNodes);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.CategoryLoader_Field_logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
@@ -287,7 +291,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.CategoryLoader_Field_logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;
@@ -318,7 +322,7 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.CategoryLoader_Field_logUtil.put (This.commonStrings.FAILURE, CategoryLoader_Access'(This'Unchecked_Access), This.commonStrings.GET, e);
             end if;
             return null;

@@ -44,7 +44,7 @@ package body org.allbinary.thread.SecondaryThreadPool_Package is
 
    function getInstance return ThreadPool_Access is
    begin
-        return ThreadPool_Access (SecondaryThreadPool_Package.instance);
+        return SecondaryThreadPool_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out SecondaryThreadPool'Class; poolName : Unbounded_String; numThreads : Integer; priority : Integer) is

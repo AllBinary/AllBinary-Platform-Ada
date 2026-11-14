@@ -104,7 +104,7 @@ package body bundle.input.automation.InputAutomationBundleActivator_Package is
 
    function getBundleContext return BundleContext_Access is
    begin
-        return BundleContext_Access (InputAutomationBundleActivator_Package.bundleContext);
+        return InputAutomationBundleActivator_Package.bundleContext;
    end getBundleContext;
 
    --  throws Exception

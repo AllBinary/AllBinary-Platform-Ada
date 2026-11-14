@@ -28,7 +28,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
 
    function getInstance return TitleData_Access is
    begin
-        return TitleData_Access (TitleData_Package.instance);
+        return TitleData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TitleData'Class) is

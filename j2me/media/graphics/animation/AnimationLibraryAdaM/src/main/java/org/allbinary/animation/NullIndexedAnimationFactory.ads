@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.NullIndexedAnimationFactory_Package;
 package org.allbinary.animation.NullIndexedAnimationFactory_Package_References is
    type NullIndexedAnimationFactory_Access is access all org.allbinary.animation.NullIndexedAnimationFactory_Package.NullIndexedAnimationFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.NullIndexedAnimationFactory_Package_References i
    type NullIndexedAnimationFactory_Access_Array_Access is access all NullIndexedAnimationFactory_Access_Array;
    type NullIndexedAnimationFactory_Access_Array_Access_Array is array (Natural range <>) of NullIndexedAnimationFactory_Access_Array_Access;
    type NullIndexedAnimationFactory_Access_Array_Access_Array_Access is access all NullIndexedAnimationFactory_Access_Array_Access_Array;
+   type NullIndexedAnimationFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NullIndexedAnimationFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NullIndexedAnimationFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NullIndexedAnimationFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NullIndexedAnimationFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NullIndexedAnimationFactory_Access_Array_Access is (if Value /= null and then Value.all in NullIndexedAnimationFactory_Access_Array_Object'Class then NullIndexedAnimationFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type NullIndexedAnimationFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NullIndexedAnimationFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NullIndexedAnimationFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NullIndexedAnimationFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NullIndexedAnimationFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NullIndexedAnimationFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NullIndexedAnimationFactory_Access_Array_Access_Array_Object'Class then NullIndexedAnimationFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.NullIndexedAnimationFactory_Package_References;
 
 with org.allbinary.animation.NullIndexedAnimationFactory_Package_References;
@@ -75,10 +86,14 @@ package org.allbinary.animation.NullIndexedAnimationFactory_Package is
    function "=" (Left, Right : NullIndexedAnimationFactory_Access_Array) return Boolean renames org.allbinary.animation.NullIndexedAnimationFactory_Package_References."=";
    subtype NullIndexedAnimationFactory_Access_Array_Access is org.allbinary.animation.NullIndexedAnimationFactory_Package_References.NullIndexedAnimationFactory_Access_Array_Access;
    function "=" (Left, Right : NullIndexedAnimationFactory_Access_Array_Access) return Boolean renames org.allbinary.animation.NullIndexedAnimationFactory_Package_References."=";
+   function Java_Box (Value : NullIndexedAnimationFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.NullIndexedAnimationFactory_Package_References.Java_Box;
+   function Java_Unbox_NullIndexedAnimationFactory_Access_Array (Value : access Java_Object'Class) return NullIndexedAnimationFactory_Access_Array_Access renames org.allbinary.animation.NullIndexedAnimationFactory_Package_References.Java_Unbox_NullIndexedAnimationFactory_Access_Array;
    subtype NullIndexedAnimationFactory_Access_Array_Access_Array is org.allbinary.animation.NullIndexedAnimationFactory_Package_References.NullIndexedAnimationFactory_Access_Array_Access_Array;
    function "=" (Left, Right : NullIndexedAnimationFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.NullIndexedAnimationFactory_Package_References."=";
    subtype NullIndexedAnimationFactory_Access_Array_Access_Array_Access is org.allbinary.animation.NullIndexedAnimationFactory_Package_References.NullIndexedAnimationFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NullIndexedAnimationFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.NullIndexedAnimationFactory_Package_References."=";
+   function Java_Box (Value : NullIndexedAnimationFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.NullIndexedAnimationFactory_Package_References.Java_Box;
+   function Java_Unbox_NullIndexedAnimationFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return NullIndexedAnimationFactory_Access_Array_Access_Array_Access renames org.allbinary.animation.NullIndexedAnimationFactory_Package_References.Java_Unbox_NullIndexedAnimationFactory_Access_Array_Access_Array;
 
    type NullIndexedAnimationFactory is new Java_Object and AnimationInterfaceFactoryInterface and ProceduralAnimationInterfaceFactoryInterface with record
       NULL_ANIMATION : Animation_Access;
@@ -97,6 +112,7 @@ package org.allbinary.animation.NullIndexedAnimationFactory_Package is
 
 end org.allbinary.animation.NullIndexedAnimationFactory_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.animation.NullIndexedAnimationInner_Package;
 package org.allbinary.animation.NullIndexedAnimationInner_Package_References is
    type NullIndexedAnimationInner_Access is access all org.allbinary.animation.NullIndexedAnimationInner_Package.NullIndexedAnimationInner'Class;
@@ -104,6 +120,16 @@ package org.allbinary.animation.NullIndexedAnimationInner_Package_References is
    type NullIndexedAnimationInner_Access_Array_Access is access all NullIndexedAnimationInner_Access_Array;
    type NullIndexedAnimationInner_Access_Array_Access_Array is array (Natural range <>) of NullIndexedAnimationInner_Access_Array_Access;
    type NullIndexedAnimationInner_Access_Array_Access_Array_Access is access all NullIndexedAnimationInner_Access_Array_Access_Array;
+   type NullIndexedAnimationInner_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NullIndexedAnimationInner_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NullIndexedAnimationInner_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NullIndexedAnimationInner_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NullIndexedAnimationInner_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NullIndexedAnimationInner_Access_Array_Access is (if Value /= null and then Value.all in NullIndexedAnimationInner_Access_Array_Object'Class then NullIndexedAnimationInner_Access_Array_Object'Class (Value.all).Value else null);
+   type NullIndexedAnimationInner_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NullIndexedAnimationInner_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NullIndexedAnimationInner_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NullIndexedAnimationInner_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NullIndexedAnimationInner_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NullIndexedAnimationInner_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NullIndexedAnimationInner_Access_Array_Access_Array_Object'Class then NullIndexedAnimationInner_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.NullIndexedAnimationInner_Package_References;
 
 with org.allbinary.animation.NullIndexedAnimationInner_Package_References;
@@ -172,10 +198,14 @@ package org.allbinary.animation.NullIndexedAnimationInner_Package is
    function "=" (Left, Right : NullIndexedAnimationInner_Access_Array) return Boolean renames org.allbinary.animation.NullIndexedAnimationInner_Package_References."=";
    subtype NullIndexedAnimationInner_Access_Array_Access is org.allbinary.animation.NullIndexedAnimationInner_Package_References.NullIndexedAnimationInner_Access_Array_Access;
    function "=" (Left, Right : NullIndexedAnimationInner_Access_Array_Access) return Boolean renames org.allbinary.animation.NullIndexedAnimationInner_Package_References."=";
+   function Java_Box (Value : NullIndexedAnimationInner_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.NullIndexedAnimationInner_Package_References.Java_Box;
+   function Java_Unbox_NullIndexedAnimationInner_Access_Array (Value : access Java_Object'Class) return NullIndexedAnimationInner_Access_Array_Access renames org.allbinary.animation.NullIndexedAnimationInner_Package_References.Java_Unbox_NullIndexedAnimationInner_Access_Array;
    subtype NullIndexedAnimationInner_Access_Array_Access_Array is org.allbinary.animation.NullIndexedAnimationInner_Package_References.NullIndexedAnimationInner_Access_Array_Access_Array;
    function "=" (Left, Right : NullIndexedAnimationInner_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.NullIndexedAnimationInner_Package_References."=";
    subtype NullIndexedAnimationInner_Access_Array_Access_Array_Access is org.allbinary.animation.NullIndexedAnimationInner_Package_References.NullIndexedAnimationInner_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NullIndexedAnimationInner_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.NullIndexedAnimationInner_Package_References."=";
+   function Java_Box (Value : NullIndexedAnimationInner_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.NullIndexedAnimationInner_Package_References.Java_Box;
+   function Java_Unbox_NullIndexedAnimationInner_Access_Array_Access_Array (Value : access Java_Object'Class) return NullIndexedAnimationInner_Access_Array_Access_Array_Access renames org.allbinary.animation.NullIndexedAnimationInner_Package_References.Java_Unbox_NullIndexedAnimationInner_Access_Array_Access_Array;
 
    type NullIndexedAnimationInner is new NullIndexedAnimation with null record;
 

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.input.MapSelectionGameInputProcessor_Package;
 package org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References is
    type MapSelectionGameInputProcessor_Access is access all org.allbinary.game.input.MapSelectionGameInputProcessor_Package.MapSelectionGameInputProcessor'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.input.MapSelectionGameInputProcessor_Package_Referenc
    type MapSelectionGameInputProcessor_Access_Array_Access is access all MapSelectionGameInputProcessor_Access_Array;
    type MapSelectionGameInputProcessor_Access_Array_Access_Array is array (Natural range <>) of MapSelectionGameInputProcessor_Access_Array_Access;
    type MapSelectionGameInputProcessor_Access_Array_Access_Array_Access is access all MapSelectionGameInputProcessor_Access_Array_Access_Array;
+   type MapSelectionGameInputProcessor_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MapSelectionGameInputProcessor_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MapSelectionGameInputProcessor_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MapSelectionGameInputProcessor_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MapSelectionGameInputProcessor_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MapSelectionGameInputProcessor_Access_Array_Access is (if Value /= null and then Value.all in MapSelectionGameInputProcessor_Access_Array_Object'Class then MapSelectionGameInputProcessor_Access_Array_Object'Class (Value.all).Value else null);
+   type MapSelectionGameInputProcessor_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MapSelectionGameInputProcessor_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MapSelectionGameInputProcessor_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MapSelectionGameInputProcessor_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MapSelectionGameInputProcessor_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MapSelectionGameInputProcessor_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MapSelectionGameInputProcessor_Access_Array_Access_Array_Object'Class then MapSelectionGameInputProcessor_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References;
 
 with org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References;
@@ -153,10 +164,14 @@ package org.allbinary.game.input.MapSelectionGameInputProcessor_Package is
    function "=" (Left, Right : MapSelectionGameInputProcessor_Access_Array) return Boolean renames org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References."=";
    subtype MapSelectionGameInputProcessor_Access_Array_Access is org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.MapSelectionGameInputProcessor_Access_Array_Access;
    function "=" (Left, Right : MapSelectionGameInputProcessor_Access_Array_Access) return Boolean renames org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References."=";
+   function Java_Box (Value : MapSelectionGameInputProcessor_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.Java_Box;
+   function Java_Unbox_MapSelectionGameInputProcessor_Access_Array (Value : access Java_Object'Class) return MapSelectionGameInputProcessor_Access_Array_Access renames org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.Java_Unbox_MapSelectionGameInputProcessor_Access_Array;
    subtype MapSelectionGameInputProcessor_Access_Array_Access_Array is org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.MapSelectionGameInputProcessor_Access_Array_Access_Array;
    function "=" (Left, Right : MapSelectionGameInputProcessor_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References."=";
    subtype MapSelectionGameInputProcessor_Access_Array_Access_Array_Access is org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.MapSelectionGameInputProcessor_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MapSelectionGameInputProcessor_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References."=";
+   function Java_Box (Value : MapSelectionGameInputProcessor_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.Java_Box;
+   function Java_Unbox_MapSelectionGameInputProcessor_Access_Array_Access_Array (Value : access Java_Object'Class) return MapSelectionGameInputProcessor_Access_Array_Access_Array_Access renames org.allbinary.game.input.MapSelectionGameInputProcessor_Package_References.Java_Unbox_MapSelectionGameInputProcessor_Access_Array_Access_Array;
 
    type MapSelectionGameInputProcessor is new Processor and GameInputProcessorInterface and PlayerGameInputCompositeInterface with record
       logUtil : LogUtil_Access;
@@ -180,6 +195,7 @@ package org.allbinary.game.input.MapSelectionGameInputProcessor_Package is
 
 end org.allbinary.game.input.MapSelectionGameInputProcessor_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.game.input.MapSelectionRunnable_Package;
 package org.allbinary.game.input.MapSelectionRunnable_Package_References is
    type MapSelectionRunnable_Access is access all org.allbinary.game.input.MapSelectionRunnable_Package.MapSelectionRunnable'Class;
@@ -187,6 +203,16 @@ package org.allbinary.game.input.MapSelectionRunnable_Package_References is
    type MapSelectionRunnable_Access_Array_Access is access all MapSelectionRunnable_Access_Array;
    type MapSelectionRunnable_Access_Array_Access_Array is array (Natural range <>) of MapSelectionRunnable_Access_Array_Access;
    type MapSelectionRunnable_Access_Array_Access_Array_Access is access all MapSelectionRunnable_Access_Array_Access_Array;
+   type MapSelectionRunnable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MapSelectionRunnable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MapSelectionRunnable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MapSelectionRunnable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MapSelectionRunnable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MapSelectionRunnable_Access_Array_Access is (if Value /= null and then Value.all in MapSelectionRunnable_Access_Array_Object'Class then MapSelectionRunnable_Access_Array_Object'Class (Value.all).Value else null);
+   type MapSelectionRunnable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : MapSelectionRunnable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : MapSelectionRunnable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new MapSelectionRunnable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_MapSelectionRunnable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return MapSelectionRunnable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in MapSelectionRunnable_Access_Array_Access_Array_Object'Class then MapSelectionRunnable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.input.MapSelectionRunnable_Package_References;
 
 with org.allbinary.game.input.MapSelectionRunnable_Package_References;
@@ -333,10 +359,14 @@ package org.allbinary.game.input.MapSelectionRunnable_Package is
    function "=" (Left, Right : MapSelectionRunnable_Access_Array) return Boolean renames org.allbinary.game.input.MapSelectionRunnable_Package_References."=";
    subtype MapSelectionRunnable_Access_Array_Access is org.allbinary.game.input.MapSelectionRunnable_Package_References.MapSelectionRunnable_Access_Array_Access;
    function "=" (Left, Right : MapSelectionRunnable_Access_Array_Access) return Boolean renames org.allbinary.game.input.MapSelectionRunnable_Package_References."=";
+   function Java_Box (Value : MapSelectionRunnable_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.MapSelectionRunnable_Package_References.Java_Box;
+   function Java_Unbox_MapSelectionRunnable_Access_Array (Value : access Java_Object'Class) return MapSelectionRunnable_Access_Array_Access renames org.allbinary.game.input.MapSelectionRunnable_Package_References.Java_Unbox_MapSelectionRunnable_Access_Array;
    subtype MapSelectionRunnable_Access_Array_Access_Array is org.allbinary.game.input.MapSelectionRunnable_Package_References.MapSelectionRunnable_Access_Array_Access_Array;
    function "=" (Left, Right : MapSelectionRunnable_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.MapSelectionRunnable_Package_References."=";
    subtype MapSelectionRunnable_Access_Array_Access_Array_Access is org.allbinary.game.input.MapSelectionRunnable_Package_References.MapSelectionRunnable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : MapSelectionRunnable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.MapSelectionRunnable_Package_References."=";
+   function Java_Box (Value : MapSelectionRunnable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.MapSelectionRunnable_Package_References.Java_Box;
+   function Java_Unbox_MapSelectionRunnable_Access_Array_Access_Array (Value : access Java_Object'Class) return MapSelectionRunnable_Access_Array_Access_Array_Access renames org.allbinary.game.input.MapSelectionRunnable_Package_References.Java_Unbox_MapSelectionRunnable_Access_Array_Access_Array;
 
    type MapSelectionRunnable is new ABRunnable with record
       inputProcessor : MapSelectionGameInputProcessor_Access;

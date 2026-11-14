@@ -93,7 +93,7 @@ package body org.allbinary.logic.communication.smtp.event.UserEmailEventNameData
 
 begin
    null;
-   userNameEvenNameHashMap := StdUtil_Package.getInstance.createHashMap;
+   userNameEvenNameHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
    nextId := 0;
    INSTALLER := UserEmailEventNameData_Package.Create (To_Unbounded_String ("Installer"));
    EXCEPTION_Id := UserEmailEventNameData_Package.Create (To_Unbounded_String ("Exception"));

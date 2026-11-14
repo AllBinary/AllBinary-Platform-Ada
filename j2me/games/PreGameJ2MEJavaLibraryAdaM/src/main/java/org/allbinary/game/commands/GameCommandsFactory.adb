@@ -27,7 +27,6 @@ with javax.microedition.lcdui.BaseDisplay_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with javax.microedition.lcdui.Canvas_Package;
 with org.microemu.device.ui.CanvasUI_Package;
-with javax.microedition.lcdui.Choice_Package;
 with javax.microedition.lcdui.ChoiceGroup_Package;
 with javax.microedition.lcdui.ChoiceItem_Package;
 with javax.microedition.lcdui.CommandListener_Package;
@@ -35,7 +34,6 @@ with org.microemu.device.ui.CommandUI_Package;
 with org.microemu.device.Device_Package;
 with org.microemu.device.DeviceDisplay_Package;
 with javax.microedition.lcdui.Display_Package;
-with org.microemu.DisplayAccess_Package;
 with javax.microedition.lcdui.DisplayAccessor_Package;
 with javax.microedition.lcdui.Displayable_Package;
 with org.microemu.device.ui.DisplayableUI_Package;
@@ -58,7 +56,6 @@ with javax.microedition.lcdui.ItemStateListener_Package;
 with javax.microedition.lcdui.List_Package;
 with org.microemu.device.ui.ListUI_Package;
 with javax.microedition.midlet.MIDlet_Package;
-with org.microemu.MIDletAccess_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.microemu.device.MutableImage_Package;
 with org.microemu.device.ui.PaintEvent_Package;
@@ -123,7 +120,7 @@ package body org.allbinary.game.commands.GameCommandsFactory_Package is
 
    function getInstance return GameCommandsFactory_Access is
    begin
-        if (GameCommandsFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (GameCommandsFactory_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             GameCommandsFactory_Package.instance := Java_Object_Access (GameCommandsFactory_Package.Create);
         end if;
         return GameCommandsFactory_Access (GameCommandsFactory_Package.instance);

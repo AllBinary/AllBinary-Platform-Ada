@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.weapon.WeaponLayer_Package;
 package org.allbinary.game.layer.weapon.WeaponLayer_Package_References is
    type WeaponLayer_Access is access all org.allbinary.game.layer.weapon.WeaponLayer_Package.WeaponLayer'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.weapon.WeaponLayer_Package_References is
    type WeaponLayer_Access_Array_Access is access all WeaponLayer_Access_Array;
    type WeaponLayer_Access_Array_Access_Array is array (Natural range <>) of WeaponLayer_Access_Array_Access;
    type WeaponLayer_Access_Array_Access_Array_Access is access all WeaponLayer_Access_Array_Access_Array;
+   type WeaponLayer_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : WeaponLayer_Access_Array_Access;
+   end record;
+   function Java_Box (Value : WeaponLayer_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new WeaponLayer_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_WeaponLayer_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return WeaponLayer_Access_Array_Access is (if Value /= null and then Value.all in WeaponLayer_Access_Array_Object'Class then WeaponLayer_Access_Array_Object'Class (Value.all).Value else null);
+   type WeaponLayer_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : WeaponLayer_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : WeaponLayer_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new WeaponLayer_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_WeaponLayer_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return WeaponLayer_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in WeaponLayer_Access_Array_Access_Array_Object'Class then WeaponLayer_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.weapon.WeaponLayer_Package_References;
 
 with org.allbinary.game.layer.weapon.WeaponLayer_Package_References;
@@ -48,8 +59,7 @@ with org.allbinary.game.score.ScoreableInterface_Package_References;
 with org.allbinary.game.tick.TickableInterface_Package; use org.allbinary.game.tick.TickableInterface_Package;
 limited with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.graphics.Rectangle_Package_References;
-limited with org.allbinary.layer.AllBinaryLayer_Package;
-with org.allbinary.layer.AllBinaryLayer_Package_References;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
 limited with org.allbinary.layer.AllBinaryLayerManager_Package;
 with org.allbinary.layer.AllBinaryLayerManager_Package_References;
 limited with org.allbinary.physics.movement.Movement_Package;
@@ -156,16 +166,6 @@ package org.allbinary.game.layer.weapon.WeaponLayer_Package is
    use type Rectangle_Access_Array_Access_Array;
    subtype Rectangle_Access_Array_Access_Array_Access is org.allbinary.graphics.Rectangle_Package_References.Rectangle_Access_Array_Access_Array_Access;
    use type Rectangle_Access_Array_Access_Array_Access;
-   subtype AllBinaryLayer_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access;
-   use type AllBinaryLayer_Access;
-   subtype AllBinaryLayer_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array;
-   use type AllBinaryLayer_Access_Array;
-   subtype AllBinaryLayer_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access;
-   use type AllBinaryLayer_Access_Array_Access;
-   subtype AllBinaryLayer_Access_Array_Access_Array is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array;
-   use type AllBinaryLayer_Access_Array_Access_Array;
-   subtype AllBinaryLayer_Access_Array_Access_Array_Access is org.allbinary.layer.AllBinaryLayer_Package_References.AllBinaryLayer_Access_Array_Access_Array_Access;
-   use type AllBinaryLayer_Access_Array_Access_Array_Access;
    subtype AllBinaryLayerManager_Access is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access;
    use type AllBinaryLayerManager_Access;
    subtype AllBinaryLayerManager_Access_Array is org.allbinary.layer.AllBinaryLayerManager_Package_References.AllBinaryLayerManager_Access_Array;
@@ -216,10 +216,14 @@ package org.allbinary.game.layer.weapon.WeaponLayer_Package is
    function "=" (Left, Right : WeaponLayer_Access_Array) return Boolean renames org.allbinary.game.layer.weapon.WeaponLayer_Package_References."=";
    subtype WeaponLayer_Access_Array_Access is org.allbinary.game.layer.weapon.WeaponLayer_Package_References.WeaponLayer_Access_Array_Access;
    function "=" (Left, Right : WeaponLayer_Access_Array_Access) return Boolean renames org.allbinary.game.layer.weapon.WeaponLayer_Package_References."=";
+   function Java_Box (Value : WeaponLayer_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.weapon.WeaponLayer_Package_References.Java_Box;
+   function Java_Unbox_WeaponLayer_Access_Array (Value : access Java_Object'Class) return WeaponLayer_Access_Array_Access renames org.allbinary.game.layer.weapon.WeaponLayer_Package_References.Java_Unbox_WeaponLayer_Access_Array;
    subtype WeaponLayer_Access_Array_Access_Array is org.allbinary.game.layer.weapon.WeaponLayer_Package_References.WeaponLayer_Access_Array_Access_Array;
    function "=" (Left, Right : WeaponLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.weapon.WeaponLayer_Package_References."=";
    subtype WeaponLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.weapon.WeaponLayer_Package_References.WeaponLayer_Access_Array_Access_Array_Access;
    function "=" (Left, Right : WeaponLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.weapon.WeaponLayer_Package_References."=";
+   function Java_Box (Value : WeaponLayer_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.weapon.WeaponLayer_Package_References.Java_Box;
+   function Java_Unbox_WeaponLayer_Access_Array_Access_Array (Value : access Java_Object'Class) return WeaponLayer_Access_Array_Access_Array_Access renames org.allbinary.game.layer.weapon.WeaponLayer_Package_References.Java_Unbox_WeaponLayer_Access_Array_Access_Array;
 
    type WeaponLayer is new MultiPlayerGameLayer and TickableInterface with record
       animationInterface : Animation_Access;

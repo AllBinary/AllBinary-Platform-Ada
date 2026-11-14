@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.image.search.ImageComparisonSearchWorker_Package;
 package org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_References is
    type ImageComparisonSearchWorker_Access is access all org.allbinary.media.image.search.ImageComparisonSearchWorker_Package.ImageComparisonSearchWorker'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_Ref
    type ImageComparisonSearchWorker_Access_Array_Access is access all ImageComparisonSearchWorker_Access_Array;
    type ImageComparisonSearchWorker_Access_Array_Access_Array is array (Natural range <>) of ImageComparisonSearchWorker_Access_Array_Access;
    type ImageComparisonSearchWorker_Access_Array_Access_Array_Access is access all ImageComparisonSearchWorker_Access_Array_Access_Array;
+   type ImageComparisonSearchWorker_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageComparisonSearchWorker_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageComparisonSearchWorker_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageComparisonSearchWorker_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageComparisonSearchWorker_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageComparisonSearchWorker_Access_Array_Access is (if Value /= null and then Value.all in ImageComparisonSearchWorker_Access_Array_Object'Class then ImageComparisonSearchWorker_Access_Array_Object'Class (Value.all).Value else null);
+   type ImageComparisonSearchWorker_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ImageComparisonSearchWorker_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ImageComparisonSearchWorker_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ImageComparisonSearchWorker_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ImageComparisonSearchWorker_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ImageComparisonSearchWorker_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ImageComparisonSearchWorker_Access_Array_Access_Array_Object'Class then ImageComparisonSearchWorker_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_References;
 
 with org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_References;
@@ -126,14 +137,18 @@ package org.allbinary.media.image.search.ImageComparisonSearchWorker_Package is
    function "=" (Left, Right : ImageComparisonSearchWorker_Access_Array) return Boolean renames org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_References."=";
    subtype ImageComparisonSearchWorker_Access_Array_Access is org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_References.ImageComparisonSearchWorker_Access_Array_Access;
    function "=" (Left, Right : ImageComparisonSearchWorker_Access_Array_Access) return Boolean renames org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_References."=";
+   function Java_Box (Value : ImageComparisonSearchWorker_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_References.Java_Box;
+   function Java_Unbox_ImageComparisonSearchWorker_Access_Array (Value : access Java_Object'Class) return ImageComparisonSearchWorker_Access_Array_Access renames org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_References.Java_Unbox_ImageComparisonSearchWorker_Access_Array;
    subtype ImageComparisonSearchWorker_Access_Array_Access_Array is org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_References.ImageComparisonSearchWorker_Access_Array_Access_Array;
    function "=" (Left, Right : ImageComparisonSearchWorker_Access_Array_Access_Array) return Boolean renames org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_References."=";
    subtype ImageComparisonSearchWorker_Access_Array_Access_Array_Access is org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_References.ImageComparisonSearchWorker_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ImageComparisonSearchWorker_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_References."=";
+   function Java_Box (Value : ImageComparisonSearchWorker_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_References.Java_Box;
+   function Java_Unbox_ImageComparisonSearchWorker_Access_Array_Access_Array (Value : access Java_Object'Class) return ImageComparisonSearchWorker_Access_Array_Access_Array_Access renames org.allbinary.media.image.search.ImageComparisonSearchWorker_Package_References.Java_Unbox_ImageComparisonSearchWorker_Access_Array_Access_Array;
 
    type ImageComparisonSearchWorker is new BasicEventHandler and ImageComparisonResultsListener with record
-      logUtil : LogUtil_Access;
-      commonStrings : CommonStrings_Access;
+      ImageComparisonSearchWorker_Field_logUtil : LogUtil_Access;
+      ImageComparisonSearchWorker_Field_commonStrings : CommonStrings_Access;
       imageComparisonInfoVector : BasicArrayList_Access;
       index : Long_Long_Integer;
       running : Boolean;

@@ -130,7 +130,7 @@ package body org.allbinary.image.AnimationFrameToImageUtil_Package is
 
    function getInstance return AnimationFrameToImageUtil_Access is
    begin
-        return AnimationFrameToImageUtil_Access (AnimationFrameToImageUtil_Package.instance);
+        return AnimationFrameToImageUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

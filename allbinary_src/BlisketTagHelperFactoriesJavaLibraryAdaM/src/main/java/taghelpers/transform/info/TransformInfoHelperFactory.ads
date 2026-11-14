@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with taghelpers.transform.info.TransformInfoHelperFactory_Package;
 package taghelpers.transform.info.TransformInfoHelperFactory_Package_References is
    type TransformInfoHelperFactory_Access is access all taghelpers.transform.info.TransformInfoHelperFactory_Package.TransformInfoHelperFactory'Class;
@@ -19,6 +20,16 @@ package taghelpers.transform.info.TransformInfoHelperFactory_Package_References 
    type TransformInfoHelperFactory_Access_Array_Access is access all TransformInfoHelperFactory_Access_Array;
    type TransformInfoHelperFactory_Access_Array_Access_Array is array (Natural range <>) of TransformInfoHelperFactory_Access_Array_Access;
    type TransformInfoHelperFactory_Access_Array_Access_Array_Access is access all TransformInfoHelperFactory_Access_Array_Access_Array;
+   type TransformInfoHelperFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransformInfoHelperFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransformInfoHelperFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransformInfoHelperFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransformInfoHelperFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransformInfoHelperFactory_Access_Array_Access is (if Value /= null and then Value.all in TransformInfoHelperFactory_Access_Array_Object'Class then TransformInfoHelperFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type TransformInfoHelperFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransformInfoHelperFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransformInfoHelperFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransformInfoHelperFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransformInfoHelperFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransformInfoHelperFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TransformInfoHelperFactory_Access_Array_Access_Array_Object'Class then TransformInfoHelperFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end taghelpers.transform.info.TransformInfoHelperFactory_Package_References;
 
 with taghelpers.transform.info.TransformInfoHelperFactory_Package_References;
@@ -62,10 +73,14 @@ package taghelpers.transform.info.TransformInfoHelperFactory_Package is
    function "=" (Left, Right : TransformInfoHelperFactory_Access_Array) return Boolean renames taghelpers.transform.info.TransformInfoHelperFactory_Package_References."=";
    subtype TransformInfoHelperFactory_Access_Array_Access is taghelpers.transform.info.TransformInfoHelperFactory_Package_References.TransformInfoHelperFactory_Access_Array_Access;
    function "=" (Left, Right : TransformInfoHelperFactory_Access_Array_Access) return Boolean renames taghelpers.transform.info.TransformInfoHelperFactory_Package_References."=";
+   function Java_Box (Value : TransformInfoHelperFactory_Access_Array_Access) return Java_Object_Access renames taghelpers.transform.info.TransformInfoHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_TransformInfoHelperFactory_Access_Array (Value : access Java_Object'Class) return TransformInfoHelperFactory_Access_Array_Access renames taghelpers.transform.info.TransformInfoHelperFactory_Package_References.Java_Unbox_TransformInfoHelperFactory_Access_Array;
    subtype TransformInfoHelperFactory_Access_Array_Access_Array is taghelpers.transform.info.TransformInfoHelperFactory_Package_References.TransformInfoHelperFactory_Access_Array_Access_Array;
    function "=" (Left, Right : TransformInfoHelperFactory_Access_Array_Access_Array) return Boolean renames taghelpers.transform.info.TransformInfoHelperFactory_Package_References."=";
    subtype TransformInfoHelperFactory_Access_Array_Access_Array_Access is taghelpers.transform.info.TransformInfoHelperFactory_Package_References.TransformInfoHelperFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TransformInfoHelperFactory_Access_Array_Access_Array_Access) return Boolean renames taghelpers.transform.info.TransformInfoHelperFactory_Package_References."=";
+   function Java_Box (Value : TransformInfoHelperFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames taghelpers.transform.info.TransformInfoHelperFactory_Package_References.Java_Box;
+   function Java_Unbox_TransformInfoHelperFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return TransformInfoHelperFactory_Access_Array_Access_Array_Access renames taghelpers.transform.info.TransformInfoHelperFactory_Package_References.Java_Unbox_TransformInfoHelperFactory_Access_Array_Access_Array;
 
    type TransformInfoHelperFactory is new TagHelperFactory with record
       logUtil : LogUtil_Access;

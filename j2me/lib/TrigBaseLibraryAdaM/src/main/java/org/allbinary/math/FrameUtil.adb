@@ -43,7 +43,7 @@ package body org.allbinary.math.FrameUtil_Package is
 
    function getInstance return FrameUtil_Access is
    begin
-        return FrameUtil_Access (FrameUtil_Package.instance);
+        return FrameUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out FrameUtil'Class) is

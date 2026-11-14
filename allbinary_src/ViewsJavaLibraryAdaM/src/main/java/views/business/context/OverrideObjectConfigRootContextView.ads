@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.business.context.OverrideObjectConfigRootContextView_Package;
 package views.business.context.OverrideObjectConfigRootContextView_Package_References is
    type OverrideObjectConfigRootContextView_Access is access all views.business.context.OverrideObjectConfigRootContextView_Package.OverrideObjectConfigRootContextView'Class;
@@ -19,6 +20,16 @@ package views.business.context.OverrideObjectConfigRootContextView_Package_Refer
    type OverrideObjectConfigRootContextView_Access_Array_Access is access all OverrideObjectConfigRootContextView_Access_Array;
    type OverrideObjectConfigRootContextView_Access_Array_Access_Array is array (Natural range <>) of OverrideObjectConfigRootContextView_Access_Array_Access;
    type OverrideObjectConfigRootContextView_Access_Array_Access_Array_Access is access all OverrideObjectConfigRootContextView_Access_Array_Access_Array;
+   type OverrideObjectConfigRootContextView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OverrideObjectConfigRootContextView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OverrideObjectConfigRootContextView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OverrideObjectConfigRootContextView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OverrideObjectConfigRootContextView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OverrideObjectConfigRootContextView_Access_Array_Access is (if Value /= null and then Value.all in OverrideObjectConfigRootContextView_Access_Array_Object'Class then OverrideObjectConfigRootContextView_Access_Array_Object'Class (Value.all).Value else null);
+   type OverrideObjectConfigRootContextView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OverrideObjectConfigRootContextView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OverrideObjectConfigRootContextView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OverrideObjectConfigRootContextView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OverrideObjectConfigRootContextView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OverrideObjectConfigRootContextView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in OverrideObjectConfigRootContextView_Access_Array_Access_Array_Object'Class then OverrideObjectConfigRootContextView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.business.context.OverrideObjectConfigRootContextView_Package_References;
 
 with views.business.context.OverrideObjectConfigRootContextView_Package_References;
@@ -72,10 +83,14 @@ package views.business.context.OverrideObjectConfigRootContextView_Package is
    function "=" (Left, Right : OverrideObjectConfigRootContextView_Access_Array) return Boolean renames views.business.context.OverrideObjectConfigRootContextView_Package_References."=";
    subtype OverrideObjectConfigRootContextView_Access_Array_Access is views.business.context.OverrideObjectConfigRootContextView_Package_References.OverrideObjectConfigRootContextView_Access_Array_Access;
    function "=" (Left, Right : OverrideObjectConfigRootContextView_Access_Array_Access) return Boolean renames views.business.context.OverrideObjectConfigRootContextView_Package_References."=";
+   function Java_Box (Value : OverrideObjectConfigRootContextView_Access_Array_Access) return Java_Object_Access renames views.business.context.OverrideObjectConfigRootContextView_Package_References.Java_Box;
+   function Java_Unbox_OverrideObjectConfigRootContextView_Access_Array (Value : access Java_Object'Class) return OverrideObjectConfigRootContextView_Access_Array_Access renames views.business.context.OverrideObjectConfigRootContextView_Package_References.Java_Unbox_OverrideObjectConfigRootContextView_Access_Array;
    subtype OverrideObjectConfigRootContextView_Access_Array_Access_Array is views.business.context.OverrideObjectConfigRootContextView_Package_References.OverrideObjectConfigRootContextView_Access_Array_Access_Array;
    function "=" (Left, Right : OverrideObjectConfigRootContextView_Access_Array_Access_Array) return Boolean renames views.business.context.OverrideObjectConfigRootContextView_Package_References."=";
    subtype OverrideObjectConfigRootContextView_Access_Array_Access_Array_Access is views.business.context.OverrideObjectConfigRootContextView_Package_References.OverrideObjectConfigRootContextView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : OverrideObjectConfigRootContextView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.OverrideObjectConfigRootContextView_Package_References."=";
+   function Java_Box (Value : OverrideObjectConfigRootContextView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.business.context.OverrideObjectConfigRootContextView_Package_References.Java_Box;
+   function Java_Unbox_OverrideObjectConfigRootContextView_Access_Array_Access_Array (Value : access Java_Object'Class) return OverrideObjectConfigRootContextView_Access_Array_Access_Array_Access renames views.business.context.OverrideObjectConfigRootContextView_Package_References.Java_Unbox_OverrideObjectConfigRootContextView_Access_Array_Access_Array;
 
    type OverrideObjectConfigRootContextView is new HttpStoreComponentView with record
       OverrideObjectConfigRootContextView_Field_logUtil : LogUtil_Access;

@@ -59,7 +59,7 @@ package body org.allbinary.game.ag.ai.LastKeyAIVisitorFactory_Package is
 
    function getInstance return LastKeyAIVisitor_Access is
    begin
-        return LastKeyAIVisitor_Access (LastKeyAIVisitorFactory_Package.instance);
+        return LastKeyAIVisitorFactory_Package.instance;
    end getInstance;
 
 begin

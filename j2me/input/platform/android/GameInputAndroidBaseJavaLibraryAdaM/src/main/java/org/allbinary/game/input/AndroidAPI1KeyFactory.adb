@@ -24,7 +24,7 @@ package body org.allbinary.game.input.AndroidAPI1KeyFactory_Package is
 
    function getInstance return AndroidAPI1KeyFactory_Access is
    begin
-        if (AndroidAPI1KeyFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (AndroidAPI1KeyFactory_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             AndroidAPI1KeyFactory_Package.instance := Java_Object_Access (AndroidAPI1KeyFactory_Package.Create);
         end if;
         return AndroidAPI1KeyFactory_Access (AndroidAPI1KeyFactory_Package.instance);

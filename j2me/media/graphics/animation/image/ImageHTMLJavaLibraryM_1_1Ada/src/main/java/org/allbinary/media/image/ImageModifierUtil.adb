@@ -252,7 +252,7 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
       graphics : Graphics_Access;
    begin
         begin
-            image2 := Image_Package.createImage (image3.width, image3.height);
+            image2 := Image_Package.createImageWH (image3.width, image3.height);
             graphics := image2.getGraphics;
             graphics.drawImage (image, 0, 0, Anchor_Package.TOP_LEFT);
             imageArray (index) := image2;

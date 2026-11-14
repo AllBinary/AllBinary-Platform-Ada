@@ -24,7 +24,7 @@ package body org.allbinary.input.motion.button.TouchButtonStrafeLeftResource_Pac
 
    function getInstance return TouchButtonResource_Access is
    begin
-        return TouchButtonResource_Access (TouchButtonStrafeLeftResource_Package.instance);
+        return TouchButtonStrafeLeftResource_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TouchButtonStrafeLeftResource'Class) is

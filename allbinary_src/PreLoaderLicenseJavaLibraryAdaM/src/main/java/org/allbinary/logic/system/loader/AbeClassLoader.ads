@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.system.loader.AbeClassLoader_Package;
 package org.allbinary.logic.system.loader.AbeClassLoader_Package_References is
    type AbeClassLoader_Access is access all org.allbinary.logic.system.loader.AbeClassLoader_Package.AbeClassLoader'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.system.loader.AbeClassLoader_Package_References is
    type AbeClassLoader_Access_Array_Access is access all AbeClassLoader_Access_Array;
    type AbeClassLoader_Access_Array_Access_Array is array (Natural range <>) of AbeClassLoader_Access_Array_Access;
    type AbeClassLoader_Access_Array_Access_Array_Access is access all AbeClassLoader_Access_Array_Access_Array;
+   type AbeClassLoader_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AbeClassLoader_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AbeClassLoader_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AbeClassLoader_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AbeClassLoader_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AbeClassLoader_Access_Array_Access is (if Value /= null and then Value.all in AbeClassLoader_Access_Array_Object'Class then AbeClassLoader_Access_Array_Object'Class (Value.all).Value else null);
+   type AbeClassLoader_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AbeClassLoader_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AbeClassLoader_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AbeClassLoader_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AbeClassLoader_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AbeClassLoader_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AbeClassLoader_Access_Array_Access_Array_Object'Class then AbeClassLoader_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.system.loader.AbeClassLoader_Package_References;
 
 with org.allbinary.logic.system.loader.AbeClassLoader_Package_References;
@@ -75,10 +86,14 @@ package org.allbinary.logic.system.loader.AbeClassLoader_Package is
    function "=" (Left, Right : AbeClassLoader_Access_Array) return Boolean renames org.allbinary.logic.system.loader.AbeClassLoader_Package_References."=";
    subtype AbeClassLoader_Access_Array_Access is org.allbinary.logic.system.loader.AbeClassLoader_Package_References.AbeClassLoader_Access_Array_Access;
    function "=" (Left, Right : AbeClassLoader_Access_Array_Access) return Boolean renames org.allbinary.logic.system.loader.AbeClassLoader_Package_References."=";
+   function Java_Box (Value : AbeClassLoader_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.system.loader.AbeClassLoader_Package_References.Java_Box;
+   function Java_Unbox_AbeClassLoader_Access_Array (Value : access Java_Object'Class) return AbeClassLoader_Access_Array_Access renames org.allbinary.logic.system.loader.AbeClassLoader_Package_References.Java_Unbox_AbeClassLoader_Access_Array;
    subtype AbeClassLoader_Access_Array_Access_Array is org.allbinary.logic.system.loader.AbeClassLoader_Package_References.AbeClassLoader_Access_Array_Access_Array;
    function "=" (Left, Right : AbeClassLoader_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.loader.AbeClassLoader_Package_References."=";
    subtype AbeClassLoader_Access_Array_Access_Array_Access is org.allbinary.logic.system.loader.AbeClassLoader_Package_References.AbeClassLoader_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AbeClassLoader_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.loader.AbeClassLoader_Package_References."=";
+   function Java_Box (Value : AbeClassLoader_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.system.loader.AbeClassLoader_Package_References.Java_Box;
+   function Java_Unbox_AbeClassLoader_Access_Array_Access_Array (Value : access Java_Object'Class) return AbeClassLoader_Access_Array_Access_Array_Access renames org.allbinary.logic.system.loader.AbeClassLoader_Package_References.Java_Unbox_AbeClassLoader_Access_Array_Access_Array;
 
    type AbeClassLoader is new ClassLoader with record
       logUtil : LogUtil_Access;

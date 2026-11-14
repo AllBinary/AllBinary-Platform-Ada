@@ -26,6 +26,7 @@ with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logi
 with org.allbinary.logic.util.event.handler.BasicEventHandler_Package; use org.allbinary.logic.util.event.handler.BasicEventHandler_Package;
 with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEvent_Package;
 with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package; use org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package;
+with org.allbinary.layer.AllBinaryLayer_Package;
 with org.allbinary.animation.Animation_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayListS_Package;
@@ -51,17 +52,22 @@ with org.allbinary.media.graphics.geography.map.GeographicMapCellType_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapCellTypeFactory_Package;
 with org.allbinary.media.graphics.geography.map.GeographicMapInterface_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.game.identification.Group_Package;
 with javax.microedition.lcdui.Image_Package;
+with org.allbinary.layer.Layer_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.graphics.Rectangle_Package;
 with org.allbinary.media.graphics.geography.map.SimpleGeographicMap_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
 with org.allbinary.graph.V_Package;
+with org.allbinary.view.ViewPositionBase_Package;
+with org.allbinary.view.event.ViewPositionEvent_Package;
 
 package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package is
 
@@ -116,7 +122,7 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
 
    function getInstance return GeographicMapCellPositionEventHandler_Access is
    begin
-        return GeographicMapCellPositionEventHandler_Access (GeographicMapCellPositionEventHandler_Package.instance);
+        return GeographicMapCellPositionEventHandler_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out GeographicMapCellPositionEventHandler'Class) is

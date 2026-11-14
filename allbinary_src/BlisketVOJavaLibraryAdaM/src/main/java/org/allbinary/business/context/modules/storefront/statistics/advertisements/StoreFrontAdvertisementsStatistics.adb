@@ -71,7 +71,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.advert
    function toHashMap (This : in out StoreFrontAdvertisementsStatistics) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         return hashMap;
    end toHashMap;
 

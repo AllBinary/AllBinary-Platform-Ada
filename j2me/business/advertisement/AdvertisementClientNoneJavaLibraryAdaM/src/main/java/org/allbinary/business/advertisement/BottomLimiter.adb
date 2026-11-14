@@ -16,6 +16,9 @@
 with org.allbinary.game.GameAdState_Package; use org.allbinary.game.GameAdState_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
 with org.allbinary.business.advertisement.GameAdStateFactory_Package; use org.allbinary.business.advertisement.GameAdStateFactory_Package;
+with org.allbinary.business.advertisement.AdConfiguration_Package;
+with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package;
+with org.allbinary.business.advertisement.Advertisements_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
 with org.microemu.device.ui.AlertUI_Package;
@@ -36,6 +39,7 @@ with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.microemu.device.Device_Package;
 with org.microemu.device.DeviceDisplay_Package;
+with org.allbinary.direction.Direction_Package;
 with javax.microedition.lcdui.Display_Package;
 with javax.microedition.lcdui.DisplayAccessor_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
@@ -48,7 +52,11 @@ with javax.microedition.lcdui.Font_Package;
 with org.microemu.device.FontManager_Package;
 with javax.microedition.lcdui.Form_Package;
 with org.microemu.device.ui.FormUI_Package;
+with org.allbinary.business.advertisement.GameAdStateBase_Package;
 with org.allbinary.business.advertisement.GameAdStateFactory_Package;
+with org.allbinary.business.advertisement.GameAdStateFactoryInterface_Package;
+with org.allbinary.game.state.GameState_Package;
+with org.allbinary.game.GameType_Package;
 with javax.microedition.lcdui.Gauge_Package;
 with javax.microedition.lcdui.Graphics_Package;
 with javax.microedition.lcdui.Image_Package;
@@ -67,6 +75,7 @@ with org.allbinary.logic.communication.log.LogUtil_Package;
 with javax.microedition.midlet.MIDlet_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.microemu.device.MutableImage_Package;
+with org.allbinary.game.rand.MyRandomFactory_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.microemu.device.ui.PointerEvent_Package;
@@ -102,7 +111,7 @@ package body org.allbinary.business.advertisement.BottomLimiter_Package is
 
    function getInstance return BottomLimiter_Access is
    begin
-        return BottomLimiter_Access (BottomLimiter_Package.instance);
+        return BottomLimiter_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out BottomLimiter'Class) is

@@ -52,7 +52,7 @@ package body org.allbinary.game.PlayerTypesFactory_Package is
 
    function getInstance return PlayerTypesFactory_Access is
    begin
-        return PlayerTypesFactory_Access (PlayerTypesFactory_Package.SINGLETON);
+        return PlayerTypesFactory_Package.SINGLETON;
    end getInstance;
 
 begin

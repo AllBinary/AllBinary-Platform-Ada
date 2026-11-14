@@ -30,6 +30,8 @@ with org.allbinary.game.GameInfoData_Package;
 with org.allbinary.game.GameMode_Package;
 with org.allbinary.game.GameType_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
+with org.allbinary.game.score.HighScore_Package;
+with org.allbinary.game.score.HighScores_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
@@ -77,7 +79,7 @@ package body org.allbinary.game.score.remote.RemoteHighScoresProcessorFactory_Pa
 
    function getInstance return RemoteHighScoresProcessorInterface_Access is
    begin
-        return RemoteHighScoresProcessorInterface_Access (RemoteHighScoresProcessorFactory_Package.SINGLETON);
+        return RemoteHighScoresProcessorFactory_Package.SINGLETON;
    end getInstance;
 
 begin

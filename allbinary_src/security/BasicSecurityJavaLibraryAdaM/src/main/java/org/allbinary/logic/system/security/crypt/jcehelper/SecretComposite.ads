@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package;
 package org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package_References is
    type SecretComposite_Access is access all org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package.SecretComposite'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Pack
    type SecretComposite_Access_Array_Access is access all SecretComposite_Access_Array;
    type SecretComposite_Access_Array_Access_Array is array (Natural range <>) of SecretComposite_Access_Array_Access;
    type SecretComposite_Access_Array_Access_Array_Access is access all SecretComposite_Access_Array_Access_Array;
+   type SecretComposite_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SecretComposite_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SecretComposite_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SecretComposite_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SecretComposite_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SecretComposite_Access_Array_Access is (if Value /= null and then Value.all in SecretComposite_Access_Array_Object'Class then SecretComposite_Access_Array_Object'Class (Value.all).Value else null);
+   type SecretComposite_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SecretComposite_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SecretComposite_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SecretComposite_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SecretComposite_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SecretComposite_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SecretComposite_Access_Array_Access_Array_Object'Class then SecretComposite_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package_References;
 
 with org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package_References;
@@ -62,10 +73,14 @@ package org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Pack
    function "=" (Left, Right : SecretComposite_Access_Array) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package_References."=";
    subtype SecretComposite_Access_Array_Access is org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package_References.SecretComposite_Access_Array_Access;
    function "=" (Left, Right : SecretComposite_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package_References."=";
+   function Java_Box (Value : SecretComposite_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package_References.Java_Box;
+   function Java_Unbox_SecretComposite_Access_Array (Value : access Java_Object'Class) return SecretComposite_Access_Array_Access renames org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package_References.Java_Unbox_SecretComposite_Access_Array;
    subtype SecretComposite_Access_Array_Access_Array is org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package_References.SecretComposite_Access_Array_Access_Array;
    function "=" (Left, Right : SecretComposite_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package_References."=";
    subtype SecretComposite_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package_References.SecretComposite_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SecretComposite_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package_References."=";
+   function Java_Box (Value : SecretComposite_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package_References.Java_Box;
+   function Java_Unbox_SecretComposite_Access_Array_Access_Array (Value : access Java_Object'Class) return SecretComposite_Access_Array_Access_Array_Access renames org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Package_References.Java_Unbox_SecretComposite_Access_Array_Access_Array;
 
    type SecretComposite is new BaseSecretComposite with record
       byteUtil : ByteUtil_Access;

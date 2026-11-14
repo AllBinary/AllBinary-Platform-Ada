@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.user.role.BasicUserRoleFactory_Package;
 package org.allbinary.business.user.role.BasicUserRoleFactory_Package_References is
    type BasicUserRoleFactory_Access is access all org.allbinary.business.user.role.BasicUserRoleFactory_Package.BasicUserRoleFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.user.role.BasicUserRoleFactory_Package_References
    type BasicUserRoleFactory_Access_Array_Access is access all BasicUserRoleFactory_Access_Array;
    type BasicUserRoleFactory_Access_Array_Access_Array is array (Natural range <>) of BasicUserRoleFactory_Access_Array_Access;
    type BasicUserRoleFactory_Access_Array_Access_Array_Access is access all BasicUserRoleFactory_Access_Array_Access_Array;
+   type BasicUserRoleFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicUserRoleFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicUserRoleFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicUserRoleFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicUserRoleFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicUserRoleFactory_Access_Array_Access is (if Value /= null and then Value.all in BasicUserRoleFactory_Access_Array_Object'Class then BasicUserRoleFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicUserRoleFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicUserRoleFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicUserRoleFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicUserRoleFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicUserRoleFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicUserRoleFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicUserRoleFactory_Access_Array_Access_Array_Object'Class then BasicUserRoleFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.user.role.BasicUserRoleFactory_Package_References;
 
 with org.allbinary.business.user.role.BasicUserRoleFactory_Package_References;
@@ -56,10 +67,14 @@ package org.allbinary.business.user.role.BasicUserRoleFactory_Package is
    function "=" (Left, Right : BasicUserRoleFactory_Access_Array) return Boolean renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References."=";
    subtype BasicUserRoleFactory_Access_Array_Access is org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.BasicUserRoleFactory_Access_Array_Access;
    function "=" (Left, Right : BasicUserRoleFactory_Access_Array_Access) return Boolean renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References."=";
+   function Java_Box (Value : BasicUserRoleFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.Java_Box;
+   function Java_Unbox_BasicUserRoleFactory_Access_Array (Value : access Java_Object'Class) return BasicUserRoleFactory_Access_Array_Access renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.Java_Unbox_BasicUserRoleFactory_Access_Array;
    subtype BasicUserRoleFactory_Access_Array_Access_Array is org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.BasicUserRoleFactory_Access_Array_Access_Array;
    function "=" (Left, Right : BasicUserRoleFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References."=";
    subtype BasicUserRoleFactory_Access_Array_Access_Array_Access is org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.BasicUserRoleFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicUserRoleFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References."=";
+   function Java_Box (Value : BasicUserRoleFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.Java_Box;
+   function Java_Unbox_BasicUserRoleFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicUserRoleFactory_Access_Array_Access_Array_Access renames org.allbinary.business.user.role.BasicUserRoleFactory_Package_References.Java_Unbox_BasicUserRoleFactory_Access_Array_Access_Array;
 
    type BasicUserRoleFactory is new Java_Object with record
       INACTIVITYTIMEOUT : Long_Long_Integer;

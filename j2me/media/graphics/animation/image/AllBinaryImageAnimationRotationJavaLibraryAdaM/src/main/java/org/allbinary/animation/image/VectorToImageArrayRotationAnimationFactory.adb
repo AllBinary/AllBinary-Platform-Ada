@@ -40,11 +40,17 @@ with org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Package;
 with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.image.AnimationFactoryImageScaleUtil_Package;
+with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.graphics.color.BasicColorSetUtil_Package;
 with org.allbinary.logic.java.character_Id.CharacterSet_Package;
+with org.allbinary.util.CircularIndexUtil_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.direction.Direction_Package;
+with org.allbinary.direction.DirectionUtil_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with javax.microedition.lcdui.Font_Package;
 with org.allbinary.math.FrameUtil_Package;
@@ -52,13 +58,18 @@ with javax.microedition.khronos.opengles.GL_Package;
 with org.allbinary.game.configuration.GameConfiguration_Package;
 with org.allbinary.logic.system.os.GenericOperatingSystem_Package;
 with javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Package;
 with org.allbinary.animation.image.ImageArrayRotationAnimation_Package;
+with org.allbinary.media.image.ImageJ2MEScaleUtil_Package;
+with org.allbinary.media.image.ImageModifierUtil_Package;
+with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.math.NamedAngle_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.animation.RotationAnimation_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -173,7 +184,7 @@ package body org.allbinary.animation.image.VectorToImageArrayRotationAnimationFa
         if ((This.animationFactoryInitializationVisitor.dx) /= (0)) or else ((This.animationFactoryInitializationVisitor.dy) /= (0)) then
             return Animation_Access (AdjustedImageArrayRotationAnimation_Package.Create (This.imageArray, AngleInfo_Package.getInstance (Short_Integer (VectorToImageArrayRotationAnimationFactory'Class (This).getAngleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationFactoryInitializationVisitor.dx, This.animationFactoryInitializationVisitor.dy, This.animationBehaviorFactory.getOrCreateInstance));
         else
-            return AdjustedImageArrayRotationAnimation_Package.createAnimation (This.imageArray, AngleInfo_Package.getInstance (Short_Integer (This.angleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationBehaviorFactory.getOrCreateInstance);
+            return Animation_Access (AdjustedImageArrayRotationAnimation_Package.createAnimation (This.imageArray, AngleInfo_Package.getInstance (Short_Integer (This.angleIncrement)), Integer (AngleFactory_Package.getInstance.TOTAL_ANGLE), This.animationBehaviorFactory.getOrCreateInstance));
         end if;
    end getInstance;
 

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package;
 package org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References is
    type HtmlImageInput_Access is access all org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package.HtmlImageInput'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_Refer
    type HtmlImageInput_Access_Array_Access is access all HtmlImageInput_Access_Array;
    type HtmlImageInput_Access_Array_Access_Array is array (Natural range <>) of HtmlImageInput_Access_Array_Access;
    type HtmlImageInput_Access_Array_Access_Array_Access is access all HtmlImageInput_Access_Array_Access_Array;
+   type HtmlImageInput_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HtmlImageInput_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HtmlImageInput_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HtmlImageInput_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HtmlImageInput_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HtmlImageInput_Access_Array_Access is (if Value /= null and then Value.all in HtmlImageInput_Access_Array_Object'Class then HtmlImageInput_Access_Array_Object'Class (Value.all).Value else null);
+   type HtmlImageInput_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HtmlImageInput_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HtmlImageInput_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HtmlImageInput_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HtmlImageInput_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HtmlImageInput_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in HtmlImageInput_Access_Array_Access_Array_Object'Class then HtmlImageInput_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References;
 
 with org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package is
    function "=" (Left, Right : HtmlImageInput_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References."=";
    subtype HtmlImageInput_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References.HtmlImageInput_Access_Array_Access;
    function "=" (Left, Right : HtmlImageInput_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References."=";
+   function Java_Box (Value : HtmlImageInput_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References.Java_Box;
+   function Java_Unbox_HtmlImageInput_Access_Array (Value : access Java_Object'Class) return HtmlImageInput_Access_Array_Access renames org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References.Java_Unbox_HtmlImageInput_Access_Array;
    subtype HtmlImageInput_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References.HtmlImageInput_Access_Array_Access_Array;
    function "=" (Left, Right : HtmlImageInput_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References."=";
    subtype HtmlImageInput_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References.HtmlImageInput_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HtmlImageInput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References."=";
+   function Java_Box (Value : HtmlImageInput_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References.Java_Box;
+   function Java_Unbox_HtmlImageInput_Access_Array_Access_Array (Value : access Java_Object'Class) return HtmlImageInput_Access_Array_Access_Array_Access renames org.allbinary.logic.visual.dhtml.html.input.HtmlImageInput_Package_References.Java_Unbox_HtmlImageInput_Access_Array_Access_Array;
 
    type HtmlImageInput is new Java_Object with null record;
 

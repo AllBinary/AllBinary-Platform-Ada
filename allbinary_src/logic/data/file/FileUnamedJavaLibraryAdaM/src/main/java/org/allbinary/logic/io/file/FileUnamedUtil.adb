@@ -49,7 +49,7 @@ package body org.allbinary.logic.io.file.FileUnamedUtil_Package is
 
    function getInstance return FileUnamedUtil_Access is
    begin
-        return FileUnamedUtil_Access (FileUnamedUtil_Package.instance);
+        return FileUnamedUtil_Package.instance;
    end getInstance;
 
    function process (This : in out FileUnamedUtil; string_Id : Unbounded_String) return Unbounded_String is

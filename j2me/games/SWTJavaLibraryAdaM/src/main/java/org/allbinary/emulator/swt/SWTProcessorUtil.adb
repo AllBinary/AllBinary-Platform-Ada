@@ -51,7 +51,7 @@ package body org.allbinary.emulator.swt.SWTProcessorUtil_Package is
 
    function getInstance return SWTProcessorUtil_Access is
    begin
-        return SWTProcessorUtil_Access (SWTProcessorUtil_Package.instance);
+        return SWTProcessorUtil_Package.instance;
    end getInstance;
 
 begin

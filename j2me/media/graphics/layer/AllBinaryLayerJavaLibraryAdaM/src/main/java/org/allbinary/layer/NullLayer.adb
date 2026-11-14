@@ -47,7 +47,7 @@ package body org.allbinary.layer.NullLayer_Package is
 
    function getInstance return NullLayer_Access is
    begin
-        return NullLayer_Access (NullLayer_Package.instance);
+        return NullLayer_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out NullLayer'Class) is

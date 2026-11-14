@@ -24,16 +24,20 @@ with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.game.configuration.feature.Feature_Package;
 with org.allbinary.game.configuration.feature.Features_Package;
+with javax.microedition.lcdui.Font_Package;
 with org.allbinary.game.configuration.feature.GameFeature_Package;
 with org.allbinary.game.configuration.feature.GameFeatureFactory_Package;
+with javax.microedition.lcdui.Graphics_Package;
 with org.allbinary.media.image.ImageCopyUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.allbinary.logic.NullUtil_Package;
+with org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package;
 with org.allbinary.graphics.opengles.OpenGLFeature_Package;
 with org.allbinary.graphics.opengles.OpenGLFeatureFactory_Package;
+with org.allbinary.graphics.opengles.OpenGLUtil_Package;
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
@@ -58,7 +62,7 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
 
    function getInstance return ImageJ2MEScaleUtil_Access is
    begin
-        return ImageJ2MEScaleUtil_Access (ImageJ2MEScaleUtil_Package.instance);
+        return ImageJ2MEScaleUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageJ2MEScaleUtil'Class) is

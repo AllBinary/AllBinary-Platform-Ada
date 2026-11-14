@@ -1,5 +1,6 @@
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.OpenGLBitmapFactory_Package;
 package org.allbinary.graphics.OpenGLBitmapFactory_Package_References is
    type OpenGLBitmapFactory_Access is access all org.allbinary.graphics.OpenGLBitmapFactory_Package.OpenGLBitmapFactory'Class;
@@ -7,6 +8,16 @@ package org.allbinary.graphics.OpenGLBitmapFactory_Package_References is
    type OpenGLBitmapFactory_Access_Array_Access is access all OpenGLBitmapFactory_Access_Array;
    type OpenGLBitmapFactory_Access_Array_Access_Array is array (Natural range <>) of OpenGLBitmapFactory_Access_Array_Access;
    type OpenGLBitmapFactory_Access_Array_Access_Array_Access is access all OpenGLBitmapFactory_Access_Array_Access_Array;
+   type OpenGLBitmapFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OpenGLBitmapFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OpenGLBitmapFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OpenGLBitmapFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OpenGLBitmapFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OpenGLBitmapFactory_Access_Array_Access is (if Value /= null and then Value.all in OpenGLBitmapFactory_Access_Array_Object'Class then OpenGLBitmapFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type OpenGLBitmapFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OpenGLBitmapFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OpenGLBitmapFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OpenGLBitmapFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OpenGLBitmapFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OpenGLBitmapFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in OpenGLBitmapFactory_Access_Array_Access_Array_Object'Class then OpenGLBitmapFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.OpenGLBitmapFactory_Package_References;
 
 with org.allbinary.graphics.OpenGLBitmapFactory_Package_References;
@@ -100,10 +111,14 @@ package org.allbinary.graphics.OpenGLBitmapFactory_Package is
    function "=" (Left, Right : OpenGLBitmapFactory_Access_Array) return Boolean renames org.allbinary.graphics.OpenGLBitmapFactory_Package_References."=";
    subtype OpenGLBitmapFactory_Access_Array_Access is org.allbinary.graphics.OpenGLBitmapFactory_Package_References.OpenGLBitmapFactory_Access_Array_Access;
    function "=" (Left, Right : OpenGLBitmapFactory_Access_Array_Access) return Boolean renames org.allbinary.graphics.OpenGLBitmapFactory_Package_References."=";
+   function Java_Box (Value : OpenGLBitmapFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.OpenGLBitmapFactory_Package_References.Java_Box;
+   function Java_Unbox_OpenGLBitmapFactory_Access_Array (Value : access Java_Object'Class) return OpenGLBitmapFactory_Access_Array_Access renames org.allbinary.graphics.OpenGLBitmapFactory_Package_References.Java_Unbox_OpenGLBitmapFactory_Access_Array;
    subtype OpenGLBitmapFactory_Access_Array_Access_Array is org.allbinary.graphics.OpenGLBitmapFactory_Package_References.OpenGLBitmapFactory_Access_Array_Access_Array;
    function "=" (Left, Right : OpenGLBitmapFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.OpenGLBitmapFactory_Package_References."=";
    subtype OpenGLBitmapFactory_Access_Array_Access_Array_Access is org.allbinary.graphics.OpenGLBitmapFactory_Package_References.OpenGLBitmapFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : OpenGLBitmapFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.OpenGLBitmapFactory_Package_References."=";
+   function Java_Box (Value : OpenGLBitmapFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.OpenGLBitmapFactory_Package_References.Java_Box;
+   function Java_Unbox_OpenGLBitmapFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return OpenGLBitmapFactory_Access_Array_Access_Array_Access renames org.allbinary.graphics.OpenGLBitmapFactory_Package_References.Java_Unbox_OpenGLBitmapFactory_Access_Array_Access_Array;
 
    type OpenGLBitmapFactory is new PlatformBitmapBaseFactory with record
       ARGB_8888 : Config_Access;
@@ -122,6 +137,7 @@ package org.allbinary.graphics.OpenGLBitmapFactory_Package is
 
 end org.allbinary.graphics.OpenGLBitmapFactory_Package;
 
+with AllBinary_Java;
 limited with org.allbinary.graphics.Config_Package;
 package org.allbinary.graphics.Config_Package_References is
    type Config_Access is access all org.allbinary.graphics.Config_Package.Config'Class;
@@ -129,6 +145,16 @@ package org.allbinary.graphics.Config_Package_References is
    type Config_Access_Array_Access is access all Config_Access_Array;
    type Config_Access_Array_Access_Array is array (Natural range <>) of Config_Access_Array_Access;
    type Config_Access_Array_Access_Array_Access is access all Config_Access_Array_Access_Array;
+   type Config_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Config_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Config_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Config_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Config_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Config_Access_Array_Access is (if Value /= null and then Value.all in Config_Access_Array_Object'Class then Config_Access_Array_Object'Class (Value.all).Value else null);
+   type Config_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : Config_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : Config_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new Config_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_Config_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return Config_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in Config_Access_Array_Access_Array_Object'Class then Config_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.graphics.Config_Package_References;
 
 with org.allbinary.graphics.Config_Package_References;
@@ -222,10 +248,14 @@ package org.allbinary.graphics.Config_Package is
    function "=" (Left, Right : Config_Access_Array) return Boolean renames org.allbinary.graphics.Config_Package_References."=";
    subtype Config_Access_Array_Access is org.allbinary.graphics.Config_Package_References.Config_Access_Array_Access;
    function "=" (Left, Right : Config_Access_Array_Access) return Boolean renames org.allbinary.graphics.Config_Package_References."=";
+   function Java_Box (Value : Config_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.Config_Package_References.Java_Box;
+   function Java_Unbox_Config_Access_Array (Value : access Java_Object'Class) return Config_Access_Array_Access renames org.allbinary.graphics.Config_Package_References.Java_Unbox_Config_Access_Array;
    subtype Config_Access_Array_Access_Array is org.allbinary.graphics.Config_Package_References.Config_Access_Array_Access_Array;
    function "=" (Left, Right : Config_Access_Array_Access_Array) return Boolean renames org.allbinary.graphics.Config_Package_References."=";
    subtype Config_Access_Array_Access_Array_Access is org.allbinary.graphics.Config_Package_References.Config_Access_Array_Access_Array_Access;
    function "=" (Left, Right : Config_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.graphics.Config_Package_References."=";
+   function Java_Box (Value : Config_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.graphics.Config_Package_References.Java_Box;
+   function Java_Unbox_Config_Access_Array_Access_Array (Value : access Java_Object'Class) return Config_Access_Array_Access_Array_Access renames org.allbinary.graphics.Config_Package_References.Java_Unbox_Config_Access_Array_Access_Array;
 
    type Config is new Java_Object with record
       bitmapConfig : Config_Access;

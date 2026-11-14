@@ -108,8 +108,8 @@ package body org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Pac
    procedure Initialize_Fields (This : in out SaveCapturedImageWorker'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
-      This.commonStrings := CommonStrings_Package.getInstance;
+      This.SaveCapturedImageWorker_Field_logUtil := LogUtil_Package.getInstance;
+      This.SaveCapturedImageWorker_Field_commonStrings := CommonStrings_Package.getInstance;
       This.running := False;
       This.capturedImageWorkerResultsEventVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
    end Initialize_Fields;
@@ -158,7 +158,7 @@ package body org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Pac
       screenBufferedImage : BufferedImage_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.SaveCapturedImageWorker_Field_logUtil.putF (This.SaveCapturedImageWorker_Field_commonStrings.START, SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.SaveCapturedImageWorker_Field_commonStrings.RUN);
             SaveCapturedImageWorker'Class (This).setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
@@ -166,15 +166,15 @@ package body org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Pac
             screenBufferedImage := capturedImageWorkerResultsEvent.getBufferedImage;
             CapturedImageInputOutput_Package.Create.save (screenBufferedImage, capturedImageWorkerResultsEvent.getFrame);
             This.capturedImageWorkerResultsEventVector.remove (Java_Object_Access (capturedImageWorkerResultsEvent));
-            This.logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.SaveCapturedImageWorker_Field_logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.SaveCapturedImageWorker_Field_commonStrings.RUN);
             SaveCapturedImageWorker'Class (This).setRunning (False);
-            This.logUtil.putF (This.commonStrings.END_Id, SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.SaveCapturedImageWorker_Field_logUtil.putF (This.SaveCapturedImageWorker_Field_commonStrings.END_Id, SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.SaveCapturedImageWorker_Field_commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
+            This.SaveCapturedImageWorker_Field_logUtil.put (This.SaveCapturedImageWorker_Field_commonStrings.EXCEPTION_Id, SaveCapturedImageWorker_Access'(This'Unchecked_Access), This.SaveCapturedImageWorker_Field_commonStrings.RUN, e);
                 end;
         end;
    end run;

@@ -384,7 +384,7 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
    function hasChild (This : in out MyCanvas; displayable_Param : access MyCanvas_Package.MyCanvas'Class) return Boolean is
       displayable : constant MyCanvas_Access := MyCanvas_Access (displayable_Param);
    begin
-        return This.childNameList.contains (displayable.name);
+        return This.childNameList.contains (Java_Box (displayable.name));
    end hasChild;
 
    procedure destroy (This : in out MyCanvas) is

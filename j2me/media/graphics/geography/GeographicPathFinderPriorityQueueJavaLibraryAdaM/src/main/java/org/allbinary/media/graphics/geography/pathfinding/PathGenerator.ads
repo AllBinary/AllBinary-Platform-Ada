@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package;
 package org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package_References is
    type PathGenerator_Access is access all org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package.PathGenerator'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package
    type PathGenerator_Access_Array_Access is access all PathGenerator_Access_Array;
    type PathGenerator_Access_Array_Access_Array is array (Natural range <>) of PathGenerator_Access_Array_Access;
    type PathGenerator_Access_Array_Access_Array_Access is access all PathGenerator_Access_Array_Access_Array;
+   type PathGenerator_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PathGenerator_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PathGenerator_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PathGenerator_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PathGenerator_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PathGenerator_Access_Array_Access is (if Value /= null and then Value.all in PathGenerator_Access_Array_Object'Class then PathGenerator_Access_Array_Object'Class (Value.all).Value else null);
+   type PathGenerator_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PathGenerator_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PathGenerator_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PathGenerator_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PathGenerator_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PathGenerator_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PathGenerator_Access_Array_Access_Array_Object'Class then PathGenerator_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package_References;
 
 with org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package_References;
@@ -108,10 +119,14 @@ package org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package
    function "=" (Left, Right : PathGenerator_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package_References."=";
    subtype PathGenerator_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package_References.PathGenerator_Access_Array_Access;
    function "=" (Left, Right : PathGenerator_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package_References."=";
+   function Java_Box (Value : PathGenerator_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package_References.Java_Box;
+   function Java_Unbox_PathGenerator_Access_Array (Value : access Java_Object'Class) return PathGenerator_Access_Array_Access renames org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package_References.Java_Unbox_PathGenerator_Access_Array;
    subtype PathGenerator_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package_References.PathGenerator_Access_Array_Access_Array;
    function "=" (Left, Right : PathGenerator_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package_References."=";
    subtype PathGenerator_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package_References.PathGenerator_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PathGenerator_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package_References."=";
+   function Java_Box (Value : PathGenerator_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package_References.Java_Box;
+   function Java_Unbox_PathGenerator_Access_Array_Access_Array (Value : access Java_Object'Class) return PathGenerator_Access_Array_Access_Array_Access renames org.allbinary.media.graphics.geography.pathfinding.PathGenerator_Package_References.Java_Unbox_PathGenerator_Access_Array_Access_Array;
 
    type PathGenerator is new Java_Object and PathGeneratorInterface with null record;
    SINGLETON : PathGenerator_Access;

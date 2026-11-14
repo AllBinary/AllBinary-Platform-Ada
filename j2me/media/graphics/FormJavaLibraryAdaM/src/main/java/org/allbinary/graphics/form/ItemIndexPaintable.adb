@@ -108,7 +108,7 @@ package body org.allbinary.graphics.form.ItemIndexPaintable_Package is
 
    function getInstance return ItemIndexPaintable_Access is
    begin
-        return ItemIndexPaintable_Access (ItemIndexPaintable_Package.instance);
+        return ItemIndexPaintable_Package.instance;
    end getInstance;
 
    --  throws Exception

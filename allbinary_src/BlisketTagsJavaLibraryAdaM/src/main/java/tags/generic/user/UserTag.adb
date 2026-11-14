@@ -16,6 +16,7 @@
 with org.allbinary.business.user.role.UserRoleData_Package; use org.allbinary.business.user.role.UserRoleData_Package;
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -34,6 +35,7 @@ package body tags.generic_Id.user.UserTag_Package is
 
    package UserRoleData_Package renames Standard.org.allbinary.business.user.role.UserRoleData_Package;
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    procedure Initialize_Fields (This : in out UserTag'Class) is
    begin
       null;
@@ -66,20 +68,20 @@ package body tags.generic_Id.user.UserTag_Package is
    begin
         begin
             if (UserTag'Class (This).getCommand) /= (null) then
-                if (UserTag'Class (This).getCommand.compareTo ((org_Package.allbinary.globals.GLOBALS2.EDIT) + (org_Package.allbinary.globals.GLOBALS2.EDIT))) = (0) then
+                if (UserTag'Class (This).getCommand.compareTo ((GLOBALS2_Package.EDIT) + (GLOBALS2_Package.EDIT))) = (0) then
                     UserTag'Class (This).setName (To_Unbounded_String ("Edit Session Validation User View - i.e. User Profile Edit"));
                     UserTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.user.EditValidationView"));
                 end if;
-                if (UserTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.NEW_Id)) = (0) then
+                if (UserTag'Class (This).getCommand.compareTo (GLOBALS2_Package.NEW_Id)) = (0) then
                     UserTag'Class (This).setName (To_Unbounded_String ("New User View"));
                     UserTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.user.NewUserView"));
                 elsif (UserTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
                     UserTag'Class (This).setName (To_Unbounded_String ("Add Validation User View"));
                     UserTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.user.AddValidationUserView"));
-                elsif (UserTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                elsif (UserTag'Class (This).getCommand.compareTo (GLOBALS2_Package.VIEW)) = (0) then
                     UserTag'Class (This).setName (To_Unbounded_String ("Validation User View"));
                     UserTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.user.ViewValidationUserView"));
-                elsif (UserTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.EDIT)) = (0) then
+                elsif (UserTag'Class (This).getCommand.compareTo (GLOBALS2_Package.EDIT)) = (0) then
                     UserTag'Class (This).setName (To_Unbounded_String ("Validation User View"));
                     UserTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.user.EditValidationUserView"));
                 elsif (UserTag'Class (This).getCommand.compareTo (This.commonStrings.UPDATE)) = (0) then
@@ -88,9 +90,9 @@ package body tags.generic_Id.user.UserTag_Package is
                 elsif (UserTag'Class (This).getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
                     UserTag'Class (This).setName (To_Unbounded_String ("Delete Validation User View"));
                     UserTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.user.DeleteValidationUserView"));
-                elsif (UserTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) = (0) then
+                elsif (UserTag'Class (This).getCommand.compareTo (GLOBALS2_Package.BACKUP)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
-                elsif (UserTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) = (0) then
+                elsif (UserTag'Class (This).getCommand.compareTo (GLOBALS2_Package.RESTORE)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));
                 elsif (UserTag'Class (This).getCommand.compareTo (This.commonStrings.DROP)) = (0) then
                     Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("View not implemented")));

@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package;
 package org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package_References is
    type NullRaceTrackGeographicMap_Access is access all org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package.NullRaceTrackGeographicMap'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeogra
    type NullRaceTrackGeographicMap_Access_Array_Access is access all NullRaceTrackGeographicMap_Access_Array;
    type NullRaceTrackGeographicMap_Access_Array_Access_Array is array (Natural range <>) of NullRaceTrackGeographicMap_Access_Array_Access;
    type NullRaceTrackGeographicMap_Access_Array_Access_Array_Access is access all NullRaceTrackGeographicMap_Access_Array_Access_Array;
+   type NullRaceTrackGeographicMap_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NullRaceTrackGeographicMap_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NullRaceTrackGeographicMap_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NullRaceTrackGeographicMap_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NullRaceTrackGeographicMap_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NullRaceTrackGeographicMap_Access_Array_Access is (if Value /= null and then Value.all in NullRaceTrackGeographicMap_Access_Array_Object'Class then NullRaceTrackGeographicMap_Access_Array_Object'Class (Value.all).Value else null);
+   type NullRaceTrackGeographicMap_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NullRaceTrackGeographicMap_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NullRaceTrackGeographicMap_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NullRaceTrackGeographicMap_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NullRaceTrackGeographicMap_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NullRaceTrackGeographicMap_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NullRaceTrackGeographicMap_Access_Array_Access_Array_Object'Class then NullRaceTrackGeographicMap_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package_References;
 
 with org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package_References;
@@ -160,10 +171,14 @@ package org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeogra
    function "=" (Left, Right : NullRaceTrackGeographicMap_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package_References."=";
    subtype NullRaceTrackGeographicMap_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package_References.NullRaceTrackGeographicMap_Access_Array_Access;
    function "=" (Left, Right : NullRaceTrackGeographicMap_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package_References."=";
+   function Java_Box (Value : NullRaceTrackGeographicMap_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package_References.Java_Box;
+   function Java_Unbox_NullRaceTrackGeographicMap_Access_Array (Value : access Java_Object'Class) return NullRaceTrackGeographicMap_Access_Array_Access renames org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package_References.Java_Unbox_NullRaceTrackGeographicMap_Access_Array;
    subtype NullRaceTrackGeographicMap_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package_References.NullRaceTrackGeographicMap_Access_Array_Access_Array;
    function "=" (Left, Right : NullRaceTrackGeographicMap_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package_References."=";
    subtype NullRaceTrackGeographicMap_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package_References.NullRaceTrackGeographicMap_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NullRaceTrackGeographicMap_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package_References."=";
+   function Java_Box (Value : NullRaceTrackGeographicMap_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package_References.Java_Box;
+   function Java_Unbox_NullRaceTrackGeographicMap_Access_Array_Access_Array (Value : access Java_Object'Class) return NullRaceTrackGeographicMap_Access_Array_Access_Array_Access renames org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackGeographicMap_Package_References.Java_Unbox_NullRaceTrackGeographicMap_Access_Array_Access_Array;
 
    type NullRaceTrackGeographicMap is new Java_Object and RaceTrackGeographicMapInterface with null record;
    NULL_RACE_TRACK_GEOGRAPHIC_MAP : NullRaceTrackGeographicMap_Access;

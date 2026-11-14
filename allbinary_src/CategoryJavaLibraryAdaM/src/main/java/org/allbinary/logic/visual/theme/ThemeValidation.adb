@@ -54,6 +54,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.visual.theme.ThemeData_Package; use org.allbinary.logic.visual.theme.ThemeData_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
@@ -87,6 +89,8 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -230,7 +234,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
         pathUtil := PathUtil_Package.getInstance;
         This.categoryAbPath := pathUtil.removeNameFromPath (categoryThemeAbPath.toString);
         This.themeName := pathData.getNameFromPath (categoryThemeAbPath.toString);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             stringBuffer := StringMaker_Package.Create;
             stringBuffer.append (To_Unbounded_String ("CategoryThemePath: "));
             stringBuffer.append (categoryThemeAbPath.toString);
@@ -344,7 +348,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
    begin
         begin
             isValid := True;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.logUtil.putF (This.commonStrings.START, ThemeValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             if not (StringValidationUtil_Package.getInstance.isValidRequired (This.categoryAbPath.toString, AbSqlData_Package.MINSTRING, AbSqlData_Package.MAXSTRING)) then
@@ -356,7 +360,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
             if not (ThemeValidation'Class (This).getCssStyleValidation.isValid) then
                 isValid := False;
             end if;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
                 This.logUtil.putF (To_Unbounded_String ("End: ") & Java_Image (isValid), ThemeValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID);
             end if;
             return isValid;
@@ -365,7 +369,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to validate form"), ThemeValidation_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
@@ -385,7 +389,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEWERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), ThemeValidation_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Validating Form");
@@ -413,10 +417,10 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
       vector : BasicArrayList_Access;
    begin
         vector := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        vector.add (ThemeValidation'Class (This).getName);
-        vector.add (ThemeValidation'Class (This).getPath);
-        vector.add (ThemeValidation'Class (This).getPreviewImageName);
-        vector.add (ThemeValidation'Class (This).getPreviewImagePath);
+        vector.add (Java_Box (ThemeValidation'Class (This).getName));
+        vector.add (Java_Box (ThemeValidation'Class (This).getPath));
+        vector.add (Java_Box (ThemeValidation'Class (This).getPreviewImageName));
+        vector.add (Java_Box (ThemeValidation'Class (This).getPreviewImagePath));
         return vector;
    end toVector;
 
@@ -425,7 +429,7 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
       hashMap : HashMap_Access;
    begin
         themeData := ThemeData_Package.getInstance;
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (themeData.NAME, Java_Box (ThemeValidation'Class (This).getName));
         hashMap.put (themeData.PATH, Java_Box (ThemeValidation'Class (This).getPath));
         hashMap.put (themeData.PREVIEW_IMAGE_NAME, Java_Box (ThemeValidation'Class (This).getPreviewImageName));

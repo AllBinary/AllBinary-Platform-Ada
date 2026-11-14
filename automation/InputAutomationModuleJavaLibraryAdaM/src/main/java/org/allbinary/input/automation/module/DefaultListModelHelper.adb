@@ -101,12 +101,12 @@ package body org.allbinary.input.automation.module.DefaultListModelHelper_Packag
 
    procedure add (This : in out DefaultListModelHelper; string_Id : Unbounded_String) is
    begin
-        This.vector.add (string_Id);
+        This.vector.add (Java_Box (string_Id));
    end add;
 
    procedure remove (This : in out DefaultListModelHelper; string_Id : Unbounded_String) is
    begin
-        This.vector.remove (string_Id);
+        This.vector.remove (Java_Box (string_Id));
    end remove;
 
 end org.allbinary.input.automation.module.DefaultListModelHelper_Package;

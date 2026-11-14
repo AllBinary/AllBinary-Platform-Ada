@@ -26,7 +26,7 @@ package body org.allbinary.business.error.ErrorData_Package is
 
    function getInstance return ErrorData_Access is
    begin
-        return ErrorData_Access (ErrorData_Package.instance);
+        return ErrorData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ErrorData'Class) is

@@ -20,6 +20,8 @@ with org.allbinary.math.Angle_Package;
 with org.allbinary.math.AngleIncrementInfo_Package;
 with org.allbinary.math.AngleInfo_Package;
 with org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.animation.AnimationBehaviorFactory_Package;
+with org.allbinary.animation.image.AnimationFactoryInitializationVisitor_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.thread.BaseImageLoadingProcessor_Package;
 with org.allbinary.util.BasicArrayList_Package;
@@ -33,6 +35,8 @@ with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.math.FrameUtil_Package;
 with org.allbinary.game.gd.resource.GDResources_Package;
 with javax.microedition.khronos.opengles.GL_Package;
+with org.allbinary.graphics.GPoint_Package;
+with org.allbinary.canvas.GameGlobalsFactory_Package;
 with org.allbinary.image.ImageCache_Package;
 with org.allbinary.animation.IndexedAnimation_Package;
 with org.allbinary.animation.image.LazyImageRotationAnimation_Package;
@@ -82,7 +86,7 @@ package body org.allbinary.image.ImageCacheFactory_Package is
 
    function getInstance return ImageCache_Access is
    begin
-        return ImageCache_Access (ImageCacheFactory_Package.IMAGE_CACHE);
+        return ImageCacheFactory_Package.IMAGE_CACHE;
    end getInstance;
 
    procedure init is

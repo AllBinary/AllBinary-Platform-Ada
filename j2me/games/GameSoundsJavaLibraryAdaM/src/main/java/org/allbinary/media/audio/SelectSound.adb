@@ -40,7 +40,7 @@ package body org.allbinary.media.audio.SelectSound_Package is
 
    function getInstance return Sound_Access is
    begin
-        return Sound_Access (SelectSound_Package.soundInterface);
+        return SelectSound_Package.soundInterface;
    end getInstance;
 
 begin

@@ -42,7 +42,7 @@ package body org.allbinary.game.combat.damage.DamageFloaters_Package is
 
    function getInstance return DamageFloaters_Access is
    begin
-        return DamageFloaters_Access (DamageFloaters_Package.SINGLETON);
+        return DamageFloaters_Package.SINGLETON;
    end getInstance;
 
    procedure add (This : in out DamageFloaters; damage : Integer) is

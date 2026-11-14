@@ -134,7 +134,7 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
             logConfigsNodeList := document.getElementsByTagName (LogConfigsData_Package.getInstance.NAME);
             logConfigsNode := logConfigsNodeList.item (0);
             logConfigNodeVector := DomSearchHelper_Package.getAllNodes (LogConfigData_Package.getInstance.NAME, logConfigsNode.getChildNodes);
-            LoggingInitInfo_Package.logConfigInfoList := BasicArrayListD_Package.Create;
+            LoggingInitInfo_Package.logConfigInfoList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             size := logConfigNodeVector.size;
             for i in 0 .. (size) - 1 loop
                 node := Node_Access (logConfigNodeVector.get (i));
@@ -192,7 +192,7 @@ package body org.allbinary.logic.communication.log.config.LoggingInitInfo_Packag
    function get return BasicArrayList_Access is
    begin
         LoggingInitInfo_Package.updateIfNeeded;
-        return BasicArrayList_Access (LoggingInitInfo_Package.logConfigInfoList);
+        return LoggingInitInfo_Package.logConfigInfoList;
    end get;
 
    --  throws Exception

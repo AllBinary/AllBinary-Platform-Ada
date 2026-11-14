@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package;
 package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package_References is
    type GeographicMapCellPositionEventListenerInterface_Access is access all org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package.GeographicMapCellPositionEventListenerInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositi
    type GeographicMapCellPositionEventListenerInterface_Access_Array_Access is access all GeographicMapCellPositionEventListenerInterface_Access_Array;
    type GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array is array (Natural range <>) of GeographicMapCellPositionEventListenerInterface_Access_Array_Access;
    type GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array_Access is access all GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array;
+   type GeographicMapCellPositionEventListenerInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GeographicMapCellPositionEventListenerInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GeographicMapCellPositionEventListenerInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GeographicMapCellPositionEventListenerInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GeographicMapCellPositionEventListenerInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GeographicMapCellPositionEventListenerInterface_Access_Array_Access is (if Value /= null and then Value.all in GeographicMapCellPositionEventListenerInterface_Access_Array_Object'Class then GeographicMapCellPositionEventListenerInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array_Object'Class then GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package_References;
 
 with org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package_References;
@@ -59,10 +70,14 @@ package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositi
    function "=" (Left, Right : GeographicMapCellPositionEventListenerInterface_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package_References."=";
    subtype GeographicMapCellPositionEventListenerInterface_Access_Array_Access is org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package_References.GeographicMapCellPositionEventListenerInterface_Access_Array_Access;
    function "=" (Left, Right : GeographicMapCellPositionEventListenerInterface_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package_References."=";
+   function Java_Box (Value : GeographicMapCellPositionEventListenerInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package_References.Java_Box;
+   function Java_Unbox_GeographicMapCellPositionEventListenerInterface_Access_Array (Value : access Java_Object'Class) return GeographicMapCellPositionEventListenerInterface_Access_Array_Access renames org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package_References.Java_Unbox_GeographicMapCellPositionEventListenerInterface_Access_Array;
    subtype GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array is org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package_References.GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array;
    function "=" (Left, Right : GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package_References."=";
    subtype GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package_References.GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package_References."=";
+   function Java_Box (Value : GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package_References.Java_Box;
+   function Java_Unbox_GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array_Access renames org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventListenerInterface_Package_References.Java_Unbox_GeographicMapCellPositionEventListenerInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_GeographicMapCellPositionEventListenerInterface (Value : GeographicMapCellPositionEventListenerInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    procedure onGeographicMapCellPositionEvent (This : in out GeographicMapCellPositionEventListenerInterface; geographicMapCellPositionEvent_Param : access GeographicMapCellPositionEvent_Package.GeographicMapCellPositionEvent'Class) is abstract;
    procedure onRemoveGeographicMapCellPositionEvent (This : in out GeographicMapCellPositionEventListenerInterface; geographicMapCellPositionEvent_Param : access GeographicMapCellPositionEvent_Package.GeographicMapCellPositionEvent'Class) is abstract;

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.view.CenterStaticViewPositionFactory_Package;
 package org.allbinary.view.CenterStaticViewPositionFactory_Package_References is
    type CenterStaticViewPositionFactory_Access is access all org.allbinary.view.CenterStaticViewPositionFactory_Package.CenterStaticViewPositionFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.view.CenterStaticViewPositionFactory_Package_References is
    type CenterStaticViewPositionFactory_Access_Array_Access is access all CenterStaticViewPositionFactory_Access_Array;
    type CenterStaticViewPositionFactory_Access_Array_Access_Array is array (Natural range <>) of CenterStaticViewPositionFactory_Access_Array_Access;
    type CenterStaticViewPositionFactory_Access_Array_Access_Array_Access is access all CenterStaticViewPositionFactory_Access_Array_Access_Array;
+   type CenterStaticViewPositionFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CenterStaticViewPositionFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CenterStaticViewPositionFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CenterStaticViewPositionFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CenterStaticViewPositionFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CenterStaticViewPositionFactory_Access_Array_Access is (if Value /= null and then Value.all in CenterStaticViewPositionFactory_Access_Array_Object'Class then CenterStaticViewPositionFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type CenterStaticViewPositionFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CenterStaticViewPositionFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CenterStaticViewPositionFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CenterStaticViewPositionFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CenterStaticViewPositionFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CenterStaticViewPositionFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CenterStaticViewPositionFactory_Access_Array_Access_Array_Object'Class then CenterStaticViewPositionFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.view.CenterStaticViewPositionFactory_Package_References;
 
 with org.allbinary.view.CenterStaticViewPositionFactory_Package_References;
@@ -56,10 +67,14 @@ package org.allbinary.view.CenterStaticViewPositionFactory_Package is
    function "=" (Left, Right : CenterStaticViewPositionFactory_Access_Array) return Boolean renames org.allbinary.view.CenterStaticViewPositionFactory_Package_References."=";
    subtype CenterStaticViewPositionFactory_Access_Array_Access is org.allbinary.view.CenterStaticViewPositionFactory_Package_References.CenterStaticViewPositionFactory_Access_Array_Access;
    function "=" (Left, Right : CenterStaticViewPositionFactory_Access_Array_Access) return Boolean renames org.allbinary.view.CenterStaticViewPositionFactory_Package_References."=";
+   function Java_Box (Value : CenterStaticViewPositionFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.view.CenterStaticViewPositionFactory_Package_References.Java_Box;
+   function Java_Unbox_CenterStaticViewPositionFactory_Access_Array (Value : access Java_Object'Class) return CenterStaticViewPositionFactory_Access_Array_Access renames org.allbinary.view.CenterStaticViewPositionFactory_Package_References.Java_Unbox_CenterStaticViewPositionFactory_Access_Array;
    subtype CenterStaticViewPositionFactory_Access_Array_Access_Array is org.allbinary.view.CenterStaticViewPositionFactory_Package_References.CenterStaticViewPositionFactory_Access_Array_Access_Array;
    function "=" (Left, Right : CenterStaticViewPositionFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.view.CenterStaticViewPositionFactory_Package_References."=";
    subtype CenterStaticViewPositionFactory_Access_Array_Access_Array_Access is org.allbinary.view.CenterStaticViewPositionFactory_Package_References.CenterStaticViewPositionFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CenterStaticViewPositionFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.view.CenterStaticViewPositionFactory_Package_References."=";
+   function Java_Box (Value : CenterStaticViewPositionFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.view.CenterStaticViewPositionFactory_Package_References.Java_Box;
+   function Java_Unbox_CenterStaticViewPositionFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return CenterStaticViewPositionFactory_Access_Array_Access_Array_Access renames org.allbinary.view.CenterStaticViewPositionFactory_Package_References.Java_Unbox_CenterStaticViewPositionFactory_Access_Array_Access_Array;
 
    type CenterStaticViewPositionFactory is new Java_Object with null record;
 

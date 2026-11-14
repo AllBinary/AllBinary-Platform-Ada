@@ -49,7 +49,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackRoads
 
    function getInstance return GeographicMapCellHistory_Access is
    begin
-        return GeographicMapCellHistory_Access (RaceTrackRoadsGeographicMapCellHistoryFactory_Package.geographicMapCellHistory);
+        return RaceTrackRoadsGeographicMapCellHistoryFactory_Package.geographicMapCellHistory;
    end getInstance;
 
 begin

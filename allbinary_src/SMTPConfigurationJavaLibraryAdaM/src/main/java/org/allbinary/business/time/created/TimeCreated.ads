@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.business.time.created.TimeCreated_Package;
 package org.allbinary.business.time.created.TimeCreated_Package_References is
    type TimeCreated_Access is access all org.allbinary.business.time.created.TimeCreated_Package.TimeCreated'Class;
@@ -19,6 +20,16 @@ package org.allbinary.business.time.created.TimeCreated_Package_References is
    type TimeCreated_Access_Array_Access is access all TimeCreated_Access_Array;
    type TimeCreated_Access_Array_Access_Array is array (Natural range <>) of TimeCreated_Access_Array_Access;
    type TimeCreated_Access_Array_Access_Array_Access is access all TimeCreated_Access_Array_Access_Array;
+   type TimeCreated_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TimeCreated_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TimeCreated_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TimeCreated_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TimeCreated_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TimeCreated_Access_Array_Access is (if Value /= null and then Value.all in TimeCreated_Access_Array_Object'Class then TimeCreated_Access_Array_Object'Class (Value.all).Value else null);
+   type TimeCreated_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TimeCreated_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TimeCreated_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TimeCreated_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TimeCreated_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TimeCreated_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TimeCreated_Access_Array_Access_Array_Object'Class then TimeCreated_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.business.time.created.TimeCreated_Package_References;
 
 with org.allbinary.business.time.created.TimeCreated_Package_References;
@@ -46,10 +57,14 @@ package org.allbinary.business.time.created.TimeCreated_Package is
    function "=" (Left, Right : TimeCreated_Access_Array) return Boolean renames org.allbinary.business.time.created.TimeCreated_Package_References."=";
    subtype TimeCreated_Access_Array_Access is org.allbinary.business.time.created.TimeCreated_Package_References.TimeCreated_Access_Array_Access;
    function "=" (Left, Right : TimeCreated_Access_Array_Access) return Boolean renames org.allbinary.business.time.created.TimeCreated_Package_References."=";
+   function Java_Box (Value : TimeCreated_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.time.created.TimeCreated_Package_References.Java_Box;
+   function Java_Unbox_TimeCreated_Access_Array (Value : access Java_Object'Class) return TimeCreated_Access_Array_Access renames org.allbinary.business.time.created.TimeCreated_Package_References.Java_Unbox_TimeCreated_Access_Array;
    subtype TimeCreated_Access_Array_Access_Array is org.allbinary.business.time.created.TimeCreated_Package_References.TimeCreated_Access_Array_Access_Array;
    function "=" (Left, Right : TimeCreated_Access_Array_Access_Array) return Boolean renames org.allbinary.business.time.created.TimeCreated_Package_References."=";
    subtype TimeCreated_Access_Array_Access_Array_Access is org.allbinary.business.time.created.TimeCreated_Package_References.TimeCreated_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TimeCreated_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.business.time.created.TimeCreated_Package_References."=";
+   function Java_Box (Value : TimeCreated_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.business.time.created.TimeCreated_Package_References.Java_Box;
+   function Java_Unbox_TimeCreated_Access_Array_Access_Array (Value : access Java_Object'Class) return TimeCreated_Access_Array_Access_Array_Access renames org.allbinary.business.time.created.TimeCreated_Package_References.Java_Unbox_TimeCreated_Access_Array_Access_Array;
 
    type TimeCreated is new Time_Package.Time with null record;
 

@@ -36,7 +36,7 @@ package body org.allbinary.graphics.displayable.screen.DisplayPointScalar_Packag
 
    function getInstance return DisplayPointScalar_Access is
    begin
-        return DisplayPointScalar_Access (DisplayPointScalar_Package.instance);
+        return DisplayPointScalar_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out DisplayPointScalar'Class) is

@@ -121,7 +121,7 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (Java_Image (This.commonStrings.EXCEPTION_LABEL) & resource, AndroidMediaPlayerWrapper_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
+            This.logUtil.put (This.commonStrings.EXCEPTION_LABEL & resource, AndroidMediaPlayerWrapper_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR, e);
             Java_Throw (e);
                 end;
         end;

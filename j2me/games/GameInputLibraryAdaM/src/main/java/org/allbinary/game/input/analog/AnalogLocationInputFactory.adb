@@ -46,7 +46,7 @@ package body org.allbinary.game.input.analog.AnalogLocationInputFactory_Package 
 
    function getInstance return AnalogLocationInputFactory_Access is
    begin
-        return AnalogLocationInputFactory_Access (AnalogLocationInputFactory_Package.instance);
+        return AnalogLocationInputFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AnalogLocationInputFactory'Class) is

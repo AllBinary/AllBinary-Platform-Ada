@@ -71,7 +71,7 @@ package body org.allbinary.input.motion.gesture.observer.MovedMotionGesturesHand
 
    function getInstance return MovedMotionGesturesHandler_Access is
    begin
-        return MovedMotionGesturesHandler_Access (MovedMotionGesturesHandler_Package.SINGLETON);
+        return MovedMotionGesturesHandler_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out MovedMotionGesturesHandler'Class) is

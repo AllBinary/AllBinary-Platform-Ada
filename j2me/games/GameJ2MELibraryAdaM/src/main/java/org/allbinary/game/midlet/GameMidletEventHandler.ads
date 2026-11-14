@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.midlet.GameMidletEventHandler_Package;
 package org.allbinary.game.midlet.GameMidletEventHandler_Package_References is
    type GameMidletEventHandler_Access is access all org.allbinary.game.midlet.GameMidletEventHandler_Package.GameMidletEventHandler'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.midlet.GameMidletEventHandler_Package_References is
    type GameMidletEventHandler_Access_Array_Access is access all GameMidletEventHandler_Access_Array;
    type GameMidletEventHandler_Access_Array_Access_Array is array (Natural range <>) of GameMidletEventHandler_Access_Array_Access;
    type GameMidletEventHandler_Access_Array_Access_Array_Access is access all GameMidletEventHandler_Access_Array_Access_Array;
+   type GameMidletEventHandler_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameMidletEventHandler_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameMidletEventHandler_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameMidletEventHandler_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameMidletEventHandler_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameMidletEventHandler_Access_Array_Access is (if Value /= null and then Value.all in GameMidletEventHandler_Access_Array_Object'Class then GameMidletEventHandler_Access_Array_Object'Class (Value.all).Value else null);
+   type GameMidletEventHandler_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameMidletEventHandler_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameMidletEventHandler_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameMidletEventHandler_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameMidletEventHandler_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameMidletEventHandler_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GameMidletEventHandler_Access_Array_Access_Array_Object'Class then GameMidletEventHandler_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.midlet.GameMidletEventHandler_Package_References;
 
 with org.allbinary.game.midlet.GameMidletEventHandler_Package_References;
@@ -72,10 +83,14 @@ package org.allbinary.game.midlet.GameMidletEventHandler_Package is
    function "=" (Left, Right : GameMidletEventHandler_Access_Array) return Boolean renames org.allbinary.game.midlet.GameMidletEventHandler_Package_References."=";
    subtype GameMidletEventHandler_Access_Array_Access is org.allbinary.game.midlet.GameMidletEventHandler_Package_References.GameMidletEventHandler_Access_Array_Access;
    function "=" (Left, Right : GameMidletEventHandler_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.GameMidletEventHandler_Package_References."=";
+   function Java_Box (Value : GameMidletEventHandler_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.midlet.GameMidletEventHandler_Package_References.Java_Box;
+   function Java_Unbox_GameMidletEventHandler_Access_Array (Value : access Java_Object'Class) return GameMidletEventHandler_Access_Array_Access renames org.allbinary.game.midlet.GameMidletEventHandler_Package_References.Java_Unbox_GameMidletEventHandler_Access_Array;
    subtype GameMidletEventHandler_Access_Array_Access_Array is org.allbinary.game.midlet.GameMidletEventHandler_Package_References.GameMidletEventHandler_Access_Array_Access_Array;
    function "=" (Left, Right : GameMidletEventHandler_Access_Array_Access_Array) return Boolean renames org.allbinary.game.midlet.GameMidletEventHandler_Package_References."=";
    subtype GameMidletEventHandler_Access_Array_Access_Array_Access is org.allbinary.game.midlet.GameMidletEventHandler_Package_References.GameMidletEventHandler_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GameMidletEventHandler_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.GameMidletEventHandler_Package_References."=";
+   function Java_Box (Value : GameMidletEventHandler_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.midlet.GameMidletEventHandler_Package_References.Java_Box;
+   function Java_Unbox_GameMidletEventHandler_Access_Array_Access_Array (Value : access Java_Object'Class) return GameMidletEventHandler_Access_Array_Access_Array_Access renames org.allbinary.game.midlet.GameMidletEventHandler_Package_References.Java_Unbox_GameMidletEventHandler_Access_Array_Access_Array;
 
    type GameMidletEventHandler is new BasicEventHandler with null record;
    gameKeyEventHandler : GameMidletEventHandler_Access;

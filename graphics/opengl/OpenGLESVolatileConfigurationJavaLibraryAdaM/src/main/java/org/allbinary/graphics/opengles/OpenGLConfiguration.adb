@@ -158,7 +158,7 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
 
    function getInstance return OpenGLConfiguration_Access is
    begin
-        if (OpenGLConfiguration_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (OpenGLConfiguration_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             OpenGLConfiguration_Package.instance := Java_Object_Access (OpenGLConfiguration_Package.Create);
         end if;
         return OpenGLConfiguration_Access (OpenGLConfiguration_Package.instance);

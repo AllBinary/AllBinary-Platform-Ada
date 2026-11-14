@@ -123,7 +123,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.invent
    function toHashMap (This : in out StoreFrontInventoryStatistics) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (StoreFrontInventoryStatisticsData_Package.getInstance.NUMBEROFITEMS, Java_Box (StoreFrontInventoryStatistics'Class (This).getNumber.toString));
         hashMap.put (StoreFrontInventoryStatisticsData_Package.getInstance.TOTALVALUE, Java_Box (StoreFrontInventoryStatistics'Class (This).getTotal.toString));
         return hashMap;

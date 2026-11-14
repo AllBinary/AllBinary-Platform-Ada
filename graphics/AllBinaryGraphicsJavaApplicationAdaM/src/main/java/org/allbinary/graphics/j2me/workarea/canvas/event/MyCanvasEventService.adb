@@ -82,7 +82,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventServ
         listeners := listenerList.getListenerList;
         i := 0;
         while (i) < (listeners'Length) loop
-            if (listeners (i)) = (listeners ((i) + (1)).all'Tag) then
+            if (Java_Object_Access (listeners (i))) = (Java_Object_Access (listeners ((i) + (1)).all'Tag)) then
                 if (Java_Compare_To (evt.getCommand, MyCanvasEventService_Package.DELETE)) = (0) then
                     MyCanvasEventListener_Access (listeners ((i) + (1))).delete (evt);
                 elsif (Java_Compare_To (evt.getCommand, MyCanvasEventService_Package.DUPLICATE)) = (0) then

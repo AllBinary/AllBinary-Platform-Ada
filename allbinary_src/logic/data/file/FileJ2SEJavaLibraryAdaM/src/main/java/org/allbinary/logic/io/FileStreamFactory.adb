@@ -62,7 +62,7 @@ package body org.allbinary.logic.io.FileStreamFactory_Package is
 
    function getInstance return FileStreamFactory_Access is
    begin
-        if (FileStreamFactory_Package.SINGLETON) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (FileStreamFactory_Package.SINGLETON)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             FileStreamFactory_Package.SINGLETON := Java_Object_Access (FileStreamFactory_Package.Create);
         end if;
         return FileStreamFactory_Access (FileStreamFactory_Package.SINGLETON);
@@ -88,7 +88,7 @@ package body org.allbinary.logic.io.FileStreamFactory_Package is
    begin
         FILEABPATH := AbPath_Package.Create (path, fileName);
         file := AbFile_Package.createAbFileFromAbPath (FILEABPATH);
-        return AbFileInputStream_Package.Create (file);
+        return AbFileInputStream_Package.createFromAbFile (file);
    end getFileInputStreamInstance;
 
    --  throws Exception

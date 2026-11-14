@@ -88,7 +88,7 @@ package body org.allbinary.graphics.color.BasicColorFactory_Package is
 
    function getInstance return BasicColorFactory_Access is
    begin
-        return BasicColorFactory_Access (BasicColorFactory_Package.instance);
+        return BasicColorFactory_Package.instance;
    end getInstance;
 
    function createInstance (This : in out BasicColorFactory; value : Integer) return BasicColor_Access is

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package;
 package org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package_References is
    type LockedFeatureNotificationUtil_Access is access all org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package.LockedFeatureNotificationUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.system.security.licensing.LockedFeatureNotificationU
    type LockedFeatureNotificationUtil_Access_Array_Access is access all LockedFeatureNotificationUtil_Access_Array;
    type LockedFeatureNotificationUtil_Access_Array_Access_Array is array (Natural range <>) of LockedFeatureNotificationUtil_Access_Array_Access;
    type LockedFeatureNotificationUtil_Access_Array_Access_Array_Access is access all LockedFeatureNotificationUtil_Access_Array_Access_Array;
+   type LockedFeatureNotificationUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LockedFeatureNotificationUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LockedFeatureNotificationUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LockedFeatureNotificationUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LockedFeatureNotificationUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LockedFeatureNotificationUtil_Access_Array_Access is (if Value /= null and then Value.all in LockedFeatureNotificationUtil_Access_Array_Object'Class then LockedFeatureNotificationUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type LockedFeatureNotificationUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LockedFeatureNotificationUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LockedFeatureNotificationUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LockedFeatureNotificationUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LockedFeatureNotificationUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LockedFeatureNotificationUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in LockedFeatureNotificationUtil_Access_Array_Access_Array_Object'Class then LockedFeatureNotificationUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package_References;
 
 with org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package_References;
@@ -70,10 +81,14 @@ package org.allbinary.logic.system.security.licensing.LockedFeatureNotificationU
    function "=" (Left, Right : LockedFeatureNotificationUtil_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package_References."=";
    subtype LockedFeatureNotificationUtil_Access_Array_Access is org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package_References.LockedFeatureNotificationUtil_Access_Array_Access;
    function "=" (Left, Right : LockedFeatureNotificationUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package_References."=";
+   function Java_Box (Value : LockedFeatureNotificationUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package_References.Java_Box;
+   function Java_Unbox_LockedFeatureNotificationUtil_Access_Array (Value : access Java_Object'Class) return LockedFeatureNotificationUtil_Access_Array_Access renames org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package_References.Java_Unbox_LockedFeatureNotificationUtil_Access_Array;
    subtype LockedFeatureNotificationUtil_Access_Array_Access_Array is org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package_References.LockedFeatureNotificationUtil_Access_Array_Access_Array;
    function "=" (Left, Right : LockedFeatureNotificationUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package_References."=";
    subtype LockedFeatureNotificationUtil_Access_Array_Access_Array_Access is org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package_References.LockedFeatureNotificationUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LockedFeatureNotificationUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package_References."=";
+   function Java_Box (Value : LockedFeatureNotificationUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package_References.Java_Box;
+   function Java_Unbox_LockedFeatureNotificationUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return LockedFeatureNotificationUtil_Access_Array_Access_Array_Access renames org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package_References.Java_Unbox_LockedFeatureNotificationUtil_Access_Array_Access_Array;
 
    type LockedFeatureNotificationUtil is new Java_Object with record
       gameNotificationEvent : GameNotificationEvent_Access;

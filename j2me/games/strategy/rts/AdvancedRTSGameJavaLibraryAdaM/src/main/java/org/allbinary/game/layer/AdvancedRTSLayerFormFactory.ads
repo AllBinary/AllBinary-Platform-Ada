@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package;
 package org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References is
    type AdvancedRTSLayerFormFactory_Access is access all org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package.AdvancedRTSLayerFormFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References 
    type AdvancedRTSLayerFormFactory_Access_Array_Access is access all AdvancedRTSLayerFormFactory_Access_Array;
    type AdvancedRTSLayerFormFactory_Access_Array_Access_Array is array (Natural range <>) of AdvancedRTSLayerFormFactory_Access_Array_Access;
    type AdvancedRTSLayerFormFactory_Access_Array_Access_Array_Access is access all AdvancedRTSLayerFormFactory_Access_Array_Access_Array;
+   type AdvancedRTSLayerFormFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AdvancedRTSLayerFormFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AdvancedRTSLayerFormFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AdvancedRTSLayerFormFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AdvancedRTSLayerFormFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AdvancedRTSLayerFormFactory_Access_Array_Access is (if Value /= null and then Value.all in AdvancedRTSLayerFormFactory_Access_Array_Object'Class then AdvancedRTSLayerFormFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type AdvancedRTSLayerFormFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AdvancedRTSLayerFormFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AdvancedRTSLayerFormFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AdvancedRTSLayerFormFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AdvancedRTSLayerFormFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AdvancedRTSLayerFormFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AdvancedRTSLayerFormFactory_Access_Array_Access_Array_Object'Class then AdvancedRTSLayerFormFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References;
 
 with org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References;
@@ -97,10 +108,14 @@ package org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package is
    function "=" (Left, Right : AdvancedRTSLayerFormFactory_Access_Array) return Boolean renames org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References."=";
    subtype AdvancedRTSLayerFormFactory_Access_Array_Access is org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References.AdvancedRTSLayerFormFactory_Access_Array_Access;
    function "=" (Left, Right : AdvancedRTSLayerFormFactory_Access_Array_Access) return Boolean renames org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References."=";
+   function Java_Box (Value : AdvancedRTSLayerFormFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References.Java_Box;
+   function Java_Unbox_AdvancedRTSLayerFormFactory_Access_Array (Value : access Java_Object'Class) return AdvancedRTSLayerFormFactory_Access_Array_Access renames org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References.Java_Unbox_AdvancedRTSLayerFormFactory_Access_Array;
    subtype AdvancedRTSLayerFormFactory_Access_Array_Access_Array is org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References.AdvancedRTSLayerFormFactory_Access_Array_Access_Array;
    function "=" (Left, Right : AdvancedRTSLayerFormFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References."=";
    subtype AdvancedRTSLayerFormFactory_Access_Array_Access_Array_Access is org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References.AdvancedRTSLayerFormFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AdvancedRTSLayerFormFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References."=";
+   function Java_Box (Value : AdvancedRTSLayerFormFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References.Java_Box;
+   function Java_Unbox_AdvancedRTSLayerFormFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return AdvancedRTSLayerFormFactory_Access_Array_Access_Array_Access renames org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package_References.Java_Unbox_AdvancedRTSLayerFormFactory_Access_Array_Access_Array;
 
    type AdvancedRTSLayerFormFactory is new RTSLayerFormFactory with record
       logUtil : LogUtil_Access;

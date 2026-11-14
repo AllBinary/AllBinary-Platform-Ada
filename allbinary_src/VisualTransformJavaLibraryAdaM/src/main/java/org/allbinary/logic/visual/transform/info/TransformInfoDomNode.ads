@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package;
 package org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References is
    type TransformInfoDomNode_Access is access all org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package.TransformInfoDomNode'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_R
    type TransformInfoDomNode_Access_Array_Access is access all TransformInfoDomNode_Access_Array;
    type TransformInfoDomNode_Access_Array_Access_Array is array (Natural range <>) of TransformInfoDomNode_Access_Array_Access;
    type TransformInfoDomNode_Access_Array_Access_Array_Access is access all TransformInfoDomNode_Access_Array_Access_Array;
+   type TransformInfoDomNode_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransformInfoDomNode_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransformInfoDomNode_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransformInfoDomNode_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransformInfoDomNode_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransformInfoDomNode_Access_Array_Access is (if Value /= null and then Value.all in TransformInfoDomNode_Access_Array_Object'Class then TransformInfoDomNode_Access_Array_Object'Class (Value.all).Value else null);
+   type TransformInfoDomNode_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransformInfoDomNode_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransformInfoDomNode_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransformInfoDomNode_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransformInfoDomNode_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransformInfoDomNode_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TransformInfoDomNode_Access_Array_Access_Array_Object'Class then TransformInfoDomNode_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References;
 
 with org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References;
@@ -82,10 +93,14 @@ package org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package i
    function "=" (Left, Right : TransformInfoDomNode_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References."=";
    subtype TransformInfoDomNode_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References.TransformInfoDomNode_Access_Array_Access;
    function "=" (Left, Right : TransformInfoDomNode_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References."=";
+   function Java_Box (Value : TransformInfoDomNode_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References.Java_Box;
+   function Java_Unbox_TransformInfoDomNode_Access_Array (Value : access Java_Object'Class) return TransformInfoDomNode_Access_Array_Access renames org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References.Java_Unbox_TransformInfoDomNode_Access_Array;
    subtype TransformInfoDomNode_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References.TransformInfoDomNode_Access_Array_Access_Array;
    function "=" (Left, Right : TransformInfoDomNode_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References."=";
    subtype TransformInfoDomNode_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References.TransformInfoDomNode_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TransformInfoDomNode_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References."=";
+   function Java_Box (Value : TransformInfoDomNode_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References.Java_Box;
+   function Java_Unbox_TransformInfoDomNode_Access_Array_Access_Array (Value : access Java_Object'Class) return TransformInfoDomNode_Access_Array_Access_Array_Access renames org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package_References.Java_Unbox_TransformInfoDomNode_Access_Array_Access_Array;
 
    type TransformInfoDomNode is new Java_Object with record
       logUtil : LogUtil_Access;

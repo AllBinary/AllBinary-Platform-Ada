@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.admin.user.DeleteValidationUserView_Package;
 package views.admin.user.DeleteValidationUserView_Package_References is
    type DeleteValidationUserView_Access is access all views.admin.user.DeleteValidationUserView_Package.DeleteValidationUserView'Class;
@@ -19,6 +20,16 @@ package views.admin.user.DeleteValidationUserView_Package_References is
    type DeleteValidationUserView_Access_Array_Access is access all DeleteValidationUserView_Access_Array;
    type DeleteValidationUserView_Access_Array_Access_Array is array (Natural range <>) of DeleteValidationUserView_Access_Array_Access;
    type DeleteValidationUserView_Access_Array_Access_Array_Access is access all DeleteValidationUserView_Access_Array_Access_Array;
+   type DeleteValidationUserView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DeleteValidationUserView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DeleteValidationUserView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DeleteValidationUserView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DeleteValidationUserView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DeleteValidationUserView_Access_Array_Access is (if Value /= null and then Value.all in DeleteValidationUserView_Access_Array_Object'Class then DeleteValidationUserView_Access_Array_Object'Class (Value.all).Value else null);
+   type DeleteValidationUserView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DeleteValidationUserView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DeleteValidationUserView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DeleteValidationUserView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DeleteValidationUserView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DeleteValidationUserView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in DeleteValidationUserView_Access_Array_Access_Array_Object'Class then DeleteValidationUserView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.admin.user.DeleteValidationUserView_Package_References;
 
 with views.admin.user.DeleteValidationUserView_Package_References;
@@ -100,10 +111,14 @@ package views.admin.user.DeleteValidationUserView_Package is
    function "=" (Left, Right : DeleteValidationUserView_Access_Array) return Boolean renames views.admin.user.DeleteValidationUserView_Package_References."=";
    subtype DeleteValidationUserView_Access_Array_Access is views.admin.user.DeleteValidationUserView_Package_References.DeleteValidationUserView_Access_Array_Access;
    function "=" (Left, Right : DeleteValidationUserView_Access_Array_Access) return Boolean renames views.admin.user.DeleteValidationUserView_Package_References."=";
+   function Java_Box (Value : DeleteValidationUserView_Access_Array_Access) return Java_Object_Access renames views.admin.user.DeleteValidationUserView_Package_References.Java_Box;
+   function Java_Unbox_DeleteValidationUserView_Access_Array (Value : access Java_Object'Class) return DeleteValidationUserView_Access_Array_Access renames views.admin.user.DeleteValidationUserView_Package_References.Java_Unbox_DeleteValidationUserView_Access_Array;
    subtype DeleteValidationUserView_Access_Array_Access_Array is views.admin.user.DeleteValidationUserView_Package_References.DeleteValidationUserView_Access_Array_Access_Array;
    function "=" (Left, Right : DeleteValidationUserView_Access_Array_Access_Array) return Boolean renames views.admin.user.DeleteValidationUserView_Package_References."=";
    subtype DeleteValidationUserView_Access_Array_Access_Array_Access is views.admin.user.DeleteValidationUserView_Package_References.DeleteValidationUserView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : DeleteValidationUserView_Access_Array_Access_Array_Access) return Boolean renames views.admin.user.DeleteValidationUserView_Package_References."=";
+   function Java_Box (Value : DeleteValidationUserView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.admin.user.DeleteValidationUserView_Package_References.Java_Box;
+   function Java_Unbox_DeleteValidationUserView_Access_Array_Access_Array (Value : access Java_Object'Class) return DeleteValidationUserView_Access_Array_Access_Array_Access renames views.admin.user.DeleteValidationUserView_Package_References.Java_Unbox_DeleteValidationUserView_Access_Array_Access_Array;
 
    type DeleteValidationUserView is new UserView and ValidationComponentInterface with record
       DeleteValidationUserView_Field_logUtil : LogUtil_Access;

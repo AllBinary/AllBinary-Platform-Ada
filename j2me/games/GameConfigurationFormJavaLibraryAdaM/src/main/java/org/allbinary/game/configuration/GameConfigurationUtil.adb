@@ -29,6 +29,7 @@ with org.allbinary.game.configuration.GameConfigurationGauge_Package; use org.al
 with org.allbinary.game.configuration.GameConfigurationGauge_Package_References;
 with org.allbinary.game.configuration.GameConfigurationCentral_Package; use org.allbinary.game.configuration.GameConfigurationCentral_Package;
 with org.allbinary.util.ABHashtable_Package;
+with org.allbinary.util.ABStack_Package;
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
 with javax.microedition.lcdui.Alert_Package;
 with javax.microedition.lcdui.AlertType_Package;
@@ -43,6 +44,7 @@ with org.allbinary.logic.java.character_Id.CharacterSet_Package;
 with javax.microedition.lcdui.ChoiceGroup_Package;
 with javax.microedition.lcdui.ChoiceItem_Package;
 with javax.microedition.lcdui.Command_Package;
+with org.allbinary.graphics.displayable.screen.CommandForm_Package;
 with javax.microedition.lcdui.CommandListener_Package;
 with org.microemu.device.ui.CommandUI_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
@@ -85,6 +87,7 @@ with org.microemu.device.MutableImage_Package;
 with org.allbinary.logic.NullUtil_Package;
 with org.microemu.device.ui.PaintEvent_Package;
 with org.microemu.device.ui.PointerEvent_Package;
+with org.allbinary.canvas.Processor_Package;
 with javax.microedition.lcdui.Screen_Package;
 with javax.microedition.lcdui.StringComponent_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
@@ -177,7 +180,7 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
 
    function getInstance return GameConfigurationUtil_Access is
    begin
-        return GameConfigurationUtil_Access (GameConfigurationUtil_Package.instance);
+        return GameConfigurationUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

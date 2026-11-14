@@ -135,7 +135,7 @@ package body org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceF
 
    function getInstance return FeaturedAnimationInterfaceFactoryInterfaceFactory_Access is
    begin
-        return FeaturedAnimationInterfaceFactoryInterfaceFactory_Access (FeaturedAnimationInterfaceFactoryInterfaceFactory_Package.INSTANCE);
+        return FeaturedAnimationInterfaceFactoryInterfaceFactory_Package.INSTANCE;
    end getInstance;
 
    --  throws Exception

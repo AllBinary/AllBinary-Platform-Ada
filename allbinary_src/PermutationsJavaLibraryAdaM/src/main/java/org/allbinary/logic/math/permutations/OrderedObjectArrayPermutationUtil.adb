@@ -96,7 +96,7 @@ package body org.allbinary.logic.math.permutations.OrderedObjectArrayPermutation
 
    function getInstance return OrderedObjectArrayPermutationUtil_Access is
    begin
-        return OrderedObjectArrayPermutationUtil_Access (OrderedObjectArrayPermutationUtil_Package.instance);
+        return OrderedObjectArrayPermutationUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out OrderedObjectArrayPermutationUtil'Class) is

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.midlet.GameMidlet_Package;
 package org.allbinary.game.midlet.GameMidlet_Package_References is
    type GameMidlet_Access is access all org.allbinary.game.midlet.GameMidlet_Package.GameMidlet'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.midlet.GameMidlet_Package_References is
    type GameMidlet_Access_Array_Access is access all GameMidlet_Access_Array;
    type GameMidlet_Access_Array_Access_Array is array (Natural range <>) of GameMidlet_Access_Array_Access;
    type GameMidlet_Access_Array_Access_Array_Access is access all GameMidlet_Access_Array_Access_Array;
+   type GameMidlet_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameMidlet_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameMidlet_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameMidlet_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameMidlet_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameMidlet_Access_Array_Access is (if Value /= null and then Value.all in GameMidlet_Access_Array_Object'Class then GameMidlet_Access_Array_Object'Class (Value.all).Value else null);
+   type GameMidlet_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GameMidlet_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GameMidlet_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GameMidlet_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GameMidlet_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GameMidlet_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GameMidlet_Access_Array_Access_Array_Object'Class then GameMidlet_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.midlet.GameMidlet_Package_References;
 
 with org.allbinary.game.midlet.GameMidlet_Package_References;
@@ -35,7 +46,8 @@ with javax.microedition.lcdui.Command_Package_References;
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
 limited with javax.microedition.lcdui.Displayable_Package;
 with javax.microedition.lcdui.Displayable_Package_References;
---  with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+limited with org.allbinary.TsUtil_Package;
+with org.allbinary.TsUtil_Package_References;
 limited with org.allbinary.business.advertisement.GameAdStateFactory_Package;
 with org.allbinary.business.advertisement.GameAdStateFactory_Package_References;
 limited with org.allbinary.canvas.FullScreenUtil_Package;
@@ -92,6 +104,7 @@ package org.allbinary.game.midlet.GameMidlet_Package is
    package Command_Package renames Standard.javax.microedition.lcdui.Command_Package;
    package CommandListener_Package renames Standard.javax.microedition.lcdui.CommandListener_Package;
    package Displayable_Package renames Standard.javax.microedition.lcdui.Displayable_Package;
+   package TsUtil_Package renames Standard.org.allbinary.TsUtil_Package;
    package GameAdStateFactory_Package renames Standard.org.allbinary.business.advertisement.GameAdStateFactory_Package;
    package FullScreenUtil_Package renames Standard.org.allbinary.canvas.FullScreenUtil_Package;
    package DebugInterface_Package renames Standard.org.allbinary.debug.DebugInterface_Package;
@@ -138,6 +151,16 @@ package org.allbinary.game.midlet.GameMidlet_Package is
    use type Displayable_Access_Array_Access_Array;
    subtype Displayable_Access_Array_Access_Array_Access is javax.microedition.lcdui.Displayable_Package_References.Displayable_Access_Array_Access_Array_Access;
    use type Displayable_Access_Array_Access_Array_Access;
+   subtype TsUtil_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access;
+   use type TsUtil_Access;
+   subtype TsUtil_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array;
+   use type TsUtil_Access_Array;
+   subtype TsUtil_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access;
+   use type TsUtil_Access_Array_Access;
+   subtype TsUtil_Access_Array_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array;
+   use type TsUtil_Access_Array_Access_Array;
+   subtype TsUtil_Access_Array_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array_Access;
+   use type TsUtil_Access_Array_Access_Array_Access;
    subtype GameAdStateFactory_Access is org.allbinary.business.advertisement.GameAdStateFactory_Package_References.GameAdStateFactory_Access;
    use type GameAdStateFactory_Access;
    subtype GameAdStateFactory_Access_Array is org.allbinary.business.advertisement.GameAdStateFactory_Package_References.GameAdStateFactory_Access_Array;
@@ -388,10 +411,14 @@ package org.allbinary.game.midlet.GameMidlet_Package is
    function "=" (Left, Right : GameMidlet_Access_Array) return Boolean renames org.allbinary.game.midlet.GameMidlet_Package_References."=";
    subtype GameMidlet_Access_Array_Access is org.allbinary.game.midlet.GameMidlet_Package_References.GameMidlet_Access_Array_Access;
    function "=" (Left, Right : GameMidlet_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.GameMidlet_Package_References."=";
+   function Java_Box (Value : GameMidlet_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.midlet.GameMidlet_Package_References.Java_Box;
+   function Java_Unbox_GameMidlet_Access_Array (Value : access Java_Object'Class) return GameMidlet_Access_Array_Access renames org.allbinary.game.midlet.GameMidlet_Package_References.Java_Unbox_GameMidlet_Access_Array;
    subtype GameMidlet_Access_Array_Access_Array is org.allbinary.game.midlet.GameMidlet_Package_References.GameMidlet_Access_Array_Access_Array;
    function "=" (Left, Right : GameMidlet_Access_Array_Access_Array) return Boolean renames org.allbinary.game.midlet.GameMidlet_Package_References."=";
    subtype GameMidlet_Access_Array_Access_Array_Access is org.allbinary.game.midlet.GameMidlet_Package_References.GameMidlet_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GameMidlet_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.midlet.GameMidlet_Package_References."=";
+   function Java_Box (Value : GameMidlet_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.midlet.GameMidlet_Package_References.Java_Box;
+   function Java_Unbox_GameMidlet_Access_Array_Access_Array (Value : access Java_Object'Class) return GameMidlet_Access_Array_Access_Array_Access renames org.allbinary.game.midlet.GameMidlet_Package_References.Java_Unbox_GameMidlet_Access_Array_Access_Array;
 
    type GameMidlet is new ProgressMidlet and CommandListener with record
       enumerationUtil : EnumerationUtil_Access;
@@ -402,6 +429,7 @@ package org.allbinary.game.midlet.GameMidlet_Package is
       gameStrings : GameStrings_Access;
       gameAdStateFactory : GameAdStateFactory_Access;
       gameStateFactory : GameStateFactory_Access;
+      tsUtil : TsUtil_Access;
       DISPLAYABLE : Unbounded_String;
       COMMAND_NAME : Unbounded_String;
       NO_COMMAND : Unbounded_String;

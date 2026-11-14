@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.tags.OrderItemsTag_Package;
 package admin.tags.OrderItemsTag_Package_References is
    type OrderItemsTag_Access is access all admin.tags.OrderItemsTag_Package.OrderItemsTag'Class;
@@ -19,6 +20,16 @@ package admin.tags.OrderItemsTag_Package_References is
    type OrderItemsTag_Access_Array_Access is access all OrderItemsTag_Access_Array;
    type OrderItemsTag_Access_Array_Access_Array is array (Natural range <>) of OrderItemsTag_Access_Array_Access;
    type OrderItemsTag_Access_Array_Access_Array_Access is access all OrderItemsTag_Access_Array_Access_Array;
+   type OrderItemsTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OrderItemsTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OrderItemsTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OrderItemsTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OrderItemsTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OrderItemsTag_Access_Array_Access is (if Value /= null and then Value.all in OrderItemsTag_Access_Array_Object'Class then OrderItemsTag_Access_Array_Object'Class (Value.all).Value else null);
+   type OrderItemsTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : OrderItemsTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : OrderItemsTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new OrderItemsTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_OrderItemsTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return OrderItemsTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in OrderItemsTag_Access_Array_Access_Array_Object'Class then OrderItemsTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.tags.OrderItemsTag_Package_References;
 
 with admin.tags.OrderItemsTag_Package_References;
@@ -60,10 +71,14 @@ package admin.tags.OrderItemsTag_Package is
    function "=" (Left, Right : OrderItemsTag_Access_Array) return Boolean renames admin.tags.OrderItemsTag_Package_References."=";
    subtype OrderItemsTag_Access_Array_Access is admin.tags.OrderItemsTag_Package_References.OrderItemsTag_Access_Array_Access;
    function "=" (Left, Right : OrderItemsTag_Access_Array_Access) return Boolean renames admin.tags.OrderItemsTag_Package_References."=";
+   function Java_Box (Value : OrderItemsTag_Access_Array_Access) return Java_Object_Access renames admin.tags.OrderItemsTag_Package_References.Java_Box;
+   function Java_Unbox_OrderItemsTag_Access_Array (Value : access Java_Object'Class) return OrderItemsTag_Access_Array_Access renames admin.tags.OrderItemsTag_Package_References.Java_Unbox_OrderItemsTag_Access_Array;
    subtype OrderItemsTag_Access_Array_Access_Array is admin.tags.OrderItemsTag_Package_References.OrderItemsTag_Access_Array_Access_Array;
    function "=" (Left, Right : OrderItemsTag_Access_Array_Access_Array) return Boolean renames admin.tags.OrderItemsTag_Package_References."=";
    subtype OrderItemsTag_Access_Array_Access_Array_Access is admin.tags.OrderItemsTag_Package_References.OrderItemsTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : OrderItemsTag_Access_Array_Access_Array_Access) return Boolean renames admin.tags.OrderItemsTag_Package_References."=";
+   function Java_Box (Value : OrderItemsTag_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.tags.OrderItemsTag_Package_References.Java_Box;
+   function Java_Unbox_OrderItemsTag_Access_Array_Access_Array (Value : access Java_Object'Class) return OrderItemsTag_Access_Array_Access_Array_Access renames admin.tags.OrderItemsTag_Package_References.Java_Unbox_OrderItemsTag_Access_Array_Access_Array;
 
    type OrderItemsTag is new TableTag with record
       logUtil : LogUtil_Access;

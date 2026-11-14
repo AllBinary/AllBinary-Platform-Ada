@@ -76,7 +76,7 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
 
    function getInstance return FileListFetcher_Access is
    begin
-        return FileListFetcher_Access (FileListFetcher_Package.instance);
+        return FileListFetcher_Package.instance;
    end getInstance;
 
    function getFiles (This : in out FileListFetcher; path : Unbounded_String) return BasicArrayList_Access is
@@ -108,7 +108,7 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
             includeExtensionBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             size := includeExtensions'Length;
             for index in 0 .. (size) - 1 loop
-                includeExtensionBasicArrayList.add (includeExtensions (index));
+                includeExtensionBasicArrayList.add (Java_Box (includeExtensions (index)));
             end loop;
             visitorFileFilter := VisitorFileFilter_Package.Create (DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package.Create (includeExtensionBasicArrayList));
             files := This.subDirectory.search (visitorFileFilter, AbFile_Package.createAbFile (path));
@@ -182,7 +182,7 @@ package body org.allbinary.logic.io.file.FileListFetcher_Package is
             includeExtensionBasicArrayList := BasicArrayList_Access (BasicArrayListD_Package.Create);
             size := includeExtensions'Length;
             for index in 0 .. (size) - 1 loop
-                includeExtensionBasicArrayList.add (includeExtensions (index));
+                includeExtensionBasicArrayList.add (Java_Box (includeExtensions (index)));
             end loop;
             visitorFileFilter := VisitorFileFilter_Package.Create (DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Package.Create (includeExtensionBasicArrayList));
             files := This.subDirectory.search (visitorFileFilter, AbFile_Package.createAbFile (path));

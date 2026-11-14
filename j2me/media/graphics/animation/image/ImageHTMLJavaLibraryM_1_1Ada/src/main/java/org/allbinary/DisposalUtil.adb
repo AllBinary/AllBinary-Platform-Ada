@@ -62,7 +62,7 @@ package body org.allbinary.DisposalUtil_Package is
 
    function getInstance return DisposalUtil_Access is
    begin
-        return DisposalUtil_Access (DisposalUtil_Package.instance);
+        return DisposalUtil_Package.instance;
    end getInstance;
 
    procedure disposeImage (This : in out DisposalUtil; image_Param : access Image_Package.Image'Class) is

@@ -136,7 +136,7 @@ package body org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
 
    function getInstance return BasicCryptUtil_Access is
    begin
-        return BasicCryptUtil_Access (BasicCryptUtil_Package.instance);
+        return BasicCryptUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

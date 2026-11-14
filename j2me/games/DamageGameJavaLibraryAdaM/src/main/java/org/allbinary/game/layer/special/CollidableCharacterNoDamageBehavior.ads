@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package;
 package org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package_References is
    type CollidableCharacterNoDamageBehavior_Access is access all org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package.CollidableCharacterNoDamageBehavior'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Pac
    type CollidableCharacterNoDamageBehavior_Access_Array_Access is access all CollidableCharacterNoDamageBehavior_Access_Array;
    type CollidableCharacterNoDamageBehavior_Access_Array_Access_Array is array (Natural range <>) of CollidableCharacterNoDamageBehavior_Access_Array_Access;
    type CollidableCharacterNoDamageBehavior_Access_Array_Access_Array_Access is access all CollidableCharacterNoDamageBehavior_Access_Array_Access_Array;
+   type CollidableCharacterNoDamageBehavior_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CollidableCharacterNoDamageBehavior_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CollidableCharacterNoDamageBehavior_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CollidableCharacterNoDamageBehavior_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CollidableCharacterNoDamageBehavior_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CollidableCharacterNoDamageBehavior_Access_Array_Access is (if Value /= null and then Value.all in CollidableCharacterNoDamageBehavior_Access_Array_Object'Class then CollidableCharacterNoDamageBehavior_Access_Array_Object'Class (Value.all).Value else null);
+   type CollidableCharacterNoDamageBehavior_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : CollidableCharacterNoDamageBehavior_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : CollidableCharacterNoDamageBehavior_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new CollidableCharacterNoDamageBehavior_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_CollidableCharacterNoDamageBehavior_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return CollidableCharacterNoDamageBehavior_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in CollidableCharacterNoDamageBehavior_Access_Array_Access_Array_Object'Class then CollidableCharacterNoDamageBehavior_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package_References;
 
 with org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Pac
    function "=" (Left, Right : CollidableCharacterNoDamageBehavior_Access_Array) return Boolean renames org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package_References."=";
    subtype CollidableCharacterNoDamageBehavior_Access_Array_Access is org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package_References.CollidableCharacterNoDamageBehavior_Access_Array_Access;
    function "=" (Left, Right : CollidableCharacterNoDamageBehavior_Access_Array_Access) return Boolean renames org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package_References."=";
+   function Java_Box (Value : CollidableCharacterNoDamageBehavior_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package_References.Java_Box;
+   function Java_Unbox_CollidableCharacterNoDamageBehavior_Access_Array (Value : access Java_Object'Class) return CollidableCharacterNoDamageBehavior_Access_Array_Access renames org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package_References.Java_Unbox_CollidableCharacterNoDamageBehavior_Access_Array;
    subtype CollidableCharacterNoDamageBehavior_Access_Array_Access_Array is org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package_References.CollidableCharacterNoDamageBehavior_Access_Array_Access_Array;
    function "=" (Left, Right : CollidableCharacterNoDamageBehavior_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package_References."=";
    subtype CollidableCharacterNoDamageBehavior_Access_Array_Access_Array_Access is org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package_References.CollidableCharacterNoDamageBehavior_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CollidableCharacterNoDamageBehavior_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package_References."=";
+   function Java_Box (Value : CollidableCharacterNoDamageBehavior_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package_References.Java_Box;
+   function Java_Unbox_CollidableCharacterNoDamageBehavior_Access_Array_Access_Array (Value : access Java_Object'Class) return CollidableCharacterNoDamageBehavior_Access_Array_Access_Array_Access renames org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavior_Package_References.Java_Unbox_CollidableCharacterNoDamageBehavior_Access_Array_Access_Array;
 
    type CollidableCharacterNoDamageBehavior is new CollidableDestroyableDamageableBehavior with null record;
 

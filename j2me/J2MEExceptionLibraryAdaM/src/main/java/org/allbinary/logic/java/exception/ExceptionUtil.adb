@@ -28,7 +28,7 @@ package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
 
    function getInstance return ExceptionUtil_Access is
    begin
-        return ExceptionUtil_Access (ExceptionUtil_Package.instance);
+        return ExceptionUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ExceptionUtil'Class) is
@@ -52,10 +52,7 @@ package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
         bs := ByteArrayOutputStream_Package.Create;
         Java_Print_Stack_Trace (e);
         output := bs.toString;
-        if (output) /= (Null_Unbounded_String) then
-            return Java_New_String (output);
-        end if;
-        return This.NONE;
+        return Java_New_String (output);
    end getStackTrace;
 
    procedure getStackTrace (This : in out ExceptionUtil; e_Param : access Java_Throwable_Object'Class) is

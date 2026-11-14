@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package;
 package org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package_References is
    type StoreFileGenerator_Access is access all org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package.StoreFileGenerator'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFi
    type StoreFileGenerator_Access_Array_Access is access all StoreFileGenerator_Access_Array;
    type StoreFileGenerator_Access_Array_Access_Array is array (Natural range <>) of StoreFileGenerator_Access_Array_Access;
    type StoreFileGenerator_Access_Array_Access_Array_Access is access all StoreFileGenerator_Access_Array_Access_Array;
+   type StoreFileGenerator_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreFileGenerator_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreFileGenerator_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreFileGenerator_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreFileGenerator_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreFileGenerator_Access_Array_Access is (if Value /= null and then Value.all in StoreFileGenerator_Access_Array_Object'Class then StoreFileGenerator_Access_Array_Object'Class (Value.all).Value else null);
+   type StoreFileGenerator_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : StoreFileGenerator_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : StoreFileGenerator_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new StoreFileGenerator_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_StoreFileGenerator_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return StoreFileGenerator_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in StoreFileGenerator_Access_Array_Access_Array_Object'Class then StoreFileGenerator_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package_References;
 
 with org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package_References;
@@ -110,10 +121,14 @@ package org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFi
    function "=" (Left, Right : StoreFileGenerator_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package_References."=";
    subtype StoreFileGenerator_Access_Array_Access is org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package_References.StoreFileGenerator_Access_Array_Access;
    function "=" (Left, Right : StoreFileGenerator_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package_References."=";
+   function Java_Box (Value : StoreFileGenerator_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package_References.Java_Box;
+   function Java_Unbox_StoreFileGenerator_Access_Array (Value : access Java_Object'Class) return StoreFileGenerator_Access_Array_Access renames org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package_References.Java_Unbox_StoreFileGenerator_Access_Array;
    subtype StoreFileGenerator_Access_Array_Access_Array is org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package_References.StoreFileGenerator_Access_Array_Access_Array;
    function "=" (Left, Right : StoreFileGenerator_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package_References."=";
    subtype StoreFileGenerator_Access_Array_Access_Array_Access is org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package_References.StoreFileGenerator_Access_Array_Access_Array_Access;
    function "=" (Left, Right : StoreFileGenerator_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package_References."=";
+   function Java_Box (Value : StoreFileGenerator_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package_References.Java_Box;
+   function Java_Unbox_StoreFileGenerator_Access_Array_Access_Array (Value : access Java_Object'Class) return StoreFileGenerator_Access_Array_Access_Array_Access renames org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFileGenerator_Package_References.Java_Unbox_StoreFileGenerator_Access_Array_Access_Array;
 
    type StoreFileGenerator is new TransformInfoObjectConfigGenerator with record
       logUtil : LogUtil_Access;

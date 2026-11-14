@@ -55,7 +55,7 @@ package body org.allbinary.business.user.role.AdminRoleFactory_Package is
 
    function getInstance return AdminRoleFactory_Access is
    begin
-        return AdminRoleFactory_Access (AdminRoleFactory_Package.instance);
+        return AdminRoleFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AdminRoleFactory'Class) is

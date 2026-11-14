@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package;
 package org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References is
    type HtmlTable_Access is access all org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package.HtmlTable'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References
    type HtmlTable_Access_Array_Access is access all HtmlTable_Access_Array;
    type HtmlTable_Access_Array_Access_Array is array (Natural range <>) of HtmlTable_Access_Array_Access;
    type HtmlTable_Access_Array_Access_Array_Access is access all HtmlTable_Access_Array_Access_Array;
+   type HtmlTable_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HtmlTable_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HtmlTable_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HtmlTable_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HtmlTable_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HtmlTable_Access_Array_Access is (if Value /= null and then Value.all in HtmlTable_Access_Array_Object'Class then HtmlTable_Access_Array_Object'Class (Value.all).Value else null);
+   type HtmlTable_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : HtmlTable_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : HtmlTable_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new HtmlTable_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_HtmlTable_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return HtmlTable_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in HtmlTable_Access_Array_Access_Array_Object'Class then HtmlTable_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References;
 
 with org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References;
@@ -71,10 +82,14 @@ package org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package is
    function "=" (Left, Right : HtmlTable_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References."=";
    subtype HtmlTable_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References.HtmlTable_Access_Array_Access;
    function "=" (Left, Right : HtmlTable_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References."=";
+   function Java_Box (Value : HtmlTable_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References.Java_Box;
+   function Java_Unbox_HtmlTable_Access_Array (Value : access Java_Object'Class) return HtmlTable_Access_Array_Access renames org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References.Java_Unbox_HtmlTable_Access_Array;
    subtype HtmlTable_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References.HtmlTable_Access_Array_Access_Array;
    function "=" (Left, Right : HtmlTable_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References."=";
    subtype HtmlTable_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References.HtmlTable_Access_Array_Access_Array_Access;
    function "=" (Left, Right : HtmlTable_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References."=";
+   function Java_Box (Value : HtmlTable_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References.Java_Box;
+   function Java_Unbox_HtmlTable_Access_Array_Access_Array (Value : access Java_Object'Class) return HtmlTable_Access_Array_Access_Array_Access renames org.allbinary.logic.visual.dhtml.html.table.HtmlTable_Package_References.Java_Unbox_HtmlTable_Access_Array_Access_Array;
 
    type HtmlTable is new HtmlTag with record
       END_Id : Unbounded_String;

@@ -61,7 +61,7 @@ package body org.allbinary.graphics.displayable.screen.AboutPaintableFactory_Pac
 
    function getInstance return AboutPaintableFactory_Access is
    begin
-        return AboutPaintableFactory_Access (AboutPaintableFactory_Package.instance);
+        return AboutPaintableFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AboutPaintableFactory'Class) is

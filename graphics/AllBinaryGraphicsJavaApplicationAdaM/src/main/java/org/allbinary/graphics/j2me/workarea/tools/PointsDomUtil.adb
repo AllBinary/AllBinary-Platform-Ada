@@ -24,6 +24,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.allbinary.util.BasicArrayList_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package; use org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
@@ -61,6 +62,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package is
    package PointFactory_Package renames Standard.org.allbinary.graphics.PointFactory_Package;
    package WorkAreaJPanel_Package renames Standard.org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package;
    package PositionStrings_Package renames Standard.org.allbinary.math.PositionStrings_Package;
+   package Document_Package renames Standard.org.w3c.dom.Document_Package;
    subtype GPoint_Access is org.allbinary.graphics.GPoint_Package_References.GPoint_Access;
    function "=" (Left, Right : GPoint_Access) return Boolean renames org.allbinary.graphics.GPoint_Package_References."=";
    subtype GPoint_Access_Array is org.allbinary.graphics.GPoint_Package_References.GPoint_Access_Array;
@@ -127,7 +129,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.PointsDomUtil_Package is
 
    function getInstance return PointsDomUtil_Access is
    begin
-        return PointsDomUtil_Access (PointsDomUtil_Package.instance);
+        return PointsDomUtil_Package.instance;
    end getInstance;
 
    --  throws Exception

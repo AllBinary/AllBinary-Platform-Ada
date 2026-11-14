@@ -70,7 +70,7 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
 
    function getInstance return XmlDocumentHelper_Access is
    begin
-        return XmlDocumentHelper_Access (XmlDocumentHelper_Package.instance);
+        return XmlDocumentHelper_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out XmlDocumentHelper'Class) is

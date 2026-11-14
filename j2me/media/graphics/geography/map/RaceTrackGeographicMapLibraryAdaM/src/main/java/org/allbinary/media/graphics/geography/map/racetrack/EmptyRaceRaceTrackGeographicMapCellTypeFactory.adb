@@ -30,7 +30,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.EmptyRaceRaceT
 
    function getInstance return EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access is
    begin
-        return EmptyRaceRaceTrackGeographicMapCellTypeFactory_Access (EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package.instanceC);
+        return EmptyRaceRaceTrackGeographicMapCellTypeFactory_Package.instanceC;
    end getInstance;
 
    procedure Initialize (This : in out EmptyRaceRaceTrackGeographicMapCellTypeFactory'Class) is

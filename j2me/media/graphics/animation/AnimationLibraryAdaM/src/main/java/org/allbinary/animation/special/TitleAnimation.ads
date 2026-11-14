@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.special.TitleAnimation_Package;
 package org.allbinary.animation.special.TitleAnimation_Package_References is
    type TitleAnimation_Access is access all org.allbinary.animation.special.TitleAnimation_Package.TitleAnimation'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.special.TitleAnimation_Package_References is
    type TitleAnimation_Access_Array_Access is access all TitleAnimation_Access_Array;
    type TitleAnimation_Access_Array_Access_Array is array (Natural range <>) of TitleAnimation_Access_Array_Access;
    type TitleAnimation_Access_Array_Access_Array_Access is access all TitleAnimation_Access_Array_Access_Array;
+   type TitleAnimation_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TitleAnimation_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TitleAnimation_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TitleAnimation_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TitleAnimation_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TitleAnimation_Access_Array_Access is (if Value /= null and then Value.all in TitleAnimation_Access_Array_Object'Class then TitleAnimation_Access_Array_Object'Class (Value.all).Value else null);
+   type TitleAnimation_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TitleAnimation_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TitleAnimation_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TitleAnimation_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TitleAnimation_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TitleAnimation_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TitleAnimation_Access_Array_Access_Array_Object'Class then TitleAnimation_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.special.TitleAnimation_Package_References;
 
 with org.allbinary.animation.special.TitleAnimation_Package_References;
@@ -112,10 +123,14 @@ package org.allbinary.animation.special.TitleAnimation_Package is
    function "=" (Left, Right : TitleAnimation_Access_Array) return Boolean renames org.allbinary.animation.special.TitleAnimation_Package_References."=";
    subtype TitleAnimation_Access_Array_Access is org.allbinary.animation.special.TitleAnimation_Package_References.TitleAnimation_Access_Array_Access;
    function "=" (Left, Right : TitleAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.special.TitleAnimation_Package_References."=";
+   function Java_Box (Value : TitleAnimation_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.special.TitleAnimation_Package_References.Java_Box;
+   function Java_Unbox_TitleAnimation_Access_Array (Value : access Java_Object'Class) return TitleAnimation_Access_Array_Access renames org.allbinary.animation.special.TitleAnimation_Package_References.Java_Unbox_TitleAnimation_Access_Array;
    subtype TitleAnimation_Access_Array_Access_Array is org.allbinary.animation.special.TitleAnimation_Package_References.TitleAnimation_Access_Array_Access_Array;
    function "=" (Left, Right : TitleAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.special.TitleAnimation_Package_References."=";
    subtype TitleAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.special.TitleAnimation_Package_References.TitleAnimation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TitleAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.special.TitleAnimation_Package_References."=";
+   function Java_Box (Value : TitleAnimation_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.special.TitleAnimation_Package_References.Java_Box;
+   function Java_Unbox_TitleAnimation_Access_Array_Access_Array (Value : access Java_Object'Class) return TitleAnimation_Access_Array_Access_Array_Access renames org.allbinary.animation.special.TitleAnimation_Package_References.Java_Unbox_TitleAnimation_Access_Array_Access_Array;
 
    type TitleAnimation is new SpecialAnimation with record
       systemWrapper : ABSystemWrapper_Access;

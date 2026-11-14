@@ -15,6 +15,8 @@
 
 with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
 with javax.microedition.lcdui.CommandListener_Package_References;
+with org.allbinary.TsUtil_Package; use org.allbinary.TsUtil_Package;
+with org.allbinary.TsUtil_Package_References;
 with org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package; use org.allbinary.game.displayable.canvas.NullWaitGameRunnable_Package;
 with org.allbinary.graphics.displayable.MyCanvas_Package; use org.allbinary.graphics.displayable.MyCanvas_Package;
 with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
@@ -52,7 +54,6 @@ with org.allbinary.graphics.displayable.BaseScalable_Package;
 with javax.microedition.lcdui.Canvas_Package;
 with org.allbinary.graphics.displayable.CanvasStrings_Package;
 with org.microemu.device.ui.CanvasUI_Package;
-with javax.microedition.lcdui.Choice_Package;
 with javax.microedition.lcdui.ChoiceGroup_Package;
 with javax.microedition.lcdui.ChoiceItem_Package;
 with javax.microedition.lcdui.Command_Package;
@@ -61,7 +62,6 @@ with org.allbinary.string_Id.CommonSeps_Package;
 with org.microemu.device.Device_Package;
 with org.microemu.device.DeviceDisplay_Package;
 with javax.microedition.lcdui.Display_Package;
-with org.microemu.DisplayAccess_Package;
 with javax.microedition.lcdui.DisplayAccessor_Package;
 with org.allbinary.graphics.displayable.event.DisplayChangeEvent_Package;
 with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
@@ -91,7 +91,6 @@ with org.allbinary.logic.communication.log.Log_Package;
 with org.allbinary.logic.communication.log.LogFormatUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package;
 with javax.microedition.midlet.MIDlet_Package;
-with org.microemu.MIDletAccess_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 with org.microemu.device.MutableImage_Package;
 with org.microemu.device.ui.PaintEvent_Package;
@@ -131,6 +130,16 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
    function "=" (Left, Right : CommandListener_Access_Array_Access_Array) return Boolean renames javax.microedition.lcdui.CommandListener_Package_References."=";
    subtype CommandListener_Access_Array_Access_Array_Access is javax.microedition.lcdui.CommandListener_Package_References.CommandListener_Access_Array_Access_Array_Access;
    function "=" (Left, Right : CommandListener_Access_Array_Access_Array_Access) return Boolean renames javax.microedition.lcdui.CommandListener_Package_References."=";
+   subtype TsUtil_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access;
+   function "=" (Left, Right : TsUtil_Access) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array;
+   function "=" (Left, Right : TsUtil_Access_Array) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access;
+   function "=" (Left, Right : TsUtil_Access_Array_Access) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array;
+   function "=" (Left, Right : TsUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   subtype TsUtil_Access_Array_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array_Access;
+   function "=" (Left, Right : TsUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.TsUtil_Package_References."=";
    subtype ABSystemWrapper_Access is org.allbinary.logic.ABSystemWrapper_Package_References.ABSystemWrapper_Access;
    function "=" (Left, Right : ABSystemWrapper_Access) return Boolean renames org.allbinary.logic.ABSystemWrapper_Package_References."=";
    subtype ABSystemWrapper_Access_Array is org.allbinary.logic.ABSystemWrapper_Package_References.ABSystemWrapper_Access_Array;
@@ -217,6 +226,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
       This.nullUtil := NullUtil_Package.getInstance;
       This.stdUtil := StdUtil_Package.getInstance;
       This.systemWrapper := ABSystemWrapper_Package.getInstance;
+      This.tsUtil := TsUtil_Package.getInstance;
       This.thread_Case := Thread_Access (NullThread_Package.NULL_THREAD);
       This.currentThread := Thread_Access (NullThread_Package.NULL_THREAD);
       This.running := False;
@@ -243,7 +253,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
    begin
         MyCanvas_Package.Initialize (This, CommonStrings_Package.getInstance.UNKNOWN, childNameList);
         Initialize_Fields (This);
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("RunnableCanvas delay: ")).appendint (Integer (This.loopTimeHelper.delay_Id)).toString, RunnableCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("RunnableCanvas delay: ")).appendint (This.loopTimeHelper.delay_Id).toString, RunnableCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.runnableCanvasRefreshHelper := Processor_Access (RunnableCanvasRefreshHelper_Package.Create (RunnableCanvas_Access'(This'Unchecked_Access)));
         if (commandListener) /= (null) then
             RunnableCanvas'Class (This).initCommands (commandListener);
@@ -295,7 +305,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
    function isRunning (This : in out RunnableCanvas) return Boolean is
       stringBuffer : StringMaker_Access;
    begin
-        if (This.thread_Case) = (This.currentThread) then
+        if (Java_Object_Access (This.thread_Case)) = (Java_Object_Access (This.currentThread)) then
             return This.running;
         else
             stringBuffer := StringMaker_Package.Create;
@@ -321,7 +331,7 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
    begin
         This.loopTimeHelper.delay_Id := wait;
         This.pauseWait := (Long_Long_Integer (wait)) * (3);
-        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("setWait - delay: ")).appendint (Integer (This.loopTimeHelper.delay_Id)).toString, RunnableCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
+        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("setWait - delay: ")).appendint (This.loopTimeHelper.delay_Id).toString, RunnableCanvas_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end setWait;
 
    function getWait (This : in out RunnableCanvas) return Integer is

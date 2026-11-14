@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package;
 package org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_References is
    type DelayedConstantVelocityMovement_Access is access all org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package.DelayedConstantVelocityMovement'Class;
@@ -19,6 +20,16 @@ package org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_R
    type DelayedConstantVelocityMovement_Access_Array_Access is access all DelayedConstantVelocityMovement_Access_Array;
    type DelayedConstantVelocityMovement_Access_Array_Access_Array is array (Natural range <>) of DelayedConstantVelocityMovement_Access_Array_Access;
    type DelayedConstantVelocityMovement_Access_Array_Access_Array_Access is access all DelayedConstantVelocityMovement_Access_Array_Access_Array;
+   type DelayedConstantVelocityMovement_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DelayedConstantVelocityMovement_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DelayedConstantVelocityMovement_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DelayedConstantVelocityMovement_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DelayedConstantVelocityMovement_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DelayedConstantVelocityMovement_Access_Array_Access is (if Value /= null and then Value.all in DelayedConstantVelocityMovement_Access_Array_Object'Class then DelayedConstantVelocityMovement_Access_Array_Object'Class (Value.all).Value else null);
+   type DelayedConstantVelocityMovement_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : DelayedConstantVelocityMovement_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : DelayedConstantVelocityMovement_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new DelayedConstantVelocityMovement_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_DelayedConstantVelocityMovement_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return DelayedConstantVelocityMovement_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in DelayedConstantVelocityMovement_Access_Array_Access_Array_Object'Class then DelayedConstantVelocityMovement_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_References;
 
 with org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_References;
@@ -97,10 +108,14 @@ package org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package i
    function "=" (Left, Right : DelayedConstantVelocityMovement_Access_Array) return Boolean renames org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_References."=";
    subtype DelayedConstantVelocityMovement_Access_Array_Access is org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_References.DelayedConstantVelocityMovement_Access_Array_Access;
    function "=" (Left, Right : DelayedConstantVelocityMovement_Access_Array_Access) return Boolean renames org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_References."=";
+   function Java_Box (Value : DelayedConstantVelocityMovement_Access_Array_Access) return Java_Object_Access renames org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_References.Java_Box;
+   function Java_Unbox_DelayedConstantVelocityMovement_Access_Array (Value : access Java_Object'Class) return DelayedConstantVelocityMovement_Access_Array_Access renames org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_References.Java_Unbox_DelayedConstantVelocityMovement_Access_Array;
    subtype DelayedConstantVelocityMovement_Access_Array_Access_Array is org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_References.DelayedConstantVelocityMovement_Access_Array_Access_Array;
    function "=" (Left, Right : DelayedConstantVelocityMovement_Access_Array_Access_Array) return Boolean renames org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_References."=";
    subtype DelayedConstantVelocityMovement_Access_Array_Access_Array_Access is org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_References.DelayedConstantVelocityMovement_Access_Array_Access_Array_Access;
    function "=" (Left, Right : DelayedConstantVelocityMovement_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_References."=";
+   function Java_Box (Value : DelayedConstantVelocityMovement_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_References.Java_Box;
+   function Java_Unbox_DelayedConstantVelocityMovement_Access_Array_Access_Array (Value : access Java_Object'Class) return DelayedConstantVelocityMovement_Access_Array_Access_Array_Access renames org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package_References.Java_Unbox_DelayedConstantVelocityMovement_Access_Array_Access_Array;
 
    type DelayedConstantVelocityMovement is new BasicConstantVelocityMovement with record
       timeDelayHelper : TimeDelayHelper_Access;

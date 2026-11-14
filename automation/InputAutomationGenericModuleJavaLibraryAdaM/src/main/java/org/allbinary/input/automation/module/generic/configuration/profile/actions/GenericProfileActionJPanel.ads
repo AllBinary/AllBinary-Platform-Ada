@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package;
 package org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package_References is
    type GenericProfileActionJPanel_Access is access all org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package.GenericProfileActionJPanel'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    type GenericProfileActionJPanel_Access_Array_Access is access all GenericProfileActionJPanel_Access_Array;
    type GenericProfileActionJPanel_Access_Array_Access_Array is array (Natural range <>) of GenericProfileActionJPanel_Access_Array_Access;
    type GenericProfileActionJPanel_Access_Array_Access_Array_Access is access all GenericProfileActionJPanel_Access_Array_Access_Array;
+   type GenericProfileActionJPanel_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GenericProfileActionJPanel_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GenericProfileActionJPanel_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GenericProfileActionJPanel_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GenericProfileActionJPanel_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GenericProfileActionJPanel_Access_Array_Access is (if Value /= null and then Value.all in GenericProfileActionJPanel_Access_Array_Object'Class then GenericProfileActionJPanel_Access_Array_Object'Class (Value.all).Value else null);
+   type GenericProfileActionJPanel_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GenericProfileActionJPanel_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GenericProfileActionJPanel_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GenericProfileActionJPanel_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GenericProfileActionJPanel_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GenericProfileActionJPanel_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GenericProfileActionJPanel_Access_Array_Access_Array_Object'Class then GenericProfileActionJPanel_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package_References;
 
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package_References;
@@ -34,7 +45,15 @@ limited with org.allbinary.input.automation.module.generic_Id.configuration.prof
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package_References;
 limited with org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
-with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.JPanel_Package; use org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.JPanel_Package;
+--  with java.awt.Dimension_Package; use java.awt.Dimension_Package;
+--  with java.awt.event.ActionEvent_Package; use java.awt.event.ActionEvent_Package;
+--  with java.awt.event.ActionListener_Package; use java.awt.event.ActionListener_Package;
+--  with javax.swing.GroupLayout_Package; use javax.swing.GroupLayout_Package;
+--  with javax.swing.JButton_Package; use javax.swing.JButton_Package;
+--  with javax.swing.JLabel_Package; use javax.swing.JLabel_Package;
+--  with javax.swing.JPanel_Package; use javax.swing.JPanel_Package;
+--  with javax.swing.JScrollPane_Package; use javax.swing.JScrollPane_Package;
+--  with javax.swing.LayoutStyle_Package; use javax.swing.LayoutStyle_Package;
 limited with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package;
 with org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileAction_Package_References;
 
@@ -83,12 +102,16 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    function "=" (Left, Right : GenericProfileActionJPanel_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package_References."=";
    subtype GenericProfileActionJPanel_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package_References.GenericProfileActionJPanel_Access_Array_Access;
    function "=" (Left, Right : GenericProfileActionJPanel_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package_References."=";
+   function Java_Box (Value : GenericProfileActionJPanel_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package_References.Java_Box;
+   function Java_Unbox_GenericProfileActionJPanel_Access_Array (Value : access Java_Object'Class) return GenericProfileActionJPanel_Access_Array_Access renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package_References.Java_Unbox_GenericProfileActionJPanel_Access_Array;
    subtype GenericProfileActionJPanel_Access_Array_Access_Array is org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package_References.GenericProfileActionJPanel_Access_Array_Access_Array;
    function "=" (Left, Right : GenericProfileActionJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package_References."=";
    subtype GenericProfileActionJPanel_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package_References.GenericProfileActionJPanel_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GenericProfileActionJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package_References."=";
+   function Java_Box (Value : GenericProfileActionJPanel_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package_References.Java_Box;
+   function Java_Unbox_GenericProfileActionJPanel_Access_Array_Access_Array (Value : access Java_Object'Class) return GenericProfileActionJPanel_Access_Array_Access_Array_Access renames org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionJPanel_Package_References.Java_Unbox_GenericProfileActionJPanel_Access_Array_Access_Array;
 
-   type GenericProfileActionJPanel is new JPanel with record
+   type GenericProfileActionJPanel is new Java_Object with record
       logUtil : LogUtil_Access;
       genericProfileAction : GenericProfileAction_Access;
       genericProfileActionScriptJPanel : GenericProfileActionScriptJPanel_Access;

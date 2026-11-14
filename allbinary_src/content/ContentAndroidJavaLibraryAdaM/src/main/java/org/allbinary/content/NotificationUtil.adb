@@ -149,7 +149,7 @@ package body org.allbinary.content.NotificationUtil_Package is
 
    function getInstance return NotificationUtil_Access is
    begin
-        return NotificationUtil_Access (NotificationUtil_Package.SINGLETON);
+        return NotificationUtil_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out NotificationUtil'Class) is

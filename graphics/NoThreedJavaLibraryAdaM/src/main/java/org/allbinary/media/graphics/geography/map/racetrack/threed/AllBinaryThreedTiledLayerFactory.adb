@@ -72,7 +72,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.threed.AllBina
 
    function getInstance return AllBinaryThreedTiledLayerFactory_Access is
    begin
-        return AllBinaryThreedTiledLayerFactory_Access (AllBinaryThreedTiledLayerFactory_Package.instance);
+        return AllBinaryThreedTiledLayerFactory_Package.instance;
    end getInstance;
 
    --  throws Exception

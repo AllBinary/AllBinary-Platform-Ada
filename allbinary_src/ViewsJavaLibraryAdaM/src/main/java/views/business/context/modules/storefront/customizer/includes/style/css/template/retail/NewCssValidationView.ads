@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package;
 package views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References is
    type NewCssValidationView_Access is access all views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package.NewCssValidationView'Class;
@@ -19,6 +20,16 @@ package views.business.context.modules.storefront.customizer.includes.style.css.
    type NewCssValidationView_Access_Array_Access is access all NewCssValidationView_Access_Array;
    type NewCssValidationView_Access_Array_Access_Array is array (Natural range <>) of NewCssValidationView_Access_Array_Access;
    type NewCssValidationView_Access_Array_Access_Array_Access is access all NewCssValidationView_Access_Array_Access_Array;
+   type NewCssValidationView_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NewCssValidationView_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NewCssValidationView_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NewCssValidationView_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NewCssValidationView_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NewCssValidationView_Access_Array_Access is (if Value /= null and then Value.all in NewCssValidationView_Access_Array_Object'Class then NewCssValidationView_Access_Array_Object'Class (Value.all).Value else null);
+   type NewCssValidationView_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : NewCssValidationView_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : NewCssValidationView_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new NewCssValidationView_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_NewCssValidationView_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return NewCssValidationView_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in NewCssValidationView_Access_Array_Access_Array_Object'Class then NewCssValidationView_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References;
 
 with views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References;
@@ -100,10 +111,14 @@ package views.business.context.modules.storefront.customizer.includes.style.css.
    function "=" (Left, Right : NewCssValidationView_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References."=";
    subtype NewCssValidationView_Access_Array_Access is views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References.NewCssValidationView_Access_Array_Access;
    function "=" (Left, Right : NewCssValidationView_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References."=";
+   function Java_Box (Value : NewCssValidationView_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References.Java_Box;
+   function Java_Unbox_NewCssValidationView_Access_Array (Value : access Java_Object'Class) return NewCssValidationView_Access_Array_Access renames views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References.Java_Unbox_NewCssValidationView_Access_Array;
    subtype NewCssValidationView_Access_Array_Access_Array is views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References.NewCssValidationView_Access_Array_Access_Array;
    function "=" (Left, Right : NewCssValidationView_Access_Array_Access_Array) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References."=";
    subtype NewCssValidationView_Access_Array_Access_Array_Access is views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References.NewCssValidationView_Access_Array_Access_Array_Access;
    function "=" (Left, Right : NewCssValidationView_Access_Array_Access_Array_Access) return Boolean renames views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References."=";
+   function Java_Box (Value : NewCssValidationView_Access_Array_Access_Array_Access) return Java_Object_Access renames views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References.Java_Box;
+   function Java_Unbox_NewCssValidationView_Access_Array_Access_Array (Value : access Java_Object'Class) return NewCssValidationView_Access_Array_Access_Array_Access renames views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package_References.Java_Unbox_NewCssValidationView_Access_Array_Access_Array;
 
    type NewCssValidationView is new CssCustomizerView and ValidationComponentInterface with record
       NewCssValidationView_Field_logUtil_Hidden : LogUtil_Access;

@@ -25,6 +25,7 @@ with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.game.ag.ai.ThrustAIVisitor_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.logic.util.visitor.Visitor_Package;
 
 package body org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package is
 
@@ -58,7 +59,7 @@ package body org.allbinary.game.ag.ai.ThrustAIVisitorFactory_Package is
 
    function getInstance return ThrustAIVisitor_Access is
    begin
-        return ThrustAIVisitor_Access (ThrustAIVisitorFactory_Package.instance);
+        return ThrustAIVisitorFactory_Package.instance;
    end getInstance;
 
 begin

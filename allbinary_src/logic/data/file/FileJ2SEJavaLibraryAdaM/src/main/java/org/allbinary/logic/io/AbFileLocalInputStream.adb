@@ -46,7 +46,7 @@ package body org.allbinary.logic.io.AbFileLocalInputStream_Package is
    procedure Initialize (This : in out AbFileLocalInputStream'Class; file_Param : access AbFile_Package.AbFile'Class) is
       file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
-        AbFileInputStream_Package.Initialize (This, AbFileNativeUtil_Package.get (file));
+        AbFileInputStream_Package.Initialize (This, AbFileNativeUtil_Package.get (file).getPath);
    end Initialize;
 
    function Create (file_Param : access AbFile_Package.AbFile'Class) return AbFileLocalInputStream_Access is

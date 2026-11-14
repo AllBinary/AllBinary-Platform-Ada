@@ -73,7 +73,7 @@ package body org.allbinary.image.PreResourceImageUtil_Package is
 
    function getInstance return PreResourceImageUtil_Access is
    begin
-        return PreResourceImageUtil_Access (PreResourceImageUtil_Package.instance);
+        return PreResourceImageUtil_Package.instance;
    end getInstance;
 
    function encapsulate (This : in out PreResourceImageUtil; image_Param : access Image_Package.Image'Class) return Image_Access is

@@ -26,7 +26,7 @@ package body org.allbinary.logic.visual.dhtml.html.head.meta.HtmlMetaAttributesD
 
    function getInstance return HtmlMetaAttributesData_Access is
    begin
-        return HtmlMetaAttributesData_Access (HtmlMetaAttributesData_Package.instance);
+        return HtmlMetaAttributesData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out HtmlMetaAttributesData'Class) is

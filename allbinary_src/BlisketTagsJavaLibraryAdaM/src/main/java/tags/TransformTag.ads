@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with tags.TransformTag_Package;
 package tags.TransformTag_Package_References is
    type TransformTag_Access is access all tags.TransformTag_Package.TransformTag'Class;
@@ -19,6 +20,16 @@ package tags.TransformTag_Package_References is
    type TransformTag_Access_Array_Access is access all TransformTag_Access_Array;
    type TransformTag_Access_Array_Access_Array is array (Natural range <>) of TransformTag_Access_Array_Access;
    type TransformTag_Access_Array_Access_Array_Access is access all TransformTag_Access_Array_Access_Array;
+   type TransformTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransformTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransformTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransformTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransformTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransformTag_Access_Array_Access is (if Value /= null and then Value.all in TransformTag_Access_Array_Object'Class then TransformTag_Access_Array_Object'Class (Value.all).Value else null);
+   type TransformTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TransformTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TransformTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TransformTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TransformTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TransformTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TransformTag_Access_Array_Access_Array_Object'Class then TransformTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end tags.TransformTag_Package_References;
 
 with tags.TransformTag_Package_References;
@@ -73,10 +84,14 @@ package tags.TransformTag_Package is
    function "=" (Left, Right : TransformTag_Access_Array) return Boolean renames tags.TransformTag_Package_References."=";
    subtype TransformTag_Access_Array_Access is tags.TransformTag_Package_References.TransformTag_Access_Array_Access;
    function "=" (Left, Right : TransformTag_Access_Array_Access) return Boolean renames tags.TransformTag_Package_References."=";
+   function Java_Box (Value : TransformTag_Access_Array_Access) return Java_Object_Access renames tags.TransformTag_Package_References.Java_Box;
+   function Java_Unbox_TransformTag_Access_Array (Value : access Java_Object'Class) return TransformTag_Access_Array_Access renames tags.TransformTag_Package_References.Java_Unbox_TransformTag_Access_Array;
    subtype TransformTag_Access_Array_Access_Array is tags.TransformTag_Package_References.TransformTag_Access_Array_Access_Array;
    function "=" (Left, Right : TransformTag_Access_Array_Access_Array) return Boolean renames tags.TransformTag_Package_References."=";
    subtype TransformTag_Access_Array_Access_Array_Access is tags.TransformTag_Package_References.TransformTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TransformTag_Access_Array_Access_Array_Access) return Boolean renames tags.TransformTag_Package_References."=";
+   function Java_Box (Value : TransformTag_Access_Array_Access_Array_Access) return Java_Object_Access renames tags.TransformTag_Package_References.Java_Box;
+   function Java_Unbox_TransformTag_Access_Array_Access_Array (Value : access Java_Object'Class) return TransformTag_Access_Array_Access_Array_Access renames tags.TransformTag_Package_References.Java_Unbox_TransformTag_Access_Array_Access_Array;
 
    type TransformTag is new TransformInfoTag with record
       TransformTag_Field_logUtil : LogUtil_Access;

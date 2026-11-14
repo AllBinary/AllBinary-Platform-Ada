@@ -16,6 +16,7 @@
 with admin.taghelpers.DownloadItemsHelperFactory_Package; use admin.taghelpers.DownloadItemsHelperFactory_Package;
 with admin.taghelpers.DownloadItemsRequestHelperFactory_Package; use admin.taghelpers.DownloadItemsRequestHelperFactory_Package;
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with admin.tags.ParentInventoryTagHelper_Package; use admin.tags.ParentInventoryTagHelper_Package;
 with admin.tags.AbTagData_Package; use admin.tags.AbTagData_Package;
 with admin.tags.ParentInventoryTagHelper_Package;
@@ -25,6 +26,7 @@ package body admin.tags.DownloadItemsTag_Package is
    package DownloadItemsHelperFactory_Package renames Standard.admin.taghelpers.DownloadItemsHelperFactory_Package;
    package DownloadItemsRequestHelperFactory_Package renames Standard.admin.taghelpers.DownloadItemsRequestHelperFactory_Package;
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    procedure Initialize_Fields (This : in out DownloadItemsTag'Class) is
    begin
       null;
@@ -53,7 +55,7 @@ package body admin.tags.DownloadItemsTag_Package is
         begin
             if DownloadItemsTag'Class (This).isEnabled then
                 if (DownloadItemsTag'Class (This).getCommand) /= (null) then
-                    if ((((DownloadItemsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.BACKUP)) /= (0)) and then ((DownloadItemsTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.RESTORE)) /= (0))) and then ((DownloadItemsTag'Class (This).getCommand.compareTo (This.commonStrings.CREATE)) /= (0))) and then ((DownloadItemsTag'Class (This).getCommand.compareTo (This.commonStrings.DROP)) /= (0)) then
+                    if ((((DownloadItemsTag'Class (This).getCommand.compareTo (GLOBALS2_Package.BACKUP)) /= (0)) and then ((DownloadItemsTag'Class (This).getCommand.compareTo (GLOBALS2_Package.RESTORE)) /= (0))) and then ((DownloadItemsTag'Class (This).getCommand.compareTo (This.commonStrings.CREATE)) /= (0))) and then ((DownloadItemsTag'Class (This).getCommand.compareTo (This.commonStrings.DROP)) /= (0)) then
                         parentTag := DownloadItemsTag'Class (This).getParent;
                         ParentInventoryTagHelper_Package.getInstance.isValid (DownloadItemsTag_Access'(This'Unchecked_Access), parentTag);
                         DownloadItemsTag'Class (This).getPropertiesHashMap.put (AbTagData_Package.PARENT, parentTag);

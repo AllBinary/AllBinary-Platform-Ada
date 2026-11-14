@@ -82,7 +82,7 @@ package body org.allbinary.logic.visual.dhtml.html.select_Id.HtmlSelect_Package 
 
    procedure addOption (This : in out HtmlSelect; key : Unbounded_String) is
    begin
-        This.options.add (key);
+        This.options.add (Java_Box (key));
    end addOption;
 
    procedure addOptions (This : in out HtmlSelect; fileName : Unbounded_String) is

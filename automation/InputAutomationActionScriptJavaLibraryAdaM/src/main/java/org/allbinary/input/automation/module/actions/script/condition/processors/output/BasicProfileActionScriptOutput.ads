@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package;
 package org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package_References is
    type BasicProfileActionScriptOutput_Access is access all org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package.BasicProfileActionScriptOutput'Class;
@@ -19,6 +20,16 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    type BasicProfileActionScriptOutput_Access_Array_Access is access all BasicProfileActionScriptOutput_Access_Array;
    type BasicProfileActionScriptOutput_Access_Array_Access_Array is array (Natural range <>) of BasicProfileActionScriptOutput_Access_Array_Access;
    type BasicProfileActionScriptOutput_Access_Array_Access_Array_Access is access all BasicProfileActionScriptOutput_Access_Array_Access_Array;
+   type BasicProfileActionScriptOutput_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicProfileActionScriptOutput_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicProfileActionScriptOutput_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicProfileActionScriptOutput_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicProfileActionScriptOutput_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicProfileActionScriptOutput_Access_Array_Access is (if Value /= null and then Value.all in BasicProfileActionScriptOutput_Access_Array_Object'Class then BasicProfileActionScriptOutput_Access_Array_Object'Class (Value.all).Value else null);
+   type BasicProfileActionScriptOutput_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : BasicProfileActionScriptOutput_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : BasicProfileActionScriptOutput_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new BasicProfileActionScriptOutput_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_BasicProfileActionScriptOutput_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return BasicProfileActionScriptOutput_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in BasicProfileActionScriptOutput_Access_Array_Access_Array_Object'Class then BasicProfileActionScriptOutput_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package_References;
 
 with org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package_References;
@@ -73,10 +84,14 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
    function "=" (Left, Right : BasicProfileActionScriptOutput_Access_Array) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package_References."=";
    subtype BasicProfileActionScriptOutput_Access_Array_Access is org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package_References.BasicProfileActionScriptOutput_Access_Array_Access;
    function "=" (Left, Right : BasicProfileActionScriptOutput_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package_References."=";
+   function Java_Box (Value : BasicProfileActionScriptOutput_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package_References.Java_Box;
+   function Java_Unbox_BasicProfileActionScriptOutput_Access_Array (Value : access Java_Object'Class) return BasicProfileActionScriptOutput_Access_Array_Access renames org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package_References.Java_Unbox_BasicProfileActionScriptOutput_Access_Array;
    subtype BasicProfileActionScriptOutput_Access_Array_Access_Array is org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package_References.BasicProfileActionScriptOutput_Access_Array_Access_Array;
    function "=" (Left, Right : BasicProfileActionScriptOutput_Access_Array_Access_Array) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package_References."=";
    subtype BasicProfileActionScriptOutput_Access_Array_Access_Array_Access is org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package_References.BasicProfileActionScriptOutput_Access_Array_Access_Array_Access;
    function "=" (Left, Right : BasicProfileActionScriptOutput_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package_References."=";
+   function Java_Box (Value : BasicProfileActionScriptOutput_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package_References.Java_Box;
+   function Java_Unbox_BasicProfileActionScriptOutput_Access_Array_Access_Array (Value : access Java_Object'Class) return BasicProfileActionScriptOutput_Access_Array_Access_Array_Access renames org.allbinary.input.automation.module.actions.script.condition.processors.output.BasicProfileActionScriptOutput_Package_References.Java_Unbox_BasicProfileActionScriptOutput_Access_Array_Access_Array;
 
    type BasicProfileActionScriptOutput is new BasicProfileActionScriptProcessor and ProfileActionScriptOutputInterface with null record;
 

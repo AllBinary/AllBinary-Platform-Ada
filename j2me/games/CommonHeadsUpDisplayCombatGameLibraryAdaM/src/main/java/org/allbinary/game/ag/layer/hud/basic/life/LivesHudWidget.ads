@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package;
 package org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References is
    type LivesHudWidget_Access is access all org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package.LivesHudWidget'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_Refere
    type LivesHudWidget_Access_Array_Access is access all LivesHudWidget_Access_Array;
    type LivesHudWidget_Access_Array_Access_Array is array (Natural range <>) of LivesHudWidget_Access_Array_Access;
    type LivesHudWidget_Access_Array_Access_Array_Access is access all LivesHudWidget_Access_Array_Access_Array;
+   type LivesHudWidget_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LivesHudWidget_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LivesHudWidget_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LivesHudWidget_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LivesHudWidget_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LivesHudWidget_Access_Array_Access is (if Value /= null and then Value.all in LivesHudWidget_Access_Array_Object'Class then LivesHudWidget_Access_Array_Object'Class (Value.all).Value else null);
+   type LivesHudWidget_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : LivesHudWidget_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : LivesHudWidget_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new LivesHudWidget_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_LivesHudWidget_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return LivesHudWidget_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in LivesHudWidget_Access_Array_Access_Array_Object'Class then LivesHudWidget_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References;
 
 with org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References;
@@ -100,10 +111,14 @@ package org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package is
    function "=" (Left, Right : LivesHudWidget_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References."=";
    subtype LivesHudWidget_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References.LivesHudWidget_Access_Array_Access;
    function "=" (Left, Right : LivesHudWidget_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References."=";
+   function Java_Box (Value : LivesHudWidget_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References.Java_Box;
+   function Java_Unbox_LivesHudWidget_Access_Array (Value : access Java_Object'Class) return LivesHudWidget_Access_Array_Access renames org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References.Java_Unbox_LivesHudWidget_Access_Array;
    subtype LivesHudWidget_Access_Array_Access_Array is org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References.LivesHudWidget_Access_Array_Access_Array;
    function "=" (Left, Right : LivesHudWidget_Access_Array_Access_Array) return Boolean renames org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References."=";
    subtype LivesHudWidget_Access_Array_Access_Array_Access is org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References.LivesHudWidget_Access_Array_Access_Array_Access;
    function "=" (Left, Right : LivesHudWidget_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References."=";
+   function Java_Box (Value : LivesHudWidget_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References.Java_Box;
+   function Java_Unbox_LivesHudWidget_Access_Array_Access_Array (Value : access Java_Object'Class) return LivesHudWidget_Access_Array_Access_Array_Access renames org.allbinary.game.ag.layer.hud.basic.life.LivesHudWidget_Package_References.Java_Unbox_LivesHudWidget_Access_Array_Access_Array;
 
    type LivesHudWidget is new BasicHud and PaintableInterface with record
       lifeInterface : Life_Access;

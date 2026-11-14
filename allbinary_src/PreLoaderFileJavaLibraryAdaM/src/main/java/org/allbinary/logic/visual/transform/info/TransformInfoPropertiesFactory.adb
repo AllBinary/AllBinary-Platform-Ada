@@ -23,6 +23,8 @@ with org.w3c.dom.NamedNodeMap_Package; use org.w3c.dom.NamedNodeMap_Package;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
 with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoData_Package; use org.allbinary.logic.visual.transform.info.TransformInfoData_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoProperties_Package; use org.allbinary.logic.visual.transform.info.TransformInfoProperties_Package;
 with org.allbinary.logic.visual.transform.info.TransformInfoProperties_Package_References;
@@ -44,6 +46,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFa
    package Attr_Package renames Standard.org.w3c.dom.Attr_Package;
    package NamedNodeMap_Package renames Standard.org.w3c.dom.NamedNodeMap_Package;
    package NodeList_Package renames Standard.org.w3c.dom.NodeList_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -83,7 +87,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFa
 
    function getInstance return TransformInfoPropertiesFactory_Access is
    begin
-        return TransformInfoPropertiesFactory_Access (TransformInfoPropertiesFactory_Package.instance);
+        return TransformInfoPropertiesFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out TransformInfoPropertiesFactory'Class) is
@@ -124,7 +128,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFa
         attributes := node.getAttributes;
         attrNode := Attr_Access (attributes.getNamedItem (transformInfoData.NAME));
         name := attrNode.getValue;
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEW) then
             This.logUtil.putF (CommonLabels_Package.getInstance.NEXT & To_Unbounded_String (" View Name: ") & name, TransformInfoPropertiesFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("toTransformInfoPropertiesHashMap()"));
         end if;
         labelNode := DomSearchHelper_Package.getNodeNoThrow (transformInfoData.LABEL, transformInfoChildNodeList);

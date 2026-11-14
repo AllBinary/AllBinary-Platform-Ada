@@ -49,7 +49,7 @@ package body org.allbinary.animation.AnimationBehaviorFactory_Package is
 
    function getInstance return AnimationBehaviorFactory_Access is
    begin
-        return AnimationBehaviorFactory_Access (AnimationBehaviorFactory_Package.instance);
+        return AnimationBehaviorFactory_Package.instance;
    end getInstance;
 
    function getOrCreateInstance (This : in out AnimationBehaviorFactory) return AnimationBehavior_Access is

@@ -183,7 +183,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
             if (profileNameNode.getNodeName.compareTo (GenericProfileData_Package.NAME)) = (0) then
                 genericProfile := GenericProfile_Package.Create (profileNameNode);
                 This.hashMap.put (Java_Box (genericProfile.getName), genericProfile);
-                GenericProfiles'Class (This).getDefaultListModelHelper.add (genericProfile.getName);
+                GenericProfiles'Class (This).getDefaultListModelHelper.add (Java_Box (genericProfile.getName));
             end if;
         end loop;
    end initProfiles;
@@ -210,7 +210,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    procedure add (This : in out GenericProfiles; name : Unbounded_String) is
    begin
         This.hashMap.put (Java_Box (name), GenericProfile_Package.Create (name));
-        GenericProfiles'Class (This).getDefaultListModelHelper.add (name);
+        GenericProfiles'Class (This).getDefaultListModelHelper.add (Java_Box (name));
         GenericProfiles'Class (This).getDefaultListModelHelper.initDefaultModelList;
         GenericProfiles'Class (This).save;
    end add;
@@ -219,7 +219,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    procedure remove (This : in out GenericProfiles; name : Unbounded_String) is
    begin
         This.hashMap.remove (Java_Box (name));
-        GenericProfiles'Class (This).getDefaultListModelHelper.remove (name);
+        GenericProfiles'Class (This).getDefaultListModelHelper.remove (Java_Box (name));
         GenericProfiles'Class (This).getDefaultListModelHelper.initDefaultModelList;
         GenericProfiles'Class (This).save;
    end remove;

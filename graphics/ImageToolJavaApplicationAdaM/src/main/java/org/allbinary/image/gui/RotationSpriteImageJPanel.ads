@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.image.gui.RotationSpriteImageJPanel_Package;
 package org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References is
    type RotationSpriteImageJPanel_Access is access all org.allbinary.image.gui.RotationSpriteImageJPanel_Package.RotationSpriteImageJPanel'Class;
@@ -19,6 +20,16 @@ package org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References is
    type RotationSpriteImageJPanel_Access_Array_Access is access all RotationSpriteImageJPanel_Access_Array;
    type RotationSpriteImageJPanel_Access_Array_Access_Array is array (Natural range <>) of RotationSpriteImageJPanel_Access_Array_Access;
    type RotationSpriteImageJPanel_Access_Array_Access_Array_Access is access all RotationSpriteImageJPanel_Access_Array_Access_Array;
+   type RotationSpriteImageJPanel_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RotationSpriteImageJPanel_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RotationSpriteImageJPanel_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RotationSpriteImageJPanel_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RotationSpriteImageJPanel_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RotationSpriteImageJPanel_Access_Array_Access is (if Value /= null and then Value.all in RotationSpriteImageJPanel_Access_Array_Object'Class then RotationSpriteImageJPanel_Access_Array_Object'Class (Value.all).Value else null);
+   type RotationSpriteImageJPanel_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : RotationSpriteImageJPanel_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : RotationSpriteImageJPanel_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new RotationSpriteImageJPanel_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_RotationSpriteImageJPanel_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return RotationSpriteImageJPanel_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in RotationSpriteImageJPanel_Access_Array_Access_Array_Object'Class then RotationSpriteImageJPanel_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References;
 
 with org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References;
@@ -42,7 +53,14 @@ limited with org.allbinary.media.image.ImageStrings_Package;
 with org.allbinary.media.image.ImageStrings_Package_References;
 limited with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
-with org.allbinary.image.gui.JPanel_Package; use org.allbinary.image.gui.JPanel_Package;
+--  with java.awt.event.ActionEvent_Package; use java.awt.event.ActionEvent_Package;
+--  with java.awt.event.ActionListener_Package; use java.awt.event.ActionListener_Package;
+--  with javax.swing.DefaultComboBoxModel_Package; use javax.swing.DefaultComboBoxModel_Package;
+--  with javax.swing.JButton_Package; use javax.swing.JButton_Package;
+--  with javax.swing.JCheckBox_Package; use javax.swing.JCheckBox_Package;
+--  with javax.swing.JComboBox_Package; use javax.swing.JComboBox_Package;
+--  with javax.swing.JLabel_Package; use javax.swing.JLabel_Package;
+--  with javax.swing.JPanel_Package; use javax.swing.JPanel_Package;
 
 package org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
 
@@ -102,12 +120,16 @@ package org.allbinary.image.gui.RotationSpriteImageJPanel_Package is
    function "=" (Left, Right : RotationSpriteImageJPanel_Access_Array) return Boolean renames org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References."=";
    subtype RotationSpriteImageJPanel_Access_Array_Access is org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References.RotationSpriteImageJPanel_Access_Array_Access;
    function "=" (Left, Right : RotationSpriteImageJPanel_Access_Array_Access) return Boolean renames org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References."=";
+   function Java_Box (Value : RotationSpriteImageJPanel_Access_Array_Access) return Java_Object_Access renames org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References.Java_Box;
+   function Java_Unbox_RotationSpriteImageJPanel_Access_Array (Value : access Java_Object'Class) return RotationSpriteImageJPanel_Access_Array_Access renames org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References.Java_Unbox_RotationSpriteImageJPanel_Access_Array;
    subtype RotationSpriteImageJPanel_Access_Array_Access_Array is org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References.RotationSpriteImageJPanel_Access_Array_Access_Array;
    function "=" (Left, Right : RotationSpriteImageJPanel_Access_Array_Access_Array) return Boolean renames org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References."=";
    subtype RotationSpriteImageJPanel_Access_Array_Access_Array_Access is org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References.RotationSpriteImageJPanel_Access_Array_Access_Array_Access;
    function "=" (Left, Right : RotationSpriteImageJPanel_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References."=";
+   function Java_Box (Value : RotationSpriteImageJPanel_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References.Java_Box;
+   function Java_Unbox_RotationSpriteImageJPanel_Access_Array_Access_Array (Value : access Java_Object'Class) return RotationSpriteImageJPanel_Access_Array_Access_Array_Access renames org.allbinary.image.gui.RotationSpriteImageJPanel_Package_References.Java_Unbox_RotationSpriteImageJPanel_Access_Array_Access_Array;
 
-   type RotationSpriteImageJPanel is new JPanel and ImageProcessorInputCompositeInterface with record
+   type RotationSpriteImageJPanel is new Java_Object and ImageProcessorInputCompositeInterface with record
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       imageStrings : ImageStrings_Access;

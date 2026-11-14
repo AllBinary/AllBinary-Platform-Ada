@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.TsUtil_Package;
 package org.allbinary.TsUtil_Package_References is
    type TsUtil_Access is access all org.allbinary.TsUtil_Package.TsUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.TsUtil_Package_References is
    type TsUtil_Access_Array_Access is access all TsUtil_Access_Array;
    type TsUtil_Access_Array_Access_Array is array (Natural range <>) of TsUtil_Access_Array_Access;
    type TsUtil_Access_Array_Access_Array_Access is access all TsUtil_Access_Array_Access_Array;
+   type TsUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TsUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TsUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TsUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TsUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TsUtil_Access_Array_Access is (if Value /= null and then Value.all in TsUtil_Access_Array_Object'Class then TsUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type TsUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TsUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TsUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TsUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TsUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TsUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TsUtil_Access_Array_Access_Array_Object'Class then TsUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.TsUtil_Package_References;
 
 with org.allbinary.TsUtil_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.TsUtil_Package is
    function "=" (Left, Right : TsUtil_Access_Array) return Boolean renames org.allbinary.TsUtil_Package_References."=";
    subtype TsUtil_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access;
    function "=" (Left, Right : TsUtil_Access_Array_Access) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   function Java_Box (Value : TsUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.TsUtil_Package_References.Java_Box;
+   function Java_Unbox_TsUtil_Access_Array (Value : access Java_Object'Class) return TsUtil_Access_Array_Access renames org.allbinary.TsUtil_Package_References.Java_Unbox_TsUtil_Access_Array;
    subtype TsUtil_Access_Array_Access_Array is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array;
    function "=" (Left, Right : TsUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.TsUtil_Package_References."=";
    subtype TsUtil_Access_Array_Access_Array_Access is org.allbinary.TsUtil_Package_References.TsUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TsUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.TsUtil_Package_References."=";
+   function Java_Box (Value : TsUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.TsUtil_Package_References.Java_Box;
+   function Java_Unbox_TsUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return TsUtil_Access_Array_Access_Array_Access renames org.allbinary.TsUtil_Package_References.Java_Unbox_TsUtil_Access_Array_Access_Array;
 
    type TsUtil is new Java_Object with null record;
    instance : TsUtil_Access;

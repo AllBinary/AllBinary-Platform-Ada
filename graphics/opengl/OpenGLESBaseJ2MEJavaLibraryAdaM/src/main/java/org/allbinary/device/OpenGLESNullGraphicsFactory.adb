@@ -45,7 +45,7 @@ package body org.allbinary.device.OpenGLESNullGraphicsFactory_Package is
 
    function getInstance return OpenGLESGraphics_Access is
    begin
-        return OpenGLESGraphics_Access (OpenGLESNullGraphicsFactory_Package.instance);
+        return OpenGLESNullGraphicsFactory_Package.instance;
    end getInstance;
 
 begin

@@ -61,7 +61,7 @@ package body org.allbinary.logic.communication.log.GuiLog_Package is
 
    function getInstance return GuiLog_Access is
    begin
-        return GuiLog_Access (GuiLog_Package.instance);
+        return GuiLog_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out GuiLog'Class) is

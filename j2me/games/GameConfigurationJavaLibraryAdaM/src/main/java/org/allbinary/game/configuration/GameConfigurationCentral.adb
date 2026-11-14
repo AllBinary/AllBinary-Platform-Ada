@@ -156,7 +156,7 @@ package body org.allbinary.game.configuration.GameConfigurationCentral_Package i
 
    function getInstance return GameConfigurationCentral_Access is
    begin
-        if (GameConfigurationCentral_Package.SINGLETON) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (GameConfigurationCentral_Package.SINGLETON)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             GameConfigurationCentral_Package.SINGLETON := Java_Object_Access (GameConfigurationCentral_Package.Create);
         end if;
         return GameConfigurationCentral_Access (GameConfigurationCentral_Package.SINGLETON);

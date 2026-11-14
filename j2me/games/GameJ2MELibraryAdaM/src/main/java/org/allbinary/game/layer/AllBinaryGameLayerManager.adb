@@ -174,7 +174,7 @@ package body org.allbinary.game.layer.AllBinaryGameLayerManager_Package is
 
    function getNullInstance return AllBinaryGameLayerManager_Access is
    begin
-        if (AllBinaryGameLayerManager_Package.NULL_ALLBINARY_LAYER_MANAGER) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (AllBinaryGameLayerManager_Package.NULL_ALLBINARY_LAYER_MANAGER)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             AllBinaryGameLayerManager_Package.NULL_ALLBINARY_LAYER_MANAGER := Java_Object_Access (AllBinaryGameLayerManager_Package.Create (BasicColorFactory_Package.getInstance.BLACK, BasicColorFactory_Package.getInstance.WHITE, GameInfo_Package.NONE));
         end if;
         return AllBinaryGameLayerManager_Access (AllBinaryGameLayerManager_Package.NULL_ALLBINARY_LAYER_MANAGER);

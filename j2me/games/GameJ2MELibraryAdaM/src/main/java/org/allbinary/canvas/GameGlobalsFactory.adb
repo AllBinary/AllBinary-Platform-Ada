@@ -53,7 +53,7 @@ package body org.allbinary.canvas.GameGlobalsFactory_Package is
 
    function getInstance return GameGlobalsFactory_Access is
    begin
-        return GameGlobalsFactory_Access (GameGlobalsFactory_Package.instance);
+        return GameGlobalsFactory_Package.instance;
    end getInstance;
 
 begin

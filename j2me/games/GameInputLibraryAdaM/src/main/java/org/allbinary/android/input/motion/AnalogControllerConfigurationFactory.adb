@@ -62,7 +62,7 @@ package body org.allbinary.android.input.motion.AnalogControllerConfigurationFac
 
    function getInstance return AnalogControllerConfigurationFactory_Access is
    begin
-        return AnalogControllerConfigurationFactory_Access (AnalogControllerConfigurationFactory_Package.instance);
+        return AnalogControllerConfigurationFactory_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out AnalogControllerConfigurationFactory'Class) is

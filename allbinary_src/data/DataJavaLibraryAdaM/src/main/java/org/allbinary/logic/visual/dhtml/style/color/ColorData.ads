@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.visual.dhtml.style.color.ColorData_Package;
 package org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_References is
    type ColorData_Access is access all org.allbinary.logic.visual.dhtml.style.color.ColorData_Package.ColorData'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_Reference
    type ColorData_Access_Array_Access is access all ColorData_Access_Array;
    type ColorData_Access_Array_Access_Array is array (Natural range <>) of ColorData_Access_Array_Access;
    type ColorData_Access_Array_Access_Array_Access is access all ColorData_Access_Array_Access_Array;
+   type ColorData_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ColorData_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ColorData_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ColorData_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ColorData_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ColorData_Access_Array_Access is (if Value /= null and then Value.all in ColorData_Access_Array_Object'Class then ColorData_Access_Array_Object'Class (Value.all).Value else null);
+   type ColorData_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ColorData_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ColorData_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ColorData_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ColorData_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ColorData_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ColorData_Access_Array_Access_Array_Object'Class then ColorData_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_References;
 
 with org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.logic.visual.dhtml.style.color.ColorData_Package is
    function "=" (Left, Right : ColorData_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_References."=";
    subtype ColorData_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_References.ColorData_Access_Array_Access;
    function "=" (Left, Right : ColorData_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_References."=";
+   function Java_Box (Value : ColorData_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_References.Java_Box;
+   function Java_Unbox_ColorData_Access_Array (Value : access Java_Object'Class) return ColorData_Access_Array_Access renames org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_References.Java_Unbox_ColorData_Access_Array;
    subtype ColorData_Access_Array_Access_Array is org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_References.ColorData_Access_Array_Access_Array;
    function "=" (Left, Right : ColorData_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_References."=";
    subtype ColorData_Access_Array_Access_Array_Access is org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_References.ColorData_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ColorData_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_References."=";
+   function Java_Box (Value : ColorData_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_References.Java_Box;
+   function Java_Unbox_ColorData_Access_Array_Access_Array (Value : access Java_Object'Class) return ColorData_Access_Array_Access_Array_Access renames org.allbinary.logic.visual.dhtml.style.color.ColorData_Package_References.Java_Unbox_ColorData_Access_Array_Access_Array;
 
    type ColorData is new Java_Object with record
       NAME : Unbounded_String;

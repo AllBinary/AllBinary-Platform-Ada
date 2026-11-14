@@ -94,7 +94,7 @@ package body org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
 
    function getInstance return SWTJOGLProcessor_Access is
    begin
-        return SWTJOGLProcessor_Access (SWTJOGLProcessor_Package.instance);
+        return SWTJOGLProcessor_Package.instance;
    end getInstance;
 
    procedure init (This : in out SWTJOGLProcessor; display_Param : access Java_Object'Class; comp_Param : access Java_Object'Class) is

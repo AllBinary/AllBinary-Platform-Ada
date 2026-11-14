@@ -56,7 +56,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointStrings_Package is
 
    function getInstance return UnitWaypointStrings_Access is
    begin
-        return UnitWaypointStrings_Access (UnitWaypointStrings_Package.instance);
+        return UnitWaypointStrings_Package.instance;
    end getInstance;
 
 begin

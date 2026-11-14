@@ -30,7 +30,7 @@ package body org.allbinary.game.GameInfoData_Package is
 
    function getInstance return GameInfoData_Access is
    begin
-        return GameInfoData_Access (GameInfoData_Package.instance);
+        return GameInfoData_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out GameInfoData'Class) is

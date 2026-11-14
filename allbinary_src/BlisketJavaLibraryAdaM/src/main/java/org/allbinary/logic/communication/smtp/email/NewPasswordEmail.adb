@@ -28,6 +28,8 @@ with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface
 with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package_References;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.string_Id.CommonStrings_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayList_Package;
@@ -44,6 +46,8 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
    package AdminEmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.AdminEmailInfo_Package;
    package BasicEmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package;
    package EmailInfo_Package renames Standard.org.allbinary.logic.communication.smtp.info.EmailInfo_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype UserInterface_Access is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access;
    function "=" (Left, Right : UserInterface_Access) return Boolean renames org.allbinary.business.user.UserInterface_Package_References."=";
    subtype UserInterface_Access_Array is org.allbinary.business.user.UserInterface_Package_References.UserInterface_Access_Array;
@@ -128,7 +132,7 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
       adminUserEmailEventHandler : UserEmailEventHandler_Access;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("notifyStoreAdmin"), NewPasswordEmail_Access'(This'Unchecked_Access), To_Unbounded_String ("notifyStoreAdmin"));
             end if;
             emailSubject := To_Unbounded_String ("New Password For User: ") & Java_Image (This.userInterface.getUserName);
@@ -142,7 +146,7 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, NewPasswordEmail_Access'(This'Unchecked_Access), To_Unbounded_String ("emailAdmin"), e);
             end if;
                 end;
@@ -158,7 +162,7 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
       userEmailEventHandler : UserEmailEventHandler_Access;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("Email User"), NewPasswordEmail_Access'(This'Unchecked_Access), To_Unbounded_String ("notifyUser()"));
             end if;
             subject := To_Unbounded_String ("New Password");
@@ -172,7 +176,7 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGINGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, NewPasswordEmail_Access'(This'Unchecked_Access), To_Unbounded_String ("notifyUser"), e);
             end if;
             Java_Throw (e);

@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with tags.admin.payment.gateway.ViewTag_Package;
 package tags.admin.payment.gateway.ViewTag_Package_References is
    type ViewTag_Access is access all tags.admin.payment.gateway.ViewTag_Package.ViewTag'Class;
@@ -19,6 +20,16 @@ package tags.admin.payment.gateway.ViewTag_Package_References is
    type ViewTag_Access_Array_Access is access all ViewTag_Access_Array;
    type ViewTag_Access_Array_Access_Array is array (Natural range <>) of ViewTag_Access_Array_Access;
    type ViewTag_Access_Array_Access_Array_Access is access all ViewTag_Access_Array_Access_Array;
+   type ViewTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ViewTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ViewTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ViewTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ViewTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ViewTag_Access_Array_Access is (if Value /= null and then Value.all in ViewTag_Access_Array_Object'Class then ViewTag_Access_Array_Object'Class (Value.all).Value else null);
+   type ViewTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : ViewTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : ViewTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new ViewTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_ViewTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return ViewTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in ViewTag_Access_Array_Access_Array_Object'Class then ViewTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end tags.admin.payment.gateway.ViewTag_Package_References;
 
 with tags.admin.payment.gateway.ViewTag_Package_References;
@@ -47,10 +58,14 @@ package tags.admin.payment.gateway.ViewTag_Package is
    function "=" (Left, Right : ViewTag_Access_Array) return Boolean renames tags.admin.payment.gateway.ViewTag_Package_References."=";
    subtype ViewTag_Access_Array_Access is tags.admin.payment.gateway.ViewTag_Package_References.ViewTag_Access_Array_Access;
    function "=" (Left, Right : ViewTag_Access_Array_Access) return Boolean renames tags.admin.payment.gateway.ViewTag_Package_References."=";
+   function Java_Box (Value : ViewTag_Access_Array_Access) return Java_Object_Access renames tags.admin.payment.gateway.ViewTag_Package_References.Java_Box;
+   function Java_Unbox_ViewTag_Access_Array (Value : access Java_Object'Class) return ViewTag_Access_Array_Access renames tags.admin.payment.gateway.ViewTag_Package_References.Java_Unbox_ViewTag_Access_Array;
    subtype ViewTag_Access_Array_Access_Array is tags.admin.payment.gateway.ViewTag_Package_References.ViewTag_Access_Array_Access_Array;
    function "=" (Left, Right : ViewTag_Access_Array_Access_Array) return Boolean renames tags.admin.payment.gateway.ViewTag_Package_References."=";
    subtype ViewTag_Access_Array_Access_Array_Access is tags.admin.payment.gateway.ViewTag_Package_References.ViewTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : ViewTag_Access_Array_Access_Array_Access) return Boolean renames tags.admin.payment.gateway.ViewTag_Package_References."=";
+   function Java_Box (Value : ViewTag_Access_Array_Access_Array_Access) return Java_Object_Access renames tags.admin.payment.gateway.ViewTag_Package_References.Java_Box;
+   function Java_Unbox_ViewTag_Access_Array_Access_Array (Value : access Java_Object'Class) return ViewTag_Access_Array_Access_Array_Access renames tags.admin.payment.gateway.ViewTag_Package_References.Java_Unbox_ViewTag_Access_Array_Access_Array;
 
    type ViewTag is new StoreValidationTransformTag with null record;
 

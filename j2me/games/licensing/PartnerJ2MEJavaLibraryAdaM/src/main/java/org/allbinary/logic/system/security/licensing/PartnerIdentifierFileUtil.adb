@@ -14,6 +14,7 @@
 
 
 with java.io.InputStream_Package; use java.io.InputStream_Package;
+with java.io.InputStreamReader_Package; use java.io.InputStreamReader_Package;
 with org.allbinary.data.resource.ResourceUtil_Package; use org.allbinary.data.resource.ResourceUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
@@ -30,6 +31,7 @@ with org.allbinary.time.TimeStampUtil_Package;
 package body org.allbinary.logic.system.security.licensing.PartnerIdentifierFileUtil_Package is
 
    package InputStream_Package renames Standard.java.io.InputStream_Package;
+   package InputStreamReader_Package renames Standard.java.io.InputStreamReader_Package;
    package ResourceUtil_Package renames Standard.org.allbinary.data.resource.ResourceUtil_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
@@ -65,7 +67,7 @@ package body org.allbinary.logic.system.security.licensing.PartnerIdentifierFile
 
    function getInstance return PartnerIdentifierFileUtil_Access is
    begin
-        return PartnerIdentifierFileUtil_Access (PartnerIdentifierFileUtil_Package.instance);
+        return PartnerIdentifierFileUtil_Package.instance;
    end getInstance;
 
    function get (This : in out PartnerIdentifierFileUtil) return Unbounded_String is

@@ -77,7 +77,7 @@ package body org.allbinary.android.ToastUtil_Package is
 
    function getInstance return ToastUtil_Access is
    begin
-        return ToastUtil_Access (ToastUtil_Package.instance);
+        return ToastUtil_Package.instance;
    end getInstance;
 
    procedure makeToast (This : in out ToastUtil; view_Param : access View_Package.View'Class; context_Param : access Context_Package.Context'Class; message : Unbounded_String; time : Integer) is

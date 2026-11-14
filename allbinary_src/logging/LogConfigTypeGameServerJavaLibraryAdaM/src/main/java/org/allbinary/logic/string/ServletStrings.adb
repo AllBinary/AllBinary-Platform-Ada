@@ -39,7 +39,7 @@ package body org.allbinary.logic.string_Id.ServletStrings_Package is
 
    function getInstance return ServletStrings_Access is
    begin
-        return ServletStrings_Access (ServletStrings_Package.instance);
+        return ServletStrings_Package.instance;
    end getInstance;
 
 begin

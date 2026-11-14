@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.configuration.InGameOptionsFormFactory_Package;
 package org.allbinary.game.configuration.InGameOptionsFormFactory_Package_References is
    type InGameOptionsFormFactory_Access is access all org.allbinary.game.configuration.InGameOptionsFormFactory_Package.InGameOptionsFormFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.configuration.InGameOptionsFormFactory_Package_Refere
    type InGameOptionsFormFactory_Access_Array_Access is access all InGameOptionsFormFactory_Access_Array;
    type InGameOptionsFormFactory_Access_Array_Access_Array is array (Natural range <>) of InGameOptionsFormFactory_Access_Array_Access;
    type InGameOptionsFormFactory_Access_Array_Access_Array_Access is access all InGameOptionsFormFactory_Access_Array_Access_Array;
+   type InGameOptionsFormFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InGameOptionsFormFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InGameOptionsFormFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InGameOptionsFormFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InGameOptionsFormFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InGameOptionsFormFactory_Access_Array_Access is (if Value /= null and then Value.all in InGameOptionsFormFactory_Access_Array_Object'Class then InGameOptionsFormFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type InGameOptionsFormFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : InGameOptionsFormFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : InGameOptionsFormFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new InGameOptionsFormFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_InGameOptionsFormFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return InGameOptionsFormFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in InGameOptionsFormFactory_Access_Array_Access_Array_Object'Class then InGameOptionsFormFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.configuration.InGameOptionsFormFactory_Package_References;
 
 with org.allbinary.game.configuration.InGameOptionsFormFactory_Package_References;
@@ -109,10 +120,14 @@ package org.allbinary.game.configuration.InGameOptionsFormFactory_Package is
    function "=" (Left, Right : InGameOptionsFormFactory_Access_Array) return Boolean renames org.allbinary.game.configuration.InGameOptionsFormFactory_Package_References."=";
    subtype InGameOptionsFormFactory_Access_Array_Access is org.allbinary.game.configuration.InGameOptionsFormFactory_Package_References.InGameOptionsFormFactory_Access_Array_Access;
    function "=" (Left, Right : InGameOptionsFormFactory_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.InGameOptionsFormFactory_Package_References."=";
+   function Java_Box (Value : InGameOptionsFormFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.configuration.InGameOptionsFormFactory_Package_References.Java_Box;
+   function Java_Unbox_InGameOptionsFormFactory_Access_Array (Value : access Java_Object'Class) return InGameOptionsFormFactory_Access_Array_Access renames org.allbinary.game.configuration.InGameOptionsFormFactory_Package_References.Java_Unbox_InGameOptionsFormFactory_Access_Array;
    subtype InGameOptionsFormFactory_Access_Array_Access_Array is org.allbinary.game.configuration.InGameOptionsFormFactory_Package_References.InGameOptionsFormFactory_Access_Array_Access_Array;
    function "=" (Left, Right : InGameOptionsFormFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.configuration.InGameOptionsFormFactory_Package_References."=";
    subtype InGameOptionsFormFactory_Access_Array_Access_Array_Access is org.allbinary.game.configuration.InGameOptionsFormFactory_Package_References.InGameOptionsFormFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : InGameOptionsFormFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.configuration.InGameOptionsFormFactory_Package_References."=";
+   function Java_Box (Value : InGameOptionsFormFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.configuration.InGameOptionsFormFactory_Package_References.Java_Box;
+   function Java_Unbox_InGameOptionsFormFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return InGameOptionsFormFactory_Access_Array_Access_Array_Access renames org.allbinary.game.configuration.InGameOptionsFormFactory_Package_References.Java_Unbox_InGameOptionsFormFactory_Access_Array_Access_Array;
 
    type InGameOptionsFormFactory is new Java_Object with record
       logUtil : LogUtil_Access;

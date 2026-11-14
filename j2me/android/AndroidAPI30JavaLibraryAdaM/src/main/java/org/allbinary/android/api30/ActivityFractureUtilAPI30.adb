@@ -58,7 +58,7 @@ package body org.allbinary.android.api30.ActivityFractureUtilAPI30_Package is
 
    function getInstance return ActivityFractureUtilAPI30_Access is
    begin
-        return ActivityFractureUtilAPI30_Access (ActivityFractureUtilAPI30_Package.instance30);
+        return ActivityFractureUtilAPI30_Package.instance30;
    end getInstance;
 
    procedure setFullScreen (This : in out ActivityFractureUtilAPI30; activity_Param : access Activity_Package.Activity'Class) is

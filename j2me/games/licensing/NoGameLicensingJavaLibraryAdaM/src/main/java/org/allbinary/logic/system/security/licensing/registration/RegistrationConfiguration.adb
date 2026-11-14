@@ -41,7 +41,7 @@ package body org.allbinary.logic.system.security.licensing.registration.Registra
 
    function getInstance return RegistrationConfiguration_Access is
    begin
-        return RegistrationConfiguration_Access (RegistrationConfiguration_Package.SINGLETON);
+        return RegistrationConfiguration_Package.SINGLETON;
    end getInstance;
 
    --  throws Exception

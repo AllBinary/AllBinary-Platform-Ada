@@ -24,6 +24,7 @@ with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Packag
 with org.allbinary.business.advertisement.AdvertisementProcessorInterface_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayListS_Package;
+with org.allbinary.logic.system.security.licensing.LockableFeature_Package;
 with org.allbinary.logic.math.MathUtil_Package;
 
 package body org.allbinary.business.advertisement.Advertisements_Package is
@@ -84,8 +85,8 @@ package body org.allbinary.business.advertisement.Advertisements_Package is
    procedure addPage (This : in out Advertisements; advertisementProcessorInterface_Param : access AdvertisementProcessorInterface_Package.AdvertisementProcessorInterface'Class) is
       advertisementProcessorInterface : constant AdvertisementProcessorInterface_Access := AdvertisementProcessorInterface_Access (advertisementProcessorInterface_Param);
    begin
-        if not (This.pageList.contains (AdvertisementProcessorInterface_Package.Java_Object_Access_From_AdvertisementProcessorInterface (advertisementProcessorInterface))) then
-            This.pageList.add (AdvertisementProcessorInterface_Package.Java_Object_Access_From_AdvertisementProcessorInterface (advertisementProcessorInterface));
+        if not (This.pageList.contains (Java_Object_Access (advertisementProcessorInterface))) then
+            This.pageList.add (Java_Object_Access (advertisementProcessorInterface));
         end if;
    end addPage;
 
@@ -131,8 +132,8 @@ package body org.allbinary.business.advertisement.Advertisements_Package is
    procedure addBanner (This : in out Advertisements; advertisementProcessorInterface_Param : access AdvertisementProcessorInterface_Package.AdvertisementProcessorInterface'Class) is
       advertisementProcessorInterface : constant AdvertisementProcessorInterface_Access := AdvertisementProcessorInterface_Access (advertisementProcessorInterface_Param);
    begin
-        if not (This.bannerList.contains (AdvertisementProcessorInterface_Package.Java_Object_Access_From_AdvertisementProcessorInterface (advertisementProcessorInterface))) then
-            This.bannerList.add (AdvertisementProcessorInterface_Package.Java_Object_Access_From_AdvertisementProcessorInterface (advertisementProcessorInterface));
+        if not (This.bannerList.contains (Java_Object_Access (advertisementProcessorInterface))) then
+            This.bannerList.add (Java_Object_Access (advertisementProcessorInterface));
         end if;
    end addBanner;
 

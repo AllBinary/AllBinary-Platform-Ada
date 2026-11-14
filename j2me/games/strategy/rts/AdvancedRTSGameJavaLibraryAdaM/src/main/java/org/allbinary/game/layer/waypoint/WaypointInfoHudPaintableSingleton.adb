@@ -49,7 +49,7 @@ package body org.allbinary.game.layer.waypoint.WaypointInfoHudPaintableSingleton
 
    function getInstance return WaypointInfoHudPaintable_Access is
    begin
-        return WaypointInfoHudPaintable_Access (WaypointInfoHudPaintableSingleton_Package.instance);
+        return WaypointInfoHudPaintableSingleton_Package.instance;
    end getInstance;
 
 begin

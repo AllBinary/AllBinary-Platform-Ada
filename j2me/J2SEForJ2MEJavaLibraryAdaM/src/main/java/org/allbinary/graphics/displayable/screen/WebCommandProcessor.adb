@@ -175,7 +175,7 @@ package body org.allbinary.graphics.displayable.screen.WebCommandProcessor_Packa
 
    function getInstance return WebCommandProcessor_Access is
    begin
-        return WebCommandProcessor_Access (WebCommandProcessor_Package.instance);
+        return WebCommandProcessor_Package.instance;
    end getInstance;
 
    procedure process (This : in out WebCommandProcessor; midletCommandListener_Param : access CommandListener_Package.CommandListener'Class; command_Param : access Command_Package.Command'Class; canvas_Param : access Canvas_Package.Canvas'Class) is

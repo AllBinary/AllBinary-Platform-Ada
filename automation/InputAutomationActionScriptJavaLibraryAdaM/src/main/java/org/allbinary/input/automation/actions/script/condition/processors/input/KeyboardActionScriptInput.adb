@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
 with java.util.HashMap_Package; use java.util.HashMap_Package;
 with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
 with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
@@ -47,6 +48,7 @@ with org.allbinary.input.automation.actions.script.condition.processors.ProfileA
 
 package body org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInput_Package is
 
+   package KeyEvent_Package renames Standard.java.awt.event.KeyEvent_Package;
    package BasicArrayList_Package renames Standard.org.allbinary.util.BasicArrayList_Package;
    package BasicArrayListD_Package renames Standard.org.allbinary.util.BasicArrayListD_Package;
    package DomNodeHelper_Package renames Standard.org.allbinary.data.tree.dom.DomNodeHelper_Package;

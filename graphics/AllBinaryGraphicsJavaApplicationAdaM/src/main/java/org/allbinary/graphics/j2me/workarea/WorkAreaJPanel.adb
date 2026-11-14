@@ -34,6 +34,7 @@ with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArra
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaJTreeJPanel_Package_References;
 with org.allbinary.graphics.j2me.workarea.Component_Package; use org.allbinary.graphics.j2me.workarea.Component_Package;
@@ -41,9 +42,7 @@ with org.allbinary.graphics.j2me.workarea.Dimension_Package; use org.allbinary.g
 with org.allbinary.graphics.j2me.workarea.Dimension_Package_References;
 with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package; use org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package;
 with org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package_References;
-with org.allbinary.graphics.j2me.workarea.GridLayout_Package; use org.allbinary.graphics.j2me.workarea.GridLayout_Package;
 with org.allbinary.graphics.j2me.workarea.GridBagLayout_Package; use org.allbinary.graphics.j2me.workarea.GridBagLayout_Package;
-with org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package; use org.allbinary.graphics.j2me.workarea.GridBagConstraints_Package;
 with java.lang.Thread_Package; use java.lang.Thread_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
@@ -186,7 +185,6 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       dimension : constant Dimension_Access := Dimension_Access (dimension_Param);
       canvasJPanel : CanvasJPanel_Access;
    begin
-      JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         begin
             WorkAreaJPanel'Class (This).initComponents;
@@ -224,7 +222,6 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       canvasJPanel : CanvasJPanel_Access;
       index : Integer;
    begin
-      JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         begin
             WorkAreaJPanel'Class (This).initComponents;
@@ -278,7 +275,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
         gridBagConstraints.gridx := 0;
         gridBagConstraints.gridy := 0;
         gridBagConstraints.gridwidth := 1;
-        gridBagConstraints.fill := java_Package.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.fill := GridBagConstraints_Package.BOTH;
         gridBagConstraints.weightx := 0.05;
         gridBagConstraints.weighty := 0.05;
         toolJPanel := ToolJPanel_Package.Create;
@@ -288,7 +285,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
         gridBagConstraints.gridx := 1;
         gridBagConstraints.gridy := 0;
         gridBagConstraints.gridwidth := 6;
-        gridBagConstraints.fill := java_Package.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.fill := GridBagConstraints_Package.BOTH;
         gridBagConstraints.weightx := 1;
         gridBagConstraints.weighty := 1;
         gridBagLayout.setConstraints (This.canvasHolderJPanel, gridBagConstraints);
@@ -296,8 +293,8 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
         gridBagConstraints := GridBagConstraints_Package.Create;
         gridBagConstraints.gridx := 8;
         gridBagConstraints.gridy := 0;
-        gridBagConstraints.gridwidth := java_Package.awt.GridBagConstraints.REMAINDER;
-        gridBagConstraints.fill := java_Package.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.gridwidth := GridBagConstraints_Package.REMAINDER;
+        gridBagConstraints.fill := GridBagConstraints_Package.BOTH;
         gridBagConstraints.weightx := 0.1;
         gridBagConstraints.weighty := 0.1;
         This.propertiesJPanel := PropertiesJPanel_Package.Create;
@@ -312,7 +309,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       canvasJPanel : CanvasJPanel_Access;
       index : Integer;
    begin
-        canvasJPanelHashMap := StdUtil_Package.getInstance.createHashMap;
+        canvasJPanelHashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         size := This.canvasJPanelList.size;
         for index in 0 .. (size) - 1 loop
             canvasJPanel := CanvasJPanel_Access (This.canvasJPanelList.get (index));
@@ -492,7 +489,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
 
    function getDocument return Document_Access is
    begin
-        return Document_Access (WorkAreaJPanel_Package.document);
+        return WorkAreaJPanel_Package.document;
    end getDocument;
 
    --  throws Exception

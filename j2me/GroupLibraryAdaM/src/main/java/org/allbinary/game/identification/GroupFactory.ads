@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.identification.GroupFactory_Package;
 package org.allbinary.game.identification.GroupFactory_Package_References is
    type GroupFactory_Access is access all org.allbinary.game.identification.GroupFactory_Package.GroupFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.identification.GroupFactory_Package_References is
    type GroupFactory_Access_Array_Access is access all GroupFactory_Access_Array;
    type GroupFactory_Access_Array_Access_Array is array (Natural range <>) of GroupFactory_Access_Array_Access;
    type GroupFactory_Access_Array_Access_Array_Access is access all GroupFactory_Access_Array_Access_Array;
+   type GroupFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GroupFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GroupFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GroupFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GroupFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GroupFactory_Access_Array_Access is (if Value /= null and then Value.all in GroupFactory_Access_Array_Object'Class then GroupFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type GroupFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : GroupFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : GroupFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new GroupFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_GroupFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return GroupFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in GroupFactory_Access_Array_Access_Array_Object'Class then GroupFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.identification.GroupFactory_Package_References;
 
 with org.allbinary.game.identification.GroupFactory_Package_References;
@@ -82,10 +93,14 @@ package org.allbinary.game.identification.GroupFactory_Package is
    function "=" (Left, Right : GroupFactory_Access_Array) return Boolean renames org.allbinary.game.identification.GroupFactory_Package_References."=";
    subtype GroupFactory_Access_Array_Access is org.allbinary.game.identification.GroupFactory_Package_References.GroupFactory_Access_Array_Access;
    function "=" (Left, Right : GroupFactory_Access_Array_Access) return Boolean renames org.allbinary.game.identification.GroupFactory_Package_References."=";
+   function Java_Box (Value : GroupFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.identification.GroupFactory_Package_References.Java_Box;
+   function Java_Unbox_GroupFactory_Access_Array (Value : access Java_Object'Class) return GroupFactory_Access_Array_Access renames org.allbinary.game.identification.GroupFactory_Package_References.Java_Unbox_GroupFactory_Access_Array;
    subtype GroupFactory_Access_Array_Access_Array is org.allbinary.game.identification.GroupFactory_Package_References.GroupFactory_Access_Array_Access_Array;
    function "=" (Left, Right : GroupFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.identification.GroupFactory_Package_References."=";
    subtype GroupFactory_Access_Array_Access_Array_Access is org.allbinary.game.identification.GroupFactory_Package_References.GroupFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : GroupFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.identification.GroupFactory_Package_References."=";
+   function Java_Box (Value : GroupFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.identification.GroupFactory_Package_References.Java_Box;
+   function Java_Unbox_GroupFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return GroupFactory_Access_Array_Access_Array_Access renames org.allbinary.game.identification.GroupFactory_Package_References.Java_Unbox_GroupFactory_Access_Array_Access_Array;
 
    type GroupFactory is new Java_Object with record
       logUtil : LogUtil_Access;

@@ -25,7 +25,6 @@ package body org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package is
 
    procedure Initialize (This : in out ColorChooser'Class) is
    begin
-      JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         ColorChooser'Class (This).initComponents;
    end Initialize;
@@ -41,7 +40,7 @@ package body org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package is
    begin
         This.jColorChooser1 := JColorChooser_Package.Create;
         ColorChooser'Class (This).setLayout (BorderLayout_Package.Create);
-        ColorChooser'Class (This).add (This.jColorChooser1, java_Package.awt.BorderLayout.CENTER);
+        ColorChooser'Class (This).add (This.jColorChooser1, BorderLayout_Package.CENTER);
    end initComponents;
 
 end org.allbinary.graphics.j2me.workarea.color.ColorChooser_Package;

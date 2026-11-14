@@ -105,7 +105,7 @@ package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFa
 
    function getInstance return AbeLicenseInterfaceFactory_Access is
    begin
-        return AbeLicenseInterfaceFactory_Access (AbeLicenseInterfaceFactory_Package.SINGLETON);
+        return AbeLicenseInterfaceFactory_Package.SINGLETON;
    end getInstance;
 
    procedure Initialize (This : in out AbeLicenseInterfaceFactory'Class) is
@@ -126,7 +126,7 @@ package body org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFa
       abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         if AbeLicenseInterfaceFactory'Class (This).isTimeToGetKey then
-            return AbeLicenseInterface_Access (AbeLicenseInterfaceFactory'Class (This).get (abeClientInformation));
+            return AbeLicenseInterfaceFactory'Class (This).get (abeClientInformation);
         else
             return This.abeLicenseInterface;
         end if;

@@ -18,6 +18,7 @@ with org.allbinary.game.input.PCGameKey_Package; use org.allbinary.game.input.PC
 with org.allbinary.game.input.PCKeyFactory_Package; use org.allbinary.game.input.PCKeyFactory_Package;
 with org.allbinary.game.input.Input_Package; use org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.Input_Package_References;
+with org.allbinary.game.input.ABKeyEventWrapper_Package;
 with org.allbinary.game.input.Input_Package;
 with org.allbinary.game.input.PCGameKey_Package;
 with org.allbinary.game.input.PCKeyFactory_Package;
@@ -55,7 +56,7 @@ package body org.allbinary.game.input.PlatformKeyFactory_Package is
 
    function getInstance return PlatformKeyFactory_Access is
    begin
-        if (PlatformKeyFactory_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+        if (Java_Object_Access (PlatformKeyFactory_Package.instance)) = (Java_Object_Access (NullUtil_Package.getInstance.NULL_OBJECT)) then
             PlatformKeyFactory_Package.instance := Java_Object_Access (PlatformKeyFactory_Package.Create);
         end if;
         return PlatformKeyFactory_Access (PlatformKeyFactory_Package.instance);

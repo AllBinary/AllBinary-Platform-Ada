@@ -60,7 +60,7 @@ package body org.allbinary.logic.string_Id.SpecialCharacterUtil_Package is
         commonSeps := CommonSeps_Package.getInstance;
         commonPhoneStrings := CommonPhoneStrings_Package.getInstance;
         stringUtil := StringUtil_Package.getInstance;
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (Java_Box (To_Unbounded_String ("!")), Java_Box (stringUtil.EMPTY_STRING));
         hashMap.put (Java_Box (To_Unbounded_String ("@")), Java_Box (stringUtil.EMPTY_STRING));
         hashMap.put (Java_Box (commonPhoneStrings.POUND), Java_Box (stringUtil.EMPTY_STRING));

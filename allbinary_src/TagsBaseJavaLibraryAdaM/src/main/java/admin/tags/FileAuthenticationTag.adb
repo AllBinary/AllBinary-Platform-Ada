@@ -33,6 +33,9 @@ with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.CustomTagSupport_Package; use tags.CustomTagSupport_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.util.BasicArrayListS_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
@@ -57,6 +60,9 @@ package body admin.tags.FileAuthenticationTag_Package is
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -229,7 +235,7 @@ package body admin.tags.FileAuthenticationTag_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, FileAuthenticationTag_Access'(This'Unchecked_Access), To_Unbounded_String ("invalidateSession()"), e);
             end if;
             return TagSupport_Package.SKIP_BODY;
@@ -252,7 +258,7 @@ package body admin.tags.FileAuthenticationTag_Package is
                 calendar := Calendar_Package.getInstance;
                 timeFirst := (calendar.getTimeInMillis) - (sessionTimout);
                 if (timeFirst) > (timeCreated) then
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATION) then
+                    if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.AUTHENTICATION) then
                         stringBuffer := StringMaker_Package.Create;
                         stringBuffer.append (To_Unbounded_String ("Session Is Old - Timeout: "));
                         stringBuffer.appendlong (sessionTimout);
@@ -265,7 +271,7 @@ package body admin.tags.FileAuthenticationTag_Package is
                     return True.booleanValue;
                 end if;
             else
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATION) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.AUTHENTICATION) then
                     This.logUtil.putF (To_Unbounded_String ("Role Is Not In Session"), FileAuthenticationTag_Access'(This'Unchecked_Access), To_Unbounded_String ("isSessionOld()"));
                 end if;
             end if;
@@ -275,7 +281,7 @@ package body admin.tags.FileAuthenticationTag_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, FileAuthenticationTag_Access'(This'Unchecked_Access), To_Unbounded_String ("isSessionOld()"), e);
             end if;
             return False;
@@ -297,7 +303,7 @@ package body admin.tags.FileAuthenticationTag_Package is
             timePassed := This.role.getSessionInactivityTimeout;
             calendar := Calendar_Package.getInstance;
             timeFirst := (calendar.getTimeInMillis) - (lastAccess);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATION) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.AUTHENTICATION) then
                 stringBuffer := StringMaker_Package.Create;
                 stringBuffer.append (To_Unbounded_String ("Session Is Rarely Used - Timeout: "));
                 stringBuffer.appendlong (lastAccess);
@@ -308,7 +314,7 @@ package body admin.tags.FileAuthenticationTag_Package is
                 This.logUtil.putF (stringBuffer.toString, FileAuthenticationTag_Access'(This'Unchecked_Access), To_Unbounded_String ("isRarelyUsedSession()"));
             end if;
         else
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.AUTHENTICATION) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.AUTHENTICATION) then
                 This.logUtil.putF (To_Unbounded_String ("Role Is Not In Session"), FileAuthenticationTag_Access'(This'Unchecked_Access), To_Unbounded_String ("isRarelyUsedSession()"));
             end if;
         end if;
@@ -326,7 +332,7 @@ package body admin.tags.FileAuthenticationTag_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, FileAuthenticationTag_Access'(This'Unchecked_Access), To_Unbounded_String ("isRoleValid()"), e);
             end if;
             return False;
@@ -349,7 +355,7 @@ package body admin.tags.FileAuthenticationTag_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to set valid role");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, FileAuthenticationTag_Access'(This'Unchecked_Access), To_Unbounded_String ("validRole()"), e);
             end if;
             return error;
@@ -374,7 +380,7 @@ package body admin.tags.FileAuthenticationTag_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             error := To_Unbounded_String ("Failed to set role invalid");
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, FileAuthenticationTag_Access'(This'Unchecked_Access), To_Unbounded_String ("invalidRole()"), e);
             end if;
             return error;
@@ -405,7 +411,7 @@ package body admin.tags.FileAuthenticationTag_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, FileAuthenticationTag_Access'(This'Unchecked_Access), To_Unbounded_String ("isAuthenticationSessionValid()"), e);
             end if;
             return False;
@@ -419,18 +425,18 @@ package body admin.tags.FileAuthenticationTag_Package is
       installerInfo : InstallerInfo_Access;
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.TAGHELPERERROR) then
                 This.logUtil.putF (To_Unbounded_String ("Starting for User: ") & This.userName & To_Unbounded_String (" Attempt: ") & Java_Image (This.weblisketSession.getAttempts), FileAuthenticationTag_Access'(This'Unchecked_Access), To_Unbounded_String ("processIfNewLogin()"));
             end if;
             if ((((This.userName) /= (Null_Unbounded_String)) and then ((Java_Compare_To (This.userName, StringUtil_Package.getInstance.EMPTY_STRING)) /= (0))) and then ((This.password) /= (Null_Unbounded_String))) and then ((Java_Compare_To (This.password, StringUtil_Package.getInstance.EMPTY_STRING)) /= (0)) then
                 login := Null_Unbounded_String;
                 installerInfo := InstallerInfo_Package.Create;
                 if installerInfo.isValid (This.userName, This.password) then
-                    login := org_Package.allbinary.globals.GLOBALS2.LOGINSUCCESS;
+                    login := GLOBALS2_Package.LOGINSUCCESS;
                 else
-                    login := org_Package.allbinary.globals.GLOBALS2.LOGINFAILED;
+                    login := GLOBALS2_Package.LOGINFAILED;
                 end if;
-                if (Java_Compare_To (login, org_Package.allbinary.globals.GLOBALS2.LOGINSUCCESS)) = (0) then
+                if (Java_Compare_To (login, GLOBALS2_Package.LOGINSUCCESS)) = (0) then
                     This.weblisketSession.setAttempts (0);
                     return True.booleanValue;
                 end if;
@@ -444,7 +450,7 @@ package body admin.tags.FileAuthenticationTag_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, FileAuthenticationTag_Access'(This'Unchecked_Access), To_Unbounded_String ("processIfNewLogin()"), e);
             end if;
             return False;
@@ -469,7 +475,7 @@ package body admin.tags.FileAuthenticationTag_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAGERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, FileAuthenticationTag_Access'(This'Unchecked_Access), To_Unbounded_String ("isSetToInvalidate()"), e);
             end if;
             return False;
@@ -487,12 +493,12 @@ package body admin.tags.FileAuthenticationTag_Package is
             This.request := HttpServletRequest_Access (This.pageContext.getRequest);
             This.weblisketSession := BasicWeblisketSession_Package.Create (This.pageContext);
             FileAuthenticationTag'Class (This).getFormData;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                 This.logUtil.putF (To_Unbounded_String ("Started"), FileAuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
             end if;
             if (This.command) /= (Null_Unbounded_String) then
-                if (Java_Compare_To (This.command, org_Package.allbinary.globals.GLOBALS2.CHANGEPASSWORD)) = (0) then
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                if (Java_Compare_To (This.command, GLOBALS2_Package.CHANGEPASSWORD)) = (0) then
+                    if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                         This.logUtil.putF (To_Unbounded_String ("Change Password"), FileAuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                     end if;
                     if not (FileAuthenticationTag'Class (This).changePassword) then
@@ -503,27 +509,27 @@ package body admin.tags.FileAuthenticationTag_Package is
                         return SKIP_BODY;
                     end if;
                 elsif (Java_Compare_To (This.command, WeblisketSessionData_Package.INVALIDATESESSION)) = (0) then
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                    if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                         This.logUtil.putF (To_Unbounded_String ("INVALIDATESESSION"), FileAuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                     end if;
                     return FileAuthenticationTag'Class (This).invalidateSession;
                 else
                     if FileAuthenticationTag'Class (This).isSessionOld then
                         if FileAuthenticationTag'Class (This).processInvalidation then
-                            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                                 This.logUtil.putF (To_Unbounded_String ("Processing Invalidation"), FileAuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                             end if;
                             This.pageContext.getOut.print (To_Unbounded_String ("Please login again.<p>"));
-                            if (Java_Compare_To (This.command, org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
+                            if (Java_Compare_To (This.command, GLOBALS2_Package.PROCESSBODYIFAUTHENTICATED)) = (0) then
                                 return TagSupport_Package.SKIP_BODY;
                             else
                                 return TagSupport_Package.EVAL_BODY_INCLUDE;
                             end if;
                         else
-                            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                                 This.logUtil.putF (To_Unbounded_String ("Preparing session for invalidation"), FileAuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                             end if;
-                            if (Java_Compare_To (This.command, org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
+                            if (Java_Compare_To (This.command, GLOBALS2_Package.PROCESSBODYIFAUTHENTICATED)) = (0) then
                                 return TagSupport_Package.SKIP_BODY;
                             else
                                 return TagSupport_Package.EVAL_BODY_INCLUDE;
@@ -531,49 +537,49 @@ package body admin.tags.FileAuthenticationTag_Package is
                         end if;
                     end if;
                     if ((((((This.userName) = (Null_Unbounded_String)) or else ((Java_Compare_To (This.userName, stringUtil.EMPTY_STRING)) = (0)))) and then ((((This.password) = (Null_Unbounded_String)) or else ((Java_Compare_To (This.password, stringUtil.EMPTY_STRING)) = (0))))) and then ((This.roles) /= (null))) and then (FileAuthenticationTag'Class (This).isAuthenticationSessionValid) then
-                        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                             This.logUtil.putF (To_Unbounded_String ("Authenticated session is valid"), FileAuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                         end if;
-                        if (Java_Compare_To (This.command, org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
+                        if (Java_Compare_To (This.command, GLOBALS2_Package.PROCESSBODYIFAUTHENTICATED)) = (0) then
                             return TagSupport_Package.EVAL_BODY_INCLUDE;
                         else
                             return TagSupport_Package.SKIP_BODY;
                         end if;
                     end if;
                     if (((This.userName) /= (Null_Unbounded_String)) and then ((This.password) /= (Null_Unbounded_String))) and then (FileAuthenticationTag'Class (This).processIfNewLogin) then
-                        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                             This.logUtil.putF (To_Unbounded_String ("Processing new login."), FileAuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                         end if;
                         if FileAuthenticationTag'Class (This).isRoleValid then
-                            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                                 This.logUtil.putF (To_Unbounded_String ("Role is valid - Processing new login"), FileAuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                             end if;
                             This.pageContext.getOut.print (FileAuthenticationTag'Class (This).validRole);
-                            if (Java_Compare_To (This.command, org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
+                            if (Java_Compare_To (This.command, GLOBALS2_Package.PROCESSBODYIFAUTHENTICATED)) = (0) then
                                 return EVAL_BODY_INCLUDE;
                             else
                                 return SKIP_BODY;
                             end if;
                         else
-                            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                                 This.logUtil.putF (To_Unbounded_String ("Role is not valid - Processing new login"), FileAuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                             end if;
                             This.pageContext.getOut.print (FileAuthenticationTag'Class (This).invalidRole);
-                            if (Java_Compare_To (This.command, org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
+                            if (Java_Compare_To (This.command, GLOBALS2_Package.PROCESSBODYIFAUTHENTICATED)) = (0) then
                                 return SKIP_BODY;
                             else
                                 return EVAL_BODY_INCLUDE;
                             end if;
                         end if;
                     else
-                        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                             This.logUtil.putF (To_Unbounded_String ("Invalid Login"), FileAuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                         end if;
                         if ((((This.userName) /= (Null_Unbounded_String)) and then ((Java_Compare_To (This.userName, StringUtil_Package.getInstance.EMPTY_STRING)) /= (0))) and then ((This.password) /= (Null_Unbounded_String))) and then ((Java_Compare_To (This.password, StringUtil_Package.getInstance.EMPTY_STRING)) /= (0)) then
                             This.pageContext.getOut.print (To_Unbounded_String ("Sorry your username and/or password is invalid.<p>"));
                         end if;
                     end if;
-                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                    if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.JSPTAG) then
                         stringBuffer := StringMaker_Package.Create;
                         stringBuffer.append (To_Unbounded_String ("Major authentication error - userName: "));
                         stringBuffer.append (This.userName);
@@ -583,7 +589,7 @@ package body admin.tags.FileAuthenticationTag_Package is
                         stringBuffer.append (This.command);
                         This.logUtil.putF (stringBuffer.toString, FileAuthenticationTag_Access'(This'Unchecked_Access), This.tagStrings.DO_START_TAG);
                     end if;
-                    if (Java_Compare_To (This.command, org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
+                    if (Java_Compare_To (This.command, GLOBALS2_Package.PROCESSBODYIFAUTHENTICATED)) = (0) then
                         return TagSupport_Package.SKIP_BODY;
                     else
                         return TagSupport_Package.EVAL_BODY_INCLUDE;

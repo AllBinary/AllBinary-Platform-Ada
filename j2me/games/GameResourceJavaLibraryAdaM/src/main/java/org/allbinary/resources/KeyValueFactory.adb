@@ -53,17 +53,15 @@ package body org.allbinary.resources.KeyValueFactory_Package is
 
    function getInstance return KeyValueFactory_Access is
    begin
-        return KeyValueFactory_Access (KeyValueFactory_Package.instance);
+        return KeyValueFactory_Package.instance;
    end getInstance;
 
    function get (This : in out KeyValueFactory; key : Unbounded_String) return Unbounded_String is
-      value : Unbounded_String;
    begin
-        value := Java_Unbox (This.MAP.get (Java_Box (key)));
-        if (value) = (Null_Unbounded_String) then
+        if not (This.MAP.containsKey (Java_Box (key))) then
             return key;
         end if;
-        return value;
+        return Java_Unbox (This.MAP.get (Java_Box (key)));
    end get;
 
    procedure get (This : in out KeyValueFactory; key : Unbounded_String) is

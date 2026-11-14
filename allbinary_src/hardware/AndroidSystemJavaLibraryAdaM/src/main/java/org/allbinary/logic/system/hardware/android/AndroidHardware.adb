@@ -137,7 +137,7 @@ package body org.allbinary.logic.system.hardware.android.AndroidHardware_Package
    begin
         lineNumberReader := Closeable_Access (NullCloseable_Package.NULL_CLOSEABLE);
         begin
-            lineNumberReader := AndroidHardware'Class (This).get (filePath);
+            lineNumberReader := Closeable_Access (AndroidHardware'Class (This).get (filePath));
         exception
             when Java_Occurrence : others =>
                 declare

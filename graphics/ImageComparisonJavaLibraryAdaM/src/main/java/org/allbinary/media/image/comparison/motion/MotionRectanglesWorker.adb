@@ -145,8 +145,8 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
    procedure Initialize_Fields (This : in out MotionRectanglesWorker'Class) is
    begin
       null;
-      This.logUtil := LogUtil_Package.getInstance;
-      This.commonStrings := CommonStrings_Package.getInstance;
+      This.MotionRectanglesWorker_Field_logUtil := LogUtil_Package.getInstance;
+      This.MotionRectanglesWorker_Field_commonStrings := CommonStrings_Package.getInstance;
       This.imageComparisonInfoVector := BasicArrayList_Access (BasicArrayListD_Package.Create);
       
       This.index := 0;
@@ -201,13 +201,13 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
       constrainedMotionRectangles : ConstrainedMotionRectangles_Access;
    begin
         begin
-            This.logUtil.putF (This.commonStrings.START, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.MotionRectanglesWorker_Field_logUtil.putF (This.MotionRectanglesWorker_Field_commonStrings.START, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.MotionRectanglesWorker_Field_commonStrings.RUN);
             MotionRectanglesWorker'Class (This).setRunning (True);
             timeHelper := TimeDelayHelper_Package.Create (1000);
             timeHelper.setStartTimeTNT;
             imageComparisonResultsEvent := ImageComparisonResultsEvent_Access (This.imageComparisonInfoVector.get (0));
             imageComparisonInfo := ImageComparisonResult_Access (imageComparisonResultsEvent.getImageComparisonResult);
-            This.logUtil.putF (imageComparisonInfo.toString, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.MotionRectanglesWorker_Field_logUtil.putF (imageComparisonInfo.toString, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.MotionRectanglesWorker_Field_commonStrings.RUN);
             allMotionRectangles := AllMotionRectangles_Package.Create (imageComparisonInfo);
             AllMotionRectanglesResultsCacheSingleton_Package.getInstance.add (MotionRectanglesResultsFrameCacheable_Package.Create (allMotionRectangles, imageComparisonInfo.getFrameTwo));
             consolidatedMotionRectangles := ConsolidateMotionRectangles_Package.Create (allMotionRectangles);
@@ -218,15 +218,15 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
             MotionRectanglesWorker'Class (This).fireEvent (MotionRectanglesResultsEvent_Package.Create (MotionRectanglesWorker_Access'(This'Unchecked_Access), imageComparisonInfo.getFrameTwo, MotionRectangles_Access (constrainedMotionRectangles)));
             This.imageComparisonInfoVector.remove (Java_Object_Access (imageComparisonResultsEvent));
             This.index := This.index + 1;
-            This.logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.MotionRectanglesWorker_Field_logUtil.putF (CommonLabels_Package.getInstance.ELAPSED & Java_Image (timeHelper.getElapsedTNT), MotionRectanglesWorker_Access'(This'Unchecked_Access), This.MotionRectanglesWorker_Field_commonStrings.RUN);
             MotionRectanglesWorker'Class (This).setRunning (False);
-            This.logUtil.putF (This.commonStrings.END_Id, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN);
+            This.MotionRectanglesWorker_Field_logUtil.putF (This.MotionRectanglesWorker_Field_commonStrings.END_Id, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.MotionRectanglesWorker_Field_commonStrings.RUN);
         exception
             when Java_Occurrence : others =>
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            This.logUtil.put (This.commonStrings.EXCEPTION_Id, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.commonStrings.RUN, e);
+            This.MotionRectanglesWorker_Field_logUtil.put (This.MotionRectanglesWorker_Field_commonStrings.EXCEPTION_Id, MotionRectanglesWorker_Access'(This'Unchecked_Access), This.MotionRectanglesWorker_Field_commonStrings.RUN, e);
                 end;
         end;
    end run;

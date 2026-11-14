@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with admin.taghelpers.PaymentHelper_Package;
 package admin.taghelpers.PaymentHelper_Package_References is
    type PaymentHelper_Access is access all admin.taghelpers.PaymentHelper_Package.PaymentHelper'Class;
@@ -19,6 +20,16 @@ package admin.taghelpers.PaymentHelper_Package_References is
    type PaymentHelper_Access_Array_Access is access all PaymentHelper_Access_Array;
    type PaymentHelper_Access_Array_Access_Array is array (Natural range <>) of PaymentHelper_Access_Array_Access;
    type PaymentHelper_Access_Array_Access_Array_Access is access all PaymentHelper_Access_Array_Access_Array;
+   type PaymentHelper_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PaymentHelper_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PaymentHelper_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PaymentHelper_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PaymentHelper_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PaymentHelper_Access_Array_Access is (if Value /= null and then Value.all in PaymentHelper_Access_Array_Object'Class then PaymentHelper_Access_Array_Object'Class (Value.all).Value else null);
+   type PaymentHelper_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PaymentHelper_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PaymentHelper_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PaymentHelper_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PaymentHelper_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PaymentHelper_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PaymentHelper_Access_Array_Access_Array_Object'Class then PaymentHelper_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end admin.taghelpers.PaymentHelper_Package_References;
 
 with admin.taghelpers.PaymentHelper_Package_References;
@@ -88,10 +99,14 @@ package admin.taghelpers.PaymentHelper_Package is
    function "=" (Left, Right : PaymentHelper_Access_Array) return Boolean renames admin.taghelpers.PaymentHelper_Package_References."=";
    subtype PaymentHelper_Access_Array_Access is admin.taghelpers.PaymentHelper_Package_References.PaymentHelper_Access_Array_Access;
    function "=" (Left, Right : PaymentHelper_Access_Array_Access) return Boolean renames admin.taghelpers.PaymentHelper_Package_References."=";
+   function Java_Box (Value : PaymentHelper_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.PaymentHelper_Package_References.Java_Box;
+   function Java_Unbox_PaymentHelper_Access_Array (Value : access Java_Object'Class) return PaymentHelper_Access_Array_Access renames admin.taghelpers.PaymentHelper_Package_References.Java_Unbox_PaymentHelper_Access_Array;
    subtype PaymentHelper_Access_Array_Access_Array is admin.taghelpers.PaymentHelper_Package_References.PaymentHelper_Access_Array_Access_Array;
    function "=" (Left, Right : PaymentHelper_Access_Array_Access_Array) return Boolean renames admin.taghelpers.PaymentHelper_Package_References."=";
    subtype PaymentHelper_Access_Array_Access_Array_Access is admin.taghelpers.PaymentHelper_Package_References.PaymentHelper_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PaymentHelper_Access_Array_Access_Array_Access) return Boolean renames admin.taghelpers.PaymentHelper_Package_References."=";
+   function Java_Box (Value : PaymentHelper_Access_Array_Access_Array_Access) return Java_Object_Access renames admin.taghelpers.PaymentHelper_Package_References.Java_Box;
+   function Java_Unbox_PaymentHelper_Access_Array_Access_Array (Value : access Java_Object'Class) return PaymentHelper_Access_Array_Access_Array_Access renames admin.taghelpers.PaymentHelper_Package_References.Java_Unbox_PaymentHelper_Access_Array_Access_Array;
 
    type PaymentHelper is new Table with record
       logUtil : LogUtil_Access;

@@ -49,7 +49,7 @@ package body org.allbinary.image.ImageFactory_Package is
 
    function getInstance return ImageFactory_Access is
    begin
-        return ImageFactory_Access (ImageFactory_Package.instance);
+        return ImageFactory_Package.instance;
    end getInstance;
 
    --  throws Exception

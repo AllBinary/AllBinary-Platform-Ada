@@ -37,7 +37,6 @@ package body org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Pa
 
    procedure Initialize (This : in out PropertiesJPanel'Class) is
    begin
-      JPanel_Package.Initialize (This);
       Initialize_Fields (This);
         PropertiesJPanel'Class (This).initComponents;
    end Initialize;

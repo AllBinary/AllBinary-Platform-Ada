@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.java.help.JavaHelpUtil_Package;
 package org.allbinary.logic.java.help.JavaHelpUtil_Package_References is
    type JavaHelpUtil_Access is access all org.allbinary.logic.java.help.JavaHelpUtil_Package.JavaHelpUtil'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.java.help.JavaHelpUtil_Package_References is
    type JavaHelpUtil_Access_Array_Access is access all JavaHelpUtil_Access_Array;
    type JavaHelpUtil_Access_Array_Access_Array is array (Natural range <>) of JavaHelpUtil_Access_Array_Access;
    type JavaHelpUtil_Access_Array_Access_Array_Access is access all JavaHelpUtil_Access_Array_Access_Array;
+   type JavaHelpUtil_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : JavaHelpUtil_Access_Array_Access;
+   end record;
+   function Java_Box (Value : JavaHelpUtil_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new JavaHelpUtil_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_JavaHelpUtil_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return JavaHelpUtil_Access_Array_Access is (if Value /= null and then Value.all in JavaHelpUtil_Access_Array_Object'Class then JavaHelpUtil_Access_Array_Object'Class (Value.all).Value else null);
+   type JavaHelpUtil_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : JavaHelpUtil_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : JavaHelpUtil_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new JavaHelpUtil_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_JavaHelpUtil_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return JavaHelpUtil_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in JavaHelpUtil_Access_Array_Access_Array_Object'Class then JavaHelpUtil_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.java.help.JavaHelpUtil_Package_References;
 
 with org.allbinary.logic.java.help.JavaHelpUtil_Package_References;
@@ -100,10 +111,14 @@ package org.allbinary.logic.java.help.JavaHelpUtil_Package is
    function "=" (Left, Right : JavaHelpUtil_Access_Array) return Boolean renames org.allbinary.logic.java.help.JavaHelpUtil_Package_References."=";
    subtype JavaHelpUtil_Access_Array_Access is org.allbinary.logic.java.help.JavaHelpUtil_Package_References.JavaHelpUtil_Access_Array_Access;
    function "=" (Left, Right : JavaHelpUtil_Access_Array_Access) return Boolean renames org.allbinary.logic.java.help.JavaHelpUtil_Package_References."=";
+   function Java_Box (Value : JavaHelpUtil_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.java.help.JavaHelpUtil_Package_References.Java_Box;
+   function Java_Unbox_JavaHelpUtil_Access_Array (Value : access Java_Object'Class) return JavaHelpUtil_Access_Array_Access renames org.allbinary.logic.java.help.JavaHelpUtil_Package_References.Java_Unbox_JavaHelpUtil_Access_Array;
    subtype JavaHelpUtil_Access_Array_Access_Array is org.allbinary.logic.java.help.JavaHelpUtil_Package_References.JavaHelpUtil_Access_Array_Access_Array;
    function "=" (Left, Right : JavaHelpUtil_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.java.help.JavaHelpUtil_Package_References."=";
    subtype JavaHelpUtil_Access_Array_Access_Array_Access is org.allbinary.logic.java.help.JavaHelpUtil_Package_References.JavaHelpUtil_Access_Array_Access_Array_Access;
    function "=" (Left, Right : JavaHelpUtil_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.java.help.JavaHelpUtil_Package_References."=";
+   function Java_Box (Value : JavaHelpUtil_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.java.help.JavaHelpUtil_Package_References.Java_Box;
+   function Java_Unbox_JavaHelpUtil_Access_Array_Access_Array (Value : access Java_Object'Class) return JavaHelpUtil_Access_Array_Access_Array_Access renames org.allbinary.logic.java.help.JavaHelpUtil_Package_References.Java_Unbox_JavaHelpUtil_Access_Array_Access_Array;
 
    type JavaHelpUtil is new Java_Object with record
       logUtil : LogUtil_Access;

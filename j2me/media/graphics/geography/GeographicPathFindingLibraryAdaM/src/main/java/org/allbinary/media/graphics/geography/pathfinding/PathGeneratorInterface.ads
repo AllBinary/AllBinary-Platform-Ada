@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package;
 package org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References is
    type PathGeneratorInterface_Access is access all org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package.PathGeneratorInterface'Class;
@@ -19,6 +20,16 @@ package org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterfac
    type PathGeneratorInterface_Access_Array_Access is access all PathGeneratorInterface_Access_Array;
    type PathGeneratorInterface_Access_Array_Access_Array is array (Natural range <>) of PathGeneratorInterface_Access_Array_Access;
    type PathGeneratorInterface_Access_Array_Access_Array_Access is access all PathGeneratorInterface_Access_Array_Access_Array;
+   type PathGeneratorInterface_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PathGeneratorInterface_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PathGeneratorInterface_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PathGeneratorInterface_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PathGeneratorInterface_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PathGeneratorInterface_Access_Array_Access is (if Value /= null and then Value.all in PathGeneratorInterface_Access_Array_Object'Class then PathGeneratorInterface_Access_Array_Object'Class (Value.all).Value else null);
+   type PathGeneratorInterface_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PathGeneratorInterface_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PathGeneratorInterface_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PathGeneratorInterface_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PathGeneratorInterface_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PathGeneratorInterface_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PathGeneratorInterface_Access_Array_Access_Array_Object'Class then PathGeneratorInterface_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References;
 
 with org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References;
@@ -96,10 +107,14 @@ package org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterfac
    function "=" (Left, Right : PathGeneratorInterface_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References."=";
    subtype PathGeneratorInterface_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References.PathGeneratorInterface_Access_Array_Access;
    function "=" (Left, Right : PathGeneratorInterface_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References."=";
+   function Java_Box (Value : PathGeneratorInterface_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References.Java_Box;
+   function Java_Unbox_PathGeneratorInterface_Access_Array (Value : access Java_Object'Class) return PathGeneratorInterface_Access_Array_Access renames org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References.Java_Unbox_PathGeneratorInterface_Access_Array;
    subtype PathGeneratorInterface_Access_Array_Access_Array is org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References.PathGeneratorInterface_Access_Array_Access_Array;
    function "=" (Left, Right : PathGeneratorInterface_Access_Array_Access_Array) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References."=";
    subtype PathGeneratorInterface_Access_Array_Access_Array_Access is org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References.PathGeneratorInterface_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PathGeneratorInterface_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References."=";
+   function Java_Box (Value : PathGeneratorInterface_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References.Java_Box;
+   function Java_Unbox_PathGeneratorInterface_Access_Array_Access_Array (Value : access Java_Object'Class) return PathGeneratorInterface_Access_Array_Access_Array_Access renames org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package_References.Java_Unbox_PathGeneratorInterface_Access_Array_Access_Array;
    function Java_Object_Access_From_PathGeneratorInterface (Value : PathGeneratorInterface_Access) return Java_Object_Access is (if Value = null then null else Java_Object_Access' (Java_Object'Class (Value.all)'Unchecked_Access));
    function createList (This : in out PathGeneratorInterface; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory_Package.GeographicMapCellHistory'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; totalPaths : Integer) return BasicArrayList_Access is abstract;
    procedure createList (This : in out PathGeneratorInterface; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory_Package.GeographicMapCellHistory'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; totalPaths : Integer) is abstract;

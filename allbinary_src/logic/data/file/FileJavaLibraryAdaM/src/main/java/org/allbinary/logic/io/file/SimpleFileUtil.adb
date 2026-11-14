@@ -127,7 +127,7 @@ package body org.allbinary.logic.io.file.SimpleFileUtil_Package is
 
    function getInstance return SimpleFileUtil_Access is
    begin
-        return SimpleFileUtil_Access (SimpleFileUtil_Package.instance);
+        return SimpleFileUtil_Package.instance;
    end getInstance;
 
    function nullOutputStream return OutputStream_Access is

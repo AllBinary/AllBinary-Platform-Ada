@@ -20,6 +20,9 @@ with org.allbinary.business.init.db.DbConnectionInfo_Package_References;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -45,6 +48,9 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
 
    package Set_Package renames Standard.java.util.Set_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype DbConnectionInfo_Access is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access;
    function "=" (Left, Right : DbConnectionInfo_Access) return Boolean renames org.allbinary.business.init.db.DbConnectionInfo_Package_References."=";
    subtype DbConnectionInfo_Access_Array is org.allbinary.business.init.db.DbConnectionInfo_Package_References.DbConnectionInfo_Access_Array;
@@ -110,7 +116,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
             rset := AbSqlBean'Class (This).executeSQLStatement (sqlStatement);
             while rset.next loop
                 field := rset.getString (requestedField);
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                     stringBuffer.delete (0, stringBuffer.length);
                     stringBuffer.append (This.sqlStrings.SQL_STATEMENT_LABEL);
                     stringBuffer.append (sqlStatement);
@@ -126,7 +132,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 This.AbSqlBean_Field_logUtil.put (This.FAILED_SQL_STATEMENT & sqlStatement, AbSqlBean_Access'(This'Unchecked_Access), This.METHOD_GET_FIELD, e);
             end if;
             return This.FAILED_SQL_STATEMENT & sqlStatement;
@@ -175,7 +181,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
             rset := AbSqlBean'Class (This).executeSQLStatement (sqlStatement);
             while rset.next loop
                 field := rset.getString (requestedField);
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                     stringBuffer.delete (0, stringBuffer.length);
                     stringBuffer.append (This.sqlStrings.SQL_STATEMENT_LABEL);
                     stringBuffer.append (sqlStatement);
@@ -192,7 +198,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             sqlStatement := stringBuffer.toString;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 This.AbSqlBean_Field_logUtil.put (This.FAILED_SQL_STATEMENT & sqlStatement, AbSqlBean_Access'(This'Unchecked_Access), This.METHOD_GET_FIELD, e);
             end if;
             return This.FAILED_SQL_STATEMENT & sqlStatement;
@@ -242,14 +248,14 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                     columnName := keyArray2 (i).toString;
                     field := rset.getObject (columnName).toString;
                     if (Java_Compare_To (field, Java_Unbox (columnsAndValues.get (Java_Box (columnName))))) /= (0) then
-                        return org_Package.allbinary.globals.GLOBALS2.NOTASUBSET;
+                        return GLOBALS2_Package.NOTASUBSET;
                     end if;
                 end loop;
             end loop;
             if (rset.getRow) /= (1) then
-                return org_Package.allbinary.globals.GLOBALS2.NOTASUBSET;
+                return GLOBALS2_Package.NOTASUBSET;
             else
-                return org_Package.allbinary.globals.GLOBALS2.ISASUBSET;
+                return GLOBALS2_Package.ISASUBSET;
             end if;
         exception
             when Java_Occurrence : others =>
@@ -257,7 +263,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBean_Package is
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
             sqlStatement := stringBuffer.toString;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGINGERROR) then
                 This.AbSqlBean_Field_logUtil.put (This.FAILED_SQL_STATEMENT & sqlStatement, AbSqlBean_Access'(This'Unchecked_Access), This.METHOD_IS_SUBSET_OF_ENTRY, e);
             end if;
             return This.FAILED_SQL_STATEMENT & sqlStatement;

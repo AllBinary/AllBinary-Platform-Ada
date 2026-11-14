@@ -77,7 +77,7 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
 
    function getInstance return ImageCopyUtil_Access is
    begin
-        return ImageCopyUtil_Access (ImageCopyUtil_Package.instance);
+        return ImageCopyUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ImageCopyUtil'Class) is

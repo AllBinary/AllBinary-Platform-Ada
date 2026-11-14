@@ -111,7 +111,7 @@ package body org.allbinary.TsUtil_Package is
 
    function getInstance return TsUtil_Access is
    begin
-        return TsUtil_Access (TsUtil_Package.instance);
+        return TsUtil_Package.instance;
    end getInstance;
 
    function longBitsToDouble (This : in out TsUtil; bits : Long_Long_Integer) return Long_Float is

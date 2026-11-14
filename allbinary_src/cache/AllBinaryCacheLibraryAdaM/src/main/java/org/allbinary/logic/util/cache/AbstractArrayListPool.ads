@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.util.cache.AbstractArrayListPool_Package;
 package org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References is
    type AbstractArrayListPool_Access is access all org.allbinary.logic.util.cache.AbstractArrayListPool_Package.AbstractArrayListPool'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References 
    type AbstractArrayListPool_Access_Array_Access is access all AbstractArrayListPool_Access_Array;
    type AbstractArrayListPool_Access_Array_Access_Array is array (Natural range <>) of AbstractArrayListPool_Access_Array_Access;
    type AbstractArrayListPool_Access_Array_Access_Array_Access is access all AbstractArrayListPool_Access_Array_Access_Array;
+   type AbstractArrayListPool_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AbstractArrayListPool_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AbstractArrayListPool_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AbstractArrayListPool_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AbstractArrayListPool_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AbstractArrayListPool_Access_Array_Access is (if Value /= null and then Value.all in AbstractArrayListPool_Access_Array_Object'Class then AbstractArrayListPool_Access_Array_Object'Class (Value.all).Value else null);
+   type AbstractArrayListPool_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AbstractArrayListPool_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AbstractArrayListPool_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AbstractArrayListPool_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AbstractArrayListPool_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AbstractArrayListPool_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AbstractArrayListPool_Access_Array_Access_Array_Object'Class then AbstractArrayListPool_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References;
 
 with org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References;
@@ -95,10 +106,14 @@ package org.allbinary.logic.util.cache.AbstractArrayListPool_Package is
    function "=" (Left, Right : AbstractArrayListPool_Access_Array) return Boolean renames org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References."=";
    subtype AbstractArrayListPool_Access_Array_Access is org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References.AbstractArrayListPool_Access_Array_Access;
    function "=" (Left, Right : AbstractArrayListPool_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References."=";
+   function Java_Box (Value : AbstractArrayListPool_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References.Java_Box;
+   function Java_Unbox_AbstractArrayListPool_Access_Array (Value : access Java_Object'Class) return AbstractArrayListPool_Access_Array_Access renames org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References.Java_Unbox_AbstractArrayListPool_Access_Array;
    subtype AbstractArrayListPool_Access_Array_Access_Array is org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References.AbstractArrayListPool_Access_Array_Access_Array;
    function "=" (Left, Right : AbstractArrayListPool_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References."=";
    subtype AbstractArrayListPool_Access_Array_Access_Array_Access is org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References.AbstractArrayListPool_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AbstractArrayListPool_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References."=";
+   function Java_Box (Value : AbstractArrayListPool_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References.Java_Box;
+   function Java_Unbox_AbstractArrayListPool_Access_Array_Access_Array (Value : access Java_Object'Class) return AbstractArrayListPool_Access_Array_Access_Array_Access renames org.allbinary.logic.util.cache.AbstractArrayListPool_Package_References.Java_Unbox_AbstractArrayListPool_Access_Array_Access_Array;
 
    type AbstractArrayListPool is new Java_Object and PoolInterface with record
       commonStrings : CommonStrings_Access;

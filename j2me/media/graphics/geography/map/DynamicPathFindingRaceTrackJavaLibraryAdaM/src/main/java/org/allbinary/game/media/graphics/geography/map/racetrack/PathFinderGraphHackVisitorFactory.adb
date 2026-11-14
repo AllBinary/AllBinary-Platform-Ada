@@ -22,6 +22,7 @@ with org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHa
 with org.allbinary.util.ArrayUtil_Package;
 with org.allbinary.game.media.graphics.geography.map.racetrack.BasePathFinderGraphVisitor_Package;
 with org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.graphics.CellPosition_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -33,6 +34,7 @@ with org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHa
 with org.allbinary.logic.string_Id.StringMaker_Package;
 with org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.time.TimeStampUtil_Package;
+with org.allbinary.graph.V_Package;
 
 package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGraphHackVisitorFactory_Package is
 

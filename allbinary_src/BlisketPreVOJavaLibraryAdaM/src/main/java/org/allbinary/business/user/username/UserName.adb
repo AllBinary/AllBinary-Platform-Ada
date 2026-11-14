@@ -21,6 +21,8 @@ with org.allbinary.logic.java.bool.BooleanFactory_Package; use org.allbinary.log
 with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
 with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -36,6 +38,8 @@ package body org.allbinary.business.user.username.UserName_Package is
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
    package StringValidationUtil_Package renames Standard.org.allbinary.logic.string_Id.StringValidationUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -56,7 +60,7 @@ package body org.allbinary.business.user.username.UserName_Package is
 
    function getInstance return UserName_Access is
    begin
-        return UserName_Access (UserName_Package.instance);
+        return UserName_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out UserName'Class) is
@@ -95,7 +99,7 @@ package body org.allbinary.business.user.username.UserName_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to validate form"), UserName_Access'(This'Unchecked_Access), To_Unbounded_String ("isUserNameValid()"), e);
             end if;
             return False;
@@ -117,11 +121,11 @@ package body org.allbinary.business.user.username.UserName_Package is
         begin
             booleanFactory := BooleanFactory_Package.getInstance;
             valid := booleanFactory.TRUE;
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VALIDATION) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VALIDATION) then
                 This.logUtil.putF (To_Unbounded_String ("UserName: ") & aUserName, UserName_Access'(This'Unchecked_Access), commonStrings.IS_VALID);
             end if;
             if not (StringValidationUtil_Package.getInstance.isValidRequired (aUserName, 5, UserData_Package.MAXLEN)) then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VALIDATION) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VALIDATION) then
                     This.logUtil.putF (To_Unbounded_String ("UserName is invalid"), UserName_Access'(This'Unchecked_Access), commonStrings.IS_VALID);
                 end if;
                 valid := booleanFactory.FALSE;
@@ -132,7 +136,7 @@ package body org.allbinary.business.user.username.UserName_Package is
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to validate form"), UserName_Access'(This'Unchecked_Access), commonStrings.IS_VALID, e);
             end if;
             return False;

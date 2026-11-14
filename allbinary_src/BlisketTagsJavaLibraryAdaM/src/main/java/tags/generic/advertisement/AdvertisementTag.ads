@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with tags.generic_Id.advertisement.AdvertisementTag_Package;
 package tags.generic_Id.advertisement.AdvertisementTag_Package_References is
    type AdvertisementTag_Access is access all tags.generic_Id.advertisement.AdvertisementTag_Package.AdvertisementTag'Class;
@@ -19,6 +20,16 @@ package tags.generic_Id.advertisement.AdvertisementTag_Package_References is
    type AdvertisementTag_Access_Array_Access is access all AdvertisementTag_Access_Array;
    type AdvertisementTag_Access_Array_Access_Array is array (Natural range <>) of AdvertisementTag_Access_Array_Access;
    type AdvertisementTag_Access_Array_Access_Array_Access is access all AdvertisementTag_Access_Array_Access_Array;
+   type AdvertisementTag_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AdvertisementTag_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AdvertisementTag_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AdvertisementTag_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AdvertisementTag_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AdvertisementTag_Access_Array_Access is (if Value /= null and then Value.all in AdvertisementTag_Access_Array_Object'Class then AdvertisementTag_Access_Array_Object'Class (Value.all).Value else null);
+   type AdvertisementTag_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : AdvertisementTag_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : AdvertisementTag_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new AdvertisementTag_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_AdvertisementTag_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return AdvertisementTag_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in AdvertisementTag_Access_Array_Access_Array_Object'Class then AdvertisementTag_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end tags.generic_Id.advertisement.AdvertisementTag_Package_References;
 
 with tags.generic_Id.advertisement.AdvertisementTag_Package_References;
@@ -47,10 +58,14 @@ package tags.generic_Id.advertisement.AdvertisementTag_Package is
    function "=" (Left, Right : AdvertisementTag_Access_Array) return Boolean renames tags.generic_Id.advertisement.AdvertisementTag_Package_References."=";
    subtype AdvertisementTag_Access_Array_Access is tags.generic_Id.advertisement.AdvertisementTag_Package_References.AdvertisementTag_Access_Array_Access;
    function "=" (Left, Right : AdvertisementTag_Access_Array_Access) return Boolean renames tags.generic_Id.advertisement.AdvertisementTag_Package_References."=";
+   function Java_Box (Value : AdvertisementTag_Access_Array_Access) return Java_Object_Access renames tags.generic_Id.advertisement.AdvertisementTag_Package_References.Java_Box;
+   function Java_Unbox_AdvertisementTag_Access_Array (Value : access Java_Object'Class) return AdvertisementTag_Access_Array_Access renames tags.generic_Id.advertisement.AdvertisementTag_Package_References.Java_Unbox_AdvertisementTag_Access_Array;
    subtype AdvertisementTag_Access_Array_Access_Array is tags.generic_Id.advertisement.AdvertisementTag_Package_References.AdvertisementTag_Access_Array_Access_Array;
    function "=" (Left, Right : AdvertisementTag_Access_Array_Access_Array) return Boolean renames tags.generic_Id.advertisement.AdvertisementTag_Package_References."=";
    subtype AdvertisementTag_Access_Array_Access_Array_Access is tags.generic_Id.advertisement.AdvertisementTag_Package_References.AdvertisementTag_Access_Array_Access_Array_Access;
    function "=" (Left, Right : AdvertisementTag_Access_Array_Access_Array_Access) return Boolean renames tags.generic_Id.advertisement.AdvertisementTag_Package_References."=";
+   function Java_Box (Value : AdvertisementTag_Access_Array_Access_Array_Access) return Java_Object_Access renames tags.generic_Id.advertisement.AdvertisementTag_Package_References.Java_Box;
+   function Java_Unbox_AdvertisementTag_Access_Array_Access_Array (Value : access Java_Object'Class) return AdvertisementTag_Access_Array_Access_Array_Access renames tags.generic_Id.advertisement.AdvertisementTag_Package_References.Java_Unbox_AdvertisementTag_Access_Array_Access_Array;
 
    type AdvertisementTag is new StoreValidationTransformTag with null record;
 

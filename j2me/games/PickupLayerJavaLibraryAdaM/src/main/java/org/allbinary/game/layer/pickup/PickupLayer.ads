@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.layer.pickup.PickupLayer_Package;
 package org.allbinary.game.layer.pickup.PickupLayer_Package_References is
    type PickupLayer_Access is access all org.allbinary.game.layer.pickup.PickupLayer_Package.PickupLayer'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.layer.pickup.PickupLayer_Package_References is
    type PickupLayer_Access_Array_Access is access all PickupLayer_Access_Array;
    type PickupLayer_Access_Array_Access_Array is array (Natural range <>) of PickupLayer_Access_Array_Access;
    type PickupLayer_Access_Array_Access_Array_Access is access all PickupLayer_Access_Array_Access_Array;
+   type PickupLayer_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PickupLayer_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PickupLayer_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PickupLayer_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PickupLayer_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PickupLayer_Access_Array_Access is (if Value /= null and then Value.all in PickupLayer_Access_Array_Object'Class then PickupLayer_Access_Array_Object'Class (Value.all).Value else null);
+   type PickupLayer_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PickupLayer_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PickupLayer_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PickupLayer_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PickupLayer_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PickupLayer_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PickupLayer_Access_Array_Access_Array_Object'Class then PickupLayer_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.layer.pickup.PickupLayer_Package_References;
 
 with org.allbinary.game.layer.pickup.PickupLayer_Package_References;
@@ -138,10 +149,14 @@ package org.allbinary.game.layer.pickup.PickupLayer_Package is
    function "=" (Left, Right : PickupLayer_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.PickupLayer_Package_References."=";
    subtype PickupLayer_Access_Array_Access is org.allbinary.game.layer.pickup.PickupLayer_Package_References.PickupLayer_Access_Array_Access;
    function "=" (Left, Right : PickupLayer_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.PickupLayer_Package_References."=";
+   function Java_Box (Value : PickupLayer_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.pickup.PickupLayer_Package_References.Java_Box;
+   function Java_Unbox_PickupLayer_Access_Array (Value : access Java_Object'Class) return PickupLayer_Access_Array_Access renames org.allbinary.game.layer.pickup.PickupLayer_Package_References.Java_Unbox_PickupLayer_Access_Array;
    subtype PickupLayer_Access_Array_Access_Array is org.allbinary.game.layer.pickup.PickupLayer_Package_References.PickupLayer_Access_Array_Access_Array;
    function "=" (Left, Right : PickupLayer_Access_Array_Access_Array) return Boolean renames org.allbinary.game.layer.pickup.PickupLayer_Package_References."=";
    subtype PickupLayer_Access_Array_Access_Array_Access is org.allbinary.game.layer.pickup.PickupLayer_Package_References.PickupLayer_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PickupLayer_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.layer.pickup.PickupLayer_Package_References."=";
+   function Java_Box (Value : PickupLayer_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.layer.pickup.PickupLayer_Package_References.Java_Box;
+   function Java_Unbox_PickupLayer_Access_Array_Access_Array (Value : access Java_Object'Class) return PickupLayer_Access_Array_Access_Array_Access renames org.allbinary.game.layer.pickup.PickupLayer_Package_References.Java_Unbox_PickupLayer_Access_Array_Access_Array;
 
    type PickupLayer is new MultiPlayerGameLayer and PickedUpLayerInterface and PickupableInterface with record
       pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access;

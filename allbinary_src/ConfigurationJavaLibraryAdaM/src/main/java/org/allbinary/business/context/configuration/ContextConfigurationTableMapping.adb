@@ -76,7 +76,7 @@ package body org.allbinary.business.context.configuration.ContextConfigurationTa
    function toHashMap (This : in out ContextConfigurationTableMapping) return HashMap_Access is
       hashMap : HashMap_Access;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         return hashMap;
    end toHashMap;
 

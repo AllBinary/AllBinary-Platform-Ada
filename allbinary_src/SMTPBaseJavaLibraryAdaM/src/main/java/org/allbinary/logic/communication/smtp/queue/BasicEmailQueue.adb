@@ -18,6 +18,8 @@ with org.allbinary.logic.communication.log.LogUtil_Package_References;
 with org.allbinary.logic.communication.smtp.EmailInterface_Package; use org.allbinary.logic.communication.smtp.EmailInterface_Package;
 with org.allbinary.logic.communication.smtp.EmailInterface_Package_References;
 with org.allbinary.logic.util.queue.BasicQueue_Package; use org.allbinary.logic.util.queue.BasicQueue_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -30,6 +32,8 @@ with org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package_Refere
 
 package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package is
 
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
    function "=" (Left, Right : LogUtil_Access) return Boolean renames org.allbinary.logic.communication.log.LogUtil_Package_References."=";
    subtype LogUtil_Access_Array is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access_Array;
@@ -76,7 +80,7 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
         if org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Package_References."=" (BasicEmailQueue_Package.basicEmailQueue_Var, null) then
             BasicEmailQueue_Package.basicEmailQueue_Var := BasicEmailQueue_Package.Create;
         end if;
-        return BasicEmailQueue_Access (BasicEmailQueue_Package.basicEmailQueue_Var);
+        return BasicEmailQueue_Package.basicEmailQueue_Var;
    end getInstance;
 
    --  throws Exception
@@ -129,11 +133,11 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
       emailInterface : constant EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
    begin
         begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("Sending: ") & emailInterface.log, BasicEmailQueue_Access'(This'Unchecked_Access), To_Unbounded_String ("send"));
             end if;
             Transport_Package.send (emailInterface.getMimeMessage);
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("Email Send Debug: ") & emailInterface.getDebugInfo, BasicEmailQueue_Access'(This'Unchecked_Access), To_Unbounded_String ("send"));
             end if;
             return True;
@@ -142,7 +146,7 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.EMAILLOGGING) then
                 This.logUtil.put (To_Unbounded_String ("Failed Email Send Debug: ") & emailInterface.getDebugInfo, BasicEmailQueue_Access'(This'Unchecked_Access), To_Unbounded_String ("send"), e);
             end if;
             return False;

@@ -120,7 +120,7 @@
 
         <module>../../media/motion/AllBinaryVibrationJavaLibraryAdaM</module>
         <module>../../media/motion/NoVibrateJavaLibraryAdaM</module>
-        <module>../../media/motion/VibrateAndroidJavaLibraryAdaM</module>
+<!--        <module>../../media/motion/VibrateAndroidJavaLibraryAdaM</module>-->
 
         <module>../../media/graphics/NullCustomUIJavaLibraryAdaM</module>
         <module>../../media/graphics/NullCustomUIBaseJavaLibraryAdaM</module>
@@ -150,7 +150,7 @@
         <module>../../media/sound/NotDeviceSpecificNoMediaMIDP1LibraryAdaM</module>
 
         <module>../../../allbinary_src/content/ContentNoneJavaLibraryAdaM</module>
-        <module>../../../allbinary_src/content/ContentAndroidJavaLibraryAdaM</module>
+<!--        <module>../../../allbinary_src/content/ContentAndroidJavaLibraryAdaM</module>-->
 
         <module>../../games/GameConfigurationFormJavaLibraryAdaM</module>
 

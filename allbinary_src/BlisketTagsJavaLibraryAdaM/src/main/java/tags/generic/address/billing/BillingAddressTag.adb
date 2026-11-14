@@ -17,6 +17,7 @@ with org.allbinary.business.user.address.BillingAddressData_Package; use org.all
 with org.allbinary.logic.communication.http.request.AbResponseHandler_Package; use org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
 with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
 with tags.StoreValidationTransformTag_Package; use tags.StoreValidationTransformTag_Package;
+with org.allbinary.globals.GLOBALS2_Package; use org.allbinary.globals.GLOBALS2_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -36,6 +37,7 @@ package body tags.generic_Id.address.billing.BillingAddressTag_Package is
    package BillingAddressData_Package renames Standard.org.allbinary.business.user.address.BillingAddressData_Package;
    package AbResponseHandler_Package renames Standard.org.allbinary.logic.communication.http.request.AbResponseHandler_Package;
    package LicensingException_Package renames Standard.org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package GLOBALS2_Package renames Standard.org.allbinary.globals.GLOBALS2_Package;
    procedure Initialize_Fields (This : in out BillingAddressTag'Class) is
    begin
       null;
@@ -61,13 +63,13 @@ package body tags.generic_Id.address.billing.BillingAddressTag_Package is
    begin
         begin
             if (BillingAddressTag'Class (This).getCommand) /= (null) then
-                if (BillingAddressTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.VIEW)) = (0) then
+                if (BillingAddressTag'Class (This).getCommand.compareTo (GLOBALS2_Package.VIEW)) = (0) then
                     BillingAddressTag'Class (This).setName (To_Unbounded_String ("Basic Billing Address View"));
                     BillingAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.billing.ValidationView"));
-                elsif (BillingAddressTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.EDIT)) = (0) then
+                elsif (BillingAddressTag'Class (This).getCommand.compareTo (GLOBALS2_Package.EDIT)) = (0) then
                     BillingAddressTag'Class (This).setName (To_Unbounded_String ("Basic Billing Address View"));
                     BillingAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.billing.EditValidationView"));
-                elsif (BillingAddressTag'Class (This).getCommand.compareTo (org_Package.allbinary.globals.GLOBALS2.NEW_Id)) = (0) then
+                elsif (BillingAddressTag'Class (This).getCommand.compareTo (GLOBALS2_Package.NEW_Id)) = (0) then
                     BillingAddressTag'Class (This).setName (To_Unbounded_String ("Basic Billing Address View"));
                     BillingAddressTag'Class (This).setObjectFile (To_Unbounded_String ("views.generic.address.billing.NewValidationView"));
                 elsif (BillingAddressTag'Class (This).getCommand.compareTo (This.commonStrings.INSERT)) = (0) then

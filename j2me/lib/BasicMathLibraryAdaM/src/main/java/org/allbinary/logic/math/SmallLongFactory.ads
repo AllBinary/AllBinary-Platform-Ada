@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.logic.math.SmallLongFactory_Package;
 package org.allbinary.logic.math.SmallLongFactory_Package_References is
    type SmallLongFactory_Access is access all org.allbinary.logic.math.SmallLongFactory_Package.SmallLongFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.logic.math.SmallLongFactory_Package_References is
    type SmallLongFactory_Access_Array_Access is access all SmallLongFactory_Access_Array;
    type SmallLongFactory_Access_Array_Access_Array is array (Natural range <>) of SmallLongFactory_Access_Array_Access;
    type SmallLongFactory_Access_Array_Access_Array_Access is access all SmallLongFactory_Access_Array_Access_Array;
+   type SmallLongFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SmallLongFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SmallLongFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SmallLongFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SmallLongFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SmallLongFactory_Access_Array_Access is (if Value /= null and then Value.all in SmallLongFactory_Access_Array_Object'Class then SmallLongFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type SmallLongFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : SmallLongFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : SmallLongFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new SmallLongFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_SmallLongFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return SmallLongFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in SmallLongFactory_Access_Array_Access_Array_Object'Class then SmallLongFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.logic.math.SmallLongFactory_Package_References;
 
 with org.allbinary.logic.math.SmallLongFactory_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.logic.math.SmallLongFactory_Package is
    function "=" (Left, Right : SmallLongFactory_Access_Array) return Boolean renames org.allbinary.logic.math.SmallLongFactory_Package_References."=";
    subtype SmallLongFactory_Access_Array_Access is org.allbinary.logic.math.SmallLongFactory_Package_References.SmallLongFactory_Access_Array_Access;
    function "=" (Left, Right : SmallLongFactory_Access_Array_Access) return Boolean renames org.allbinary.logic.math.SmallLongFactory_Package_References."=";
+   function Java_Box (Value : SmallLongFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.math.SmallLongFactory_Package_References.Java_Box;
+   function Java_Unbox_SmallLongFactory_Access_Array (Value : access Java_Object'Class) return SmallLongFactory_Access_Array_Access renames org.allbinary.logic.math.SmallLongFactory_Package_References.Java_Unbox_SmallLongFactory_Access_Array;
    subtype SmallLongFactory_Access_Array_Access_Array is org.allbinary.logic.math.SmallLongFactory_Package_References.SmallLongFactory_Access_Array_Access_Array;
    function "=" (Left, Right : SmallLongFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.logic.math.SmallLongFactory_Package_References."=";
    subtype SmallLongFactory_Access_Array_Access_Array_Access is org.allbinary.logic.math.SmallLongFactory_Package_References.SmallLongFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : SmallLongFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.logic.math.SmallLongFactory_Package_References."=";
+   function Java_Box (Value : SmallLongFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.logic.math.SmallLongFactory_Package_References.Java_Box;
+   function Java_Unbox_SmallLongFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return SmallLongFactory_Access_Array_Access_Array_Access renames org.allbinary.logic.math.SmallLongFactory_Package_References.Java_Unbox_SmallLongFactory_Access_Array_Access_Array;
 
    type SmallLongFactory is new Java_Object with record
       NEGATIVE_MAX : Integer;

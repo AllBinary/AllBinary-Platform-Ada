@@ -25,6 +25,8 @@ with org.allbinary.logic.control.crypt.file.CryptFileWriter_Package; use org.all
 with org.allbinary.logic.io.file.AbFile_Package; use org.allbinary.logic.io.file.AbFile_Package;
 with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
 with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.logic.java.exception_Id.ExceptionUtil_Package;
 with org.allbinary.logic.communication.log.Log_Package;
@@ -42,6 +44,8 @@ package body org.allbinary.data.tree.category.CategoryPrivateTree_Package is
    package AbFile_Package renames Standard.org.allbinary.logic.io.file.AbFile_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    package Document_Package renames Standard.org.w3c.dom.Document_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype CategoryFactoryInterface_Access is org.allbinary.business.category.CategoryFactoryInterface_Package_References.CategoryFactoryInterface_Access;
    function "=" (Left, Right : CategoryFactoryInterface_Access) return Boolean renames org.allbinary.business.category.CategoryFactoryInterface_Package_References."=";
    subtype CategoryFactoryInterface_Access_Array is org.allbinary.business.category.CategoryFactoryInterface_Package_References.CategoryFactoryInterface_Access_Array;
@@ -85,7 +89,7 @@ package body org.allbinary.data.tree.category.CategoryPrivateTree_Package is
       commonStrings : CommonStrings_Access;
    begin
       Initialize_Fields (This);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.CATEGORY) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.CATEGORY) then
             commonStrings := CommonStrings_Package.getInstance;
             This.logUtil.putF (commonStrings.START, CategoryPrivateTree_Access'(This'Unchecked_Access), To_Unbounded_String ("CategoryPrivateTree(CategoryFactoryInterface categoryFactoryInterface)"));
         end if;
@@ -105,13 +109,13 @@ package body org.allbinary.data.tree.category.CategoryPrivateTree_Package is
       document : Document_Access;
       cryptFileWriter : CryptFileWriter_Access;
    begin
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("Saving Category File: ") & Java_Image (categoryInterface.getFilePath), CategoryPrivateTree_Access'(This'Unchecked_Access), To_Unbounded_String ("save()"));
         end if;
         document := CategoryComponent_Package.Create (categoryInterface).toXmlDoc;
         cryptFileWriter := CryptFileWriter_Package.Create (CategoryData_Package.getInstance.UNCRYPTED_EXTENSION, CategoryData_Package.getInstance.ENCRYPTED_EXTENSION);
         cryptFileWriter.write (categoryInterface.getFilePath, document);
-        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+        if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
             This.logUtil.putF (To_Unbounded_String ("end"), CategoryPrivateTree_Access'(This'Unchecked_Access), To_Unbounded_String ("save()"));
         end if;
    end save;
@@ -124,12 +128,12 @@ package body org.allbinary.data.tree.category.CategoryPrivateTree_Package is
         if categoryInterface.isLeaf then
             categoryFile := AbFile_Package.createAbFileFromAbPath (categoryInterface.getFilePath);
             if categoryFile.delete then
-                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+                if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                     This.logUtil.putF (To_Unbounded_String ("Removed: ") & Java_Image (categoryInterface.getFilePath), CategoryPrivateTree_Access'(This'Unchecked_Access), To_Unbounded_String ("delete(CategoryInterface)"));
                 end if;
             end if;
         else
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLLOGGING) then
                 This.logUtil.putF (To_Unbounded_String ("Not a leaf unable to remove"), CategoryPrivateTree_Access'(This'Unchecked_Access), To_Unbounded_String ("delete(CategoryInterface)"));
             end if;
         end if;

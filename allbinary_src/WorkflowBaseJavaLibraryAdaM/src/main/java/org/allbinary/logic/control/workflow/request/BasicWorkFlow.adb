@@ -38,6 +38,8 @@ with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
 with org.w3c.dom.Document_Package_References;
 with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
 with org.w3c.dom.Node_Package_References;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+with org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package; use org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
 with org.allbinary.util.ABHashMap_Package;
 with org.allbinary.util.ABHashtable_Package;
 with org.allbinary.util.ABStack_Package;
@@ -65,6 +67,8 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
    package WorkFlowData_Package renames Standard.org.allbinary.logic.control.workflow.WorkFlowData_Package;
    package StringMaker_Package renames Standard.org.allbinary.logic.string_Id.StringMaker_Package;
    package StringUtil_Package renames Standard.org.allbinary.logic.string_Id.StringUtil_Package;
+   package LogConfigTypeFactory_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory_Package;
+   package LogConfigTypes_Package renames Standard.org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes_Package;
    subtype BasicArrayList_Access is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access;
    function "=" (Left, Right : BasicArrayList_Access) return Boolean renames org.allbinary.util.BasicArrayList_Package_References."=";
    subtype BasicArrayList_Access_Array is org.allbinary.util.BasicArrayList_Package_References.BasicArrayList_Access_Array;
@@ -202,13 +206,13 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
       time : Unbounded_String;
    begin
         values := BasicArrayList_Access (BasicArrayListD_Package.Create);
-        values.add (This.workFlowName);
-        values.add (This.storeName);
-        values.add (XmlDocumentHelper_Package.toString (This.workFlowDoc));
+        values.add (Java_Box (This.workFlowName));
+        values.add (Java_Box (This.storeName));
+        values.add (Java_Box (XmlDocumentHelper_Package.toString (This.workFlowDoc)));
         calendar := Calendar_Package.getInstance;
         time := Java_New_String (To_Unbounded_String (Java_Image (calendar.getTimeInMillis)));
-        values.add (time);
-        values.add (time);
+        values.add (Java_Box (time));
+        values.add (Java_Box (time));
         return values;
    end toVector;
 
@@ -218,7 +222,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
       calendar : Calendar_Access;
       time : Unbounded_String;
    begin
-        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
         hashMap.put (WorkFlowData_Package.getInstance.NAME, Java_Box (This.workFlowName));
         hashMap.put (StoreFrontData_Package.getInstance.NAME, Java_Box (This.storeName));
         hashMap.put (WorkFlowData_Package.getInstance.DATA, Java_Box (XmlDocumentHelper_Package.toString (This.workFlowDoc)));
@@ -256,7 +260,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicWorkFlow_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlNode()"), e);
             end if;
             return null;
@@ -273,7 +277,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, BasicWorkFlow_Access'(This'Unchecked_Access), To_Unbounded_String ("toXmlDoc()"), e);
             end if;
             return null;
@@ -295,7 +299,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.SQLTAGSERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to validate"), BasicWorkFlow_Access'(This'Unchecked_Access), This.commonStrings.IS_VALID, e);
             end if;
             return False;
@@ -317,7 +321,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
                 declare
                     e : Java_Throwable := Java_To_Throwable (Java_Occurrence);
                 begin
-            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+            if LogConfigTypes_Package.LOGGING.contains (LogConfigTypeFactory_Package.getInstance.VIEWERROR) then
                 This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), BasicWorkFlow_Access'(This'Unchecked_Access), To_Unbounded_String ("validationInfo()"), e);
             end if;
             return To_Unbounded_String ("Error Getting Validation Info");

@@ -99,7 +99,7 @@ package body org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package
 
    function getInstance return TrackingEventCircularStaticPool_Access is
    begin
-        return TrackingEventCircularStaticPool_Access (TrackingEventCircularStaticPool_Package.instance);
+        return TrackingEventCircularStaticPool_Package.instance;
    end getInstance;
 
    procedure init (This : in out TrackingEventCircularStaticPool) is

@@ -84,13 +84,13 @@ package body org.allbinary.logic.system.security.licensing.registration.LicenseR
    begin
         begin
             commonStrings := CommonStrings_Package.getInstance;
-            PreLogUtil_Package.put (CommonLabels_Package.getInstance.START_LABEL & To_Unbounded_String ("License Registration"), Java_Box (To_Unbounded_String ("LicenseRegistrationUtil")), commonStrings.PROCESS);
+            PreLogUtil_Package.putS (CommonLabels_Package.getInstance.START_LABEL & To_Unbounded_String ("License Registration"), Java_Box (To_Unbounded_String ("LicenseRegistrationUtil")), commonStrings.PROCESS);
             registrationConfiguration := RegistrationConfiguration_Package.getInstance;
             registrationConfiguration.setRegistrationCode (registrationId);
             registrationConfiguration.write;
             hashtable := abeClientInformation.toHashtable;
             hashtable.put (Java_Box (RegistrationConfiguration_Package.getInstance.NAME), Java_Box (registrationId));
-            hashtable.put (Java_Box (To_Unbounded_String ("message")), SpecialMessageUtil_Package.getInstance.get);
+            hashtable.put (Java_Box (To_Unbounded_String ("message")), Java_Box (SpecialMessageUtil_Package.getInstance.get));
             XmlRpcRemoteLicenseRegistrationClient_Package.Create (abeClientInformation).get (hashtable);
         exception
             when Java_Occurrence : others =>

@@ -53,7 +53,7 @@ package body org.allbinary.game.midlet.LicenseLoadingTypeFactory_Package is
 
    function getIntance return LicenseLoadingTypeFactory_Access is
    begin
-        return LicenseLoadingTypeFactory_Access (LicenseLoadingTypeFactory_Package.instance);
+        return LicenseLoadingTypeFactory_Package.instance;
    end getIntance;
 
 begin

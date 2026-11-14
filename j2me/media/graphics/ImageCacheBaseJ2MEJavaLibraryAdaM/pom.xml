@@ -69,6 +69,16 @@
             <!-- AllBinary Platform Version End -->
         </dependency>
 
+        <!-- MIDPUtil of ImageFactory: optional dependencies are not transitive -->
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>J2MEOnlyJavaLibraryAda</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+            <optional>true</optional>
+        </dependency>
+
         <dependency>
             <groupId>org.allbinary</groupId>
             <artifactId>NullJ2MELibraryAda</artifactId>

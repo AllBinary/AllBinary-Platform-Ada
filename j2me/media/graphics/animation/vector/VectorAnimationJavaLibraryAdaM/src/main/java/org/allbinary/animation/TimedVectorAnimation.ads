@@ -12,6 +12,7 @@
 --  
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.animation.TimedVectorAnimation_Package;
 package org.allbinary.animation.TimedVectorAnimation_Package_References is
    type TimedVectorAnimation_Access is access all org.allbinary.animation.TimedVectorAnimation_Package.TimedVectorAnimation'Class;
@@ -19,6 +20,16 @@ package org.allbinary.animation.TimedVectorAnimation_Package_References is
    type TimedVectorAnimation_Access_Array_Access is access all TimedVectorAnimation_Access_Array;
    type TimedVectorAnimation_Access_Array_Access_Array is array (Natural range <>) of TimedVectorAnimation_Access_Array_Access;
    type TimedVectorAnimation_Access_Array_Access_Array_Access is access all TimedVectorAnimation_Access_Array_Access_Array;
+   type TimedVectorAnimation_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TimedVectorAnimation_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TimedVectorAnimation_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TimedVectorAnimation_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TimedVectorAnimation_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TimedVectorAnimation_Access_Array_Access is (if Value /= null and then Value.all in TimedVectorAnimation_Access_Array_Object'Class then TimedVectorAnimation_Access_Array_Object'Class (Value.all).Value else null);
+   type TimedVectorAnimation_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : TimedVectorAnimation_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : TimedVectorAnimation_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new TimedVectorAnimation_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_TimedVectorAnimation_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return TimedVectorAnimation_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in TimedVectorAnimation_Access_Array_Access_Array_Object'Class then TimedVectorAnimation_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.animation.TimedVectorAnimation_Package_References;
 
 with org.allbinary.animation.TimedVectorAnimation_Package_References;
@@ -83,10 +94,14 @@ package org.allbinary.animation.TimedVectorAnimation_Package is
    function "=" (Left, Right : TimedVectorAnimation_Access_Array) return Boolean renames org.allbinary.animation.TimedVectorAnimation_Package_References."=";
    subtype TimedVectorAnimation_Access_Array_Access is org.allbinary.animation.TimedVectorAnimation_Package_References.TimedVectorAnimation_Access_Array_Access;
    function "=" (Left, Right : TimedVectorAnimation_Access_Array_Access) return Boolean renames org.allbinary.animation.TimedVectorAnimation_Package_References."=";
+   function Java_Box (Value : TimedVectorAnimation_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.TimedVectorAnimation_Package_References.Java_Box;
+   function Java_Unbox_TimedVectorAnimation_Access_Array (Value : access Java_Object'Class) return TimedVectorAnimation_Access_Array_Access renames org.allbinary.animation.TimedVectorAnimation_Package_References.Java_Unbox_TimedVectorAnimation_Access_Array;
    subtype TimedVectorAnimation_Access_Array_Access_Array is org.allbinary.animation.TimedVectorAnimation_Package_References.TimedVectorAnimation_Access_Array_Access_Array;
    function "=" (Left, Right : TimedVectorAnimation_Access_Array_Access_Array) return Boolean renames org.allbinary.animation.TimedVectorAnimation_Package_References."=";
    subtype TimedVectorAnimation_Access_Array_Access_Array_Access is org.allbinary.animation.TimedVectorAnimation_Package_References.TimedVectorAnimation_Access_Array_Access_Array_Access;
    function "=" (Left, Right : TimedVectorAnimation_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.animation.TimedVectorAnimation_Package_References."=";
+   function Java_Box (Value : TimedVectorAnimation_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.animation.TimedVectorAnimation_Package_References.Java_Box;
+   function Java_Unbox_TimedVectorAnimation_Access_Array_Access_Array (Value : access Java_Object'Class) return TimedVectorAnimation_Access_Array_Access_Array_Access renames org.allbinary.animation.TimedVectorAnimation_Package_References.Java_Unbox_TimedVectorAnimation_Access_Array_Access_Array;
 
    type TimedVectorAnimation is new VectorAnimation with record
       timeElapsedHelper : TimeDelayHelper_Access;

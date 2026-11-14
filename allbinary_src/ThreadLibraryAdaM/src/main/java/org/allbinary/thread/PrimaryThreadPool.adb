@@ -44,7 +44,7 @@ package body org.allbinary.thread.PrimaryThreadPool_Package is
 
    function getInstance return ThreadPool_Access is
    begin
-        return ThreadPool_Access (PrimaryThreadPool_Package.THREAD_POOL);
+        return PrimaryThreadPool_Package.THREAD_POOL;
    end getInstance;
 
    procedure Initialize (This : in out PrimaryThreadPool'Class; poolName : Unbounded_String; numThreads : Integer; priority : Integer) is

@@ -47,7 +47,7 @@ package body org.allbinary.util.ArrayUtil_Package is
 
    function getInstance return ArrayUtil_Access is
    begin
-        return ArrayUtil_Access (ArrayUtil_Package.instance);
+        return ArrayUtil_Package.instance;
    end getInstance;
 
    function copyOf (This : in out ArrayUtil; original : Java_Object_Access_Array_Access; newLength : Integer) return Java_Object_Access_Array_Access is

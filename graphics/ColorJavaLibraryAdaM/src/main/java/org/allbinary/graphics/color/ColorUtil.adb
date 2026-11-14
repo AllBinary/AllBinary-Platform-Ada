@@ -48,7 +48,7 @@ package body org.allbinary.graphics.color.ColorUtil_Package is
 
    function getInstance return ColorUtil_Access is
    begin
-        return ColorUtil_Access (ColorUtil_Package.instance);
+        return ColorUtil_Package.instance;
    end getInstance;
 
    function isGreyishOrWhiteLike (This : in out ColorUtil; color_Param : access Color_Package.Color'Class) return Boolean is

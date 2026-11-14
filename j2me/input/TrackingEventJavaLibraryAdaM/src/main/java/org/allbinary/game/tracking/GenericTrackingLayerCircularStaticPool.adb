@@ -63,7 +63,7 @@ package body org.allbinary.game.tracking.GenericTrackingLayerCircularStaticPool_
 
    function getInstance return GenericTrackingLayerCircularStaticPool_Access is
    begin
-        return GenericTrackingLayerCircularStaticPool_Access (GenericTrackingLayerCircularStaticPool_Package.SINGLETON);
+        return GenericTrackingLayerCircularStaticPool_Package.SINGLETON;
    end getInstance;
 
 begin

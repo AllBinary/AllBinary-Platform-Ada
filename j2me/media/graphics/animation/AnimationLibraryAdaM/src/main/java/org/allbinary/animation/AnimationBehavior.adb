@@ -36,7 +36,7 @@ package body org.allbinary.animation.AnimationBehavior_Package is
 
    function getInstance return AnimationBehavior_Access is
    begin
-        return AnimationBehavior_Access (AnimationBehavior_Package.instance);
+        return AnimationBehavior_Package.instance;
    end getInstance;
 
    procedure reset (This : in out AnimationBehavior) is

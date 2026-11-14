@@ -53,7 +53,7 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
    begin
       null;
       This.logUtil := LogUtil_Package.getInstance;
-      This.hashMap := StdUtil_Package.getInstance.createHashMap;
+      This.hashMap := HashMap_Access (StdUtil_Package.getInstance.createHashMap);
       This.angleIncrementJTextField := null;
       This.jButton1 := null;
       This.jLabel1 := null;
@@ -66,7 +66,7 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
    procedure Initialize (This : in out RotateJDialog'Class; parent_Param : access Frame_Package.Frame'Class; modal : Boolean) is
       parent : constant Frame_Access := Frame_Access (parent_Param);
    begin
-        JDialog_Package.Initialize (This, parent, modal);
+        null;
         Initialize_Fields (This);
         RotateJDialog'Class (This).initComponents;
    end Initialize;
@@ -88,7 +88,7 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
         This.jLabel2 := JLabel_Package.Create;
         This.jPanel1 := JPanel_Package.Create;
         This.jButton1 := JButton_Package.Create;
-        RotateJDialog'Class (This).setDefaultCloseOperation (javax_Package.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        RotateJDialog'Class (This).setDefaultCloseOperation (WindowConstants_Package.DISPOSE_ON_CLOSE);
         This.angleIncrementJTextField.setText (To_Unbounded_String ("36"));
         This.jLabel1.setText (To_Unbounded_String ("Angle Increment:"));
         This.totalRotationJTextField.setText (To_Unbounded_String ("360"));
@@ -104,12 +104,12 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
 );
         jPanel1Layout := GroupLayout_Package.Create (This.jPanel1);
         This.jPanel1.setLayout (jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (jPanel1Layout.createSequentialGroup.addGap (62, 62, 62).addComponent (This.jButton1).addContainerGap (62, Short_Integer'Last)));
-        jPanel1Layout.setVerticalGroup (jPanel1Layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.jButton1));
+        jPanel1Layout.setHorizontalGroup (jPanel1Layout.createParallelGroup (GroupLayout_Package.Alignment.LEADING).addGroup (jPanel1Layout.createSequentialGroup.addGap (62, 62, 62).addComponent (This.jButton1).addContainerGap (62, Short_Integer'Last)));
+        jPanel1Layout.setVerticalGroup (jPanel1Layout.createParallelGroup (GroupLayout_Package.Alignment.LEADING).addComponent (This.jButton1));
         layout := GroupLayout_Package.Create (RotateJDialog'Class (This).getContentPane);
         RotateJDialog'Class (This).getContentPane.setLayout (layout);
-        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.TRAILING).addComponent (This.jLabel1).addComponent (This.jLabel2)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.UNRELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addComponent (This.totalRotationJTextField, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 31, Short_Integer'Last).addComponent (This.angleIncrementJTextField, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 31, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addContainerGap).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.Alignment.TRAILING, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Integer'Last));
-        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.angleIncrementJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel1)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.totalRotationJTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel2)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short_Integer'Last).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addContainerGap));
+        layout.setHorizontalGroup (layout.createParallelGroup (GroupLayout_Package.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (GroupLayout_Package.Alignment.TRAILING).addComponent (This.jLabel1).addComponent (This.jLabel2)).addPreferredGap (LayoutStyle_Package.ComponentPlacement.UNRELATED).addGroup (layout.createParallelGroup (GroupLayout_Package.Alignment.LEADING).addComponent (This.totalRotationJTextField, GroupLayout_Package.Alignment.TRAILING, GroupLayout_Package.DEFAULT_SIZE, 31, Short_Integer'Last).addComponent (This.angleIncrementJTextField, GroupLayout_Package.Alignment.TRAILING, GroupLayout_Package.PREFERRED_SIZE, 31, GroupLayout_Package.PREFERRED_SIZE)).addContainerGap).addComponent (This.jPanel1, GroupLayout_Package.Alignment.TRAILING, GroupLayout_Package.DEFAULT_SIZE, GroupLayout_Package.DEFAULT_SIZE, Short_Integer'Last));
+        layout.setVerticalGroup (layout.createParallelGroup (GroupLayout_Package.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addGroup (layout.createParallelGroup (GroupLayout_Package.Alignment.BASELINE).addComponent (This.angleIncrementJTextField, GroupLayout_Package.PREFERRED_SIZE, GroupLayout_Package.DEFAULT_SIZE, GroupLayout_Package.PREFERRED_SIZE).addComponent (This.jLabel1)).addPreferredGap (LayoutStyle_Package.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (GroupLayout_Package.Alignment.BASELINE).addComponent (This.totalRotationJTextField, GroupLayout_Package.PREFERRED_SIZE, GroupLayout_Package.DEFAULT_SIZE, GroupLayout_Package.PREFERRED_SIZE).addComponent (This.jLabel2)).addPreferredGap (LayoutStyle_Package.ComponentPlacement.RELATED, 16, Short_Integer'Last).addComponent (This.jPanel1, GroupLayout_Package.PREFERRED_SIZE, GroupLayout_Package.DEFAULT_SIZE, GroupLayout_Package.PREFERRED_SIZE).addContainerGap));
         RotateJDialog'Class (This).pack;
    end initComponents;
 
@@ -135,7 +135,7 @@ package body org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
 
    procedure main (args : Unbounded_String_Array_Access) is
    begin
-        java_Package.awt.EventQueue.invokeLater (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
+        EventQueue_Package.invokeLater (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
 --     procedure run (This : in out ) is
 --        dialog : RotateJDialog_Access;

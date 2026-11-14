@@ -53,7 +53,7 @@ package body org.allbinary.input.motion.button.TouchScreenTypesFactory_Package i
 
    function getInstance return TouchScreenTypesFactory_Access is
    begin
-        return TouchScreenTypesFactory_Access (TouchScreenTypesFactory_Package.instance);
+        return TouchScreenTypesFactory_Package.instance;
    end getInstance;
 
 begin

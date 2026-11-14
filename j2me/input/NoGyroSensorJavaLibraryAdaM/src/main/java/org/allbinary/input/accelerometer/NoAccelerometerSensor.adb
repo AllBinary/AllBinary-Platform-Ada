@@ -18,6 +18,7 @@ with org.allbinary.logic.math.Orientation_Package; use org.allbinary.logic.math.
 with org.allbinary.logic.math.Orientation_Package_References;
 with org.allbinary.logic.util.event.AllBinaryEventObject_Package;
 with org.allbinary.input.AllBinarySensor_Package;
+with org.allbinary.logic.math.BasicDecimal_Package;
 with org.allbinary.string_Id.CommonSeps_Package;
 with org.allbinary.string_Id.CommonStrings_Package;
 with org.allbinary.game.input.CompleteMotionGestureInputEvent_Package;

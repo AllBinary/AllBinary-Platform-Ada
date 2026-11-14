@@ -55,7 +55,7 @@ package body org.allbinary.graphics.paint.ProcessPaintableSingletonFactory_Packa
 
    function getInstance return ProcessPaintable_Access is
    begin
-        return ProcessPaintable_Access (ProcessPaintableSingletonFactory_Package.SINGLETON);
+        return ProcessPaintableSingletonFactory_Package.SINGLETON;
    end getInstance;
 
 begin

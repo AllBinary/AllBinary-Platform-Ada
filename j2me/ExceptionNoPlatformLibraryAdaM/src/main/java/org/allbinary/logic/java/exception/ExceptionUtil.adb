@@ -25,7 +25,7 @@ package body org.allbinary.logic.java.exception_Id.ExceptionUtil_Package is
 
    function getInstance return ExceptionUtil_Access is
    begin
-        return ExceptionUtil_Access (ExceptionUtil_Package.instance);
+        return ExceptionUtil_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out ExceptionUtil'Class) is

@@ -12,6 +12,7 @@
 --   
 --  Generated Code Do Not Modify
 
+with AllBinary_Java;
 limited with org.allbinary.game.input.form.PlayersSingletonFactory_Package;
 package org.allbinary.game.input.form.PlayersSingletonFactory_Package_References is
    type PlayersSingletonFactory_Access is access all org.allbinary.game.input.form.PlayersSingletonFactory_Package.PlayersSingletonFactory'Class;
@@ -19,6 +20,16 @@ package org.allbinary.game.input.form.PlayersSingletonFactory_Package_References
    type PlayersSingletonFactory_Access_Array_Access is access all PlayersSingletonFactory_Access_Array;
    type PlayersSingletonFactory_Access_Array_Access_Array is array (Natural range <>) of PlayersSingletonFactory_Access_Array_Access;
    type PlayersSingletonFactory_Access_Array_Access_Array_Access is access all PlayersSingletonFactory_Access_Array_Access_Array;
+   type PlayersSingletonFactory_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PlayersSingletonFactory_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PlayersSingletonFactory_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PlayersSingletonFactory_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PlayersSingletonFactory_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PlayersSingletonFactory_Access_Array_Access is (if Value /= null and then Value.all in PlayersSingletonFactory_Access_Array_Object'Class then PlayersSingletonFactory_Access_Array_Object'Class (Value.all).Value else null);
+   type PlayersSingletonFactory_Access_Array_Access_Array_Object is new AllBinary_Java.Java_Object with record
+      Value : PlayersSingletonFactory_Access_Array_Access_Array_Access;
+   end record;
+   function Java_Box (Value : PlayersSingletonFactory_Access_Array_Access_Array_Access) return AllBinary_Java.Java_Object_Access is (if Value = null then null else new PlayersSingletonFactory_Access_Array_Access_Array_Object'(AllBinary_Java.Java_Object with Value => Value));
+   function Java_Unbox_PlayersSingletonFactory_Access_Array_Access_Array (Value : access AllBinary_Java.Java_Object'Class) return PlayersSingletonFactory_Access_Array_Access_Array_Access is (if Value /= null and then Value.all in PlayersSingletonFactory_Access_Array_Access_Array_Object'Class then PlayersSingletonFactory_Access_Array_Access_Array_Object'Class (Value.all).Value else null);
 end org.allbinary.game.input.form.PlayersSingletonFactory_Package_References;
 
 with org.allbinary.game.input.form.PlayersSingletonFactory_Package_References;
@@ -44,10 +55,14 @@ package org.allbinary.game.input.form.PlayersSingletonFactory_Package is
    function "=" (Left, Right : PlayersSingletonFactory_Access_Array) return Boolean renames org.allbinary.game.input.form.PlayersSingletonFactory_Package_References."=";
    subtype PlayersSingletonFactory_Access_Array_Access is org.allbinary.game.input.form.PlayersSingletonFactory_Package_References.PlayersSingletonFactory_Access_Array_Access;
    function "=" (Left, Right : PlayersSingletonFactory_Access_Array_Access) return Boolean renames org.allbinary.game.input.form.PlayersSingletonFactory_Package_References."=";
+   function Java_Box (Value : PlayersSingletonFactory_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.form.PlayersSingletonFactory_Package_References.Java_Box;
+   function Java_Unbox_PlayersSingletonFactory_Access_Array (Value : access Java_Object'Class) return PlayersSingletonFactory_Access_Array_Access renames org.allbinary.game.input.form.PlayersSingletonFactory_Package_References.Java_Unbox_PlayersSingletonFactory_Access_Array;
    subtype PlayersSingletonFactory_Access_Array_Access_Array is org.allbinary.game.input.form.PlayersSingletonFactory_Package_References.PlayersSingletonFactory_Access_Array_Access_Array;
    function "=" (Left, Right : PlayersSingletonFactory_Access_Array_Access_Array) return Boolean renames org.allbinary.game.input.form.PlayersSingletonFactory_Package_References."=";
    subtype PlayersSingletonFactory_Access_Array_Access_Array_Access is org.allbinary.game.input.form.PlayersSingletonFactory_Package_References.PlayersSingletonFactory_Access_Array_Access_Array_Access;
    function "=" (Left, Right : PlayersSingletonFactory_Access_Array_Access_Array_Access) return Boolean renames org.allbinary.game.input.form.PlayersSingletonFactory_Package_References."=";
+   function Java_Box (Value : PlayersSingletonFactory_Access_Array_Access_Array_Access) return Java_Object_Access renames org.allbinary.game.input.form.PlayersSingletonFactory_Package_References.Java_Box;
+   function Java_Unbox_PlayersSingletonFactory_Access_Array_Access_Array (Value : access Java_Object'Class) return PlayersSingletonFactory_Access_Array_Access_Array_Access renames org.allbinary.game.input.form.PlayersSingletonFactory_Package_References.Java_Unbox_PlayersSingletonFactory_Access_Array_Access_Array;
 
    type PlayersSingletonFactory is new Java_Object with null record;
    total : Integer;

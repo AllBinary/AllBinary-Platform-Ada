@@ -161,7 +161,7 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
 
    function getInstance return LayerManagerEventHandler_Access is
    begin
-        return LayerManagerEventHandler_Access (LayerManagerEventHandler_Package.instance);
+        return LayerManagerEventHandler_Package.instance;
    end getInstance;
 
    procedure Initialize (This : in out LayerManagerEventHandler'Class) is
@@ -230,6 +230,7 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
       eventListenerInterfaceList : BasicArrayList_Access;
       eventListenerInterface : EventListenerInterface_Access;
       layerManagerEventListenerInterface : LayerManagerEventListenerInterface_Access;
+      listenerIndex : Integer;
    begin
         index := This.list.size;
         while (Java_Pre_Decrement (index)) >= (0) loop
@@ -248,10 +249,10 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
         eventListenerInterfaceList := This.eventListenerInterfaceList;
         eventListenerInterface := null;
         layerManagerEventListenerInterface := null;
-        index := 0;
-        while (index) < (eventListenerInterfaceList.size) loop
+        listenerIndex := 0;
+        while (listenerIndex) < (eventListenerInterfaceList.size) loop
             begin
-                eventListenerInterface := EventListenerInterface_Access (eventListenerInterfaceList.objectArray (index));
+                eventListenerInterface := EventListenerInterface_Access (eventListenerInterfaceList.objectArray (listenerIndex));
                 layerManagerEventListenerInterface := (LayerManagerEventListenerInterface_Access (eventListenerInterface));
                 layerManagerEventListenerInterface.onDeleteLayerManagerEvent (LayerManagerEvent_Access (eventObject));
             exception
@@ -262,7 +263,7 @@ package body org.allbinary.layer.event.LayerManagerEventHandler_Package is
                 This.logUtil.put (This.commonStrings.EXCEPTION_Id, LayerManagerEventHandler_Access'(This'Unchecked_Access), EventStrings_Package.getInstance.FIRE_EVENT, e);
                     end;
             end;
-            index := index + 1;
+            listenerIndex := listenerIndex + 1;
         end loop;
    end fireDeleteEvent;
 

@@ -13,6 +13,7 @@
 --  Generated Code Do Not Modify
 
 
+with java.awt.event.KeyEvent_Package; use java.awt.event.KeyEvent_Package;
 with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
 with org.allbinary.logic.communication.log.LogUtil_Package_References;
@@ -24,6 +25,7 @@ with org.allbinary.util.ABVector_Package;
 
 package body org.allbinary.input.KeySingletonFactory_Package is
 
+   package KeyEvent_Package renames Standard.java.awt.event.KeyEvent_Package;
    package StdUtil_Package renames Standard.org.allbinary.logic.StdUtil_Package;
    package CommonStrings_Package renames Standard.org.allbinary.string_Id.CommonStrings_Package;
    subtype LogUtil_Access is org.allbinary.logic.communication.log.LogUtil_Package_References.LogUtil_Access;
@@ -94,7 +96,7 @@ package body org.allbinary.input.KeySingletonFactory_Package is
 
    function getHashtable return ABHashtable_Access is
    begin
-        return ABHashtable_Access (KeySingletonFactory_Package.keyStringHashtable);
+        return KeySingletonFactory_Package.keyStringHashtable;
    end getHashtable;
 
    function getInstance (index : Integer) return Integer is
