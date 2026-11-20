@@ -21,4 +21,13 @@
             <outputFileNameMapping></outputFileNameMapping>
         </dependencySet>
     </dependencySets>
+
+    <fileSets>
+        <fileSet>
+            <includes>
+                <include>*.adb</include>
+                <include>*.ads</include>
+            </includes>
+        </fileSet>
+    </fileSets>
 </assembly>
